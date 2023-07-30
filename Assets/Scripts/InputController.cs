@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
-    [SerializeField] private float _moveSpeed = 4f;
+    [SerializeField] private float _speedWalk = 4f;
+    [SerializeField] private float _speedSprint = 12f;
     [SerializeField] private float _rotationSpeed = 5f;
     [SerializeField] private float _zoomSpeed = 5f; // Adjust this to control camera zoom speed
     [SerializeField] private float _orthographicSizeMin = 2f;
     [SerializeField] private float _orthographicSizeMax = 15f;
 
+    public float _moveSpeed = 0f;
+
     private Transform characterTransform;
     private Transform cameraTransform;
     private bool isMouseWheelDown = false;
+    private bool isSprinting = false;
 
     private void Start()
     {
@@ -43,10 +47,28 @@ public class InputController : MonoBehaviour
 
         float zoomInput = Input.GetAxis("Mouse ScrollWheel");
         ZoomCamera(zoomInput);
+
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            isSprinting = true;
+        }
+        else
+        {
+            isSprinting = false;
+        }
+        
     }
 
     private void Move()
     {
+        if (isSprinting)
+        {
+            _moveSpeed = _speedSprint;
+        }
+        else
+        {
+            _moveSpeed = _speedWalk;
+        }
         Vector3 forwardDirection = cameraTransform.forward;
         forwardDirection.y = 0;
         forwardDirection = Vector3.Normalize(forwardDirection);
