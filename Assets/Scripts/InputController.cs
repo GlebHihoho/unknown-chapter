@@ -7,6 +7,7 @@ public class InputController : MonoBehaviour
 
     private Transform characterTransform;
     private Transform cameraTransform;
+    private bool isMouseWheelDown = false;
 
     private void Start()
     {
@@ -20,9 +21,22 @@ public class InputController : MonoBehaviour
         {
             Move();
         }
-        
-        float rotationInput = Input.GetAxis("Mouse ScrollWheel");
-        RotateCamera(rotationInput);
+
+        // Check if the mouse wheel is pressed down or released
+        if (Input.GetMouseButtonDown(2)) // Mouse wheel button
+        {
+            isMouseWheelDown = true;
+        }
+        else if (Input.GetMouseButtonUp(2))
+        {
+            isMouseWheelDown = false;
+        }
+
+        if (isMouseWheelDown)
+        {
+            float rotationInput = Input.GetAxis("Mouse X");
+            RotateCamera(rotationInput);
+        }
     }
 
     private void Move()
@@ -52,7 +66,4 @@ public class InputController : MonoBehaviour
             cameraTransform.RotateAround(characterTransform.position, Vector3.up, rotationInput * _rotationSpeed);
         }
     }
-  
 }
-
-
