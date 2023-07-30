@@ -9,7 +9,7 @@ public class InputController : MonoBehaviour
     [SerializeField] private float _orthographicSizeMin = 2f;
     [SerializeField] private float _orthographicSizeMax = 15f;
 
-    public float _moveSpeed = 0f;
+    private float _moveSpeed = 0f;
 
     private Transform characterTransform;
     private Transform cameraTransform;
