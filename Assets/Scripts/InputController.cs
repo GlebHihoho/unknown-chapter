@@ -10,6 +10,7 @@ public class InputController : MonoBehaviour
     [SerializeField] private float _orthographicSizeMax = 15f;
 
     private float _moveSpeed = 0f;
+    private Animator _characterAnimator;
 
     private Transform characterTransform;
     private Transform cameraTransform;
@@ -20,13 +21,30 @@ public class InputController : MonoBehaviour
     {
         characterTransform = transform;
         cameraTransform = Camera.main.transform;
+        _characterAnimator = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        if (Input.anyKey)
+        // if (Input.anyKey)
+        // {
+        //     Move();
+        //     _characterAnimator.SetTrigger("Walk");
+        // }
+        // else
+        // {
+        //     _characterAnimator.SetTrigger("Idle");
+        // }
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             Move();
+            // _characterAnimator.SetTrigger("Walk");
+            _characterAnimator.SetBool("IsWalk", true);
+        }
+        else
+        {
+            // _characterAnimator.SetTrigger("Idle");
+            _characterAnimator.SetBool("IsWalk", false);
         }
 
         // Check if the mouse wheel is pressed down or released
@@ -51,10 +69,13 @@ public class InputController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             isSprinting = true;
+            _characterAnimator.SetBool("IsSprint", true);
         }
         else
         {
             isSprinting = false;
+            _characterAnimator.SetBool("IsSprint", false);
+
         }
         
     }
