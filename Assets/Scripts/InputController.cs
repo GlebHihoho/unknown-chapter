@@ -3,7 +3,10 @@ using UnityEngine;
 public class InputController : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 4f;
-    [SerializeField] private float _rotationSpeed = 5f; // Adjust this to control camera rotation speed
+    [SerializeField] private float _rotationSpeed = 5f;
+    [SerializeField] private float _zoomSpeed = 5f; // Adjust this to control camera zoom speed
+    [SerializeField] private float _orthographicSizeMin = 2f;
+    [SerializeField] private float _orthographicSizeMax = 15f;
 
     private Transform characterTransform;
     private Transform cameraTransform;
@@ -37,6 +40,9 @@ public class InputController : MonoBehaviour
             float rotationInput = Input.GetAxis("Mouse X");
             RotateCamera(rotationInput);
         }
+
+        float zoomInput = Input.GetAxis("Mouse ScrollWheel");
+        ZoomCamera(zoomInput);
     }
 
     private void Move()
@@ -65,5 +71,11 @@ public class InputController : MonoBehaviour
         {
             cameraTransform.RotateAround(characterTransform.position, Vector3.up, rotationInput * _rotationSpeed);
         }
+    }
+
+    private void ZoomCamera(float zoomInput)
+    {
+        Camera.main.orthographicSize -= zoomInput * _zoomSpeed;
+        Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, _orthographicSizeMin, _orthographicSizeMax);
     }
 }
