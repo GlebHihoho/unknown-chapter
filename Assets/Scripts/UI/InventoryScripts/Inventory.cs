@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -42,7 +41,7 @@ namespace UI.InventoryScripts
             for (int i = 0; i < _maxCount; i++) // тестовое заполнение ячеек
             {
                 var item = _data.items[Random.Range(0, _data.items.Count)];
-                AddItem(i, item, Random.Range(1, MaxNumOfObjectInCall));
+                AddItem(i, item);
             }
             UpdateInventory();
         }
@@ -64,52 +63,16 @@ namespace UI.InventoryScripts
             }
         }
 
-        // public void SearchForSameItem(Item item, int count)
-        // {
-        //     for (int i = 0; i < _maxCount; i++)
-        //     {
-        //         if (_items[i].id == item.id)
-        //         {
-        //             if (_items[0].count < MaxNumOfObjectInCall)
-        //             {
-        //                 _items[i].count += count;
-        //
-        //                 if (_items[i].count > MaxNumOfObjectInCall)
-        //                 {
-        //                     count = _items[i].count - MaxNumOfObjectInCall;
-        //                     _items[i].count = 64; //?????????
-        //                 }
-        //                 else
-        //                 {
-        //                     count = 0;
-        //                     i = _maxCount;
-        //                 }
-        //             }
-        //         }
-        //     }
-        //
-        //     if (count > 0)
-        //     {
-        //         for (int i = 0; i < _maxCount; i++)
-        //         {
-        //             if (_items[i].id == 0)
-        //             {
-        //                 AddItem(i, item, count);
-        //                 i = _maxCount;
-        //             }
-        //         }
-        //     }
-        // }
-
-        private void AddItem(int id, Item item, int count)
+        private void AddItem(int id, Item item)
         {
             _items[id]._id = item.id;
-            _items[id]._count = count;
-            _items[id]._itemGameObj.GetComponent<Image>().sprite = item.img;
+            _items[id]._count = item.count;
+            _items[id]._itemGameObj.GetComponentInChildren<Image>().sprite = item.img;
+            _items[id]._isUsed = item.isUsed;
         
-            if (count > 1 && item.id != 0)
+            if (item.count > 1 && item.id != 0)
             {
-                _items[id]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = count.ToString();
+                _items[id]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = item.count.ToString();
             }
             else
             {
@@ -122,6 +85,7 @@ namespace UI.InventoryScripts
             _items[id]._id = invItem._id;
             _items[id]._count = invItem._count;
             _items[id]._itemGameObj.GetComponent<Image>().sprite = _data.items[invItem._id].img;
+            _items[id]._isUsed = invItem._isUsed;
         
             if (invItem._count > 1 && invItem._id != 0)
             {
@@ -138,7 +102,7 @@ namespace UI.InventoryScripts
             for (int i = 0; i < _maxCount; i++)
             {
                 var newItem = Instantiate(_gameObjShow, _inventoryMainObject.transform);
-            
+                
                 newItem.name = i.ToString();
 
                 var ii = new ItemInventory
@@ -174,6 +138,12 @@ namespace UI.InventoryScripts
                 }
 
                 _items[i]._itemGameObj.GetComponent<Image>().sprite = _data.items[_items[i]._id].img;
+
+                if (_items[i]._isUsed)
+                {
+                    _items[i]._itemGameObj.transform.GetChild(1).GetComponent<Image>().enabled = true;
+                    //_items[i]._itemGameObj.GetComponentInChildren<Image>().color = new Color(255, 255, 0, 140);
+                }
             }
         }
 
@@ -188,7 +158,7 @@ namespace UI.InventoryScripts
                 {
                     _movingObject.gameObject.SetActive(true);
                     _movingObject.GetComponent<Image>().sprite = _data.items[_currentItem._id].img;
-                    AddItem(_currentID, _data.items[0], 0);
+                    AddItem(_currentID, _data.items[0]);
                 }
             }
             else
@@ -209,7 +179,9 @@ namespace UI.InventoryScripts
                     }
                     else
                     {
-                        AddItem(_currentID, _data.items[ii._id], ii._count + _currentItem._count - MaxNumOfObjectInCall);
+                        var newItem = _data.items[ii._id];
+                        newItem.count = ii._count + _currentItem._count - MaxNumOfObjectInCall;
+                        AddItem(_currentID, newItem);
 
                         ii._count = MaxNumOfObjectInCall;
                     }
@@ -237,7 +209,8 @@ namespace UI.InventoryScripts
             {
                 _id = old._id,
                 _itemGameObj = old._itemGameObj,
-                _count = old._count
+                _count = old._count,
+                _isUsed = old._isUsed
             };
 
             return newItemInventory;
@@ -250,5 +223,6 @@ namespace UI.InventoryScripts
         public int _id;
         public GameObject _itemGameObj;
         public int _count;
+        public bool _isUsed;
     }
 }
