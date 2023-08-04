@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
+using Button = UnityEngine.UI.Button;
+using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
 
 namespace UI.InventoryScripts
@@ -38,10 +39,10 @@ namespace UI.InventoryScripts
                 AddGraphics();
             }
 
-            for (int i = 0; i < _maxCount; i++) // тестовое заполнение ячеек
+            for (int i = 1; i < _data._items.Count; i++)
             {
-                var item = _data.items[Random.Range(0, _data.items.Count)];
-                AddItem(i, item);
+                var item = _data._items[i];
+                AddItem(i - 1, item);
             }
             UpdateInventory();
         }
@@ -65,14 +66,15 @@ namespace UI.InventoryScripts
 
         private void AddItem(int id, Item item)
         {
-            _items[id]._id = item.id;
-            _items[id]._count = item.count;
-            _items[id]._itemGameObj.GetComponentInChildren<Image>().sprite = item.img;
-            _items[id]._isUsed = item.isUsed;
+            _items[id]._id = item._id;
+            _items[id]._count = item._count;
+            _items[id]._itemGameObj.GetComponentInChildren<Image>().sprite = item._img;
+            _items[id]._isUsed = item._isUsed;
+            _items[id]._description = item._description;
         
-            if (item.count > 1 && item.id != 0)
+            if (item._count > 1 && item._id != 0)
             {
-                _items[id]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = item.count.ToString();
+                _items[id]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = item._count.ToString();
             }
             else
             {
@@ -84,8 +86,9 @@ namespace UI.InventoryScripts
         {
             _items[id]._id = invItem._id;
             _items[id]._count = invItem._count;
-            _items[id]._itemGameObj.GetComponent<Image>().sprite = _data.items[invItem._id].img;
+            _items[id]._itemGameObj.GetComponent<Image>().sprite = _data._items[invItem._id]._img;
             _items[id]._isUsed = invItem._isUsed;
+            _items[id]._description = invItem._description;
         
             if (invItem._count > 1 && invItem._id != 0)
             {
@@ -118,7 +121,7 @@ namespace UI.InventoryScripts
                 Button tempButton = newItem.GetComponent<Button>();
             
                 tempButton.onClick.AddListener(SelectObject);
-            
+
                 _items.Add(ii);
             }
         }
@@ -137,12 +140,15 @@ namespace UI.InventoryScripts
                     _items[i]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = "";
                 }
 
-                _items[i]._itemGameObj.GetComponent<Image>().sprite = _data.items[_items[i]._id].img;
+                _items[i]._itemGameObj.GetComponent<Image>().sprite = _data._items[_items[i]._id]._img;
 
                 if (_items[i]._isUsed)
                 {
                     _items[i]._itemGameObj.transform.GetChild(1).GetComponent<Image>().enabled = true;
-                    //_items[i]._itemGameObj.GetComponentInChildren<Image>().color = new Color(255, 255, 0, 140);
+                }
+                else
+                {
+                    _items[i]._itemGameObj.transform.GetChild(1).GetComponent<Image>().enabled = false;
                 }
             }
         }
@@ -157,8 +163,8 @@ namespace UI.InventoryScripts
                 if (_currentItem._id != 0)
                 {
                     _movingObject.gameObject.SetActive(true);
-                    _movingObject.GetComponent<Image>().sprite = _data.items[_currentItem._id].img;
-                    AddItem(_currentID, _data.items[0]);
+                    _movingObject.GetComponent<Image>().sprite = _data._items[_currentItem._id]._img;
+                    AddItem(_currentID, _data._items[0]);
                 }
             }
             else
@@ -179,8 +185,8 @@ namespace UI.InventoryScripts
                     }
                     else
                     {
-                        var newItem = _data.items[ii._id];
-                        newItem.count = ii._count + _currentItem._count - MaxNumOfObjectInCall;
+                        var newItem = _data._items[ii._id];
+                        newItem._count = ii._count + _currentItem._count - MaxNumOfObjectInCall;
                         AddItem(_currentID, newItem);
 
                         ii._count = MaxNumOfObjectInCall;
@@ -193,6 +199,8 @@ namespace UI.InventoryScripts
 
                 _movingObject.gameObject.SetActive(false);
             }
+            
+            UpdateInventory();
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
@@ -210,11 +218,20 @@ namespace UI.InventoryScripts
                 _id = old._id,
                 _itemGameObj = old._itemGameObj,
                 _count = old._count,
-                _isUsed = old._isUsed
+                _isUsed = old._isUsed,
+                _description = old._description
             };
 
             return newItemInventory;
         }
+
+        // private void DescriptionObject()
+        // {
+        //     _currentID = int.Parse(_es.currentSelectedGameObject.name);
+        //     _currentItem = CopyInventoryItem(_items[_currentID]);
+        //     
+        //     print(_currentItem._description);
+        // }
     }
 
     [System.Serializable]
@@ -224,5 +241,6 @@ namespace UI.InventoryScripts
         public GameObject _itemGameObj;
         public int _count;
         public bool _isUsed;
+        public string _description;
     }
 }
