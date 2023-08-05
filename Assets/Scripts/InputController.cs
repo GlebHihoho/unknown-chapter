@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class InputController : MonoBehaviour
@@ -11,40 +12,76 @@ public class InputController : MonoBehaviour
 
     private float _moveSpeed = 0f;
     private Animator _characterAnimator;
+    
+    private float Velocity = 0f;
+    private int _velocityHash;
+    private float velocityTransitionTime = 0.5f;
+    private float velocityTransitionTimer = 0f;
+    
 
     private Transform characterTransform;
     private Transform cameraTransform;
     private bool isMouseWheelDown = false;
     private bool isSprinting = false;
+    
+    
+    
+    private float _originalOrthographicSize;
+    
+    
+    
+    [SerializeField] private float _zoomOffset = 1.0f;
+    
 
     private void Start()
     {
         characterTransform = transform;
         cameraTransform = Camera.main.transform;
         _characterAnimator = GetComponent<Animator>();
+        // _velocityHash = _characterAnimator.StringToHash("Velocity");
+        _velocityHash = Animator.StringToHash("Velocity");
     }
 
     private void Update()
     {
-        // if (Input.anyKey)
-        // {
-        //     Move();
-        //     _characterAnimator.SetTrigger("Walk");
-        // }
-        // else
-        // {
-        //     _characterAnimator.SetTrigger("Idle");
-        // }
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
+            if (Velocity <= 0.5)
+            {
+                Velocity += Time.deltaTime * 1.5f;
+            }
             Move();
-            // _characterAnimator.SetTrigger("Walk");
-            _characterAnimator.SetBool("IsWalk", true);
+            _characterAnimator.SetFloat(_velocityHash, Velocity);
         }
         else
         {
-            // _characterAnimator.SetTrigger("Idle");
-            _characterAnimator.SetBool("IsWalk", false);
+            if (Velocity >= 0)
+            {
+                Velocity -= Time.deltaTime;
+            }
+            _characterAnimator.SetFloat(_velocityHash, Velocity);
+        }
+        
+        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && Velocity >= 0.5f)
+        {
+            // isSprinting = true;
+            // _characterAnimator.SetBool("IsSprint", true);
+            if (Velocity <= 1f)
+            {
+                Velocity += Time.deltaTime / 2f;
+                isSprinting = true;
+            }
+        }
+        else
+        {
+            // _characterAnimator.SetBool("IsSprint", false);
+            if (Velocity >= 0.5f)
+            {
+                Velocity -= Time.deltaTime / 2f;
+                isSprinting = false;
+
+            }
+
         }
 
         // Check if the mouse wheel is pressed down or released
@@ -66,18 +103,7 @@ public class InputController : MonoBehaviour
         float zoomInput = Input.GetAxis("Mouse ScrollWheel");
         ZoomCamera(zoomInput);
 
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
-        {
-            isSprinting = true;
-            _characterAnimator.SetBool("IsSprint", true);
-        }
-        else
-        {
-            isSprinting = false;
-            _characterAnimator.SetBool("IsSprint", false);
-
-        }
-        
+ 
     }
 
     private void Move()
@@ -104,8 +130,10 @@ public class InputController : MonoBehaviour
         characterTransform.forward = heading;
         characterTransform.position += rightMovement;
         characterTransform.position += upMovement;
-
+        
         cameraTransform.position = characterTransform.position;
+        
+        
     }
 
     private void RotateCamera(float rotationInput)
@@ -121,4 +149,55 @@ public class InputController : MonoBehaviour
         Camera.main.orthographicSize -= zoomInput * _zoomSpeed;
         Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, _orthographicSizeMin, _orthographicSizeMax);
     }
+    
+    
+    // private void CheckObstacleBehindCamera()
+    // {
+    //     Vector3 cameraPosition = cameraTransform.position;
+    //     Vector3 characterPosition = characterTransform.position;
+    //     Vector3 cameraDirection = cameraTransform.forward;
+    //
+    //     // Определяем позицию передней стенки камеры
+    //     Vector3 cameraFrontPosition = cameraPosition + cameraDirection * Camera.main.nearClipPlane;
+    //
+    //     Vector3 directionToCharacter = characterPosition - cameraFrontPosition;
+    //     float distanceToCharacter = directionToCharacter.magnitude;
+    //
+    //     // Инвертируем направление луча
+    //     Vector3 oppositeDirection = -directionToCharacter;
+    //
+    //     RaycastHit[] hits = Physics.RaycastAll(characterPosition, oppositeDirection, distanceToCharacter);
+    //
+    //     RaycastHit closestHit = new RaycastHit();
+    //     float closestHitDistance = float.MaxValue;
+    //
+    //     foreach (RaycastHit hit in hits)
+    //     {
+    //         if (hit.collider.CompareTag("Finish")) // Замените на актуальный тег препятствия
+    //         {
+    //             if (hit.distance < closestHitDistance)
+    //             {
+    //                 closestHit = hit;
+    //                 closestHitDistance = hit.distance;
+    //             }
+    //         }
+    //     }
+    //
+    //     // Если было найдено препятствие, меняем зум
+    //     if (closestHit.collider != null)
+    //     {
+    //         float newOrthographicSize = closestHit.distance + _zoomOffset;
+    //         Camera.main.orthographicSize = Mathf.Clamp(newOrthographicSize, _orthographicSizeMin, _orthographicSizeMax);
+    //     }
+    //     // Если рэйкаст больше не попадает в объекты, восстанавливаем исходный зум
+    //     else
+    //     {
+    //         Camera.main.orthographicSize = _originalOrthographicSize;
+    //     }
+    //
+    //     // Рисуем луч для отладки
+    //     Debug.DrawRay(characterPosition, oppositeDirection * distanceToCharacter, Color.green);
+    // }
+
+    
 }
