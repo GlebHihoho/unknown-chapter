@@ -1,10 +1,13 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
+using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Button = UnityEngine.UI.Button;
 using Image = UnityEngine.UI.Image;
-using Random = UnityEngine.Random;
+using System.Text.Json;
 
 namespace UI.InventoryScripts
 {
@@ -31,19 +34,57 @@ namespace UI.InventoryScripts
         [SerializeField] private GameObject _backGround;
 
         private const int MaxNumOfObjectInCall = 10;
+        private string _json = "";
+        private ItemsDB _itemsDB;
+        
+        private List<Item> test = new List<Item>()
+        {
+            new Item()
+            {
+                _id = 1,
+                _name = "Кольцо",
+                _count = 1,
+                _img = "",
+                _description = @"\Assets\Graphics\Sprites\332938.png",
+                _isUsed = true
+            },
+            new Item()
+            {
+                _id = 0,
+                _name = "Empty",
+                _count = 0,
+                _img = "",
+                _description = "",
+                _isUsed = false
+            },
+        };
 
         public void Start()
         {
+            // try
+            // {
+            //     StreamReader jsonFile = File.OpenText(@"items.json");
+            //     _json = jsonFile.ReadToEnd();
+            //     jsonFile.Close();
+            // }
+            // catch (Exception e)
+            // {
+            //     Console.WriteLine("Exception: " + e.Message);
+            // }
+
+            _data._items = test;
+
+            
             if (_items.Count == 0)
             {  
                 AddGraphics();
             }
 
-            for (int i = 1; i < _data._items.Count; i++)
-            {
-                var item = _data._items[i];
-                AddItem(i - 1, item);
-            }
+            // for (int i = 1; i < _data._items.Count; i++)
+            // {
+            //     var item = _data._items[i];
+            //     AddItem(i - 1, item);
+            // }
             UpdateInventory();
         }
 
@@ -68,7 +109,7 @@ namespace UI.InventoryScripts
         {
             _items[id]._id = item._id;
             _items[id]._count = item._count;
-            _items[id]._itemGameObj.GetComponentInChildren<Image>().sprite = item._img;
+            _items[id]._itemGameObj.GetComponentInChildren<Image>().sprite = Resources.Load<Sprite>(item._img);
             _items[id]._isUsed = item._isUsed;
             _items[id]._description = item._description;
         
@@ -86,7 +127,7 @@ namespace UI.InventoryScripts
         {
             _items[id]._id = invItem._id;
             _items[id]._count = invItem._count;
-            _items[id]._itemGameObj.GetComponent<Image>().sprite = _data._items[invItem._id]._img;
+            _items[id]._itemGameObj.GetComponent<Image>().sprite = Resources.Load<Sprite>(_data._items[invItem._id]._img);
             _items[id]._isUsed = invItem._isUsed;
             _items[id]._description = invItem._description;
         
@@ -140,7 +181,7 @@ namespace UI.InventoryScripts
                     _items[i]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = "";
                 }
 
-                _items[i]._itemGameObj.GetComponent<Image>().sprite = _data._items[_items[i]._id]._img;
+                _items[i]._itemGameObj.GetComponent<Image>().sprite = Resources.Load<Sprite>(_data._items[_items[i]._id]._img);
 
                 if (_items[i]._isUsed)
                 {
@@ -163,7 +204,7 @@ namespace UI.InventoryScripts
                 if (_currentItem._id != 0)
                 {
                     _movingObject.gameObject.SetActive(true);
-                    _movingObject.GetComponent<Image>().sprite = _data._items[_currentItem._id]._img;
+                    _movingObject.GetComponent<Image>().sprite = Resources.Load<Sprite>(_data._items[_currentItem._id]._img);
                     AddItem(_currentID, _data._items[0]);
                 }
             }
@@ -232,9 +273,17 @@ namespace UI.InventoryScripts
         //     
         //     print(_currentItem._description);
         // }
+
+        private void OnApplicationQuit()
+        {
+            string jsonData = JsonUtility.ToJson(test[1]);
+            string path = Application.dataPath + "/items.json";
+            
+            File.WriteAllText(path, JsonConvert.SerializeObject(test));
+        }
     }
 
-    [System.Serializable]
+    [Serializable]
     public class ItemInventory
     {
         public int _id;
