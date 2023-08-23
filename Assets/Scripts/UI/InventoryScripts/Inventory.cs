@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Button = UnityEngine.UI.Button;
 using Image = UnityEngine.UI.Image;
-using System.Text.Json;
 
 namespace UI.InventoryScripts
 {

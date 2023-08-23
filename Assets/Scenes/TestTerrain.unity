@@ -6286,31 +6286,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 665267742197859244, guid: 65f8b888f1bf34e4d81ed65c3ac7eae6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4680176
+      value: -56.539772
       objectReference: {fileID: 0}
     - target: {fileID: 665267742197859244, guid: 65f8b888f1bf34e4d81ed65c3ac7eae6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.532387
+      value: -27.472267
       objectReference: {fileID: 0}
     - target: {fileID: 665267742197859244, guid: 65f8b888f1bf34e4d81ed65c3ac7eae6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 64.16896
+      value: 26.910109
       objectReference: {fileID: 0}
     - target: {fileID: 665267742197859244, guid: 65f8b888f1bf34e4d81ed65c3ac7eae6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.001359701
+      value: 0.9260154
       objectReference: {fileID: 0}
     - target: {fileID: 665267742197859244, guid: 65f8b888f1bf34e4d81ed65c3ac7eae6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0004484951
+      value: 0.00024983284
       objectReference: {fileID: 0}
     - target: {fileID: 665267742197859244, guid: 65f8b888f1bf34e4d81ed65c3ac7eae6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.86579895
+      value: 0.3266191
       objectReference: {fileID: 0}
     - target: {fileID: 665267742197859244, guid: 65f8b888f1bf34e4d81ed65c3ac7eae6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.5003901
+      value: -0.18924946
       objectReference: {fileID: 0}
     - target: {fileID: 665267742197859244, guid: 65f8b888f1bf34e4d81ed65c3ac7eae6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14317,6 +14317,105 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e414606ca5d58f84fa4832604ff399b7, type: 3}
   m_PrefabInstance: {fileID: 1662167853}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1662167858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662167854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 32
+  condition:
+    luaConditions: []
+    questConditions: []
+    acceptedTags:
+    - Player
+    acceptedGameObjects: []
+    luaWizardIndex: -1
+    lastEvaluationValue: 0
+  setQuestState: 1
+  questName: 
+  questState: 0
+  setQuestEntryState: 0
+  questEntryNumber: 1
+  questEntryState: 0
+  setAnotherQuestEntryState: 0
+  anotherQuestEntryNumber: 1
+  anotherQuestEntryState: 0
+  luaCode: 
+  sequence: 
+  sequenceSpeaker: {fileID: 0}
+  sequenceListener: {fileID: 0}
+  waitOneFrameOnStartOrEnable: 1
+  alertMessage: 
+  textTable: {fileID: 0}
+  alertDuration: 0
+  sendMessages: []
+  barkSource: 0
+  barkConversation: 
+  barkText: 
+  barkTextSequence: 
+  barker: {fileID: 0}
+  barkTarget: {fileID: 0}
+  barkOrder: 0
+  allowBarksDuringConversations: 0
+  skipBarkIfNoValidEntries: 0
+  cacheBarkLines: 0
+  conversation: Shovel
+  conversationConversant: {fileID: 0}
+  conversationActor: {fileID: 0}
+  startConversationEntryID: -1
+  startConversationEntryTitle: 
+  exclusive: 0
+  replace: 0
+  skipIfNoValidEntries: 0
+  preventRestartOnSameFrameEnded: 0
+  stopConversationOnTriggerExit: 0
+  stopConversationIfTooFar: 0
+  maxConversationDistance: 5
+  monitorConversationDistanceFrequency: 1
+  showCursorDuringConversation: 0
+  pauseGameDuringConversation: 0
+  setActiveActions: []
+  setEnabledActions: []
+  setAnimatorStateActions: []
+  onExecute:
+    m_PersistentCalls:
+      m_Calls: []
+  useConversationTitlePicker: 1
+  useBarkTitlePicker: 1
+  useQuestNamePicker: 1
+  selectedDatabase: {fileID: 11400000, guid: 66ed6aeb0db0c784093f9af72cac5ccc, type: 2}
+--- !u!114 &1662167859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662167854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274b80ab5b659c646ba9338870d14625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overrideName: 
+  overrideUseMessage: 
+  maxUseDistance: 5
+  events:
+    onSelect:
+      m_PersistentCalls:
+        m_Calls: []
+    onDeselect:
+      m_PersistentCalls:
+        m_Calls: []
+    onUse:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1664641879 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1378774232192725509, guid: dacdbb84670cf1649a43a3d59565aca7, type: 3}
@@ -15356,7 +15455,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 109040, guid: f907b1416ebdbf645a73183ab47aa2b8, type: 3}
       propertyPath: m_Name
-      value: Quest Machine (1)
+      value: 'Quest Machine '
       objectReference: {fileID: 0}
     - target: {fileID: 424526, guid: f907b1416ebdbf645a73183ab47aa2b8, type: 3}
       propertyPath: m_RootOrder
@@ -19249,7 +19348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3294541908985390630, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
       propertyPath: displaySettings.subtitleSettings.subtitleCharsPerSecond
-      value: 300
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}

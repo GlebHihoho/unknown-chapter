@@ -1,93 +1,87 @@
-﻿using System;
-using System.Collections;
-using Unity.VisualScripting;
-using UnityEditor.UIElements;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace DefaultNamespace
+public class ScreenFader : MonoBehaviour
+
 {
-    public class ScreenFader : MonoBehaviour
+    [SerializeField] private float _fadeSpeed = 1;
+    [SerializeField] private float _fadeDuration = 2; // Длительность затемнения
+    [SerializeField] private GameObject[] deathBodyPrefabs; // префабы всех мертвых тел
+    [SerializeField] private GameObject burnedBodyPrefab; // префаб сожженных тел
+    [SerializeField] private GameObject buriedBodyPrefab; // префаб захороненных тел
 
+    public bool Burning;
+
+    private IEnumerator Start()
     {
-        [SerializeField] private float _fadeSpeed = 1;
-        [SerializeField] private float _fadeDuration = 2; // Длительность затемнения
-        [SerializeField] private GameObject[] deathBodyPrefabs; // префабы всех мертвых тел
-        [SerializeField] private GameObject burnedBodyPrefab; // префаб сожженных тел
-        [SerializeField] private GameObject buriedBodyPrefab; // префаб захороненных тел
+        Image fadeImage = GetComponent<Image>();
+        Color color = fadeImage.color;
 
-        public bool Burning;
-
-        private IEnumerator Start()
+        // Первая часть: Затемнение
+        while (color.a < 1f)
         {
-            Image fadeImage = GetComponent<Image>();
-            Color color = fadeImage.color;
+            color.a += _fadeSpeed * Time.deltaTime;
+            fadeImage.color = color;
+            yield return null;
 
-            // Первая часть: Затемнение
-            while (color.a < 1f)
+            foreach (var destroyBody in deathBodyPrefabs)
             {
-                color.a += _fadeSpeed * Time.deltaTime;
-                fadeImage.color = color;
-                yield return null;
-
-                foreach (var destroyBody in deathBodyPrefabs)
-                {
-                    Destroy(destroyBody);
-                }
-
-
+                Destroy(destroyBody);
             }
 
-            print("Затемнение");
-            
 
-            // Задержка перед началом второй корутины
-            
-            yield return new WaitForSeconds(_fadeDuration);
-
-
-            if (Burning)
-            {
-                buriedBodyPrefab.SetActive(true);
-            }
-            else
-            {
-                burnedBodyPrefab.SetActive(true);
-            }
-
-            // Вторая часть: Раззатемнение
-            while (color.a > 0)
-            {
-                color.a -= _fadeSpeed * Time.deltaTime;
-                fadeImage.color = color;
-                yield return null;
-            }
-
-            print("Раззатемнение");
-            gameObject.SetActive(false);
         }
 
-        private void BurningBody()
-        {
-            burnedBodyPrefab.SetActive(true);
-        }
-        
-        private void BurialOfBody()
+        print("Затемнение");
+            
+
+        // Задержка перед началом второй корутины
+            
+        yield return new WaitForSeconds(_fadeDuration);
+
+
+        if (Burning)
         {
             buriedBodyPrefab.SetActive(true);
         }
-
-        public void IsBurning(int burning)
+        else
         {
-            if (burning == 1)
-            {
-                Burning = true;
-            }
-            else
-            {
-                Burning = false;
-            }
+            burnedBodyPrefab.SetActive(true);
         }
-        
+
+        // Вторая часть: Раззатемнение
+        while (color.a > 0)
+        {
+            color.a -= _fadeSpeed * Time.deltaTime;
+            fadeImage.color = color;
+            yield return null;
+        }
+
+        print("Раззатемнение");
+        gameObject.SetActive(false);
     }
+
+    private void BurningBody()
+    {
+        burnedBodyPrefab.SetActive(true);
+    }
+        
+    private void BurialOfBody()
+    {
+        buriedBodyPrefab.SetActive(true);
+    }
+
+    public void IsBurning(int burning)
+    {
+        if (burning == 1)
+        {
+            Burning = true;
+        }
+        else
+        {
+            Burning = false;
+        }
+    }
+        
 }
