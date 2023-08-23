@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using Newtonsoft.Json;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Button = UnityEngine.UI.Button;
 using Image = UnityEngine.UI.Image;
-using System.Text.Json;
 
 namespace UI.InventoryScripts
 {
@@ -20,81 +20,44 @@ namespace UI.InventoryScripts
         [SerializeField] private GameObject _gameObjShow;
 
         [SerializeField] private GameObject _inventoryMainObject;
-        [SerializeField] private int _maxCount;
 
-        [SerializeField] private Camera _cam;
         [SerializeField] private EventSystem _es;
 
         [SerializeField] private int _currentID;
         [SerializeField] private ItemInventory _currentItem;
-
-        [SerializeField] private RectTransform _movingObject;
-        [SerializeField] private Vector3 _offset;
-
+        
         [SerializeField] private GameObject _backGround;
 
-        private const int MaxNumOfObjectInCall = 10;
-        private string _json = "";
-        private ItemsDB _itemsDB;
-        
-        private List<Item> test = new List<Item>()
-        {
-            new Item()
-            {
-                _id = 1,
-                _name = "Кольцо",
-                _count = 1,
-                _img = "",
-                _description = @"\Assets\Graphics\Sprites\332938.png",
-                _isUsed = true
-            },
-            new Item()
-            {
-                _id = 0,
-                _name = "Empty",
-                _count = 0,
-                _img = "",
-                _description = "",
-                _isUsed = false
-            },
-        };
+        [SerializeField] private GameObject _selectItemImage;
 
+        [SerializeField] private Button _useButton;
+        [SerializeField] private Button _deleteButton;
+
+        [SerializeField] private TextMeshProUGUI _nameOfItem;
+        [SerializeField] private TextMeshProUGUI _descriptionOfItem;
+        
         public void Start()
         {
-            // try
-            // {
-            //     StreamReader jsonFile = File.OpenText(@"items.json");
-            //     _json = jsonFile.ReadToEnd();
-            //     jsonFile.Close();
-            // }
-            // catch (Exception e)
-            // {
-            //     Console.WriteLine("Exception: " + e.Message);
-            // }
+            string json = File.ReadAllText(Application.dataPath + "/items.json");
+            _data._items = JsonConvert.DeserializeObject<List<Item>>(json);
 
-            _data._items = test;
-
+            ChangeInventory();
             
-            if (_items.Count == 0)
-            {  
-                AddGraphics();
-            }
-
-            // for (int i = 1; i < _data._items.Count; i++)
-            // {
-            //     var item = _data._items[i];
-            //     AddItem(i - 1, item);
-            // }
             UpdateInventory();
         }
 
+        private Item testItem = new Item()
+        {
+            Name = "Ларец",
+            Count = 1,
+            Img = "\\Graphics\\Sprites\\4883370.png",
+            Description = ""
+        };
+
         public void Update()
         {
-            if (_currentID != -1)
-            {
-                MoveObject();
-            }
-
+            UpdateInventory();
+            
             if (Input.GetKeyDown(KeyCode.I))
             {
                 _backGround.SetActive(!_backGround.activeSelf);
@@ -103,76 +66,84 @@ namespace UI.InventoryScripts
                     UpdateInventory();
                 }
             }
-        }
-
-        private void AddItem(int id, Item item)
-        {
-            _items[id]._id = item._id;
-            _items[id]._count = item._count;
-            _items[id]._itemGameObj.GetComponentInChildren<Image>().sprite = Resources.Load<Sprite>(item._img);
-            _items[id]._isUsed = item._isUsed;
-            _items[id]._description = item._description;
-        
-            if (item._count > 1 && item._id != 0)
-            {
-                _items[id]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = item._count.ToString();
-            }
-            else
-            {
-                _items[id]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = "";
-            }
-        }
-
-        private void AddInventoryItem(int id, ItemInventory invItem)
-        {
-            _items[id]._id = invItem._id;
-            _items[id]._count = invItem._count;
-            _items[id]._itemGameObj.GetComponent<Image>().sprite = Resources.Load<Sprite>(_data._items[invItem._id]._img);
-            _items[id]._isUsed = invItem._isUsed;
-            _items[id]._description = invItem._description;
-        
-            if (invItem._count > 1 && invItem._id != 0)
-            {
-                _items[id]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = invItem._count.ToString();
-            }
-            else
-            {
-                _items[id]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = "";
-            }
-        }
-
-        private void AddGraphics()
-        {
-            for (int i = 0; i < _maxCount; i++)
-            {
-                var newItem = Instantiate(_gameObjShow, _inventoryMainObject.transform);
-                
-                newItem.name = i.ToString();
-
-                var ii = new ItemInventory
-                {
-                    _itemGameObj = newItem
-                };
-
-                var rt = newItem.GetComponent<RectTransform>();
-                rt.localPosition = new Vector3(0, 0, 0);
-                rt.localScale = new Vector3(1, 1, 1);
-                newItem.GetComponentInChildren<RectTransform>().localScale = new Vector3(1, 1, 1);
-
-                Button tempButton = newItem.GetComponent<Button>();
             
-                tempButton.onClick.AddListener(SelectObject);
-
-                _items.Add(ii);
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                AddObject(testItem);
             }
+        }
+
+        private void ChangeInventory()
+        {
+            if (_items.Count == 0)
+            {
+                foreach (var t in _data._items)
+                {
+                    AddGraphics(t);
+                }
+            }
+            
+            for (int i = 0; i < _data._items.Count; i++)
+            {
+                var item = _data._items[i];
+                AddItem(i, item);
+            }
+        }
+
+        private void AddItem(int id, Item item) //добавляет предмет в лист ItemInventory
+        {
+            Texture2D itemImage = new Texture2D(60,60);
+            byte[] imageData = File.ReadAllBytes(Application.dataPath + item.Img);
+            itemImage.LoadImage(imageData);
+            Sprite sprite = Sprite.Create(itemImage, new Rect(0, 0, itemImage.width, itemImage.height), Vector2.one * 0.5f);
+            
+//            _items[id]._id = item.ID;
+            _items[id]._name = item.Name;
+            _items[id]._count = item.Count;
+            _items[id]._itemGameObj.GetComponentInChildren<Image>().sprite =  sprite;
+            _items[id]._isUsed = item.IsUsed;
+            _items[id]._description = item.Description;
+        
+            if (item.Count > 1)
+            {
+                _items[id]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = item.Count.ToString();
+            }
+            else
+            {
+                _items[id]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = "";
+            }
+        }
+
+        private void AddGraphics(Item t) //добавляет кнопку предмета в инвентарь
+        {
+            var newItem = Instantiate(_gameObjShow, _inventoryMainObject.transform);
+                
+            newItem.name = t.Name;
+
+            var ii = new ItemInventory
+            {
+                _itemGameObj = newItem
+            };
+
+            var rt = newItem.GetComponent<RectTransform>();
+            rt.localPosition = new Vector3(0, 0, 0);
+            rt.localScale = new Vector3(1, 1, 1);
+            newItem.GetComponentInChildren<RectTransform>().localScale = new Vector3(1, 1, 1);
+
+            Button tempButton = newItem.GetComponent<Button>();
+            
+            tempButton.onClick.AddListener(SelectObject);
+
+            _items.Add(ii);
+            
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
         private void UpdateInventory()
         {
-            for (var i = 0; i < _maxCount; i++)
+            for (var i = 0; i < _data._items.Count; i++)
             {
-                if (_items[i]._id != 0 && _items[i]._count > 1)
+                if (_items[i]._count > 1)
                 {
                     _items[i]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = _items[i]._count.ToString();
                 }
@@ -181,112 +152,81 @@ namespace UI.InventoryScripts
                     _items[i]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = "";
                 }
 
-                _items[i]._itemGameObj.GetComponent<Image>().sprite = Resources.Load<Sprite>(_data._items[_items[i]._id]._img);
-
-                if (_items[i]._isUsed)
-                {
-                    _items[i]._itemGameObj.transform.GetChild(1).GetComponent<Image>().enabled = true;
-                }
-                else
-                {
-                    _items[i]._itemGameObj.transform.GetChild(1).GetComponent<Image>().enabled = false;
-                }
+                _items[i]._itemGameObj.transform.GetChild(1).GetComponent<Image>().enabled = _items[i]._isUsed;
             }
         }
 
         private void SelectObject()
         {
-            if (_currentID == -1 || _currentItem._id == 0)
+            if (_currentID == -1)
             {
-                _currentID = int.Parse(_es.currentSelectedGameObject.name);
-                _currentItem = CopyInventoryItem(_items[_currentID]);
+                _currentItem = _items.Find(x => x._name == _es.currentSelectedGameObject.name);
+                
+                _selectItemImage.GetComponent<Image>().sprite = _currentItem._itemGameObj.GetComponentInChildren<Image>().sprite;
+                DescriptionObject(_currentItem);
+                
+                _deleteButton.onClick.AddListener(DeleteObject);
+                
+                _useButton.onClick.AddListener(UseObject);
+            }
+            UpdateInventory();
+        }
+        
+        private void DeleteObject()
+        {
+            _data._items.Remove(_data._items.Find(x => x.Name == _currentItem._name));
+            _items.Remove(_items.Find(x => x._name == _currentItem._name));
+            GameObject childObject = _inventoryMainObject.transform.Find(_currentItem._name).gameObject;
+            Destroy(childObject);
+            UpdateInventory();
+        }
 
-                if (_currentItem._id != 0)
-                {
-                    _movingObject.gameObject.SetActive(true);
-                    _movingObject.GetComponent<Image>().sprite = Resources.Load<Sprite>(_data._items[_currentItem._id]._img);
-                    AddItem(_currentID, _data._items[0]);
-                }
+        private void UseObject()
+        {
+            
+        }
+
+        // ReSharper disable Unity.PerformanceAnalysis
+        private void AddObject(Item itemForAdd)
+        {
+
+            if (_data._items.Find(x => x.Name == itemForAdd.Name) != null)
+            {
+                _data._items.Find(x => x.Name == itemForAdd.Name).Count++;
+                _items.Find(x => x._name == itemForAdd.Name)._count++;
             }
             else
             {
-                var ii = _items[int.Parse(_es.currentSelectedGameObject.name)];
+                _data._items.Add(itemForAdd);
+                //ChangeInventory();
+                AddGraphics(itemForAdd);
+                Debug.Log(_items.Count);
 
-                if (_currentItem._id != ii._id)
-                {
-                    AddInventoryItem(_currentID, ii);
-
-                    AddInventoryItem(int.Parse(_es.currentSelectedGameObject.name), _currentItem);
-                }
-                else
-                {
-                    if (ii._count + _currentItem._count <= MaxNumOfObjectInCall)
-                    {
-                        ii._count += _currentItem._count;
-                    }
-                    else
-                    {
-                        var newItem = _data._items[ii._id];
-                        newItem._count = ii._count + _currentItem._count - MaxNumOfObjectInCall;
-                        AddItem(_currentID, newItem);
-
-                        ii._count = MaxNumOfObjectInCall;
-                    }
-
-                    ii._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = ii._count.ToString();
-                }
-
-                _currentID = -1;
-
-                _movingObject.gameObject.SetActive(false);
+                AddItem(_items.Count - 1, itemForAdd);
             }
             
             UpdateInventory();
         }
 
-        // ReSharper disable Unity.PerformanceAnalysis
-        private void MoveObject()
+        private void DescriptionObject(ItemInventory currentItem)
         {
-            Vector3 pos = Input.mousePosition + _offset;
-            pos.z = _inventoryMainObject.GetComponent<RectTransform>().position.z;
-            _movingObject.position = _cam.ScreenToWorldPoint(pos);
+            _nameOfItem.text = currentItem._name;
+            _descriptionOfItem.text = currentItem._description;
         }
-
-        private ItemInventory CopyInventoryItem(ItemInventory old)
-        {
-            var newItemInventory = new ItemInventory
-            {
-                _id = old._id,
-                _itemGameObj = old._itemGameObj,
-                _count = old._count,
-                _isUsed = old._isUsed,
-                _description = old._description
-            };
-
-            return newItemInventory;
-        }
-
-        // private void DescriptionObject()
-        // {
-        //     _currentID = int.Parse(_es.currentSelectedGameObject.name);
-        //     _currentItem = CopyInventoryItem(_items[_currentID]);
-        //     
-        //     print(_currentItem._description);
-        // }
 
         private void OnApplicationQuit()
         {
-            string jsonData = JsonUtility.ToJson(test[1]);
             string path = Application.dataPath + "/items.json";
             
-            File.WriteAllText(path, JsonConvert.SerializeObject(test));
+            File.WriteAllText(path, JsonConvert.SerializeObject(_data._items));
         }
     }
 
     [Serializable]
     public class ItemInventory
     {
-        public int _id;
+        //public int _id;
+        public string _name;
         public GameObject _itemGameObj;
         public int _count;
         public bool _isUsed;
