@@ -46,14 +46,15 @@ namespace DefaultNamespace
             yield return new WaitForSeconds(_fadeDuration);
 
 
-            if (Burning)
-            {
-                buriedBodyPrefab.SetActive(true);
-            }
-            else
-            {
-                burnedBodyPrefab.SetActive(true);
-            }
+            (Burning ? buriedBodyPrefab : burnedBodyPrefab).SetActive(true);
+            // if (Burning)
+            // {
+            //     buriedBodyPrefab.SetActive(true);
+            // }
+            // else
+            // {
+            //     burnedBodyPrefab.SetActive(true);
+            // }
 
             // Вторая часть: Раззатемнение
             while (color.a > 0)
@@ -77,16 +78,11 @@ namespace DefaultNamespace
             buriedBodyPrefab.SetActive(true);
         }
 
+        //Метод называется не корректно, когда Is - ожидается что он вернет какое-то значение а не установит его
         public void IsBurning(int burning)
         {
-            if (burning == 1)
-            {
-                Burning = true;
-            }
-            else
-            {
-                Burning = false;
-            }
+            //меняется в одну строку
+            Burning = burning == 1;
         }
         
     }

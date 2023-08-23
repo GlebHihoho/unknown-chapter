@@ -36,7 +36,7 @@ namespace UI.InventoryScripts
         private const int MaxNumOfObjectInCall = 10;
         private string _json = "";
         private ItemsDB _itemsDB;
-        
+
         private List<Item> test = new List<Item>()
         {
             new Item()
@@ -74,9 +74,9 @@ namespace UI.InventoryScripts
 
             _data._items = test;
 
-            
+
             if (_items.Count == 0)
-            {  
+            {
                 AddGraphics();
             }
 
@@ -112,15 +112,18 @@ namespace UI.InventoryScripts
             _items[id]._itemGameObj.GetComponentInChildren<Image>().sprite = Resources.Load<Sprite>(item._img);
             _items[id]._isUsed = item._isUsed;
             _items[id]._description = item._description;
-        
-            if (item._count > 1 && item._id != 0)
-            {
-                _items[id]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = item._count.ToString();
-            }
-            else
-            {
-                _items[id]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = "";
-            }
+
+            // if (item._count > 1 && item._id != 0)
+            // {
+            //     _items[id]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = item._count.ToString();
+            // }
+            // else
+            // {
+            //     _items[id]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = "";
+            // }
+            _items[id]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = item._count > 1 && item._id != 0
+                ? item._count.ToString()
+                : string.Empty;
         }
 
         private void AddInventoryItem(int id, ItemInventory invItem)
@@ -130,7 +133,7 @@ namespace UI.InventoryScripts
             _items[id]._itemGameObj.GetComponent<Image>().sprite = Resources.Load<Sprite>(_data._items[invItem._id]._img);
             _items[id]._isUsed = invItem._isUsed;
             _items[id]._description = invItem._description;
-        
+
             if (invItem._count > 1 && invItem._id != 0)
             {
                 _items[id]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = invItem._count.ToString();
@@ -146,7 +149,7 @@ namespace UI.InventoryScripts
             for (int i = 0; i < _maxCount; i++)
             {
                 var newItem = Instantiate(_gameObjShow, _inventoryMainObject.transform);
-                
+
                 newItem.name = i.ToString();
 
                 var ii = new ItemInventory
@@ -155,12 +158,12 @@ namespace UI.InventoryScripts
                 };
 
                 var rt = newItem.GetComponent<RectTransform>();
-                rt.localPosition = new Vector3(0, 0, 0);
-                rt.localScale = new Vector3(1, 1, 1);
-                newItem.GetComponentInChildren<RectTransform>().localScale = new Vector3(1, 1, 1);
+                rt.localPosition = Vector3.zero;;// new Vector3(0, 0, 0);
+                rt.localScale = Vector3.one;// new Vector3(1, 1, 1);
+                newItem.GetComponentInChildren<RectTransform>().localScale = Vector3.one; // new Vector3(1, 1, 1);
 
                 Button tempButton = newItem.GetComponent<Button>();
-            
+
                 tempButton.onClick.AddListener(SelectObject);
 
                 _items.Add(ii);
@@ -181,16 +184,18 @@ namespace UI.InventoryScripts
                     _items[i]._itemGameObj.GetComponentInChildren<TextMeshProUGUI>().text = "";
                 }
 
-                _items[i]._itemGameObj.GetComponent<Image>().sprite = Resources.Load<Sprite>(_data._items[_items[i]._id]._img);
+                _items[i]._itemGameObj.GetComponent<Image>().sprite =
+                    Resources.Load<Sprite>(_data._items[_items[i]._id]._img);
 
-                if (_items[i]._isUsed)
-                {
-                    _items[i]._itemGameObj.transform.GetChild(1).GetComponent<Image>().enabled = true;
-                }
-                else
-                {
-                    _items[i]._itemGameObj.transform.GetChild(1).GetComponent<Image>().enabled = false;
-                }
+                // if (_items[i]._isUsed)
+                // {
+                //     _items[i]._itemGameObj.transform.GetChild(1).GetComponent<Image>().enabled = true;
+                // }
+                // else
+                // {
+                //     _items[i]._itemGameObj.transform.GetChild(1).GetComponent<Image>().enabled = false;
+                // }
+                _items[i]._itemGameObj.transform.GetChild(1).GetComponent<Image>().enabled = _items[i]._isUsed;
             }
         }
 
@@ -204,7 +209,8 @@ namespace UI.InventoryScripts
                 if (_currentItem._id != 0)
                 {
                     _movingObject.gameObject.SetActive(true);
-                    _movingObject.GetComponent<Image>().sprite = Resources.Load<Sprite>(_data._items[_currentItem._id]._img);
+                    _movingObject.GetComponent<Image>().sprite =
+                        Resources.Load<Sprite>(_data._items[_currentItem._id]._img);
                     AddItem(_currentID, _data._items[0]);
                 }
             }
@@ -240,7 +246,7 @@ namespace UI.InventoryScripts
 
                 _movingObject.gameObject.SetActive(false);
             }
-            
+
             UpdateInventory();
         }
 
@@ -278,7 +284,7 @@ namespace UI.InventoryScripts
         {
             string jsonData = JsonUtility.ToJson(test[1]);
             string path = Application.dataPath + "/items.json";
-            
+
             File.WriteAllText(path, JsonConvert.SerializeObject(test));
         }
     }

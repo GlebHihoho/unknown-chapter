@@ -45,10 +45,11 @@ public class InputController : MonoBehaviour
     private void Update()
     {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            //по условиям сильная привязка к клавиатуре, лучше заменить на InputVector
         {
             if (Velocity <= 0.5)
             {
-                Velocity += Time.deltaTime * 1.5f;
+                Velocity += Time.deltaTime * 1.5f;//магичское число
             }
             Move();
             _characterAnimator.SetFloat(_velocityHash, Velocity);
@@ -68,7 +69,7 @@ public class InputController : MonoBehaviour
             // _characterAnimator.SetBool("IsSprint", true);
             if (Velocity <= 1f)
             {
-                Velocity += Time.deltaTime / 2f;
+                Velocity += Time.deltaTime / 2f;//магичское число
                 isSprinting = true;
             }
         }
@@ -77,7 +78,7 @@ public class InputController : MonoBehaviour
             // _characterAnimator.SetBool("IsSprint", false);
             if (Velocity >= 0.5f)
             {
-                Velocity -= Time.deltaTime / 2f;
+                Velocity -= Time.deltaTime / 2f;//магичское число
                 isSprinting = false;
 
             }
@@ -108,14 +109,16 @@ public class InputController : MonoBehaviour
 
     private void Move()
     {
-        if (isSprinting)
-        {
-            _moveSpeed = _speedSprint;
-        }
-        else
-        {
-            _moveSpeed = _speedWalk;
-        }
+        //меняется в одну строку
+        _moveSpeed = isSprinting ? _speedSprint : _speedWalk;
+        // if (isSprinting)
+        // {
+        //     _moveSpeed = _speedSprint;
+        // }
+        // else
+        // {
+        //     _moveSpeed = _speedWalk;
+        // }
         Vector3 forwardDirection = cameraTransform.forward;
         forwardDirection.y = 0;
         forwardDirection = Vector3.Normalize(forwardDirection);
@@ -151,6 +154,7 @@ public class InputController : MonoBehaviour
     }
     
     
+    //ненужный код удалять, если что можно восстановить через гит
     // private void CheckObstacleBehindCamera()
     // {
     //     Vector3 cameraPosition = cameraTransform.position;
