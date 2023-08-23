@@ -220,7 +220,10 @@ namespace UI.InventoryScripts
             
             File.WriteAllText(path, JsonConvert.SerializeObject(_data._items));
         }
+
+        
     }
+    
 
     [Serializable]
     public class ItemInventory
