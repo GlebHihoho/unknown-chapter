@@ -46,31 +46,9 @@ namespace UI.InventoryScripts
             UpdateInventory();
         }
 
-        private Item testItem = new Item()
-        {
-            Name = "Ларец",
-            Count = 1,
-            Img = "\\Graphics\\Sprites\\4883370.png",
-            Description = ""
-        };
-
         public void Update()
         {
             UpdateInventory();
-            
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                _backGround.SetActive(!_backGround.activeSelf);
-                if (_backGround.activeSelf)
-                {
-                    UpdateInventory();
-                }
-            }
-            
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                AddObject(testItem);
-            }
         }
 
         private void ChangeInventory()
@@ -139,7 +117,7 @@ namespace UI.InventoryScripts
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
-        private void UpdateInventory()
+        public void UpdateInventory()
         {
             for (var i = 0; i < _data._items.Count; i++)
             {

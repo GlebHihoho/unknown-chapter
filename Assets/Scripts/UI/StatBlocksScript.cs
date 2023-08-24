@@ -1,3 +1,5 @@
+using System;
+using TMPro;
 using UnityEngine;
 
 namespace UI
@@ -8,10 +10,17 @@ namespace UI
         [SerializeField] private GameObject _gameObjectTrue;
         [SerializeField] private GameObject _gameObjectFalse;
 
-        [SerializeField] private int _stat;
-        
+        private int _stat = 0;
+        [SerializeField] private TextMeshProUGUI _actualStats;
+        [SerializeField] private TextMeshProUGUI _info;
+
         // Start is called before the first frame update
         void Start()
+        {
+            UpdateStats();
+        }
+
+        private void UpdateStats()
         {
             for (int i = 0; i < 5; i++)
             {
@@ -22,7 +31,9 @@ namespace UI
         // Update is called once per frame
         void Update()
         {
-        
+            _stat = Convert.ToInt32(_actualStats.text);
+            _info.text = _stat + "/5";
+            //UpdateStats();
         }
     }
 }

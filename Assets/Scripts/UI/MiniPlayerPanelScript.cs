@@ -16,14 +16,7 @@ namespace UI
         // Update is called once per frame
         void Update()
         {
-            CheckActive();
-            
             CheckStats();
-        }
-
-        private void CheckActive()
-        {
-            gameObject.SetActive(!_mainPlayerPanel.activeSelf);
         }
 
         private void CheckStats()
