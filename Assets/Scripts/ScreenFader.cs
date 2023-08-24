@@ -10,6 +10,7 @@ public class ScreenFader : MonoBehaviour
     [SerializeField] private GameObject[] deathBodyPrefabs; // префабы всех мертвых тел
     [SerializeField] private GameObject burnedBodyPrefab; // префаб сожженных тел
     [SerializeField] private GameObject buriedBodyPrefab; // префаб захороненных тел
+    [SerializeField] private GameObject gravePrefab; //префаб могилы
 
     public bool Burning;
 
@@ -41,6 +42,8 @@ public class ScreenFader : MonoBehaviour
         yield return new WaitForSeconds(_fadeDuration);
 
 
+        gravePrefab.SetActive(false);
+        
         if (Burning)
         {
             buriedBodyPrefab.SetActive(true);
