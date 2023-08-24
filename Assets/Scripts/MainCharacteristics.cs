@@ -44,6 +44,22 @@ public class MainCharacteristics : MonoBehaviour
         }
     }
 
+    public void AddCharacteristic(string nameCharacteristic)
+    {
+        switch (nameCharacteristic)
+        {
+            case "_physicalAbilities":
+                _physicalAbilities++;
+                break;
+            case "_perception":
+                _perception++;
+                break;
+            case "_intellect":
+                _intellect++;
+                break;
+        }
+    }
+
     private void OnEnable()
     {
         // Lua.RegisterFunction("PhysicalAbilities", this, SymbolExtensions.GetMethodInfo(() => _physicalAbilities((double)0)));
