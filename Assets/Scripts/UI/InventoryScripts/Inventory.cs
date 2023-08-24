@@ -187,7 +187,7 @@ namespace UI.InventoryScripts
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
-        private void AddObject(Item itemForAdd)
+        public void AddObject(Item itemForAdd)
         {
 
             if (_data._items.Find(x => x.Name == itemForAdd.Name) != null)

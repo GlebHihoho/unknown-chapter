@@ -7,30 +7,43 @@ using Unity.VisualScripting;
 
 public class MainCharacteristics : MonoBehaviour
 {
-    [SerializeField] private double _physicalAbilities = 1; // физические способности
-    [SerializeField] private double _perception = 1;        // восприятие
-    [SerializeField] private double _intellect  = 0;        // интелект 
+    [SerializeField] private int _physicalAbilities = 1; // физические способности
+    [SerializeField] private int _perception = 1;        // восприятие
+    [SerializeField] private int _intellect  = 0;        // интеллект 
 
     private void Start()
     {
         var ds = GetComponent<DialogueSystemTrigger>();
-
-
     }
 
-    private double GetPhysicalAbilities(double value)
+    public int GetPhysicalAbilities()
     {
         return _physicalAbilities;
     }
+
+    private void SetPhysicalAbilities(int value)
+    {
+        _physicalAbilities = value;
+    }
     
-    private double GetPerception(double value)
+    public int GetPerception()
     {
         return _perception;
     }
     
-    private double GetIntellect(double value)
+    private void SetPerception(int value)
+    {
+        _perception = value;
+    }
+    
+    public int GetIntellect()
     {
         return _intellect;
+    }
+    
+    public void SetIntellect(int value)
+    {
+        _intellect = value;
     }
 
     private void Update()
@@ -46,10 +59,10 @@ public class MainCharacteristics : MonoBehaviour
 
     private void OnEnable()
     {
-        // Lua.RegisterFunction("PhysicalAbilities", this, SymbolExtensions.GetMethodInfo(() => _physicalAbilities((double)0)));
-        Lua.RegisterFunction("PhysicalAbilities", this, SymbolExtensions.GetMethodInfo(() => GetPhysicalAbilities(1)));
-        Lua.RegisterFunction("Perception", this, SymbolExtensions.GetMethodInfo(() => GetPerception(1)));
-        Lua.RegisterFunction("Intellect", this, SymbolExtensions.GetMethodInfo(() => GetIntellect(1)));
+        // Lua.RegisterFunction("PhysicalAbilities", this, SymbolExtensions.GetMethodInfo(() => _physicalAbilities((int)0)));
+        Lua.RegisterFunction("PhysicalAbilities", this, SymbolExtensions.GetMethodInfo(() => SetPhysicalAbilities(1)));
+        Lua.RegisterFunction("Perception", this, SymbolExtensions.GetMethodInfo(() => SetPerception(1)));
+        Lua.RegisterFunction("Intellect", this, SymbolExtensions.GetMethodInfo(() => SetIntellect(1)));
 
     }
 
@@ -59,9 +72,4 @@ public class MainCharacteristics : MonoBehaviour
         Lua.UnregisterFunction("Perception");
         Lua.UnregisterFunction("Intellect");
     }
-
-    
-    
-    
-    
 }

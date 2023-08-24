@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UI.InventoryScripts;
+using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace DefaultNamespace
 {
@@ -6,13 +9,8 @@ namespace DefaultNamespace
     [CreateAssetMenu(fileName = "Item", menuName = "ScriptableObjects")]
     public class ItemSO : ScriptableObject
     {
-        
-        //  public int ID { get; set; }
-        public string Name;
-        public int Count;
-        public string Img;
-        public string Description;
-        public bool IsUsed;
-        // добавить описание, bool значение одет предмет или нет, максимум два кольца и одно ожерелье
+        [FormerlySerializedAs("Name")] public string _name;
+        [FormerlySerializedAs("Img")] public string _img;
+        [FormerlySerializedAs("Description")] public string _description;
     }
 }
