@@ -18,6 +18,7 @@ public class MainCharacteristics : MonoBehaviour
 
     private void Update()
     {
+        // TODO: пересмотреть код в Update. Выглядит как устаревший
         var textDescription = DialogueLua.GetQuestField("Захоронение тел", "Description").luaValue;
 
         if (Input.GetKeyDown(KeyCode.T))
