@@ -198,6 +198,4 @@ public class InputController : MonoBehaviour
     //     // Рисуем луч для отладки
     //     Debug.DrawRay(characterPosition, oppositeDirection * distanceToCharacter, Color.green);
     // }
-
-    
 }
