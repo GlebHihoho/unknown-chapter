@@ -1544,11 +1544,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -1560,16 +1560,20 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "[em3]\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C
           \u0441 \u0441\u0438\u043B\u043E\u0439[/em3]"
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: ae81d0dd-6464-46cd-8df8-8d3255d6f605
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -1996,8 +2000,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.6700009
+    canvasScrollPosition: {x: 72.331085, y: 0}
+    canvasZoom: 0.9400006
   - id: 2
     fields:
     - title: Title
@@ -2164,7 +2168,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 209
-        y: 202
+        y: 200.63013
         width: 160
         height: 30
     - id: 2
@@ -3307,7 +3311,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 191.78076, y: 274.72968}
+    canvasScrollPosition: {x: 210.9588, y: 164.38345}
     canvasZoom: 0.73000026
   - id: 3
     fields:
@@ -6969,7 +6973,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 603
+        x: 604.09894
         y: 253
         width: 160
         height: 30
@@ -8343,11 +8347,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -8359,7 +8363,7 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "\u0412\u044B\u0431\u0435\u0440\u0438 \u043E\u0434\u043D\u0443 \u0438\u0437
           \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043A,
@@ -8367,11 +8371,11 @@ MonoBehaviour:
           \u043F\u043E\u0432\u044B\u0441\u0438\u0442\u044C - \u044D\u0442\u043E \u043D\u0430\u043F\u0440\u044F\u043C\u0443\u044E
           \u0432\u043B\u0438\u044F\u0435\u0442 \u043D\u0430 \u0445\u043E\u0434 \u0438\u0441\u0442\u043E\u0440\u0438\u0438"
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 11
       isRoot: 0
       isGroup: 0
@@ -8677,11 +8681,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -8693,7 +8697,7 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "[var=Actor]: \u0425\u043E\u043B\u043E\u0434\u2026 \u0427\u0435\u0440\u0442\u2026
           \u0425\u043E\u043B\u043E\u0434\u043D\u043E \u0438 \u0441\u044B\u0440\u043E\u2026
@@ -8703,11 +8707,11 @@ MonoBehaviour:
           \u043F\u043E\u0447\u0435\u043C\u0443 \u0442\u044B \u0441\u0434\u0435\u043B\u0430\u043B
           \u0432\u043E\u0434\u0443 \u0442\u0430\u043A\u043E\u0439 \u0445\u043E\u043B\u043E\u0434\u043D\u043E\u0439\u2026 "
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: AudioWait(VG/intro_VG_1)
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 12
       isRoot: 0
       isGroup: 0
@@ -8729,8 +8733,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 241
-        y: 142
+        x: 243
+        y: 139
         width: 160
         height: 30
     - id: 2
@@ -8738,11 +8742,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -8754,17 +8758,17 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "[var=Actor]: \u041F\u043E\u0434\u043E \u043C\u043D\u043E\u0439 \u0441\u044B\u0440\u043E\u0439
           \u043F\u0435\u0441\u043E\u043A. \u042F \u043D\u0430 \u0431\u0435\u0440\u0435\u0433\u0443.
           \u0425\u043C\u2026"
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: AudioWait(VG/intro_VG_2)
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 12
       isRoot: 0
       isGroup: 0
@@ -8781,7 +8785,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 241
-        y: 192
+        y: 191
         width: 160
         height: 30
     entryGroups: []
@@ -8893,11 +8897,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -8909,16 +8913,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "\u041E-\u043E-\u043E\u0445\u2026 \u041A\u0430\u0436\u0435\u0442\u0441\u044F,
           \u044F \u0436\u0438\u0432\u2026"
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/intro_Oran_1)
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 13
       isRoot: 0
       isGroup: 0
@@ -8940,8 +8944,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 291
-        y: 178
+        x: 294
+        y: 176
         width: 160
         height: 30
     - id: 2
@@ -8949,11 +8953,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -8965,7 +8969,7 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "\u0412\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0438\u0439 \u0433\u043E\u043B\u043E\u0441:
           \u041F\u0440\u043E\u043A\u043B\u044F\u0442\u044B\u0439 \u0448\u0442\u043E\u0440\u043C.
@@ -8992,11 +8996,11 @@ MonoBehaviour:
           \u043D\u0430\u043B\u0430\u0436\u0438\u0432\u0430\u0435\u0442\u0441\u044F,
           \u044F \u0441\u043C\u043E\u0442\u0440\u044E."
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: AudioWait(VG/intro_VG_3)
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 13
       isRoot: 0
       isGroup: 0
@@ -9012,7 +9016,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 292
+        x: 293
         y: 258
         width: 160
         height: 30

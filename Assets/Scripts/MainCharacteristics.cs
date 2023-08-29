@@ -4,27 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
 using Unity.VisualScripting;
+using Update = UnityEngine.PlayerLoop.Update;
 
 public class MainCharacteristics : MonoBehaviour
 {
     [SerializeField] private int _physicalAbilities = 1; // физические способности
     [SerializeField] private int _perception = 1;        // восприятие
     [SerializeField] private int _intellect  = 0;        // интеллект 
-
-    private void Start()
-    {
-        var ds = GetComponent<DialogueSystemTrigger>();
-    }
+    private double _physicalAbilitiesDouble;
+    private double _perceptionDouble;
+    private double _intellectDouble;
 
     private void Update()
     {
-        // TODO: пересмотреть код в Update. Выглядит как устаревший
-        var textDescription = DialogueLua.GetQuestField("Захоронение тел", "Description").luaValue;
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            DialogueLua.SetQuestField("Захоронение тел", "Description", textDescription + "/\n111");
-        }
+        _physicalAbilitiesDouble = (Int32)_physicalAbilities;
+        _perceptionDouble = (Int32)_perception;
+        _intellectDouble = (Int32)_intellect;
     }
 
     private void OnEnable()
@@ -33,7 +28,6 @@ public class MainCharacteristics : MonoBehaviour
         Lua.RegisterFunction("PhysicalAbilities", this, SymbolExtensions.GetMethodInfo(() => SetPhysicalAbilities(1)));
         Lua.RegisterFunction("Perception", this, SymbolExtensions.GetMethodInfo(() => SetPerception(1)));
         Lua.RegisterFunction("Intellect", this, SymbolExtensions.GetMethodInfo(() => SetIntellect(1)));
-
     }
 
     private void OnDisable()
@@ -43,14 +37,14 @@ public class MainCharacteristics : MonoBehaviour
         Lua.UnregisterFunction("Intellect");
     }
 
-    public int GetPhysicalAbilities()
-    {
-        return _physicalAbilities;
-    }
-
     private void SetPhysicalAbilities(int value)
     {
         _physicalAbilities = value;
+    }
+    
+    public double GetPhysicalAbilities()
+    {
+        return _physicalAbilitiesDouble;
     }
     
     public int GetPerception()
