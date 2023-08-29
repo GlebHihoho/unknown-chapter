@@ -8,9 +8,9 @@ using Update = UnityEngine.PlayerLoop.Update;
 
 public class MainCharacteristics : MonoBehaviour
 {
-    [SerializeField] private int _physicalAbilities = 1; // физические способности
-    [SerializeField] private int _perception = 1;        // восприятие
-    [SerializeField] private int _intellect  = 0;        // интеллект 
+    [SerializeField] private double _physicalAbilities = 1; // физические способности
+    [SerializeField] private double _perception = 1;        // восприятие
+    [SerializeField] private double _intellect  = 0;        // интеллект 
     private double _physicalAbilitiesDouble;
     private double _perceptionDouble;
     private double _intellectDouble;
@@ -25,9 +25,9 @@ public class MainCharacteristics : MonoBehaviour
     private void OnEnable()
     {
         // Lua.RegisterFunction("PhysicalAbilities", this, SymbolExtensions.GetMethodInfo(() => _physicalAbilities((int)0)));
-        Lua.RegisterFunction("PhysicalAbilities", this, SymbolExtensions.GetMethodInfo(() => SetPhysicalAbilities(1)));
-        Lua.RegisterFunction("Perception", this, SymbolExtensions.GetMethodInfo(() => SetPerception(1)));
-        Lua.RegisterFunction("Intellect", this, SymbolExtensions.GetMethodInfo(() => SetIntellect(1)));
+        Lua.RegisterFunction("PhysicalAbilities", this, SymbolExtensions.GetMethodInfo(() => GetPhysicalAbilities(1)));
+        Lua.RegisterFunction("Perception", this, SymbolExtensions.GetMethodInfo(() => GetPerception(1)));
+        Lua.RegisterFunction("Intellect", this, SymbolExtensions.GetMethodInfo(() => GetIntellect(1)));
     }
 
     private void OnDisable()
@@ -37,32 +37,32 @@ public class MainCharacteristics : MonoBehaviour
         Lua.UnregisterFunction("Intellect");
     }
 
-    private void SetPhysicalAbilities(int value)
+    private void SetPhysicalAbilities(double value)
     {
         _physicalAbilities = value;
     }
     
-    public double GetPhysicalAbilities()
+    public double GetPhysicalAbilities(double value)
     {
-        return _physicalAbilitiesDouble;
+        return _physicalAbilities;
     }
     
-    public int GetPerception()
+    public double GetPerception(double value)
     {
         return _perception;
     }
     
-    private void SetPerception(int value)
+    private void SetPerception(double value)
     {
         _perception = value;
     }
     
-    public int GetIntellect()
+    public double GetIntellect(double value)
     {
         return _intellect;
     }
     
-    public void SetIntellect(int value)
+    public void SetIntellect(double value)
     {
         _intellect = value;
     }
