@@ -4,26 +4,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
 using Unity.VisualScripting;
+using Update = UnityEngine.PlayerLoop.Update;
 
 public class MainCharacteristics : MonoBehaviour
 {
     [SerializeField] private int _physicalAbilities = 1; // физические способности
     [SerializeField] private int _perception = 1;        // восприятие
     [SerializeField] private int _intellect  = 0;        // интеллект 
+    private double _physicalAbilitiesDouble;
+    private double _perceptionDouble;
+    private double _intellectDouble;
 
     private void Start()
     {
         var ds = GetComponent<DialogueSystemTrigger>();
     }
-
-    public int GetPhysicalAbilities()
+    
+    private void Update()
     {
-        return _physicalAbilities;
+        var textDescription = DialogueLua.GetQuestField("Захоронение тел", "Description").luaValue;
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            DialogueLua.SetQuestField("Захоронение тел", "Description", textDescription + "/\n111");
+        }
+
+        _physicalAbilitiesDouble = (Int32)_physicalAbilities;
+        _perceptionDouble = (Int32)_perception;
+        _intellectDouble = (Int32)_intellect;
     }
 
     private void SetPhysicalAbilities(int value)
     {
         _physicalAbilities = value;
+    }
+    
+    public double GetPhysicalAbilities()
+    {
+        return _physicalAbilitiesDouble;
     }
     
     public int GetPerception()
@@ -46,16 +64,7 @@ public class MainCharacteristics : MonoBehaviour
         _intellect = value;
     }
 
-    private void Update()
-    {
-        var textDescription = DialogueLua.GetQuestField("Захоронение тел", "Description").luaValue;
 
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            DialogueLua.SetQuestField("Захоронение тел", "Description", textDescription + "/\n111");
-
-        }
-    }
 
     public void AddCharacteristic(string nameCharacteristic)
     {

@@ -10544,6 +10544,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8302728026184437557, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
 --- !u!1 &1122229225
@@ -15472,6 +15476,19 @@ MonoBehaviour:
     onUse:
       m_PersistentCalls:
         m_Calls: []
+--- !u!65 &1662167863
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662167854}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.24, y: 14.1, z: 6.29}
+  m_Center: {x: -0.000015228987, y: 0, z: 0}
 --- !u!1 &1664641879 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1378774232192725509, guid: dacdbb84670cf1649a43a3d59565aca7, type: 3}
@@ -20777,15 +20794,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3294541908675848696, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
       propertyPath: _intellect
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3294541908675848696, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
       propertyPath: _perception
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3294541908675848696, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
       propertyPath: _physicalAbilities
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3294541908975129762, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
       propertyPath: m_Name
