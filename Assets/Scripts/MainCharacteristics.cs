@@ -14,7 +14,7 @@ public class MainCharacteristics : MonoBehaviour
     private double _physicalAbilitiesDouble;
     private double _perceptionDouble;
     private double _intellectDouble;
-
+    
     private void Update()
     {
         _physicalAbilitiesDouble = (Int32)_physicalAbilities;
