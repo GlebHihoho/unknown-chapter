@@ -21,9 +21,9 @@ namespace UI
 
         private void CheckStats()
         {
-            _phys.text = _mainStats.GetPhysicalAbilities().ToString();
-            _per.text = _mainStats.GetPerception().ToString();
-            _int.text = _mainStats.GetIntellect().ToString();
+            _phys.text = _mainStats.GetPhysicalAbilities(0).ToString();
+            _per.text = _mainStats.GetPerception(0).ToString();
+            _int.text = _mainStats.GetIntellect(0).ToString();
         }
     }
 }
