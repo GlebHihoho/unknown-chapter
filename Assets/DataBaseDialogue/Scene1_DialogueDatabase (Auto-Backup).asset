@@ -594,6 +594,20 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
+  - id: 17
+    fields:
+    - title: Name
+      value: IvanIsAlive
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
   conversations:
   - id: 1
     fields:
@@ -1528,8 +1542,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[em1]\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C
-          \u0447\u0435\u0440\u0435\u0437 \u0438\u043D\u0442\u0435\u043B\u0435\u043A\u0442[/em1]"
+        value: "[em3]\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C
+          \u0447\u0435\u0440\u0435\u0437 \u0438\u043D\u0442\u0435\u043B\u0435\u043A\u0442[/em3]"
         type: 0
         typeString: 
       - title: Sequence
@@ -1584,8 +1598,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "[em3]\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C
-          \u0441 \u0441\u0438\u043B\u043E\u0439[/em3]"
+        value: "[em1]\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C
+          \u0441 \u0441\u0438\u043B\u043E\u0439[/em1]"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -1618,7 +1632,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 135.72247
-        y: 184.5451
+        y: 183.48126
         width: 160
         height: 30
     - id: 17
@@ -2022,8 +2036,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 72.331085, y: 0}
-    canvasZoom: 0.9400006
+    canvasScrollPosition: {x: 137.35857, y: 9.158501}
+    canvasZoom: 0.7300008
   - id: 2
     fields:
     - title: Title
@@ -2160,8 +2174,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[em3]\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C
-          \u0441 \u0441\u0438\u043B\u043E\u0439[/em3]"
+        value: "[em1]\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C
+          \u0441 \u0441\u0438\u043B\u043E\u0439[/em1]"
         type: 0
         typeString: 
       - title: Sequence
@@ -2190,7 +2204,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 209
-        y: 200.63013
+        y: 199.26025
         width: 160
         height: 30
     - id: 2
@@ -2245,7 +2259,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 540.0928
+        x: 538.7229
         y: 203.87625
         width: 160
         height: 30
@@ -2272,8 +2286,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[em1]\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C
-          \u0447\u0435\u0440\u0435\u0437 \u0438\u043D\u0442\u0435\u043B\u0435\u043A\u0442[/em1]"
+        value: "[em3]\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C
+          \u0447\u0435\u0440\u0435\u0437 \u0438\u043D\u0442\u0435\u043B\u0435\u043A\u0442[/em3]"
         type: 0
         typeString: 
       - title: Sequence
@@ -2344,7 +2358,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/deadBody_Stigberg_VG_1)
         type: 0
         typeString: 
       conversationID: 2
@@ -2404,7 +2418,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/deadBody_Stigberg_Oran_1)
         type: 0
         typeString: 
       conversationID: 2
@@ -2461,7 +2475,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/deadBody_Stigberg_VG_4)
         type: 0
         typeString: 
       conversationID: 2
@@ -2646,7 +2660,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/deadBody_Stigberg_VG_5)
         type: 0
         typeString: 
       conversationID: 2
@@ -2829,7 +2843,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/deadBody_Stigberg_VG_6)
         type: 0
         typeString: 
       conversationID: 2
@@ -2885,7 +2899,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/deadBody_Stigberg_VG_7)
         type: 0
         typeString: 
       conversationID: 2
@@ -3134,7 +3148,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/deadBody_Stigberg_VG_2)
         type: 0
         typeString: 
       conversationID: 2
@@ -3198,7 +3212,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/deadBody_Stigberg_VG_3)
         type: 0
         typeString: 
       conversationID: 2
@@ -3333,8 +3347,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 210.9588, y: 164.38345}
-    canvasZoom: 0.73000026
+    canvasScrollPosition: {x: 99.26177, y: 258.00824}
+    canvasZoom: 1.3699995
   - id: 3
     fields:
     - title: Title
@@ -3471,8 +3485,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[em3]\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C
-          \u0441 \u0441\u0438\u043B\u043E\u0439[/em3]"
+        value: "[em1]\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C
+          \u0441 \u0441\u0438\u043B\u043E\u0439[/em1]"
         type: 0
         typeString: 
       - title: Sequence
@@ -3583,8 +3597,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[em1]\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C
-          \u0447\u0435\u0440\u0435\u0437 \u0438\u043D\u0442\u0435\u043B\u0435\u043A\u0442[/em1]"
+        value: "[em3]\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C
+          \u0447\u0435\u0440\u0435\u0437 \u0438\u043D\u0442\u0435\u043B\u0435\u043A\u0442[/em3]"
         type: 0
         typeString: 
       - title: Sequence
@@ -4676,8 +4690,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 302.53156, y: 0}
-    canvasZoom: 0.7900002
+    canvasScrollPosition: {x: 14.560128, y: 7.431731}
+    canvasZoom: 0.46000046
   - id: 4
     fields:
     - title: Title
@@ -6785,7 +6799,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 878.0821, y: 47.94519}
+    canvasScrollPosition: {x: 1112.3289, y: 27.397278}
     canvasZoom: 0.73000014
   - id: 5
     fields:
@@ -9023,6 +9037,10 @@ MonoBehaviour:
         value: AudioWait(VG/intro_VG_3)
         type: 0
         typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
       conversationID: 13
       isRoot: 0
       isGroup: 0
@@ -9711,7 +9729,8 @@ MonoBehaviour:
         destinationDialogueID: 17
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: "Variable[\"\u041F\u0435\u0440\u0432\u0430\u044F_\u0432\u0441\u0442\u0440\u0435\u0447\u0430_\u0441_\u0418\u0432\u0430\u043D\u043E\u043C\"]
+        == true"
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -9769,7 +9788,7 @@ MonoBehaviour:
         destinationDialogueID: 13
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Perception(Variable[""]) >= 1
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -10324,7 +10343,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 4
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -10358,7 +10377,8 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks: []
-      conditionsString: 
+      conditionsString: "Variable[\"\u041F\u0435\u0440\u0432\u0430\u044F_\u0432\u0441\u0442\u0440\u0435\u0447\u0430_\u0441_\u0418\u0432\u0430\u043D\u043E\u043C\"]
+        == true"
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -10370,8 +10390,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 92, y: 102}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 0, y: 204.88507}
+    canvasZoom: 0.8800001
   - id: 15
     fields:
     - title: Title
@@ -10547,7 +10567,7 @@ MonoBehaviour:
         destinationDialogueID: 15
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Variable["IvanIsAlive"] == true
       userScript: "SendMessageSystem(\"\u0422\u043E\u043D\u0434\u0440\u0430\u043B\",
         \"\u0421\u043E\u0431\u0440\u0430\u0442\u044C\u041D\u043E\u0441\u0438\u043B\u043A\u0438\")"
       onExecute:
@@ -10611,7 +10631,7 @@ MonoBehaviour:
         destinationDialogueID: 3
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Variable["IvanIsAlive"] == false
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -10861,7 +10881,7 @@ MonoBehaviour:
         destinationDialogueID: 10
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: PhysicalAbilities(Variable[""]) >= 1
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -10920,7 +10940,7 @@ MonoBehaviour:
         destinationDialogueID: 11
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Perception(Variable[""]) >= 1
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -10982,7 +11002,7 @@ MonoBehaviour:
         destinationDialogueID: 12
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Intellect(Variable[""]) >= 1
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -11504,8 +11524,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 14.981445}
-    canvasZoom: 0.8200002
+    canvasScrollPosition: {x: 85.858765, y: 129.43382}
+    canvasZoom: 0.94000006
   syncInfo:
     syncActors: 0
     syncItems: 0
