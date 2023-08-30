@@ -2828,15 +2828,16 @@ MonoBehaviour:
         destinationDialogueID: 19
         isConnector: 0
         priority: 2
-      conditionsString: Perception(1) >= 1
+      conditionsString: Perception(1) >= 1 and (PhysicalAbilities(Variable[""]) <
+        1)
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 540.0928
-        y: 253.87625
+        x: 541.3915
+        y: 252.57755
         width: 160
         height: 30
     - id: 18
@@ -2892,7 +2893,8 @@ MonoBehaviour:
         destinationDialogueID: 19
         isConnector: 0
         priority: 2
-      conditionsString: Intellect(Variable[""]) >= 1
+      conditionsString: Intellect(Variable[""]) >= 1 and (PhysicalAbilities(Variable[""])
+        < 1)
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -3176,7 +3178,8 @@ MonoBehaviour:
         destinationDialogueID: 22
         isConnector: 0
         priority: 2
-      conditionsString: PhysicalAbilities(Variable[""]) >= 1
+      conditionsString: PhysicalAbilities(Variable[""]) >= 1 and (Intellect(Variable[""])
+        < 1)
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -3243,7 +3246,7 @@ MonoBehaviour:
         destinationDialogueID: 22
         isConnector: 0
         priority: 2
-      conditionsString: Perception(1) >= 1
+      conditionsString: Perception(1) >= 1 and (Intellect(Variable[""]) < 1)
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -4185,7 +4188,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 65.591835, y: 0}
+    canvasScrollPosition: {x: 90.866554, y: 21.978027}
     canvasZoom: 0.91000015
   - id: 4
     fields:
