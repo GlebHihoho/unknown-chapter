@@ -1,33 +1,36 @@
 ﻿using System;
 using UI;
+using UI.InventoryScripts;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace DefaultNamespace
 {
     public class QuickItemView : MonoBehaviour
     {
         //todo изменить названия этого компонента на более читаемое
-        [SerializeField] private GameObject _foundItemsUI;
+        [SerializeField] private GameObject _foundItemsUIPrefab;
         [SerializeField] private ItemsList _itemsList;
-        // [SerializeField] private Transform _containerTransform;
-        // [SerializeField] private ItemsList _itemsListFound;
+        [SerializeField] private Transform _containerTransform;
+        private Vector3 mousePosition;
 
         private void Start()
         {
-            // _itemsListFound = _foundItemsUI.GetComponentInChildren<FoundItem>()._listOfItems;
+            
         }
 
         private void OnMouseDown()
         {
-            print(_itemsList);
+            mousePosition = Input.mousePosition;
+            print(mousePosition);
             OpenView();
         }
 
         private void OpenView()
         {
-            _foundItemsUI.GetComponentInChildren<FoundItem>()._listOfItems = _itemsList;
-            // Instantiate(_foundItemsUI, _containerTransform);
-            _foundItemsUI.SetActive(true);
+            _foundItemsUIPrefab.GetComponentInChildren<FoundItem>()._listOfItems = _itemsList;
+            Instantiate(_foundItemsUIPrefab, mousePosition, Quaternion.identity, _containerTransform);
+            // _foundItemsUIPrefab.GetComponentInChildren<FoundItem>()._inventory = FindObjectOfType<Inventory>();
         }
         
     }

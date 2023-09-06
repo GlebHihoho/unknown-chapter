@@ -9,18 +9,24 @@ namespace UI
 {
     public class FoundItem : MonoBehaviour
     {
+        //todo проверить надежность публичных полей
         [SerializeField] public ItemsList _listOfItems;
+        
+        [SerializeField] private Inventory _inventory;
 
         [SerializeField] private GameObject _gameObjShow;
     
         [SerializeField] private List<ItemInventory> _items = new();
 
-        [SerializeField] private Inventory _inventory;
 
         [SerializeField] private Button _takeAllButton;
 
-        private void Update()
+        private void Start()
         {
+            //todo удалить лишние принты
+            print("Создали экземпляр");
+            _inventory = FindObjectOfType<Inventory>(true);
+            print(_inventory);
             foreach (var itemSo in _listOfItems.items)
             {
                 AddGraphics(itemSo);
@@ -92,5 +98,7 @@ namespace UI
                 }
             }
         }
+        
+        
     }
 }
