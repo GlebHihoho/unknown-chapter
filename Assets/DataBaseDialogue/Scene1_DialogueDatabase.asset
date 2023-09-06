@@ -86,7 +86,7 @@ MonoBehaviour:
     - title: Name
       value: "\u0418\u0432\u0430\u043D"
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
@@ -94,7 +94,7 @@ MonoBehaviour:
     - title: Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: IsPlayer
       value: False
       type: 2
@@ -2836,8 +2836,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 541.3915
-        y: 252.57755
+        x: 542.6902
+        y: 251.27884
         width: 160
         height: 30
     - id: 18
@@ -3253,8 +3253,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 485.59277
-        y: 221.87625
+        x: 486.69165
+        y: 220.77734
         width: 160
         height: 30
     - id: 9
@@ -7899,12 +7899,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0412\u044B\u0431\u0435\u0440\u0438 \u043E\u0434\u043D\u0443 \u0438\u0437
-          \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043A,
+        value: "\n[em1]\u0412\u044B\u0431\u0435\u0440\u0438[/em1] \u043E\u0434\u043D\u0443
+          \u0438\u0437 \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043A,
           \u043A\u043E\u0442\u043E\u0440\u0443\u044E \u0445\u043E\u0447\u0435\u0448\u044C
           \u043F\u043E\u0432\u044B\u0441\u0438\u0442\u044C - \u044D\u0442\u043E \u043D\u0430\u043F\u0440\u044F\u043C\u0443\u044E
-          \u0432\u043B\u0438\u044F\u0435\u0442 \u043D\u0430 \u0445\u043E\u0434 \u0438\u0441\u0442\u043E\u0440\u0438\u0438
-          \n[var=Conversant]\n[var=Actor]"
+          \u0432\u043B\u0438\u044F\u0435\u0442 \u043D\u0430 \u0445\u043E\u0434 \u0438\u0441\u0442\u043E\u0440\u0438\u0438"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -7944,8 +7943,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 265
-        y: 137
+        x: 266
+        y: 134
         width: 160
         height: 30
     - id: 2
@@ -7997,8 +7996,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 95
-        y: 232
+        x: 96
+        y: 231
         width: 160
         height: 30
     - id: 3
@@ -8050,8 +8049,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 285
-        y: 231
+        x: 289.0309
+        y: 227.96906
         width: 160
         height: 30
     - id: 4
@@ -8103,23 +8102,23 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 471
-        y: 229
+        x: 473.03094
+        y: 228
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 81, y: 32}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 77.4433, y: 16.134037}
+    canvasZoom: 0.97
   - id: 12
     fields:
     - title: Title
       value: BitchConversation_1
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Actor
       value: 1
       type: 5
@@ -8234,7 +8233,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "[var=Actor]: \u0425\u043E\u043B\u043E\u0434\u2026 \u0427\u0435\u0440\u0442\u2026
+        value: "[var=Conversant]: \u0425\u043E\u043B\u043E\u0434\u2026 \u0427\u0435\u0440\u0442\u2026
           \u0425\u043E\u043B\u043E\u0434\u043D\u043E \u0438 \u0441\u044B\u0440\u043E\u2026
           \u041D\u0430\u0434\u043E \u0431\u044B\u043B\u043E \u0431\u0435\u0436\u0430\u0442\u044C
           \u0432 \u0412\u0430\u0440\u0430\u043D\u0442, \u0430 \u043D\u0435 \u043F\u0440\u044F\u0442\u0430\u0442\u044C\u0441\u044F
@@ -8269,7 +8268,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 243
-        y: 139
+        y: 140
         width: 160
         height: 30
     - id: 2
@@ -8295,9 +8294,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "[var=Actor]: \u041F\u043E\u0434\u043E \u043C\u043D\u043E\u0439 \u0441\u044B\u0440\u043E\u0439
-          \u043F\u0435\u0441\u043E\u043A. \u042F \u043D\u0430 \u0431\u0435\u0440\u0435\u0433\u0443.
-          \u0425\u043C\u2026"
+        value: "[var=Conversant]: \u041F\u043E\u0434\u043E \u043C\u043D\u043E\u0439
+          \u0441\u044B\u0440\u043E\u0439 \u043F\u0435\u0441\u043E\u043A. \u042F \u043D\u0430
+          \u0431\u0435\u0440\u0435\u0433\u0443. \u0425\u043C\u2026"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -9116,7 +9115,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 510
+        x: 512.2727
         y: 416
         width: 160
         height: 30
@@ -9171,7 +9170,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 703
+        x: 705.2727
         y: 417
         width: 160
         height: 30
@@ -9236,8 +9235,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 906
-        y: 419
+        x: 907.1364
+        y: 417.86365
         width: 160
         height: 30
     - id: 10
@@ -9889,7 +9888,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 204.88507}
+    canvasScrollPosition: {x: 296.59103, y: 145.79416}
     canvasZoom: 0.8800001
   - id: 15
     fields:
@@ -11268,7 +11267,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 244.71426
-        y: 377.10995
+        y: 375.4706
         width: 160
         height: 30
     - id: 3
@@ -12375,7 +12374,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 112.84033, y: 90.16394}
+    canvasScrollPosition: {x: 288.25012, y: 101.63934}
     canvasZoom: 0.6100002
   syncInfo:
     syncActors: 0

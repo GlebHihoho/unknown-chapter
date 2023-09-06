@@ -116,7 +116,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _listOfItems: {fileID: 11400000, guid: e7742ede85c1fba4ea4b5ba3a17c3a3c, type: 2}
   _gameObjShow: {fileID: 2416159112455865255, guid: b38a5919448c6904382ebc91a80cee37, type: 3}
-  _items: []
+  _items:
+  - _name: 
+    _itemGameObj: {fileID: 0}
+    _count: 0
+    _isUsed: 0
+    _description: 
   _inventory: {fileID: 0}
   _takeAllButton: {fileID: 9112354652042193720}
 --- !u!1 &9112354651331177403
