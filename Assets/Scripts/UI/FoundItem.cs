@@ -9,7 +9,7 @@ namespace UI
 {
     public class FoundItem : MonoBehaviour
     {
-        [SerializeField] private ItemsList _listOfItems;
+        [SerializeField] public ItemsList _listOfItems;
 
         [SerializeField] private GameObject _gameObjShow;
     
@@ -19,7 +19,7 @@ namespace UI
 
         [SerializeField] private Button _takeAllButton;
 
-        private void Start()
+        private void Update()
         {
             foreach (var itemSo in _listOfItems.items)
             {
