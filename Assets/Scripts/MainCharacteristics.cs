@@ -31,12 +31,13 @@ public class MainCharacteristics : MonoBehaviour
     private void OnEnable()
     {
         Lua.RegisterFunction("GetSkill", this, SymbolExtensions.GetMethodInfo(() => GetSkill("")));
+        Lua.RegisterFunction("GetItemAmount", _inventory, SymbolExtensions.GetMethodInfo(() => _inventory.GetItemAmount(string.Empty)));
+
         
         
         // Lua.RegisterFunction("PhysicalAbilities", this, SymbolExtensions.GetMethodInfo(() => GetPhysicalAbilities(1)));
         // Lua.RegisterFunction("Perception", this, SymbolExtensions.GetMethodInfo(() => GetPerception(1)));
         // Lua.RegisterFunction("Intellect", this, SymbolExtensions.GetMethodInfo(() => GetIntellect(1)));
-        Lua.RegisterFunction("GetItemAmount", this, SymbolExtensions.GetMethodInfo(() => _inventory.GetItemAmount(string.Empty)));
     }
 
     private void OnDisable()

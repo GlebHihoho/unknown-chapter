@@ -204,8 +204,6 @@ namespace UI.InventoryScripts
             var item = _items.Find(x => x._name == itemName);
             return (item != null) ? item._count : 0;
         }
-
-        
     }
     
 

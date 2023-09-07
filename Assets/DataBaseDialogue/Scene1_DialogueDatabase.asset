@@ -772,7 +772,7 @@ MonoBehaviour:
         destinationDialogueID: 2
         isConnector: 0
         priority: 2
-      conditionsString: Perception(Variable[""]) >= 1
+      conditionsString: GetSkill("Perception") >= 1
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -780,7 +780,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 551.7763
-        y: 261.99374
+        y: 259.254
         width: 160
         height: 30
     - id: 2
@@ -1682,15 +1682,15 @@ MonoBehaviour:
         destinationDialogueID: 20
         isConnector: 0
         priority: 2
-      conditionsString: Intellect(Variable[""]) >= 1 and (Perception(Variable[""])
-        < 1)
+      conditionsString: GetSkill("Intellect") >= 1 and (GetSkill("Perception") <
+        1)
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 927.2062
+        x: 928.57605
         y: 256.8825
         width: 160
         height: 30
@@ -1747,7 +1747,7 @@ MonoBehaviour:
         destinationDialogueID: 19
         isConnector: 0
         priority: 2
-      conditionsString: PhysicalAbilities(Variable[""]) >= 1 and (Perception(Variable[""])
+      conditionsString: GetSkill("PhysicalAbilities") >= 1 and (GetSkill("Perception")
         < 1)
       userScript: 
       onExecute:
@@ -1866,7 +1866,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 119.550354, y: 0}
+    canvasScrollPosition: {x: 114.07089, y: 0}
     canvasZoom: 0.7300008
   - id: 2
     fields:
@@ -2037,7 +2037,7 @@ MonoBehaviour:
         destinationDialogueID: 5
         isConnector: 0
         priority: 2
-      conditionsString: PhysicalAbilities(Variable[""]) >= 1
+      conditionsString: GetSkill("PhysicalAbilities") >= 1
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -2828,8 +2828,8 @@ MonoBehaviour:
         destinationDialogueID: 19
         isConnector: 0
         priority: 2
-      conditionsString: Perception(1) >= 1 and (PhysicalAbilities(Variable[""]) <
-        1)
+      conditionsString: GetSkill("Perception") >= 1 and (GetSkill("PhysicalAbilities")
+        < 1)
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -2893,7 +2893,7 @@ MonoBehaviour:
         destinationDialogueID: 19
         isConnector: 0
         priority: 2
-      conditionsString: Intellect(Variable[""]) >= 1 and (PhysicalAbilities(Variable[""])
+      conditionsString: GetSkill("Intellect") >= 1 and (GetSkill("PhysicalAbilities")
         < 1)
       userScript: 
       onExecute:
@@ -3012,7 +3012,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 88.14257, y: 52.747192}
+    canvasScrollPosition: {x: 279.05167, y: 51.448517}
     canvasZoom: 0.7700001
   - id: 3
     fields:
@@ -3178,7 +3178,7 @@ MonoBehaviour:
         destinationDialogueID: 22
         isConnector: 0
         priority: 2
-      conditionsString: PhysicalAbilities(Variable[""]) >= 1 and (Intellect(Variable[""])
+      conditionsString: GetSkill("PhysicalAbilities") >= 1 and (GetSkill("Intellect")
         < 1)
       userScript: 
       onExecute:
@@ -3246,7 +3246,8 @@ MonoBehaviour:
         destinationDialogueID: 22
         isConnector: 0
         priority: 2
-      conditionsString: Perception(1) >= 1 and (Intellect(Variable[""]) < 1)
+      conditionsString: GetSkill("Perception") >= 1 and (GetSkill("Intellect") <
+        1)
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -3309,7 +3310,7 @@ MonoBehaviour:
         destinationDialogueID: 10
         isConnector: 0
         priority: 2
-      conditionsString: Intellect(Variable[""]) >= 1
+      conditionsString: GetSkill("Intellect >= 1
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -4188,7 +4189,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 90.866554, y: 21.978027}
+    canvasScrollPosition: {x: 345.81158, y: 0}
     canvasZoom: 0.91000015
   - id: 4
     fields:
@@ -12521,6 +12522,18 @@ MonoBehaviour:
         destinationDialogueID: 3
         isConnector: 0
         priority: 2
+      - originConversationID: 17
+        originDialogueID: 1
+        destinationConversationID: 17
+        destinationDialogueID: 2
+        isConnector: 0
+        priority: 2
+      - originConversationID: 17
+        originDialogueID: 1
+        destinationConversationID: 17
+        destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -12571,7 +12584,8 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks: []
-      conditionsString: GetItemAmount("rum") >= 0
+      conditionsString: "GetItemAmount(\"\u0411\u0443\u0442\u044B\u043B\u043A\u0430
+        \u0440\u043E\u043C\u0430\") >= 3"
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -12579,7 +12593,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 93
-        y: 351
+        y: 350
         width: 160
         height: 30
     - id: 3
@@ -12605,7 +12619,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: hahaha
+        value: "\u043E\u0431\u043B\u043E\u043C\u043E\u043A \u043A\u043E\u0440\u043E\u0431\u043B\u044F"
         type: 0
         typeString: 
       - title: Sequence
@@ -12620,7 +12634,8 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks: []
-      conditionsString: 
+      conditionsString: "GetItemAmount(\"\u041E\u0431\u043B\u043E\u043C\u043E\u043A
+        \u043A\u043E\u0440\u0430\u0431\u043B\u044F\") >= 1"
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -12629,6 +12644,56 @@ MonoBehaviour:
         serializedVersion: 2
         x: 323
         y: 353
+        width: 160
+        height: 30
+    - id: 4
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "\u041B\u043E\u043F\u0430\u0442\u0430"
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 17
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: "GetItemAmount(\"\u041B\u043E\u043F\u0430\u0442\u0430\")
+        >= 2"
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 200
+        y: 433
         width: 160
         height: 30
     entryGroups: []
