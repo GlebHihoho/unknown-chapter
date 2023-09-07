@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 
 public class InventoryExitButton : MonoBehaviour
@@ -9,5 +10,11 @@ public class InventoryExitButton : MonoBehaviour
     public void OnClick()
     {
         _backGround.SetActive(!_backGround.activeSelf);
+    }
+
+    public void InvetoryExitButtonDestroy()
+    {
+        QuickItemView.isInventoryOpen = false;
+        Destroy(_backGround);
     }
 }

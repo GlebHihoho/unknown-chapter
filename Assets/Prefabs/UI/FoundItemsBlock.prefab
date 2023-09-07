@@ -115,9 +115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _listOfItems: {fileID: 11400000, guid: e7742ede85c1fba4ea4b5ba3a17c3a3c, type: 2}
+  _inventory: {fileID: 0}
   _gameObjShow: {fileID: 2416159112455865255, guid: b38a5919448c6904382ebc91a80cee37, type: 3}
   _items: []
-  _inventory: {fileID: 0}
   _takeAllButton: {fileID: 9112354652042193720}
 --- !u!1 &9112354651331177403
 GameObject:
@@ -322,7 +322,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9112354652032131102}
         m_TargetAssemblyTypeName: InventoryExitButton, Assembly-CSharp
-        m_MethodName: OnClick
+        m_MethodName: InvetoryExitButtonDestroy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

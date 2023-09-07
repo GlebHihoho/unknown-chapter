@@ -14,16 +14,18 @@ namespace DefaultNamespace
         [SerializeField] private Transform _containerTransform;
         private Vector3 mousePosition;
 
-        private void Start()
-        {
-            
-        }
+        public static bool isInventoryOpen = false;
+
 
         private void OnMouseDown()
         {
-            mousePosition = Input.mousePosition;
-            print(mousePosition);
-            OpenView();
+            if (!isInventoryOpen)
+            {
+                mousePosition = Input.mousePosition;
+                OpenView();
+                isInventoryOpen = true;
+            }
+            
         }
 
         private void OpenView()
