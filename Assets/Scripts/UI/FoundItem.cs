@@ -16,17 +16,21 @@ namespace UI
 
         [SerializeField] private GameObject _gameObjShow;
     
-        [SerializeField] private List<ItemInventory> _items = new();
+        [SerializeField] public List<ItemInventory> _items = new();
 
 
         [SerializeField] private Button _takeAllButton;
 
+
+
+        [SerializeField] public QuickItemView _quickItemView;
+
         private void Start()
         {
-            //todo удалить лишние принты
-            print("Создали экземпляр");
+            // _quickItemView = FindObjectOfType<QuickItemView>();
+            print(_quickItemView);
             _inventory = FindObjectOfType<Inventory>(true);
-            print(_inventory);
+            
             foreach (var itemSo in _listOfItems.items)
             {
                 AddGraphics(itemSo);
@@ -81,20 +85,37 @@ namespace UI
         {
             if (_listOfItems != null)
             {
-                while (_listOfItems.items.Count != 0)
+                // while (_listOfItems.items.Count != 0)
+                // {
+                //     _inventory.AddObject(new Item()
+                //     {
+                //         Count = 1,
+                //         Description = _listOfItems.items[0]._description,
+                //         Img = _listOfItems.items[0]._img,
+                //         IsUsed = false,
+                //         Name = _listOfItems.items[0]._name
+                //     });
+                //     _items.Remove(_items.Find(x => x._name == _listOfItems.items[0]._name));
+                //     GameObject childObject = transform.Find(_listOfItems.items[0]._name).gameObject;
+                //     Destroy(childObject);
+                //     // _listOfItems.items.Remove(_listOfItems.items[0]);
+                // }
+
+                for (int i = 0; i < _listOfItems.items.Count; i++)
                 {
                     _inventory.AddObject(new Item()
                     {
-                        Count = 1,
-                        Description = _listOfItems.items[0]._description,
-                        Img = _listOfItems.items[0]._img,
+                        // Count = 1,
+                        Description = _listOfItems.items[i]._description,
+                        Img = _listOfItems.items[i]._img,
                         IsUsed = false,
-                        Name = _listOfItems.items[0]._name
+                        Name = _listOfItems.items[i]._name
                     });
-                    _items.Remove(_items.Find(x => x._name == _listOfItems.items[0]._name));
-                    GameObject childObject = transform.Find(_listOfItems.items[0]._name).gameObject;
+                    _items.Remove(_items.Find(x => x._name == _listOfItems.items[i]._name));
+                    GameObject childObject = transform.Find(_listOfItems.items[i]._name).gameObject;
                     Destroy(childObject);
-                    _listOfItems.items.Remove(_listOfItems.items[0]);
+                    // _listOfItems.items.Remove(_listOfItems.items[i]);
+                    _quickItemView._itemsListFilling.Remove(_quickItemView._itemsListFilling[i]);
                 }
             }
         }

@@ -6,7 +6,7 @@ namespace DefaultNamespace
     {
         public void ThisDestroyObject()
         {
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }

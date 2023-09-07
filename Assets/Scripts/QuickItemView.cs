@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UI;
 using UI.InventoryScripts;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace DefaultNamespace
         //todo изменить названия этого компонента на более читаемое
         [SerializeField] private GameObject _foundItemsUIPrefab;
         [SerializeField] private ItemsList _itemsList;
+        public List<ItemSO> _itemsListFilling;
         [SerializeField] private Transform _containerTransform;
         [SerializeField] private float maxDistanceToOpen = 5f;
         
@@ -22,6 +24,7 @@ namespace DefaultNamespace
 
         private void Start()
         {
+            _itemsListFilling = _itemsList.items;
             _player = GameObject.FindWithTag("Player").transform;
         }
 
@@ -34,17 +37,19 @@ namespace DefaultNamespace
                 if (!isInventoryOpen)
                 {
                     mousePosition = Input.mousePosition;
-                    OpenView();
                     isInventoryOpen = true;
+                    OpenView();
                 }
             }
         }
 
         private void OpenView()
         {
-            _foundItemsUIPrefab.GetComponentInChildren<FoundItem>()._listOfItems = _itemsList;
-            Instantiate(_foundItemsUIPrefab, mousePosition, Quaternion.identity, _containerTransform);
+            _foundItemsUIPrefab.GetComponentInChildren<FoundItem>()._listOfItems.items = _itemsListFilling;
+            GameObject go = Instantiate(_foundItemsUIPrefab, mousePosition, Quaternion.identity, _containerTransform);
+            _foundItemsUIPrefab.GetComponentInChildren<FoundItem>()._quickItemView = this;
             _player.GetComponent<InputController>().enabled = false;
+            isInventoryOpen = false;
         }
         
         public void QuickItemViewDestroy()

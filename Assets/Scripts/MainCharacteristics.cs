@@ -32,20 +32,11 @@ public class MainCharacteristics : MonoBehaviour
     {
         Lua.RegisterFunction("GetSkill", this, SymbolExtensions.GetMethodInfo(() => GetSkill("")));
         Lua.RegisterFunction("GetItemAmount", _inventory, SymbolExtensions.GetMethodInfo(() => _inventory.GetItemAmount(string.Empty)));
-
-        
-        
-        // Lua.RegisterFunction("PhysicalAbilities", this, SymbolExtensions.GetMethodInfo(() => GetPhysicalAbilities(1)));
-        // Lua.RegisterFunction("Perception", this, SymbolExtensions.GetMethodInfo(() => GetPerception(1)));
-        // Lua.RegisterFunction("Intellect", this, SymbolExtensions.GetMethodInfo(() => GetIntellect(1)));
     }
 
     private void OnDisable()
     {
         Lua.UnregisterFunction("GetSkill");
-        // Lua.UnregisterFunction("PhysicalAbilities");
-        // Lua.UnregisterFunction("Perception");
-        // Lua.UnregisterFunction("Intellect");
         Lua.UnregisterFunction("GetItemAmount");
     }
 
@@ -64,40 +55,4 @@ public class MainCharacteristics : MonoBehaviour
     {
         return _intellect;
     }
-    
-    // private void SetPhysicalAbilities(double value)
-    // {
-    //     _physicalAbilities = value;
-    // }
-    //
-    
-    
-    //
-    // private void SetPerception(double value)
-    // {
-    //     _perception = value;
-    // }
-    
-    
-    //
-    // public void SetIntellect(double value)
-    // {
-    //     _intellect = value;
-    // }
-
-    // public void AddCharacteristic(string nameCharacteristic)
-    // {
-    //     switch (nameCharacteristic)
-    //     {
-    //         case "_physicalAbilities":
-    //             _physicalAbilities++;
-    //             break;
-    //         case "_perception":
-    //             _perception++;
-    //             break;
-    //         case "_intellect":
-    //             _intellect++;
-    //             break;
-    //     }
-    // }
 }
