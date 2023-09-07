@@ -11,10 +11,4 @@ public class InventoryExitButton : MonoBehaviour
     {
         _backGround.SetActive(!_backGround.activeSelf);
     }
-
-    public void InvetoryExitButtonDestroy()
-    {
-        QuickItemView.isInventoryOpen = false;
-        Destroy(_backGround);
-    }
 }

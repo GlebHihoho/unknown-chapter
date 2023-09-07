@@ -198,6 +198,12 @@ namespace UI.InventoryScripts
             
             File.WriteAllText(path, JsonConvert.SerializeObject(_data._items));
         }
+        
+        public double GetItemAmount(string itemName)
+        {
+            var item = _items.Find(x => x._name == itemName);
+            return (item != null) ? item._count : 0;
+        }
 
         
     }

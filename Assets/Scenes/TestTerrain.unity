@@ -164,7 +164,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1862425151}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 4.264, y: -44.841, z: -4.229}
 --- !u!114 &19725878
 MonoBehaviour:
@@ -2184,7 +2184,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1862425151}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 13.264}
 --- !u!114 &212253605
 MonoBehaviour:
@@ -5920,6 +5920,7 @@ MonoBehaviour:
   _foundItemsUIPrefab: {fileID: 9112354651331177403, guid: 69aee0ca2005b1e4d926df31f6d5a0fc, type: 3}
   _itemsList: {fileID: 11400000, guid: 96c0cca09bf4ccb4c9fcd3579caea502, type: 2}
   _containerTransform: {fileID: 1457708356}
+  maxDistanceToOpen: 5
 --- !u!1 &547552731
 GameObject:
   m_ObjectHideFlags: 0
@@ -6252,7 +6253,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1862425151}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 4.731, y: 44.859, z: 9.251}
 --- !u!114 &617772390
 MonoBehaviour:
@@ -6269,6 +6270,7 @@ MonoBehaviour:
   _foundItemsUIPrefab: {fileID: 9112354651331177403, guid: 69aee0ca2005b1e4d926df31f6d5a0fc, type: 3}
   _itemsList: {fileID: 11400000, guid: 2d6183176f0d27449a56fce93c9e76f7, type: 2}
   _containerTransform: {fileID: 1457708356}
+  maxDistanceToOpen: 5
 --- !u!114 &617772391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7446,7 +7448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &696370571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7520,7 +7522,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: StartConversation
+  conversation: TestCharacteristic
   conversationConversant: {fileID: 0}
   conversationActor: {fileID: 0}
   startConversationEntryID: -1
@@ -15633,7 +15635,7 @@ GameObject:
   - component: {fileID: 1457708358}
   - component: {fileID: 1457708357}
   m_Layer: 5
-  m_Name: Canvas (1)
+  m_Name: CanvasGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17843,7 +17845,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680399931}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1d8c1f6198f00f4d8a8e12f152ef037, type: 3}
   m_Name: 
@@ -20665,9 +20667,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 546177108}
+  - {fileID: 617772389}
   - {fileID: 19725877}
   - {fileID: 212253604}
-  - {fileID: 617772389}
   m_Father: {fileID: 984382003}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
