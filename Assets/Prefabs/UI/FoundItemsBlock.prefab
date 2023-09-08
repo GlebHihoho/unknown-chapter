@@ -119,6 +119,8 @@ MonoBehaviour:
   _gameObjShow: {fileID: 2416159112455865255, guid: b38a5919448c6904382ebc91a80cee37, type: 3}
   _items: []
   _takeAllButton: {fileID: 9112354652042193720}
+  _quickItemView: {fileID: 0}
+  _itemsListFilling: []
 --- !u!1 &9112354651331177403
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +212,6 @@ GameObject:
   - component: {fileID: 9112354652032132067}
   - component: {fileID: 9112354652032132064}
   - component: {fileID: 9112354652032132065}
-  - component: {fileID: 3177445584235070657}
   - component: {fileID: 8151379619022789431}
   m_Layer: 0
   m_Name: ExitButton
@@ -333,23 +334,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3177445584235070657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9112354652032131100}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8117564728754a74830cff7f6c7a93b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _foundItemsUIPrefab: {fileID: 9112354651331177403}
-  _itemsList: {fileID: 0}
-  _itemsListFilling: []
-  _containerTransform: {fileID: 0}
-  maxDistanceToOpen: 5
 --- !u!114 &8151379619022789431
 MonoBehaviour:
   m_ObjectHideFlags: 0
