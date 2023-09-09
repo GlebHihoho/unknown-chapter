@@ -1906,8 +1906,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.2500011
+    canvasScrollPosition: {x: 0, y: 121.816956}
+    canvasZoom: 0.5500011
   - id: 2
     fields:
     - title: Title
@@ -3046,8 +3046,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 62.87404, y: 459.46228}
-    canvasZoom: 1.0399998
+    canvasScrollPosition: {x: 62.143677, y: 131.72954}
+    canvasZoom: 0.83000004
   - id: 3
     fields:
     - title: Title
@@ -12168,7 +12168,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0412\u0413: \u041E\u0434\u0438\u043D\u043E\u043A\u0430\u044F \u0431\u0430\u0448\u043D\u044F
+        value: "\u041E\u0434\u0438\u043D\u043E\u043A\u0430\u044F \u0431\u0430\u0448\u043D\u044F
           \u043D\u0430 \u0431\u0435\u0440\u0435\u0433\u0443 \u043C\u043E\u0440\u044F.
           \u041A\u0442\u043E \u0432\u043E\u043E\u0431\u0449\u0435 \u0441\u0442\u0440\u043E\u0438\u0442
           \u043E\u0434\u0438\u043D\u043E\u043A\u0438\u0435 \u0431\u0430\u0448\u043D\u0438?
@@ -12184,7 +12184,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/BT_VG_1)
         type: 0
         typeString: 
       conversationID: 16
@@ -12247,16 +12247,16 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413) \u0425\u043E\u0440\u043E\u0448\u043E,
-          \u043D\u0430\u0432\u0435\u0440\u043D\u043E\u0435, \u0442\u0443\u0442 \u0431\u044B\u043B\u043E
-          \u0436\u0438\u0442\u044C. \u0412\u043E\u043D \u0432\u0438\u0434 \u043A\u0430\u043A\u043E\u0439
-          \u043A\u0440\u0430\u0441\u0438\u0432\u044B\u0439. \u0418\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E,
-          \u043A\u0430\u043A \u0445\u043E\u0437\u044F\u0438\u043D \u0432\u044B\u0433\u043B\u044F\u0434\u0435\u043B
+        value: "\u0425\u043E\u0440\u043E\u0448\u043E, \u043D\u0430\u0432\u0435\u0440\u043D\u043E\u0435,
+          \u0442\u0443\u0442 \u0431\u044B\u043B\u043E \u0436\u0438\u0442\u044C. \u0412\u043E\u043D
+          \u0432\u0438\u0434 \u043A\u0430\u043A\u043E\u0439 \u043A\u0440\u0430\u0441\u0438\u0432\u044B\u0439.
+          \u0418\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E, \u043A\u0430\u043A
+          \u0445\u043E\u0437\u044F\u0438\u043D \u0432\u044B\u0433\u043B\u044F\u0434\u0435\u043B
           \u0443 \u0432\u0441\u0435\u0433\u043E \u044D\u0442\u043E\u0433\u043E..."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/BT_Oran_1)
         type: 0
         typeString: 
       conversationID: 16
@@ -12273,7 +12273,7 @@ MonoBehaviour:
         destinationDialogueID: 5
         isConnector: 0
         priority: 2
-      conditionsString: Perception(Variable[""]) >= 1
+      conditionsString: GetSkill("Perception") >= 1
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -12307,11 +12307,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413) \u0414\u0432\u0435\u0440\u044C
-          \u0437\u0430\u043F\u0435\u0440\u0442\u0430, \u043D\u043E \u0432\u044B\u0433\u043B\u044F\u0434\u0438\u0442
-          \u043D\u0435 \u043E\u0447\u0435\u043D\u044C-\u0442\u043E \u0443\u0436 \u0438
-          \u043D\u0430\u0434\u0435\u0436\u043D\u043E\u0439. \u041F\u043E\u0445\u043E\u0436\u0435,
-          \u043F\u0435\u0442\u043B\u0438 \u0437\u0430\u0440\u0436\u0430\u0432\u0435\u043B\u0438
+        value: "\u0414\u0432\u0435\u0440\u044C \u0437\u0430\u043F\u0435\u0440\u0442\u0430,
+          \u043D\u043E \u0432\u044B\u0433\u043B\u044F\u0434\u0438\u0442 \u043D\u0435
+          \u043E\u0447\u0435\u043D\u044C-\u0442\u043E \u0443\u0436 \u0438 \u043D\u0430\u0434\u0435\u0436\u043D\u043E\u0439.
+          \u041F\u043E\u0445\u043E\u0436\u0435, \u043F\u0435\u0442\u043B\u0438 \u0437\u0430\u0440\u0436\u0430\u0432\u0435\u043B\u0438
           \u0437\u0430 \u0434\u043E\u043B\u0433\u0438\u0435 \u0433\u043E\u0434\u044B
           \u043D\u0430 \u0441\u043E\u043B\u0435\u043D\u043E\u043C \u043C\u043E\u0440\u0441\u043A\u043E\u043C
           \u0431\u0435\u0440\u0435\u0433\u0443. \u0414\u0443\u043C\u0430\u044E, \u0435\u0435
@@ -12320,7 +12319,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/BT_Oran_7)
         type: 0
         typeString: 
       conversationID: 16
@@ -12343,7 +12342,7 @@ MonoBehaviour:
         destinationDialogueID: 13
         isConnector: 0
         priority: 2
-      conditionsString: PhysicalAbilities(Variable[""]) >= 1
+      conditionsString: GetSkill("PhysicalAbilities") >= 1
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -12377,16 +12376,15 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413) \u0427\u0435\u043C \u043C\u0435\u043D\u044C\u0448\u0435
-          \u0434\u0443\u043C\u0430\u0435\u0448\u044C \u043E\u0431\u043E \u0432\u0441\u0435\u043C
-          \u044D\u0442\u043E\u043C, \u0442\u0435\u043C \u043B\u0443\u0447\u0448\u0435.
-          \u041F\u0440\u043E\u0441\u0442\u043E \u043A\u0430\u043C\u0435\u043D\u044C,
+        value: "\u0427\u0435\u043C \u043C\u0435\u043D\u044C\u0448\u0435 \u0434\u0443\u043C\u0430\u0435\u0448\u044C
+          \u043E\u0431\u043E \u0432\u0441\u0435\u043C \u044D\u0442\u043E\u043C, \u0442\u0435\u043C
+          \u043B\u0443\u0447\u0448\u0435. \u041F\u0440\u043E\u0441\u0442\u043E \u043A\u0430\u043C\u0435\u043D\u044C,
           \u043F\u0440\u043E\u0441\u0442\u043E \u0433\u043B\u0443\u043F\u043E \u043F\u043E\u0441\u0442\u0440\u043E\u0435\u043D\u043D\u0430\u044F
           \u0431\u0430\u0448\u043D\u044F."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/BT_Oran_2)
         type: 0
         typeString: 
       conversationID: 16
@@ -12403,7 +12401,7 @@ MonoBehaviour:
         destinationDialogueID: 5
         isConnector: 0
         priority: 2
-      conditionsString: Perception(Variable[""]) >= 1
+      conditionsString: GetSkill("Perception") >= 1
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -12437,7 +12435,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0412\u0413: \u0414\u0432\u0435\u0440\u044C, \u043A\u0430\u0436\u0435\u0442\u0441\u044F,
+        value: "\u0414\u0432\u0435\u0440\u044C, \u043A\u0430\u0436\u0435\u0442\u0441\u044F,
           \u0437\u0430\u043F\u0435\u0440\u0442\u0430. \u0418 \u043A\u043B\u044E\u0447
           \u043D\u0430\u0432\u0435\u0440\u043D\u044F\u043A\u0430 \u0445\u0438\u0442\u0440\u044B\u0439
           - \u0434\u0440\u0443\u0433\u0438\u0445 \u0432 \u043F\u043E\u0434\u043E\u0431\u043D\u044B\u0445
@@ -12453,7 +12451,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/BT_VG_2)
         type: 0
         typeString: 
       conversationID: 16
@@ -12510,16 +12508,16 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413) \u041F\u043E\u0440\u0430
-          \u0434\u0432\u0438\u0433\u0430\u0442\u044C\u0441\u044F \u0434\u0430\u043B\u044C\u0448\u0435.
-          \u041D\u0435\u0442 \u0432\u0440\u0435\u043C\u0435\u043D\u0438 \u0440\u0430\u0441\u0441\u043C\u0430\u0442\u0440\u0438\u0432\u0430\u0442\u044C
+        value: "\u041F\u043E\u0440\u0430 \u0434\u0432\u0438\u0433\u0430\u0442\u044C\u0441\u044F
+          \u0434\u0430\u043B\u044C\u0448\u0435. \u041D\u0435\u0442 \u0432\u0440\u0435\u043C\u0435\u043D\u0438
+          \u0440\u0430\u0441\u0441\u043C\u0430\u0442\u0440\u0438\u0432\u0430\u0442\u044C
           \u043A\u0430\u0436\u0434\u044B\u0439 \u043A\u0430\u043C\u0435\u043D\u044C
           \u043D\u0430 \u044D\u0442\u043E\u043C \u043F\u0440\u043E\u043A\u043B\u044F\u0442\u043E\u043C
           \u043E\u0441\u0442\u0440\u043E\u0432\u0435."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/BT_Oran_3)
         type: 0
         typeString: 
       conversationID: 16
@@ -12570,15 +12568,14 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413) \u041D\u0430\u0434\u043E
-          \u0431\u0443\u0434\u0435\u0442 \u043A\u0430\u043A-\u043D\u0438\u0431\u0443\u0434\u044C
+        value: "\u041D\u0430\u0434\u043E \u0431\u0443\u0434\u0435\u0442 \u043A\u0430\u043A-\u043D\u0438\u0431\u0443\u0434\u044C
           \u0441\u044E\u0434\u0430 \u0432\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F,
           \u043C\u043E\u0436\u0435\u0442, \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u0441\u044F
           \u043D\u0430\u0439\u0442\u0438 \u043A\u043B\u044E\u0447..."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/BT_Oran_4)
         type: 0
         typeString: 
       conversationID: 16
@@ -12629,15 +12626,14 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0412\u0413: \u041E \u0410\u0434\u0430\u043D\u043E\u0441, \u043E\u043D\u0430
-          \u0447\u0442\u043E-\u0442\u043E \u0432\u0441\u0435-\u0442\u0430\u043A\u0438
-          \u043D\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u0435\u0442 \u043C\u043D\u0435
-          \u0438\u0437 \u0434\u0435\u0442\u0441\u0442\u0432\u0430. \u0427\u0442\u043E-\u0442\u043E
-          \u0434\u0430\u043B\u0435\u043A\u043E\u0435..."
+        value: "\u041E \u0410\u0434\u0430\u043D\u043E\u0441, \u043E\u043D\u0430 \u0447\u0442\u043E-\u0442\u043E
+          \u0432\u0441\u0435-\u0442\u0430\u043A\u0438 \u043D\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u0435\u0442
+          \u043C\u043D\u0435 \u0438\u0437 \u0434\u0435\u0442\u0441\u0442\u0432\u0430.
+          \u0427\u0442\u043E-\u0442\u043E \u0434\u0430\u043B\u0435\u043A\u043E\u0435..."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/BT_VG_3)
         type: 0
         typeString: 
       conversationID: 16
@@ -12694,13 +12690,13 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413) \u041D\u0435\u043A\u043E\u0433\u0434\u0430
-          \u0434\u0443\u043C\u0430\u0442\u044C \u043E \u0433\u043B\u0443\u043F\u043E\u0441\u0442\u044F\u0445!
-          \u041D\u0430\u0434\u043E \u0434\u0432\u0438\u0433\u0430\u0442\u044C\u0441\u044F!"
+        value: "\u041D\u0435\u043A\u043E\u0433\u0434\u0430 \u0434\u0443\u043C\u0430\u0442\u044C
+          \u043E \u0433\u043B\u0443\u043F\u043E\u0441\u0442\u044F\u0445! \u041D\u0430\u0434\u043E
+          \u0434\u0432\u0438\u0433\u0430\u0442\u044C\u0441\u044F!"
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/BT_Oran_5)
         type: 0
         typeString: 
       conversationID: 16
@@ -12745,14 +12741,13 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413) \u042D\u0442\u043E \u0431\u044B\u043B\u043E
-          \u0441\u043B\u0438\u0448\u043A\u043E\u043C \u0434\u0430\u0432\u043D\u043E.
-          \u042F \u0443\u0436\u0435 \u0438 \u043D\u0435 \u043F\u043E\u043C\u043D\u044E.
-          \u0427\u0435\u0440\u0442!"
+        value: "\u042D\u0442\u043E \u0431\u044B\u043B\u043E \u0441\u043B\u0438\u0448\u043A\u043E\u043C
+          \u0434\u0430\u0432\u043D\u043E. \u042F \u0443\u0436\u0435 \u0438 \u043D\u0435
+          \u043F\u043E\u043C\u043D\u044E. \u0427\u0435\u0440\u0442!"
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/BT_Oran_6)
         type: 0
         typeString: 
       conversationID: 16
@@ -12797,8 +12792,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413) (\u041E\u0441\u0442\u0430\u0432\u0438\u0442\u044C
-          \u0434\u0432\u0435\u0440\u044C \u0432 \u043F\u043E\u043A\u043E\u0435)"
+        value: "\u041E\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u0434\u0432\u0435\u0440\u044C
+          \u0432 \u043F\u043E\u043A\u043E\u0435"
         type: 0
         typeString: 
       - title: Sequence
@@ -12870,7 +12865,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 680.044
-        y: 188.87915
+        y: 488.8792
         width: 160
         height: 30
     - id: 13
@@ -12896,8 +12891,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413) (\u041F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C
-          \u0432\u044B\u0431\u0438\u0442\u044C \u0434\u0432\u0435\u0440\u044C)"
+        value: "\u041F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C
+          \u0432\u044B\u0431\u0438\u0442\u044C \u0434\u0432\u0435\u0440\u044C"
         type: 0
         typeString: 
       - title: Sequence
@@ -12952,11 +12947,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0412\u0413: \u041D\u0438\u0447\u0435\u0433\u043E..."
+        value: "\u041D\u0438\u0447\u0435\u0433\u043E..."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/BT_VG_4)
         type: 0
         typeString: 
       conversationID: 16
@@ -13013,8 +13008,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413) (\u041E\u0441\u0442\u0430\u0432\u0438\u0442\u044C
-          \u0434\u0432\u0435\u0440\u044C \u0432 \u043F\u043E\u043A\u043E\u0435)"
+        value: "\u041E\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u0434\u0432\u0435\u0440\u044C
+          \u0432 \u043F\u043E\u043A\u043E\u0435"
         type: 0
         typeString: 
       - title: Sequence
@@ -13028,13 +13023,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 16
-        originDialogueID: 15
-        destinationConversationID: 16
-        destinationDialogueID: 17
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -13042,7 +13031,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 994.16504
+        x: 993.06616
         y: 568.86816
         width: 160
         height: 30
@@ -13069,8 +13058,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413) (\u041F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C
-          \u0432\u044B\u0431\u0438\u0442\u044C \u0434\u0432\u0435\u0440\u044C)"
+        value: "\u041F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C
+          \u0432\u044B\u0431\u0438\u0442\u044C \u0434\u0432\u0435\u0440\u044C"
         type: 0
         typeString: 
       - title: Sequence
@@ -13125,14 +13114,14 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0412\u0413: \u041E\u043F\u044F\u0442\u044C \u043D\u0438\u0447\u0435\u0433\u043E...
+        value: "\u041E\u043F\u044F\u0442\u044C \u043D\u0438\u0447\u0435\u0433\u043E...
           \u041C\u043E\u0436\u0435\u0442 \u043F\u0440\u0435\u043A\u0440\u0430\u0442\u0438\u0448\u044C
           \u044D\u0442\u043E \u0431\u0435\u0441\u043F\u043E\u043B\u0435\u0437\u043D\u043E\u0435
           \u0437\u0430\u043D\u044F\u0442\u0438\u0435?"
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/BT_VG_5)
         type: 0
         typeString: 
       conversationID: 16
@@ -13189,8 +13178,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413) (\u041E\u0441\u0442\u0430\u0432\u0438\u0442\u044C
-          \u0434\u0432\u0435\u0440\u044C \u0432 \u043F\u043E\u043A\u043E\u0435)"
+        value: "\u041E\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u0434\u0432\u0435\u0440\u044C
+          \u0432 \u043F\u043E\u043A\u043E\u0435"
         type: 0
         typeString: 
       - title: Sequence
@@ -13212,8 +13201,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 983.17615
-        y: 713.92303
+        x: 982.0773
+        y: 716.12085
         width: 160
         height: 30
     - id: 19
@@ -13239,8 +13228,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413) (\u041F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C
-          \u0432\u044B\u0431\u0438\u0442\u044C \u0434\u0432\u0435\u0440\u044C)"
+        value: "\u041F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C
+          \u0432\u044B\u0431\u0438\u0442\u044C \u0434\u0432\u0435\u0440\u044C"
         type: 0
         typeString: 
       - title: Sequence
@@ -13301,7 +13290,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0412\u0413: \u041D\u0435 \u043F\u043E\u0434\u0434\u0430\u0435\u0442\u0441\u044F...
+        value: "\u041D\u0435 \u043F\u043E\u0434\u0434\u0430\u0435\u0442\u0441\u044F...
           \u041A\u0430\u0436\u0435\u0442\u0441\u044F, \u044F \u0432\u0438\u0436\u0443
           \u0432 \u0433\u043B\u0443\u0431\u0438\u043D\u0435 \u0431\u0430\u0448\u043D\u0438
           \u043A\u0430\u043A\u043E\u0439-\u0442\u043E \u043F\u0440\u0435\u0434\u043C\u0435\u0442,
@@ -13311,7 +13300,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/BT_VG_7)
         type: 0
         typeString: 
       conversationID: 16
@@ -13322,7 +13311,7 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks: []
-      conditionsString: PhysicalAbilities(Variable[""]) >= 2
+      conditionsString: GetSkill("PhysicalAbilities") >= 2
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -13356,7 +13345,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0412\u0413: \u0418\u0434\u0438\u043E\u0442! \u041A\u0430\u0436\u0435\u0442\u0441\u044F,
+        value: "\u0418\u0434\u0438\u043E\u0442! \u041A\u0430\u0436\u0435\u0442\u0441\u044F,
           \u044F \u0447\u0442\u043E-\u0442\u043E \u0441\u043B\u043E\u043C\u0430\u043B,
           \u0432\u0434\u043E\u0431\u0430\u0432\u043E\u043A \u0440\u0430\u0437\u0431\u0438\u0432
           \u0441\u0435\u0431\u0435 \u0432 \u043A\u0440\u043E\u0432\u044C \u043B\u0438\u0446\u043E.
@@ -13365,7 +13354,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/BT_VG_6)
         type: 0
         typeString: 
       conversationID: 16
@@ -13376,20 +13365,20 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks: []
-      conditionsString: PhysicalAbilities(Variable[""]) < 2
+      conditionsString: GetSkill("PhysicalAbilities") >= 1
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1274.385
-        y: 832.0549
+        x: 1272.946
+        y: 832.7743
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 288.25012, y: 101.63934}
-    canvasZoom: 0.6100002
+    canvasScrollPosition: {x: 113.321884, y: 468.14417}
+    canvasZoom: 1.1799997
   - id: 17
     fields:
     - title: Title
