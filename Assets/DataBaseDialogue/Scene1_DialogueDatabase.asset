@@ -4397,8 +4397,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[var=Conversant]:  \u0418\u0432\u0430\u043D: (\u0437\u0430\u043A\u0430\u0448\u043B\u0438\u0432\u0430\u0435\u0442\u0441\u044F)
-          \u041A\u0445\u0435-\u043A\u0445\u0435, \u043E \u0410\u0434\u0430\u043D\u043E\u0441...
+        value: "\u041A\u0445\u0435-\u043A\u0445\u0435, \u043E \u0410\u0434\u0430\u043D\u043E\u0441...
           \u041D\u0435 \u043F\u043E\u0449\u0430\u0434\u0438\u043B \u043D\u0430\u0448
           \u043A\u043E\u0440\u0430\u0431\u043B\u044C \u0432 \u044D\u0442\u043E\u0442
           \u0440\u0430\u0437. \u0418 \u0435\u0449\u0435 \u0448\u0442\u0443\u0440\u043C\u0430\u043D...
@@ -4419,7 +4418,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_1)
         type: 0
         typeString: 
       conversationID: 4
@@ -4471,16 +4470,15 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[var=Conversant]:  \u0412\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0438\u0439
-          \u0413\u043E\u043B\u043E\u0441 (\u0412\u0413): \u041A\u0430\u0436\u0435\u0442\u0441\u044F,
-          \u0434\u0435\u043B\u043E \u0445\u0443\u0434\u043E. \u0412 \u0431\u044B\u043B\u044B\u0435
-          \u0431\u044B \u0432\u0440\u0435\u043C\u0435\u043D\u0430 \u0442\u0430\u043A\u043E\u0433\u043E
+        value: "\u041A\u0430\u0436\u0435\u0442\u0441\u044F, \u0434\u0435\u043B\u043E
+          \u0445\u0443\u0434\u043E. \u0412 \u0431\u044B\u043B\u044B\u0435 \u0431\u044B
+          \u0432\u0440\u0435\u043C\u0435\u043D\u0430 \u0442\u0430\u043A\u043E\u0433\u043E
           \u043F\u0440\u043E\u0441\u0442\u043E \u0431\u044B \u043E\u0441\u0442\u0430\u0432\u0438\u043B\u0438
           \u0443\u043C\u0438\u0440\u0430\u0442\u044C..."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/beach_Ivan_VG_1)
         type: 0
         typeString: 
       conversationID: 4
@@ -4562,12 +4560,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[var=Actor]:  \u041E\u0440\u0430\u043D (\u0413\u0413): \u0427\u0442\u043E
-          \u0442\u0435\u0431\u0435 \u043D\u0443\u0436\u043D\u043E? "
+        value: "\u0427\u0442\u043E \u0442\u0435\u0431\u0435 \u043D\u0443\u0436\u043D\u043E? "
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/beach_Ivan_Oran_1)
         type: 0
         typeString: 
       conversationID: 4
@@ -4619,27 +4616,27 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[var=Conversant]: \u0418\u0432\u0430\u043D: \u041F\u0430\u0440\u0430
-          \u0434\u043E\u0441\u043E\u043A \u0438\u043B\u0438 \u043F\u0430\u043B\u043E\u043A
-          \u043A\u0430\u043A\u0438\u0445 \u0440\u043E\u0432\u043D\u044B\u0445, \u0434\u0430
-          \u0438 \u0447\u0442\u043E\u0431\u044B \u0431\u044B\u043B\u043E \u0447\u0435\u043C
-          \u0438\u0445 \u0441\u0432\u044F\u0437\u0430\u0442\u044C. \u041D\u0430\u0434\u043E
-          \u043E\u0431\u0435\u0437\u0434\u0432\u0438\u0436\u0438\u0442\u044C \u043D\u043E\u0433\u0443.
-          \u0418 \u0435\u0449\u0435 \u0432\u044B\u043F\u0438\u0442\u044C \u0447\u0442\u043E-\u043D\u0438\u0431\u0443\u0434\u044C,
-          \u0435\u0441\u043B\u0438 \u043D\u0430\u0439\u0434\u0435\u0448\u044C. \u041D\u0430\u0448
-          \u043A\u043E\u0440\u0430\u0431\u043B\u044C \u0432\u0435\u0437 \u0441\u0442\u043E\u043B\u044C\u043A\u043E
-          \u0440\u043E\u043C\u0430, \u0438 \u044F \u043D\u0435 \u043F\u043E\u0432\u0435\u0440\u044E,
-          \u0447\u0442\u043E \u0445\u043E\u0442\u044F \u0431\u044B \u043E\u0434\u043D\u0443
-          \u0431\u0443\u0442\u044B\u043B\u043E\u0447\u043A\u0443 \u043D\u0435 \u0432\u044B\u043D\u0435\u0441\u043B\u043E
-          \u043F\u0440\u0438\u0431\u043E\u0435\u043C! \u041D\u0430\u0434\u043E \u0445\u043E\u0442\u044C
-          \u043A\u0430\u043A-\u0442\u043E \u043E\u0431\u0435\u0437\u0437\u0430\u0440\u0430\u0437\u0438\u0442\u044C
+        value: "\u041F\u0430\u0440\u0430 \u0434\u043E\u0441\u043E\u043A \u0438\u043B\u0438
+          \u043F\u0430\u043B\u043E\u043A \u043A\u0430\u043A\u0438\u0445 \u0440\u043E\u0432\u043D\u044B\u0445,
+          \u0434\u0430 \u0438 \u0447\u0442\u043E\u0431\u044B \u0431\u044B\u043B\u043E
+          \u0447\u0435\u043C \u0438\u0445 \u0441\u0432\u044F\u0437\u0430\u0442\u044C.
+          \u041D\u0430\u0434\u043E \u043E\u0431\u0435\u0437\u0434\u0432\u0438\u0436\u0438\u0442\u044C
+          \u043D\u043E\u0433\u0443. \u0418 \u0435\u0449\u0435 \u0432\u044B\u043F\u0438\u0442\u044C
+          \u0447\u0442\u043E-\u043D\u0438\u0431\u0443\u0434\u044C, \u0435\u0441\u043B\u0438
+          \u043D\u0430\u0439\u0434\u0435\u0448\u044C. \u041D\u0430\u0448 \u043A\u043E\u0440\u0430\u0431\u043B\u044C
+          \u0432\u0435\u0437 \u0441\u0442\u043E\u043B\u044C\u043A\u043E \u0440\u043E\u043C\u0430,
+          \u0438 \u044F \u043D\u0435 \u043F\u043E\u0432\u0435\u0440\u044E, \u0447\u0442\u043E
+          \u0445\u043E\u0442\u044F \u0431\u044B \u043E\u0434\u043D\u0443 \u0431\u0443\u0442\u044B\u043B\u043E\u0447\u043A\u0443
+          \u043D\u0435 \u0432\u044B\u043D\u0435\u0441\u043B\u043E \u043F\u0440\u0438\u0431\u043E\u0435\u043C!
+          \u041D\u0430\u0434\u043E \u0445\u043E\u0442\u044C \u043A\u0430\u043A-\u0442\u043E
+          \u043E\u0431\u0435\u0437\u0437\u0430\u0440\u0430\u0437\u0438\u0442\u044C
           \u0440\u0430\u043D\u0443 \u0434\u0430 \u0432\u044B\u043F\u0438\u0442\u044C.
           \u041F\u043E\u0441\u043B\u0435 \u0442\u0430\u043A\u043E\u0433\u043E \u043D\u0435
           \u0432\u044B\u043F\u0438\u0442\u044C \u2013 \u0433\u0440\u0435\u0445."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_2)
         type: 0
         typeString: 
       conversationID: 4
@@ -4704,12 +4701,12 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): \u042F \u043F\u0440\u0438\u043D\u0435\u0441
-          \u0432\u0441\u0435 \u043D\u0443\u0436\u043D\u043E\u0435. \u0418 \u0440\u043E\u043C."
+        value: "\u042F \u043F\u0440\u0438\u043D\u0435\u0441 \u0432\u0441\u0435 \u043D\u0443\u0436\u043D\u043E\u0435.
+          \u0418 \u0440\u043E\u043C."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/beach_Ivan_Oran_4)
         type: 0
         typeString: 
       conversationID: 4
@@ -4743,7 +4740,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 38.19655
-        y: 335.36816
+        y: 338.55966
         width: 160
         height: 30
     - id: 6
@@ -4769,18 +4766,18 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): \u042F \u043F\u0440\u0438\u043D\u0435\u0441
-          \u0432\u0441\u0435 \u043D\u0443\u0436\u043D\u043E\u0435. \u0418 \u0435\u0449\u0435
-          \u043A\u043E\u0435-\u0447\u0442\u043E... \u042D\u0442\u043E, \u043A\u043E\u043D\u0435\u0447\u043D\u043E,
-          \u043D\u0435 \u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0438\u0439 \u043A\u043B\u044F\u043F,
-          \u043D\u043E \u0434\u0443\u043C\u0430\u044E, \u043E\u043D \u0437\u0430\u0449\u0438\u0442\u0438\u0442
-          \u043C\u0435\u043D\u044F \u043E\u0442 \u0442\u0432\u043E\u0438\u0445 \u043A\u0440\u0438\u043A\u043E\u0432,
+        value: "\u042F \u043F\u0440\u0438\u043D\u0435\u0441 \u0432\u0441\u0435 \u043D\u0443\u0436\u043D\u043E\u0435.
+          \u0418 \u0435\u0449\u0435 \u043A\u043E\u0435-\u0447\u0442\u043E... \u042D\u0442\u043E,
+          \u043A\u043E\u043D\u0435\u0447\u043D\u043E, \u043D\u0435 \u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0438\u0439
+          \u043A\u043B\u044F\u043F, \u043D\u043E \u0434\u0443\u043C\u0430\u044E,
+          \u043E\u043D \u0437\u0430\u0449\u0438\u0442\u0438\u0442 \u043C\u0435\u043D\u044F
+          \u043E\u0442 \u0442\u0432\u043E\u0438\u0445 \u043A\u0440\u0438\u043A\u043E\u0432,
           \u0438 \u0448\u0438\u043D\u0430 \u043D\u0430\u043B\u043E\u0436\u0438\u0442\u0441\u044F
           \u043B\u0443\u0447\u0448\u0435."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/beach_Ivan_Oran_5)
         type: 0
         typeString: 
       conversationID: 4
@@ -4835,11 +4832,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: \u041E \u0411\u0435\u043B\u0438\u0430\u0440...
-          \u041B\u0443\u0447\u0448\u0435 \u0431\u044B \u044D\u0442\u043E \u0431\u044B\u043B
-          \u0440\u043E\u043C. \u0412\u043F\u0440\u043E\u0447\u0435\u043C, \u0432
-          \u043C\u043E\u0435\u043C \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0438
-          \u0432\u044B\u0431\u0438\u0440\u0430\u0442\u044C \u043D\u0435 \u043F\u0440\u0438\u0445\u043E\u0434\u0438\u0442\u0441\u044F.
+        value: "\u041E \u0411\u0435\u043B\u0438\u0430\u0440... \u041B\u0443\u0447\u0448\u0435
+          \u0431\u044B \u044D\u0442\u043E \u0431\u044B\u043B \u0440\u043E\u043C.
+          \u0412\u043F\u0440\u043E\u0447\u0435\u043C, \u0432 \u043C\u043E\u0435\u043C
+          \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0438 \u0432\u044B\u0431\u0438\u0440\u0430\u0442\u044C
+          \u043D\u0435 \u043F\u0440\u0438\u0445\u043E\u0434\u0438\u0442\u0441\u044F.
           {\u043E\u0442\u0434\u0430\u0435\u043C \u0435\u043C\u0443 \u043A\u043B\u044F\u043F}
           \u041E \u0447\u0435\u0440\u0442, \u043A\u0430\u043A \u0436\u0435 \u043E\u0442
           \u043D\u0435\u0435 \u0432\u043E\u043D\u044F\u0435\u0442... \u041E-\u043E-\u043E\u0445.
@@ -4849,7 +4846,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_6)
         type: 0
         typeString: 
       conversationID: 4
@@ -4901,16 +4898,16 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): \u042F \u043E\u0431\u043B\u0430\u0437\u0438\u043B
-          \u0432\u0435\u0441\u044C \u0431\u0435\u0440\u0435\u0433, \u0438 \u043D\u0435
-          \u043D\u0430\u0448\u0435\u043B \u043D\u0438\u0447\u0435\u0433\u043E. \u041F\u0440\u0438\u0434\u0435\u0442\u0441\u044F
+        value: "\u042F \u043E\u0431\u043B\u0430\u0437\u0438\u043B \u0432\u0435\u0441\u044C
+          \u0431\u0435\u0440\u0435\u0433, \u0438 \u043D\u0435 \u043D\u0430\u0448\u0435\u043B
+          \u043D\u0438\u0447\u0435\u0433\u043E. \u041F\u0440\u0438\u0434\u0435\u0442\u0441\u044F
           \u0442\u0435\u0431\u0435 \u043F\u043E\u0442\u0435\u0440\u043F\u0435\u0442\u044C.
           \u0415\u0441\u043B\u0438 \u0431\u0443\u0434\u0435\u0442 \u043B\u0435\u0433\u0447\u0435,
           \u043C\u043E\u0436\u0435\u0448\u044C \u043F\u043E\u043C\u043E\u043B\u0438\u0442\u044C\u0441\u044F."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/beach_Ivan_Oran_6)
         type: 0
         typeString: 
       conversationID: 4
@@ -4964,15 +4961,15 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: \u041E\u0445, \u0410\u0434\u0430\u043D\u043E\u0441!
-          (\u043C\u043E\u043B\u0438\u0442\u0441\u044F) \u0411\u043B\u0430\u0433\u043E\u0441\u043B\u043E\u0432\u0438
-          \u0441\u043B\u0443\u0433\u0443 \u0441\u0432\u043E\u0435\u0433\u043E, \u0437\u0430
-          \u0442\u043E \u0447\u0442\u043E \u0436\u0438\u043B \u043F\u0440\u0430\u0432\u0435\u0434\u043D\u043E,
-          \u0437\u0430 \u0442\u043E \u0447\u0442\u043E..."
+        value: "\u041E\u0445, \u0410\u0434\u0430\u043D\u043E\u0441! (\u043C\u043E\u043B\u0438\u0442\u0441\u044F)
+          \u0411\u043B\u0430\u0433\u043E\u0441\u043B\u043E\u0432\u0438 \u0441\u043B\u0443\u0433\u0443
+          \u0441\u0432\u043E\u0435\u0433\u043E, \u0437\u0430 \u0442\u043E \u0447\u0442\u043E
+          \u0436\u0438\u043B \u043F\u0440\u0430\u0432\u0435\u0434\u043D\u043E, \u0437\u0430
+          \u0442\u043E \u0447\u0442\u043E..."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_7)
         type: 0
         typeString: 
       conversationID: 4
@@ -5023,16 +5020,15 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0412\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0438\u0439 \u0413\u043E\u043B\u043E\u0441
-          (\u0412\u0413): \u041F\u0440\u0430\u0432\u0435\u0434\u043D\u043E \u043E\u043D
-          \u0436\u0438\u043B, \u043A\u0430\u043A \u0436\u0435. \u0412\u0440\u0435\u0442
-          \u0438 \u043D\u0435 \u043A\u0440\u0430\u0441\u043D\u0435\u0435\u0442. \u041C\u043E\u0436\u0435\u0442,
+        value: "\u041F\u0440\u0430\u0432\u0435\u0434\u043D\u043E \u043E\u043D \u0436\u0438\u043B,
+          \u043A\u0430\u043A \u0436\u0435. \u0412\u0440\u0435\u0442 \u0438 \u043D\u0435
+          \u043A\u0440\u0430\u0441\u043D\u0435\u0435\u0442. \u041C\u043E\u0436\u0435\u0442,
           \u043F\u043E\u0431\u044B\u0442\u044C \u0440\u0443\u043A\u043E\u0439 \u0410\u0434\u0430\u043D\u043E\u0441\u0430
           \u0438 \u043D\u0430\u043A\u0430\u0437\u0430\u0442\u044C \u0435\u0433\u043E?"
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/beach_Ivan_VG_2)
         type: 0
         typeString: 
       conversationID: 4
@@ -5089,8 +5085,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): (\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C
-          \u043D\u0430\u043A\u043B\u0430\u0434\u044B\u0432\u0430\u0442\u044C \u0448\u0438\u043D\u0443)"
+        value: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C \u043D\u0430\u043A\u043B\u0430\u0434\u044B\u0432\u0430\u0442\u044C
+          \u0448\u0438\u043D\u0443"
         type: 0
         typeString: 
       - title: Sequence
@@ -5145,9 +5141,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): (\u201C\u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u201D
-          \u043D\u0430\u0434\u0430\u0432\u0438\u0442\u044C \u043D\u0430 \u0440\u0430\u043D\u0443,
-          \u0447\u0442\u043E\u0431\u044B \u0418\u0432\u0430\u043D \u043E\u0434\u0443\u043C\u0430\u043B\u0441\u044F)"
+        value: "\u201CC\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u201D \u043D\u0430\u0434\u0430\u0432\u0438\u0442\u044C
+          \u043D\u0430 \u0440\u0430\u043D\u0443, \u0447\u0442\u043E\u0431\u044B \u0418\u0432\u0430\u043D
+          \u043E\u0434\u0443\u043C\u0430\u043B\u0441\u044F"
         type: 0
         typeString: 
       - title: Sequence
@@ -5202,15 +5198,14 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: ...\u043F\u043E\u043C\u043E\u0433\u0430\u043B
-          \u0431\u043B\u0438\u0436\u043D\u0438\u043C \u0438 \u0434\u0430\u043B\u044C\u043D\u0438\u043C,
-          \u0437\u0430 \u0442\u043E \u0447\u0442\u043E \u0432 \u043C\u043E\u0440\u0435
-          \u0432\u0441\u044E \u0436\u0438\u0437\u043D\u044C \u043F\u0440\u043E\u0432\u0435\u043B,
-          \u0437\u0430 \u0442\u043E \u0447\u0442\u043E...."
+        value: "...\u043F\u043E\u043C\u043E\u0433\u0430\u043B \u0431\u043B\u0438\u0436\u043D\u0438\u043C
+          \u0438 \u0434\u0430\u043B\u044C\u043D\u0438\u043C, \u0437\u0430 \u0442\u043E
+          \u0447\u0442\u043E \u0432 \u043C\u043E\u0440\u0435 \u0432\u0441\u044E \u0436\u0438\u0437\u043D\u044C
+          \u043F\u0440\u043E\u0432\u0435\u043B, \u0437\u0430 \u0442\u043E \u0447\u0442\u043E...."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_8)
         type: 0
         typeString: 
       conversationID: 4
@@ -5261,13 +5256,12 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: \u0410-\u0430-\u0430-\u0430-\u0430-\u0430!
-          \u041C\u0430\u0442\u044C \u0442\u0432\u043E\u044E! \u0411\u043E\u043B\u044C\u043D\u043E!
-          \u0423-\u0443-\u0443...."
+        value: " \u0410-\u0430-\u0430-\u0430-\u0430-\u0430! \u041C\u0430\u0442\u044C
+          \u0442\u0432\u043E\u044E! \u0411\u043E\u043B\u044C\u043D\u043E! \u0423-\u0443-\u0443...."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_10)
         type: 0
         typeString: 
       conversationID: 4
@@ -5318,13 +5312,13 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: \u041F\u043E\u043C\u043E\u0433\u0438, \u0410\u0434\u0430\u043D\u043E\u0441!
+        value: "\u041F\u043E\u043C\u043E\u0433\u0438, \u0410\u0434\u0430\u043D\u043E\u0441!
           \u0417\u0430\u043A\u043B\u0438\u043D\u0430\u044E \u0442\u0435\u0431\u044F!
           \u041E, \u0431\u043E\u0433\u0438..."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_9)
         type: 0
         typeString: 
       conversationID: 4
@@ -5375,8 +5369,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0412\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0438\u0439 \u0413\u043E\u043B\u043E\u0441
-          (\u0412\u0413): \u041E\u0434\u043D\u043E\u0433\u043E \u0410\u0434\u0430\u043D\u043E\u0441\u0430,
+        value: "\u041E\u0434\u043D\u043E\u0433\u043E \u0410\u0434\u0430\u043D\u043E\u0441\u0430,
           \u0432\u0438\u0434\u0430\u0442\u044C, \u0435\u043C\u0443 \u0443\u0436\u0435
           \u043C\u0430\u043B\u043E. \u0422\u0435\u043F\u0435\u0440\u044C \u0431\u043E\u0433\u0438
           \u043F\u043E\u0448\u043B\u0438. \u0427\u0442\u043E \u0434\u0430\u043B\u044C\u0448\u0435?
@@ -5385,7 +5378,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/beach_Ivan_VG_3)
         type: 0
         typeString: 
       conversationID: 4
@@ -5442,8 +5435,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): (\u0437\u0430\u0442\u044F\u043D\u0443\u0442\u044C
-          \u0441 \u043E\u0431\u044B\u0447\u043D\u043E\u0439 \u0441\u0438\u043B\u043E\u0439)"
+        value: "\u0417\u0430\u0442\u044F\u043D\u0443\u0442\u044C \u0441 \u043E\u0431\u044B\u0447\u043D\u043E\u0439
+          \u0441\u0438\u043B\u043E\u0439"
         type: 0
         typeString: 
       - title: Sequence
@@ -5498,12 +5491,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): \u0422\u0430\u043A, \u0434\u0443\u043C\u0430\u044E,
-          \u0445\u0432\u0430\u0442\u0438\u0442."
+        value: "\u0422\u0430\u043A, \u0434\u0443\u043C\u0430\u044E, \u0445\u0432\u0430\u0442\u0438\u0442."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/beach_Ivan_Oran_7_v2)
         type: 0
         typeString: 
       conversationID: 4
@@ -5554,12 +5546,12 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: \u0414\u0430 \u0431\u043B\u0430\u0433\u043E\u0441\u043B\u0430\u0432\u044F\u0442
+        value: "\u0414\u0430 \u0431\u043B\u0430\u0433\u043E\u0441\u043B\u0430\u0432\u044F\u0442
           \u0442\u0435\u0431\u044F \u0431\u043E\u0433\u0438, \u0447\u0435-\u0435-\u0435\u0440\u0442..."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_12)
         type: 0
         typeString: 
       conversationID: 4
@@ -5610,8 +5602,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): (\u0437\u0430\u0442\u044F\u043D\u0443\u0442\u044C
-          \u043F\u043E\u0432\u044F\u0437\u043A\u0443 \u043F\u043E\u0442\u0443\u0436\u0435)"
+        value: "\u0417\u0430\u0442\u044F\u043D\u0443\u0442\u044C \u043F\u043E\u0432\u044F\u0437\u043A\u0443
+          \u043F\u043E\u0442\u0443\u0436\u0435"
         type: 0
         typeString: 
       - title: Sequence
@@ -5666,12 +5658,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D:  \u041E \u0447\u0435\u0440\u0442! \u041D\u0435
-          \u0442\u0443\u0433\u043E?"
+        value: " \u041E \u0447\u0435\u0440\u0442! \u041D\u0435 \u0442\u0443\u0433\u043E?"
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_11)
         type: 0
         typeString: 
       conversationID: 4
@@ -5722,11 +5713,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): \u0411\u043E\u043B\u0435\u0435-\u043C\u0435\u043D\u0435\u0435..."
+        value: "\u0411\u043E\u043B\u0435\u0435-\u043C\u0435\u043D\u0435\u0435..."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/beach_Ivan_Oran_8)
         type: 0
         typeString: 
       conversationID: 4
@@ -5777,18 +5768,18 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: \u041E\u0445, \u043F\u043E\u043C\u043E\u0433\u0438.
-          \u041D\u0430\u0434\u0435\u044E\u0441\u044C, \u043B\u0435\u043A\u0430\u0440\u044C
-          \u0438\u0437 \u0442\u0435\u0431\u044F \u043B\u0443\u0447\u0448\u0435, \u0447\u0435\u043C
-          \u0438\u0437 \u043C\u0435\u043D\u044F. (\u043F\u044C\u0435\u0442) \u042D\u0442\u043E
-          \u043F\u043E\u043C\u043E\u0436\u0435\u0442 \u043C\u043D\u0435 \u0441\u043F\u0440\u0430\u0432\u0438\u0442\u044C\u0441\u044F
+        value: "\u041E\u0445, \u043F\u043E\u043C\u043E\u0433\u0438. \u041D\u0430\u0434\u0435\u044E\u0441\u044C,
+          \u043B\u0435\u043A\u0430\u0440\u044C \u0438\u0437 \u0442\u0435\u0431\u044F
+          \u043B\u0443\u0447\u0448\u0435, \u0447\u0435\u043C \u0438\u0437 \u043C\u0435\u043D\u044F.
+          (\u043F\u044C\u0435\u0442) \u042D\u0442\u043E \u043F\u043E\u043C\u043E\u0436\u0435\u0442
+          \u043C\u043D\u0435 \u0441\u043F\u0440\u0430\u0432\u0438\u0442\u044C\u0441\u044F
           \u0441 \u0431\u043E\u043B\u044C\u044E. \u0427\u0442\u043E \u0436, \u043F\u0440\u0438\u0441\u0442\u0443\u043F\u0438\u043C,
           \u0434\u0430 \u043F\u043E\u043C\u043E\u0436\u0435\u0442 \u043D\u0430\u043C
           \u0418\u043D\u043D\u043E\u0441!."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_5)
         type: 0
         typeString: 
       - title: EventGuid
@@ -5856,11 +5847,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): \u0411\u043E\u043B\u044C\u043D\u043E?"
+        value: "\u0411\u043E\u043B\u044C\u043D\u043E?"
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/beach_Ivan_Oran_2)
         type: 0
         typeString: 
       conversationID: 4
@@ -5912,11 +5903,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: \u0415\u0449\u0435 \u043A\u0430\u043A!
-          \u0414\u0430\u0432\u043D\u043E \u044F \u0432 \u0442\u0430\u043A\u0443\u044E
-          \u0437\u0430\u0432\u0430\u0440\u0443\u0448\u043A\u0443 \u043D\u0435 \u043F\u043E\u043F\u0430\u0434\u0430\u043B.
-          \u0421 \u0442\u0435\u0445 \u0441\u0430\u043C\u044B\u0445 \u043F\u043E\u0440,
-          \u043A\u0430\u043A \u0432 \u043A\u0430\u0431\u0430\u043A\u0435 \u0441 \u0432\u0430\u0440\u0430\u043D\u0442\u0441\u043A\u0438\u043C\u0438
+        value: "\u0415\u0449\u0435 \u043A\u0430\u043A! \u0414\u0430\u0432\u043D\u043E
+          \u044F \u0432 \u0442\u0430\u043A\u0443\u044E \u0437\u0430\u0432\u0430\u0440\u0443\u0448\u043A\u0443
+          \u043D\u0435 \u043F\u043E\u043F\u0430\u0434\u0430\u043B. \u0421 \u0442\u0435\u0445
+          \u0441\u0430\u043C\u044B\u0445 \u043F\u043E\u0440, \u043A\u0430\u043A \u0432
+          \u043A\u0430\u0431\u0430\u043A\u0435 \u0441 \u0432\u0430\u0440\u0430\u043D\u0442\u0441\u043A\u0438\u043C\u0438
           \u043C\u043E\u0440\u0435\u0445\u043E\u0434\u0430\u043C\u0438 \u043D\u0435
           \u0441\u0445\u043B\u0435\u0441\u0442\u043D\u0443\u043B\u0438\u0441\u044C.
           \u0412\u043F\u0440\u043E\u0447\u0435\u043C, \u043D\u0443 \u0435\u0433\u043E
@@ -5924,7 +5915,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_3)
         type: 0
         typeString: 
       conversationID: 4
@@ -5969,13 +5960,12 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): \u0422\u0435\u0431\u0435
-          \u043F\u043E\u0432\u0435\u0437\u043B\u043E - \u0442\u044B \u0445\u043E\u0442\u044F
-          \u0431\u044B \u0436\u0438\u0432."
+        value: "\u0422\u0435\u0431\u0435 \u043F\u043E\u0432\u0435\u0437\u043B\u043E
+          - \u0442\u044B \u0445\u043E\u0442\u044F \u0431\u044B \u0436\u0438\u0432."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/beach_Ivan_Oran_3_v1)
         type: 0
         typeString: 
       conversationID: 4
@@ -6027,13 +6017,13 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: \u0427\u0442\u043E \u0441 \u043E\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u043C\u0438
+        value: "\u0427\u0442\u043E \u0441 \u043E\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u043C\u0438
           \u043F\u0430\u0440\u043D\u044F\u043C\u0438? \u0422\u044B \u043D\u0430\u0448\u0435\u043B
           \u0435\u0449\u0435 \u043A\u043E\u0433\u043E-\u043D\u0438\u0431\u0443\u0434\u044C?"
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_4)
         type: 0
         typeString: 
       conversationID: 4
@@ -6090,13 +6080,13 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): \u041F\u0430\u0440\u043D\u0438
-          \u043B\u0435\u0436\u0430\u0442, \u043D\u043E \u0431\u0435\u0437 \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F...
+        value: "\u041F\u0430\u0440\u043D\u0438 \u043B\u0435\u0436\u0430\u0442, \u043D\u043E
+          \u0431\u0435\u0437 \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F...
           \u0411\u043E\u044E\u0441\u044C, \u043E\u043D\u0438 \u0432\u0441\u0435 \u043C\u0435\u0440\u0442\u0432\u044B."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/beach_Ivan_Oran_13)
         type: 0
         typeString: 
       conversationID: 4
@@ -6148,14 +6138,13 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): \u041C\u0435\u0440\u0442\u0432\u044B
-          \u0432\u0441\u0435. \u041D\u0430\u0434\u0435\u044E\u0441\u044C, \u043C\u044B
-          \u0438\u043C \u043D\u0435 \u043F\u043E\u0437\u0430\u0432\u0438\u0434\u0443\u0435\u043C
+        value: "\u041C\u0435\u0440\u0442\u0432\u044B \u0432\u0441\u0435. \u041D\u0430\u0434\u0435\u044E\u0441\u044C,
+          \u043C\u044B \u0438\u043C \u043D\u0435 \u043F\u043E\u0437\u0430\u0432\u0438\u0434\u0443\u0435\u043C
           \u0441\u0435\u0433\u043E\u0434\u043D\u044F."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/beach_Ivan_Oran_14)
         type: 0
         typeString: 
       conversationID: 4
@@ -6173,7 +6162,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: "Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u044B\u0435_\u0442\u0435\u043B\u0430\"]
-        > 0"
+        == 0"
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -6207,7 +6196,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: \u0416\u0430\u043B\u044C, \u043A\u043E\u043D\u0435\u0447\u043D\u043E,
+        value: "\u0416\u0430\u043B\u044C, \u043A\u043E\u043D\u0435\u0447\u043D\u043E,
           \u0445\u043E\u0442\u044C \u0438 \u043D\u0435 \u0432\u0441\u0435\u0445.
           \u041C\u043E\u0440\u0435 - \u043E\u043D\u043E \u0442\u0430\u043A\u043E\u0435.
           \u0412\u0441\u0435\u0445 \u0437\u0430\u0431\u0435\u0440\u0435\u0442, \u043A\u043E\u0433\u043E
@@ -6218,7 +6207,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_20)
         type: 0
         typeString: 
       conversationID: 4
@@ -6372,7 +6361,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1716.5785
+        x: 1717.7981
         y: 388.66513
         width: 160
         height: 30
@@ -6399,16 +6388,16 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): \u042F \u043F\u043E\u0445\u043E\u0440\u043E\u043D\u0438\u043B
-          \u043F\u0430\u0440\u043D\u0435\u0439. \u041F\u0440\u0438\u0448\u043B\u043E\u0441\u044C
-          \u0438\u0437\u0440\u044F\u0434\u043D\u043E \u043F\u043E\u0432\u043E\u0437\u0438\u0442\u044C\u0441\u044F
-          \u0441 \u0438\u0445 \u0442\u0435\u043B\u0430\u043C\u0438 - \u043D\u0430\u0434\u0435\u044E\u0441\u044C,
+        value: "\u042F \u043F\u043E\u0445\u043E\u0440\u043E\u043D\u0438\u043B \u043F\u0430\u0440\u043D\u0435\u0439.
+          \u041F\u0440\u0438\u0448\u043B\u043E\u0441\u044C \u0438\u0437\u0440\u044F\u0434\u043D\u043E
+          \u043F\u043E\u0432\u043E\u0437\u0438\u0442\u044C\u0441\u044F \u0441 \u0438\u0445
+          \u0442\u0435\u043B\u0430\u043C\u0438 - \u043D\u0430\u0434\u0435\u044E\u0441\u044C,
           \u0432\u0441\u0435 \u044D\u0442\u043E \u0431\u044B\u043B\u043E \u043D\u0435
           \u0437\u0440\u044F."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/beach_Ivan_Oran_15_v2)
         type: 0
         typeString: 
       conversationID: 4
@@ -6461,18 +6450,18 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): \u0422\u0440\u0443\u043F\u044B
-          \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u0441\u0436\u0435\u0447\u044C
-          \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E \u0442\u043E\u0433\u043E
-          \u043C\u0430\u0441\u043B\u0430, \u0447\u0442\u043E \u043C\u044B \u0432\u0435\u0437\u043B\u0438.
-          \u0425\u043E\u0442\u044F \u0431\u044B \u043D\u0435 \u043F\u0440\u0438\u0448\u043B\u043E\u0441\u044C
-          \u0438\u0445 \u0432\u0441\u0435\u0445 \u0437\u0430\u043A\u0430\u043F\u044B\u0432\u0430\u0442\u044C
+        value: "\u0422\u0440\u0443\u043F\u044B \u0443\u0434\u0430\u043B\u043E\u0441\u044C
+          \u0441\u0436\u0435\u0447\u044C \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E
+          \u0442\u043E\u0433\u043E \u043C\u0430\u0441\u043B\u0430, \u0447\u0442\u043E
+          \u043C\u044B \u0432\u0435\u0437\u043B\u0438. \u0425\u043E\u0442\u044F \u0431\u044B
+          \u043D\u0435 \u043F\u0440\u0438\u0448\u043B\u043E\u0441\u044C \u0438\u0445
+          \u0432\u0441\u0435\u0445 \u0437\u0430\u043A\u0430\u043F\u044B\u0432\u0430\u0442\u044C
           \u0438 \u0442\u0440\u0430\u0442\u0438\u0442\u044C \u0441\u0438\u043B\u044B
           \u043F\u043E\u043F\u0443\u0441\u0442\u0443."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/beach_Ivan_Oran_16)
         type: 0
         typeString: 
       conversationID: 4
@@ -6525,8 +6514,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: \u041D\u0430\u0434\u0435\u044E\u0441\u044C,
-          \u0442\u044B \u0437\u0430\u043A\u043E\u043F\u0430\u043B \u0438\u0445 \u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E
+        value: "\u041D\u0430\u0434\u0435\u044E\u0441\u044C, \u0442\u044B \u0437\u0430\u043A\u043E\u043F\u0430\u043B
+          \u0438\u0445 \u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E
           \u0433\u043B\u0443\u0431\u043E\u043A\u043E. \u042F \u0441\u043B\u044B\u0448\u0430\u043B
           \u0441\u043B\u0438\u0448\u043A\u043E\u043C \u043C\u043D\u043E\u0433\u043E
           \u0438\u0441\u0442\u043E\u0440\u0438\u0439 \u043E \u0442\u043E\u043C, \u043A\u0430\u043A
@@ -6539,7 +6528,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_21)
         type: 0
         typeString: 
       conversationID: 4
@@ -6584,7 +6573,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: \u0414\u0430, \u044D\u0442\u043E \u0445\u043E\u0440\u043E\u0448\u0430\u044F
+        value: "\u0414\u0430, \u044D\u0442\u043E \u0445\u043E\u0440\u043E\u0448\u0430\u044F
           \u0438\u0434\u0435\u044F. \u041D\u0430\u0434\u0435\u044E\u0441\u044C, \u0443
           \u043D\u0430\u0441 \u043E\u0441\u0442\u0430\u043B\u043E\u0441\u044C \u0445\u043E\u0442\u044C
           \u043D\u0435\u043C\u043D\u043E\u0436\u043A\u043E \u043C\u0430\u0441\u043B\u0430?
@@ -6597,7 +6586,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_22)
         type: 0
         typeString: 
       conversationID: 4
@@ -6642,12 +6631,12 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): (\u0432\u043F\u0440\u0430\u0432\u043B\u044F\u0435\u043C
-          \u043D\u043E\u0433\u0443) \u041B\u0443\u0447\u0448\u0435?"
+        value: "{\u0432\u043F\u0440\u0430\u0432\u043B\u044F\u0435\u043C \u043D\u043E\u0433\u0443)
+          \u041B\u0443\u0447\u0448\u0435?"
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/beach_Ivan_Oran_9)
         type: 0
         typeString: 
       conversationID: 4
@@ -6698,15 +6687,13 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: (\u0435\u0441\u043B\u0438 \u0431\u044B\u043B
-          \u0432 \u043E\u0442\u043A\u043B\u044E\u0447\u043A\u0435 - \u043E\u0447\u0443\u0445\u0438\u0432\u0430\u0435\u0442\u0441\u044F)
-          \u0411\u0435\u043B\u0438\u0430\u0440 \u0435\u0433\u043E \u0434\u0435\u0440\u0438,
+        value: "\u0411\u0435\u043B\u0438\u0430\u0440 \u0435\u0433\u043E \u0434\u0435\u0440\u0438,
           \u0434\u043E \u0447\u0435\u0433\u043E \u0436\u0435 \u044D\u0442\u043E \u0431\u043E\u043B\u044C\u043D\u043E!
           \u0413\u0434\u0435 \u044D\u0442\u043E \u043C\u044B?"
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_13)
         type: 0
         typeString: 
       conversationID: 4
@@ -6757,13 +6744,12 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): \u0421\u0443\u0434\u044F
-          \u043F\u043E \u0432\u0441\u0435\u043C\u0443, \u043C\u044B \u043F\u043E\u043F\u0430\u043B\u0438
-          \u043F\u043E\u0434 \u0411\u0430\u0440\u044C\u0435\u0440."
+        value: "\u0421\u0443\u0434\u044F \u043F\u043E \u0432\u0441\u0435\u043C\u0443,
+          \u043C\u044B \u043F\u043E\u043F\u0430\u043B\u0438 \u043F\u043E\u0434 \u0411\u0430\u0440\u044C\u0435\u0440."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/beach_Ivan_Oran_10)
         type: 0
         typeString: 
       conversationID: 4
@@ -6814,10 +6800,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: (\u043C\u043E\u0440\u0449\u0430\u0441\u044C)
-          \u0414\u0430 \u0443\u0436, \u043D\u0435 \u043F\u043E\u0432\u0435\u0437\u043B\u043E
-          \u043D\u0430\u043C. \u041E, \u0418\u043D\u043D\u043E\u0441... \u041C\u043D\u0435
-          \u0441\u0435\u0439\u0447\u0430\u0441 \u043D\u0435 \u0434\u043E \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440\u043E\u0432
+        value: "(\u043C\u043E\u0440\u0449\u0430\u0441\u044C) \u0414\u0430 \u0443\u0436,
+          \u043D\u0435 \u043F\u043E\u0432\u0435\u0437\u043B\u043E \u043D\u0430\u043C.
+          \u041E, \u0418\u043D\u043D\u043E\u0441... \u041C\u043D\u0435 \u0441\u0435\u0439\u0447\u0430\u0441
+          \u043D\u0435 \u0434\u043E \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440\u043E\u0432
           \u044F\u0432\u043D\u043E \u0443\u0436. \u0411\u0443\u0434\u044C \u0434\u0440\u0443\u0433\u043E\u043C,
           \u043F\u043E\u0438\u0449\u0438 \u043A\u0430\u043A\u043E\u0435-\u043D\u0438\u0431\u0443\u0434\u044C
           \u0443\u0431\u0435\u0436\u0438\u0449\u0435. \u0415\u0441\u043B\u0438 \u044D\u0442\u043E
@@ -6830,7 +6816,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_14)
         type: 0
         typeString: 
       conversationID: 4
@@ -6861,7 +6847,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 342.6583
-        y: 1182.3936
+        y: 1183.3936
         width: 160
         height: 30
     - id: 41
@@ -6887,14 +6873,14 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): \u0420\u0430\u0437\u0443\u043C\u043D\u0435\u0435
-          \u0431\u0443\u0434\u0435\u0442 \u0442\u0435\u0431\u044F \u043E\u0441\u0442\u0430\u0432\u0438\u0442\u044C
+        value: "\u0420\u0430\u0437\u0443\u043C\u043D\u0435\u0435 \u0431\u0443\u0434\u0435\u0442
+          \u0442\u0435\u0431\u044F \u043E\u0441\u0442\u0430\u0432\u0438\u0442\u044C
           \u0437\u0434\u0435\u0441\u044C \u043D\u0430 \u0441\u044A\u0435\u0434\u0435\u043D\u0438\u0435
           \u0448\u043D\u044B\u0433\u0430\u043C."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/beach_Ivan_Oran_11_v2)
         type: 0
         typeString: 
       conversationID: 4
@@ -6945,10 +6931,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: (\u0438\u0441\u043F\u0443\u0433\u0430\u043D\u043D\u043E)
-          \u042D\u0439-\u044D\u0439! \u042F \u043D\u0430\u0434\u0435\u044E\u0441\u044C,
-          \u0442\u044B \u0442\u0430\u043A \u043F\u043B\u043E\u0445\u043E \u0448\u0443\u0442\u0438\u0448\u044C!
-          \u041D\u0435 \u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0439 \u043C\u0435\u043D\u044F
+        value: "(\u0438\u0441\u043F\u0443\u0433\u0430\u043D\u043D\u043E) \u042D\u0439-\u044D\u0439!
+          \u042F \u043D\u0430\u0434\u0435\u044E\u0441\u044C, \u0442\u044B \u0442\u0430\u043A
+          \u043F\u043B\u043E\u0445\u043E \u0448\u0443\u0442\u0438\u0448\u044C! \u041D\u0435
+          \u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0439 \u043C\u0435\u043D\u044F
           \u0437\u0434\u0435\u0441\u044C, \u0441\u043B\u044B\u0448\u0438\u0448\u044C?!
           \u0412\u043E\u043E\u0431\u0449\u0435, \u043F\u043E\u043C\u043D\u0438, \u0435\u0441\u043B\u0438
           \u0431\u044B \u043D\u0435 \u044F, \u0442\u043E \u0442\u0435\u0431\u044F
@@ -6963,7 +6949,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_15_v1)
         type: 0
         typeString: 
       conversationID: 4
@@ -7000,7 +6986,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 251.2297
-        y: 1300.9651
+        y: 1301.9651
         width: 160
         height: 30
     - id: 43
@@ -7026,14 +7012,14 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0440\u0430\u043D (\u0413\u0413): \u0420\u0430\u0437\u0443\u043C\u0435\u0435\u0442\u0441\u044F,
-          \u043D\u0435 \u0431\u0440\u043E\u0448\u0443. \u0411\u043E\u043B\u044C\u043D\u043E
-          \u043D\u0430\u0434\u043E \u043C\u043D\u0435 \u0442\u0435\u0431\u044F \u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0442\u044C
+        value: "\u0420\u0430\u0437\u0443\u043C\u0435\u0435\u0442\u0441\u044F, \u043D\u0435
+          \u0431\u0440\u043E\u0448\u0443. \u0411\u043E\u043B\u044C\u043D\u043E \u043D\u0430\u0434\u043E
+          \u043C\u043D\u0435 \u0442\u0435\u0431\u044F \u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0442\u044C
           \u0437\u0434\u0435\u0441\u044C."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Oran/beach_Ivan_Oran_12)
         type: 0
         typeString: 
       conversationID: 4
@@ -7084,13 +7070,13 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: \u042F \u0440\u0430\u0434, \u0447\u0442\u043E
-          \u0442\u044B \u0442\u0430\u043A \u0434\u0443\u043C\u0430\u0435\u0448\u044C.
-          \u0412 \u0441\u0430\u043C\u043E\u043C \u0434\u0435\u043B\u0435, \u0440\u0430\u0434."
+        value: "\u042F \u0440\u0430\u0434, \u0447\u0442\u043E \u0442\u044B \u0442\u0430\u043A
+          \u0434\u0443\u043C\u0430\u0435\u0448\u044C. \u0412 \u0441\u0430\u043C\u043E\u043C
+          \u0434\u0435\u043B\u0435, \u0440\u0430\u0434."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_16)
         type: 0
         typeString: 
       conversationID: 4
@@ -7153,19 +7139,17 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: {\u0435\u0441\u043B\u0438 \u043C\u044B
-          \u0434\u0430\u0432\u0430\u043B\u0438 \u0435\u043C\u0443 \u0440\u043E\u043C}
-          \u0411\u0435\u043B\u0438\u0430\u0440, \u043A\u0430\u043A \u0436\u0435 \u043C\u0435\u043D\u044F
-          \u043A\u043B\u043E\u043D\u0438\u0442 \u0432 \u0441\u043E\u043D \u043F\u043E\u0441\u043B\u0435
-          \u0440\u043E\u043C\u0430. \u0425\u043E\u0440\u043E\u0448\u0438\u0439 \u043D\u0430\u043F\u0438\u0442\u043E\u043A,
-          \u0445\u043E\u0440\u043E\u0448\u0438\u0439. \u042F, \u0435\u0441\u043B\u0438
-          \u0447\u0442\u043E, \u0437\u0434\u0435\u0441\u044C \u0431\u0443\u0434\u0443.
-          \u0412\u0441\u0435 \u0440\u0430\u0432\u043D\u043E \u043C\u043D\u0435 \u043D\u0438\u043A\u0430\u043A
-          \u043D\u0435 \u0443\u0431\u0435\u0436\u0430\u0442\u044C."
+        value: "\u0411\u0435\u043B\u0438\u0430\u0440, \u043A\u0430\u043A \u0436\u0435
+          \u043C\u0435\u043D\u044F \u043A\u043B\u043E\u043D\u0438\u0442 \u0432 \u0441\u043E\u043D
+          \u043F\u043E\u0441\u043B\u0435 \u0440\u043E\u043C\u0430. \u0425\u043E\u0440\u043E\u0448\u0438\u0439
+          \u043D\u0430\u043F\u0438\u0442\u043E\u043A, \u0445\u043E\u0440\u043E\u0448\u0438\u0439.
+          \u042F, \u0435\u0441\u043B\u0438 \u0447\u0442\u043E, \u0437\u0434\u0435\u0441\u044C
+          \u0431\u0443\u0434\u0443. \u0412\u0441\u0435 \u0440\u0430\u0432\u043D\u043E
+          \u043C\u043D\u0435 \u043D\u0438\u043A\u0430\u043A \u043D\u0435 \u0443\u0431\u0435\u0436\u0430\u0442\u044C."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_17)
         type: 0
         typeString: 
       conversationID: 4
@@ -7211,20 +7195,18 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: {\u0435\u0441\u043B\u0438 \u043C\u044B
-          \u0432\u0441\u0442\u0430\u0432\u043B\u044F\u043B\u0438 \u0435\u043C\u0443
-          \u043A\u043B\u044F\u043F} \u0411\u0435\u043B\u0438\u0430\u0440, \u043A\u0430\u043A
-          \u0436\u0435 \u0433\u043E\u043B\u043E\u0432\u0430 \u0431\u043E\u043B\u0438\u0442
-          \u043E\u0442 \u0442\u0432\u043E\u0435\u0439 \u0442\u0440\u044F\u043F\u043A\u0438.
-          \u041E\u0442\u043A\u0443\u0434\u0430 \u0442\u044B \u0435\u0435 \u0434\u043E\u0441\u0442\u0430\u043B?
-          \u0412\u043F\u0440\u043E\u0447\u0435\u043C, \u043D\u0435 \u0445\u043E\u0447\u0443
-          \u0437\u043D\u0430\u0442\u044C. \u042F, \u0435\u0441\u043B\u0438 \u0447\u0442\u043E,
-          \u0437\u0434\u0435\u0441\u044C \u0431\u0443\u0434\u0443. \u0427\u0435\u0440\u0442...
-          \u0414\u043E \u0447\u0435\u0433\u043E \u0436\u0435 \u0431\u043E\u043B\u044C\u043D\u043E..."
+        value: "\u0411\u0435\u043B\u0438\u0430\u0440, \u043A\u0430\u043A \u0436\u0435
+          \u0433\u043E\u043B\u043E\u0432\u0430 \u0431\u043E\u043B\u0438\u0442 \u043E\u0442
+          \u0442\u0432\u043E\u0435\u0439 \u0442\u0440\u044F\u043F\u043A\u0438. \u041E\u0442\u043A\u0443\u0434\u0430
+          \u0442\u044B \u0435\u0435 \u0434\u043E\u0441\u0442\u0430\u043B? \u0412\u043F\u0440\u043E\u0447\u0435\u043C,
+          \u043D\u0435 \u0445\u043E\u0447\u0443 \u0437\u043D\u0430\u0442\u044C. \u042F,
+          \u0435\u0441\u043B\u0438 \u0447\u0442\u043E, \u0437\u0434\u0435\u0441\u044C
+          \u0431\u0443\u0434\u0443. \u0427\u0435\u0440\u0442... \u0414\u043E \u0447\u0435\u0433\u043E
+          \u0436\u0435 \u0431\u043E\u043B\u044C\u043D\u043E..."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_18)
         type: 0
         typeString: 
       conversationID: 4
@@ -7270,17 +7252,16 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u0432\u0430\u043D: {\u0435\u0441\u043B\u0438 \u043B\u0435\u0447\u0438\u043B\u0438
-          \u0431\u0435\u0437 \u0432\u0441\u0435\u0433\u043E} \u0411\u0443\u0434\u044C
-          \u0442\u044B \u043F\u0440\u043E\u043A\u043B\u044F\u0442, \u043E-\u043E-\u043E\u0445.
-          \u0414\u043E \u0447\u0435\u0433\u043E \u0436\u0435 \u0431\u043E\u043B\u044C\u043D\u043E.
-          \u041D\u0430\u0434\u0435\u044E\u0441\u044C, \u0438\u0437 \u0442\u0435\u0431\u044F
-          \u0431\u043E\u0433\u0438 \u0445\u043E\u0442\u0435\u043B\u0438 \u0441\u0434\u0435\u043B\u0430\u0442\u044C
-          \u0445\u043E\u0440\u043E\u0448\u0435\u0433\u043E \u043B\u0435\u043A\u0430\u0440\u044F."
+        value: "\u0411\u0443\u0434\u044C \u0442\u044B \u043F\u0440\u043E\u043A\u043B\u044F\u0442,
+          \u043E-\u043E-\u043E\u0445. \u0414\u043E \u0447\u0435\u0433\u043E \u0436\u0435
+          \u0431\u043E\u043B\u044C\u043D\u043E. \u041D\u0430\u0434\u0435\u044E\u0441\u044C,
+          \u0438\u0437 \u0442\u0435\u0431\u044F \u0431\u043E\u0433\u0438 \u0445\u043E\u0442\u0435\u043B\u0438
+          \u0441\u0434\u0435\u043B\u0430\u0442\u044C \u0445\u043E\u0440\u043E\u0448\u0435\u0433\u043E
+          \u043B\u0435\u043A\u0430\u0440\u044F."
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Ivan/beach_Ivan_Ivan_19)
         type: 0
         typeString: 
       conversationID: 4
@@ -7303,8 +7284,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 793.4785}
-    canvasZoom: 0.70000017
+    canvasScrollPosition: {x: 659.0164, y: 0}
+    canvasZoom: 0.61
   - id: 5
     fields:
     - title: Title
@@ -7581,8 +7562,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 205.95404, y: 0}
-    canvasZoom: 0.9100001
+    canvasScrollPosition: {x: 226.4384, y: 17.411686}
+    canvasZoom: 1.03
   - id: 6
     fields:
     - title: Title
@@ -10894,8 +10875,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 83.29422}
-    canvasZoom: 0.8800001
+    canvasScrollPosition: {x: 71.87338, y: 161.37177}
+    canvasZoom: 0.7000003
   - id: 15
     fields:
     - title: Title
@@ -12036,8 +12017,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 220.5326, y: 89.1602}
-    canvasZoom: 0.9100001
+    canvasScrollPosition: {x: 48.682358, y: 189.82838}
+    canvasZoom: 0.6100004
   - id: 16
     fields:
     - title: Title
