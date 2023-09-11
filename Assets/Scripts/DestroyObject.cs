@@ -16,9 +16,9 @@ namespace DefaultNamespace
 
         public void ThisDestroyObject()
         {
-            Destroy(transform.parent.gameObject);
             _player.GetComponent<InputController>().enabled = true;
             _quickItemView.SetIsInventoryOpen(false);
+            Destroy(transform.parent.gameObject);
         }
     }
 }

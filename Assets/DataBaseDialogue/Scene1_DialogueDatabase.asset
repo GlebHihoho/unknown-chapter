@@ -4936,7 +4936,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 420.294
-        y: 333.71127
+        y: 332.5348
         width: 160
         height: 30
     - id: 9
@@ -5821,7 +5821,7 @@ MonoBehaviour:
             m_CallState: 2
       canvasRect:
         serializedVersion: 2
-        x: 35.51552
+        x: 34.33905
         y: 388.1079
         width: 160
         height: 30
@@ -6632,12 +6632,15 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "{\u0432\u043F\u0440\u0430\u0432\u043B\u044F\u0435\u043C \u043D\u043E\u0433\u0443)
-          \u041B\u0443\u0447\u0448\u0435?"
+        value: "{\u0432\u043F\u0440\u0430\u0432\u043B\u044F\u0435\u043C \u043D\u043E\u0433\u0443)"
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Oran/beach_Ivan_Oran_9)
+        value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 48b7c7e9-0c1c-4d05-870e-1fc06f33e46f
         type: 0
         typeString: 
       conversationID: 4
@@ -6647,13 +6650,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 4
-        originDialogueID: 37
-        destinationConversationID: 4
-        destinationDialogueID: 38
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -6662,7 +6659,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 341.2297
-        y: 1030.965
+        y: 1029.7886
         width: 160
         height: 30
     - id: 38
@@ -6718,8 +6715,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 342.6583
-        y: 1082.3936
+        x: 343.83478
+        y: 1162.3936
         width: 160
         height: 30
     - id: 39
@@ -6774,8 +6771,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 342.6583
-        y: 1132.3936
+        x: 343.83478
+        y: 1212.3936
         width: 160
         height: 30
     - id: 40
@@ -6847,8 +6844,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 342.6583
-        y: 1183.3936
+        x: 343.83478
+        y: 1263.3936
         width: 160
         height: 30
     - id: 41
@@ -6905,8 +6902,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 252.6583
-        y: 1250.9651
+        x: 253.83478
+        y: 1330.9651
         width: 160
         height: 30
     - id: 42
@@ -6986,8 +6983,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 251.2297
-        y: 1301.9651
+        x: 252.40619
+        y: 1381.9651
         width: 160
         height: 30
     - id: 43
@@ -7044,8 +7041,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 429.80115
-        y: 1250.9648
+        x: 430.97763
+        y: 1330.9648
         width: 160
         height: 30
     - id: 44
@@ -7113,8 +7110,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 429.80115
-        y: 1300.9648
+        x: 430.97763
+        y: 1380.9648
         width: 160
         height: 30
     - id: 45
@@ -7153,6 +7150,10 @@ MonoBehaviour:
         value: AudioWait(Ivan/beach_Ivan_Ivan_17)
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 13943edc-3fac-4e1a-8f42-0411ce0ee28d
+        type: 0
+        typeString: 
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -7169,8 +7170,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 99.80118
-        y: 1416.6794
+        x: 99.91383
+        y: 1496.6794
         width: 160
         height: 30
     - id: 46
@@ -7210,6 +7211,10 @@ MonoBehaviour:
         value: AudioWait(Ivan/beach_Ivan_Ivan_18)
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: 
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -7226,8 +7231,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 329.80115
-        y: 1419.5365
+        x: 330.9776
+        y: 1499.5365
         width: 160
         height: 30
     - id: 47
@@ -7280,13 +7285,68 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 546.9438
-        y: 1423.8223
+        x: 548.12024
+        y: 1503.8223
+        width: 160
+        height: 30
+    - id: 48
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "\u041B\u0443\u0447\u0448\u0435?"
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Oran/beach_Ivan_Oran_9)
+        type: 0
+        typeString: 
+      conversationID: 4
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 4
+        originDialogueID: 48
+        destinationConversationID: 4
+        destinationDialogueID: 38
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 343.5826
+        y: 1111.5532
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 659.0164, y: 0}
-    canvasZoom: 0.61
+    canvasScrollPosition: {x: 0, y: 903.81226}
+    canvasZoom: 0.84999996
   - id: 5
     fields:
     - title: Title
