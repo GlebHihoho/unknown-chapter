@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +15,12 @@ public class ScreenFader : MonoBehaviour
 
     public bool Burning;
 
-    private IEnumerator Start()
+    public void StartCoroutine()
+    {
+        Awader();
+    }
+
+    private IEnumerator Awader()
     {
         Image fadeImage = GetComponent<Image>();
         Color color = fadeImage.color;
