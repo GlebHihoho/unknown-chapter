@@ -12,20 +12,21 @@ namespace DefaultNamespace.TestTools
         [SerializeField] private AllItemCollectionsSO _allItemCollectionsSo;
         [SerializeField] private GameObject _prefab;
         [SerializeField] private Transform _contentParent;
-        [FormerlySerializedAs("_testButtonItem")] [SerializeField] private TestToolButtonUI testToolButtonUI;
+        // [SerializeField] private TestToolButtonUI testToolButtonUI;
 
         private void Awake()
         {
             foreach (var item in _allItemCollectionsSo._allItemCollections)
             {
-                Instantiate(_prefab, _contentParent);
-                testToolButtonUI.ButtonFilling(item);
+                var obj = Instantiate(_prefab, _contentParent);
+                var a = obj.GetComponentInChildren<TestToolButtonUI>()._inventory = _inventory;
+                // testToolButtonUI.ButtonFilling(item);
+                obj.GetComponent<TestToolButtonUI>().ButtonFilling(item);
             }
         }
 
         private void Update()
         {
-            throw new NotImplementedException();
         }
     }
 }

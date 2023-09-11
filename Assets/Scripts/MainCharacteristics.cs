@@ -59,4 +59,24 @@ public class MainCharacteristics : MonoBehaviour
     {
         return _intellect;
     }
+
+    public void CharacteristicIncrease(string nameCharacteristic)
+    {
+        switch (nameCharacteristic)
+        {
+            case "PhysicalAbilities": _physicalAbilities++; break;
+            case "Perception": _perception++; break;
+            case "Intellect": _intellect++; break;
+        }
+    }    
+    
+    public void CharacteristicDecreasee(string nameCharacteristic)
+    {
+        switch (nameCharacteristic)
+        {
+            case "PhysicalAbilities": _physicalAbilities--; break;
+            case "Perception": _perception--; break;
+            case "Intellect": _intellect--; break;
+        }
+    }
 }
