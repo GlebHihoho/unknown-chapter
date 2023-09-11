@@ -42,16 +42,7 @@ public class ScreenFader : MonoBehaviour
         yield return new WaitForSeconds(_fadeDuration);
 
 
-        gravePrefab.SetActive(false);
         
-        if (Burning)
-        {
-            buriedBodyPrefab.SetActive(true);
-        }
-        else
-        {
-            burnedBodyPrefab.SetActive(true);
-        }
 
         // Вторая часть: Раззатемнение
         while (color.a > 0)
@@ -84,6 +75,20 @@ public class ScreenFader : MonoBehaviour
         else
         {
             Burning = false;
+        }
+    }
+
+    private void Body()
+    {
+        gravePrefab.SetActive(false);
+        
+        if (Burning)
+        {
+            buriedBodyPrefab.SetActive(true);
+        }
+        else
+        {
+            burnedBodyPrefab.SetActive(true);
         }
     }
 }

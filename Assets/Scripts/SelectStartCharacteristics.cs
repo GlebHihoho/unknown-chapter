@@ -7,7 +7,7 @@ namespace DefaultNamespace
     public class SelectStartCharacteristics : MonoBehaviour
     {
         [SerializeField] private string _nameCharacteristic;
-        private MainCharacteristics _mainCharacteristics;
+        [SerializeField] private MainCharacteristics _mainCharacteristics;
 
         public void SelectCurrentStat(string nameCharacteristic)
         {
