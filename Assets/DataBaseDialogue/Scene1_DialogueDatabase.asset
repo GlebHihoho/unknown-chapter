@@ -6662,7 +6662,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 342.44922
+        x: 343.66873
         y: 1028.569
         width: 160
         height: 30
@@ -7349,7 +7349,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 182.92682}
+    canvasScrollPosition: {x: 81.7074, y: 550}
     canvasZoom: 0.81999993
   - id: 5
     fields:
@@ -11888,7 +11888,11 @@ MonoBehaviour:
         >= 1) and (GetItemAmount(\"\u041E\u0431\u043B\u043E\u043C\u043E\u043A \u043A\u043E\u0440\u0430\u0431\u043B\u044F\")
         >= 1) and (GetItemAmount(\"\u041B\u0435\u0447\u0435\u0431\u043D\u043E\u0435
         \u0437\u0435\u043B\u044C\u0435\") >= 1)"
-      userScript: 
+      userScript: "DialogueSystemItemDeleter(\"\u041E\u0431\u043B\u043E\u043C\u043E\u043A
+        \u043A\u043E\u0440\u0430\u0431\u043B\u044F\", 2);\nDialogueSystemItemDeleter(\"\u041E\u0431\u0440\u044B\u0432\u043E\u043A
+        \u0442\u0440\u044F\u043F\u044C\u044F\", 2);\nDialogueSystemItemDeleter(\"\u041A\u0430\u043D\u0430\u0442\",
+        1);\nDialogueSystemItemDeleter(\"\u041B\u0435\u0447\u0435\u0431\u043D\u043E\u0435
+        \u0437\u0435\u043B\u044C\u0435\", 1)"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11948,7 +11952,10 @@ MonoBehaviour:
         >= 1) and (GetItemAmount(\"\u041E\u0431\u043B\u043E\u043C\u043E\u043A \u043A\u043E\u0440\u0430\u0431\u043B\u044F\")
         >= 1) and (GetItemAmount(\"\u041B\u0435\u0447\u0435\u0431\u043D\u043E\u0435
         \u0437\u0435\u043B\u044C\u0435\") == 0)"
-      userScript: 
+      userScript: "DialogueSystemItemDeleter(\"\u041E\u0431\u043B\u043E\u043C\u043E\u043A
+        \u043A\u043E\u0440\u0430\u0431\u043B\u044F\", 2);\nDialogueSystemItemDeleter(\"\u041E\u0431\u0440\u044B\u0432\u043E\u043A
+        \u0442\u0440\u044F\u043F\u044C\u044F\", 2);\nDialogueSystemItemDeleter(\"\u041A\u0430\u043D\u0430\u0442\",
+        1)"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -12064,7 +12071,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 109.04143, y: 91.74071}
+    canvasScrollPosition: {x: 187.52238, y: 85.411575}
     canvasZoom: 0.7900002
   - id: 16
     fields:

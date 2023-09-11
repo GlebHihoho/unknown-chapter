@@ -17,7 +17,7 @@ public class ScreenFader : MonoBehaviour
 
     public void StartCoroutine()
     {
-        Awader();
+        StartCoroutine("Awader");
     }
 
     private IEnumerator Awader()
@@ -32,12 +32,11 @@ public class ScreenFader : MonoBehaviour
             fadeImage.color = color;
             yield return null;
 
-            foreach (var destroyBody in deathBodyPrefabs)
-            {
-                Destroy(destroyBody);
-            }
-
-
+            // foreach (var destroyBody in deathBodyPrefabs)
+            // {
+            //     Destroy(destroyBody);
+            // }
+            
         }
 
         print("Затемнение");
