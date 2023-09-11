@@ -12,7 +12,7 @@ public class MainCharacteristics : MonoBehaviour
     [SerializeField] private double _physicalAbilities = 0; // физические способности
     [SerializeField] private double _perception = 0;        // восприятие
     [SerializeField] private double _intellect  = 0;        // интеллект 
-    private Inventory _inventory;
+    [SerializeField] private Inventory _inventory;
 
 
     public double GetSkill(string skillName)
@@ -32,12 +32,16 @@ public class MainCharacteristics : MonoBehaviour
     {
         Lua.RegisterFunction("GetSkill", this, SymbolExtensions.GetMethodInfo(() => GetSkill("")));
         Lua.RegisterFunction("GetItemAmount", _inventory, SymbolExtensions.GetMethodInfo(() => _inventory.GetItemAmount(string.Empty)));
+        Lua.RegisterFunction("DialogueSystemItemDeleter", _inventory, SymbolExtensions.GetMethodInfo(() => _inventory.DialogueSystemItemDeleter(string.Empty, 1)));
+        Lua.RegisterFunction("DialogueSystemItemAdder", _inventory, SymbolExtensions.GetMethodInfo(() => _inventory.DialogueSystemItemAdder(string.Empty, 1)));
     }
 
     private void OnDisable()
     {
         Lua.UnregisterFunction("GetSkill");
         Lua.UnregisterFunction("GetItemAmount");
+        Lua.UnregisterFunction("DialogueSystemItemDeleter");
+        Lua.UnregisterFunction("DialogueSystemItemAdder");
     }
 
     

@@ -13,19 +13,16 @@ MonoBehaviour:
   m_Name: New Custom Lua Function Info
   m_EditorClassIdentifier: 
   conditionFunctions:
-  - functionName: PhysicalAbilities
-    parameters: 06000000
-    returnValue: 2
-  - functionName: Perception
-    parameters: 06000000
-    returnValue: 2
-  - functionName: Intellect
-    parameters: 06000000
-    returnValue: 2
   - functionName: GetSkill
     parameters: 02000000
     returnValue: 2
   - functionName: GetItemAmount
     parameters: 02000000
     returnValue: 2
-  scriptFunctions: []
+  scriptFunctions:
+  - functionName: DialogueSystemItemDeleter
+    parameters: 0200000001000000
+    returnValue: 0
+  - functionName: DialogueSystemItemAdder
+    parameters: 0200000001000000
+    returnValue: 0
