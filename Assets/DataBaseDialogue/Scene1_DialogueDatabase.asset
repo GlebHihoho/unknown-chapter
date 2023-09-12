@@ -414,13 +414,13 @@ MonoBehaviour:
   - id: 7
     fields:
     - title: Name
-      value: "\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u044B\u0435 \u0442\u0435\u043B\u0430"
+      value: "\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u043E\u0425\u043E\u0442\u044C\u041E\u0434\u043D\u043E\u0422\u0435\u043B\u043E"
       type: 0
       typeString: 
     - title: Initial Value
-      value: 0
-      type: 1
-      typeString: CustomFieldType_Number
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
     - title: Description
       value: 
       type: 0
@@ -638,6 +638,20 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
+  - id: 20
+    fields:
+    - title: Name
+      value: "\u041F\u0435\u0440\u0432\u0430\u044F\u0412\u0441\u0442\u0440\u0435\u0447\u0430\u0421\u0422\u043E\u043D\u0434\u0440\u0430\u043B\u043E\u043C"
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
   conversations:
   - id: 1
     fields:
@@ -803,7 +817,8 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: GetSkill("Perception") >= 1
-      userScript: 
+      userScript: "Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u043E\u0425\u043E\u0442\u044C\u041E\u0434\u043D\u043E\u0422\u0435\u043B\u043E\"]
+        = true"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1422,13 +1437,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 1
-        originDialogueID: 11
-        destinationConversationID: 1
-        destinationDialogueID: 23
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -1542,13 +1551,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 1
-        originDialogueID: 13
-        destinationConversationID: 1
-        destinationDialogueID: 23
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -1597,13 +1600,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 1
-        originDialogueID: 19
-        destinationConversationID: 1
-        destinationDialogueID: 23
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -1652,13 +1649,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 1
-        originDialogueID: 20
-        destinationConversationID: 1
-        destinationDialogueID: 23
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -1725,13 +1716,14 @@ MonoBehaviour:
         priority: 2
       conditionsString: GetSkill("Intellect") >= 1 and (GetSkill("Perception") <
         1)
-      userScript: 
+      userScript: "Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u043E\u0425\u043E\u0442\u044C\u041E\u0434\u043D\u043E\u0422\u0435\u043B\u043E\"]
+        = true"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 928.57605
+        x: 930.0686
         y: 256.8825
         width: 160
         height: 30
@@ -1789,7 +1781,8 @@ MonoBehaviour:
         priority: 2
       conditionsString: GetSkill("PhysicalAbilities") >= 1 and (GetSkill("Perception")
         < 1)
-      userScript: 
+      userScript: "Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u043E\u0425\u043E\u0442\u044C\u041E\u0434\u043D\u043E\u0422\u0435\u043B\u043E\"]
+        = true"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1799,114 +1792,8 @@ MonoBehaviour:
         y: 279.75528
         width: 160
         height: 30
-    - id: 23
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 1
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 1
-        originDialogueID: 23
-        destinationConversationID: 1
-        destinationDialogueID: 24
-        isConnector: 0
-        priority: 2
-      conditionsString: Variable["Dorn"] == false
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 549.8077
-        y: 874.0584
-        width: 160
-        height: 30
-    - id: 24
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 1
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: "Variable[\"Dorn\"] = true;\nVariable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u044B\u0435_\u0442\u0435\u043B\u0430\"]
-        = Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u044B\u0435_\u0442\u0435\u043B\u0430\"]
-        + 1"
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 552.6648
-        y: 951.0385
-        width: 160
-        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 40.207825}
+    canvasScrollPosition: {x: 114.92523, y: 49.253662}
     canvasZoom: 0.67000103
   - id: 2
     fields:
@@ -2078,7 +1965,8 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: GetSkill("PhysicalAbilities") >= 1
-      userScript: 
+      userScript: "Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u043E\u0425\u043E\u0442\u044C\u041E\u0434\u043D\u043E\u0422\u0435\u043B\u043E\"]
+        = true"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2251,13 +2139,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 7
-        destinationConversationID: 2
-        destinationDialogueID: 19
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -2554,13 +2436,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 12
-        destinationConversationID: 2
-        destinationDialogueID: 19
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -2732,13 +2608,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 15
-        destinationConversationID: 2
-        destinationDialogueID: 19
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -2788,13 +2658,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 16
-        destinationConversationID: 2
-        destinationDialogueID: 19
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -2856,16 +2720,11 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 17
-        destinationConversationID: 2
-        destinationDialogueID: 19
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: GetSkill("Perception") >= 1 and (GetSkill("PhysicalAbilities")
         < 1)
-      userScript: 
+      userScript: "Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u043E\u0425\u043E\u0442\u044C\u041E\u0434\u043D\u043E\u0422\u0435\u043B\u043E\"]
+        = true"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2921,16 +2780,11 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 18
-        destinationConversationID: 2
-        destinationDialogueID: 19
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: GetSkill("Intellect") >= 1 and (GetSkill("PhysicalAbilities")
         < 1)
-      userScript: 
+      userScript: "Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u043E\u0425\u043E\u0442\u044C\u041E\u0434\u043D\u043E\u0422\u0435\u043B\u043E\"]
+        = true"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2940,114 +2794,8 @@ MonoBehaviour:
         y: 259.70132
         width: 160
         height: 30
-    - id: 19
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 2
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 19
-        destinationConversationID: 2
-        destinationDialogueID: 20
-        isConnector: 0
-        priority: 2
-      conditionsString: Variable["Stigberg"] == false
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 746.0464
-        y: 762.2951
-        width: 160
-        height: 30
-    - id: 20
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 2
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: "Variable[\"Stigberg\"] = true;\nVariable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u044B\u0435_\u0442\u0435\u043B\u0430\"]
-        = Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u044B\u0435_\u0442\u0435\u043B\u0430\"]
-        + 1"
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 746.4262
-        y: 831.03864
-        width: 160
-        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 28.09054}
+    canvasScrollPosition: {x: 516.2161, y: 1.3513794}
     canvasZoom: 0.74000007
   - id: 3
     fields:
@@ -3206,16 +2954,11 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 3
-        originDialogueID: 7
-        destinationConversationID: 3
-        destinationDialogueID: 22
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: GetSkill("PhysicalAbilities") >= 1 and (GetSkill("Intellect")
         < 1)
-      userScript: 
+      userScript: "Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u043E\u0425\u043E\u0442\u044C\u041E\u0434\u043D\u043E\u0422\u0435\u043B\u043E\"]
+        = true"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3274,16 +3017,11 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 3
-        originDialogueID: 8
-        destinationConversationID: 3
-        destinationDialogueID: 22
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: GetSkill("Perception") >= 1 and (GetSkill("Intellect") <
         1)
-      userScript: 
+      userScript: "Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u043E\u0425\u043E\u0442\u044C\u041E\u0434\u043D\u043E\u0422\u0435\u043B\u043E\"]
+        = true"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3346,7 +3084,8 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: GetSkill("Intellect") >= 1
-      userScript: 
+      userScript: "Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u043E\u0425\u043E\u0442\u044C\u041E\u0434\u043D\u043E\u0422\u0435\u043B\u043E\"]
+        = true"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3658,13 +3397,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 3
-        originDialogueID: 14
-        destinationConversationID: 3
-        destinationDialogueID: 22
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -3906,13 +3639,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 3
-        originDialogueID: 18
-        destinationConversationID: 3
-        destinationDialogueID: 22
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -4093,13 +3820,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 3
-        originDialogueID: 21
-        destinationConversationID: 3
-        destinationDialogueID: 22
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -4109,112 +3830,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 919.5
         y: 640
-        width: 160
-        height: 30
-    - id: 22
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 3
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 3
-        originDialogueID: 22
-        destinationConversationID: 3
-        destinationDialogueID: 23
-        isConnector: 0
-        priority: 2
-      conditionsString: Variable["Sten"] == false
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 561.0949
-        y: 678.8607
-        width: 160
-        height: 30
-    - id: 23
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 3
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: "Variable[\"Sten\"] = true;\nVariable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u044B\u0435_\u0442\u0435\u043B\u0430\"]
-        = Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u044B\u0435_\u0442\u0435\u043B\u0430\"]
-        + 1"
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 562.3608
-        y: 760.50616
         width: 160
         height: 30
     entryGroups: []
@@ -6065,7 +5680,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1338.9858
-        y: 383.5769
+        y: 381.85278
         width: 160
         height: 30
     - id: 28
@@ -6114,8 +5729,8 @@ MonoBehaviour:
         destinationDialogueID: 30
         isConnector: 0
         priority: 2
-      conditionsString: "Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u044B\u0435_\u0442\u0435\u043B\u0430\"]
-        > 0"
+      conditionsString: "Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u043E\u0425\u043E\u0442\u044C\u041E\u0434\u043D\u043E\u0422\u0435\u043B\u043E\"]
+        == true"
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -6123,7 +5738,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1251.8428
-        y: 484.79636
+        y: 483.07224
         width: 160
         height: 30
     - id: 29
@@ -6172,8 +5787,8 @@ MonoBehaviour:
         destinationDialogueID: 30
         isConnector: 0
         priority: 2
-      conditionsString: "Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u044B\u0435_\u0442\u0435\u043B\u0430\"]
-        == 0"
+      conditionsString: "Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u043E\u0425\u043E\u0442\u044C\u041E\u0434\u043D\u043E\u0422\u0435\u043B\u043E\"]
+        == false"
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -6292,12 +5907,10 @@ MonoBehaviour:
         destinationDialogueID: 32
         isConnector: 0
         priority: 2
-      conditionsString: "Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u044B\u0435_\u0442\u0435\u043B\u0430\"]
-        >= 1 and (Variable[\"\u041F\u0435\u0440\u0432\u0430\u044F_\u0432\u0441\u0442\u0440\u0435\u0447\u0430_\u0441_\u0418\u0432\u0430\u043D\u043E\u043C\"]
+      conditionsString: "Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u043E\u0425\u043E\u0442\u044C\u041E\u0434\u043D\u043E\u0422\u0435\u043B\u043E\"]
+        == true and (Variable[\"\u041F\u0435\u0440\u0432\u0430\u044F_\u0432\u0441\u0442\u0440\u0435\u0447\u0430_\u0441_\u0418\u0432\u0430\u043D\u043E\u043C\"]
         == true)"
-      userScript: "SetQuestState(\"\u0417\u0430\u0445\u043E\u0440\u043E\u043D\u0435\u043D\u0438\u0435
-        \u0442\u0435\u043B\", \"active\");\nSendMessageSystem(\"\u0422\u0435\u043B\u0430\",
-        \"\u0417\u0430\u0445\u043E\u0440\u043E\u043D\u0438\u0442\u044C\")"
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6366,7 +5979,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: "SendMessageSystem(\"\u0422\u0435\u043B\u0430\", \"\u0421\u0436\u0435\u0447\u044C\")"
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6435,7 +6048,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1983.3002
-        y: 300.62967
+        y: 298.9055
         width: 160
         height: 30
     - id: 34
@@ -6498,8 +6111,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2171.373
-        y: 300.3089
+        x: 2173.0972
+        y: 298.58472
         width: 160
         height: 30
     - id: 35
@@ -6673,8 +6286,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 183.88937, y: 209.52519}
-    canvasZoom: 0.58000016
+    canvasScrollPosition: {x: 568.421, y: 18.42102}
+    canvasZoom: 0.76000005
   - id: 5
     fields:
     - title: Title
@@ -9027,6 +8640,42 @@ MonoBehaviour:
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
+      - originConversationID: 14
+        originDialogueID: 0
+        destinationConversationID: 14
+        destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
+      - originConversationID: 14
+        originDialogueID: 0
+        destinationConversationID: 14
+        destinationDialogueID: 6
+        isConnector: 0
+        priority: 2
+      - originConversationID: 14
+        originDialogueID: 0
+        destinationConversationID: 14
+        destinationDialogueID: 7
+        isConnector: 0
+        priority: 2
+      - originConversationID: 14
+        originDialogueID: 0
+        destinationConversationID: 14
+        destinationDialogueID: 8
+        isConnector: 0
+        priority: 2
+      - originConversationID: 14
+        originDialogueID: 0
+        destinationConversationID: 14
+        destinationDialogueID: 9
+        isConnector: 0
+        priority: 2
+      - originConversationID: 14
+        originDialogueID: 0
+        destinationConversationID: 14
+        destinationDialogueID: 10
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -9034,8 +8683,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 519
-        y: 146
+        x: 521.82214
+        y: 122.19838
         width: 160
         height: 30
     - id: 1
@@ -9090,15 +8739,17 @@ MonoBehaviour:
         destinationDialogueID: 2
         isConnector: 0
         priority: 2
-      conditionsString: 
-      userScript: 
+      conditionsString: "Variable[\"\u041F\u0435\u0440\u0432\u0430\u044F\u0412\u0441\u0442\u0440\u0435\u0447\u0430\u0421\u0422\u043E\u043D\u0434\u0440\u0430\u043B\u043E\u043C\"]
+        == false"
+      userScript: "Variable[\"\u041F\u0435\u0440\u0432\u0430\u044F\u0412\u0441\u0442\u0440\u0435\u0447\u0430\u0421\u0422\u043E\u043D\u0434\u0440\u0430\u043B\u043E\u043C\"]
+        = true"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 519
-        y: 195
+        y: 193.36066
         width: 160
         height: 30
     - id: 2
@@ -9239,14 +8890,13 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: "SendMessageSystem(\"\u0422\u043E\u043D\u0434\u0440\u0430\u043B\",
-        \"\u041F\u0435\u0440\u0432\u0430\u044F\u0412\u0441\u0442\u0440\u0435\u0447\u0430\")"
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 518
+        x: 520.90515
         y: 292
         width: 160
         height: 30
@@ -9665,7 +9315,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1118
-        y: 416.86365
+        y: 415.2243
         width: 160
         height: 30
     - id: 11
@@ -10254,8 +9904,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 109.783844}
-    canvasZoom: 0.7900002
+    canvasScrollPosition: {x: 239.97464, y: 3.2786865}
+    canvasZoom: 0.61000025
   - id: 15
     fields:
     - title: Title
