@@ -15,12 +15,12 @@ public class ScreenFader : MonoBehaviour
 
     public bool Burning;
 
-    public void StartCoroutine()
+    public void StartCoroutine(float fadeDuration)
     {
-        StartCoroutine("Awader");
+        StartCoroutine("Awader", fadeDuration);
     }
 
-    private IEnumerator Awader()
+    private IEnumerator Awader(float fadeDuration)
     {
         Image fadeImage = GetComponent<Image>();
         Color color = fadeImage.color;
@@ -44,7 +44,7 @@ public class ScreenFader : MonoBehaviour
 
         // Задержка перед началом второй корутины
             
-        yield return new WaitForSeconds(_fadeDuration);
+        yield return new WaitForSeconds(fadeDuration);
 
 
         

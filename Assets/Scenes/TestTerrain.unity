@@ -12769,12 +12769,12 @@ MonoBehaviour:
         - m_Target: {fileID: 1607261979}
           m_TargetAssemblyTypeName: ScreenFader, Assembly-CSharp
           m_MethodName: StartCoroutine
-          m_Mode: 1
+          m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0
+            m_FloatArgument: 3
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
@@ -14147,14 +14147,38 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8302728024491312801, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fb0f1c2add90c47418a50a7ad274d8bc, type: 3}
     - target: {fileID: 8302728024573204655, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8302728024937814483, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 404033a1d7560aa4ca44fece3d3d1962, type: 3}
+    - target: {fileID: 8302728025012475670, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cfa20962acb12a647adff10cf347f8e9, type: 3}
+    - target: {fileID: 8302728025141809190, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: db87cf60564f1b449913f0a2a33e7256, type: 3}
+    - target: {fileID: 8302728025192341265, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 404033a1d7560aa4ca44fece3d3d1962, type: 3}
     - target: {fileID: 8302728025206213312, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
       propertyPath: _mainStats
       value: 
       objectReference: {fileID: 521969281}
+    - target: {fileID: 8302728025354105137, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: db87cf60564f1b449913f0a2a33e7256, type: 3}
     - target: {fileID: 8302728025418497338, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -14167,6 +14191,10 @@ PrefabInstance:
       propertyPath: _allItemCollectionsSO
       value: 
       objectReference: {fileID: 11400000, guid: 8d1d4d49790ecfc448fae9ddfc85c6e0, type: 2}
+    - target: {fileID: 8302728025427322430, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fb0f1c2add90c47418a50a7ad274d8bc, type: 3}
     - target: {fileID: 8302728026184437553, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
       propertyPath: m_Name
       value: HUDPrefab (1)
@@ -14259,6 +14287,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8302728026492547493, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cfa20962acb12a647adff10cf347f8e9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
 --- !u!1001 &1111304216
