@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,12 +9,6 @@ public class ScreenFader : MonoBehaviour
 {
     [SerializeField] private float _fadeSpeed = 1;
     [SerializeField] private float _fadeDuration = 2; // Длительность затемнения
-    [SerializeField] private GameObject[] deathBodyPrefabs; // префабы всех мертвых тел
-    [SerializeField] private GameObject burnedBodyPrefab; // префаб сожженных тел
-    [SerializeField] private GameObject buriedBodyPrefab; // префаб захороненных тел
-    [SerializeField] private GameObject gravePrefab; //префаб могилы
-
-    public bool Burning;
 
     public void StartCoroutine(float fadeDuration)
     {
@@ -31,23 +26,10 @@ public class ScreenFader : MonoBehaviour
             color.a += _fadeSpeed * Time.deltaTime;
             fadeImage.color = color;
             yield return null;
-
-            // foreach (var destroyBody in deathBodyPrefabs)
-            // {
-            //     Destroy(destroyBody);
-            // }
-            
         }
-
-        print("Затемнение");
-            
-
-        // Задержка перед началом второй корутины
-            
-        yield return new WaitForSeconds(fadeDuration);
-
-
         
+        // Задержка перед началом второй корутины
+        yield return new WaitForSeconds(fadeDuration);
 
         // Вторая часть: Раззатемнение
         while (color.a > 0)
@@ -56,44 +38,63 @@ public class ScreenFader : MonoBehaviour
             fadeImage.color = color;
             yield return null;
         }
-
-        print("Раззатемнение");
         gameObject.SetActive(false);
     }
 
-    private void BurningBody()
+    public void ScreenBrightener(GameObject brightenerObject)
     {
-        burnedBodyPrefab.SetActive(true);
-    }
-        
-    private void BurialOfBody()
-    {
-        buriedBodyPrefab.SetActive(true);
+        StartCoroutine("ScreenBrightenerStart", brightenerObject);
     }
 
-    public void IsBurning(int burning)
+    private IEnumerator ScreenBrightenerStart(GameObject brightenerObject)
     {
-        if (burning == 1)
+        
+        
+        if (brightenerObject.GetComponent<Image>())
         {
-            Burning = true;
+            Image fadeImage = brightenerObject.GetComponent<Image>();
+            Color color = fadeImage.color;
+            while (color.a < 1f)
+            {
+                color.a += _fadeSpeed * Time.deltaTime;
+                fadeImage.color = color;
+                yield return null;
+            }
         }
         else
         {
-            Burning = false;
+            TextMeshProUGUI fadeImage = brightenerObject.GetComponent<TextMeshProUGUI>();
+            Color color = fadeImage.color;
+            while (color.a < 1f)
+            {
+                color.a += _fadeSpeed * Time.deltaTime;
+                fadeImage.color = color;
+                yield return null;
+            }
         }
+
+        
+
+        gameObject.SetActive(false);
+
     }
 
-    private void Body()
+    public void ScreenDarkener(GameObject darkerObject)
     {
-        gravePrefab.SetActive(false);
-        
-        if (Burning)
+        StartCoroutine("ScreenDarkenerStart", darkerObject);
+    }
+
+    private IEnumerator ScreenDarkenerStart(GameObject darkerObject)
+    {
+        Image fadeImage = darkerObject.GetComponent<Image>();
+        Color color = fadeImage.color;
+            
+        while (color.a < 1f)
         {
-            buriedBodyPrefab.SetActive(true);
+            color.a += _fadeSpeed * Time.deltaTime;
+            fadeImage.color = color;
+            yield return null;
         }
-        else
-        {
-            burnedBodyPrefab.SetActive(true);
-        }
+        gameObject.SetActive(false);
     }
 }

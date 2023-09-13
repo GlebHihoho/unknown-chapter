@@ -158,12 +158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f0e48c679befd4e8bc6e173a9ba42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 0}
-  m_countText: {m_uiText: {fileID: 0}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 1317983184}, m_textMeshProUGUI: {fileID: 0}}
-  m_button: {fileID: 1347702188}
-  m_actions: []
-  m_groupNumber: -1
 --- !u!224 &4592315
 RectTransform:
   m_ObjectHideFlags: 0
@@ -454,114 +448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2185d538298c73f418ba252c3e3e01ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_key: 
-  m_appendSaverTypeToKey: 0
-  m_saveAcrossSceneChanges: 1
-  m_restoreStateOnStart: 0
-  m_runtimeKey: 
-  m_forwardEventsToListeners: 0
-  m_includeInSavedGameData: 1
-  m_addNewQuestsSinceSavedGame: 0
-  m_questList: []
-  m_deletedStaticQuests: []
-  <originalQuestList>k__BackingField: []
-  m_runtimeStartupQueue: []
-  m_id:
-    m_text: Ivan
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_displayName:
-    m_text: Ivan
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_image: {fileID: 0}
-  m_fallbackID:
-    m_text: 
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_fallbackDisplayName:
-    m_text: 
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_questEntity: {fileID: 0}
-  m_textTable: {fileID: 0}
-  m_noQuestsUIContents: {m_icon: {fileID: 0}, m_headingText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_bodyText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_contentList: []
-}
-  m_offerableQuestsUIContents: {m_icon: {fileID: 0}, m_headingText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_bodyText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_contentList: []
-}
-  m_activeQuestsUIContents: {m_icon: {fileID: 0}, m_headingText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_bodyText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_contentList: []
-}
-  m_completedQuestDialogueMode: 0
-  m_questDialogueUI: {fileID: 0}
-  m_cooldownCheckFrequency: 0
-  <nonOfferableQuests>k__BackingField: []
-  <offerableQuests>k__BackingField: []
-  <activeQuests>k__BackingField: []
-  <completedQuests>k__BackingField: []
-  <player>k__BackingField: {fileID: 0}
-  <playerTextInfo>k__BackingField:
-    m_id:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_displayName:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_textTable: {fileID: 0}
-    m_image: {fileID: 0}
-  <allowBackButton>k__BackingField: 0
-  m_playerQuestListContainer: {fileID: 0}
-  m_myQuestGiverTextinfo:
-    m_id:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_displayName:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_textTable: {fileID: 0}
-    m_image: {fileID: 0}
-  overrideQuestIDToShowInDialogue: 
 --- !u!114 &19725881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -868,12 +754,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f0e48c679befd4e8bc6e173a9ba42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 573732119}
-  m_countText: {m_uiText: {fileID: 1095587130}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 1952442940}, m_textMeshProUGUI: {fileID: 0}}
-  m_button: {fileID: 22134294}
-  m_actions: []
-  m_groupNumber: -1
 --- !u!114 &22134294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1222,7 +1102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 38204400}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &38204400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1450,7 +1329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f2f483d2288b14f8cdb337699bc716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_iconTemplate: {fileID: 1366124478}
 --- !u!224 &44514584
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1815,7 +1693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be9af57cff30f14f8df1685e6fa05e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_buttonTemplate: {fileID: 1374690831}
 --- !u!224 &55555616
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2093,9 +1970,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de78fbfab2f2dd4f89712741c1b535b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_icon: {fileID: 0}
-  m_buttonTemplate: {fileID: 79235858}
-  m_trackToggleTemplate: {fileID: 726858549}
 --- !u!224 &79235857
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2130,12 +2004,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f0e48c679befd4e8bc6e173a9ba42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 0}
-  m_countText: {m_uiText: {fileID: 0}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 366069561}, m_textMeshProUGUI: {fileID: 0}}
-  m_button: {fileID: 79235859}
-  m_actions: []
-  m_groupNumber: -1
 --- !u!114 &79235859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3250,11 +3118,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &127537994 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 693721447181767777, guid: 0925a6345dab0574eaa4a6b4c0f580b6, type: 3}
-  m_PrefabInstance: {fileID: 3582140340045010854}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &128452014
 GameObject:
   m_ObjectHideFlags: 0
@@ -5161,6 +5024,106 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2865104911859505335, guid: df45bf22e9623084aa8e0ad6c52eab4a, type: 3}
+--- !u!1 &181082303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 181082305}
+  - component: {fileID: 181082304}
+  m_Layer: 0
+  m_Name: EndGame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &181082304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181082303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b134e33f3df065940bcb04f98206be9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mode: 0
+  m_duration: 2
+  m_frames: 0
+  m_activateOnStart: 0
+  m_onTimeReached:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1607261977}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1607261979}
+        m_TargetAssemblyTypeName: ScreenFader, Assembly-CSharp
+        m_MethodName: ScreenBrightener
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 812089791}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 3
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1607261979}
+        m_TargetAssemblyTypeName: ScreenFader, Assembly-CSharp
+        m_MethodName: ScreenBrightener
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 476696917}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1607261979}
+        m_TargetAssemblyTypeName: ScreenFader, Assembly-CSharp
+        m_MethodName: ScreenBrightener
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 966225779}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &181082305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181082303}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -26.52214, y: -17.074387, z: 74.89963}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 978293134}
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &181966140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6121,114 +6084,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2185d538298c73f418ba252c3e3e01ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_key: 
-  m_appendSaverTypeToKey: 0
-  m_saveAcrossSceneChanges: 1
-  m_restoreStateOnStart: 0
-  m_runtimeKey: 
-  m_forwardEventsToListeners: 0
-  m_includeInSavedGameData: 1
-  m_addNewQuestsSinceSavedGame: 0
-  m_questList: []
-  m_deletedStaticQuests: []
-  <originalQuestList>k__BackingField: []
-  m_runtimeStartupQueue: []
-  m_id:
-    m_text: Ivan
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_displayName:
-    m_text: Ivan
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_image: {fileID: 0}
-  m_fallbackID:
-    m_text: 
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_fallbackDisplayName:
-    m_text: 
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_questEntity: {fileID: 0}
-  m_textTable: {fileID: 0}
-  m_noQuestsUIContents: {m_icon: {fileID: 0}, m_headingText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_bodyText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_contentList: []
-}
-  m_offerableQuestsUIContents: {m_icon: {fileID: 0}, m_headingText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_bodyText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_contentList: []
-}
-  m_activeQuestsUIContents: {m_icon: {fileID: 0}, m_headingText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_bodyText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_contentList: []
-}
-  m_completedQuestDialogueMode: 0
-  m_questDialogueUI: {fileID: 0}
-  m_cooldownCheckFrequency: 0
-  <nonOfferableQuests>k__BackingField: []
-  <offerableQuests>k__BackingField: []
-  <activeQuests>k__BackingField: []
-  <completedQuests>k__BackingField: []
-  <player>k__BackingField: {fileID: 0}
-  <playerTextInfo>k__BackingField:
-    m_id:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_displayName:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_textTable: {fileID: 0}
-    m_image: {fileID: 0}
-  <allowBackButton>k__BackingField: 0
-  m_playerQuestListContainer: {fileID: 0}
-  m_myQuestGiverTextinfo:
-    m_id:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_displayName:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_textTable: {fileID: 0}
-    m_image: {fileID: 0}
-  overrideQuestIDToShowInDialogue: 
 --- !u!114 &212253597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6555,6 +6410,44 @@ MonoBehaviour:
     onDialogueSystemUnpause:
       m_PersistentCalls:
         m_Calls: []
+--- !u!1 &212393413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 212393414}
+  m_Layer: 5
+  m_Name: EndGameImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &212393414
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212393413}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 476696918}
+  - {fileID: 966225780}
+  m_Father: {fileID: 978293134}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 134}
+  m_SizeDelta: {x: 981.8806, y: 132.3997}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &213775416
 GameObject:
   m_ObjectHideFlags: 0
@@ -6700,7 +6593,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 213775421}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!1 &218726707
 GameObject:
   m_ObjectHideFlags: 0
@@ -7331,26 +7223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddfb74c753039de46a193eeed0049803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_mainPanel: {fileID: 247194196}
-  m_entityName: {m_uiText: {fileID: 1122892446}, m_textMeshProUGUI: {fileID: 0}}
-  m_entityImage: {fileID: 1875580615}
-  <uiPanel>k__BackingField: {fileID: 0}
-  <currentIconList>k__BackingField: {fileID: 0}
-  <currentButtonList>k__BackingField: {fileID: 0}
-  m_cancelButton: {fileID: 1173728060}
-  m_closeButton: {fileID: 712759744}
-  m_backButton: {fileID: 1421892853}
-  m_acceptButton: {fileID: 1362357232}
-  m_declineButton: {fileID: 2138548400}
-  m_contentContainer: {fileID: 541913358}
-  m_headingTemplate: {fileID: 1237634666}
-  m_subheadingTemplates:
-  - {fileID: 1940791087}
-  m_bodyTemplate: {fileID: 1413681789}
-  m_iconListTemplate: {fileID: 44514583}
-  m_buttonListTemplate: {fileID: 1898331596}
-  <scrollbarEnabler>k__BackingField: {fileID: 0}
-  <selectedQuest>k__BackingField: {fileID: 0}
 --- !u!114 &247194198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7773,7 +7645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 265832287}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &265832284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10618,7 +10489,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f2f483d2288b14f8cdb337699bc716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_iconTemplate: {fileID: 774225637}
 --- !u!1 &345471151
 GameObject:
   m_ObjectHideFlags: 0
@@ -11652,7 +11522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f2f483d2288b14f8cdb337699bc716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_iconTemplate: {fileID: 621624958}
 --- !u!4 &396660256 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8737698988310289093, guid: b3c3e6614231adb4ea5d638ed94bf7c5, type: 3}
@@ -11774,7 +11643,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a03e7396af4504bbe3340921a04590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_toggle: {fileID: 414215192}
 --- !u!114 &414215192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11977,7 +11845,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 431763689}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &431763689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13465,6 +13332,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474015045}
   m_CullTransparentMesh: 0
+--- !u!1 &476696917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 476696918}
+  - component: {fileID: 476696920}
+  - component: {fileID: 476696919}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &476696918
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476696917}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 212393414}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.00019503, y: -0.0001089}
+  m_SizeDelta: {x: 981.88, y: 132.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &476696919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476696917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e682c44952177c648a565b9b94055c8b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &476696920
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476696917}
+  m_CullTransparentMesh: 1
 --- !u!1 &478462662
 GameObject:
   m_ObjectHideFlags: 0
@@ -13872,12 +13815,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f0e48c679befd4e8bc6e173a9ba42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 1833280051}
-  m_countText: {m_uiText: {fileID: 186113614}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 1479518768}, m_textMeshProUGUI: {fileID: 0}}
-  m_button: {fileID: 486407190}
-  m_actions: []
-  m_groupNumber: -1
 --- !u!114 &486407190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15078,11 +15015,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c139516016bca084288d1ee836fc024b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_processQuestMachineTags: 1
-  m_overrideQuestLog: 1
-  didIRegisterFunctions: 0
-  m_currentQuest: {fileID: 0}
-  m_currentQuestConversationID: -1
 --- !u!114 &521969279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15095,8 +15027,6 @@ MonoBehaviour:
   m_Script: {fileID: -159411732, guid: b6aeb324d5ee2fb4896ea216d1d741a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unregisterOnDisable: 0
-  didIRegister: 0
 --- !u!114 &521969281 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3294541908675848696, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
@@ -15387,31 +15317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caffcdd11c323fd4994cb04c5cc581c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_mainPanel: {fileID: 953058726}
-  m_entityName: {m_uiText: {fileID: 0}, m_textMeshProUGUI: {fileID: 0}}
-  m_entityImage: {fileID: 0}
-  <uiPanel>k__BackingField: {fileID: 0}
-  <currentIconList>k__BackingField: {fileID: 0}
-  <currentButtonList>k__BackingField: {fileID: 0}
-  m_contentContainer: {fileID: 953058726}
-  m_questGroupTemplate: {fileID: 0}
-  m_activeQuestHeadingTemplate: {fileID: 265832283}
-  m_activeQuestBodyTemplate: {fileID: 1290319271}
-  m_completedQuestHeadingTemplate: {fileID: 1193025303}
-  m_completedQuestBodyTemplate: {fileID: 561175159}
-  m_iconListTemplate: {fileID: 1106264171}
-  m_buttonListTemplate: {fileID: 690850883}
-  m_subheadingTemplates: []
-  m_showHUD: 1
-  m_useGroups: 0
-  m_showActiveQuests: 1
-  m_showSuccessfulQuests: 0
-  m_showFailedQuests: 0
-  m_hideIfNoTrackedQuests: 0
-  <isQuestActive>k__BackingField: 0
-  expandedGroupNames: []
-  <questListContainer>k__BackingField: {fileID: 0}
-  m_canvasGroup: {fileID: 0}
 --- !u!114 &529387811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15713,7 +15618,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 538484923}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &538484920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16082,114 +15986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2185d538298c73f418ba252c3e3e01ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_key: 
-  m_appendSaverTypeToKey: 0
-  m_saveAcrossSceneChanges: 1
-  m_restoreStateOnStart: 0
-  m_runtimeKey: 
-  m_forwardEventsToListeners: 0
-  m_includeInSavedGameData: 1
-  m_addNewQuestsSinceSavedGame: 0
-  m_questList: []
-  m_deletedStaticQuests: []
-  <originalQuestList>k__BackingField: []
-  m_runtimeStartupQueue: []
-  m_id:
-    m_text: Ivan
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_displayName:
-    m_text: Ivan
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_image: {fileID: 0}
-  m_fallbackID:
-    m_text: 
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_fallbackDisplayName:
-    m_text: 
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_questEntity: {fileID: 0}
-  m_textTable: {fileID: 0}
-  m_noQuestsUIContents: {m_icon: {fileID: 0}, m_headingText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_bodyText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_contentList: []
-}
-  m_offerableQuestsUIContents: {m_icon: {fileID: 0}, m_headingText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_bodyText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_contentList: []
-}
-  m_activeQuestsUIContents: {m_icon: {fileID: 0}, m_headingText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_bodyText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_contentList: []
-}
-  m_completedQuestDialogueMode: 0
-  m_questDialogueUI: {fileID: 0}
-  m_cooldownCheckFrequency: 0
-  <nonOfferableQuests>k__BackingField: []
-  <offerableQuests>k__BackingField: []
-  <activeQuests>k__BackingField: []
-  <completedQuests>k__BackingField: []
-  <player>k__BackingField: {fileID: 0}
-  <playerTextInfo>k__BackingField:
-    m_id:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_displayName:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_textTable: {fileID: 0}
-    m_image: {fileID: 0}
-  <allowBackButton>k__BackingField: 0
-  m_playerQuestListContainer: {fileID: 0}
-  m_myQuestGiverTextinfo:
-    m_id:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_displayName:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_textTable: {fileID: 0}
-    m_image: {fileID: 0}
-  overrideQuestIDToShowInDialogue: 
 --- !u!114 &546177101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16696,7 +16492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f2f483d2288b14f8cdb337699bc716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_iconTemplate: {fileID: 1265789332}
 --- !u!224 &553527421
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17036,7 +16831,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 561175163}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &561175160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17229,31 +17023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caffcdd11c323fd4994cb04c5cc581c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_mainPanel: {fileID: 1485689409}
-  m_entityName: {m_uiText: {fileID: 0}, m_textMeshProUGUI: {fileID: 0}}
-  m_entityImage: {fileID: 0}
-  <uiPanel>k__BackingField: {fileID: 0}
-  <currentIconList>k__BackingField: {fileID: 0}
-  <currentButtonList>k__BackingField: {fileID: 0}
-  m_contentContainer: {fileID: 1485689409}
-  m_questGroupTemplate: {fileID: 0}
-  m_activeQuestHeadingTemplate: {fileID: 1031127125}
-  m_activeQuestBodyTemplate: {fileID: 1984379519}
-  m_completedQuestHeadingTemplate: {fileID: 2070951033}
-  m_completedQuestBodyTemplate: {fileID: 538484919}
-  m_iconListTemplate: {fileID: 1574098285}
-  m_buttonListTemplate: {fileID: 1236069587}
-  m_subheadingTemplates: []
-  m_showHUD: 1
-  m_useGroups: 0
-  m_showActiveQuests: 1
-  m_showSuccessfulQuests: 0
-  m_showFailedQuests: 0
-  m_hideIfNoTrackedQuests: 0
-  <isQuestActive>k__BackingField: 0
-  expandedGroupNames: []
-  <questListContainer>k__BackingField: {fileID: 0}
-  m_canvasGroup: {fileID: 0}
 --- !u!114 &572823215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18092,9 +17861,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e60271a1b1876d54db73197b61b3da4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 309274873}
-  m_countText: {m_uiText: {fileID: 1193192163}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 2084819075}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &621624959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19225,12 +18991,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f0e48c679befd4e8bc6e173a9ba42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 1299280277}
-  m_countText: {m_uiText: {fileID: 1660387971}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 87778398}, m_textMeshProUGUI: {fileID: 0}}
-  m_button: {fileID: 645310568}
-  m_actions: []
-  m_groupNumber: -1
 --- !u!114 &645310568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20020,6 +19780,82 @@ RectTransform:
   m_AnchoredPosition: {x: -400, y: 0}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 1, y: 1}
+--- !u!1 &668923783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 668923784}
+  - component: {fileID: 668923786}
+  - component: {fileID: 668923785}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &668923784
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668923783}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.685, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1457708356}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -27.029337, y: -100.6}
+  m_SizeDelta: {x: 261.3379, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &668923785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668923783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &668923786
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668923783}
+  m_CullTransparentMesh: 1
 --- !u!1 &671703973
 GameObject:
   m_ObjectHideFlags: 0
@@ -20176,7 +20012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be9af57cff30f14f8df1685e6fa05e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_buttonTemplate: {fileID: 486407189}
 --- !u!114 &690850884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22059,9 +21894,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e60271a1b1876d54db73197b61b3da4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 146714944}
-  m_countText: {m_uiText: {fileID: 651823958}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 1845230446}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &723833810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22266,7 +22098,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a03e7396af4504bbe3340921a04590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_toggle: {fileID: 726858550}
 --- !u!114 &726858550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23070,7 +22901,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 748546826}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &748546826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23281,7 +23111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 750441968}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &750441968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23952,9 +23781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e60271a1b1876d54db73197b61b3da4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 1419351441}
-  m_countText: {m_uiText: {fileID: 1595712103}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 1963736136}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &774225638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24394,12 +24220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f0e48c679befd4e8bc6e173a9ba42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 1738042741}
-  m_countText: {m_uiText: {fileID: 545833360}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 855587193}, m_textMeshProUGUI: {fileID: 0}}
-  m_button: {fileID: 793695263}
-  m_actions: []
-  m_groupNumber: -1
 --- !u!114 &793695263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24647,6 +24467,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802043866}
   m_CullTransparentMesh: 0
+--- !u!1 &812089791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 812089792}
+  - component: {fileID: 812089794}
+  - component: {fileID: 812089793}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &812089792
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812089791}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 978293134}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &812089793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812089791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &812089794
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812089791}
+  m_CullTransparentMesh: 1
 --- !u!1 &813357504
 GameObject:
   m_ObjectHideFlags: 0
@@ -24681,7 +24577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be9af57cff30f14f8df1685e6fa05e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_buttonTemplate: {fileID: 22134293}
 --- !u!224 &813357506
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25072,14 +24967,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fadeSpeed: 1
   _fadeDuration: 2
-  deathBodyPrefabs:
-  - {fileID: 333675618}
-  - {fileID: 1957430643}
-  - {fileID: 317329626}
-  burnedBodyPrefab: {fileID: 1030672928}
-  buriedBodyPrefab: {fileID: 127537994}
-  gravePrefab: {fileID: 0}
-  Burning: 0
 --- !u!114 &824886005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25645,9 +25532,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e60271a1b1876d54db73197b61b3da4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 1742790741}
-  m_countText: {m_uiText: {fileID: 577388509}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 1765404537}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &848768273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26335,27 +26219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a2a696e4a53f9842909da4e6a22b4a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_mainPanel: {fileID: 1796362306}
-  m_entityName: {m_uiText: {fileID: 0}, m_textMeshProUGUI: {fileID: 0}}
-  m_entityImage: {fileID: 0}
-  <uiPanel>k__BackingField: {fileID: 0}
-  <currentIconList>k__BackingField: {fileID: 0}
-  <currentButtonList>k__BackingField: {fileID: 0}
-  m_contentContainer: {fileID: 1796362306}
-  m_alertContainerTemplate: {fileID: 1417561931}
-  m_headingTemplate: {fileID: 1471101437}
-  m_subheadingTemplates: []
-  m_bodyTemplate: {fileID: 213775423}
-  m_iconListTemplate: {fileID: 344995528}
-  m_buttonListTemplate: {fileID: 813357505}
-  m_alwaysUseContainerTemplate: 0
-  m_minDisplayDuration: 5
-  m_charsPerSecDuration: 50
-  m_leaveLastContentVisibleDuringHide: 0
-  m_onShowAlert:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
 --- !u!224 &862860049
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27156,7 +27019,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a03e7396af4504bbe3340921a04590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_toggle: {fileID: 899774395}
 --- !u!114 &899774395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27566,9 +27428,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f140093025293f45b9800ed6e0f7e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_foldoutButton: {fileID: 778094872}
-  m_foldoutText: {m_uiText: {fileID: 990727173}, m_textMeshProUGUI: {fileID: 0}}
-  m_interiorPanel: {fileID: 1897681375}
 --- !u!224 &916084262
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27881,7 +27740,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9caaffc25c6e64cadfd0e976b5d4c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_queueAlertIfConversationActive: 0
 --- !u!114 &929005670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27894,95 +27752,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 770432b57b2e22a4ea012fc98a4435a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_hideOriginalUIOnConversationStart: 1
-  m_allowOriginalUIDuringConversations: 0
-  m_generateConversationForQuestLists: 1
-  m_cancelQuestListText:
-    m_text: Goodbye.
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  <selectedQuest>k__BackingField: {fileID: 0}
-  <currentSpeaker>k__BackingField:
-    m_id:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_displayName:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_textTable: {fileID: 0}
-    m_image: {fileID: 0}
-  <PlayerID>k__BackingField: 0
-  m_generatedConversation:
-    id: 0
-    fields: []
-    overrideSettings:
-      useOverrides: 0
-      overrideSubtitleSettings: 0
-      showNPCSubtitlesDuringLine: 1
-      showNPCSubtitlesWithResponses: 1
-      showPCSubtitlesDuringLine: 0
-      skipPCSubtitleAfterResponseMenu: 0
-      subtitleCharsPerSecond: 30
-      minSubtitleSeconds: 2
-      continueButton: 0
-      overrideSequenceSettings: 0
-      defaultSequence: 
-      defaultPlayerSequence: 
-      defaultResponseMenuSequence: 
-      overrideInputSettings: 0
-      alwaysForceResponseMenu: 1
-      includeInvalidEntries: 0
-      responseTimeout: 0
-      emTagForOldResponses: 0
-      emTagForInvalidResponses: 0
-      cancelSubtitle:
-        key: 27
-        buttonName: 
-      cancelConversation:
-        key: 27
-        buttonName: 
-    nodeColor: 
-    dialogueEntries: []
-    entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
-  m_template:
-    treatItemsAsQuests: 1
-    actorFields: []
-    itemFields: []
-    questFields: []
-    locationFields: []
-    variableFields: []
-    conversationFields: []
-    dialogueEntryFields: []
-    actorPrimaryFieldTitles: []
-    itemPrimaryFieldTitles: []
-    questPrimaryFieldTitles: []
-    locationPrimaryFieldTitles: []
-    variablePrimaryFieldTitles: []
-    conversationPrimaryFieldTitles: []
-    dialogueEntryPrimaryFieldTitles: []
-    npcLineColor:
-      r: 1
-      g: 0
-      b: 0
-      a: 1
-    pcLineColor:
-      r: 0
-      g: 0
-      b: 1
-      a: 1
-    repeatLineColor:
-      r: 0.5
-      g: 0.5
-      b: 0.5
-      a: 1
-  m_didIRegister: 0
 --- !u!114 &929005671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28007,7 +27776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15491f45d568daa4aa9500acbff68866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_questAlertUI: {fileID: 1565343127}
 --- !u!114 &929005673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28020,31 +27788,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994bdb45f0cf15c4cbb1b065872d32bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_questDatabases:
-  - {fileID: 11400000, guid: 62da740dba2cf924c89544dd31aa149e, type: 2}
-  m_questDialogueUI: {fileID: 1230925478}
-  m_questJournalUI: {fileID: 1660377319}
-  m_questAlertUI: {fileID: 1565343127}
-  m_questHUD: {fileID: 572823214}
-  m_completedQuestDialogueMode: 0
-  m_prettyPrintJson: 0
-  m_allowOnlyOneInstance: 1
-  m_hideDialogueUIOnStart: 1
-  m_hideJournalUIOnStart: 1
-  m_untrackCompletedQuests: 1
-  m_generatorSettings:
-    m_maxSimultaneousPlanners: 5
-    m_maxGoalActionChecksPerFrame: 100
-    m_maxStepsPerFrame: 100
-    m_defaultPlayerDomainType: {fileID: 11400000, guid: c0a712e689f630748b5f41affd4392c5, type: 2}
-    m_goalSelectionMode:
-      m_criterion: 1
-      m_max: 1
-  m_debugSettings:
-    m_debug: 0
-    m_debugMessageSystem: 0
-    m_debugQuestGenerator: 0
-  watermark: {fileID: 0}
 --- !u!4 &929005674
 Transform:
   m_ObjectHideFlags: 0
@@ -29084,14 +28827,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fadeSpeed: 1
   _fadeDuration: 2
-  deathBodyPrefabs:
-  - {fileID: 333675618}
-  - {fileID: 1957430643}
-  - {fileID: 317329626}
-  burnedBodyPrefab: {fileID: 1030672928}
-  buriedBodyPrefab: {fileID: 127537994}
-  gravePrefab: {fileID: 0}
-  Burning: 0
 --- !u!114 &963656301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29267,6 +29002,141 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964111680}
   m_CullTransparentMesh: 0
+--- !u!1 &966225779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 966225780}
+  - component: {fileID: 966225782}
+  - component: {fileID: 966225781}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &966225780
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966225779}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.1864831, y: 2.5491865, z: 2.5491865}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 212393414}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2.8, y: 4}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &966225781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966225779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "\u041A\u043E\u043D\u0435\u0446 \u0418\u0433\u0440\u044B"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 10800862
+  m_fontColor: {r: 0.8705883, g: 0.8078432, b: 0.6431373, a: 0}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 22.2
+  m_fontSizeBase: 22.2
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &966225782
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966225779}
+  m_CullTransparentMesh: 1
 --- !u!1 &968547065
 GameObject:
   m_ObjectHideFlags: 0
@@ -29915,6 +29785,108 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975975394}
   m_CullTransparentMesh: 0
+--- !u!1 &978293133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 978293134}
+  - component: {fileID: 978293137}
+  - component: {fileID: 978293136}
+  - component: {fileID: 978293135}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &978293134
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978293133}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 812089792}
+  - {fileID: 212393414}
+  m_Father: {fileID: 181082305}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &978293135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978293133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &978293136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978293133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &978293137
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978293133}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &978946145 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c380d56629c88674a9c1232f286e9f1d, type: 3}
@@ -30594,7 +30566,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be9af57cff30f14f8df1685e6fa05e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_buttonTemplate: {fileID: 1212781101}
 --- !u!224 &1022326547
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30811,12 +30782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f0e48c679befd4e8bc6e173a9ba42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 832487117}
-  m_countText: {m_uiText: {fileID: 908137326}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 1858690599}, m_textMeshProUGUI: {fileID: 0}}
-  m_button: {fileID: 1030178765}
-  m_actions: []
-  m_groupNumber: -1
 --- !u!114 &1030178765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30974,11 +30939,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030178763}
   m_CullTransparentMesh: 0
---- !u!1 &1030672928 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9083593446137711636, guid: 256147a2389c1c5429018e4f7c39f23d, type: 3}
-  m_PrefabInstance: {fileID: 6099842847456196457}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1031127123
 GameObject:
   m_ObjectHideFlags: 0
@@ -31033,7 +30993,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 1031127129}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &1031127126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32464,12 +32423,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f0e48c679befd4e8bc6e173a9ba42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 0}
-  m_countText: {m_uiText: {fileID: 0}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 623413184}, m_textMeshProUGUI: {fileID: 0}}
-  m_button: {fileID: 2087099266}
-  m_actions: []
-  m_groupNumber: -1
 --- !u!224 &1077832270
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33210,7 +33163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f2f483d2288b14f8cdb337699bc716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_iconTemplate: {fileID: 848768272}
 --- !u!114 &1106264172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34307,7 +34259,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 1193025307}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &1193025304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34743,12 +34694,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f0e48c679befd4e8bc6e173a9ba42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 1738698254}
-  m_countText: {m_uiText: {fileID: 815285985}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 1645667916}, m_textMeshProUGUI: {fileID: 0}}
-  m_button: {fileID: 1212781102}
-  m_actions: []
-  m_groupNumber: -1
 --- !u!114 &1212781102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35982,26 +35927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddfb74c753039de46a193eeed0049803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_mainPanel: {fileID: 1230925477}
-  m_entityName: {m_uiText: {fileID: 311105119}, m_textMeshProUGUI: {fileID: 0}}
-  m_entityImage: {fileID: 108364626}
-  <uiPanel>k__BackingField: {fileID: 0}
-  <currentIconList>k__BackingField: {fileID: 0}
-  <currentButtonList>k__BackingField: {fileID: 0}
-  m_cancelButton: {fileID: 2011964275}
-  m_closeButton: {fileID: 944966917}
-  m_backButton: {fileID: 2113444063}
-  m_acceptButton: {fileID: 1101937628}
-  m_declineButton: {fileID: 1387537857}
-  m_contentContainer: {fileID: 341534051}
-  m_headingTemplate: {fileID: 1952190236}
-  m_subheadingTemplates:
-  - {fileID: 750441967}
-  m_bodyTemplate: {fileID: 431763688}
-  m_iconListTemplate: {fileID: 553527420}
-  m_buttonListTemplate: {fileID: 2043399769}
-  <scrollbarEnabler>k__BackingField: {fileID: 0}
-  <selectedQuest>k__BackingField: {fileID: 0}
 --- !u!114 &1230925479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36310,7 +36235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a03e7396af4504bbe3340921a04590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_toggle: {fileID: 1234355777}
 --- !u!114 &1234355777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36455,7 +36379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be9af57cff30f14f8df1685e6fa05e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_buttonTemplate: {fileID: 793695262}
 --- !u!114 &1236069588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36580,7 +36503,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 1237634667}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &1237634667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36980,9 +36902,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e60271a1b1876d54db73197b61b3da4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 945448877}
-  m_countText: {m_uiText: {fileID: 1065629329}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 554531821}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!224 &1265789333
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37798,7 +37717,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 1290319275}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &1290319272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38331,7 +38249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 1301802347}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &1301802347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38717,7 +38634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 1315650013}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &1315650013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41059,8 +40975,6 @@ MonoBehaviour:
   m_Script: {fileID: -159411732, guid: b6aeb324d5ee2fb4896ea216d1d741a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unregisterOnDisable: 0
-  didIRegister: 0
 --- !u!114 &1340168877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41073,8 +40987,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f0c8993584b394baa7bfaa80f1ef27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_actionConversationMap: {fileID: 11400000, guid: 92a74325454e33149b62a3bec620e6a8, type: 2}
-  m_applyToAllGenerators: 1
 --- !u!114 &1340168878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41100,11 +41012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c139516016bca084288d1ee836fc024b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_processQuestMachineTags: 1
-  m_overrideQuestLog: 1
-  didIRegisterFunctions: 0
-  m_currentQuest: {fileID: 0}
-  m_currentQuestConversationID: -1
 --- !u!114 &1340168880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41180,12 +41087,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f0e48c679befd4e8bc6e173a9ba42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 1991959931}
-  m_countText: {m_uiText: {fileID: 128452018}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 1271418235}, m_textMeshProUGUI: {fileID: 0}}
-  m_button: {fileID: 1343683557}
-  m_actions: []
-  m_groupNumber: -1
 --- !u!114 &1343683557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42051,9 +41952,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e60271a1b1876d54db73197b61b3da4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 1309913427}
-  m_countText: {m_uiText: {fileID: 691904108}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 512790242}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!224 &1366124479
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42202,12 +42100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f0e48c679befd4e8bc6e173a9ba42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 1683412853}
-  m_countText: {m_uiText: {fileID: 1254950498}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 1283545944}, m_textMeshProUGUI: {fileID: 0}}
-  m_button: {fileID: 1374690832}
-  m_actions: []
-  m_groupNumber: -1
 --- !u!114 &1374690832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43305,9 +43197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de78fbfab2f2dd4f89712741c1b535b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_icon: {fileID: 0}
-  m_buttonTemplate: {fileID: 1407875453}
-  m_trackToggleTemplate: {fileID: 899774394}
 --- !u!224 &1407875452
 RectTransform:
   m_ObjectHideFlags: 0
@@ -43342,12 +43231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f0e48c679befd4e8bc6e173a9ba42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 0}
-  m_countText: {m_uiText: {fileID: 0}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 603245193}, m_textMeshProUGUI: {fileID: 0}}
-  m_button: {fileID: 1407875454}
-  m_actions: []
-  m_groupNumber: -1
 --- !u!114 &1407875454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43509,7 +43392,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 1413681790}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &1413681790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44014,7 +43896,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f2f483d2288b14f8cdb337699bc716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_iconTemplate: {fileID: 1985974483}
 --- !u!224 &1436189922
 RectTransform:
   m_ObjectHideFlags: 0
@@ -44680,6 +44561,7 @@ RectTransform:
   - {fileID: 1640185655}
   - {fileID: 1312435682}
   - {fileID: 2033392621}
+  - {fileID: 668923784}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44822,12 +44704,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f0e48c679befd4e8bc6e173a9ba42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 0}
-  m_countText: {m_uiText: {fileID: 0}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 1876066462}, m_textMeshProUGUI: {fileID: 0}}
-  m_button: {fileID: 488222599}
-  m_actions: []
-  m_groupNumber: -1
 --- !u!224 &1467627033
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45098,7 +44974,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 1471101435}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!1 &1473499005
 GameObject:
   m_ObjectHideFlags: 0
@@ -46148,48 +46023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45866ddd7223f146a5a84fe97d2d1e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_mainPanel: {fileID: 179118138}
-  m_entityName: {m_uiText: {fileID: 982234870}, m_textMeshProUGUI: {fileID: 0}}
-  m_entityImage: {fileID: 50033540}
-  <uiPanel>k__BackingField: {fileID: 0}
-  <currentIconList>k__BackingField: {fileID: 0}
-  <currentButtonList>k__BackingField: {fileID: 0}
-  m_questSelectionContentContainer: {fileID: 1544418820}
-  m_questGroupTemplate: {fileID: 1596400394}
-  m_activeQuestNameTemplate: {fileID: 79235856}
-  m_completedQuestNameTemplate: {fileID: 1407875451}
-  m_alwaysExpandAllGroups: 0
-  m_showDetailsOnFocus: 0
-  m_showCompletedQuests: 1
-  m_questDetailsContentContainer: {fileID: 599718902}
-  m_questHeadingTextTemplate: {fileID: 1301802346}
-  m_subheadingTemplates: []
-  m_questBodyTextTemplate: {fileID: 748546825}
-  m_iconListTemplate: {fileID: 1727745383}
-  m_buttonListTemplate: {fileID: 55555615}
-  m_questDetailsButtonContainer: {fileID: 925680498}
-  m_trackButtonTemplate: {fileID: 1467627032}
-  m_abandonButtonTemplate: {fileID: 4592314}
-  m_abandonQuestPanel: {fileID: 167747522}
-  m_abandonQuestNameText: {m_uiText: {fileID: 2025635785}, m_textMeshProUGUI: {fileID: 0}}
-  m_sortAlphabetically: 1
-  m_showDisplayNameInHeading: 0
-  m_showDialogueContentIfNoJournalContent: 1
-  m_showOfferContentIfNoJournalOrDialogueContent: 0
-  m_showQuestsThatHaveNoContent: 1
-  m_showFirstQuestDetailsOnOpen: 0
-  m_showTrackButtonInDetails: 0
-  m_sendMessageOnOpen: 2
-  m_openMessage: Pause Player
-  m_closeMessage: Unpause Player
-  <isDrawingSelectionPanel>k__BackingField: 0
-  collapsedGroupNames: []
-  <selectedQuest>k__BackingField: {fileID: 0}
-  <questJournal>k__BackingField: {fileID: 0}
-  m_mustSendCloseMessage: 0
-  m_hasInitialized: 0
-  m_justShown: 0
-  m_justToggledTracking: 0
 --- !u!95 &1539505619
 Animator:
   serializedVersion: 5
@@ -47067,27 +46900,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a2a696e4a53f9842909da4e6a22b4a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_mainPanel: {fileID: 1218667894}
-  m_entityName: {m_uiText: {fileID: 0}, m_textMeshProUGUI: {fileID: 0}}
-  m_entityImage: {fileID: 0}
-  <uiPanel>k__BackingField: {fileID: 0}
-  <currentIconList>k__BackingField: {fileID: 0}
-  <currentButtonList>k__BackingField: {fileID: 0}
-  m_contentContainer: {fileID: 1218667894}
-  m_alertContainerTemplate: {fileID: 293805840}
-  m_headingTemplate: {fileID: 1571894310}
-  m_subheadingTemplates: []
-  m_bodyTemplate: {fileID: 2092264222}
-  m_iconListTemplate: {fileID: 393660830}
-  m_buttonListTemplate: {fileID: 1022326546}
-  m_alwaysUseContainerTemplate: 0
-  m_minDisplayDuration: 5
-  m_charsPerSecDuration: 50
-  m_leaveLastContentVisibleDuringHide: 0
-  m_onShowAlert:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
 --- !u!224 &1565343128
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47488,7 +47300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 1571894308}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!1 &1572016018 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3594517042557757022, guid: ac0a7fc0586ab0e4e9c7ac4c0962db3f, type: 3}
@@ -47549,7 +47360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f2f483d2288b14f8cdb337699bc716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_iconTemplate: {fileID: 723833809}
 --- !u!114 &1574098286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47923,9 +47733,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f140093025293f45b9800ed6e0f7e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_foldoutButton: {fileID: 792557217}
-  m_foldoutText: {m_uiText: {fileID: 524979398}, m_textMeshProUGUI: {fileID: 0}}
-  m_interiorPanel: {fileID: 319468309}
 --- !u!224 &1596400395
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48071,9 +47878,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e60271a1b1876d54db73197b61b3da4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 2035816648}
-  m_countText: {m_uiText: {fileID: 671703977}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 871438090}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!224 &1599922291
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48496,14 +48300,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fadeSpeed: 1
   _fadeDuration: 2
-  deathBodyPrefabs:
-  - {fileID: 333675618}
-  - {fileID: 1957430643}
-  - {fileID: 317329626}
-  burnedBodyPrefab: {fileID: 1030672928}
-  buriedBodyPrefab: {fileID: 127537994}
-  gravePrefab: {fileID: 0}
-  Burning: 0
 --- !u!114 &1607261980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48798,7 +48594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be9af57cff30f14f8df1685e6fa05e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_buttonTemplate: {fileID: 645310567}
 --- !u!224 &1615702210
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49700,48 +49495,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45866ddd7223f146a5a84fe97d2d1e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_mainPanel: {fileID: 701274434}
-  m_entityName: {m_uiText: {fileID: 1520558593}, m_textMeshProUGUI: {fileID: 0}}
-  m_entityImage: {fileID: 1989692818}
-  <uiPanel>k__BackingField: {fileID: 0}
-  <currentIconList>k__BackingField: {fileID: 0}
-  <currentButtonList>k__BackingField: {fileID: 0}
-  m_questSelectionContentContainer: {fileID: 325980734}
-  m_questGroupTemplate: {fileID: 916084261}
-  m_activeQuestNameTemplate: {fileID: 1841647746}
-  m_completedQuestNameTemplate: {fileID: 1821289895}
-  m_alwaysExpandAllGroups: 0
-  m_showDetailsOnFocus: 0
-  m_showCompletedQuests: 1
-  m_questDetailsContentContainer: {fileID: 1273523554}
-  m_questHeadingTextTemplate: {fileID: 38204399}
-  m_subheadingTemplates: []
-  m_questBodyTextTemplate: {fileID: 1315650012}
-  m_iconListTemplate: {fileID: 1436189921}
-  m_buttonListTemplate: {fileID: 1615702209}
-  m_questDetailsButtonContainer: {fileID: 546922757}
-  m_trackButtonTemplate: {fileID: 1874926937}
-  m_abandonButtonTemplate: {fileID: 1077832269}
-  m_abandonQuestPanel: {fileID: 1339500238}
-  m_abandonQuestNameText: {m_uiText: {fileID: 1567318664}, m_textMeshProUGUI: {fileID: 0}}
-  m_sortAlphabetically: 1
-  m_showDisplayNameInHeading: 0
-  m_showDialogueContentIfNoJournalContent: 1
-  m_showOfferContentIfNoJournalOrDialogueContent: 0
-  m_showQuestsThatHaveNoContent: 1
-  m_showFirstQuestDetailsOnOpen: 0
-  m_showTrackButtonInDetails: 0
-  m_sendMessageOnOpen: 2
-  m_openMessage: Pause Player
-  m_closeMessage: Unpause Player
-  <isDrawingSelectionPanel>k__BackingField: 0
-  collapsedGroupNames: []
-  <selectedQuest>k__BackingField: {fileID: 0}
-  <questJournal>k__BackingField: {fileID: 0}
-  m_mustSendCloseMessage: 0
-  m_hasInitialized: 0
-  m_justShown: 0
-  m_justToggledTracking: 0
 --- !u!95 &1660377320
 Animator:
   serializedVersion: 5
@@ -50710,46 +50463,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e934de1a262c41478a844f227d499e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_key: PlayerJournal
-  m_appendSaverTypeToKey: 0
-  m_saveAcrossSceneChanges: 1
-  m_restoreStateOnStart: 0
-  m_runtimeKey: 
-  m_forwardEventsToListeners: 1
-  m_includeInSavedGameData: 1
-  m_addNewQuestsSinceSavedGame: 0
-  m_questList: []
-  m_deletedStaticQuests: []
-  <originalQuestList>k__BackingField: []
-  m_runtimeStartupQueue: []
-  m_id:
-    m_text: Player
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_displayName:
-    m_text: 
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_image: {fileID: 0}
-  m_fallbackID:
-    m_text: 
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_fallbackDisplayName:
-    m_text: 
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_questEntity: {fileID: 0}
-  m_questJournalUI: {fileID: 0}
-  m_questHUD: {fileID: 0}
-  m_rememberCompletedQuests: 1
-  m_onlyRememberHandwrittenQuests: 0
-  m_compressCompletedProcgenQuests: 0
-  m_onlyTrackOneQuestAtATime: 0
 --- !u!95 &1680399944 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 529c34a4c0faa0e45a416e2975613f14, type: 3}
@@ -51554,7 +51267,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f2f483d2288b14f8cdb337699bc716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_iconTemplate: {fileID: 1599922290}
 --- !u!224 &1727745384
 RectTransform:
   m_ObjectHideFlags: 0
@@ -52592,116 +52304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2185d538298c73f418ba252c3e3e01ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_key: 
-  m_appendSaverTypeToKey: 0
-  m_saveAcrossSceneChanges: 1
-  m_restoreStateOnStart: 0
-  m_runtimeKey: 
-  m_forwardEventsToListeners: 0
-  m_includeInSavedGameData: 1
-  m_addNewQuestsSinceSavedGame: 0
-  m_questList:
-  - {fileID: 11400000, guid: eea8dfd53473de147b76c83e0dba7914, type: 2}
-  - {fileID: 11400000, guid: a99229d71c6e431458453033e2dc0dd3, type: 2}
-  m_deletedStaticQuests: []
-  <originalQuestList>k__BackingField: []
-  m_runtimeStartupQueue: []
-  m_id:
-    m_text: Ivan
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_displayName:
-    m_text: Ivan
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_image: {fileID: 0}
-  m_fallbackID:
-    m_text: 
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_fallbackDisplayName:
-    m_text: 
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_questEntity: {fileID: 0}
-  m_textTable: {fileID: 0}
-  m_noQuestsUIContents: {m_icon: {fileID: 0}, m_headingText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_bodyText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_contentList: []
-}
-  m_offerableQuestsUIContents: {m_icon: {fileID: 0}, m_headingText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_bodyText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_contentList: []
-}
-  m_activeQuestsUIContents: {m_icon: {fileID: 0}, m_headingText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_bodyText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_contentList: []
-}
-  m_completedQuestDialogueMode: 0
-  m_questDialogueUI: {fileID: 0}
-  m_cooldownCheckFrequency: 0
-  <nonOfferableQuests>k__BackingField: []
-  <offerableQuests>k__BackingField: []
-  <activeQuests>k__BackingField: []
-  <completedQuests>k__BackingField: []
-  <player>k__BackingField: {fileID: 0}
-  <playerTextInfo>k__BackingField:
-    m_id:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_displayName:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_textTable: {fileID: 0}
-    m_image: {fileID: 0}
-  <allowBackButton>k__BackingField: 0
-  m_playerQuestListContainer: {fileID: 0}
-  m_myQuestGiverTextinfo:
-    m_id:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_displayName:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_textTable: {fileID: 0}
-    m_image: {fileID: 0}
-  overrideQuestIDToShowInDialogue: 
 --- !u!114 &1759093733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53570,95 +53172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 770432b57b2e22a4ea012fc98a4435a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_hideOriginalUIOnConversationStart: 1
-  m_allowOriginalUIDuringConversations: 0
-  m_generateConversationForQuestLists: 1
-  m_cancelQuestListText:
-    m_text: Goodbye.
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  <selectedQuest>k__BackingField: {fileID: 0}
-  <currentSpeaker>k__BackingField:
-    m_id:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_displayName:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_textTable: {fileID: 0}
-    m_image: {fileID: 0}
-  <PlayerID>k__BackingField: 0
-  m_generatedConversation:
-    id: 0
-    fields: []
-    overrideSettings:
-      useOverrides: 0
-      overrideSubtitleSettings: 0
-      showNPCSubtitlesDuringLine: 1
-      showNPCSubtitlesWithResponses: 1
-      showPCSubtitlesDuringLine: 0
-      skipPCSubtitleAfterResponseMenu: 0
-      subtitleCharsPerSecond: 30
-      minSubtitleSeconds: 2
-      continueButton: 0
-      overrideSequenceSettings: 0
-      defaultSequence: 
-      defaultPlayerSequence: 
-      defaultResponseMenuSequence: 
-      overrideInputSettings: 0
-      alwaysForceResponseMenu: 1
-      includeInvalidEntries: 0
-      responseTimeout: 0
-      emTagForOldResponses: 0
-      emTagForInvalidResponses: 0
-      cancelSubtitle:
-        key: 27
-        buttonName: 
-      cancelConversation:
-        key: 27
-        buttonName: 
-    nodeColor: 
-    dialogueEntries: []
-    entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
-  m_template:
-    treatItemsAsQuests: 1
-    actorFields: []
-    itemFields: []
-    questFields: []
-    locationFields: []
-    variableFields: []
-    conversationFields: []
-    dialogueEntryFields: []
-    actorPrimaryFieldTitles: []
-    itemPrimaryFieldTitles: []
-    questPrimaryFieldTitles: []
-    locationPrimaryFieldTitles: []
-    variablePrimaryFieldTitles: []
-    conversationPrimaryFieldTitles: []
-    dialogueEntryPrimaryFieldTitles: []
-    npcLineColor:
-      r: 1
-      g: 0
-      b: 0
-      a: 1
-    pcLineColor:
-      r: 0
-      g: 0
-      b: 1
-      a: 1
-    repeatLineColor:
-      r: 0.5
-      g: 0.5
-      b: 0.5
-      a: 1
-  m_didIRegister: 0
 --- !u!114 &1765133136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53683,7 +53196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15491f45d568daa4aa9500acbff68866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_questAlertUI: {fileID: 862860048}
 --- !u!114 &1765133138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53696,31 +53208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994bdb45f0cf15c4cbb1b065872d32bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_questDatabases:
-  - {fileID: 11400000, guid: 2cba4e905d8e60d41a00b7e343157b76, type: 2}
-  m_questDialogueUI: {fileID: 247194197}
-  m_questJournalUI: {fileID: 1539505618}
-  m_questAlertUI: {fileID: 862860048}
-  m_questHUD: {fileID: 529387810}
-  m_completedQuestDialogueMode: 0
-  m_prettyPrintJson: 0
-  m_allowOnlyOneInstance: 1
-  m_hideDialogueUIOnStart: 1
-  m_hideJournalUIOnStart: 1
-  m_untrackCompletedQuests: 1
-  m_generatorSettings:
-    m_maxSimultaneousPlanners: 5
-    m_maxGoalActionChecksPerFrame: 100
-    m_maxStepsPerFrame: 100
-    m_defaultPlayerDomainType: {fileID: 11400000, guid: c0a712e689f630748b5f41affd4392c5, type: 2}
-    m_goalSelectionMode:
-      m_criterion: 1
-      m_max: 1
-  m_debugSettings:
-    m_debug: 0
-    m_debugMessageSystem: 0
-    m_debugQuestGenerator: 0
-  watermark: {fileID: 0}
 --- !u!4 &1765133139
 Transform:
   m_ObjectHideFlags: 0
@@ -55066,9 +54553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de78fbfab2f2dd4f89712741c1b535b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_icon: {fileID: 0}
-  m_buttonTemplate: {fileID: 1821289897}
-  m_trackToggleTemplate: {fileID: 414215191}
 --- !u!224 &1821289896
 RectTransform:
   m_ObjectHideFlags: 0
@@ -55103,12 +54587,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f0e48c679befd4e8bc6e173a9ba42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 0}
-  m_countText: {m_uiText: {fileID: 0}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 471793150}, m_textMeshProUGUI: {fileID: 0}}
-  m_button: {fileID: 1821289898}
-  m_actions: []
-  m_groupNumber: -1
 --- !u!114 &1821289898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55533,116 +55011,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2185d538298c73f418ba252c3e3e01ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_key: 
-  m_appendSaverTypeToKey: 0
-  m_saveAcrossSceneChanges: 1
-  m_restoreStateOnStart: 0
-  m_runtimeKey: 
-  m_forwardEventsToListeners: 0
-  m_includeInSavedGameData: 1
-  m_addNewQuestsSinceSavedGame: 0
-  m_questList:
-  - {fileID: 11400000, guid: eea8dfd53473de147b76c83e0dba7914, type: 2}
-  - {fileID: 11400000, guid: a99229d71c6e431458453033e2dc0dd3, type: 2}
-  m_deletedStaticQuests: []
-  <originalQuestList>k__BackingField: []
-  m_runtimeStartupQueue: []
-  m_id:
-    m_text: Ivan
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_displayName:
-    m_text: Ivan
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_image: {fileID: 0}
-  m_fallbackID:
-    m_text: 
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_fallbackDisplayName:
-    m_text: 
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_questEntity: {fileID: 0}
-  m_textTable: {fileID: 0}
-  m_noQuestsUIContents: {m_icon: {fileID: 0}, m_headingText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_bodyText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_contentList: []
-}
-  m_offerableQuestsUIContents: {m_icon: {fileID: 0}, m_headingText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_bodyText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_contentList: []
-}
-  m_activeQuestsUIContents: {m_icon: {fileID: 0}, m_headingText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_bodyText:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-, m_contentList: []
-}
-  m_completedQuestDialogueMode: 0
-  m_questDialogueUI: {fileID: 0}
-  m_cooldownCheckFrequency: 0
-  <nonOfferableQuests>k__BackingField: []
-  <offerableQuests>k__BackingField: []
-  <activeQuests>k__BackingField: []
-  <completedQuests>k__BackingField: []
-  <player>k__BackingField: {fileID: 0}
-  <playerTextInfo>k__BackingField:
-    m_id:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_displayName:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_textTable: {fileID: 0}
-    m_image: {fileID: 0}
-  <allowBackButton>k__BackingField: 0
-  m_playerQuestListContainer: {fileID: 0}
-  m_myQuestGiverTextinfo:
-    m_id:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_displayName:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    m_textTable: {fileID: 0}
-    m_image: {fileID: 0}
-  overrideQuestIDToShowInDialogue: 
 --- !u!114 &1833017619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55791,9 +55159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de78fbfab2f2dd4f89712741c1b535b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_icon: {fileID: 0}
-  m_buttonTemplate: {fileID: 1841647748}
-  m_trackToggleTemplate: {fileID: 1234355776}
 --- !u!224 &1841647747
 RectTransform:
   m_ObjectHideFlags: 0
@@ -55828,12 +55193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f0e48c679befd4e8bc6e173a9ba42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 0}
-  m_countText: {m_uiText: {fileID: 0}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 1269016491}, m_textMeshProUGUI: {fileID: 0}}
-  m_button: {fileID: 1841647749}
-  m_actions: []
-  m_groupNumber: -1
 --- !u!114 &1841647749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56753,12 +56112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f0e48c679befd4e8bc6e173a9ba42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 0}
-  m_countText: {m_uiText: {fileID: 0}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 238380623}, m_textMeshProUGUI: {fileID: 0}}
-  m_button: {fileID: 1179080599}
-  m_actions: []
-  m_groupNumber: -1
 --- !u!224 &1874926938
 RectTransform:
   m_ObjectHideFlags: 0
@@ -57679,7 +57032,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be9af57cff30f14f8df1685e6fa05e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_buttonTemplate: {fileID: 1343683556}
 --- !u!224 &1898331597
 RectTransform:
   m_ObjectHideFlags: 0
@@ -58366,7 +57718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 1940791088}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &1940791088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58529,7 +57880,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 1952190237}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &1952190237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59651,7 +59001,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 1984379523}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &1984379520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59770,9 +59119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e60271a1b1876d54db73197b61b3da4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 298206233}
-  m_countText: {m_uiText: {fileID: 39909803}, m_textMeshProUGUI: {fileID: 0}}
-  m_captionText: {m_uiText: {fileID: 469664972}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!224 &1985974484
 RectTransform:
   m_ObjectHideFlags: 0
@@ -60113,14 +59459,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fadeSpeed: 1
   _fadeDuration: 2
-  deathBodyPrefabs:
-  - {fileID: 333675618}
-  - {fileID: 1957430643}
-  - {fileID: 317329626}
-  burnedBodyPrefab: {fileID: 1030672928}
-  buriedBodyPrefab: {fileID: 127537994}
-  gravePrefab: {fileID: 0}
-  Burning: 0
 --- !u!114 &1992614184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62025,7 +61363,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be9af57cff30f14f8df1685e6fa05e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_buttonTemplate: {fileID: 1030178764}
 --- !u!224 &2043399770
 RectTransform:
   m_ObjectHideFlags: 0
@@ -62373,7 +61710,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 2070951037}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!114 &2070951034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63030,7 +62366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514802d85fb5cf447a2bcffd1100b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {m_uiText: {fileID: 2092264220}, m_textMeshProUGUI: {fileID: 0}}
 --- !u!1 &2098876045
 GameObject:
   m_ObjectHideFlags: 0
