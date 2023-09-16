@@ -8,10 +8,12 @@ namespace DefaultNamespace
     {
         [SerializeField] private string _nameCharacteristic;
         [SerializeField] private MainCharacteristics _mainCharacteristics;
+        [SerializeField] private Button _addCharateristicButton;
 
         public void SelectCurrentStat(string nameCharacteristic)
         {
             _nameCharacteristic = nameCharacteristic;
+            _addCharateristicButton.interactable = true;
         }
 
         public void AddCharacteristic()

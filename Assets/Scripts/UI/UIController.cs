@@ -17,7 +17,7 @@ namespace UI
                 _inventoryBackGround.SetActive(!_inventoryBackGround.activeSelf);
             }
 
-            if (Input.GetKeyDown(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.C))
             {
                 _playerBackGround.SetActive(!_playerBackGround.activeSelf);
             }

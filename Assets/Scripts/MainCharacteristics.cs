@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
+using UI;
 using UI.InventoryScripts;
 using Unity.VisualScripting;
 using Update = UnityEngine.PlayerLoop.Update;
@@ -13,6 +14,11 @@ public class MainCharacteristics : MonoBehaviour
     [SerializeField] private double _perception = 0;        // восприятие
     [SerializeField] private double _intellect  = 0;        // интеллект 
     [SerializeField] private Inventory _inventory;
+    [SerializeField] private StatBlocksScript _statBlockPhys;
+    [SerializeField] private StatBlocksScript _statBlockPerc;
+    [SerializeField] private StatBlocksScript _statBlockInt;
+
+    public event Action StatCurrent;
 
 
     public double GetSkill(string skillName)
@@ -64,11 +70,15 @@ public class MainCharacteristics : MonoBehaviour
     {
         switch (nameCharacteristic)
         {
-            case "PhysicalAbilities": _physicalAbilities++; break;
-            case "Perception": _perception++; break;
-            case "Intellect": _intellect++; break;
+            case "PhysicalAbilities": _physicalAbilities++; /*_statBlockPhys.Updatic();*/
+                /*if (StatCurrent != null) StatCurrent();*/
+                break;
+            case "Perception": _perception++; /*_statBlockPerc.Updatic();*/ break;
+            case "Intellect": _intellect++; /*_statBlockInt.Updatic();*/ break;
         }
+
     }    
+    
     
     public void CharacteristicDecreasee(string nameCharacteristic)
     {

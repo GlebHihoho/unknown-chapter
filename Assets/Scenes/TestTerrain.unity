@@ -4590,6 +4590,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &164844836 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8302728024875527708, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
+  m_PrefabInstance: {fileID: 1106996533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f23ea836fb5a924bbc70908f33e9d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &167747520
 GameObject:
   m_ObjectHideFlags: 0
@@ -23583,6 +23594,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759804842}
   m_CullTransparentMesh: 0
+--- !u!114 &760768827 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8302728024939888432, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
+  m_PrefabInstance: {fileID: 1106996533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f23ea836fb5a924bbc70908f33e9d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &769143434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2916570863362053800, guid: ac0a7fc0586ab0e4e9c7ac4c0962db3f, type: 3}
@@ -38524,6 +38546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nameCharacteristic: 
   _mainCharacteristics: {fileID: 521969281}
+  _addCharateristicButton: {fileID: 1886781217}
 --- !u!1 &1315650011
 GameObject:
   m_ObjectHideFlags: 0
@@ -40975,6 +40998,9 @@ MonoBehaviour:
   _perception: 1
   _intellect: 0
   _inventory: {fileID: 0}
+  _statBlockPhys: {fileID: 0}
+  _statBlockPerc: {fileID: 0}
+  _statBlockInt: {fileID: 0}
 --- !u!1 &1343683555
 GameObject:
   m_ObjectHideFlags: 0
@@ -52176,6 +52202,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752698608}
   m_CullTransparentMesh: 0
+--- !u!114 &1757650686 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8302728024693496938, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
+  m_PrefabInstance: {fileID: 1106996533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f23ea836fb5a924bbc70908f33e9d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1759093730
 GameObject:
   m_ObjectHideFlags: 0
@@ -56481,7 +56518,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ddd6d5c5a71d58b4a9cbc1c1d167f342, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6617da2395b9f224abfcea00382a9a3a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -56518,7 +56555,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -56531,14 +56568,14 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: ddd6d5c5a71d58b4a9cbc1c1d167f342, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1886781215}
   m_OnClick:
     m_PersistentCalls:
@@ -62476,6 +62513,18 @@ PrefabInstance:
       propertyPath: _perception
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3294541908675848696, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
+      propertyPath: _statBlockInt
+      value: 
+      objectReference: {fileID: 164844836}
+    - target: {fileID: 3294541908675848696, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
+      propertyPath: _statBlockPerc
+      value: 
+      objectReference: {fileID: 1757650686}
+    - target: {fileID: 3294541908675848696, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
+      propertyPath: _statBlockPhys
+      value: 
+      objectReference: {fileID: 760768827}
     - target: {fileID: 3294541908675848696, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
       propertyPath: _physicalAbilities
       value: 0

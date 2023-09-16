@@ -14,26 +14,35 @@ namespace UI
         [SerializeField] private TextMeshProUGUI _actualStats;
         [SerializeField] private TextMeshProUGUI _info;
 
-        // Start is called before the first frame update
         void Start()
         {
+            _stat = Convert.ToInt32(_actualStats.text);
+            _info.text = _stat + "/5";
             UpdateStats();
         }
-
+        
         private void UpdateStats()
         {
+            foreach (Transform child in _mainStatObject.transform)
+            {
+                Destroy(child.gameObject);
+            }
             for (int i = 0; i < 5; i++)
             {
                 Instantiate(i < _stat ? _gameObjectTrue : _gameObjectFalse, _mainStatObject.transform);
             }
         }
-
-        // Update is called once per frame
+        
         void Update()
         {
-            _stat = Convert.ToInt32(_actualStats.text);
-            _info.text = _stat + "/5";
-            //UpdateStats();
+            if (_stat != Convert.ToInt32(_actualStats.text))
+            {
+                print("hmmmm");
+                _stat = Convert.ToInt32(_actualStats.text);
+                _info.text = _stat + "/5";
+                UpdateStats();
+            }
         }
+
     }
 }
