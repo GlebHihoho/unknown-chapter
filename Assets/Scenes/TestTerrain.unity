@@ -62723,7 +62723,23 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3294541908985390630, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
+      propertyPath: includeSimStatus
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294541908985390630, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
+      propertyPath: warmUpConversationController
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294541908985390630, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
       propertyPath: displaySettings.inputSettings.cancel.key
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294541908985390630, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
+      propertyPath: persistentDataSettings.includeAllItemData
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294541908985390630, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
+      propertyPath: persistentDataSettings.includeLocationData
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3294541908985390630, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
@@ -62743,6 +62759,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3294541908985390630, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
+      propertyPath: persistentDataSettings.includeAllConversationFields
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294541908985390630, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
       propertyPath: displaySettings.inputSettings.cancelConversation.key
       value: 0
       objectReference: {fileID: 0}
@@ -62755,12 +62775,20 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3294541908985390630, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
+      propertyPath: persistentDataSettings.saveConversationSimStatusWithField
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294541908985390630, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
       propertyPath: displaySettings.barkSettings.allowBarksDuringConversations
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3294541908985390630, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
       propertyPath: displaySettings.subtitleSettings.requireContinueOnLastLine
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294541908985390630, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
+      propertyPath: persistentDataSettings.saveDialogueEntrySimStatusWithField
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3294541908995266210, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
       propertyPath: m_SortingOrder

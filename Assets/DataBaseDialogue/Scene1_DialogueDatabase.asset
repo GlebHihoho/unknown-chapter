@@ -5795,14 +5795,14 @@ MonoBehaviour:
         priority: 2
       conditionsString: "Variable[\"\u041E\u0431\u044B\u0441\u043A\u0430\u043D\u043D\u043E\u0425\u043E\u0442\u044C\u041E\u0434\u043D\u043E\u0422\u0435\u043B\u043E\"]
         == true and (Variable[\"\u041F\u0435\u0440\u0432\u0430\u044F_\u0432\u0441\u0442\u0440\u0435\u0447\u0430_\u0441_\u0418\u0432\u0430\u043D\u043E\u043C\"]
-        == true)"
+        == true) and (Dialog[thisID].SimStatus == \"Untouched\")"
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1722.1168
+        x: 1723.6793
         y: 300.44293
         width: 160
         height: 30
@@ -6178,11 +6178,11 @@ MonoBehaviour:
     - title: Title
       value: "\u041C\u043E\u0433\u0438\u043B\u043A\u0430"
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Actor
       value: 1
       type: 5
@@ -6332,8 +6332,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 367.14566
-        y: 253.05826
+        x: 366.17484
+        y: 252.0874
         width: 160
         height: 30
     - id: 2
@@ -6395,8 +6395,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 603.128
-        y: 253
+        x: 604.0988
+        y: 252.99997
         width: 160
         height: 30
     - id: 3
@@ -6740,7 +6740,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 603.128
-        y: 353
+        y: 352.0291
         width: 160
         height: 30
     - id: 9
@@ -6794,7 +6794,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 226.4384, y: 17.411686}
+    canvasScrollPosition: {x: 236.55597, y: 14.52507}
     canvasZoom: 1.03
   - id: 6
     fields:
