@@ -40,6 +40,8 @@ public class MainCharacteristics : MonoBehaviour
         Lua.RegisterFunction("GetItemAmount", _inventory, SymbolExtensions.GetMethodInfo(() => _inventory.GetItemAmount(string.Empty)));
         Lua.RegisterFunction("DialogueSystemItemDeleter", _inventory, SymbolExtensions.GetMethodInfo(() => _inventory.DialogueSystemItemDeleter(string.Empty, 1)));
         Lua.RegisterFunction("DialogueSystemItemAdder", _inventory, SymbolExtensions.GetMethodInfo(() => _inventory.DialogueSystemItemAdder(string.Empty, 1)));
+        Lua.RegisterFunction("CharacteristicIncrease", this, SymbolExtensions.GetMethodInfo(() => CharacteristicIncrease(string.Empty)));
+        Lua.RegisterFunction("CharacteristicDecreasee", this, SymbolExtensions.GetMethodInfo(() => CharacteristicDecreasee(string.Empty)));
     }
 
     private void OnDisable()
@@ -48,6 +50,8 @@ public class MainCharacteristics : MonoBehaviour
         Lua.UnregisterFunction("GetItemAmount");
         Lua.UnregisterFunction("DialogueSystemItemDeleter");
         Lua.UnregisterFunction("DialogueSystemItemAdder");
+        Lua.UnregisterFunction("CharacteristicIncrease");
+        Lua.UnregisterFunction("CharacteristicDecreasee");
     }
 
     
