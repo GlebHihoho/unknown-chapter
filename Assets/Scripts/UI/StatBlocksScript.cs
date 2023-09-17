@@ -37,7 +37,6 @@ namespace UI
         {
             if (_stat != Convert.ToInt32(_actualStats.text))
             {
-                print("hmmmm");
                 _stat = Convert.ToInt32(_actualStats.text);
                 _info.text = _stat + "/5";
                 UpdateStats();
