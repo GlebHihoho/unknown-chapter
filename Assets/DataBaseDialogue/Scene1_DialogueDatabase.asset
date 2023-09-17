@@ -5803,7 +5803,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1722.1168
-        y: 297.31793
+        y: 300.44293
         width: 160
         height: 30
     - id: 32
@@ -5870,8 +5870,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1717.7981
-        y: 388.66513
+        x: 1724.0481
+        y: 393.35263
         width: 160
         height: 30
     - id: 33
@@ -6326,14 +6326,13 @@ MonoBehaviour:
       conditionsString: "GetItemAmount(\"\u041B\u043E\u043F\u0430\u0442\u0430\")
         >= 1"
       userScript: "Variable[\"\u0417\u0430\u043A\u043E\u043F\u0430\u043B\u0438_\u0442\u0435\u043B\u0430_\u043B\u043E\u043F\u0430\u0442\u043E\u0439\"]
-        = true;\nDialogueSystemItemDeleter(\"\u041B\u043E\u043F\u0430\u0442\u0430\",
-        1);\nCharacteristicIncrease(\"PhysicalAbilities\")"
+        = true;\nCharacteristicIncrease(\"PhysicalAbilities\")"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 368.11652
+        x: 367.14566
         y: 254.02914
         width: 160
         height: 30
@@ -6568,7 +6567,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 370.05826
-        y: 354.0291
+        y: 353.05823
         width: 160
         height: 30
     - id: 6
@@ -6604,7 +6603,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: EventGuid
-        value: 2a94138f-25af-4e45-8022-2e9eeb14ee48
+        value: a51afed8-d74d-42fc-938c-f4d7276d6b6a
         type: 0
         typeString: 
       conversationID: 5

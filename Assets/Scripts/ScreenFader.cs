@@ -90,9 +90,9 @@ public class ScreenFader : MonoBehaviour
         Image fadeImage = darkerObject.GetComponent<Image>();
         Color color = fadeImage.color;
             
-        while (color.a < 1f)
+        while (color.a > 0)
         {
-            color.a += _fadeSpeed * Time.deltaTime;
+            color.a -= _fadeSpeed * Time.deltaTime;
             fadeImage.color = color;
             yield return null;
         }
