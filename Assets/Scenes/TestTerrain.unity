@@ -29424,19 +29424,6 @@ MonoBehaviour:
     onExecute:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 521969286}
-          m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.DialogueSystemController,
-            Assembly-CSharp-firstpass
-          m_MethodName: StopAllConversations
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
         - m_Target: {fileID: 2037341580}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
@@ -29475,11 +29462,11 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1607261979}
           m_TargetAssemblyTypeName: ScreenFader, Assembly-CSharp
-          m_MethodName: StartCoroutine
-          m_Mode: 4
+          m_MethodName: ScreenBrightener
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 857167389}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 2
             m_StringArgument: 
@@ -29681,6 +29668,50 @@ MonoBehaviour:
     onExecute:
       m_PersistentCalls:
         m_Calls: []
+  - guid: 6818609c-8a1d-46a6-a5d4-65382de062ce
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2037341583}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - guid: 2a94138f-25af-4e45-8022-2e9eeb14ee48
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1607261977}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1607261979}
+          m_TargetAssemblyTypeName: ScreenFader, Assembly-CSharp
+          m_MethodName: ScreenDarkener
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 857167389}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!4 &970845729
 Transform:
   m_ObjectHideFlags: 0
