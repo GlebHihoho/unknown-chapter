@@ -613,7 +613,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 5839dee95090c5244bdf0725013f218b, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 21300000, guid: 5839dee95090c5244bdf0725013f218b, type: 3}
     m_DisabledSprite: {fileID: 0}
@@ -1413,6 +1413,118 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190565704}
   m_CullTransparentMesh: 1
+--- !u!1 &190778421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 190778425}
+  - component: {fileID: 190778424}
+  - component: {fileID: 190778423}
+  - component: {fileID: 190778422}
+  - component: {fileID: 190778426}
+  m_Layer: 0
+  m_Name: IsDeadIvan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &190778422
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190778421}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &190778423
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190778421}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &190778424
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190778421}
+  m_Mesh: {fileID: 0}
+--- !u!4 &190778425
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190778421}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: 6.13, y: 12.59, z: 32.98}
+  m_LocalScale: {x: 4.6026225, y: 2.865, z: 5.0111713}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+--- !u!114 &190778426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190778421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ec57332de4d874aa207ca4d55175cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueIvanTrigger: {fileID: 1833017615}
 --- !u!1 &212393413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,7 +1748,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 1613e608e34072a45a142d5927b10f60, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 21300000, guid: 1613e608e34072a45a142d5927b10f60, type: 3}
     m_DisabledSprite: {fileID: 0}
@@ -1754,6 +1866,7 @@ GameObject:
   - component: {fileID: 285059120}
   - component: {fileID: 285059119}
   - component: {fileID: 285059118}
+  - component: {fileID: 285059125}
   m_Layer: 0
   m_Name: FogTowerConversation
   m_TagString: Untagged
@@ -1788,7 +1901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64578247383140469c45370654a984a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actor: 
+  actor: "\u0412\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0438\u0439 \u0413\u043E\u043B\u043E\u0441"
   persistentDataName: 
   portrait: {fileID: 0}
   spritePortrait: {fileID: 0}
@@ -1804,11 +1917,11 @@ MonoBehaviour:
     customMenuPanelOffset: {x: 0, y: 0, z: 0}
     useMenuPanelFor: 0
     portraitAnimatorController: {fileID: 0}
-    setSubtitleColor: 0
-    applyColorToPrependedName: 0
+    setSubtitleColor: 1
+    applyColorToPrependedName: 1
     prependActorNameSeparator: ': '
     prependActorNameFormat: '{0}{1}'
-    subtitleColor: {r: 1, g: 1, b: 1, a: 1}
+    subtitleColor: {r: 0.5882353, g: 0.80784315, b: 0.6117647, a: 1}
 --- !u!114 &285059119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1984,6 +2097,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285059116}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &285059125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285059116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0.30980393, g: 0.44705883, b: 0.32156864, a: 1}
+  applyTo: 0
+  prependActorNameSeparator: ': '
 --- !u!1 &285136267
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,7 +2497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.040138844, g: 0.7735849, b: 0.103421874, a: 1}
+  color: {r: 0.30980393, g: 0.44705883, b: 0.32156864, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
 --- !u!114 &317329636
@@ -2404,7 +2532,7 @@ MonoBehaviour:
     applyColorToPrependedName: 1
     prependActorNameSeparator: ':'
     prependActorNameFormat: '{0} {1}'
-    subtitleColor: {r: 0.7830189, g: 0.7217208, b: 0.114498034, a: 1}
+    subtitleColor: {r: 0.5882353, g: 0.80784315, b: 0.6117647, a: 1}
 --- !u!114 &317329639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2583,7 +2711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.040138844, g: 0.7735849, b: 0.103421874, a: 1}
+  color: {r: 0.30980393, g: 0.44705883, b: 0.32156864, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
 --- !u!114 &333675628
@@ -2618,7 +2746,7 @@ MonoBehaviour:
     applyColorToPrependedName: 1
     prependActorNameSeparator: ':'
     prependActorNameFormat: '{0} {1}'
-    subtitleColor: {r: 0.7830189, g: 0.7217208, b: 0.114498034, a: 1}
+    subtitleColor: {r: 0.5882353, g: 0.80784315, b: 0.6117647, a: 1}
 --- !u!114 &333675631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2683,11 +2811,11 @@ MonoBehaviour:
     customMenuPanelOffset: {x: 0, y: 0, z: 0}
     useMenuPanelFor: 0
     portraitAnimatorController: {fileID: 0}
-    setSubtitleColor: 0
-    applyColorToPrependedName: 0
+    setSubtitleColor: 1
+    applyColorToPrependedName: 1
     prependActorNameSeparator: ': '
     prependActorNameFormat: '{0}{1}'
-    subtitleColor: {r: 1, g: 1, b: 1, a: 1}
+    subtitleColor: {r: 1, g: 0.99215686, b: 0.80784315, a: 1}
 --- !u!114 &338432083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3335,7 +3463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.040138844, g: 0.7735849, b: 0.103421874, a: 1}
+  color: {r: 0.30980393, g: 0.44705883, b: 0.32156864, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
 --- !u!114 &433111287
@@ -3370,7 +3498,7 @@ MonoBehaviour:
     applyColorToPrependedName: 1
     prependActorNameSeparator: ': '
     prependActorNameFormat: '{0} {1}'
-    subtitleColor: {r: 0.7830189, g: 0.7217208, b: 0.114498034, a: 1}
+    subtitleColor: {r: 0.5882353, g: 0.80784315, b: 0.6117647, a: 1}
 --- !u!1 &435121054
 GameObject:
   m_ObjectHideFlags: 0
@@ -5639,11 +5767,11 @@ MonoBehaviour:
     customMenuPanelOffset: {x: 0, y: 0, z: 0}
     useMenuPanelFor: 0
     portraitAnimatorController: {fileID: 0}
-    setSubtitleColor: 0
-    applyColorToPrependedName: 0
+    setSubtitleColor: 1
+    applyColorToPrependedName: 1
     prependActorNameSeparator: ': '
     prependActorNameFormat: '{0}{1}'
-    subtitleColor: {r: 1, g: 1, b: 1, a: 1}
+    subtitleColor: {r: 1, g: 0.99215686, b: 0.80784315, a: 1}
 --- !u!65 &717072678
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5712,11 +5840,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
+  outlineColor: {r: 1, g: 0.8666878, b: 0, a: 1}
+  outlineWidth: 10
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &717072683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717072673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0.68235296, g: 0.6666667, b: 0.5254902, a: 1}
+  applyTo: 0
+  prependActorNameSeparator: ': '
 --- !u!1 &718972512
 GameObject:
   m_ObjectHideFlags: 0
@@ -6281,7 +6424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0.30980393, g: 0.44705886, b: 0.32156864, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
 --- !u!114 &826366186
@@ -6296,7 +6439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64578247383140469c45370654a984a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actor: 
+  actor: "\u0412\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0438\u0439 \u0413\u043E\u043B\u043E\u0441"
   persistentDataName: 
   portrait: {fileID: 0}
   spritePortrait: {fileID: 0}
@@ -6312,11 +6455,11 @@ MonoBehaviour:
     customMenuPanelOffset: {x: 0, y: 0, z: 0}
     useMenuPanelFor: 0
     portraitAnimatorController: {fileID: 0}
-    setSubtitleColor: 0
-    applyColorToPrependedName: 0
+    setSubtitleColor: 1
+    applyColorToPrependedName: 1
     prependActorNameSeparator: ': '
     prependActorNameFormat: '{0}{1}'
-    subtitleColor: {r: 1, g: 1, b: 1, a: 1}
+    subtitleColor: {r: 0.5882353, g: 0.8078432, b: 0.6117647, a: 1}
 --- !u!4 &838252988 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8737698988310289093, guid: b3c3e6614231adb4ea5d638ed94bf7c5, type: 3}
@@ -6515,11 +6658,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
+  outlineColor: {r: 1, g: 0.8666878, b: 0, a: 1}
+  outlineWidth: 10
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &870720473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338432081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0.68235296, g: 0.6666667, b: 0.5254902, a: 1}
+  applyTo: 0
+  prependActorNameSeparator: ': '
 --- !u!1 &876846058
 GameObject:
   m_ObjectHideFlags: 0
@@ -9740,6 +9898,87 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7749651603785563685, guid: 7543350c8e8b4c2498664512d1ab6408, type: 3}
   m_PrefabInstance: {fileID: 1632586628}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1370893118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1370893119}
+  - component: {fileID: 1370893121}
+  - component: {fileID: 1370893120}
+  m_Layer: 0
+  m_Name: Charatcers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1370893119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370893118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1859846924}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1370893120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370893118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0.68235296, g: 0.6666667, b: 0.5254902, a: 1}
+  applyTo: 0
+  prependActorNameSeparator: ': '
+--- !u!114 &1370893121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370893118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a64578247383140469c45370654a984a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: "\u0412\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0438\u0439 \u0413\u043E\u043B\u043E\u0441"
+  persistentDataName: 
+  portrait: {fileID: 0}
+  spritePortrait: {fileID: 0}
+  barkUISettings:
+    barkUI: {fileID: 0}
+    barkUIOffset: {x: 0, y: 2, z: 0}
+  standardDialogueUISettings:
+    subtitlePanelNumber: 0
+    customSubtitlePanel: {fileID: 0}
+    customSubtitlePanelOffset: {x: 0, y: 0, z: 0}
+    menuPanelNumber: 0
+    customMenuPanel: {fileID: 0}
+    customMenuPanelOffset: {x: 0, y: 0, z: 0}
+    useMenuPanelFor: 0
+    portraitAnimatorController: {fileID: 0}
+    setSubtitleColor: 1
+    applyColorToPrependedName: 1
+    prependActorNameSeparator: ': '
+    prependActorNameFormat: '{0}{1}'
+    subtitleColor: {r: 1, g: 0.9921569, b: 0.8078432, a: 1}
 --- !u!1 &1377157003
 GameObject:
   m_ObjectHideFlags: 0
@@ -10175,7 +10414,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 56f4bba3f7ff5c14682adf85fabb2389, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 21300000, guid: 56f4bba3f7ff5c14682adf85fabb2389, type: 3}
     m_DisabledSprite: {fileID: 0}
@@ -10691,8 +10930,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
+  outlineColor: {r: 1, g: 0.8666878, b: 0, a: 1}
+  outlineWidth: 10
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -11779,7 +12018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.040138844, g: 0.7735849, b: 0.103421874, a: 1}
+  color: {r: 0.30980393, g: 0.44705883, b: 0.32156864, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
 --- !u!114 &1667923997
@@ -11814,7 +12053,7 @@ MonoBehaviour:
     applyColorToPrependedName: 1
     prependActorNameSeparator: ': '
     prependActorNameFormat: '{0} {1}'
-    subtitleColor: {r: 0.7830189, g: 0.7217208, b: 0.114498034, a: 1}
+    subtitleColor: {r: 0.5882353, g: 0.80784315, b: 0.6117647, a: 1}
 --- !u!1 &1675580215
 GameObject:
   m_ObjectHideFlags: 0
@@ -12029,7 +12268,7 @@ MonoBehaviour:
     applyColorToPrependedName: 1
     prependActorNameSeparator: ': '
     prependActorNameFormat: '{0} {1}'
-    subtitleColor: {r: 0.19063722, g: 0.24584986, b: 0.7924528, a: 1}
+    subtitleColor: {r: 1, g: 0.99215686, b: 0.80784315, a: 1}
 --- !u!114 &1680399949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12042,7 +12281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.8490566, g: 0.11614456, b: 0.11614456, a: 1}
+  color: {r: 0.68235296, g: 0.6666667, b: 0.5254902, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
 --- !u!1 &1706155885
@@ -12209,7 +12448,7 @@ MonoBehaviour:
     applyColorToPrependedName: 1
     prependActorNameSeparator: ': '
     prependActorNameFormat: '{0}{1}'
-    subtitleColor: {r: 0, g: 0.11066723, b: 1, a: 1}
+    subtitleColor: {r: 1, g: 0.99215686, b: 0.80784315, a: 1}
 --- !u!114 &1759093734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12222,7 +12461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.06132078, g: 0.075530425, b: 1, a: 1}
+  color: {r: 0.68235296, g: 0.6666667, b: 0.5254902, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
 --- !u!114 &1759093735
@@ -13215,7 +13454,7 @@ MonoBehaviour:
     applyColorToPrependedName: 1
     prependActorNameSeparator: ': '
     prependActorNameFormat: '{0}{1}'
-    subtitleColor: {r: 0, g: 0.11066723, b: 1, a: 1}
+    subtitleColor: {r: 1, g: 0.99215686, b: 0.80784315, a: 1}
 --- !u!114 &1833017615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13265,7 +13504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.06132078, g: 0.075530425, b: 1, a: 1}
+  color: {r: 0.68235296, g: 0.6666667, b: 0.5254902, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
 --- !u!114 &1833017620
@@ -13300,7 +13539,7 @@ MonoBehaviour:
     applyColorToPrependedName: 1
     prependActorNameSeparator: ': '
     prependActorNameFormat: '{0}{1}'
-    subtitleColor: {r: 0, g: 0.9245283, b: 0.034498673, a: 1}
+    subtitleColor: {r: 1, g: 0.99215686, b: 0.80784315, a: 1}
 --- !u!1001 &1845356192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13418,6 +13657,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 826366184}
+  - {fileID: 1370893119}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13867,7 +14107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.040138844, g: 0.7735849, b: 0.103421874, a: 1}
+  color: {r: 0.30980393, g: 0.44705883, b: 0.32156864, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
 --- !u!114 &1957430653
@@ -13902,7 +14142,7 @@ MonoBehaviour:
     applyColorToPrependedName: 1
     prependActorNameSeparator: ':'
     prependActorNameFormat: '{0} {1}'
-    subtitleColor: {r: 0.7830189, g: 0.7217208, b: 0.114498034, a: 1}
+    subtitleColor: {r: 0.5882353, g: 0.80784315, b: 0.6117647, a: 1}
 --- !u!114 &1957430656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14850,7 +15090,7 @@ MonoBehaviour:
     applyColorToPrependedName: 1
     prependActorNameSeparator: ':'
     prependActorNameFormat: '{0} {1}'
-    subtitleColor: {r: 0.7830189, g: 0.7217208, b: 0.114498034, a: 1}
+    subtitleColor: {r: 0.5882353, g: 0.80784315, b: 0.6117647, a: 1}
 --- !u!114 &2037341591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14863,7 +15103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.040138844, g: 0.7735849, b: 0.103421874, a: 1}
+  color: {r: 0.30980393, g: 0.44705883, b: 0.32156864, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
 --- !u!1 &2039443650 stripped
@@ -15275,7 +15515,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3294541908675848696, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
       propertyPath: _intellect
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3294541908675848696, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
       propertyPath: _inventory
@@ -15876,7 +16116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.06132078, g: 0.075530425, b: 1, a: 1}
+  color: {r: 0.30980393, g: 0.44705883, b: 0.32156864, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
 --- !u!114 &2892451120233149019
@@ -15911,7 +16151,7 @@ MonoBehaviour:
     applyColorToPrependedName: 1
     prependActorNameSeparator: ': '
     prependActorNameFormat: '{0}{1}'
-    subtitleColor: {r: 0, g: 0.9245283, b: 0.034498673, a: 1}
+    subtitleColor: {r: 0.5882353, g: 0.80784315, b: 0.6117647, a: 1}
 --- !u!114 &2892451120233149020
 MonoBehaviour:
   m_ObjectHideFlags: 0
