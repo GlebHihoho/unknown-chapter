@@ -7335,7 +7335,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1246.7626
+        x: 1253.6118
         y: 122.6317
         width: 160
         height: 30
@@ -9672,7 +9672,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u041A\u043E\u043D\u0435\u0446"
+        value: "[f]\u041A\u043E\u043D\u0435\u0446"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -9694,12 +9694,12 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1095.0204
+        x: 1093.6505
         y: 825.3254
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 577.8737, y: 66.946014}
+    canvasScrollPosition: {x: 551.8464, y: 102.739746}
     canvasZoom: 0.72999984
   - id: 19
     fields:
@@ -10796,7 +10796,7 @@ MonoBehaviour:
       type: 5
       typeString: CustomFieldType_Actor
     overrideSettings:
-      useOverrides: 0
+      useOverrides: 1
       overrideSubtitleSettings: 0
       showNPCSubtitlesDuringLine: 1
       showNPCSubtitlesWithResponses: 1
@@ -12005,7 +12005,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 358.40842, y: 122.120544}
+    canvasScrollPosition: {x: 222.9654, y: 277.8167}
     canvasZoom: 0.7900002
   - id: 14
     fields:
@@ -12537,7 +12537,7 @@ MonoBehaviour:
         destinationDialogueID: 18
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Dialog[18].SimStatus == "Untouched"
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -13282,7 +13282,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 425.71423
-        y: 473.32965
+        y: 474.64545
         width: 160
         height: 30
     - id: 19
