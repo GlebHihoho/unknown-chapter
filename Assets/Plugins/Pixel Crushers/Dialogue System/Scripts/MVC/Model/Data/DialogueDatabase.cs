@@ -1056,6 +1056,11 @@ namespace PixelCrushers.DialogueSystem
             var entry = (conversation != null) ? conversation.GetDialogueEntry(dialogueEntryID) : null;
             return GetEntrytaglocal(conversation, entry, entrytagFormat);
         }
+
+        public DialogueEntry GetDialogueEntry(object isConversationActive, object entryID)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 
 }

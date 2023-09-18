@@ -7,6 +7,7 @@ using UI;
 using UI.InventoryScripts;
 using Unity.VisualScripting;
 using Update = UnityEngine.PlayerLoop.Update;
+using System.Net.Http.Headers;
 
 public class MainCharacteristics : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class MainCharacteristics : MonoBehaviour
         Lua.RegisterFunction("DialogueSystemItemAdder", _inventory, SymbolExtensions.GetMethodInfo(() => _inventory.DialogueSystemItemAdder(string.Empty, 1)));
         Lua.RegisterFunction("CharacteristicIncrease", this, SymbolExtensions.GetMethodInfo(() => CharacteristicIncrease(string.Empty)));
         Lua.RegisterFunction("CharacteristicDecreasee", this, SymbolExtensions.GetMethodInfo(() => CharacteristicDecreasee(string.Empty)));
+        Lua.RegisterFunction("ReloadConversation", this, SymbolExtensions.GetMethodInfo(() => ReloadConversation()));
     }
 
     private void OnDisable()
@@ -52,6 +54,15 @@ public class MainCharacteristics : MonoBehaviour
         Lua.UnregisterFunction("DialogueSystemItemAdder");
         Lua.UnregisterFunction("CharacteristicIncrease");
         Lua.UnregisterFunction("CharacteristicDecreasee");
+        Lua.UnregisterFunction("ReloadConversation");
+    }
+
+    private void ReloadConversation()
+    {
+        DialogueManager.conversationController.GotoState(DialogueManager.currentConversationState);
+        DialogueManager.conversationController.GotoState(DialogueManager.conversationModel.FirstState);
+        print(DialogueManager.currentConversationState);
+        print(DialogueManager.conversationModel.FirstState);
     }
 
     
