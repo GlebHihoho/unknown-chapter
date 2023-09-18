@@ -254,6 +254,16 @@ namespace UI.InventoryScripts
             _data._items.Find(x => x.Name == itemName).Count = (int)countAdd;
             ChangeInventory();
         }
+
+        public void DeleteAllItem()
+        {
+            for(int i = 0; i < _items.Count;)
+            {
+                var itemName = _items[i]._name;
+                var itemCount = _items.Find(x => x._name == itemName)._count;
+                DialogueSystemItemDeleter(itemName, itemCount);
+            }
+        }
     }
 
 
