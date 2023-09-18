@@ -40,8 +40,9 @@ namespace UI.InventoryScripts
 
         public void Start()
         {
-            string json = File.ReadAllText(Application.dataPath + "/items.json");
-            _data._items = JsonConvert.DeserializeObject<List<Item>>(json);
+            //todo разобраться с json
+            // string json = File.ReadAllText(Application.dataPath + "/items.json");
+            // _data._items = JsonConvert.DeserializeObject<List<Item>>(json);
 
             ChangeInventory();
 

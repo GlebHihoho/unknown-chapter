@@ -77,7 +77,7 @@ namespace UI
                 Vector2.one * 0.5f);
 
             _items[id]._name = item._name;
-            _items[id]._count = 1;
+            _items[id]._count = item._count;
             _items[id]._itemGameObj.GetComponentInChildren<Image>().sprite = sprite;
             _items[id]._isUsed = false;
             _items[id]._description = item._description;
@@ -95,7 +95,8 @@ namespace UI
                         Description = _quickItemView._itemsListFilling[i]._description,
                         Img = _quickItemView._itemsListFilling[i]._img,
                         IsUsed = false,
-                        Name = _quickItemView._itemsListFilling[i]._name
+                        Name = _quickItemView._itemsListFilling[i]._name,
+                        Count = _quickItemView._itemsListFilling[i]._count
                     });
                     _items.Remove(_items.Find(x => x._name == _quickItemView._itemsListFilling[i]._name));
                     GameObject childObject = transform.Find(_quickItemView._itemsListFilling[i]._name).gameObject;
