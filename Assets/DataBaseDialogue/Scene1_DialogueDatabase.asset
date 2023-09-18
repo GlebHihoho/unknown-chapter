@@ -929,7 +929,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041A\u043E\u043D\u0435\u0446"
+        value: "[nosubtitle][f]\u041A\u043E\u043D\u0435\u0446"
         type: 0
         typeString: 
       - title: Sequence
@@ -2190,7 +2190,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041A\u043E\u043D\u0435\u0446"
+        value: "[nosubtitle][f]\u041A\u043E\u043D\u0435\u0446"
         type: 0
         typeString: 
       - title: Sequence
@@ -3307,7 +3307,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041A\u043E\u043D\u0435\u0446"
+        value: "[nosubtitle][f]\u041A\u043E\u043D\u0435\u0446"
         type: 0
         typeString: 
       - title: Sequence
@@ -4428,7 +4428,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041A\u043E\u043D\u0435\u0446"
+        value: "[nosubtitle][f]\u041A\u043E\u043D\u0435\u0446"
         type: 0
         typeString: 
       - title: Sequence
@@ -5516,7 +5516,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041A\u043E\u043D\u0435\u0446"
+        value: "[nosubtitle][f]\u041A\u043E\u043D\u0435\u0446"
         type: 0
         typeString: 
       - title: Sequence
@@ -6365,7 +6365,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041A\u043E\u043D\u0435\u0446"
+        value: "[nosubtitle][f]\u041A\u043E\u043D\u0435\u0446"
         type: 0
         typeString: 
       - title: Sequence
@@ -6954,7 +6954,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041A\u043E\u043D\u0435\u0446"
+        value: "[nosubtitle][f]\u041A\u043E\u043D\u0435\u0446"
         type: 0
         typeString: 
       - title: Sequence
@@ -6980,7 +6980,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1268.8364
+        x: 1267.4666
         y: 940.93475
         width: 160
         height: 30
@@ -9276,7 +9276,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: ReloadConversation()
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -9564,7 +9564,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0432\u043F\u0440\u0430\u0432\u043B\u044F\u0435\u043C \u043D\u043E\u0433\u0443"
+        value: "[nosubtitle][f]\u0432\u043F\u0440\u0430\u0432\u043B\u044F\u0435\u043C
+          \u043D\u043E\u0433\u0443"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -9672,7 +9673,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "[f]\u041A\u043E\u043D\u0435\u0446"
+        value: "[nosubtitle][f]\u041A\u043E\u043D\u0435\u0446"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -9699,7 +9700,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 551.8464, y: 102.739746}
+    canvasScrollPosition: {x: 1540.8876, y: 91.78076}
     canvasZoom: 0.72999984
   - id: 19
     fields:
@@ -10748,11 +10749,15 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041A\u043E\u043D\u0435\u0446"
+        value: "[nosubtitle][f]\u041A\u043E\u043D\u0435\u0446"
         type: 0
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 045c8c9c-2fda-4e62-a780-d3e95c419da9
         type: 0
         typeString: 
       conversationID: 19
@@ -10770,13 +10775,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 296.47128
+        x: 295.40744
         y: 791.5518
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 253.1915}
-    canvasZoom: 0.94000006
+    canvasScrollPosition: {x: 0, y: 146.8501}
+    canvasZoom: 0.7000002
   - id: 15
     fields:
     - title: Title
@@ -11974,7 +11979,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041A\u043E\u043D\u0435\u0446"
+        value: "[nosubtitle][f]\u041A\u043E\u043D\u0435\u0446"
         type: 0
         typeString: 
       - title: Sequence
@@ -12005,8 +12010,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 222.9654, y: 277.8167}
-    canvasZoom: 0.7900002
+    canvasScrollPosition: {x: 31.423553, y: 145.23871}
+    canvasZoom: 0.7000003
   - id: 14
     fields:
     - title: Title
@@ -13486,7 +13491,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041F\u043E\u0431\u0435\u0436\u0430\u043B\u0438 \u043D\u0430 \u043F\u043B\u044F\u0436"
+        value: "[nosubtitle][f]\u041F\u043E\u0431\u0435\u0436\u0430\u043B\u0438 \u043D\u0430
+          \u043F\u043B\u044F\u0436"
         type: 0
         typeString: 
       - title: Sequence
@@ -13539,8 +13545,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041F\u043E\u0448\u043B\u0438 \u0432 \u043B\u0430\u0433\u0435\u0440\u044C
-          \u0438 \u043A\u0438\u043D\u0435\u043C \u0418\u0432\u0430\u043D\u0430"
+        value: "[nosubtitle][f]\u041F\u043E\u0448\u043B\u0438 \u0432 \u043B\u0430\u0433\u0435\u0440\u044C
+          \u0438 \u043A\u0438\u0434\u0430\u0435\u043C \u0418\u0432\u0430\u043D\u0430"
         type: 0
         typeString: 
       - title: Sequence
@@ -13571,8 +13577,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 143.59607}
-    canvasZoom: 0.7600002
+    canvasScrollPosition: {x: 56.094776, y: 94.05269}
+    canvasZoom: 0.6700003
   - id: 5
     fields:
     - title: Title
@@ -14177,7 +14183,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u041A\u043E\u043D\u0435\u0446"
+        value: "[nosubtitle][f]\u041A\u043E\u043D\u0435\u0446"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
