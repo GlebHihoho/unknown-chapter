@@ -249,7 +249,8 @@ namespace UI.InventoryScripts
                 Img = item._img,
                 IsUsed = false,
                 Name = item._name,
-                Count = (int)count,
+                // Count = (int)count,
+                Count = item._count,
             });
             _data._items.Find(x => x.Name == itemName).Count = (int)countAdd;
             ChangeInventory();

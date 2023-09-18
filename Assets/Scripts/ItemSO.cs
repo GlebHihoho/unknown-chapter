@@ -12,5 +12,6 @@ namespace DefaultNamespace
         [FormerlySerializedAs("Name")] public string _name;
         [FormerlySerializedAs("Img")] public string _img;
         [FormerlySerializedAs("Description")] public string _description;
+        [FormerlySerializedAs("Description")] public int _count;
     }
 }
