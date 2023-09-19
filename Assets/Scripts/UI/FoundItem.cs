@@ -70,11 +70,13 @@ namespace UI
 
         private void AddItem(int id, ItemSO item) //добавляет предмет в лист ItemInventory
         {
-            Texture2D itemImage = new Texture2D(60, 60);
-            byte[] imageData = File.ReadAllBytes(Application.dataPath + item._img);
-            itemImage.LoadImage(imageData);
-            Sprite sprite = Sprite.Create(itemImage, new Rect(0, 0, itemImage.width, itemImage.height),
-                Vector2.one * 0.5f);
+            // Texture2D itemImage = new Texture2D(60, 60);
+            // byte[] imageData = File.ReadAllBytes(Application.dataPath + item._img);
+            // itemImage.LoadImage(imageData);
+            // Sprite sprite = Sprite.Create(itemImage, new Rect(0, 0, itemImage.width, itemImage.height),
+            //     Vector2.one * 0.5f);
+            
+            Sprite sprite = Resources.Load<Sprite>(item._img);
 
             _items[id]._name = item._name;
             _items[id]._count = item._count;

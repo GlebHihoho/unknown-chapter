@@ -73,11 +73,12 @@ namespace UI.InventoryScripts
 
         private void AddItem(int id, Item item) //добавляет предмет в лист ItemInventory
         {
-            Texture2D itemImage = new Texture2D(60, 60);
-            byte[] imageData = File.ReadAllBytes(Application.dataPath + item.Img);
-            itemImage.LoadImage(imageData);
-            Sprite sprite = Sprite.Create(itemImage, new Rect(0, 0, itemImage.width, itemImage.height),
-                Vector2.one * 0.5f);
+            // Texture2D itemImage = new Texture2D(60, 60);
+            // byte[] imageData = File.ReadAllBytes(Application.dataPath + item.Img);
+            // itemImage.LoadImage(imageData);
+            // Sprite sprite = Sprite.Create(itemImage, new Rect(0, 0, itemImage.width, itemImage.height),
+            //     Vector2.one * 0.5f);
+            Sprite sprite = Resources.Load<Sprite>(item.Img);
 
 //            _items[id]._id = item.ID;
             _items[id]._name = item.Name;

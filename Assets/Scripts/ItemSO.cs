@@ -2,6 +2,7 @@
 using UI.InventoryScripts;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace DefaultNamespace
 {
