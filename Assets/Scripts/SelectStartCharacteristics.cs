@@ -10,6 +10,15 @@ namespace DefaultNamespace
         [SerializeField] private MainCharacteristics _mainCharacteristics;
         [SerializeField] private Button _addCharateristicButton;
 
+        /// <summary>
+        /// Start is called on the frame when a script is enabled just before
+        /// any of the Update methods is called the first time.
+        /// </summary>
+        void Start()
+        {
+            _mainCharacteristics = FindObjectOfType<MainCharacteristics>();
+        }
+
         public void SelectCurrentStat(string nameCharacteristic)
         {
             _nameCharacteristic = nameCharacteristic;
