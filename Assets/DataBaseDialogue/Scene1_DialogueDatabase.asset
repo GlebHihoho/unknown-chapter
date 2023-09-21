@@ -9805,7 +9805,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 163.74963, y: 259.1353}
+    canvasScrollPosition: {x: 399.11557, y: 0}
     canvasZoom: 0.81999975
   - id: 19
     fields:
@@ -10885,7 +10885,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 146.8501}
+    canvasScrollPosition: {x: 0, y: 55.714294}
     canvasZoom: 0.7000002
   - id: 15
     fields:
@@ -12003,7 +12003,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 237.68295
+        x: 236.25436
         y: 470.36584
         width: 160
         height: 30
@@ -12301,6 +12301,12 @@ MonoBehaviour:
         originDialogueID: 0
         destinationConversationID: 14
         destinationDialogueID: 19
+        isConnector: 0
+        priority: 2
+      - originConversationID: 14
+        originDialogueID: 0
+        destinationConversationID: 14
+        destinationDialogueID: 24
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -13790,7 +13796,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 295.1219, y: 93.52304}
+    canvasScrollPosition: {x: 318.29263, y: 38.64511}
     canvasZoom: 0.8200002
   - id: 5
     fields:
@@ -13929,7 +13935,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "\u0417\u0430\u043A\u043E\u043F\u0430\u0442\u044C \u0442\u0435\u043B\u0430
-          \u043B\u043E\u043F\u0430\u0442\u043E\u0439"
+          \u043B\u043E\u043F\u0430\u0442\u043E\u0439[nosubtitle]"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -13991,7 +13997,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "\u0421\u0436\u0435\u0447\u044C \u0442\u0435\u043B\u0430 \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E
-          \u043C\u0430\u0441\u043B\u0430 \u0438 \u0444\u0430\u043A\u0435\u043B\u0430"
+          \u043C\u0430\u0441\u043B\u0430 \u0438 \u0444\u0430\u043A\u0435\u043B\u0430[nosubtitle]"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -14027,7 +14033,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 604.0988
-        y: 252.99997
+        y: 252.02908
         width: 160
         height: 30
     - id: 4
@@ -14060,7 +14066,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/deadBody_tomb_VG_3)
         type: 0
         typeString: 
       conversationID: 5
@@ -14116,7 +14122,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/deadBody_tomb_VG_4)
         type: 0
         typeString: 
       conversationID: 5
@@ -14173,7 +14179,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/deadBody_tomb_VG_5)
         type: 0
         typeString: 
       - title: EventGuid
@@ -14234,7 +14240,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/deadBody_tomb_VG_6)
         type: 0
         typeString: 
       conversationID: 5
@@ -14289,7 +14295,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/deadBody_tomb_VG_7_v1)
         type: 0
         typeString: 
       conversationID: 5
@@ -14345,7 +14351,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(VG/deadBody_tomb_VG_8)
         type: 0
         typeString: 
       conversationID: 5
@@ -14369,7 +14375,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 603.128
+        x: 604.0989
         y: 402.02914
         width: 160
         height: 30
@@ -14529,7 +14535,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 232.67249, y: 65.01048}
+    canvasScrollPosition: {x: 145.29382, y: 74.71922}
     canvasZoom: 1.03
   - id: 21
     fields:
