@@ -31,6 +31,10 @@ public class InputController : MonoBehaviour
     
     
     [SerializeField] private float _zoomOffset = 1.0f;
+
+
+
+    [SerializeField] private Vector3 cameraOffset = new Vector3(5f, 5f, 5f); // Расстояние между персонажем и камерой
     
 
     private void Start()
@@ -131,9 +135,10 @@ public class InputController : MonoBehaviour
         characterTransform.position += rightMovement;
         characterTransform.position += upMovement;
         
-        cameraTransform.position = characterTransform.position;
-        
-        
+        cameraTransform.position = characterTransform.position + new Vector3(-7f, 4f, 0f);
+        cameraTransform.LookAt(characterTransform);
+        float characterRotationY = characterTransform.eulerAngles.y;
+        cameraTransform.eulerAngles = new Vector3(cameraTransform.eulerAngles.x, characterRotationY, cameraTransform.eulerAngles.z);
     }
 
     private void RotateCamera(float rotationInput)
@@ -149,53 +154,4 @@ public class InputController : MonoBehaviour
         Camera.main.orthographicSize -= zoomInput * _zoomSpeed;
         Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, _orthographicSizeMin, _orthographicSizeMax);
     }
-    
-    
-    // private void CheckObstacleBehindCamera()
-    // {
-    //     Vector3 cameraPosition = cameraTransform.position;
-    //     Vector3 characterPosition = characterTransform.position;
-    //     Vector3 cameraDirection = cameraTransform.forward;
-    //
-    //     // Определяем позицию передней стенки камеры
-    //     Vector3 cameraFrontPosition = cameraPosition + cameraDirection * Camera.main.nearClipPlane;
-    //
-    //     Vector3 directionToCharacter = characterPosition - cameraFrontPosition;
-    //     float distanceToCharacter = directionToCharacter.magnitude;
-    //
-    //     // Инвертируем направление луча
-    //     Vector3 oppositeDirection = -directionToCharacter;
-    //
-    //     RaycastHit[] hits = Physics.RaycastAll(characterPosition, oppositeDirection, distanceToCharacter);
-    //
-    //     RaycastHit closestHit = new RaycastHit();
-    //     float closestHitDistance = float.MaxValue;
-    //
-    //     foreach (RaycastHit hit in hits)
-    //     {
-    //         if (hit.collider.CompareTag("Finish")) // Замените на актуальный тег препятствия
-    //         {
-    //             if (hit.distance < closestHitDistance)
-    //             {
-    //                 closestHit = hit;
-    //                 closestHitDistance = hit.distance;
-    //             }
-    //         }
-    //     }
-    //
-    //     // Если было найдено препятствие, меняем зум
-    //     if (closestHit.collider != null)
-    //     {
-    //         float newOrthographicSize = closestHit.distance + _zoomOffset;
-    //         Camera.main.orthographicSize = Mathf.Clamp(newOrthographicSize, _orthographicSizeMin, _orthographicSizeMax);
-    //     }
-    //     // Если рэйкаст больше не попадает в объекты, восстанавливаем исходный зум
-    //     else
-    //     {
-    //         Camera.main.orthographicSize = _originalOrthographicSize;
-    //     }
-    //
-    //     // Рисуем луч для отладки
-    //     Debug.DrawRay(characterPosition, oppositeDirection * distanceToCharacter, Color.green);
-    // }
 }
