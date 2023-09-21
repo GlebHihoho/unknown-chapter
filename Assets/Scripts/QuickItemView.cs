@@ -15,6 +15,7 @@ namespace DefaultNamespace
         [SerializeField] public List<ItemSO> _itemsListFilling;
         [SerializeField] private Transform _containerTransform;
         [SerializeField] private float maxDistanceToOpen = 5f;
+        [SerializeField] private bool _isDeleteObject = false;
         
         private Transform _player;
         private float distance;
@@ -50,6 +51,10 @@ namespace DefaultNamespace
             GameObject go = Instantiate(_foundItemsUIPrefab, mousePosition, Quaternion.identity, _containerTransform);
             go.GetComponentInChildren<FoundItem>()._quickItemView = this;
             _player.GetComponent<InputController>().enabled = false;
+            if(_isDeleteObject)
+            {
+                Destroy(gameObject);
+            }
         }
         
         public void SetIsInventoryOpen(bool value)

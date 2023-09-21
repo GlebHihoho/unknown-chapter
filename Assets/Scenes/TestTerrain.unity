@@ -7338,31 +7338,7 @@ MonoBehaviour:
   - guid: a51afed8-d74d-42fc-938c-f4d7276d6b6a
     onExecute:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1607261977}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 1607261979}
-          m_TargetAssemblyTypeName: ScreenFader, Assembly-CSharp
-          m_MethodName: ScreenDarkener
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1071105376}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - guid: 672a0b2a-3f3f-460f-8e8d-44ff5f26265e
     onExecute:
       m_PersistentCalls:
@@ -7610,6 +7586,62 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: bbd50a5a-9359-4934-b050-f7f90cdf615a
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1607261977}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1607261979}
+          m_TargetAssemblyTypeName: ScreenFader, Assembly-CSharp
+          m_MethodName: ScreenDarkener
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1071105376}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 60deff40-7734-4de1-a569-13d4622c4a83
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1607261977}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1607261979}
+          m_TargetAssemblyTypeName: ScreenFader, Assembly-CSharp
+          m_MethodName: ScreenDarkener
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1071105376}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -9288,6 +9320,10 @@ PrefabInstance:
       propertyPath: _itemsList
       value: 
       objectReference: {fileID: 11400000, guid: e039b87aa6910ce49941110f7cf2a77c, type: 2}
+    - target: {fileID: 7749651603785563686, guid: 7543350c8e8b4c2498664512d1ab6408, type: 3}
+      propertyPath: _isDeleteObject
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7749651603785563686, guid: 7543350c8e8b4c2498664512d1ab6408, type: 3}
       propertyPath: _containerTransform
       value: 
@@ -14688,7 +14724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3294541908985390630, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
       propertyPath: displaySettings.inputSettings.cancel.key
-      value: 0
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 3294541908985390630, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
       propertyPath: persistentDataSettings.includeAllItemData
@@ -14700,7 +14736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3294541908985390630, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
       propertyPath: displaySettings.subtitleSettings.continueButton
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3294541908985390630, guid: 1444db22f73a6f842ba7a66601ba520a, type: 3}
       propertyPath: displaySettings.alertSettings.alertCharsPerSecond
