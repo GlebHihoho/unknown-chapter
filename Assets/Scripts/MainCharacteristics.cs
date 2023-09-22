@@ -57,6 +57,11 @@ public class MainCharacteristics : MonoBehaviour
         Lua.UnregisterFunction("ReloadConversation");
     }
 
+    private void ChangeDialogueText(string a)
+    {
+        
+    }
+
     private void ReloadConversation()
     {
         DialogueManager.conversationController.GotoState(DialogueManager.currentConversationState);

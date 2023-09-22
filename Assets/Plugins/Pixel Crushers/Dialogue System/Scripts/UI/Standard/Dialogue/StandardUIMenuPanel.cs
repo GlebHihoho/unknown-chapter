@@ -414,6 +414,7 @@ namespace PixelCrushers.DialogueSystem
                             if (responseButton != null)
                             {
                                 buttonGameObject.name = "Response: " + responseButton.text;
+                                responseButton.text = (i + 1f) + ". " + responseButton.text;
                                 if (explicitNavigationForTemplateButtons && !responseButton.isClickable) hasDisabledButton = true;
                             }
                             if (firstSelected == null) firstSelected = buttonGameObject;
