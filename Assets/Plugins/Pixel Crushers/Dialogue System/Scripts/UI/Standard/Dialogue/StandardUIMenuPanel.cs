@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -414,7 +415,21 @@ namespace PixelCrushers.DialogueSystem
                             if (responseButton != null)
                             {
                                 buttonGameObject.name = "Response: " + responseButton.text;
-                                responseButton.text = (i + 1f) + ". " + responseButton.text;
+
+                                string number = (i + 1f) + ". ";
+
+                                // Используем регулярное выражение для поиска цветового тега в responseButton.text
+                                Match match = Regex.Match(responseButton.text, @"<color=#[0-9a-fA-F]+>");
+
+                                if (match.Success)
+                                {
+                                    string colorTag = match.Value; // Извлекаем цветовой тег
+                                    responseButton.text = $"{colorTag}{number}{responseButton.text.Substring(match.Length)}";
+                                }
+                                else
+                                {
+                                    responseButton.text = number + responseButton.text; // Если цветовой тег не найден, просто добавляем номер
+                                }
                                 if (explicitNavigationForTemplateButtons && !responseButton.isClickable) hasDisabledButton = true;
                             }
                             if (firstSelected == null) firstSelected = buttonGameObject;

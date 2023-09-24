@@ -44,6 +44,7 @@ public class MainCharacteristics : MonoBehaviour
         Lua.RegisterFunction("CharacteristicIncrease", this, SymbolExtensions.GetMethodInfo(() => CharacteristicIncrease(string.Empty)));
         Lua.RegisterFunction("CharacteristicDecreasee", this, SymbolExtensions.GetMethodInfo(() => CharacteristicDecreasee(string.Empty)));
         Lua.RegisterFunction("ReloadConversation", this, SymbolExtensions.GetMethodInfo(() => ReloadConversation()));
+        Lua.RegisterFunction("ChangeDialogueText", this, SymbolExtensions.GetMethodInfo(() => ChangeDialogueText()));
     }
 
     private void OnDisable()
@@ -55,11 +56,12 @@ public class MainCharacteristics : MonoBehaviour
         Lua.UnregisterFunction("CharacteristicIncrease");
         Lua.UnregisterFunction("CharacteristicDecreasee");
         Lua.UnregisterFunction("ReloadConversation");
+        Lua.UnregisterFunction("ChangeDialogueText");
     }
 
-    private void ChangeDialogueText(string a)
+    private void ChangeDialogueText()
     {
-        
+        print(DialogueManager.currentConversationState.HasPCResponses);
     }
 
     private void ReloadConversation()

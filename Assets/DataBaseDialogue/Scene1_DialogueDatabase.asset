@@ -19,15 +19,15 @@ MonoBehaviour:
     launch codes to stop the launch of a weapon against their homeworld.
   globalUserScript: 
   emphasisSettings:
-  - color: {r: 1, g: 0.9921569, b: 0.8078432, a: 1}
+  - color: {r: 0.5372549, g: 0.18823531, b: 0.19215688, a: 1}
     bold: 0
     italic: 0
     underline: 0
-  - color: {r: 0.5900474, g: 0.8679245, b: 0.08597365, a: 1}
+  - color: {r: 0.62352943, g: 0.47058827, b: 0.2784314, a: 1}
     bold: 0
     italic: 0
     underline: 0
-  - color: {r: 0.19744569, g: 0.2048767, b: 0.8207547, a: 1}
+  - color: {r: 0.24705884, g: 0.41176474, b: 0.56078434, a: 1}
     bold: 0
     italic: 0
     underline: 0
@@ -7470,6 +7470,12 @@ MonoBehaviour:
         destinationDialogueID: 39
         isConnector: 0
         priority: 2
+      - originConversationID: 4
+        originDialogueID: 2
+        destinationConversationID: 4
+        destinationDialogueID: 41
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: "Variable[\"\u041F\u0435\u0440\u0432\u0430\u044F_\u0432\u0441\u0442\u0440\u0435\u0447\u0430_\u0441_\u0418\u0432\u0430\u043D\u043E\u043C\"]
         = true;"
@@ -7479,7 +7485,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1250.1604
-        y: 178.52142
+        y: 179.74094
         width: 160
         height: 30
     - id: 3
@@ -7505,8 +7511,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0427\u0442\u043E \u0442\u0435\u0431\u0435 \u043D\u0443\u0436\u043D\u043E?
-          [nosubtitle]"
+        value: "[em2]\u0427\u0442\u043E \u0442\u0435\u0431\u0435 \u043D\u0443\u0436\u043D\u043E?[/em2]
+          [nosubtitle] <sprite name=\"pers\">"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -8801,7 +8807,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0411\u043E\u043B\u044C\u043D\u043E? "
+        value: "[em1]\u0411\u043E\u043B\u044C\u043D\u043E?[/em1] <sprite name=\"phys\">"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -8824,13 +8830,13 @@ MonoBehaviour:
         priority: 2
       conditionsString: "Variable[\"\u041F\u0435\u0440\u0432\u0430\u044F_\u0432\u0441\u0442\u0440\u0435\u0447\u0430_\u0441_\u0418\u0432\u0430\u043D\u043E\u043C\"]
         == true"
-      userScript: 
+      userScript: ChangeDialogueText()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 999.19385
+        x: 996.75476
         y: 321.5733
         width: 160
         height: 30
@@ -8950,7 +8956,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1336.112
+        x: 1337.3315
         y: 312.83075
         width: 160
         height: 30
@@ -9804,9 +9810,58 @@ MonoBehaviour:
         y: 458.1057
         width: 160
         height: 30
+    - id: 41
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "[em3]\u0445\u043C\u043C\u043C[/em3]  <sprite name=\"int\">"
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 4
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 763.57495
+        y: 82.1799
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 399.11557, y: 0}
-    canvasZoom: 0.81999975
+    canvasScrollPosition: {x: 412.7025, y: 0}
+    canvasZoom: 0.6699999
   - id: 19
     fields:
     - title: Title
