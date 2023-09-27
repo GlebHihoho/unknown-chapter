@@ -87,27 +87,6 @@ public class InputController : MonoBehaviour
             }
 
         }
-
-        // Check if the mouse wheel is pressed down or released
-        if (Input.GetMouseButtonDown(2)) // Mouse wheel button
-        {
-            isMouseWheelDown = true;
-        }
-        else if (Input.GetMouseButtonUp(2))
-        {
-            isMouseWheelDown = false;
-        }
-
-        if (isMouseWheelDown)
-        {
-            float rotationInput = Input.GetAxis("Mouse X");
-            RotateCamera(rotationInput);
-        }
-
-        float zoomInput = Input.GetAxis("Mouse ScrollWheel");
-        ZoomCamera(zoomInput);
-
- 
     }
 
     private void Move()
@@ -135,23 +114,13 @@ public class InputController : MonoBehaviour
         characterTransform.position += rightMovement;
         characterTransform.position += upMovement;
         
-        cameraTransform.position = characterTransform.position + new Vector3(-7f, 4f, 0f);
-        cameraTransform.LookAt(characterTransform);
-        float characterRotationY = characterTransform.eulerAngles.y;
-        cameraTransform.eulerAngles = new Vector3(cameraTransform.eulerAngles.x, characterRotationY, cameraTransform.eulerAngles.z);
-    }
-
-    private void RotateCamera(float rotationInput)
-    {
-        if (Mathf.Abs(rotationInput) > 0.0f)
-        {
-            cameraTransform.RotateAround(characterTransform.position, Vector3.up, rotationInput * _rotationSpeed);
-        }
-    }
-
-    private void ZoomCamera(float zoomInput)
-    {
-        Camera.main.orthographicSize -= zoomInput * _zoomSpeed;
-        Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, _orthographicSizeMin, _orthographicSizeMax);
+        
+        
+        // cameraTransform.position = characterTransform.position + new Vector3(-7f, 4f, 0f);
+        // cameraTransform.LookAt(characterTransform);
+        // float characterRotationY = characterTransform.eulerAngles.y;
+        
+        
+        // cameraTransform.eulerAngles = new Vector3(cameraTransform.eulerAngles.x, characterRotationY, cameraTransform.eulerAngles.z);
     }
 }
