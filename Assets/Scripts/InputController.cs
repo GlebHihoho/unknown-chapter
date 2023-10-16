@@ -28,6 +28,9 @@ public class InputController : MonoBehaviour
     
     private float _originalOrthographicSize;
     
+    private Vector3 targetPosition; // Целевая позиция для движения
+    private bool isMovingToTarget;
+    
     
     
     [SerializeField] private float _zoomOffset = 1.0f;
@@ -48,6 +51,29 @@ public class InputController : MonoBehaviour
 
     private void Update()
     {
+        
+        
+        // if (Input.GetMouseButtonDown(0)) // Левая кнопка мыши
+        // {
+        //     // Получаем позицию щелчка мыши на земле
+        //     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //     RaycastHit hit;
+        //     print(ray);
+        //     
+        //     if (Physics.Raycast(ray, out hit))
+        //     {
+        //         // Устанавливаем целевую позицию для движения
+        //         SetTargetPosition(hit.point);
+        //     }
+        // }
+        //
+        // if (isMovingToTarget)
+        // {
+        //     MoveToTarget(); // Двигаемся к цели
+        // }
+        
+        
+        
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             if (Velocity <= 0.5)
@@ -123,4 +149,41 @@ public class InputController : MonoBehaviour
         
         // cameraTransform.eulerAngles = new Vector3(cameraTransform.eulerAngles.x, characterRotationY, cameraTransform.eulerAngles.z);
     }
+    
+    // // Установка целевой позиции для движения
+    // private void SetTargetPosition(Vector3 position)
+    // {
+    //     targetPosition = position;
+    //     isMovingToTarget = true;
+    // }
+    //
+    // // Метод для движения к целевой позиции
+    // private void MoveToTarget()
+    // {
+    //     if (!Input.GetKeyDown(KeyCode.Escape))
+    //     {
+    //         // Вычисляем направление к целевой точке
+    //         Vector3 moveDirection = (targetPosition - characterTransform.position).normalized;
+    //
+    //         // Проверяем расстояние до цели
+    //         float distanceToTarget = Vector3.Distance(characterTransform.position, targetPosition);
+    //
+    //         // Устанавливаем скорость движения (по желанию)
+    //         float moveSpeed = _speedWalk;
+    //
+    //         // Если расстояние до цели слишком мало, завершаем движение
+    //         if (distanceToTarget < 0.1f)
+    //         {
+    //             isMovingToTarget = false;
+    //         }
+    //         else
+    //         {
+    //             // Выполняем перемещение к целевой точке с учетом скорости
+    //             characterTransform.position += moveDirection * moveSpeed * Time.deltaTime;
+    //             Vector3 newForward = new Vector3(moveDirection.x, characterTransform.forward.y, moveDirection.z);
+    //             characterTransform.forward = newForward;
+    //         }
+    //     }
+    //     
+    // }
 }

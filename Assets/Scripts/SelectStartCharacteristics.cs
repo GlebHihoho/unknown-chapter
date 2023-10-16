@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,6 +24,8 @@ namespace DefaultNamespace
         {
             _nameCharacteristic = nameCharacteristic;
             _addCharateristicButton.interactable = true;
+            var colorText = _addCharateristicButton.gameObject.GetComponentInChildren<TextMeshProUGUI>();
+            colorText.color = new Color(0.8705883f, 0.8078432f, 0.6431373f);
         }
 
         public void AddCharacteristic()

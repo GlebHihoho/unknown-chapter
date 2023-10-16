@@ -7470,12 +7470,6 @@ MonoBehaviour:
         destinationDialogueID: 39
         isConnector: 0
         priority: 2
-      - originConversationID: 4
-        originDialogueID: 2
-        destinationConversationID: 4
-        destinationDialogueID: 41
-        isConnector: 0
-        priority: 2
       conditionsString: 
       userScript: "Variable[\"\u041F\u0435\u0440\u0432\u0430\u044F_\u0432\u0441\u0442\u0440\u0435\u0447\u0430_\u0441_\u0418\u0432\u0430\u043D\u043E\u043C\"]
         = true;"
@@ -7511,8 +7505,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "[em2]\u0427\u0442\u043E \u0442\u0435\u0431\u0435 \u043D\u0443\u0436\u043D\u043E?[/em2]
-          [nosubtitle] <sprite name=\"pers\">"
+        value: "\u0427\u0442\u043E \u0442\u0435\u0431\u0435 \u043D\u0443\u0436\u043D\u043E?"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -8807,7 +8800,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "[em1]\u0411\u043E\u043B\u044C\u043D\u043E?[/em1] <sprite name=\"phys\">"
+        value: "\u0411\u043E\u043B\u044C\u043D\u043E?"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -8956,7 +8949,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1337.3315
+        x: 1338.8242
         y: 312.83075
         width: 160
         height: 30
@@ -9271,7 +9264,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1725.0491
-        y: 297.31793
+        y: 295.8254
         width: 160
         height: 30
     - id: 32
@@ -9833,7 +9826,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[em3]\u0445\u043C\u043C\u043C[/em3]  <sprite name=\"int\">"
+        value: "[em3] <sprite name=\"int\"> \u0445\u043C\u043C\u043C[/em3]"
         type: 0
         typeString: 
       - title: Sequence
@@ -9855,13 +9848,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 763.57495
-        y: 82.1799
+        x: 660.58984
+        y: 77.702286
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 412.7025, y: 0}
-    canvasZoom: 0.6699999
+    canvasScrollPosition: {x: 296.6045, y: 16.40915}
+    canvasZoom: 0.9399998
   - id: 19
     fields:
     - title: Title
@@ -10479,7 +10472,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0411\u0435\u043B\u0438\u0430\u0440, \u043A\u0430\u043A \u0436\u0435
+        value: "\u0410\u0433\u0430, \u0438\u0437\u0434\u0430\u0448\u044C \u0442\u0443\u0442
+          \u0437\u0432\u0443\u043A\u0438, \u043A\u043E\u0433\u0434\u0430 \u0440\u043E\u0442
+          \u0437\u0430\u0442\u043A\u043D\u0443\u0442! \u0411\u0435\u043B\u0438\u0430\u0440,
+          \u0437\u043D\u0430\u043B \u0431\u044B \u0442\u044B, \u043A\u0430\u043A 
           \u0433\u043E\u043B\u043E\u0432\u0430 \u0431\u043E\u043B\u0438\u0442 \u043E\u0442
           \u0442\u0432\u043E\u0435\u0439 \u0442\u0440\u044F\u043F\u043A\u0438. \u041E\u0442\u043A\u0443\u0434\u0430
           \u0442\u044B \u0435\u0435 \u0434\u043E\u0441\u0442\u0430\u043B? \u0412\u043F\u0440\u043E\u0447\u0435\u043C,
@@ -10578,7 +10574,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 511.699
+        x: 512.7628
         y: 679.5457
         width: 160
         height: 30
@@ -10940,8 +10936,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 55.714294}
-    canvasZoom: 0.7000002
+    canvasScrollPosition: {x: 0, y: 375.13434}
+    canvasZoom: 0.94000006
   - id: 15
     fields:
     - title: Title
