@@ -9,10 +9,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DefaultNamespace;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-
+[RequireComponent(typeof(Hightlight))]
 public class Outline : MonoBehaviour {
   private static HashSet<Mesh> registeredMeshes = new HashSet<Mesh>();
 
@@ -23,7 +24,36 @@ public class Outline : MonoBehaviour {
     OutlineAndSilhouette,
     SilhouetteOnly
   }
+  
+  [SerializeField]
+  private ColorOptions selectedColorOption;
+  
+  public ColorOptions SelectedColorOption
+  {
+    get { return selectedColorOption; }
+    set
+    {
+      selectedColorOption = value;
+      outlineColor = GetColorFromEnum(value);
+    }
+  }
+  
+  public enum ColorOptions
+  {
+    PreSet_0,
+    PreSet_1
+  }
+  
+  [ColorUsage(true, true)]
+  [SerializeField]
+  private Color[] predefinedColors = new Color[]
+  {
+    new Color(0.990566f, 0.8180472f, 0f),
+    new Color(0f, 0.8867924f, 0.8509698f),
 
+  };
+  
+  
   public Mode OutlineMode {
     get { return outlineMode; }
     set {
@@ -60,7 +90,7 @@ public class Outline : MonoBehaviour {
   private Color outlineColor = Color.white;
 
   [SerializeField, Range(0f, 10f)]
-  private float outlineWidth = 2f;
+  private float outlineWidth = 6f;
 
   [Header("Optional")]
 
@@ -79,8 +109,15 @@ public class Outline : MonoBehaviour {
   private Material outlineFillMaterial;
 
   private bool needsUpdate;
+  
+  private Color GetColorFromEnum(ColorOptions colorOption)
+  {
+    return predefinedColors[(int)colorOption];
+  }
 
   void Awake() {
+    
+    outlineColor = GetColorFromEnum(selectedColorOption);
 
     // Cache renderers
     renderers = GetComponentsInChildren<Renderer>();

@@ -31,26 +31,8 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        // // Получаем ввод с мыши для вращения по горизонтали
-        // float mouseX = Input.GetAxis("Mouse X") * sensitivity;
-        // rotationY += mouseX;
-        //
-        // // Поворачиваем камеру вокруг персонажа по горизонтали
-        // Quaternion cameraRotation = Quaternion.Euler(0f, rotationY, 0f);
-        //
-        // // Рассчитываем новое расстояние и смещение камеры
-        // currentZoomDistance -= Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
-        // currentZoomDistance = Mathf.Clamp(currentZoomDistance, minZoomDistance, maxZoomDistance);
-        // zoomFactor = Mathf.Lerp(zoomFactor, currentZoomDistance / initialCameraDistance, Time.deltaTime * 5f);
-        // Vector3 newCameraOffset = cameraOffset * zoomFactor;
-        //
-        // // Применяем новое положение камеры
-        // _camera.transform.position = _player.position + cameraRotation * newCameraOffset;
-        // _camera.transform.LookAt(_player.position);
-        
         _camera.transform.position = _player.position + cameraRotation * (cameraOffset * zoomFactor);
 
-        
         float scrollWheelInput = Input.GetAxis("Mouse ScrollWheel");
         if (scrollWheelInput != 0f)
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DefaultNamespace
 {
-    [RequireComponent(typeof(Outline))]
+    
     public class Hightlight : MonoBehaviour
     {
         

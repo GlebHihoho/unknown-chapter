@@ -1,6 +1,6 @@
 ﻿using System;
-using PixelCrushers;
 using PixelCrushers.DialogueSystem;
+using UI.InventoryScripts;
 using UnityEngine;
 
 namespace UI
@@ -8,7 +8,15 @@ namespace UI
     public class UIStateController : MonoBehaviour
     {
         [SerializeField] private CameraController _camera;
-        [SerializeField] private InputController _inputController;
+        private MouseInput _mouseInput;
+        private GameObject _playerHUD;
+
+
+        private void Start()
+        {
+            _mouseInput = FindObjectOfType<MouseInput>(true);
+            _playerHUD = FindObjectOfType<ItemsDB>(true).gameObject;
+        }
 
         private void Update()
         {
@@ -17,12 +25,14 @@ namespace UI
             if (gg != null)
             {
                 _camera.enabled = false;
-                _inputController.enabled = false;
+                _mouseInput.enabled = false;
+                _playerHUD.SetActive(false);
             }
             else
             {
                 _camera.enabled = true;
-                _inputController.enabled = true;
+                _mouseInput.enabled = true;
+                _playerHUD.SetActive(true);
             }
         }
     }

@@ -24,7 +24,6 @@ namespace DefaultNamespace
         
         private void Start()
         {
-            _player = GameObject.FindWithTag("Player").transform;
             foreach (var item in _itemsList.items)
             {
                 ItemSO newItem = Instantiate(item); // Создаем копию объекта из _itemList
@@ -34,6 +33,7 @@ namespace DefaultNamespace
 
         private void OnMouseDown()
         {
+            _player = GameObject.FindWithTag("Player").transform;
             distance = Vector3.Distance(_player.position, transform.position);
             if (distance <= maxDistanceToOpen)
             {
