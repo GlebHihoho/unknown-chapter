@@ -3703,7 +3703,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 665267742581646713}
-  _inputController: {fileID: 0}
 --- !u!1 &522177540
 GameObject:
   m_ObjectHideFlags: 0
@@ -11248,7 +11247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: 16
+  trigger: 32
   condition:
     luaConditions: []
     questConditions: []

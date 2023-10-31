@@ -24,10 +24,11 @@ namespace DefaultNamespace
         
         private void Start()
         {
-            foreach (var item in _itemsList.items)
+            foreach (var itemsWithCount in _itemsList.itemsWithCount)
             {
-                ItemSO newItem = Instantiate(item); // Создаем копию объекта из _itemList
-                _itemsListFilling.Add(newItem);     // Добавляем копию в _itemListFilling
+                    ItemSO newItem = Instantiate(itemsWithCount.item); // Создаем копию объекта из _itemList
+                    newItem._count = itemsWithCount.count;
+                    _itemsListFilling.Add(newItem); // Добавляем копию в _itemListFilling
             }
         }
 

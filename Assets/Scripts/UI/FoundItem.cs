@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using DefaultNamespace;
+using TMPro;
 using UI.InventoryScripts;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,15 +12,13 @@ namespace UI
     {
         //todo проверить надежность публичных полей
         [SerializeField] public ItemsList _listOfItems;
-        // public List<ItemSO> _itemsListFilling;
 
         [SerializeField] private Inventory _inventory;
 
         [SerializeField] private GameObject _gameObjShow;
 
         [SerializeField] public List<ItemInventory> _items = new();
-
-
+        
         [SerializeField] private Button _takeAllButton;
 
         [SerializeField] public QuickItemView _quickItemView;
@@ -30,16 +29,13 @@ namespace UI
             print(_quickItemView);
             _inventory = FindObjectOfType<Inventory>(true);
 
-            // foreach (var itemSo in _listOfItems.items)
             foreach (var itemSo in _quickItemView._itemsListFilling)
             {
                 AddGraphics(itemSo);
             }
 
-            // for (int i = 0; i < _listOfItems.items.Count; i++)
             for (int i = 0; i < _quickItemView._itemsListFilling.Count; i++)
             {
-                // var item = _listOfItems.items[i];
                 var item = _quickItemView._itemsListFilling[i];
                 AddItem(i, item);
             }
@@ -63,6 +59,9 @@ namespace UI
             rt.localScale = new Vector3(1, 1, 1);
             newItem.GetComponentInChildren<RectTransform>().localScale = new Vector3(1, 1, 1);
 
+            var text = newItem.GetComponentInChildren<TextMeshProUGUI>();
+            text.text = t._count.ToString();
+
             Button tempButton = newItem.GetComponent<Button>();
 
             _items.Add(ii);
@@ -70,12 +69,6 @@ namespace UI
 
         private void AddItem(int id, ItemSO item) //добавляет предмет в лист ItemInventory
         {
-            // Texture2D itemImage = new Texture2D(60, 60);
-            // byte[] imageData = File.ReadAllBytes(Application.dataPath + item._img);
-            // itemImage.LoadImage(imageData);
-            // Sprite sprite = Sprite.Create(itemImage, new Rect(0, 0, itemImage.width, itemImage.height),
-            //     Vector2.one * 0.5f);
-            
             Sprite sprite = Resources.Load<Sprite>(item._img);
 
             _items[id]._name = item._name;
@@ -106,24 +99,6 @@ namespace UI
                     _quickItemView._itemsListFilling.Remove(_quickItemView._itemsListFilling[i]);
                 }
             }
-            
-            // if (_listOfItems != null)
-            // {
-            // while (_listOfItems.items.Count != 0)
-            // {
-            //     _inventory.AddObject(new Item()
-            //     {
-            //         Count = 1,
-            //         Description = _listOfItems.items[0]._description,
-            //         Img = _listOfItems.items[0]._img,
-            //         IsUsed = false,
-            //         Name = _listOfItems.items[0]._name
-            //     });
-            //     _items.Remove(_items.Find(x => x._name == _listOfItems.items[0]._name));
-            //     GameObject childObject = transform.Find(_listOfItems.items[0]._name).gameObject;
-            //     Destroy(childObject);
-            //     // _listOfItems.items.Remove(_listOfItems.items[0]);
-            // }
         }
     }
 }
