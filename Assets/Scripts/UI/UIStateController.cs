@@ -36,8 +36,8 @@ namespace UI
                 _mouseInput.enabled = false;
                 _playerHUD.SetActive(false);
                 _navMeshAgent.enabled = false;
-                _mxMTrajectoryGenerator.enabled = false;
-                // _mxMAnimator.enabled = false;
+                // _mxMTrajectoryGenerator.enabled = false;
+                _mxMAnimator.enabled = false;
                 _mouseInput.DeleteParticle();
             }
             else

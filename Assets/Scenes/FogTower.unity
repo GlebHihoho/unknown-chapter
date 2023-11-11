@@ -3768,6 +3768,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1010755048}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
     runOnConversationEndEventsAtEndOfFrame: 0
     onConversationCancelled:
       m_PersistentCalls:
@@ -8935,6 +8947,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beachConversation_2: {fileID: 433111280}
+--- !u!114 &1010755048 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 386651070937704991, guid: 7e8bb83aec37b6f4ab46c1e50744c2f5, type: 3}
+  m_PrefabInstance: {fileID: 1754787731}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010755024}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6581870d3a3d8a488583561e2c42f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1018604522 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 836471079580606226, guid: 8bca2b3a3298c6740b46da82556d6856, type: 3}
@@ -9741,7 +9764,7 @@ PrefabInstance:
       objectReference: {fileID: 1010755040}
     - target: {fileID: 7778232333682415514, guid: f0ce6d26a1413674b850081c82500563, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7778232333682415514, guid: f0ce6d26a1413674b850081c82500563, type: 3}
       propertyPath: maxZoomDistance
@@ -12608,7 +12631,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1112374070}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 679eda128bdf4147a0489b0032bb8d55, type: 3}
   m_Name: 
@@ -12767,7 +12790,19 @@ MonoBehaviour:
   conversationEvents:
     onConversationStart:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1639267365}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     onConversationEnd:
       m_PersistentCalls:
         m_Calls:
@@ -13270,7 +13305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 386651070937704990, guid: 7e8bb83aec37b6f4ab46c1e50744c2f5, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 386651070937704991, guid: 7e8bb83aec37b6f4ab46c1e50744c2f5, type: 3}
       propertyPath: m_Enabled
