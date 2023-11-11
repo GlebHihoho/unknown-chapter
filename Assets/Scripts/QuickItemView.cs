@@ -5,11 +5,11 @@ using UI.InventoryScripts;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+// TODO: UI вынесит
 namespace DefaultNamespace
 {
     public class QuickItemView : MonoBehaviour
     {
-        //todo изменить названия этого компонента на более читаемое
         [SerializeField] private GameObject _foundItemsUIPrefab;
         [SerializeField] public ItemsList _itemsList;
         [SerializeField] public List<ItemSO> _itemsListFilling;
@@ -18,6 +18,7 @@ namespace DefaultNamespace
         [SerializeField] private bool _isDeleteObject = false;
         
         private Transform _player;
+        // TODO: ___
         private float distance;
         private Vector3 mousePosition;
         private static bool isInventoryOpen = false;
@@ -26,9 +27,9 @@ namespace DefaultNamespace
         {
             foreach (var itemsWithCount in _itemsList.itemsWithCount)
             {
-                    ItemSO newItem = Instantiate(itemsWithCount.item); // Создаем копию объекта из _itemList
+                    ItemSO newItem = Instantiate(itemsWithCount.item);
                     newItem._count = itemsWithCount.count;
-                    _itemsListFilling.Add(newItem); // Добавляем копию в _itemListFilling
+                    _itemsListFilling.Add(newItem);
             }
         }
 
@@ -47,8 +48,24 @@ namespace DefaultNamespace
             }
         }
 
+        // private void OnMouseDown()
+        // {
+        //     if (isInventoryOpen) return;
+
+        //     _player = GameObject.FindWithTag("Player").transform;
+        //     distance = Vector3.Distance(_player.position, transform.position);
+
+        //     if (distance <= maxDistanceToOpen)
+        //     {
+        //         mousePosition = Input.mousePosition;
+        //         isInventoryOpen = true;
+        //         OpenView();
+        //     }
+        // }
+
         private void OpenView()
         {
+            // TODO: go?
             GameObject go = Instantiate(_foundItemsUIPrefab, mousePosition, Quaternion.identity, _containerTransform);
             go.GetComponentInChildren<FoundItem>()._quickItemView = this;
             _player.GetComponent<InputController>().enabled = false;

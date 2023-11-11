@@ -4,6 +4,8 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 
+// TODO: UI
+// StatIncreaseView -> NotificationView
 namespace DefaultNamespace
 {
     public class StatIncreaseView : MonoBehaviour

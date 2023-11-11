@@ -16,6 +16,7 @@ public class CameraController : MonoBehaviour
     private float rotationY = 45f; // Угол обзора по горизонтали
 
     private Quaternion cameraRotation;
+    // TODO - пересмотреть удалить??
     private Vector3 newCameraOffset;
 
     private void Start()
@@ -29,11 +30,13 @@ public class CameraController : MonoBehaviour
         _camera.transform.position = _player.position + cameraRotation * (cameraOffset * zoomFactor);
     }
 
+    // TODO: не тот метод для камеры (другой метод жизненного цикла) ???
     private void Update()
     {
         _camera.transform.position = _player.position + cameraRotation * (cameraOffset * zoomFactor);
 
         float scrollWheelInput = Input.GetAxis("Mouse ScrollWheel");
+
         if (scrollWheelInput != 0f)
         {
             CameraZoom();
@@ -65,10 +68,12 @@ public class CameraController : MonoBehaviour
     {
         // Рассчитываем новое расстояние и смещение камеры
         float zoomDelta = Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
+        // TODO: пересмотреть
         currentZoomDistance -= zoomDelta;
         currentZoomDistance = Mathf.Clamp(currentZoomDistance, minZoomDistance, maxZoomDistance);
         zoomFactor = currentZoomDistance / initialCameraDistance;
 
+        // TODO: возможно удалить
         // Пересчитываем смещение камеры с учетом нового расстояния
         Vector3 newCameraOffset = cameraOffset * zoomFactor;
 

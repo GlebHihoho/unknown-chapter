@@ -11,6 +11,7 @@ using PixelCrushers.DialogueSystem;
 /// If you call GotoFallback, or if the script is added to a UI Button,
 /// it will go back to the top position recorded on the stack.
 /// </summary>
+/// TODO - UI - работает ли оно или нет?
 public class FallbackButton : MonoBehaviour
 {
     public bool debug = false;

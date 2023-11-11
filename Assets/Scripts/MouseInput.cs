@@ -6,15 +6,19 @@ using UnityEngine.AI;
 
 public class MouseInput : MonoBehaviour
 {
+    // TODO naming
     public LayerMask WhatCanBeClickedOn;
     private NavMeshAgent _myAgent;
+    // TODO удалим?
     [SerializeField] private Vector3 previousClickPoint; // Сохраняем предыдущую точку нажатия
+    // TODO удалим?
     [SerializeField] private float tolerance = 1f; // Допуск по координатам X и Z
     [SerializeField] private GameObject _movePointPrefab;
+    // naming
     private GameObject _particleObject;
     private bool _isParticleMovePoint = false;
     private Vector3 currentClickPoint;
-
+    // TODO - вынести выше все SerializeField ??? naming
     [SerializeField] private LocomotionSpeedRamp m_locomotionSpeedRamp;
     [SerializeField] private MxMTrajectoryGenerator m_trajectoryGenerator;
     private MxMAnimator m_mxmAnimator;
@@ -34,11 +38,11 @@ public class MouseInput : MonoBehaviour
 
         m_trajectoryGenerator = GetComponentInChildren<MxMTrajectoryGenerator>();
         m_trajectoryGenerator.InputProfile = m_generalLocomotion;
-
     }
 
     void FixedUpdate()
     {
+        // TODO: magic number 0.6f
         if (_myAgent.remainingDistance <= 0.6f && _myAgent.hasPath && _isParticleMovePoint)
         {
             _isParticleMovePoint = false;
@@ -53,6 +57,7 @@ public class MouseInput : MonoBehaviour
             if (Physics.Raycast(myRay, out hitInfo, 100, WhatCanBeClickedOn))
             {
                 currentClickPoint = hitInfo.point;
+                // TODO удалить
                 Debug.Log("Двойной щелчок");
                 m_locomotionSpeedRamp.BeginSprint();
                 m_trajectoryGenerator.MaxSpeed = 5f;
@@ -60,7 +65,6 @@ public class MouseInput : MonoBehaviour
                 m_trajectoryGenerator.DirectionBias = 6f;
                 m_mxmAnimator.SetCalibrationData("Sprint");
                 m_trajectoryGenerator.InputProfile = m_sprintLocomotion;
-
 
                 if (!_isParticleMovePoint)
                 {
@@ -81,21 +85,24 @@ public class MouseInput : MonoBehaviour
         }
     }
 
+    // TODO: naming CreateMovePoint
     private void CreatePaticle()
     {
-        _particleObject = Instantiate(_movePointPrefab, currentClickPoint + new Vector3(0f, 0.2f, 0f),
-            Quaternion.Euler(90f, 0f, 0f));
+        _particleObject = Instantiate(
+            _movePointPrefab,
+            currentClickPoint + new Vector3(0f, 0.2f, 0f),
+            Quaternion.Euler(90f, 0f, 0f)
+        );
         _isParticleMovePoint = true;
-        print("создали");
     }
 
+    // TODO: naming DeleteMovePoint
     public void DeleteParticle()
     {
         Destroy(_particleObject);
         _isParticleMovePoint = false;
-        print("удалили");
     }
-    
+    // TODO: naming UpdateMovePoint
     private void UpdateParticlePosition()
     {
         // Обновление позиции существующей частицы

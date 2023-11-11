@@ -9,12 +9,15 @@ using Unity.VisualScripting;
 using Update = UnityEngine.PlayerLoop.Update;
 using System.Net.Http.Headers;
 
+// TODO: Characteristics название
+// using
 public class MainCharacteristics : MonoBehaviour
 {
     [SerializeField] private double _physicalAbilities = 0; // физические способности
     [SerializeField] private double _perception = 0;        // восприятие
     [SerializeField] private double _intellect  = 0;        // интеллект 
     [SerializeField] private Inventory _inventory;
+    // TODO: удалить неиспользованые переменные _statBlockPhys _statBlockPerc _statBlockInt StatCurrent
     [SerializeField] private StatBlocksScript _statBlockPhys;
     [SerializeField] private StatBlocksScript _statBlockPerc;
     [SerializeField] private StatBlocksScript _statBlockInt;
@@ -22,6 +25,7 @@ public class MainCharacteristics : MonoBehaviour
     public event Action StatCurrent;
 
 
+    // название GetSkill - характеристики
     public double GetSkill(string skillName)
     {
         switch (skillName)
@@ -35,6 +39,7 @@ public class MainCharacteristics : MonoBehaviour
         }
     }
 
+    // TODO: вынести регистрацию методов в Lua в отдельный скрипт
     private void OnEnable()
     {
         Lua.RegisterFunction("GetSkill", this, SymbolExtensions.GetMethodInfo(() => GetSkill("")));
@@ -47,6 +52,7 @@ public class MainCharacteristics : MonoBehaviour
         Lua.RegisterFunction("ChangeDialogueText", this, SymbolExtensions.GetMethodInfo(() => ChangeDialogueText()));
     }
 
+    // TODO: вынести регистрацию методов в Lua в отдельный скрипт
     private void OnDisable()
     {
         Lua.UnregisterFunction("GetSkill");
@@ -59,11 +65,13 @@ public class MainCharacteristics : MonoBehaviour
         Lua.UnregisterFunction("ChangeDialogueText");
     }
 
+    // TODO: проверить и удалить
     private void ChangeDialogueText()
     {
         print(DialogueManager.currentConversationState.HasPCResponses);
     }
 
+    // TODO: проверить и удалить
     private void ReloadConversation()
     {
         DialogueManager.conversationController.GotoState(DialogueManager.currentConversationState);
@@ -72,22 +80,23 @@ public class MainCharacteristics : MonoBehaviour
         print(DialogueManager.conversationModel.FirstState);
     }
 
-    
+    // TODO: возможно не нужны. но проверить UI элементы от Иры
     public double GetPhysicalAbilities(double value)
     {
         return _physicalAbilities;
     }
-    
+    // TODO: возможно не нужны. но проверить UI элементы от Иры
     public double GetPerception(double value)
     {
         return _perception;
     }
-    
+    // TODO: возможно не нужны. но проверить UI элементы от Иры
     public double GetIntellect(double value)
     {
         return _intellect;
     }
 
+    // TODO: проверить через Enum
     public void CharacteristicIncrease(string nameCharacteristic)
     {
         switch (nameCharacteristic)
@@ -96,10 +105,8 @@ public class MainCharacteristics : MonoBehaviour
             case "Perception" when _perception < 5f: _perception++; break;
             case "Intellect" when _intellect < 5f: _intellect++; break;
         }
-
-    }    
-    
-    
+    }
+    // TODO: проверить через Enum
     public void CharacteristicDecreasee(string nameCharacteristic)
     {
         switch (nameCharacteristic)

@@ -3,14 +3,14 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+// TODO - затемнение ScreenFader ScreenBrightener - создать задачу на рефакторинг этих методов
+// возможно сделать один класс для работы с этой механикой
 namespace DefaultNamespace
 {
     public class ScreenBrightener : MonoBehaviour
     {
         [SerializeField] private float _fadeSpeed = 1;
 
-        
-        
         private IEnumerator Start()
         {
             

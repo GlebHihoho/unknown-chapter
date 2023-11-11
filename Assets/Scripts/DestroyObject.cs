@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
+// TODO: возможно вынести в UI
+// изучить вопрос DefaultNamespace
 namespace DefaultNamespace
 {
     public class DestroyObject : MonoBehaviour

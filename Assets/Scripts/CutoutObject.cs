@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: вынести в папку с шейдерами
 public class CutoutObject : MonoBehaviour
 {
     [SerializeField]

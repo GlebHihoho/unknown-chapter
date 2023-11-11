@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// TODO: удалим?? либо вынести в папку архив
 public class PlayerCamera : MonoBehaviour
 {
     [SerializeField] private Camera _camera;

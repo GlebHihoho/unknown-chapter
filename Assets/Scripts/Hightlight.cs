@@ -7,7 +7,7 @@ namespace DefaultNamespace
     
     public class Hightlight : MonoBehaviour
     {
-        
+        // TODO нужен ли SerializeField
         [SerializeField] private OutlineEffect _outline;
 
         private void Start()
