@@ -5,9 +5,9 @@ namespace DefaultNamespace.TestTools
 {
     public class TestToolManager : MonoBehaviour
     {
-        [SerializeField] private GameObject _estToolKitItem;
-        [SerializeField] private GameObject _estToolMenuItem;
-        [SerializeField] private GameObject _estMainCharacteristic;
+        [SerializeField] private GameObject _testToolKitItem;
+        [SerializeField] private GameObject _testToolMenuItem;
+        [SerializeField] private GameObject _testMainCharacteristic;
         [SerializeField] private GameObject _sceneReloaded;
         private bool isActive = false;
 
@@ -16,9 +16,9 @@ namespace DefaultNamespace.TestTools
             if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.K))
             {
                 isActive = !isActive;
-                _estToolKitItem.SetActive(isActive);
-                _estToolMenuItem.SetActive(isActive);
-                _estMainCharacteristic.SetActive(isActive);
+                _testToolKitItem.SetActive(isActive);
+                _testToolMenuItem.SetActive(isActive);
+                _testMainCharacteristic.SetActive(isActive);
                 _sceneReloaded.SetActive(isActive);
             }
         }

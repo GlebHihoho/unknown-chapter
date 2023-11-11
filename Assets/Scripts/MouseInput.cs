@@ -11,27 +11,25 @@ public class MouseInput : MonoBehaviour
     [SerializeField] private Vector3 previousClickPoint; // Сохраняем предыдущую точку нажатия
     [SerializeField] private float tolerance = 1f; // Допуск по координатам X и Z
     [SerializeField] private GameObject _movePointPrefab;
-    public GameObject _particleObject;
+    private GameObject _particleObject;
     private bool _isParticleMovePoint = false;
     private Vector3 currentClickPoint;
-    
+
     [SerializeField] private LocomotionSpeedRamp m_locomotionSpeedRamp;
     [SerializeField] private MxMTrajectoryGenerator m_trajectoryGenerator;
     private MxMAnimator m_mxmAnimator;
 
-    [Header("Input Profiles")]
-    [SerializeField]
+    [Header("Input Profiles")] [SerializeField]
     private MxMInputProfile m_generalLocomotion = null;
-    
-    [SerializeField]
-    private MxMInputProfile m_sprintLocomotion = null;
-    
+
+    [SerializeField] private MxMInputProfile m_sprintLocomotion = null;
+
 
     void Start()
     {
         _myAgent = GetComponent<NavMeshAgent>();
         m_locomotionSpeedRamp = GetComponent<LocomotionSpeedRamp>();
-        
+
         m_mxmAnimator = GetComponentInChildren<MxMAnimator>();
 
         m_trajectoryGenerator = GetComponentInChildren<MxMTrajectoryGenerator>();
@@ -39,58 +37,46 @@ public class MouseInput : MonoBehaviour
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (_myAgent.remainingDistance <= 0.4f && _myAgent.hasPath && _isParticleMovePoint)
+        if (_myAgent.remainingDistance <= 0.6f && _myAgent.hasPath && _isParticleMovePoint)
         {
             _isParticleMovePoint = false;
             DeleteParticle();
         }
-        
-        if (Input.GetMouseButtonDown(0))
+
+        if (Input.GetMouseButton(1))
         {
             Ray myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
-        
+
             if (Physics.Raycast(myRay, out hitInfo, 100, WhatCanBeClickedOn))
             {
                 currentClickPoint = hitInfo.point;
-                if (Vector3.Distance(currentClickPoint, previousClickPoint) <= tolerance)
-                {
-                    Debug.Log("Двойной щелчок");
-                    m_locomotionSpeedRamp.BeginSprint();
-                    m_trajectoryGenerator.MaxSpeed = 4.8f;
-                    m_trajectoryGenerator.PositionBias = 6f;
-                    m_trajectoryGenerator.DirectionBias = 6f;
-                    m_mxmAnimator.SetCalibrationData("Sprint");
-                    m_trajectoryGenerator.InputProfile = m_sprintLocomotion;
-                }
-                else
-                {
-                    Debug.Log("Одиночный щелчок");
-                    m_locomotionSpeedRamp.ResetFromSprint();
-                    m_trajectoryGenerator.MaxSpeed = 2f;
-                    m_trajectoryGenerator.PositionBias = 10f;
-                    m_trajectoryGenerator.DirectionBias = 10f;
-                    m_mxmAnimator.SetCalibrationData("General");
-                    m_trajectoryGenerator.InputProfile = m_generalLocomotion;
-                }
-                
+                Debug.Log("Двойной щелчок");
+                m_locomotionSpeedRamp.BeginSprint();
+                m_trajectoryGenerator.MaxSpeed = 5f;
+                m_trajectoryGenerator.PositionBias = 6f;
+                m_trajectoryGenerator.DirectionBias = 6f;
+                m_mxmAnimator.SetCalibrationData("Sprint");
+                m_trajectoryGenerator.InputProfile = m_sprintLocomotion;
+
+
                 if (!_isParticleMovePoint)
                 {
                     CreatePaticle();
                 }
                 else
                 {
-                    DeleteParticle();
-                    CreatePaticle();
+                    // DeleteParticle();
+                    // CreatePaticle();
+                    // Удаление и создание частицы не нужно, достаточно обновить её позицию
+                    UpdateParticlePosition();
                 }
 
                 _myAgent.SetDestination(hitInfo.point);
                 _myAgent.isStopped = true; // Остановить навигацию
                 previousClickPoint = hitInfo.point; // Сохраняем текущую точку нажатия
-
-                
             }
         }
     }
@@ -103,10 +89,16 @@ public class MouseInput : MonoBehaviour
         print("создали");
     }
 
-    private void DeleteParticle()
+    public void DeleteParticle()
     {
         Destroy(_particleObject);
         _isParticleMovePoint = false;
         print("удалили");
+    }
+    
+    private void UpdateParticlePosition()
+    {
+        // Обновление позиции существующей частицы
+        _particleObject.transform.position = currentClickPoint + new Vector3(0f, 0.2f, 0f);
     }
 }

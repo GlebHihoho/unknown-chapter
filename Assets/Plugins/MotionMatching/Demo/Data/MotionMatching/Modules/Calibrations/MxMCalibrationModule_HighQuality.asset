@@ -34,10 +34,10 @@ MonoBehaviour:
     - 0.5
     - 0.5
   - CalibrationName: Sprint
-    PoseTrajectoryRatio: 0.65
+    PoseTrajectoryRatio: 0.608
     PoseVelocityWeight: 5
-    PoseAspectMultiplier: 1
-    PoseResultantVelocityMultiplier: 0.2
+    PoseAspectMultiplier: 0.1
+    PoseResultantVelocityMultiplier: 0.4
     TrajPosMultiplier: 10
     TrajFAngleMultiplier: 0.1
     JointPositionWeights:

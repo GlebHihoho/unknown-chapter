@@ -8,11 +8,11 @@ namespace DefaultNamespace
     public class Hightlight : MonoBehaviour
     {
         
-        [SerializeField] private Outline _outline;
+        [SerializeField] private OutlineEffect _outline;
 
         private void Start()
         {
-            _outline = GetComponent<Outline>();
+            _outline = GetComponent<OutlineEffect>();
         }
 
         private void Update()

@@ -92,11 +92,9 @@ public class MainCharacteristics : MonoBehaviour
     {
         switch (nameCharacteristic)
         {
-            case "PhysicalAbilities": _physicalAbilities++; /*_statBlockPhys.Updatic();*/
-                /*if (StatCurrent != null) StatCurrent();*/
-                break;
-            case "Perception": _perception++; /*_statBlockPerc.Updatic();*/ break;
-            case "Intellect": _intellect++; /*_statBlockInt.Updatic();*/ break;
+            case "PhysicalAbilities" when _physicalAbilities < 5f: _physicalAbilities++; break;
+            case "Perception" when _perception < 5f: _perception++; break;
+            case "Intellect" when _intellect < 5f: _intellect++; break;
         }
 
     }    
@@ -106,9 +104,9 @@ public class MainCharacteristics : MonoBehaviour
     {
         switch (nameCharacteristic)
         {
-            case "PhysicalAbilities": _physicalAbilities--; break;
-            case "Perception": _perception--; break;
-            case "Intellect": _intellect--; break;
+            case "PhysicalAbilities" when _physicalAbilities > 0f: _physicalAbilities--; break;
+            case "Perception" when _perception > 0f: _perception--; break;
+            case "Intellect" when _intellect > 0f: _intellect--; break;
         }
     }
 }
