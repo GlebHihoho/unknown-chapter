@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
     [SerializeField] private Transform _player;
-    [SerializeField] private float sensitivity = 2f;
-    [SerializeField] private float zoomSpeed = 2f;
-    [SerializeField] private float minZoomDistance = 1f;
-    [SerializeField] private float maxZoomDistance = 10f;
-    [SerializeField] private float initialCameraDistance = 5f; // Расстояние камеры при начальном зуме
+    [FormerlySerializedAs("sensitivity")] [SerializeField] private float _sensitivity = 2f;
+    [FormerlySerializedAs("zoomSpeed")] [SerializeField] private float _zoomSpeed = 2f;
+    [FormerlySerializedAs("minZoomDistance")] [SerializeField] private float _minZoomDistance = 1f;
+    [FormerlySerializedAs("maxZoomDistance")] [SerializeField] private float _maxZoomDistance = 10f;
+    [FormerlySerializedAs("initialCameraDistance")] [SerializeField] private float _initialCameraDistance = 5f;
 
     private float currentZoomDistance = 5f; // Текущее расстояние камеры
     private float zoomFactor = 1f; // Фактор зума
@@ -20,11 +21,10 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        // Определяем начальное смещение камеры от персонажа
         cameraOffset = _camera.transform.position - _player.position;
 
         // Устанавливаем начальное расстояние камеры
-        currentZoomDistance = initialCameraDistance;
+        currentZoomDistance = _initialCameraDistance;
         
         _camera.transform.position = _player.position + cameraRotation * (cameraOffset * zoomFactor);
     }
@@ -50,7 +50,7 @@ public class CameraController : MonoBehaviour
     private void CameraScroll()
     {
         // Получаем ввод с мыши для вращения по горизонтали
-        float mouseX = Input.GetAxis("Mouse X") * sensitivity;
+        float mouseX = Input.GetAxis("Mouse X") * _sensitivity;
         rotationY += mouseX;
 
         // Поворачиваем камеру вокруг персонажа по горизонтали
@@ -64,10 +64,10 @@ public class CameraController : MonoBehaviour
     private void CameraZoom()
     {
         // Рассчитываем новое расстояние и смещение камеры
-        float zoomDelta = Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
+        float zoomDelta = Input.GetAxis("Mouse ScrollWheel") * _zoomSpeed;
         currentZoomDistance -= zoomDelta;
-        currentZoomDistance = Mathf.Clamp(currentZoomDistance, minZoomDistance, maxZoomDistance);
-        zoomFactor = currentZoomDistance / initialCameraDistance;
+        currentZoomDistance = Mathf.Clamp(currentZoomDistance, _minZoomDistance, _maxZoomDistance);
+        zoomFactor = currentZoomDistance / _initialCameraDistance;
 
         // Пересчитываем смещение камеры с учетом нового расстояния
         Vector3 newCameraOffset = cameraOffset * zoomFactor;
