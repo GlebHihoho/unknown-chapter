@@ -924,7 +924,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1607261979}
         m_TargetAssemblyTypeName: ScreenFader, Assembly-CSharp
-        m_MethodName: ScreenBrightener
+        m_MethodName: Overlay
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 812089791}
@@ -936,7 +936,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1607261979}
         m_TargetAssemblyTypeName: ScreenFader, Assembly-CSharp
-        m_MethodName: ScreenBrightener
+        m_MethodName: Overlay
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 476696917}
@@ -948,7 +948,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1607261979}
         m_TargetAssemblyTypeName: ScreenFader, Assembly-CSharp
-        m_MethodName: ScreenBrightener
+        m_MethodName: Overlay
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 966225779}
@@ -8448,7 +8448,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1607261979}
           m_TargetAssemblyTypeName: ScreenFader, Assembly-CSharp
-          m_MethodName: ScreenBrightener
+          m_MethodName: Overlay
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 1071105376}
@@ -8932,7 +8932,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1607261979}
           m_TargetAssemblyTypeName: ScreenFader, Assembly-CSharp
-          m_MethodName: ScreenDarkener
+          m_MethodName: ShowHideOverlay
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 1071105376}
@@ -8960,7 +8960,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1607261979}
           m_TargetAssemblyTypeName: ScreenFader, Assembly-CSharp
-          m_MethodName: ScreenDarkener
+          m_MethodName: ShowHideOverlay
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 1071105376}

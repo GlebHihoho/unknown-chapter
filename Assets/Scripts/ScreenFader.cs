@@ -41,7 +41,7 @@ public class ScreenFader : MonoBehaviour
         gameObject.SetActive(false);
     }
 //todo переименовать метод
-    public void ScreenBrightener(GameObject brightenerObject)
+    public void Overlay(GameObject brightenerObject)
     {
         StartCoroutine("ScreenBrightenerStart", brightenerObject);
     }
@@ -75,7 +75,7 @@ public class ScreenFader : MonoBehaviour
     }
     
 //todo переименовать метод
-    public void ScreenDarkener(GameObject darkerObject)
+    public void ShowHideOverlay(GameObject darkerObject)
     {
         StartCoroutine("ScreenDarkenerStart", darkerObject);
     }
