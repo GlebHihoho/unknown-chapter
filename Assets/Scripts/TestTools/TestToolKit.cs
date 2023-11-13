@@ -8,7 +8,7 @@ namespace DefaultNamespace.TestTools
     public class TestToolKit : MonoBehaviour
     {
         [SerializeField] private Inventory _inventory;
-        [SerializeField] private MainCharacteristics _mainCharacteristics;
+        [FormerlySerializedAs("_mainCharacteristics")] [SerializeField] private Characteristics characteristics;
         [SerializeField] private AllItemCollectionsSO _allItemCollectionsSo;
         [SerializeField] private GameObject _prefab;
         [SerializeField] private Transform _contentParent;

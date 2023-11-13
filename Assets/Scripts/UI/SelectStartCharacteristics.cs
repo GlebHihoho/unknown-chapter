@@ -1,22 +1,22 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-namespace DefaultNamespace
+namespace UI
 {
     public class SelectStartCharacteristics : MonoBehaviour
     {
         [SerializeField] private string _nameCharacteristic;
-        [SerializeField] private MainCharacteristics _mainCharacteristics;
+        [FormerlySerializedAs("_mainCharacteristics")] [SerializeField] private Characteristics characteristics;
         [SerializeField] private Button _addCharateristicButton;
 
         void Start()
         {
-            _mainCharacteristics = FindObjectOfType<MainCharacteristics>();
+            characteristics = FindObjectOfType<Characteristics>();
         }
 
-        // TODO: Stat??? naming
-        public void SelectCurrentStat(string nameCharacteristic)
+        public void SelectCurrentCharacteristics(string nameCharacteristic)
         {
             _nameCharacteristic = nameCharacteristic;
             _addCharateristicButton.interactable = true;
@@ -28,7 +28,7 @@ namespace DefaultNamespace
         {
             if (_nameCharacteristic != "")
             {
-                _mainCharacteristics.CharacteristicIncrease(_nameCharacteristic);
+                characteristics.CharacteristicIncrease(_nameCharacteristic);
                 Destroy(gameObject);
             }
         }

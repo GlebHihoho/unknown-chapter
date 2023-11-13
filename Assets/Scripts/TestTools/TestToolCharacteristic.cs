@@ -1,6 +1,7 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace DefaultNamespace.TestTools
 {
@@ -9,20 +10,20 @@ namespace DefaultNamespace.TestTools
         [SerializeField] private TextMeshProUGUI _currentPhysical;
         [SerializeField] private TextMeshProUGUI _currentPerception;
         [SerializeField] private TextMeshProUGUI _currentIntellect;
-        [SerializeField] private MainCharacteristics _mainCharacteristics;
+        [FormerlySerializedAs("_mainCharacteristics")] [SerializeField] private Characteristics characteristics;
 
         private void Awake()
         {
-            _currentPhysical.text = _mainCharacteristics.GetSkill("PhysicalAbilities").ToString();
-            _currentPerception.text = _mainCharacteristics.GetSkill("Perception").ToString();
-            _currentIntellect.text = _mainCharacteristics.GetSkill("Intellect").ToString();
+            _currentPhysical.text = characteristics.GetSkill("PhysicalAbilities").ToString();
+            _currentPerception.text = characteristics.GetSkill("Perception").ToString();
+            _currentIntellect.text = characteristics.GetSkill("Intellect").ToString();
         }
 
         private void Update()
         {
-            _currentPhysical.text = _mainCharacteristics.GetSkill("PhysicalAbilities").ToString();
-            _currentPerception.text = _mainCharacteristics.GetSkill("Perception").ToString();
-            _currentIntellect.text = _mainCharacteristics.GetSkill("Intellect").ToString();
+            _currentPhysical.text = characteristics.GetSkill("PhysicalAbilities").ToString();
+            _currentPerception.text = characteristics.GetSkill("Perception").ToString();
+            _currentIntellect.text = characteristics.GetSkill("Intellect").ToString();
         }
     }
 }

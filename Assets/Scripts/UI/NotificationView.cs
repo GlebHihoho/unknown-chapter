@@ -1,14 +1,11 @@
-﻿using System;
+﻿using DG.Tweening;
 using TMPro;
 using UnityEngine;
-using DG.Tweening;
 using UnityEngine.UI;
 
-// TODO: UI
-// StatIncreaseView -> NotificationView
-namespace DefaultNamespace
+namespace UI
 {
-    public class StatIncreaseView : MonoBehaviour
+    public class NotificationView : MonoBehaviour
     {
         [SerializeField] private GameObject _statIncreasePrefab;
         [SerializeField] private TextMeshProUGUI _statIncreaseName;
@@ -27,7 +24,6 @@ namespace DefaultNamespace
         {
             var pos = _statIncreasePrefab.transform.position;
             _statIncreasePrefab.SetActive(true);
-            // _statIncreaseName.text = string.Format("Ваша характеристика {0} повышена", statName);
             _statIncreaseName.text = $"Ваша характеристика \"{statName}\" повышена";
             
             var image = _statIncreasePrefab.GetComponentInChildren<Image>();

@@ -1,16 +1,16 @@
 ﻿using PixelCrushers.DialogueSystem;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-// Создать папку со скриптами связанными с сценариями
-namespace DefaultNamespace
+namespace Events
 {
     public class OpenNextDialogue : MonoBehaviour
     {
-        [SerializeField] private GameObject beachConversation_2;
+        [FormerlySerializedAs("beachConversation_2")] [SerializeField] private GameObject _beachConversation_2;
 
         public void OpenBeachConversation_2()
         {
-            beachConversation_2.GetComponent<DialogueSystemTrigger>().enabled = true;
+            _beachConversation_2.GetComponent<DialogueSystemTrigger>().enabled = true;
         }
     }
 }

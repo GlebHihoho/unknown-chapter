@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
-// TODO: delete????
 public class ParticleSpawner : MonoBehaviour
 {
-    public GameObject particleSystemPrefab;
+    [FormerlySerializedAs("particleSystemPrefab")] public GameObject _particleSystemPrefab;
     
     void Update()
     {
@@ -19,8 +17,7 @@ public class ParticleSpawner : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayerMask))
             {
                 Vector3 spawnPosition = hit.point;
-                GameObject particleSystem = Instantiate(particleSystemPrefab, spawnPosition + new Vector3(0f, 0.2f, 0f), Quaternion.Euler(90f, 0f, 0f));
-                // Настройте систему частиц по вашему усмотрению
+                GameObject particleSystem = Instantiate(_particleSystemPrefab, spawnPosition + new Vector3(0f, 0.2f, 0f), Quaternion.Euler(90f, 0f, 0f));
             }
         }
     }

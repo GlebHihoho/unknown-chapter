@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +9,6 @@ public class ScreenFader : MonoBehaviour
 
 {
     [SerializeField] private float _fadeSpeed = 1;
-    [SerializeField] private float _fadeDuration = 2; // Длительность затемнения
 
     public void StartCoroutine(float fadeDuration)
     {
@@ -50,8 +48,6 @@ public class ScreenFader : MonoBehaviour
 
     private IEnumerator ScreenBrightenerStart(GameObject brightenerObject)
     {
-        
-        
         if (brightenerObject.GetComponent<Image>())
         {
             Image fadeImage = brightenerObject.GetComponent<Image>();
@@ -74,11 +70,8 @@ public class ScreenFader : MonoBehaviour
                 yield return null;
             }
         }
-
         
-
         gameObject.SetActive(false);
-
     }
     
 //todo переименовать метод

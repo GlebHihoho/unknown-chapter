@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using ScriptableObjects;
-using UI;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace DefaultNamespace
+namespace UI
 {
     public class QuickItemView : MonoBehaviour
     {

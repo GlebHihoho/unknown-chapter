@@ -367,7 +367,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9112354651331177403, guid: 69aee0ca2005b1e4d926df31f6d5a0fc, type: 3}
+    - target: {fileID: 9112354651331177403, guid: 69aee0cSelectCurrentCharacteristicsf6d5a0fc, type: 3}
       propertyPath: m_Name
       value: FoundItemsBlock
       objectReference: {fileID: 0}
@@ -634,7 +634,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1312435683}
         m_TargetAssemblyTypeName: DefaultNamespace.SelectStartCharacteristics, Assembly-CSharp
-        m_MethodName: SelectCurrentStat
+        m_MethodName: SelectCurrentCharacteristics
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1797,7 +1797,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1312435683}
         m_TargetAssemblyTypeName: DefaultNamespace.SelectStartCharacteristics, Assembly-CSharp
-        m_MethodName: SelectCurrentStat
+        m_MethodName: SelectCurrentCharacteristics
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11268,7 +11268,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1312435683}
         m_TargetAssemblyTypeName: DefaultNamespace.SelectStartCharacteristics, Assembly-CSharp
-        m_MethodName: SelectCurrentStat
+        m_MethodName: SelectCurrentCharacteristics
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

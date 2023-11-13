@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace UI
 {
@@ -7,7 +8,7 @@ namespace UI
     {
         [SerializeField] private GameObject _mainPlayerPanel;
 
-        [SerializeField] private MainCharacteristics _mainStats;
+        [FormerlySerializedAs("_mainStats")] [SerializeField] private Characteristics stats;
 
         [SerializeField] private TextMeshProUGUI _phys;
         [SerializeField] private TextMeshProUGUI _per;
@@ -21,9 +22,9 @@ namespace UI
 
         private void CheckStats()
         {
-            _phys.text = _mainStats.GetPhysicalAbilities(0).ToString();
-            _per.text = _mainStats.GetPerception(0).ToString();
-            _int.text = _mainStats.GetIntellect(0).ToString();
+            _phys.text = stats.GetPhysicalAbilities(0).ToString();
+            _per.text = stats.GetPerception(0).ToString();
+            _int.text = stats.GetIntellect(0).ToString();
         }
     }
 }

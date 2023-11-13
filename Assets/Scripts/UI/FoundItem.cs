@@ -30,14 +30,14 @@ namespace UI
             print(_quickItemView);
             _inventory = FindObjectOfType<Inventory>(true);
 
-            foreach (var itemSo in _quickItemView._itemsListFilling)
+            foreach (var itemSo in _quickItemView.ItemsListFilling)
             {
                 AddGraphics(itemSo);
             }
 
-            for (int i = 0; i < _quickItemView._itemsListFilling.Count; i++)
+            for (int i = 0; i < _quickItemView.ItemsListFilling.Count; i++)
             {
-                var item = _quickItemView._itemsListFilling[i];
+                var item = _quickItemView.ItemsListFilling[i];
                 AddItem(i, item);
             }
 
@@ -82,22 +82,22 @@ namespace UI
         private void TakeAll()
         {
             
-            if (_quickItemView._itemsListFilling != null)
+            if (_quickItemView.ItemsListFilling != null)
             {
-                for (int i = 0; i < _quickItemView._itemsListFilling.Count;)
+                for (int i = 0; i < _quickItemView.ItemsListFilling.Count;)
                 {
                     _inventory.AddObject(new Item()
                     {
-                        Description = _quickItemView._itemsListFilling[i]._description,
-                        Img = _quickItemView._itemsListFilling[i]._img,
+                        Description = _quickItemView.ItemsListFilling[i]._description,
+                        Img = _quickItemView.ItemsListFilling[i]._img,
                         IsUsed = false,
-                        Name = _quickItemView._itemsListFilling[i]._name,
-                        Count = _quickItemView._itemsListFilling[i]._count
+                        Name = _quickItemView.ItemsListFilling[i]._name,
+                        Count = _quickItemView.ItemsListFilling[i]._count
                     });
-                    _items.Remove(_items.Find(x => x._name == _quickItemView._itemsListFilling[i]._name));
-                    GameObject childObject = transform.Find(_quickItemView._itemsListFilling[i]._name).gameObject;
+                    _items.Remove(_items.Find(x => x._name == _quickItemView.ItemsListFilling[i]._name));
+                    GameObject childObject = transform.Find(_quickItemView.ItemsListFilling[i]._name).gameObject;
                     Destroy(childObject);
-                    _quickItemView._itemsListFilling.Remove(_quickItemView._itemsListFilling[i]);
+                    _quickItemView.ItemsListFilling.Remove(_quickItemView.ItemsListFilling[i]);
                 }
             }
         }
