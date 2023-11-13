@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+// TODO: удаляем?
 public class InputController : MonoBehaviour
 {
     [SerializeField] private float _speedWalk = 4f;

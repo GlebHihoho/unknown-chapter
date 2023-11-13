@@ -2,18 +2,12 @@
 using PixelCrushers.DialogueSystem;
 using UnityEngine;
 
+// Создать папку со скриптами связанными с сценариями
 namespace DefaultNamespace
 {
     public class OpenNextDialogue : MonoBehaviour
     {
-        // private DialogueSystemTrigger _dialogueSystemTrigger;
         [SerializeField] private GameObject beachConversation_2;
-        //
-        // private void Start()
-        // {
-        //     _dialogueSystemTrigger = GetComponent<DialogueSystemTrigger>();
-        //     _dialogueSystemTrigger.enabled = true;
-        // }
 
         public void OpenBeachConversation_2()
         {

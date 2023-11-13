@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+// TODO - затемнение ScreenFader ScreenBrightener - создать задачу на рефакторинг этих методов
+// возможно сделать один класс для работы с этой механикой
 public class ScreenFader : MonoBehaviour
 
 {

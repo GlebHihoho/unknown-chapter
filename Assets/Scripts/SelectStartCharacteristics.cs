@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+// TODO: UI?
 namespace DefaultNamespace
 {
     public class SelectStartCharacteristics : MonoBehaviour
@@ -10,15 +11,13 @@ namespace DefaultNamespace
         [SerializeField] private MainCharacteristics _mainCharacteristics;
         [SerializeField] private Button _addCharateristicButton;
 
-        /// <summary>
-        /// Start is called on the frame when a script is enabled just before
-        /// any of the Update methods is called the first time.
-        /// </summary>
         void Start()
         {
+            // TODO - надо ли оно?
             _mainCharacteristics = FindObjectOfType<MainCharacteristics>();
         }
 
+        // TODO: Stat??? naming
         public void SelectCurrentStat(string nameCharacteristic)
         {
             _nameCharacteristic = nameCharacteristic;
@@ -33,10 +32,6 @@ namespace DefaultNamespace
             {
                 _mainCharacteristics.CharacteristicIncrease(_nameCharacteristic);
                 Destroy(gameObject);
-            }
-            else
-            {
-                print("Характеристика не выбрана");
             }
         }
     }

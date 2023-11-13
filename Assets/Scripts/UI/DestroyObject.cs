@@ -1,12 +1,12 @@
-﻿using System;
+﻿using DefaultNamespace;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace UI
 {
     public class DestroyObject : MonoBehaviour
     {
-        private Transform _player;
         [SerializeField]private QuickItemView _quickItemView;
+        private Transform _player;
 
         private void Start()
         {
