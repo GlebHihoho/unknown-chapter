@@ -367,10 +367,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9112354651331177403, guid: 69aee0cSelectCurrentCharacteristicsf6d5a0fc, type: 3}
-      propertyPath: m_Name
-      value: FoundItemsBlock
-      objectReference: {fileID: 0}
     - target: {fileID: 9112354651331177403, guid: 69aee0ca2005b1e4d926df31f6d5a0fc, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -426,11 +422,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _foundItemsUIPrefab: {fileID: 9112354651331177403, guid: 69aee0ca2005b1e4d926df31f6d5a0fc, type: 3}
-  _itemsList: {fileID: 11400000, guid: ece44b0c432ae5944b89b974f3178559, type: 2}
-  _itemsListFilling: []
   _containerTransform: {fileID: 1457708356}
-  maxDistanceToOpen: 5
+  _maxDistanceToOpen: 5
   _isDeleteObject: 0
+  ItemsList: {fileID: 11400000, guid: ece44b0c432ae5944b89b974f3178559, type: 2}
+  ItemsListFilling: []
 --- !u!114 &96024761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1860,37 +1856,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7552325017457806696, guid: b516d3b0f0bf2094caa6eab2d435a096, type: 3}
   m_PrefabInstance: {fileID: 2134025289}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &266643481
+--- !u!1 &266643481 stripped
 GameObject:
-  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 469290209009913244, guid: 0f8bc575f24771042807742645e5b4ea, type: 3}
   m_PrefabInstance: {fileID: 1228541970}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 266643482}
-  m_Layer: 0
-  m_Name: 
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &266643482
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 266643481}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &273195011
 GameObject:
   m_ObjectHideFlags: 0
@@ -6760,7 +6730,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fadeSpeed: 1
-  _fadeDuration: 2
 --- !u!114 &824886005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7325,11 +7294,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _foundItemsUIPrefab: {fileID: 9112354651331177403, guid: 69aee0ca2005b1e4d926df31f6d5a0fc, type: 3}
-  _itemsList: {fileID: 11400000, guid: 103a696d52ea1654eae47172938f8a41, type: 2}
-  _itemsListFilling: []
   _containerTransform: {fileID: 1457708356}
-  maxDistanceToOpen: 5
+  _maxDistanceToOpen: 5
   _isDeleteObject: 0
+  ItemsList: {fileID: 11400000, guid: 103a696d52ea1654eae47172938f8a41, type: 2}
+  ItemsListFilling: []
 --- !u!114 &902605868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7701,7 +7670,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fadeSpeed: 1
-  _fadeDuration: 2
 --- !u!114 &963656301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9000,7 +8968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be0a7ed54384b3fbc8a9aec037ea8bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beachConversation_2: {fileID: 433111280}
+  _beachConversation_2: {fileID: 433111280}
 --- !u!114 &1010755048 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 386651070937704991, guid: 7e8bb83aec37b6f4ab46c1e50744c2f5, type: 3}
@@ -9815,14 +9783,22 @@ PrefabInstance:
     - target: {fileID: 7778232333682415514, guid: f0ce6d26a1413674b850081c82500563, type: 3}
       propertyPath: _player
       value: 
-      objectReference: {fileID: 1010755040}
+      objectReference: {fileID: 1754787732}
     - target: {fileID: 7778232333682415514, guid: f0ce6d26a1413674b850081c82500563, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7778232333682415514, guid: f0ce6d26a1413674b850081c82500563, type: 3}
+      propertyPath: _targetObject
+      value: 
+      objectReference: {fileID: 1010755040}
+    - target: {fileID: 7778232333682415514, guid: f0ce6d26a1413674b850081c82500563, type: 3}
       propertyPath: maxZoomDistance
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778232333682415514, guid: f0ce6d26a1413674b850081c82500563, type: 3}
+      propertyPath: _wallMask.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 7778232333682415515, guid: f0ce6d26a1413674b850081c82500563, type: 3}
       propertyPath: _player
@@ -10718,11 +10694,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _foundItemsUIPrefab: {fileID: 9112354651331177403, guid: 69aee0ca2005b1e4d926df31f6d5a0fc, type: 3}
-  _itemsList: {fileID: 11400000, guid: e039b87aa6910ce49941110f7cf2a77c, type: 2}
-  _itemsListFilling: []
   _containerTransform: {fileID: 1457708356}
-  maxDistanceToOpen: 5
+  _maxDistanceToOpen: 5
   _isDeleteObject: 0
+  ItemsList: {fileID: 11400000, guid: e039b87aa6910ce49941110f7cf2a77c, type: 2}
+  ItemsListFilling: []
 --- !u!114 &1278312737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10946,7 +10922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nameCharacteristic: 
-  _mainCharacteristics: {fileID: 521969281}
+  characteristics: {fileID: 521969281}
   _addCharateristicButton: {fileID: 1886781217}
 --- !u!4 &1350231577 stripped
 Transform:
@@ -12171,11 +12147,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _foundItemsUIPrefab: {fileID: 9112354651331177403, guid: 69aee0ca2005b1e4d926df31f6d5a0fc, type: 3}
-  _itemsList: {fileID: 11400000, guid: 96c0cca09bf4ccb4c9fcd3579caea502, type: 2}
-  _itemsListFilling: []
   _containerTransform: {fileID: 1457708356}
-  maxDistanceToOpen: 5
+  _maxDistanceToOpen: 5
   _isDeleteObject: 0
+  ItemsList: {fileID: 11400000, guid: 96c0cca09bf4ccb4c9fcd3579caea502, type: 2}
+  ItemsListFilling: []
 --- !u!4 &1580124091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 78a42bc5ab7c0c24397f5b8d721021b8, type: 3}
@@ -12402,7 +12378,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fadeSpeed: 1
-  _fadeDuration: 2
 --- !u!114 &1607261980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13201,7 +13176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be0a7ed54384b3fbc8a9aec037ea8bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beachConversation_2: {fileID: 433111280}
+  _beachConversation_2: {fileID: 433111280}
 --- !u!114 &1680399948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13430,6 +13405,11 @@ PrefabInstance:
     - {fileID: 386651070937704976, guid: 7e8bb83aec37b6f4ab46c1e50744c2f5, type: 3}
     - {fileID: 386651070937704977, guid: 7e8bb83aec37b6f4ab46c1e50744c2f5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7e8bb83aec37b6f4ab46c1e50744c2f5, type: 3}
+--- !u!4 &1754787732 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 386651070699479684, guid: 7e8bb83aec37b6f4ab46c1e50744c2f5, type: 3}
+  m_PrefabInstance: {fileID: 1754787731}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1757650686 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8302728024693496938, guid: 1af7ba98a36ed814cbea2433bb173c5e, type: 3}
@@ -15536,7 +15516,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fadeSpeed: 1
-  _fadeDuration: 2
 --- !u!114 &1992614184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17097,11 +17076,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _foundItemsUIPrefab: {fileID: 9112354651331177403, guid: 69aee0ca2005b1e4d926df31f6d5a0fc, type: 3}
-  _itemsList: {fileID: 11400000, guid: 2d6183176f0d27449a56fce93c9e76f7, type: 2}
-  _itemsListFilling: []
   _containerTransform: {fileID: 1457708356}
-  maxDistanceToOpen: 5
+  _maxDistanceToOpen: 5
   _isDeleteObject: 0
+  ItemsList: {fileID: 11400000, guid: 2d6183176f0d27449a56fce93c9e76f7, type: 2}
+  ItemsListFilling: []
 --- !u!114 &2125802147
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float _minZoomDistance = 1f;
     [SerializeField] private float _maxZoomDistance = 10f;
     [SerializeField] private float _initialCameraDistance = 5f;
+    [SerializeField] private LayerMask _obstacleMask; // Добавляем маску препятствий
+
+    [SerializeField] private Transform _targetObject;
+    [SerializeField] private LayerMask _wallMask;
 
     private float _currentZoomDistance = 5f; // Текущее расстояние камеры
     private float _zoomFactor = 1f; // Фактор зума
@@ -16,11 +21,20 @@ public class CameraController : MonoBehaviour
     private float _rotationY = 45f; // Угол обзора по горизонтали
     private Quaternion _cameraRotation;
 
+    private Camera _mainCamera;
+    private bool _isZooming = false; // Флаг, указывающий, происходит ли зум в данный момент
+    private float _previousZoomDistance; // Переменная для хранения предыдущего расстояния зума
+
+    private bool
+        _hasSavedInitialZoom = false; // Флаг для отслеживания того, было ли уже сохранено начальное значение зума
+
     private void Start()
     {
         _cameraOffset = _camera.transform.position - _player.position;
         _currentZoomDistance = _initialCameraDistance;
         _camera.transform.position = _player.position + _cameraRotation * (_cameraOffset * _zoomFactor);
+
+        _mainCamera = GetComponent<Camera>();
     }
 
     private void Update()
@@ -32,11 +46,13 @@ public class CameraController : MonoBehaviour
         {
             CameraZoom();
         }
-        
+
         if (Input.GetMouseButton(2))
         {
             CameraScroll();
         }
+
+        CheckObstaclesBetweenCameraAndPlayer();
         _camera.transform.LookAt(_player.position);
     }
 
@@ -56,10 +72,69 @@ public class CameraController : MonoBehaviour
         _zoomFactor = _currentZoomDistance / _initialCameraDistance;
         UpdateCameraPosition();
     }
-    
+
     private void UpdateCameraPosition()
     {
         _camera.transform.position = _player.position + _cameraRotation * (_cameraOffset * _zoomFactor);
         _camera.transform.LookAt(_player.position);
+    }
+
+    public void CheckObstaclesBetweenCameraAndPlayer()
+    {
+        Vector3 offset = _targetObject.position - transform.position;
+        RaycastHit[] hitObjects = Physics.RaycastAll(transform.position, offset, offset.magnitude, _wallMask);
+
+        if (hitObjects.Length >= 1)
+        {
+            if (!_isZooming)
+            {
+                StartCoroutine(ZoomIn());
+            }
+        }
+        else
+        {
+            if (_isZooming)
+            {
+                StopCoroutine(ZoomIn());
+                _isZooming = false;
+
+                if (_hasSavedInitialZoom)
+                {
+                    _currentZoomDistance = _previousZoomDistance;
+                    _zoomFactor = _currentZoomDistance / _initialCameraDistance;
+                    UpdateCameraPosition();
+                    _hasSavedInitialZoom = false;
+                }
+            }
+        }
+    }
+
+    private IEnumerator ZoomIn()
+    {
+        _isZooming = true;
+
+        if (!_hasSavedInitialZoom)
+        {
+            _previousZoomDistance = _currentZoomDistance;
+            _hasSavedInitialZoom = true;
+        }
+
+        while (true)
+        {
+            _currentZoomDistance -= _zoomSpeed * (Time.deltaTime * 4);
+            _currentZoomDistance = Mathf.Max(_currentZoomDistance, _minZoomDistance);
+            _zoomFactor = _currentZoomDistance / _initialCameraDistance;
+            UpdateCameraPosition();
+            Vector3 newOffset = _targetObject.position - transform.position;
+            RaycastHit[] newHitObjects = Physics.RaycastAll(transform.position, newOffset, newOffset.magnitude, _wallMask);
+
+            if (newHitObjects.Length == 0)
+            {
+                break;
+            }
+
+            yield return null;
+        }
+        _isZooming = false;
     }
 }

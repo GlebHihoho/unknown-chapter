@@ -3061,7 +3061,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3219a08674be4704b00eb30732b6441a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystemPrefab: {fileID: 7236410693364666172, guid: 64889aa1af94996439fd8a07363f317e, type: 3}
 --- !u!4 &423642172
 Transform:
   m_ObjectHideFlags: 0
@@ -4786,31 +4785,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb618c128e83046b01a9af59ceb12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
-  iRegistered: 0
-  fallingBack: 0
-  fallbackEntry:
-    id: 0
-    fields: []
-    conversationID: 0
-    isRoot: 0
-    isGroup: 0
-    nodeColor: 
-    delaySimStatus: 0
-    falseConditionAction: 
-    conditionPriority: 2
-    outgoingLinks: []
-    conditionsString: 
-    userScript: 
-    onExecute:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    canvasRect:
-      x: 0
-      y: 0
-      width: 160
-      height: 30
 --- !u!114 &521969293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9018,27 +8992,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d8c1f6198f00f4d8a8e12f152ef037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedWalk: 4
-  _speedSprint: 12
-  _rotationSpeed: 12
-  _zoomSpeed: 5
-  _orthographicSizeMin: 2
-  _orthographicSizeMax: 15
-  _zoomOffset: 1
-  cameraOffset: {x: 5, y: 5, z: 5}
-  _moveSpeed: 0
-  _characterAnimator: {fileID: 0}
-  Velocity: 0
-  _velocityHash: 0
-  velocityTransitionTime: 0.5
-  velocityTransitionTimer: 0
-  characterTransform: {fileID: 0}
-  cameraTransform: {fileID: 0}
-  isMouseWheelDown: 0
-  isSprinting: 0
-  _originalOrthographicSize: 0
-  targetPosition: {x: 0, y: 0, z: 0}
-  isMovingToTarget: 0
 --- !u!4 &978946151 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c380d56629c88674a9c1232f286e9f1d, type: 3}
@@ -11003,6 +10956,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8021001004253913084, guid: ac0a7fc0586ab0e4e9c7ac4c0962db3f, type: 3}
   m_PrefabInstance: {fileID: 1845356192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1272989586 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 386651070699479684, guid: 7e8bb83aec37b6f4ab46c1e50744c2f5, type: 3}
+  m_PrefabInstance: {fileID: 467842957}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1275541480 stripped
 GameObject:
@@ -13580,6 +13538,11 @@ Transform:
   m_Father: {fileID: 1706155886}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1629256057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7778232333682415505, guid: f0ce6d26a1413674b850081c82500563, type: 3}
+  m_PrefabInstance: {fileID: 7118594949628818147}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1632586628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18234,7 +18197,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7778232333682415514, guid: f0ce6d26a1413674b850081c82500563, type: 3}
   m_PrefabInstance: {fileID: 7118594949628818147}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1629256057}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 679eda128bdf4147a0489b0032bb8d55, type: 3}
@@ -18245,6 +18208,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7778232333682415506, guid: f0ce6d26a1413674b850081c82500563, type: 3}
   m_PrefabInstance: {fileID: 7118594949628818147}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &665267742581646719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629256057}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f3c662b9cb64122a556ea2b75612e8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetObject: {fileID: 1749934474}
+  _wallMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &836471078408696560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19577,11 +19556,15 @@ PrefabInstance:
     - target: {fileID: 7778232333682415514, guid: f0ce6d26a1413674b850081c82500563, type: 3}
       propertyPath: _player
       value: 
-      objectReference: {fileID: 1749934474}
+      objectReference: {fileID: 1272989586}
     - target: {fileID: 7778232333682415514, guid: f0ce6d26a1413674b850081c82500563, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7778232333682415514, guid: f0ce6d26a1413674b850081c82500563, type: 3}
+      propertyPath: _targetObject
+      value: 
+      objectReference: {fileID: 1749934474}
     - target: {fileID: 7778232333682415514, guid: f0ce6d26a1413674b850081c82500563, type: 3}
       propertyPath: maxZoomDistance
       value: 10
@@ -19589,6 +19572,18 @@ PrefabInstance:
     - target: {fileID: 7778232333682415514, guid: f0ce6d26a1413674b850081c82500563, type: 3}
       propertyPath: _maxZoomDistance
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778232333682415514, guid: f0ce6d26a1413674b850081c82500563, type: 3}
+      propertyPath: _minZoomDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778232333682415514, guid: f0ce6d26a1413674b850081c82500563, type: 3}
+      propertyPath: _wallMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778232333682415514, guid: f0ce6d26a1413674b850081c82500563, type: 3}
+      propertyPath: _obstacleMask.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 7778232333682415515, guid: f0ce6d26a1413674b850081c82500563, type: 3}
       propertyPath: _player
