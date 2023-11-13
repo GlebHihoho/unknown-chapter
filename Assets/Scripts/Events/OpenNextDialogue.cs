@@ -1,5 +1,4 @@
-﻿using System;
-using PixelCrushers.DialogueSystem;
+﻿using PixelCrushers.DialogueSystem;
 using UnityEngine;
 
 // Создать папку со скриптами связанными с сценариями

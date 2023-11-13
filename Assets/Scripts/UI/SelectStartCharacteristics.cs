@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// TODO: UI?
 namespace DefaultNamespace
 {
     public class SelectStartCharacteristics : MonoBehaviour
@@ -13,7 +12,6 @@ namespace DefaultNamespace
 
         void Start()
         {
-            // TODO - надо ли оно?
             _mainCharacteristics = FindObjectOfType<MainCharacteristics>();
         }
 
