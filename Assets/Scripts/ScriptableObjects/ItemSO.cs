@@ -1,11 +1,7 @@
-﻿using System.Collections.Generic;
-using UI.InventoryScripts;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Serialization;
-using UnityEngine.UI;
 
-// TODO: создать отдельную папку для SO
-namespace DefaultNamespace
+namespace ScriptableObjects
 {
     [System.Serializable]
     [CreateAssetMenu(fileName = "Item", menuName = "ScriptableObjects")]

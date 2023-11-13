@@ -38,7 +38,7 @@ namespace UI
                 _navMeshAgent.enabled = false;
                 // _mxMTrajectoryGenerator.enabled = false;
                 _mxMAnimator.enabled = false;
-                _mouseInput.DeleteParticle();
+                _mouseInput.DeleteMovePoint();
             }
             else
             {

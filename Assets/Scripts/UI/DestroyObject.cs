@@ -16,7 +16,6 @@ namespace UI
 
         public void ThisDestroyObject()
         {
-            _player.GetComponent<InputController>().enabled = true;
             _quickItemView.SetIsInventoryOpen(false);
             Destroy(transform.parent.gameObject);
         }

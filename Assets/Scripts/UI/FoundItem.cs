@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using DefaultNamespace;
+using ScriptableObjects;
 using TMPro;
 using UI.InventoryScripts;
 using UnityEngine;

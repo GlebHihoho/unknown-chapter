@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DefaultNamespace;
+using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Serialization;
 

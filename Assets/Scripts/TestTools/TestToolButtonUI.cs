@@ -1,5 +1,6 @@
 ﻿using System;
 using DefaultNamespace;
+using ScriptableObjects;
 using TMPro;
 using UI.InventoryScripts;
 using UnityEngine;

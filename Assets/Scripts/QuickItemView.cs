@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ScriptableObjects;
 using UI;
 using UI.InventoryScripts;
 using UnityEngine;
@@ -68,7 +69,7 @@ namespace DefaultNamespace
             // TODO: go?
             GameObject go = Instantiate(_foundItemsUIPrefab, mousePosition, Quaternion.identity, _containerTransform);
             go.GetComponentInChildren<FoundItem>()._quickItemView = this;
-            _player.GetComponent<InputController>().enabled = false;
+            // _player.GetComponent<InputController>().enabled = false;
             if(_isDeleteObject)
             {
                 Destroy(gameObject);
