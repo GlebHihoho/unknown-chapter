@@ -1,5 +1,4 @@
 
-using UnityEngine.UI;
 
 namespace UI.InventoryScripts
 {
@@ -9,7 +8,6 @@ namespace UI.InventoryScripts
       //  public int ID { get; set; }
         public string Name { get; set; }
         public int Count { get; set; }
-        // public string Img { get; set; }
         public string Img { get; set; }
         public string Description { get; set; }
         public bool IsUsed { get; set; }

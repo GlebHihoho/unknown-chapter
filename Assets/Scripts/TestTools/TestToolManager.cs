@@ -9,6 +9,7 @@ namespace DefaultNamespace.TestTools
         [SerializeField] private GameObject _testToolMenuItem;
         [SerializeField] private GameObject _testMainCharacteristic;
         [SerializeField] private GameObject _sceneReloaded;
+        [SerializeField] private GameObject _saveLoadButton;
         private bool isActive = false;
 
         private void Update()
@@ -20,6 +21,14 @@ namespace DefaultNamespace.TestTools
                 _testToolMenuItem.SetActive(isActive);
                 _testMainCharacteristic.SetActive(isActive);
                 _sceneReloaded.SetActive(isActive);
+            }
+
+            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.L))
+            {
+                if (_saveLoadButton)
+                {
+                    _saveLoadButton.SetActive(!_saveLoadButton.activeSelf);
+                }
             }
         }
     }

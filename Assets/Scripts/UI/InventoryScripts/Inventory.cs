@@ -37,16 +37,27 @@ namespace UI.InventoryScripts
         [SerializeField] private TextMeshProUGUI _descriptionOfItem;
 
         [SerializeField] private AllItemCollectionsSO _allItemCollectionsSO;
+        
+        private string savePath;
+
 
         public void Start()
         {
             //todo разобраться с json
-            // string json = File.ReadAllText(Application.dataPath + "/items.json");
-            // _data._items = JsonConvert.DeserializeObject<List<Item>>(json);
+            string json = File.ReadAllText(Application.dataPath + "/itemsss.json");
+            
+            _data._items = JsonConvert.DeserializeObject<List<Item>>(json);
 
             ChangeInventory();
+            // UpdateInventory();
+            print("Открыли скрипт");
+        }
+        
+        public void OnApplicationQuit()
+        {
+            string path = Application.dataPath + "/items.json";
 
-            UpdateInventory();
+            File.WriteAllText(path, JsonConvert.SerializeObject(_data._items));
         }
 
         public void Update()
@@ -54,7 +65,7 @@ namespace UI.InventoryScripts
             UpdateInventory();
         }
 
-        private void ChangeInventory()
+        public void ChangeInventory()
         {
             if (_items.Count == 0)
             {
@@ -199,13 +210,6 @@ namespace UI.InventoryScripts
             _descriptionOfItem.text = currentItem._description;
         }
 
-        private void OnApplicationQuit()
-        {
-            string path = Application.dataPath + "/items.json";
-
-            File.WriteAllText(path, JsonConvert.SerializeObject(_data._items));
-        }
-
         public double GetItemAmount(string itemName)
         {
             var item = _items.Find(x => x._name == itemName);
@@ -267,6 +271,66 @@ namespace UI.InventoryScripts
                 DialogueSystemItemDeleter(itemName, itemCount);
             }
         }
+        
+        public InventoryData GetInventoryDate()
+        {
+            return new InventoryData
+            {
+                ItemInventory = _items,
+                // ItemsDB = _data._items
+            };
+        }
+    
+        public void SetInventoryDate(InventoryData data)
+        {
+            _items = data.ItemInventory;
+            // _data._items = data.ItemsDB;
+        }
+        
+        // private void OnApplicationQuit()
+        // {
+        //     string path = Application.dataPath + "/items.json";
+        //
+        //     File.WriteAllText(path, JsonConvert.SerializeObject(_data._items));
+        // }
+        
+        // public void SetInventoryDate(InventoryData data)
+        // {
+        //     _items = data.ItemInventory;
+        //
+        //     // Clear the existing objects in the inventory
+        //     ClearInventory();
+        //
+        //     // Create new objects based on the saved data
+        //     foreach (var item in _items)
+        //     {
+        //         var newItem = Instantiate(_gameObjShow, _inventoryMainObject.transform);
+        //         newItem.name = item._name;
+        //
+        //         var ii = new ItemInventory
+        //         {
+        //             _itemGameObj = newItem
+        //         };
+        //
+        //         var rt = newItem.GetComponent<RectTransform>();
+        //         rt.localPosition = new Vector3(0, 0, 0);
+        //         rt.localScale = new Vector3(1, 1, 1);
+        //         newItem.GetComponentInChildren<RectTransform>().localScale = new Vector3(1, 1, 1);
+        //
+        //         Button tempButton = newItem.GetComponent<Button>();
+        //         tempButton.onClick.AddListener(SelectObject);
+        //     }
+        //
+        //     UpdateInventory();
+        // }
+        //
+        // private void ClearInventory()
+        // {
+        //     foreach (Transform child in _inventoryMainObject.transform)
+        //     {
+        //         Destroy(child.gameObject);
+        //     }
+        // }
     }
 
 
