@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using DefaultNamespace.SaveLoadData;
 using TMPro;
 using Newtonsoft.Json;
 using Unity.VisualScripting;
@@ -39,12 +40,14 @@ namespace UI.InventoryScripts
         [SerializeField] private AllItemCollectionsSO _allItemCollectionsSO;
         
         private string savePath;
+        [SerializeField] private SaveManager _saveManager;
 
 
         public void Start()
         {
+            _saveManager = FindObjectOfType<SaveManager>();
             //todo разобраться с json
-            string json = File.ReadAllText(Application.dataPath + "/itemsss.json");
+            string json = File.ReadAllText(Application.dataPath + $"/Save/{_saveManager.CurrentSaveFile}.json");
             
             _data._items = JsonConvert.DeserializeObject<List<Item>>(json);
 
@@ -53,12 +56,12 @@ namespace UI.InventoryScripts
             print("Открыли скрипт");
         }
         
-        public void OnApplicationQuit()
-        {
-            string path = Application.dataPath + "/items.json";
-
-            File.WriteAllText(path, JsonConvert.SerializeObject(_data._items));
-        }
+        // public void OnApplicationQuit()
+        // {
+        //     string path = Application.dataPath + $"/{SaveManager.Instance.CurrentSaveFile}.json";
+        //
+        //     File.WriteAllText(path, JsonConvert.SerializeObject(_data._items));
+        // }
 
         public void Update()
         {

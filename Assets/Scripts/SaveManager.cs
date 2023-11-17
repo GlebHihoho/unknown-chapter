@@ -3,13 +3,22 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using TMPro;
 using UI.InventoryScripts;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace DefaultNamespace.SaveLoadData
 {
     public class SaveManager : MonoBehaviour
     {
+        [SerializeField] private TMP_InputField _fileName;
+        [SerializeField] private List<string> _allSaveName;
+        [SerializeField] private string _currentSaveFile = "NewGames";
+
+        public List<string> AllSaveName => _allSaveName;
+        public string CurrentSaveFile => _currentSaveFile;
+
         private string savePath;
         private GameData gameData;
 
@@ -17,13 +26,20 @@ namespace DefaultNamespace.SaveLoadData
 
         private void Awake()
         {
+            if (_currentSaveFile == "")
+            {
+                _currentSaveFile = "NewGames";
+            }
             Instance = this;
-            savePath = Application.persistentDataPath + "/gameData.json";
+            // savePath = Application.persistentDataPath + "/gameData.json";
+            savePath = Application.persistentDataPath + $"/{CurrentSaveFile}.json";
+            LoadSaveNames();
             // LoadGameData();
         }
 
-        public void LoadGameData()
+        public void LoadGameData(string saveFile)
         {
+            _currentSaveFile = saveFile;
             // if (File.Exists(savePath))
             // {
                 try
@@ -33,24 +49,24 @@ namespace DefaultNamespace.SaveLoadData
                     // // gameData.CharacterState.SetCharacterData(gameData.CharacterStateData);
                     // gameData.Inventory.SetInventoryDate(gameData.InventoryData);
                     
+            
+                    // string saveFile = File.ReadAllText(savePath);
+                    // gameData = JsonUtility.FromJson<GameData>(saveFile);
 
-                    string saveFile = File.ReadAllText(savePath);
-                    gameData = JsonUtility.FromJson<GameData>(saveFile);
-                    
-                    
-                    string json = File.ReadAllText(Application.dataPath + "/items.json");
 
+                    string json = File.ReadAllText(Application.dataPath + $"/{_currentSaveFile}.json");
+            
                     
                     // string saveFile = File.ReadAllText(savePath);
                     gameData = JsonConvert.DeserializeObject<GameData>(json);
-
+            
                     if (gameData.InventoryData != null)
                     {
                         if (gameData.InventoryData.ItemInventory == null)
                         {
                             gameData.InventoryData.ItemInventory = new List<ItemInventory>();
                         }
-
+            
                         gameData.Inventory.SetInventoryDate(gameData.InventoryData);
                     }
                 }
@@ -77,8 +93,12 @@ namespace DefaultNamespace.SaveLoadData
             {
                 // gameData.CharacterStateData = gameData.CharacterState.GetCharacterData();
                 gameData.InventoryData = gameData.Inventory.GetInventoryDate();
-                string path = Application.dataPath + "/itemsss.json";
+                string path = Application.dataPath + $"/{_fileName.text}.json";
                 File.WriteAllText(path, JsonConvert.SerializeObject(gameData.Inventory._data._items));
+                // File.WriteAllText(path, JsonConvert.SerializeObject(gameData.InventoryData.ItemInventory));
+                _allSaveName.Add(_fileName.text);
+                SaveSaveNames();
+                _fileName.text = "";
             }
             catch (Exception e)
             {
@@ -93,6 +113,25 @@ namespace DefaultNamespace.SaveLoadData
                 // CharacterState = FindObjectOfType<CharacterState>(),
                 Inventory = FindObjectOfType<Inventory>(true),
             };
+        }
+        
+        private void LoadSaveNames()
+        {
+            // Загрузка списка сохраненных имен из файла
+            string saveNamesPath = Application.persistentDataPath + "/saveNames.json";
+
+            if (File.Exists(saveNamesPath))
+            {
+                string saveNamesJson = File.ReadAllText(saveNamesPath);
+                _allSaveName = JsonConvert.DeserializeObject<List<string>>(saveNamesJson);
+            }
+        }
+
+        private void SaveSaveNames()
+        {
+            // Сохранение списка сохраненных имен в файл
+            string saveNamesPath = Application.persistentDataPath + "/saveNames.json";
+            File.WriteAllText(saveNamesPath, JsonConvert.SerializeObject(_allSaveName));
         }
 
         // private void OnApplicationQuit()
