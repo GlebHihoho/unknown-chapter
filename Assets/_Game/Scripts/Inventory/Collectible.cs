@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,8 @@ public class Collectible : MonoBehaviour
     private Vector2 hotSpot = Vector2.zero;
 
 
+    public static event Action<ItemData, int> OnItemGiven;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,17 +42,17 @@ public class Collectible : MonoBehaviour
 
     private void OnMouseOver()
     {
-        canCollect = Vector3.Magnitude(transform.position - player.position) <= itemData.interactDistance;
+        canCollect = Vector3.Magnitude(transform.position - player.position) <= itemData.InteractDistance;
    
         if (canCollect)
         {
-            Cursor.SetCursor(cursorData.takeCursor, hotSpot, cursorMode);
-            outline.OutlineColor = cursorData.takeColor;
+            Cursor.SetCursor(cursorData.TakeCursor, hotSpot, cursorMode);
+            outline.OutlineColor = cursorData.TakeColor;
         }
         else
         {
-            Cursor.SetCursor(cursorData.viewCursor, hotSpot, cursorMode);
-            outline.OutlineColor = cursorData.inspectColor;
+            Cursor.SetCursor(cursorData.ViewCursor, hotSpot, cursorMode);
+            outline.OutlineColor = cursorData.InspectColor;
         }
 
         outline.enabled = true;
@@ -70,21 +73,14 @@ public class Collectible : MonoBehaviour
     {
         if (canCollect)
         {
-
-            if (DialogueManager.Instance != null && DialogueManager.DatabaseManager != null && DialogueManager.MasterDatabase != null)
-            {
-                int oldValue = DialogueLua.GetVariable(itemData.dialogVariable).asInt;
-                int newValue = Mathf.Clamp(oldValue + increment, 0, itemData.inventoryMax);
-                DialogueLua.SetVariable(itemData.dialogVariable, newValue);
-                DialogueManager.SendUpdateTracker();
-            }
+            OnItemGiven?.Invoke(itemData, increment);
 
             ResetVisuals();
             gameObject.SetActive(false);
         }
         else
         {
-            DialogueManager.BarkString(itemData.examineBark, transform);        
+            DialogueManager.BarkString(itemData.ExamineBark, transform);        
         }
 
 

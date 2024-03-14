@@ -6,17 +6,17 @@ using UnityEngine;
 public class CursorData : ScriptableObject
 {
 
-    [SerializeField] Texture2D _viewCursor;
-    public Texture2D viewCursor => _viewCursor;
+    [SerializeField] Texture2D viewCursor;
+    public Texture2D ViewCursor => viewCursor;
 
 
-    [SerializeField] Color _inspectColor = Color.yellow;
-    public Color inspectColor => _inspectColor;
+    [SerializeField] Color inspectColor = Color.yellow;
+    public Color InspectColor => inspectColor;
 
-    [SerializeField] Texture2D _takeCursor;
-    public Texture2D takeCursor => _takeCursor;
+    [SerializeField] Texture2D takeCursor;
+    public Texture2D TakeCursor => takeCursor;
 
 
-    [SerializeField] Color _takeColor = Color.green;
-    public Color takeColor => _takeColor;
+    [SerializeField] Color takeColor = Color.green;
+    public Color TakeColor => takeColor;
 }

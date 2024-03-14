@@ -8,33 +8,33 @@ public class ItemData : ScriptableObject
 {
 
     [VariablePopup(true)]
-    [SerializeField] string _dialogVariable = string.Empty;
-    public string dialogVariable => _dialogVariable;
+    [SerializeField] string dialogVariable = string.Empty;
+    public string DialogVariable => dialogVariable;
 
     [Space]
 
-    [SerializeField] Sprite _icon;
-    public Sprite icon => _icon;
+    [SerializeField] Sprite icon;
+    public Sprite Icon => icon;
 
-    [SerializeField] Sprite _image;
-    public Sprite image => _image;
-
-    [Space]
-
-    [SerializeField] string _examineBark;
-    public string examineBark => _examineBark;
-
-    [SerializeField, TextArea(0, 10)] string _description;
-    public string description => _description;
+    [SerializeField] Sprite image;
+    public Sprite Image => image;
 
     [Space]
 
-    [SerializeField, Min(1)] int _inventoryMax = 100;
-    public int inventoryMax => _inventoryMax; 
+    [SerializeField, TextArea(0, 3)] string examineBark;
+    public string ExamineBark => examineBark;
+
+    [SerializeField, TextArea(0, 10)] string description;
+    public string Description => description;
+
+    [Space]
+
+    [SerializeField, Min(1)] int inventoryMax = 100;
+    public int InventoryMax => inventoryMax; 
 
 
-    [SerializeField, Min(0)] float _interactDistace = 2f;
-    public float interactDistance => _interactDistace;
+    [SerializeField, Min(0)] float interactDistace = 2f;
+    public float InteractDistance => interactDistace;
 
 
 

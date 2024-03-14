@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27aa10b6c282e9f4ca58562cc5a86b9e, type: 3}
   m_Name: Rum
   m_EditorClassIdentifier: 
-  _dialogVariable: "\u0420\u043E\u043C"
-  _icon: {fileID: 0}
-  _examineBark: "\u042D\u0442\u043E \u0431\u0443\u0442\u044B\u043B\u043A\u0430 \u0440\u043E\u043C\u0430"
+  dialogVariable: "\u0420\u043E\u043C"
+  icon: {fileID: 0}
+  image: {fileID: 0}
+  examineBark: "\u0411\u0443\u0442\u044B\u043B\u043A\u0430 \u0440\u043E\u043C\u0430"
+  description: 
+  inventoryMax: 100
+  interactDistace: 2
