@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,10 @@ public class ActiveItemUI : MonoBehaviour
     [Space]
     [SerializeField] Button useButton;
     [SerializeField] Button deleteButton;
+
+
+    public static event Action<ItemData> OnUseItem;
+    public static event Action<ItemData> OnDeleteItem;
 
 
     private void Awake()
@@ -49,14 +54,8 @@ public class ActiveItemUI : MonoBehaviour
     }
 
 
-    private void UseItem()
-    {
+    private void UseItem() => OnUseItem?.Invoke(item);
 
-    }
-
-    private void DeleteItem()
-    {
-
-    }
+    private void DeleteItem() => OnDeleteItem?.Invoke(item);
 
 }

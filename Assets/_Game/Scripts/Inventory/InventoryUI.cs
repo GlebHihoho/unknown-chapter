@@ -39,7 +39,6 @@ public class InventoryUI : MonoBehaviour
 
     private void AddItem(ItemData item)
     {
-
         InventoryCell cell = Instantiate(cellPrefab, itemsPanel);
         cell.SetItem(item, this);
 
@@ -54,14 +53,15 @@ public class InventoryUI : MonoBehaviour
 
         inventory.Remove(item);
 
-        if (activeItem == item && inventory.Count > 0) SetActiveItem(inventory.Keys.First());       
+        if (activeItem == item)
+        {
+            if (inventory.Count > 0) SetActiveItem(inventory.Keys.First());
+            else activeItem = null;
+        }       
     }
 
 
-    private void UpdateItem(ItemData item, int quantity)
-    {
-        inventory[item].UpdateItem(quantity);
-    }
+    private void UpdateItem(ItemData item, int quantity) => inventory[item].UpdateItem(quantity);
 
 
     public void SetActiveItem(ItemData item)

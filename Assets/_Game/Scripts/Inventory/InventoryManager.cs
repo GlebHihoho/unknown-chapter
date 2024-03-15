@@ -21,107 +21,71 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-
         foreach (ItemData item in allItemTypes.Items)
         {
             if (item.DialogVariable != string.Empty) dialogToItem.Add(item.DialogVariable, item);
         }
-
-    }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
 
     private void OnEnable()
     {
-        Collectible.OnItemGiven += AddItem;
+        Collectible.OnItemGiven += IncreaseQuantity;
+
+        ActiveItemUI.OnUseItem += UseItem;
+        ActiveItemUI.OnDeleteItem += DeleteItem;
+
         Lua.RegisterFunction("UpdateItem", this, SymbolExtensions.GetMethodInfo(() => UpdateItem(string.Empty)));
     }
 
     private void OnDisable()
     {
-        Collectible.OnItemGiven -= AddItem;
+        Collectible.OnItemGiven -= IncreaseQuantity;
+
+        ActiveItemUI.OnUseItem -= UseItem;
+        ActiveItemUI.OnDeleteItem -= DeleteItem;
+
         Lua.UnregisterFunction("UpdateItem");
     }
 
 
-    public void AddItem(ItemData item, int amount = 1)
+    private void IncreaseQuantity(ItemData item, int amount) => NotifyDialog(item.DialogVariable, SetQuantity(item, amount));
+
+
+    private int SetQuantity(ItemData item, int amount, bool increment = true)
     {
 
-  
         if (!items.ContainsKey(item))
         {
             items.Add(item, 0);
             OnItemAdded?.Invoke(item);
         }
 
-        int newValue = Mathf.Clamp(items[item] + amount, 0, item.InventoryMax);
+        if (increment) amount = items[item] + amount;
+
+        int newValue = Mathf.Clamp(amount, 0, item.InventoryMax);
         items[item] = newValue;
 
         OnQuantityChanged?.Invoke(item, newValue);
 
-        NotifyDialog(item.DialogVariable, newValue);
-    }
-
-
-    public void RemoveItem(ItemData item, int amount = 1)
-    {
-
-        if (items.ContainsKey(item))
+        if (items[item] <= 0)
         {
-            int newValue = Mathf.Clamp(items[item] - amount, 0, item.InventoryMax);
-            items[item] = newValue;
-
-            OnQuantityChanged?.Invoke(item, newValue);
-
-            if (items[item] <= 0)
-            {
-                items.Remove(item);
-                OnItemRemoved?.Invoke(item);
-            }
-
-            NotifyDialog(item.DialogVariable, newValue);
+            items.Remove(item);
+            OnItemRemoved?.Invoke(item);
         }
+
+        return newValue;
     }
 
 
     public void UpdateItem(string itemID)
     {
-
         if (dialogToItem.ContainsKey(itemID))
         {
-
             ItemData item = dialogToItem[itemID];
-
-            if (!items.ContainsKey(item)) items.Add(item, 0);
-
-            int newValue = DialogueLua.GetVariable(itemID).asInt;
-            newValue = Mathf.Clamp(newValue, 0, item.InventoryMax);
-
-            items[item] = newValue;
-
-            OnQuantityChanged?.Invoke(item, newValue);
-
-            if (items[item] <= 0)
-            {
-                items.Remove(item);
-                OnItemRemoved?.Invoke(item);
-            }
+            SetQuantity(item, DialogueLua.GetVariable(itemID).asInt, false);
         }      
-
     }
-
 
 
     private void NotifyDialog(string dialogVariable, object value)
@@ -131,6 +95,17 @@ public class InventoryManager : MonoBehaviour
             DialogueLua.SetVariable(dialogVariable, value);
             DialogueManager.SendUpdateTracker();
         }
+    }
+
+
+    private void UseItem(ItemData item)
+    {
+        Debug.Log("Using item: " + item.name + " \""+ item.ItemName+"\"");
+    }
+
+    private void DeleteItem(ItemData item)
+    {
+        NotifyDialog(item.DialogVariable, SetQuantity(item, 0, false));
     }
 
 
