@@ -21,6 +21,9 @@ public class ItemData : ScriptableObject
 
     [Space]
 
+    [SerializeField] string itemName;
+    public string ItemName => itemName;
+
     [SerializeField, TextArea(0, 3)] string examineBark;
     public string ExamineBark => examineBark;
 

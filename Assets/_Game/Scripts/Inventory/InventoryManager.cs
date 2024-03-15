@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,11 @@ public class InventoryManager : MonoBehaviour
     private Dictionary<string, ItemData> dialogToItem = new Dictionary<string, ItemData>();
 
     [SerializeField] AllItems allItemTypes;
+
+
+    public static event Action<ItemData> OnItemAdded;
+    public static event Action<ItemData, int> OnQuantityChanged;
+    public static event Action<ItemData> OnItemRemoved;
 
 
     private void Awake()
@@ -56,11 +62,14 @@ public class InventoryManager : MonoBehaviour
   
         if (!items.ContainsKey(item))
         {
-            items.Add(item, 0);                                             
+            items.Add(item, 0);
+            OnItemAdded?.Invoke(item);
         }
 
         int newValue = Mathf.Clamp(items[item] + amount, 0, item.InventoryMax);
         items[item] = newValue;
+
+        OnQuantityChanged?.Invoke(item, newValue);
 
         NotifyDialog(item.DialogVariable, newValue);
     }
@@ -74,9 +83,12 @@ public class InventoryManager : MonoBehaviour
             int newValue = Mathf.Clamp(items[item] - amount, 0, item.InventoryMax);
             items[item] = newValue;
 
+            OnQuantityChanged?.Invoke(item, newValue);
+
             if (items[item] <= 0)
             {
                 items.Remove(item);
+                OnItemRemoved?.Invoke(item);
             }
 
             NotifyDialog(item.DialogVariable, newValue);
@@ -98,6 +110,14 @@ public class InventoryManager : MonoBehaviour
             newValue = Mathf.Clamp(newValue, 0, item.InventoryMax);
 
             items[item] = newValue;
+
+            OnQuantityChanged?.Invoke(item, newValue);
+
+            if (items[item] <= 0)
+            {
+                items.Remove(item);
+                OnItemRemoved?.Invoke(item);
+            }
         }      
 
     }
@@ -111,19 +131,6 @@ public class InventoryManager : MonoBehaviour
             DialogueLua.SetVariable(dialogVariable, value);
             DialogueManager.SendUpdateTracker();
         }
-    }
-
-
-    private void OnGUI()
-    {
-
-        string s = "Inv: ";
-
-        foreach (ItemData item in items.Keys)
-        {
-            s += item.name + " " + items[item] + "; ";
-        }
-        GUI.Label(new Rect(20, 20, 500, 50), s);
     }
 
 
