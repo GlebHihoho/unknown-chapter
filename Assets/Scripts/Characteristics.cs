@@ -7,7 +7,8 @@ public class Characteristics : MonoBehaviour
     [SerializeField] private double _physicalAbilities = 0; // физические способности
     [SerializeField] private double _perception = 0;        // восприятие
     [SerializeField] private double _intellect  = 0;        // интеллект 
-    [SerializeField] private Inventory _inventory;
+
+
     
     public double GetPhysicalAbilities(double value)
     {
@@ -39,25 +40,42 @@ public class Characteristics : MonoBehaviour
     private void OnEnable()
     {
         Lua.RegisterFunction("GetSkill", this, SymbolExtensions.GetMethodInfo(() => GetSkill("")));
-        Lua.RegisterFunction("GetItemAmount", _inventory, SymbolExtensions.GetMethodInfo(() => _inventory.GetItemAmount(string.Empty)));
-        Lua.RegisterFunction("DialogueSystemItemDeleter", _inventory, SymbolExtensions.GetMethodInfo(() => _inventory.DialogueSystemItemDeleter(string.Empty, 1)));
-        Lua.RegisterFunction("DialogueSystemItemAdder", _inventory, SymbolExtensions.GetMethodInfo(() => _inventory.DialogueSystemItemAdder(string.Empty, 1)));
+
         Lua.RegisterFunction("CharacteristicIncrease", this, SymbolExtensions.GetMethodInfo(() => CharacteristicIncrease(string.Empty)));
         Lua.RegisterFunction("CharacteristicDecreasee", this, SymbolExtensions.GetMethodInfo(() => CharacteristicDecreasee(string.Empty)));
         Lua.RegisterFunction("ChangeDialogueText", this, SymbolExtensions.GetMethodInfo(() => ChangeDialogueText()));
+
+        InventoryManager.OnQuantityDifference += ApplyItemModifier;
     }
 
     // TODO: вынести регистрацию методов в Lua в отдельный скрипт
     private void OnDisable()
     {
         Lua.UnregisterFunction("GetSkill");
-        Lua.UnregisterFunction("GetItemAmount");
-        Lua.UnregisterFunction("DialogueSystemItemDeleter");
-        Lua.UnregisterFunction("DialogueSystemItemAdder");
+
         Lua.UnregisterFunction("CharacteristicIncrease");
         Lua.UnregisterFunction("CharacteristicDecreasee");
         Lua.UnregisterFunction("ChangeDialogueText");
+
+        InventoryManager.OnQuantityDifference -= ApplyItemModifier;
     }
+
+
+
+    private void ApplyItemModifier(ItemData item, int delta)
+    {
+
+        double Apply(double stat, int modifier)
+        {
+            return Mathf.Clamp((float)stat + modifier * delta, 0, 5);
+        }
+
+        _physicalAbilities = Apply(_physicalAbilities, item.PerceptionlModifier);
+        _perception = Apply(_perception, item.PerceptionlModifier);
+        _intellect = Apply(_intellect, item.IntellectModifier);
+    }
+
+
 
     private void ChangeDialogueText()
     {

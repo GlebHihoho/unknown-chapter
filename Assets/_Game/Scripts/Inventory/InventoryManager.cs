@@ -16,7 +16,9 @@ public class InventoryManager : MonoBehaviour
 
     public static event Action<ItemData> OnItemAdded;
     public static event Action<ItemData, int> OnQuantityChanged;
+    public static event Action<ItemData, int> OnQuantityDifference;
     public static event Action<ItemData> OnItemRemoved;
+
 
 
     private void Awake()
@@ -61,12 +63,15 @@ public class InventoryManager : MonoBehaviour
             OnItemAdded?.Invoke(item);
         }
 
+        int oldValue = items[item];
+
         if (increment) amount = items[item] + amount;
 
         int newValue = Mathf.Clamp(amount, 0, item.InventoryMax);
         items[item] = newValue;
 
         OnQuantityChanged?.Invoke(item, newValue);
+        OnQuantityDifference?.Invoke(item, newValue - oldValue);
 
         if (items[item] <= 0)
         {

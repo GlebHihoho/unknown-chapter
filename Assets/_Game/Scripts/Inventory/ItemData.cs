@@ -39,6 +39,17 @@ public class ItemData : ScriptableObject
     [SerializeField, Min(0)] float interactDistace = 2f;
     public float InteractDistance => interactDistace;
 
+    [Header("Modifiers")]
+
+    [SerializeField, Range(-5, 5)] int physicalModifier = 0;
+    public int PhysicalModifier => physicalModifier;
+
+    [SerializeField, Range(-5, 5)] int perceptionModifier = 0;
+    public int PerceptionlModifier => perceptionModifier;
+
+    [SerializeField, Range(-5, 5)] int intellectModifier = 0;
+    public int IntellectModifier => intellectModifier;
+
 
 
 
