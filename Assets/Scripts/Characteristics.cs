@@ -2,7 +2,7 @@ using UnityEngine;
 using PixelCrushers.DialogueSystem;
 using UI.InventoryScripts;
 
-public class Characteristics : MonoBehaviour
+public class Characteristics : MonoBehaviour, ISaveable
 {
     [SerializeField] private double _physicalAbilities = 0; // физические способности
     [SerializeField] private double _perception = 0;        // восприятие
@@ -100,5 +100,19 @@ public class Characteristics : MonoBehaviour
             case "Perception" when _perception > 0f: _perception--; break;
             case "Intellect" when _intellect > 0f: _intellect--; break;
         }
+    }
+
+    public void Save(ref SaveData.Save save)
+    {
+        save.physical = _physicalAbilities;
+        save.perception = _perception;
+        save.intellect = _intellect;
+    }
+
+    public void Load(SaveData.Save save)
+    {
+        _physicalAbilities = save.physical;
+        _perception = save.perception;
+        _intellect = save.intellect;
     }
 }

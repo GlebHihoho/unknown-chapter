@@ -31,6 +31,19 @@ public class MouseInput : MonoBehaviour
         _m_trajectoryGenerator.InputProfile = _m_generalLocomotion;
     }
 
+
+    private void OnEnable() => SaveManager.OnStartingLoad += ResetMovement;
+    private void OnDisable() => SaveManager.OnStartingLoad -= ResetMovement;
+
+
+    private void ResetMovement()
+    {
+        if (_particleObject != null) DeleteMovePoint();
+        _myAgent.isStopped = true;
+        _myAgent.ResetPath();
+    }
+
+
     void FixedUpdate()
     {
         if (_myAgent.remainingDistance <= _tolerance && _myAgent.hasPath && _isParticleMovePoint)
@@ -88,4 +101,5 @@ public class MouseInput : MonoBehaviour
     {
         _particleObject.transform.position = _currentClickPoint + new Vector3(0f, 0.2f, 0f);
     }
+
 }

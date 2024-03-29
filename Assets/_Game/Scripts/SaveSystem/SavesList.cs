@@ -22,13 +22,11 @@ public class SavesList : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        RefreshList();
-    }
 
     private void OnEnable()
     {
+        RefreshList();
+
         SaveManager.OnSaveAdded += RefreshList;
         SaveManager.OnSaveRemoved += RefreshList;
     }

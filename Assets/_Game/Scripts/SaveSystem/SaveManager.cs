@@ -13,7 +13,7 @@ public class SaveManager : MonoBehaviour
     PixelCrushers.DialogueSystem.DialogueSystemSaver saver;
 
     const string savesFolder = "Saves";
-    const string extension = ".txt";
+    const string extension = ".dat";
 
     string path;
 
@@ -31,6 +31,8 @@ public class SaveManager : MonoBehaviour
 
     public static event Action<string> OnSaveAdded;
     public static event Action<string> OnSaveRemoved;
+
+    public static event Action OnStartingLoad;
 
     private void Awake()
     {
@@ -136,6 +138,9 @@ public class SaveManager : MonoBehaviour
 
         if (File.Exists(fileName))
         {
+
+            OnStartingLoad?.Invoke();
+
             save = JsonUtility.FromJson<SaveData.Save>(File.ReadAllText(fileName));
 
             saver.ApplyData(save.dialogues);

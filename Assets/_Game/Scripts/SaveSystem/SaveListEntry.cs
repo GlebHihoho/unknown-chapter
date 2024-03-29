@@ -11,9 +11,17 @@ public class SaveListEntry : MonoBehaviour
     [SerializeField] Button button;
     [SerializeField] TextMeshProUGUI saveNameLabel;
 
+    [Space]
+    [SerializeField] Image image;
+    [SerializeField] Color defaultColour = Color.white;
+    [SerializeField] Color selectColour = Color.green;
+
     string saveName;
 
     public static event Action<string> OnSaveSelected;
+
+
+    private static SaveListEntry selected;
 
 
     private void OnEnable() => button.onClick.AddListener(Select);
@@ -32,6 +40,18 @@ public class SaveListEntry : MonoBehaviour
 
     public void Select()
     {
-        OnSaveSelected?.Invoke(saveName);
+
+        if (selected != null) selected.Deselect();
+
+        image.color = selectColour;
+        selected = this;
+
+        OnSaveSelected?.Invoke(saveName);      
+    }
+
+    private void Deselect()
+    {
+        image.color = defaultColour;
+        selected = null;
     }
 }

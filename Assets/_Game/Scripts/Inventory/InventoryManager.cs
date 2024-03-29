@@ -120,7 +120,7 @@ public class InventoryManager : MonoBehaviour, ISaveable
         {
             SaveData.InventoryItem item;
 
-            item.itemData = key;
+            item.id = GetItemID(key);
             item.quantity = items[key];
 
             save.inventory.Add(item);
@@ -139,9 +139,35 @@ public class InventoryManager : MonoBehaviour, ISaveable
 
         foreach (SaveData.InventoryItem item in save.inventory)
         {
-            items.Add(item.itemData, item.quantity);
-            OnItemAdded?.Invoke(item.itemData);
-            OnQuantityChanged?.Invoke(item.itemData, item.quantity);
+            ItemData itemData;
+
+            if (GetItem(item.id, out itemData))
+            {
+                items.Add(itemData, item.quantity);
+                OnItemAdded?.Invoke(itemData);
+                OnQuantityChanged?.Invoke(itemData, item.quantity);
+            }
+        }
+    }
+
+    private int GetItemID(ItemData item)
+    {
+        return allItemTypes.Items.IndexOf(item);
+    }
+
+
+    private bool GetItem(int id, out ItemData item)
+    {
+
+        if (id >= 0 && id < allItemTypes.Items.Count)
+        {
+            item = allItemTypes.Items[id];
+            return true;
+        }
+        else
+        {
+            item = null;
+            return false;
         }
     }
 }
