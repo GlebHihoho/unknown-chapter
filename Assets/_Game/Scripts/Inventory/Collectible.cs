@@ -5,7 +5,7 @@ using UnityEngine;
 using PixelCrushers.DialogueSystem;
 
 [RequireComponent(typeof(Outline))]
-public class Collectible : MonoBehaviour
+public class Collectible : MonoBehaviour, ISaveable
 {
 
     private bool canCollect = false;
@@ -15,6 +15,9 @@ public class Collectible : MonoBehaviour
 
     [Space]
     [SerializeField] int increment = 1;
+
+    [Header("Save"), Tooltip("Must be unique in the scene")]
+    [SerializeField] int id;
  
     Outline outline;
 
@@ -84,5 +87,20 @@ public class Collectible : MonoBehaviour
         }
 
 
+    }
+
+    public void Save(ref SaveData.Save save)
+    {
+        SaveData.CollectibleData obj;
+
+        obj.id = id;
+        obj.enabled = gameObject.activeSelf;
+       
+        save.objects.Add(obj);
+    }
+
+    public void Load(SaveData.Save save)
+    {
+        if (save.collectibles.ContainsKey(id)) gameObject.SetActive(save.collectibles[id]);
     }
 }

@@ -10,7 +10,7 @@ namespace UI
     {
         [SerializeField] private GameObject _saveButtonPrefab;
         [SerializeField] private Transform _contentContainer;
-        [SerializeField] private SaveManager _saveManager;
+        [SerializeField] private SaveManager_old _saveManager;
         [SerializeField] private string _currentSaveFile;
 
         private void OnEnable()
@@ -35,7 +35,7 @@ namespace UI
         {
             if (_currentSaveFile != "")
             {
-                SaveManager.Instance.LoadGameData(_currentSaveFile);
+                SaveManager_old.Instance.LoadGameData(_currentSaveFile);
             }
             else
             {

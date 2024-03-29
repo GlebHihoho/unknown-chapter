@@ -40,12 +40,12 @@ namespace UI.InventoryScripts
         [SerializeField] private AllItemCollectionsSO _allItemCollectionsSO;
         
         private string savePath;
-        [SerializeField] private SaveManager _saveManager;
+        [SerializeField] private SaveManager_old _saveManager;
 
 
         public void Start()
         {
-            _saveManager = FindObjectOfType<SaveManager>();
+            _saveManager = FindObjectOfType<SaveManager_old>();
             //todo разобраться с json
             string json = File.ReadAllText(Application.dataPath + $"/Save/{_saveManager.CurrentSaveFile}.json");
             

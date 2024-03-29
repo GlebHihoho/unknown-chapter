@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : MonoBehaviour, ISaveable
 {
 
     private Dictionary<ItemData, int> items = new Dictionary<ItemData, int>();
@@ -114,4 +114,34 @@ public class InventoryManager : MonoBehaviour
     }
 
 
+    public void Save(ref SaveData.Save save)
+    {
+        foreach (ItemData  key in items.Keys)
+        {
+            SaveData.InventoryItem item;
+
+            item.itemData = key;
+            item.quantity = items[key];
+
+            save.inventory.Add(item);
+        }
+    }
+
+    public void Load(SaveData.Save save)
+    {
+
+        foreach (ItemData item in items.Keys)
+        {
+            OnItemRemoved?.Invoke(item);
+        }
+
+        items.Clear();
+
+        foreach (SaveData.InventoryItem item in save.inventory)
+        {
+            items.Add(item.itemData, item.quantity);
+            OnItemAdded?.Invoke(item.itemData);
+            OnQuantityChanged?.Invoke(item.itemData, item.quantity);
+        }
+    }
 }

@@ -10,7 +10,7 @@ using UnityEngine.Serialization;
 
 namespace DefaultNamespace.SaveLoadData
 {
-    public class SaveManager : MonoBehaviour
+    public class SaveManager_old : MonoBehaviour
     {
         [SerializeField] private TMP_InputField _fileName;
         [SerializeField] private List<string> _allSaveName;
@@ -22,7 +22,7 @@ namespace DefaultNamespace.SaveLoadData
         private string savePath;
         private GameData gameData;
 
-        public static SaveManager Instance;
+        public static SaveManager_old Instance;
 
         private void Awake()
         {
