@@ -182,23 +182,27 @@ public class SaveManager : MonoBehaviour
     {
         SavesInfo.Clear();
 
-        string[] filenames = Directory.GetFiles(path);
-
-        foreach (string filename in filenames)
+        if (Directory.Exists(path))
         {
-            save = JsonUtility.FromJson<SaveData.Save>(File.ReadAllText(filename));
 
-            DateTime timestamp;
+            string[] filenames = Directory.GetFiles(path);
 
-            if (DateTime.TryParse(save.timeStamp, out timestamp))
+            foreach (string filename in filenames)
             {
-                Summary info;
+                save = JsonUtility.FromJson<SaveData.Save>(File.ReadAllText(filename));
 
-                string name = Path.GetFileNameWithoutExtension(filename);
-                info.location = save.location;
-                info.timeStamp = timestamp;
+                DateTime timestamp;
 
-                SavesInfo.Add(name, info);
+                if (DateTime.TryParse(save.timeStamp, out timestamp))
+                {
+                    Summary info;
+
+                    string name = Path.GetFileNameWithoutExtension(filename);
+                    info.location = save.location;
+                    info.timeStamp = timestamp;
+
+                    SavesInfo.Add(name, info);
+                }
             }
         }
     }
