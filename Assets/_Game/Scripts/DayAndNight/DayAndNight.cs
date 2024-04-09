@@ -23,20 +23,16 @@ public class DayAndNight : MonoBehaviour
 
     float prevAngle = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
+    private void OnEnable() => Pause.OnPause += SetPause;
+    private void OnDisable() => Pause.OnPause -= SetPause;
+
+    private void SetPause(bool isPaused) => this.isPaused = isPaused;
+
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isPaused = !isPaused;
-        }
 
         if (isPaused) return;
 
@@ -72,4 +68,6 @@ public class DayAndNight : MonoBehaviour
             isNight = false;
         }
     }
+
+
 }

@@ -15,6 +15,12 @@ public class Clock : MonoBehaviour
 
     bool isPaused = false;
 
+    private void OnEnable() => Pause.OnPause += SetPause;
+    private void OnDisable() => Pause.OnPause -= SetPause;
+
+    private void SetPause(bool isPaused) => this.isPaused = isPaused;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,15 +31,11 @@ public class Clock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isPaused = !isPaused;
-        }
-
         if (isPaused) return;
-
 
         hours.Rotate(0, hoursSpeed * Time.deltaTime, 0);
         minutes.Rotate(0, minutesSpeed * Time.deltaTime, 0);
     }
+
+   
 }
