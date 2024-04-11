@@ -13,23 +13,18 @@ public class Torch : MonoBehaviour
     [SerializeField, Range(0, 5)] float minDelay = 0;
     [SerializeField, Range(0, 5)] float maxDelay = 3;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    enum Status { Inactive, Burning, Paused}
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    Status status = Status.Inactive;
+    Status prevStatus = Status.Inactive;
 
 
     private void OnEnable()
     {
         DayAndNight.OnNightStarts += ActivateWithDelay;
         DayAndNight.OnNightEnds += DesactivateWithDelay;
+
+        Pause.OnPause += PauseTorch;
 
         DesactivateTorch();
     }
@@ -39,6 +34,8 @@ public class Torch : MonoBehaviour
     {
         DayAndNight.OnNightStarts -= ActivateWithDelay;
         DayAndNight.OnNightEnds -= DesactivateWithDelay;
+
+        Pause.OnPause -= PauseTorch;
     }
 
 
@@ -68,6 +65,8 @@ public class Torch : MonoBehaviour
 
     private void ActivateTorch()
     {
+        status = Status.Burning;
+
         light.enabled = true;
         flame.Play();
         bugs.Play();
@@ -76,8 +75,39 @@ public class Torch : MonoBehaviour
 
     private void DesactivateTorch()
     {
+        status = Status.Inactive;
+
         light.enabled = false;
         flame.Stop();
         bugs.Stop();
     }
+
+
+    private void PauseTorch(bool isPause)
+    {
+
+        if (isPause)
+        {
+            if (status == Status.Burning)
+            {
+                flame.Pause();
+                bugs.Pause();
+            }
+
+            prevStatus = status;
+            status = Status.Paused;
+        }
+        else
+        {
+            status = prevStatus;
+
+            if (status == Status.Burning)
+            {
+                flame.Play();
+                bugs.Play();
+            }
+        }
+
+    }
+
 }

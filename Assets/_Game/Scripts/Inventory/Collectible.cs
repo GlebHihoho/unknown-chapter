@@ -8,7 +8,10 @@ using PixelCrushers.DialogueSystem;
 public class Collectible : MonoBehaviour, ISaveable
 {
 
-    private bool canCollect = false;
+    enum Status { CanCollect, CanInspect, Paused}
+
+    Status status = Status.CanCollect;
+    Status prevStatus = Status.CanCollect;
 
     [SerializeField] ItemData itemData;
     [SerializeField] CursorData cursorData;
@@ -40,14 +43,22 @@ public class Collectible : MonoBehaviour, ISaveable
 
     }
 
+    private void OnEnable() => Pause.OnPause += SetPause;
+    private void OnDisable() => Pause.OnPause -= SetPause;
+
+
     private void OnMouseDown() => Collect();
 
 
     private void OnMouseOver()
     {
-        canCollect = Vector3.Magnitude(transform.position - player.position) <= itemData.InteractDistance;
+        if (status == Status.Paused) return;
+
+        if (Vector3.Magnitude(transform.position - player.position) <= itemData.InteractDistance) status = Status.CanCollect;
+        else status = Status.CanInspect;
+                
    
-        if (canCollect)
+        if (status == Status.CanCollect)
         {
             Cursor.SetCursor(cursorData.TakeCursor, hotSpot, cursorMode);
             outline.OutlineColor = cursorData.TakeColor;
@@ -74,7 +85,10 @@ public class Collectible : MonoBehaviour, ISaveable
 
     private void Collect()
     {
-        if (canCollect)
+
+        if (status == Status.Paused) return;
+
+        if (status == Status.CanCollect)
         {
             OnItemGiven?.Invoke(itemData, increment);
 
@@ -102,5 +116,21 @@ public class Collectible : MonoBehaviour, ISaveable
     public void Load(SaveData.Save save)
     {
         if (save.collectibles.ContainsKey(id)) gameObject.SetActive(save.collectibles[id]);
+    }
+
+
+    private void SetPause(bool isPaused)
+    {
+        if (isPaused)
+        {
+            prevStatus = status;
+            status = Status.Paused;
+
+            ResetVisuals();
+        }
+        else
+        {
+            status = prevStatus;
+        }
     }
 }
