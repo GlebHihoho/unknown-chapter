@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
 using UI.InventoryScripts;
@@ -5,23 +6,26 @@ using UI.InventoryScripts;
 public class Characteristics : MonoBehaviour, ISaveable
 {
     [SerializeField] private double _physicalAbilities = 0; // физические способности
+    public double PhysicalAbilities => _physicalAbilities;
+
     [SerializeField] private double _perception = 0;        // восприятие
+    public double Perception => _perception;
+
     [SerializeField] private double _intellect  = 0;        // интеллект 
+    public double Intellect => _intellect;
 
 
-    
-    public double GetPhysicalAbilities(double value)
+    public static Characteristics instance;
+
+
+    public static event Action OnStatsChanged;
+
+
+    private void Awake()
     {
-        return _physicalAbilities;
+        if (instance == null) instance = this;
     }
-    public double GetPerception(double value)
-    {
-        return _perception;
-    }
-    public double GetIntellect(double value)
-    {
-        return _intellect;
-    }
+
 
     public double GetSkill(string skillName)
     {
@@ -73,6 +77,8 @@ public class Characteristics : MonoBehaviour, ISaveable
         _physicalAbilities = Apply(_physicalAbilities, item.PerceptionlModifier);
         _perception = Apply(_perception, item.PerceptionlModifier);
         _intellect = Apply(_intellect, item.IntellectModifier);
+
+        OnStatsChanged?.Invoke();
     }
 
 
@@ -90,6 +96,8 @@ public class Characteristics : MonoBehaviour, ISaveable
             case "Perception" when _perception < 5f: _perception++; break;
             case "Intellect" when _intellect < 5f: _intellect++; break;
         }
+
+        OnStatsChanged?.Invoke();
     }
     
     public void CharacteristicDecreasee(string nameCharacteristic)
@@ -100,6 +108,8 @@ public class Characteristics : MonoBehaviour, ISaveable
             case "Perception" when _perception > 0f: _perception--; break;
             case "Intellect" when _intellect > 0f: _intellect--; break;
         }
+
+        OnStatsChanged?.Invoke();
     }
 
     public void Save(ref SaveData.Save save)
@@ -114,5 +124,7 @@ public class Characteristics : MonoBehaviour, ISaveable
         _physicalAbilities = save.physical;
         _perception = save.perception;
         _intellect = save.intellect;
+
+        OnStatsChanged?.Invoke();
     }
 }

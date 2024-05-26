@@ -8,23 +8,25 @@ namespace UI
     {
         [SerializeField] private GameObject _mainPlayerPanel;
 
-        [FormerlySerializedAs("_mainStats")] [SerializeField] private Characteristics stats;
 
         [SerializeField] private TextMeshProUGUI _phys;
         [SerializeField] private TextMeshProUGUI _per;
         [SerializeField] private TextMeshProUGUI _int;
 
-        // Update is called once per frame
-        void Update()
-        {
-            CheckStats();
-        }
+
+        private void Start() => CheckStats();
+
+        private void OnEnable() => Characteristics.OnStatsChanged += CheckStats;
+        private void OnDisable() => Characteristics.OnStatsChanged -= CheckStats;
 
         private void CheckStats()
         {
-            _phys.text = stats.GetPhysicalAbilities(0).ToString();
-            _per.text = stats.GetPerception(0).ToString();
-            _int.text = stats.GetIntellect(0).ToString();
+            if (Characteristics.instance != null)
+            {
+                _phys.text = Characteristics.instance.PhysicalAbilities.ToString();
+                _per.text = Characteristics.instance.Perception.ToString();
+                _int.text = Characteristics.instance.Intellect.ToString();
+            }
         }
     }
 }
