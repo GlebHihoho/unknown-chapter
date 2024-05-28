@@ -40,7 +40,7 @@ MonoBehaviour:
     - title: Name
       value: "\u042D\u0440\u0430\u0441\u0442"
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
@@ -54,7 +54,7 @@ MonoBehaviour:
       type: 2
       typeString: CustomFieldType_Boolean
     portrait: {fileID: 0}
-    spritePortrait: {fileID: 0}
+    spritePortrait: {fileID: 21300000, guid: 404033a1d7560aa4ca44fece3d3d1962, type: 3}
     alternatePortraits: []
     spritePortraits: []
   - id: 2
@@ -76,7 +76,7 @@ MonoBehaviour:
       type: 2
       typeString: CustomFieldType_Boolean
     portrait: {fileID: 0}
-    spritePortrait: {fileID: 0}
+    spritePortrait: {fileID: 21300000, guid: 033b1374ee87a1d41aff99348287e1f6, type: 3}
     alternatePortraits: []
     spritePortraits: []
   - id: 3
@@ -98,7 +98,7 @@ MonoBehaviour:
       type: 2
       typeString: CustomFieldType_Boolean
     portrait: {fileID: 0}
-    spritePortrait: {fileID: 0}
+    spritePortrait: {fileID: 21300000, guid: 703c21debf0fdf24ebe39f505c6480f5, type: 3}
     alternatePortraits: []
     spritePortraits: []
   - id: 4
@@ -120,7 +120,7 @@ MonoBehaviour:
       type: 2
       typeString: CustomFieldType_Boolean
     portrait: {fileID: 0}
-    spritePortrait: {fileID: 0}
+    spritePortrait: {fileID: 21300000, guid: ac026eef32d3d824db39a3119fce8731, type: 3}
     alternatePortraits: []
     spritePortraits: []
   - id: 5
@@ -142,7 +142,7 @@ MonoBehaviour:
       type: 2
       typeString: CustomFieldType_Boolean
     portrait: {fileID: 0}
-    spritePortrait: {fileID: 0}
+    spritePortrait: {fileID: 21300000, guid: 9f14df2507fd17b418ef14248d02bbbb, type: 3}
     alternatePortraits: []
     spritePortraits: []
   - id: 6
@@ -164,7 +164,7 @@ MonoBehaviour:
       type: 2
       typeString: CustomFieldType_Boolean
     portrait: {fileID: 0}
-    spritePortrait: {fileID: 0}
+    spritePortrait: {fileID: 21300000, guid: 13a18c77f9a450d4e86ba4f74abf36a3, type: 3}
     alternatePortraits: []
     spritePortraits: []
   - id: 7
@@ -186,7 +186,7 @@ MonoBehaviour:
       type: 2
       typeString: CustomFieldType_Boolean
     portrait: {fileID: 0}
-    spritePortrait: {fileID: 0}
+    spritePortrait: {fileID: 21300000, guid: 2a6442b37843f404a981ca7b25de7391, type: 3}
     alternatePortraits: []
     spritePortraits: []
   - id: 8
@@ -208,7 +208,7 @@ MonoBehaviour:
       type: 2
       typeString: CustomFieldType_Boolean
     portrait: {fileID: 0}
-    spritePortrait: {fileID: 0}
+    spritePortrait: {fileID: 21300000, guid: a1342bfd8a61a7941a90f289095d18f6, type: 3}
     alternatePortraits: []
     spritePortraits: []
   - id: 9
@@ -627,6 +627,202 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: CustomFieldType_Text
+  - id: 27
+    fields:
+    - title: Name
+      value: Items.CockedHat
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 28
+    fields:
+    - title: Name
+      value: Items.Compass
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 29
+    fields:
+    - title: Name
+      value: Items.CondensedMilk
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 30
+    fields:
+    - title: Name
+      value: Items.Cross
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 31
+    fields:
+    - title: Name
+      value: Items.Fusee
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 32
+    fields:
+    - title: Name
+      value: Items.Net
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 33
+    fields:
+    - title: Name
+      value: Items.Pick
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 34
+    fields:
+    - title: Name
+      value: Items.Rum
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 35
+    fields:
+    - title: Name
+      value: Items.Shield
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 36
+    fields:
+    - title: Name
+      value: Items.Snuffbox
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 37
+    fields:
+    - title: Name
+      value: Items.Sword
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 38
+    fields:
+    - title: Name
+      value: Items.Whistle
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 39
+    fields:
+    - title: Name
+      value: Items.Wig
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 40
+    fields:
+    - title: Name
+      value: Items.Skull
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
   conversations:
   - id: 1
     fields:
@@ -740,7 +936,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 3
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -977,7 +1173,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 3
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -8771,7 +8967,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 2740.167, y: 153.0032}
+    canvasScrollPosition: {x: 2799.6606, y: 44.142212}
     canvasZoom: 0.7900001
   - id: 2
     fields:
@@ -21858,8 +22054,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 5597.7983, y: 2703.406}
-    canvasZoom: 0.9099998
+    canvasScrollPosition: {x: 6911.43, y: 1339.5605}
+    canvasZoom: 0.84999985
   - id: 5
     fields:
     - title: Title
@@ -30023,7 +30219,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -30323,7 +30519,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -30374,7 +30570,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -30386,7 +30582,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041F\u0438\u0439: \u042D\u0442\u043E \u043D\u0435\u0432\u0435\u0440\u043D\u044B\u0435,
+        value: "\u042D\u0442\u043E \u043D\u0435\u0432\u0435\u0440\u043D\u044B\u0435,
           \u043F\u0430\u0434\u0448\u0438\u0435 \u0436\u0435\u043D\u0449\u0438\u043D\u044B.
           \u0418\u0445 \u043D\u0430\u0432\u0435\u0440\u043D\u044F\u043A\u0430 \u043F\u0435\u0440\u0435\u0443\u0431\u0438\u0432\u0430\u043B\u0438
           \u0438\u0445 \u043B\u044E\u0431\u043E\u0432\u043D\u0438\u043A\u0438 \u0438\u0437
@@ -30554,7 +30750,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -30865,7 +31061,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -30934,7 +31130,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -30995,7 +31191,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -31232,7 +31428,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -31244,7 +31440,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041F\u0438\u0439: \u0416\u0430\u043B\u044C... \u041D\u043E \u0434\u0435\u043B\u0430\u0442\u044C
+        value: "\u0416\u0430\u043B\u044C... \u041D\u043E \u0434\u0435\u043B\u0430\u0442\u044C
           \u043D\u0435\u0447\u0435\u0433\u043E. \u041C\u043E\u043B\u043E\u0434\u0446\u044B,
           \u0447\u0442\u043E \u0434\u0435\u0439\u0441\u0442\u0432\u0443\u0435\u0442\u0435
           \u043F\u043E \u043F\u0440\u043E\u0442\u043E\u043A\u043E\u043B\u0443. \u042D\u0442\u043E
@@ -31291,7 +31487,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -31303,8 +31499,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041F\u0438\u0439: \u0425\u043C! \u041D\u0443 \u043C\u043E\u0436\u0435\u0442,
-          \u0442\u043E\u0433\u0434\u0430 \u0432\u044B \u043C\u0435\u043D\u044F \u043F\u0440\u043E\u0441\u0432\u0435\u0442\u0438\u0442\u0435?"
+        value: "\u0425\u043C! \u041D\u0443 \u043C\u043E\u0436\u0435\u0442, \u0442\u043E\u0433\u0434\u0430
+          \u0432\u044B \u043C\u0435\u043D\u044F \u043F\u0440\u043E\u0441\u0432\u0435\u0442\u0438\u0442\u0435?"
         type: 0
         typeString: 
       - title: Sequence
@@ -31422,7 +31618,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -31546,7 +31742,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -31679,7 +31875,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -31795,7 +31991,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 3
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -31976,7 +32172,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -31988,7 +32184,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041F\u0438\u0439: \u0422\u0430\u043A \u043C\u044B \u043D\u0430\u0437\u044B\u0432\u0430\u0435\u043C
+        value: "\u0422\u0430\u043A \u043C\u044B \u043D\u0430\u0437\u044B\u0432\u0430\u0435\u043C
           \u0440\u0443\u0434\u0443, \u0434\u0430\u0440\u043E\u0432\u0430\u043D\u043D\u0443\u044E
           \u043D\u0430\u043C \u0431\u043E\u0433\u0430\u043C\u0438 \u0437\u0430 \u0432\u0435\u0440\u043D\u043E\u0441\u0442\u044C
           \u0438 \u043F\u043E\u0441\u043B\u0443\u0448\u0430\u043D\u0438\u0435. \u041E\u043D\u0430
@@ -32155,7 +32351,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 3
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -32511,7 +32707,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 3
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -32626,7 +32822,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 3
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -32638,8 +32834,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u043D\u0442\u0443\u0438\u0446\u0438\u044F: \u0427\u0442\u043E
-          \u0431\u044B \u0435\u0449\u0451 \u0441\u043F\u0440\u043E\u0441\u0438\u0442\u044C
+        value: "\u0427\u0442\u043E \u0431\u044B \u0435\u0449\u0451 \u0441\u043F\u0440\u043E\u0441\u0438\u0442\u044C
           \u0443 \u044D\u0442\u043E\u0433\u043E \u0434\u0435\u0434\u0430?"
         type: 0
         typeString: 
@@ -32870,7 +33065,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -32882,9 +33077,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041F\u0438\u0439: \u041D\u0443 \u0435\u0441\u043B\u0438 \u0432\u044B
-          \u0432\u0438\u0434\u0438\u0442\u0435 \u0441\u0432\u043E\u0451 \u0441\u0447\u0430\u0441\u0442\u044C\u0435
-          \u0432 \u044D\u0442\u043E\u043C - \u0434\u0430. \u0418 \u0434\u0443\u0445\u043E\u0432\u043D\u043E
+        value: "\u041D\u0443 \u0435\u0441\u043B\u0438 \u0432\u044B \u0432\u0438\u0434\u0438\u0442\u0435
+          \u0441\u0432\u043E\u0451 \u0441\u0447\u0430\u0441\u0442\u044C\u0435 \u0432
+          \u044D\u0442\u043E\u043C - \u0434\u0430. \u0418 \u0434\u0443\u0445\u043E\u0432\u043D\u043E
           \u043D\u0438\u0449\u0438\u0435 \u043D\u0430\u0445\u043E\u0434\u044F\u0442
           \u043C\u0435\u0441\u0442\u043E \u0432 \u043D\u0430\u0448\u0435\u0439 \u043E\u0431\u0449\u0438\u043D\u0435.
           \u041E\u043D\u0438 \u043F\u0440\u043E\u0441\u0432\u0435\u0442\u043B\u044F\u044E\u0442\u0441\u044F
@@ -32995,7 +33190,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 3
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -33007,9 +33202,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0418\u043D\u0442\u0443\u0438\u0446\u0438\u044F: \u041A\u0430\u043A\u043E\u0439
-          \u0436\u0435 \u0432\u0441\u0451-\u0442\u0430\u043A\u0438 \u043E\u043D \u043C\u0435\u0440\u0437\u043A\u0438\u0439,
-          \u0441\u0443\u043A\u0430. \u041D\u0430\u0434\u043E \u043F\u0440\u0438\u0434\u0443\u043C\u0430\u0442\u044C,
+        value: "\u041A\u0430\u043A\u043E\u0439 \u0436\u0435 \u0432\u0441\u0451-\u0442\u0430\u043A\u0438
+          \u043E\u043D \u043C\u0435\u0440\u0437\u043A\u0438\u0439, \u0441\u0443\u043A\u0430.
+          \u041D\u0430\u0434\u043E \u043F\u0440\u0438\u0434\u0443\u043C\u0430\u0442\u044C,
           \u043A\u0430\u043A \u0441\u0432\u0430\u043B\u0438\u0442\u044C \u043E\u0442\u0441\u044E\u0434\u0430
           \u043A\u0430\u043A \u043C\u043E\u0436\u043D\u043E \u0441\u043A\u043E\u0440\u0435\u0435.
           \u0410 \u0442\u043E \u044F \u0442\u0430\u043A \u0441\u043A\u043E\u0440\u043E
@@ -33178,7 +33373,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -33417,7 +33612,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -33429,8 +33624,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041F\u0438\u0439: \u041F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E!
-          \u0414\u0438\u0430\u043D\u0430 \u041E\u0440\u043B\u043E\u0432\u0430 \u0441\u0442\u0440\u0430\u0448\u043D\u0430\u044F
+        value: "\u041F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E! \u0414\u0438\u0430\u043D\u0430
+          \u041E\u0440\u043B\u043E\u0432\u0430 \u0441\u0442\u0440\u0430\u0448\u043D\u0430\u044F
           \u0440\u0430\u0441\u043A\u043E\u043B\u044C\u043D\u0438\u0446\u0430 \u0438
           \u0431\u0435\u0437\u0431\u043E\u0436\u043D\u0438\u0446\u0430. \u041E\u043D\u0430
           \u0434\u0435\u043B\u0430\u0435\u0442 \u0432\u0441\u0451, \u0447\u0442\u043E\u0431\u044B
@@ -33473,7 +33668,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 3286.225
+        x: 3283.24
         y: 1003.3788
         width: 160
         height: 30
@@ -33488,7 +33683,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -33500,7 +33695,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041F\u0438\u0439: \u0414\u0438\u0430\u043D\u0430 \u041E\u0440\u043B\u043E\u0432\u0430
+        value: "\u0414\u0438\u0430\u043D\u0430 \u041E\u0440\u043B\u043E\u0432\u0430
           \u0441\u0442\u0440\u0430\u0448\u043D\u0430\u044F \u0440\u0430\u0441\u043A\u043E\u043B\u044C\u043D\u0438\u0446\u0430
           \u0438 \u0431\u0435\u0437\u0431\u043E\u0436\u043D\u0438\u0446\u0430. \u041E\u043D\u0430
           \u0434\u0435\u043B\u0430\u0435\u0442 \u0432\u0441\u0451, \u0447\u0442\u043E\u0431\u044B
@@ -33558,7 +33753,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -33570,12 +33765,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041F\u0438\u0439: \u0427\u0442\u043E \u0436. \u0432\u0430\u043C
-          \u043B\u0443\u0447\u0448\u0435 \u043F\u043E\u0434\u0443\u043C\u0430\u0442\u044C
-          \u0435\u0449\u0451 \u0440\u0430\u0437, \u044E\u043D\u043E\u0448\u0430!
-          \u0414\u0438\u0430\u043D\u0430 \u041E\u0440\u043B\u043E\u0432\u0430 \u0441\u0442\u0440\u0430\u0448\u043D\u0430\u044F
-          \u0440\u0430\u0441\u043A\u043E\u043B\u044C\u043D\u0438\u0446\u0430 \u0438
-          \u0431\u0435\u0437\u0431\u043E\u0436\u043D\u0438\u0446\u0430. \u041E\u043D\u0430
+        value: "\u0427\u0442\u043E \u0436. \u0432\u0430\u043C \u043B\u0443\u0447\u0448\u0435
+          \u043F\u043E\u0434\u0443\u043C\u0430\u0442\u044C \u0435\u0449\u0451 \u0440\u0430\u0437,
+          \u044E\u043D\u043E\u0448\u0430! \u0414\u0438\u0430\u043D\u0430 \u041E\u0440\u043B\u043E\u0432\u0430
+          \u0441\u0442\u0440\u0430\u0448\u043D\u0430\u044F \u0440\u0430\u0441\u043A\u043E\u043B\u044C\u043D\u0438\u0446\u0430
+          \u0438 \u0431\u0435\u0437\u0431\u043E\u0436\u043D\u0438\u0446\u0430. \u041E\u043D\u0430
           \u0434\u0435\u043B\u0430\u0435\u0442 \u0432\u0441\u0451, \u0447\u0442\u043E\u0431\u044B
           \u043D\u0430\u0432\u0440\u0435\u0434\u0438\u0442\u044C \u043E\u0431\u0449\u0438\u043D\u0435
           \u0438 \u0432\u043D\u0443\u0448\u0438\u0442\u044C \u043F\u043E\u0441\u043B\u0443\u0448\u043D\u0438\u043A\u0430\u043C
@@ -33631,7 +33825,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 3
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -33697,7 +33891,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 3
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -33808,8 +34002,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1798.9199, y: 1123.9213}
-    canvasZoom: 0.7600002
+    canvasScrollPosition: {x: 1585.3257, y: 149.75586}
+    canvasZoom: 0.6700003
   - id: 8
     fields:
     - title: Title
@@ -33943,7 +34137,9 @@ MonoBehaviour:
           [em1][var=\u0418\u0437\u0432\u0435\u0441\u0442\u043D\u043E \u043F\u0440\u043E
           \u0427\u0435\u0440\u043D\u0438\u043B\u044C\u043D\u0438\u043A][/em1]\n\u041E\u0441\u043C\u043E\u0442\u0440\u0435\u043D\u043E
           \u0442\u0435\u043B\u043E [em1][var=\u041E\u0441\u043C\u043E\u0442\u0440\u0435\u043D\u043E
-          \u0442\u0435\u043B\u043E][/em1]"
+          \u0442\u0435\u043B\u043E][/em1]\n\u0411\u0430\u043B\u0430\u043B\u0430\u0435\u043A
+          [em1][var=Items.Balalaika][/em1]\n\u0427\u0435\u0440\u0435\u043F\u043E\u0432
+          [em1][var=Items.Skull][/em1]"
         type: 0
         typeString: 
       - title: Sequence
@@ -34415,7 +34611,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041F\u0435\u0440\u0432\u0430\u044F \u0436\u0435\u0440\u0442\u0432\u0430"
+        value: "\u041F\u0435\u0440\u0432\u0430\u044F [em1]\u0436\u0435\u0440\u0442\u0432\u0430[/em1]"
         type: 0
         typeString: 
       - title: Sequence
@@ -35482,11 +35678,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -35498,18 +35694,18 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "(-x \u043E\u0447\u043A\u043E\u0432 \u0434\u0435\u0440\u0437\u043E\u0441\u0442\u0438)
           \u0411\u044B\u0441\u0442\u0440\u043E \u0440\u0430\u0437\u043E\u0440\u0432\u0430\u0442\u044C
           \u043F\u043B\u0430\u0442\u044C\u0435 \u0438 \u043D\u0430\u0439\u0442\u0438
           \u043C\u0435\u0441\u0442\u043E \u0443\u043A\u043E\u043B\u0430."
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 9
       isRoot: 0
       isGroup: 0
@@ -35720,7 +35916,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 4
+        value: 10
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -35769,8 +35965,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 889.9963
-        y: 1518.4165
+        x: 892.736
+        y: 1511.5671
         width: 160
         height: 30
     - id: 25
@@ -35899,7 +36095,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 4
+        value: 10
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -36014,7 +36210,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 4
+        value: 10
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -37454,8 +37650,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 476.95605, y: 173.42188}
+    canvasZoom: 0.73000026
   - id: 10
     fields:
     - title: Title
@@ -37629,7 +37825,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2441.0112
+        x: 2427.3125
         y: 641.31104
         width: 160
         height: 30
@@ -40723,7 +40919,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 8
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -41353,8 +41549,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1351.7297, y: 666.23224}
-    canvasZoom: 0.55000025
+    canvasScrollPosition: {x: 1887.3838, y: 399.84055}
+    canvasZoom: 0.7300001
   syncInfo:
     syncActors: 0
     syncItems: 0
@@ -41370,4 +41566,4 @@ MonoBehaviour:
     Item","value":"False","type":2,"typeString":"CustomFieldType_Boolean"}],"locationFields":[{"title":"Name","value":"","type":0,"typeString":""},{"title":"Description","value":"","type":0,"typeString":""}],"variableFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Initial
     Value","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"}],"conversationFields":[{"title":"Title","value":"","type":0,"typeString":""},{"title":"Description","value":"","type":0,"typeString":""},{"title":"Actor","value":"0","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Conversant","value":"0","type":5,"typeString":"CustomFieldType_Actor"}],"dialogueEntryFields":[{"title":"Title","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Actor","value":"","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Conversant","value":"","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Menu
     Text","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Dialogue
-    Text","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Sequence","value":"","type":0,"typeString":"CustomFieldType_Text"}],"actorPrimaryFieldTitles":[],"itemPrimaryFieldTitles":[],"questPrimaryFieldTitles":[],"locationPrimaryFieldTitles":[],"variablePrimaryFieldTitles":[],"conversationPrimaryFieldTitles":[],"dialogueEntryPrimaryFieldTitles":[],"npcLineColor":{"r":1.0,"g":0.0,"b":0.0,"a":1.0},"pcLineColor":{"r":0.0,"g":0.0,"b":1.0,"a":1.0},"repeatLineColor":{"r":0.5,"g":0.5,"b":0.5,"a":1.0}}'
+    Text","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Sequence","value":"","type":0,"typeString":"CustomFieldType_Text"}],"actorPrimaryFieldTitles":[],"itemPrimaryFieldTitles":[],"questPrimaryFieldTitles":[],"locationPrimaryFieldTitles":[],"variablePrimaryFieldTitles":[],"conversationPrimaryFieldTitles":[],"dialogueEntryPrimaryFieldTitles":[],"npcLineColor":{"r":0.658823549747467,"g":0.6509804129600525,"b":0.47843137383461,"a":1.0},"pcLineColor":{"r":0.25390854477882388,"g":0.5849056243896484,"b":0.24003203213214875,"a":1.0},"repeatLineColor":{"r":0.5,"g":0.5,"b":0.5,"a":1.0}}'
