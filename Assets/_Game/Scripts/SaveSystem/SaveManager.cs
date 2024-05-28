@@ -102,7 +102,6 @@ public class SaveManager : MonoBehaviour
 
         save.dialogues = saver.RecordData();
 
-        save.objects.Clear();
         save.inventory.Clear();
 
         ISaveable[] saveables = FindObjectsOfType<MonoBehaviour>(true).OfType<ISaveable>().ToArray();
@@ -144,12 +143,6 @@ public class SaveManager : MonoBehaviour
             save = JsonUtility.FromJson<SaveData.Save>(File.ReadAllText(fileName));
 
             saver.ApplyData(save.dialogues);
-
-            save.collectibles.Clear();
-            foreach (SaveData.CollectibleData item in save.objects)
-            {
-                save.collectibles.Add(item.id, item.enabled);
-            }
 
 
             ISaveable[] saveables = FindObjectsOfType<MonoBehaviour>(true).OfType<ISaveable>().ToArray();
