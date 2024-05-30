@@ -35,8 +35,11 @@ public class Pause : MonoBehaviour
 
     private void OnDisable()
     {
-        DialogueManager.Instance.conversationStarted -= ConversationStarted;
-        DialogueManager.instance.conversationEnded -= ConversationEnded;
+        if (DialogueManager.Instance != null) // Fixing a bug with dialogue manager already absent, for some reason.
+        {
+            DialogueManager.Instance.conversationStarted -= ConversationStarted;
+            DialogueManager.instance.conversationEnded -= ConversationEnded;
+        }
     }
 
     private void ConversationStarted(Transform t)

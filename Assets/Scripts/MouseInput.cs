@@ -19,6 +19,9 @@ public class MouseInput : MonoBehaviour
     private NavMeshAgent _myAgent;
 
     public LayerMask WhatCanBeClickedOn;
+
+    bool isPaused = false;
+    Vector3 destination;
     
     void Start()
     {
@@ -32,15 +35,41 @@ public class MouseInput : MonoBehaviour
     }
 
 
-    private void OnEnable() => SaveManager.OnStartingLoad += ResetMovement;
-    private void OnDisable() => SaveManager.OnStartingLoad -= ResetMovement;
+    private void OnEnable()
+    {
+        SaveManager.OnStartingLoad += ResetMovement;
+        Pause.OnPause += SetPause;
+    }
 
+    private void OnDisable()
+    {
+        SaveManager.OnStartingLoad -= ResetMovement;
+        Pause.OnPause -= SetPause;
+    }
 
     private void ResetMovement()
     {
         if (_particleObject != null) DeleteMovePoint();
         _myAgent.isStopped = true;
         _myAgent.ResetPath();
+    }
+
+
+
+    private void SetPause(bool isPaused)
+    {
+        this.isPaused = isPaused;
+        _myAgent.isStopped = isPaused;
+
+        if (isPaused) 
+        { 
+            _myAgent.velocity = Vector3.zero;
+            _myAgent.ResetPath();
+        }
+        else
+        {
+            if (_isParticleMovePoint) _myAgent.SetDestination(destination);
+        }
     }
 
 
@@ -52,7 +81,7 @@ public class MouseInput : MonoBehaviour
             DeleteMovePoint();
         }
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && !isPaused)
         {
             Ray myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
@@ -76,6 +105,7 @@ public class MouseInput : MonoBehaviour
                     UpdateMovePoint();
                 }
 
+                destination = hitInfo.point;
                 _myAgent.SetDestination(hitInfo.point);
                 _myAgent.isStopped = true; // Остановить навигацию
             }
