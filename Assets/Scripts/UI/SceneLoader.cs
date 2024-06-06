@@ -1,3 +1,5 @@
+using System.Collections;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -8,6 +10,7 @@ public class SceneLoader : MonoBehaviour
 
     public void Load()
     {
-        SceneManager.LoadSceneAsync(_sceneName);
+        LoadingScreen.instance.Load(_sceneName);
     }
+
 }
