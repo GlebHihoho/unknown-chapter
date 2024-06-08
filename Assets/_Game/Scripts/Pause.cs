@@ -10,6 +10,7 @@ public class Pause : MonoBehaviour
     public static event Action<bool> OnPause;
 
     bool isPaused = false;
+    bool conversationinProgress = false;
 
     public static Pause instance;
 
@@ -30,6 +31,8 @@ public class Pause : MonoBehaviour
     {
         DialogueManager.Instance.conversationStarted += ConversationStarted;
         DialogueManager.instance.conversationEnded += ConversationEnded;
+
+        SaveManager.OnLoadCompleted += ResetPause;
     }
 
 
@@ -39,23 +42,36 @@ public class Pause : MonoBehaviour
         {
             DialogueManager.Instance.conversationStarted -= ConversationStarted;
             DialogueManager.instance.conversationEnded -= ConversationEnded;
+
+            SaveManager.OnLoadCompleted -= ResetPause;
         }
     }
 
     private void ConversationStarted(Transform t)
     {
         SetPause(true);
+        conversationinProgress = true;
     }
 
     private void ConversationEnded(Transform t)
     {
+        conversationinProgress = false;
         SetPause(false);
     }
 
 
     public void SetPause(bool isPaused)
     {
+        if (conversationinProgress) return;
+
         this.isPaused = isPaused;
         OnPause?.Invoke(isPaused);
+    }
+
+
+    private void ResetPause()
+    {
+        conversationinProgress = false;
+        SetPause(false);
     }
 }

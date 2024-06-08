@@ -20,6 +20,9 @@ public class SaveManager : MonoBehaviour
     SaveData.Save save = new SaveData.Save();
 
 
+    public static event Action OnLoadCompleted;
+
+
     public struct Summary
     {
         public string location;
@@ -153,6 +156,8 @@ public class SaveManager : MonoBehaviour
             }
 
         }
+
+        OnLoadCompleted?.Invoke();
     }
 
 
