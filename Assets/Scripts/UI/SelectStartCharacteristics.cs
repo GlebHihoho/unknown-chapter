@@ -13,7 +13,7 @@ namespace UI
 
         void Start()
         {
-            characteristics = FindObjectOfType<Characteristics>();
+            characteristics = FindAnyObjectByType<Characteristics>();
         }
 
         public void SelectCurrentCharacteristics(string nameCharacteristic)

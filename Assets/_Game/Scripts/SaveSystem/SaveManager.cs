@@ -107,7 +107,7 @@ public class SaveManager : MonoBehaviour
 
         save.inventory.Clear();
 
-        ISaveable[] saveables = FindObjectsOfType<MonoBehaviour>(true).OfType<ISaveable>().ToArray();
+        ISaveable[] saveables = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).OfType<ISaveable>().ToArray();
 
 
         foreach (ISaveable item in saveables)
@@ -148,7 +148,7 @@ public class SaveManager : MonoBehaviour
             saver.ApplyData(save.dialogues);
 
 
-            ISaveable[] saveables = FindObjectsOfType<MonoBehaviour>(true).OfType<ISaveable>().ToArray();
+            ISaveable[] saveables = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).OfType<ISaveable>().ToArray();
 
             foreach (ISaveable item in saveables)
             {

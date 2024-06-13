@@ -18,7 +18,7 @@ public class TestToolButtonUI : MonoBehaviour
 
     private void Start()
     {
-        _inventory = FindObjectOfType<Inventory>(true);
+        _inventory = FindAnyObjectByType<Inventory>(FindObjectsInactive.Include);
     }
 
     private void Update()

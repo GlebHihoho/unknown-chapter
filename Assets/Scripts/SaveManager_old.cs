@@ -111,7 +111,7 @@ namespace DefaultNamespace.SaveLoadData
             return new GameData
             {
                 // CharacterState = FindObjectOfType<CharacterState>(),
-                Inventory = FindObjectOfType<Inventory>(true),
+                Inventory = FindAnyObjectByType<Inventory>(FindObjectsInactive.Include),
             };
         }
         

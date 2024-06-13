@@ -437,7 +437,7 @@ namespace MxM
                 return;
             }
             
-            if (p_animator.updateMode == AnimatorUpdateMode.AnimatePhysics)
+            if (p_animator.updateMode == AnimatorUpdateMode.Fixed)
             {
                 p_currentDeltaTime = Time.fixedDeltaTime;
 
@@ -471,7 +471,7 @@ namespace MxM
                 return;
             }
             
-            if (p_animator.updateMode != AnimatorUpdateMode.AnimatePhysics)
+            if (p_animator.updateMode != AnimatorUpdateMode.Fixed)
             {
                 p_currentDeltaTime = Time.deltaTime;
 

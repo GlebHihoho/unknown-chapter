@@ -11,7 +11,7 @@ namespace UI
         private void Start()
         {
             _player = GameObject.FindWithTag("Player").transform;
-            _quickItemView = FindObjectOfType<QuickItemView>();
+            _quickItemView = FindAnyObjectByType<QuickItemView>();
         }
 
         public void ThisDestroyObject()

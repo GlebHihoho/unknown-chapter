@@ -19,11 +19,11 @@ namespace UI
 
         private void Start()
         {
-            _mouseInput = FindObjectOfType<MouseInput>(true);
-            _navMeshAgent = FindObjectOfType<NavMeshAgent>(true);
-            _mxMTrajectoryGenerator = FindObjectOfType<MxMTrajectoryGenerator>(true);
-            _mxMAnimator = FindObjectOfType<MxMAnimator>(true);
-            _playerHUD = FindObjectOfType<ItemsDB>(true).gameObject;
+            _mouseInput = FindAnyObjectByType<MouseInput>(FindObjectsInactive.Include);
+            _navMeshAgent = FindAnyObjectByType<NavMeshAgent>(FindObjectsInactive.Include);
+            _mxMTrajectoryGenerator = FindAnyObjectByType<MxMTrajectoryGenerator>(FindObjectsInactive.Include);
+            _mxMAnimator = FindAnyObjectByType<MxMAnimator>(FindObjectsInactive.Include);
+            _playerHUD = FindAnyObjectByType<ItemsDB>(FindObjectsInactive.Include).gameObject;
         }
 
         private void Update()

@@ -28,7 +28,7 @@ namespace UI
         private void Start()
         {
             print(_quickItemView);
-            _inventory = FindObjectOfType<Inventory>(true);
+            _inventory = FindAnyObjectByType<Inventory>(FindObjectsInactive.Include);
 
             foreach (var itemSo in _quickItemView.ItemsListFilling)
             {

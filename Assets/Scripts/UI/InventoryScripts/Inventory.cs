@@ -45,7 +45,7 @@ namespace UI.InventoryScripts
 
         public void Start()
         {
-            _saveManager = FindObjectOfType<SaveManager_old>();
+            _saveManager = FindAnyObjectByType<SaveManager_old>();
             //todo разобраться с json
             string json = File.ReadAllText(Application.dataPath + $"/Save/{_saveManager.CurrentSaveFile}.json");
             
