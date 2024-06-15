@@ -19,4 +19,10 @@ public class CursorData : ScriptableObject
 
     [SerializeField] Color takeColor = Color.green;
     public Color TakeColor => takeColor;
+
+    [SerializeField] Texture2D talkCursor;
+    public Texture2D TalkCursor => talkCursor;
+
+    [SerializeField] Color talkColor = Color.green;
+    public Color TalkColor => talkColor;
 }

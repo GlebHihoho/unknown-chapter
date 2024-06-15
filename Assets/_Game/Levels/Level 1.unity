@@ -13221,13 +13221,13 @@ PrefabInstance:
       addedObject: {fileID: 284491340}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9aef5eaae80cd9648a15a586918d5884, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 284491341}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9aef5eaae80cd9648a15a586918d5884, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 284491342}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9aef5eaae80cd9648a15a586918d5884, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 284491343}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9aef5eaae80cd9648a15a586918d5884, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 717181984}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9aef5eaae80cd9648a15a586918d5884, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 717181983}
   m_SourcePrefab: {fileID: 100100000, guid: 9aef5eaae80cd9648a15a586918d5884, type: 3}
 --- !u!1 &284491339 stripped
 GameObject:
@@ -13255,105 +13255,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7567291, y: 1.8678589, z: 0.5531769}
   m_Center: {x: 0.0060811043, y: 0.8236084, z: 0.056877136}
---- !u!114 &284491341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284491339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 274b80ab5b659c646ba9338870d14625, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideName: 
-  overrideUseMessage: 
-  maxUseDistance: 5
-  events:
-    onSelect:
-      m_PersistentCalls:
-        m_Calls: []
-    onDeselect:
-      m_PersistentCalls:
-        m_Calls: []
-    onUse:
-      m_PersistentCalls:
-        m_Calls: []
---- !u!114 &284491342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284491339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: 32
-  condition:
-    luaConditions: []
-    questConditions: []
-    acceptedTags:
-    - Player
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  setQuestState: 1
-  questName: 
-  questState: 0
-  setQuestEntryState: 0
-  questEntryNumber: 1
-  questEntryState: 0
-  setAnotherQuestEntryState: 0
-  anotherQuestEntryNumber: 1
-  anotherQuestEntryState: 0
-  luaCode: 
-  sequence: 
-  sequenceSpeaker: {fileID: 0}
-  sequenceListener: {fileID: 0}
-  waitOneFrameOnStartOrEnable: 1
-  alertMessage: 
-  textTable: {fileID: 0}
-  alertDuration: 0
-  sendMessages: []
-  barkSource: 0
-  barkConversation: 
-  barkText: 
-  barkTextSequence: 
-  barker: {fileID: 0}
-  barkTarget: {fileID: 0}
-  barkOrder: 0
-  allowBarksDuringConversations: 0
-  skipBarkIfNoValidEntries: 0
-  cacheBarkLines: 0
-  conversation: 4_Erast and Pivs
-  conversationConversant: {fileID: 0}
-  conversationActor: {fileID: 0}
-  startConversationEntryID: -1
-  startConversationEntryTitle: 
-  exclusive: 0
-  replace: 0
-  skipIfNoValidEntries: 0
-  preventRestartOnSameFrameEnded: 0
-  stopConversationOnTriggerExit: 0
-  stopConversationIfTooFar: 0
-  maxConversationDistance: 5
-  monitorConversationDistanceFrequency: 1
-  showCursorDuringConversation: 0
-  pauseGameDuringConversation: 0
-  setActiveActions: []
-  setEnabledActions: []
-  setAnimatorStateActions: []
-  onExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  useConversationTitlePicker: 1
-  useBarkTitlePicker: 1
-  useQuestNamePicker: 1
-  selectedDatabase: {fileID: 11400000, guid: 9c9430574f8156448ad7ef4be77f0028, type: 2}
 --- !u!114 &284491343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13371,7 +13272,7 @@ MonoBehaviour:
   portrait: {fileID: 0}
   spritePortrait: {fileID: 0}
   barkUISettings:
-    barkUI: {fileID: 0}
+    barkUI: {fileID: 11453294, guid: d5a18ab9ec93e0d4284d6fbae4f557e0, type: 3}
     barkUIOffset: {x: 0, y: 2, z: 0}
   standardDialogueUISettings:
     subtitlePanelNumber: 0
@@ -30061,6 +29962,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9aef5eaae80cd9648a15a586918d5884, type: 3}
   m_PrefabInstance: {fileID: 284491338}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &717181983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284491339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eebbcf7bd66c069428c27ca0cc86fb42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorData: {fileID: 11400000, guid: 3cbdc5300f2749740a07853532c902bf, type: 2}
+  interactDistance: 4
+  examineBark: "\u041F\u0438\u0439"
+  conversation: 4_Erast and Pivs
+--- !u!114 &717181984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284491339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.9245283, g: 0.8587032, b: 0.100302614, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &720769508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35163,13 +35098,13 @@ PrefabInstance:
       addedObject: {fileID: 812615412}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ac0a7fc0586ab0e4e9c7ac4c0962db3f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 812615409}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ac0a7fc0586ab0e4e9c7ac4c0962db3f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 812615410}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ac0a7fc0586ab0e4e9c7ac4c0962db3f, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 812615411}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ac0a7fc0586ab0e4e9c7ac4c0962db3f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 812615414}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ac0a7fc0586ab0e4e9c7ac4c0962db3f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 812615413}
   m_SourcePrefab: {fileID: 100100000, guid: ac0a7fc0586ab0e4e9c7ac4c0962db3f, type: 3}
 --- !u!4 &812615407 stripped
 Transform:
@@ -35181,105 +35116,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ac0a7fc0586ab0e4e9c7ac4c0962db3f, type: 3}
   m_PrefabInstance: {fileID: 812615406}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &812615409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 812615408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: 32
-  condition:
-    luaConditions: []
-    questConditions: []
-    acceptedTags:
-    - Player
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  setQuestState: 1
-  questName: 
-  questState: 0
-  setQuestEntryState: 0
-  questEntryNumber: 1
-  questEntryState: 0
-  setAnotherQuestEntryState: 0
-  anotherQuestEntryNumber: 1
-  anotherQuestEntryState: 0
-  luaCode: 
-  sequence: 
-  sequenceSpeaker: {fileID: 0}
-  sequenceListener: {fileID: 0}
-  waitOneFrameOnStartOrEnable: 1
-  alertMessage: 
-  textTable: {fileID: 0}
-  alertDuration: 0
-  sendMessages: []
-  barkSource: 0
-  barkConversation: 
-  barkText: 
-  barkTextSequence: 
-  barker: {fileID: 0}
-  barkTarget: {fileID: 0}
-  barkOrder: 0
-  allowBarksDuringConversations: 0
-  skipBarkIfNoValidEntries: 0
-  cacheBarkLines: 0
-  conversation: 1_ErastAndFoma
-  conversationConversant: {fileID: 0}
-  conversationActor: {fileID: 0}
-  startConversationEntryID: -1
-  startConversationEntryTitle: 
-  exclusive: 0
-  replace: 0
-  skipIfNoValidEntries: 0
-  preventRestartOnSameFrameEnded: 0
-  stopConversationOnTriggerExit: 0
-  stopConversationIfTooFar: 0
-  maxConversationDistance: 5
-  monitorConversationDistanceFrequency: 1
-  showCursorDuringConversation: 0
-  pauseGameDuringConversation: 0
-  setActiveActions: []
-  setEnabledActions: []
-  setAnimatorStateActions: []
-  onExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  useConversationTitlePicker: 1
-  useBarkTitlePicker: 1
-  useQuestNamePicker: 1
-  selectedDatabase: {fileID: 11400000, guid: 9c9430574f8156448ad7ef4be77f0028, type: 2}
---- !u!114 &812615410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 812615408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 274b80ab5b659c646ba9338870d14625, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideName: 
-  overrideUseMessage: 
-  maxUseDistance: 5
-  events:
-    onSelect:
-      m_PersistentCalls:
-        m_Calls: []
-    onDeselect:
-      m_PersistentCalls:
-        m_Calls: []
-    onUse:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!114 &812615411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35297,7 +35133,7 @@ MonoBehaviour:
   portrait: {fileID: 0}
   spritePortrait: {fileID: 0}
   barkUISettings:
-    barkUI: {fileID: 0}
+    barkUI: {fileID: 11453294, guid: d5a18ab9ec93e0d4284d6fbae4f557e0, type: 3}
     barkUIOffset: {x: 0, y: 2, z: 0}
   standardDialogueUISettings:
     subtitlePanelNumber: 0
@@ -35334,6 +35170,40 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9272789, y: 0.8300389, z: 2.0440445}
   m_Center: {x: 0.005661905, y: 0.83699256, z: -0.013309479}
+--- !u!114 &812615413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812615408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eebbcf7bd66c069428c27ca0cc86fb42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorData: {fileID: 11400000, guid: 3cbdc5300f2749740a07853532c902bf, type: 2}
+  interactDistance: 4
+  examineBark: "\u0424\u043E\u043C\u0430"
+  conversation: 1_ErastAndFoma
+--- !u!114 &812615414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812615408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.9245283, g: 0.8587032, b: 0.100302614, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &812629657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49207,93 +49077,19 @@ PrefabInstance:
       addedObject: {fileID: 1109314890}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 85e798ea5beaaf74fab33c1d9d6b5994, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1109314887}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 85e798ea5beaaf74fab33c1d9d6b5994, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1109314888}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 85e798ea5beaaf74fab33c1d9d6b5994, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1109314889}
+      addedObject: {fileID: 1109314892}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 85e798ea5beaaf74fab33c1d9d6b5994, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1109314891}
   m_SourcePrefab: {fileID: 100100000, guid: 85e798ea5beaaf74fab33c1d9d6b5994, type: 3}
 --- !u!1 &1109314886 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 85e798ea5beaaf74fab33c1d9d6b5994, type: 3}
   m_PrefabInstance: {fileID: 1109314885}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1109314887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109314886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: 32
-  condition:
-    luaConditions: []
-    questConditions: []
-    acceptedTags:
-    - Player
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  setQuestState: 1
-  questName: 
-  questState: 0
-  setQuestEntryState: 0
-  questEntryNumber: 1
-  questEntryState: 0
-  setAnotherQuestEntryState: 0
-  anotherQuestEntryNumber: 1
-  anotherQuestEntryState: 0
-  luaCode: 
-  sequence: 
-  sequenceSpeaker: {fileID: 0}
-  sequenceListener: {fileID: 0}
-  waitOneFrameOnStartOrEnable: 1
-  alertMessage: 
-  textTable: {fileID: 0}
-  alertDuration: 0
-  sendMessages: []
-  barkSource: 0
-  barkConversation: 
-  barkText: 
-  barkTextSequence: 
-  barker: {fileID: 0}
-  barkTarget: {fileID: 0}
-  barkOrder: 0
-  allowBarksDuringConversations: 0
-  skipBarkIfNoValidEntries: 0
-  cacheBarkLines: 0
-  conversation: 5_Erast and Nestor
-  conversationConversant: {fileID: 0}
-  conversationActor: {fileID: 0}
-  startConversationEntryID: -1
-  startConversationEntryTitle: 
-  exclusive: 0
-  replace: 0
-  skipIfNoValidEntries: 0
-  preventRestartOnSameFrameEnded: 0
-  stopConversationOnTriggerExit: 0
-  stopConversationIfTooFar: 0
-  maxConversationDistance: 5
-  monitorConversationDistanceFrequency: 1
-  showCursorDuringConversation: 0
-  pauseGameDuringConversation: 0
-  setActiveActions: []
-  setEnabledActions: []
-  setAnimatorStateActions: []
-  onExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  useConversationTitlePicker: 1
-  useBarkTitlePicker: 1
-  useQuestNamePicker: 1
-  selectedDatabase: {fileID: 11400000, guid: 9c9430574f8156448ad7ef4be77f0028, type: 2}
 --- !u!114 &1109314888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49311,7 +49107,7 @@ MonoBehaviour:
   portrait: {fileID: 0}
   spritePortrait: {fileID: 0}
   barkUISettings:
-    barkUI: {fileID: 0}
+    barkUI: {fileID: 11453294, guid: d5a18ab9ec93e0d4284d6fbae4f557e0, type: 3}
     barkUIOffset: {x: 0, y: 2, z: 0}
   standardDialogueUISettings:
     subtitlePanelNumber: 0
@@ -49327,31 +49123,6 @@ MonoBehaviour:
     prependActorNameSeparator: ': '
     prependActorNameFormat: '{0}{1}'
     subtitleColor: {r: 0.65882355, g: 0.6509804, b: 0.47843137, a: 1}
---- !u!114 &1109314889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109314886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 274b80ab5b659c646ba9338870d14625, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideName: 
-  overrideUseMessage: 
-  maxUseDistance: 5
-  events:
-    onSelect:
-      m_PersistentCalls:
-        m_Calls: []
-    onDeselect:
-      m_PersistentCalls:
-        m_Calls: []
-    onUse:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!65 &1109314890
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49373,6 +49144,40 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6174277, y: 1.9285889, z: 0.40956435}
   m_Center: {x: 0.013481021, y: 0.8051491, z: 0.07203607}
+--- !u!114 &1109314891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109314886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eebbcf7bd66c069428c27ca0cc86fb42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorData: {fileID: 11400000, guid: 3cbdc5300f2749740a07853532c902bf, type: 2}
+  interactDistance: 4
+  examineBark: "\u041D\u0435\u0441\u0442\u043E\u0440"
+  conversation: 5_Erast and Nestor
+--- !u!114 &1109314892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109314886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.9245283, g: 0.8587032, b: 0.100302614, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1109543694
 GameObject:
   m_ObjectHideFlags: 0
@@ -96248,93 +96053,19 @@ PrefabInstance:
       addedObject: {fileID: 2098951228}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fb53f3587bc43e84eaf0bb86202bbd9a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2098951225}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fb53f3587bc43e84eaf0bb86202bbd9a, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2098951226}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fb53f3587bc43e84eaf0bb86202bbd9a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2098951227}
+      addedObject: {fileID: 2098951230}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fb53f3587bc43e84eaf0bb86202bbd9a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2098951229}
   m_SourcePrefab: {fileID: 100100000, guid: fb53f3587bc43e84eaf0bb86202bbd9a, type: 3}
 --- !u!1 &2098951224 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fb53f3587bc43e84eaf0bb86202bbd9a, type: 3}
   m_PrefabInstance: {fileID: 2098951223}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2098951225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2098951224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: 32
-  condition:
-    luaConditions: []
-    questConditions: []
-    acceptedTags:
-    - Player
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  setQuestState: 1
-  questName: 
-  questState: 0
-  setQuestEntryState: 0
-  questEntryNumber: 1
-  questEntryState: 0
-  setAnotherQuestEntryState: 0
-  anotherQuestEntryNumber: 1
-  anotherQuestEntryState: 0
-  luaCode: 
-  sequence: 
-  sequenceSpeaker: {fileID: 0}
-  sequenceListener: {fileID: 0}
-  waitOneFrameOnStartOrEnable: 1
-  alertMessage: 
-  textTable: {fileID: 0}
-  alertDuration: 0
-  sendMessages: []
-  barkSource: 0
-  barkConversation: 
-  barkText: 
-  barkTextSequence: 
-  barker: {fileID: 0}
-  barkTarget: {fileID: 0}
-  barkOrder: 0
-  allowBarksDuringConversations: 0
-  skipBarkIfNoValidEntries: 0
-  cacheBarkLines: 0
-  conversation: 6_Erast and D. O.
-  conversationConversant: {fileID: 0}
-  conversationActor: {fileID: 0}
-  startConversationEntryID: -1
-  startConversationEntryTitle: 
-  exclusive: 0
-  replace: 0
-  skipIfNoValidEntries: 0
-  preventRestartOnSameFrameEnded: 0
-  stopConversationOnTriggerExit: 0
-  stopConversationIfTooFar: 0
-  maxConversationDistance: 5
-  monitorConversationDistanceFrequency: 1
-  showCursorDuringConversation: 0
-  pauseGameDuringConversation: 0
-  setActiveActions: []
-  setEnabledActions: []
-  setAnimatorStateActions: []
-  onExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  useConversationTitlePicker: 1
-  useBarkTitlePicker: 1
-  useQuestNamePicker: 1
-  selectedDatabase: {fileID: 11400000, guid: 9c9430574f8156448ad7ef4be77f0028, type: 2}
 --- !u!114 &2098951226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96352,7 +96083,7 @@ MonoBehaviour:
   portrait: {fileID: 0}
   spritePortrait: {fileID: 0}
   barkUISettings:
-    barkUI: {fileID: 0}
+    barkUI: {fileID: 11453294, guid: d5a18ab9ec93e0d4284d6fbae4f557e0, type: 3}
     barkUIOffset: {x: 0, y: 2, z: 0}
   standardDialogueUISettings:
     subtitlePanelNumber: 0
@@ -96368,31 +96099,6 @@ MonoBehaviour:
     prependActorNameSeparator: ': '
     prependActorNameFormat: '{0}{1}'
     subtitleColor: {r: 0.65882355, g: 0.6509804, b: 0.47843137, a: 1}
---- !u!114 &2098951227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2098951224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 274b80ab5b659c646ba9338870d14625, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideName: 
-  overrideUseMessage: 
-  maxUseDistance: 5
-  events:
-    onSelect:
-      m_PersistentCalls:
-        m_Calls: []
-    onDeselect:
-      m_PersistentCalls:
-        m_Calls: []
-    onUse:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!65 &2098951228
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -96414,6 +96120,40 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5985626, y: 2.002962, z: 0.45783073}
   m_Center: {x: -0.02315527, y: 0.79480076, z: 0.013477482}
+--- !u!114 &2098951229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098951224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eebbcf7bd66c069428c27ca0cc86fb42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorData: {fileID: 11400000, guid: 3cbdc5300f2749740a07853532c902bf, type: 2}
+  interactDistance: 4
+  examineBark: "\u0414\u0438\u0430\u043D\u0430"
+  conversation: 6_Erast and D. O.
+--- !u!114 &2098951230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098951224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.9245283, g: 0.8587032, b: 0.100302614, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &2101298747
 PrefabInstance:
   m_ObjectHideFlags: 0
