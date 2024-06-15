@@ -39,8 +39,18 @@ public class ConversationPartner : MonoBehaviour
         player = GameObject.FindWithTag("Player").transform;
     }
 
-    private void OnEnable() => Pause.OnPause += SetPause;
-    private void OnDisable() => Pause.OnPause -= SetPause;
+    private void OnEnable()
+    {
+        Pause.OnPause += SetPause;
+        HighlightInteractable.OnHighlightsEnabled += Highlight;
+    }
+
+    private void OnDisable()
+    {
+        Pause.OnPause -= SetPause;
+        HighlightInteractable.OnHighlightsEnabled -= Highlight;
+    }
+
     private void OnMouseDown() => Talk();
 
 
@@ -107,5 +117,15 @@ public class ConversationPartner : MonoBehaviour
         {
             status = prevStatus;
         }
+    }
+
+    private void Highlight(bool isHighlighted)
+    {
+        if (isHighlighted)
+        {
+            outline.OutlineColor = cursorData.TalkColor;
+            outline.enabled = true;
+        }
+        else ResetVisuals();
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
+using System.Dynamic;
 
 [RequireComponent(typeof(Outline))]
 public class Collectible : MonoBehaviour
@@ -41,9 +42,17 @@ public class Collectible : MonoBehaviour
 
     }
 
-    private void OnEnable() => Pause.OnPause += SetPause;
-    private void OnDisable() => Pause.OnPause -= SetPause;
+    private void OnEnable()
+    {
+        Pause.OnPause += SetPause;
+        HighlightInteractable.OnHighlightsEnabled += Highlight;
+    }
 
+    private void OnDisable()
+    {
+        Pause.OnPause -= SetPause;
+        HighlightInteractable.OnHighlightsEnabled -= Highlight;
+    }
 
     private void OnMouseDown() => Collect();
 
@@ -115,5 +124,15 @@ public class Collectible : MonoBehaviour
         {
             status = prevStatus;
         }
+    }
+
+    private void Highlight(bool isHighlighted)
+    {
+        if (isHighlighted)
+        {
+            outline.OutlineColor = cursorData.TakeColor;
+            outline.enabled = true;
+        }
+        else ResetVisuals();
     }
 }
