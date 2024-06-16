@@ -40,7 +40,7 @@ public class LocomotionSpeedRamp : MonoBehaviour
         if (m_currentSpeed == 1)
             m_mxmAnimator.RemoveFavourTags(m_runTagHandle);
         
-        print("пешком");
+       // print("пешком"); //TODO: remove
 
         m_currentSpeed = 2;
         
@@ -55,7 +55,7 @@ public class LocomotionSpeedRamp : MonoBehaviour
         m_currentSpeed = 1;
         m_speedTimer = 0f;
         
-        print("бежим");
+        //print("бежим");
 
 
         float inputMag = m_trajectoryGenerator.InputVector.sqrMagnitude;
