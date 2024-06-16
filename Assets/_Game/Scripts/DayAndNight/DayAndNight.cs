@@ -13,6 +13,7 @@ public class DayAndNight : MonoBehaviour
 
 
     float currentTime = 0;
+    public float CurrentTime => currentTime;
 
     public static event Action OnNightStarts;
     public static event Action OnNightEnds;
@@ -20,6 +21,8 @@ public class DayAndNight : MonoBehaviour
     bool isNight = false;
 
     bool isPaused = false;
+
+    bool manualMode = false;
 
     float prevAngle = 0;
 
@@ -34,11 +37,27 @@ public class DayAndNight : MonoBehaviour
     void Update()
     {
 
-        if (isPaused) return;
+        if (isPaused || manualMode) return;
 
         currentTime += Time.deltaTime / settings.DayDuration;
         currentTime = Mathf.Repeat(currentTime, 1);
 
+        UpdateCycle();
+    }
+
+
+    public void SetTime(float timeOfDay)
+    {
+        if (!manualMode) return;
+
+        currentTime = Mathf.Clamp(timeOfDay, 0, 1);
+
+        UpdateCycle();
+    }
+
+
+    private void UpdateCycle()
+    {
         float sunAngle = 365 * currentTime;
 
 
@@ -48,7 +67,7 @@ public class DayAndNight : MonoBehaviour
             prevAngle = sunAngle;
         }
 
-       
+
         RenderSettings.fogDensity = settings.FogDensity.Evaluate(currentTime);
         RenderSettings.fogColor = settings.FogGradient.Evaluate(currentTime);
 
@@ -68,6 +87,12 @@ public class DayAndNight : MonoBehaviour
             isNight = false;
         }
     }
+
+    public void ToggleManual(bool isToggled)
+    {
+        manualMode = isToggled;
+    }
+
 
 
 }
