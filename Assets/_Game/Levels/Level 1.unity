@@ -7284,6 +7284,130 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 199941612779450446, guid: 165bc0f1fd329994fb892739cbfd084a, type: 3}
   m_PrefabInstance: {fileID: 153260214}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &155645832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 155645833}
+  - component: {fileID: 155645837}
+  - component: {fileID: 155645836}
+  - component: {fileID: 155645835}
+  - component: {fileID: 155645834}
+  m_Layer: 0
+  m_Name: Cube (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &155645833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155645832}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.7597172, z: -0, w: 0.6502536}
+  m_LocalPosition: {x: 1.1, y: 1.53, z: 78.4}
+  m_LocalScale: {x: 2.2767246, y: 4.335399, z: 2.6640904}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1919249324}
+  m_LocalEulerAnglesHint: {x: 0, y: -98.879, z: 0}
+--- !u!114 &155645834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155645832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c46bab3367ef145833068383fb1917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontalClip: {fileID: 0}
+  backClip: {fileID: 0}
+  source: {fileID: 185603768}
+--- !u!65 &155645835
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155645832}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &155645836
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155645832}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 56558f8d1d25843499974e4c000bc7e2, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &155645837
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155645832}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &157503726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22171,12 +22295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c46bab3367ef145833068383fb1917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip1: {fileID: 0}
-  clip2: {fileID: 8300000, guid: 4d12cd93b6e7a9e4587485309d8ea3bf, type: 3}
+  frontalClip: {fileID: 0}
+  backClip: {fileID: 8300000, guid: 4d12cd93b6e7a9e4587485309d8ea3bf, type: 3}
   source: {fileID: 185603768}
-  activeZone: 1
-  threshold: 0.05
-  destroyVisuals: 1
 --- !u!65 &518965937
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38873,12 +38994,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c46bab3367ef145833068383fb1917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip1: {fileID: 8300000, guid: 4d12cd93b6e7a9e4587485309d8ea3bf, type: 3}
-  clip2: {fileID: 8300000, guid: 60983c9b0b3cd224085c329d0d22b3f0, type: 3}
+  frontalClip: {fileID: 8300000, guid: 4d12cd93b6e7a9e4587485309d8ea3bf, type: 3}
+  backClip: {fileID: 8300000, guid: 60983c9b0b3cd224085c329d0d22b3f0, type: 3}
   source: {fileID: 185603768}
-  activeZone: 1
-  threshold: 0.05
-  destroyVisuals: 1
 --- !u!65 &889183200
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65818,8 +65936,8 @@ Transform:
   m_GameObject: {fileID: 1451229416}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7597172, z: -0, w: 0.6502536}
-  m_LocalPosition: {x: -7.35, y: 1.53, z: 93.59}
-  m_LocalScale: {x: 50.849575, y: 4.335399, z: 2.6640904}
+  m_LocalPosition: {x: -10.17, y: 1.53, z: 111.67}
+  m_LocalScale: {x: 80.82032, y: 4.335399, z: 2.6640904}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1919249324}
@@ -65836,12 +65954,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c46bab3367ef145833068383fb1917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip1: {fileID: 0}
-  clip2: {fileID: 0}
-  source: {fileID: 0}
-  activeZone: 1
-  threshold: 0.5
-  destroyVisuals: 1
+  frontalClip: {fileID: 0}
+  backClip: {fileID: 0}
+  source: {fileID: 185603768}
 --- !u!65 &1451229419
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -89152,6 +89267,7 @@ Transform:
   - {fileID: 518965935}
   - {fileID: 889183198}
   - {fileID: 1451229417}
+  - {fileID: 155645833}
   - {fileID: 185603767}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -96881,12 +96997,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c46bab3367ef145833068383fb1917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip1: {fileID: 8300000, guid: b3bf0ded00649f54fb079104a9817821, type: 3}
-  clip2: {fileID: 0}
+  frontalClip: {fileID: 8300000, guid: b3bf0ded00649f54fb079104a9817821, type: 3}
+  backClip: {fileID: 0}
   source: {fileID: 185603768}
-  activeZone: 1
-  threshold: 0.05
-  destroyVisuals: 1
 --- !u!65 &2105068785
 BoxCollider:
   m_ObjectHideFlags: 0

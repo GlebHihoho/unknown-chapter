@@ -3,26 +3,18 @@ using UnityEngine;
 public class SoundZoneBorder : MonoBehaviour
 {
 
-    [SerializeField] AudioClip clip1;
-    [SerializeField] AudioClip clip2;
-
+    [SerializeField] AudioClip frontalClip;
+    [SerializeField] AudioClip backClip;
 
     [SerializeField] AudioSource source;
 
-    [SerializeField, Range(1, 2)] int activeZone = 1; //TODO: Set zones angles?
 
     float enterDot, exitDot;
-
-    [SerializeField, Range(0.01f, 1.5f)] float threshold = 0.5f;
 
     MeshRenderer render;
 
 
-
-    private void Awake()
-    {
-        render = GetComponent<MeshRenderer>();
-    }
+    private void Awake() => render = GetComponent<MeshRenderer>();
 
     private void Update()
     {
@@ -30,45 +22,46 @@ public class SoundZoneBorder : MonoBehaviour
             render.enabled = !render.enabled;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        enterDot = DirectionDot(other);
-    }
+    private void OnTriggerEnter(Collider other) => enterDot = DirectionDot(other);
 
     private void OnTriggerExit(Collider other)
     {
 
         void ChangeClip(AudioClip clip)
         {
-            source.Stop();
-            if (clip != null)
+
+            if (clip != null) 
             {
-                source.clip = clip;
-                source.Play();
+                if (source.clip != clip || source.clip == null)
+                {
+                    source.Stop();
+                    source.clip = clip;
+                    source.Play();
+                }
+            }
+            else if (source.clip != null)
+            {
+                source.Stop();
+                source.clip = null;
             }
                 
         }
 
         exitDot = DirectionDot(other);
 
-        float direction = Mathf.Abs(enterDot - exitDot); //TODO: Small angles at big distance from the center of trigger
+        float direction = enterDot * exitDot;
 
-        Debug.Log("Direction: " + direction);
 
-        if (direction >= threshold)
+        if (direction < 0)
         {
-            if (activeZone == 1) 
+            if (exitDot > 0) 
             { 
-                activeZone = 2;
-                ChangeClip(clip2);
+                ChangeClip(frontalClip);
             }
             else 
             { 
-                activeZone = 1;
-                ChangeClip(clip1);
+                ChangeClip(backClip);
             }
-
-            Debug.Log("Changed zone to " + activeZone);
 
         }
                 
