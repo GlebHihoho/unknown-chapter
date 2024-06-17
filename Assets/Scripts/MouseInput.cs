@@ -51,25 +51,19 @@ public class MouseInput : MonoBehaviour
     {
         if (_particleObject != null) DeleteMovePoint();
         _myAgent.isStopped = true;
-        _myAgent.ResetPath();
+        _myAgent.ResetPath();    
     }
 
 
 
     private void SetPause(bool isPaused)
     {
-        this.isPaused = isPaused;
-        _myAgent.isStopped = isPaused;
 
-        if (isPaused) 
-        { 
-            _myAgent.velocity = Vector3.zero;
-            _myAgent.ResetPath();
-        }
-        else
-        {
-            if (_isParticleMovePoint) _myAgent.SetDestination(destination);
-        }
+        this.isPaused = isPaused;
+
+        if (isPaused) _m_mxmAnimator.Pause();
+        else _m_mxmAnimator.UnPause();
+
     }
 
 
