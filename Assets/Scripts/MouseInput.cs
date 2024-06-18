@@ -1,4 +1,5 @@
 using MxM;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -19,6 +20,7 @@ public class MouseInput : MonoBehaviour
     private NavMeshAgent _myAgent;
 
     public LayerMask WhatCanBeClickedOn;
+
 
     bool isPaused = false;
     Vector3 destination;
@@ -61,18 +63,28 @@ public class MouseInput : MonoBehaviour
 
         this.isPaused = isPaused;
 
-        if (isPaused) _m_mxmAnimator.Pause();
-        else _m_mxmAnimator.UnPause();
+        _myAgent.enabled = !isPaused;
 
+        if (isPaused) _m_mxmAnimator.Pause();
+        else 
+        { 
+            if (_isParticleMovePoint) _myAgent.SetDestination(destination);
+
+            _m_mxmAnimator.UnPause();           
+        }     
     }
 
 
     void FixedUpdate()
     {
-        if (_myAgent.remainingDistance <= _tolerance && _myAgent.hasPath && _isParticleMovePoint)
+
+        if (_myAgent.enabled)
         {
-            _isParticleMovePoint = false;
-            DeleteMovePoint();
+            if (_myAgent.remainingDistance <= _tolerance && _myAgent.hasPath && _isParticleMovePoint)
+            {
+                _isParticleMovePoint = false;
+                DeleteMovePoint();
+            }
         }
 
         if (Input.GetMouseButton(1) && !isPaused)
@@ -82,6 +94,9 @@ public class MouseInput : MonoBehaviour
 
             if (Physics.Raycast(myRay, out hitInfo, 100, WhatCanBeClickedOn))
             {
+                _m_mxmAnimator.RootMotion = EMxMRootMotion.On;
+                _myAgent.enabled = true;
+
                 _currentClickPoint = hitInfo.point;
                 _m_locomotionSpeedRamp.BeginSprint();
                 _m_trajectoryGenerator.MaxSpeed = 5f;
@@ -101,7 +116,7 @@ public class MouseInput : MonoBehaviour
 
                 destination = hitInfo.point;
                 _myAgent.SetDestination(hitInfo.point);
-                _myAgent.isStopped = true; // Остановить навигацию
+                //_myAgent.isStopped = true; // Остановить навигацию
             }
         }
     }
@@ -124,6 +139,12 @@ public class MouseInput : MonoBehaviour
     private void UpdateMovePoint()
     {
         _particleObject.transform.position = _currentClickPoint + new Vector3(0f, 0.2f, 0f);
+    }
+
+    public void SetIdle()
+    {
+        _m_mxmAnimator.RootMotion = EMxMRootMotion.Off;
+        _myAgent.enabled = false;
     }
 
 }
