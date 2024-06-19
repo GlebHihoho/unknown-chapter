@@ -28,10 +28,22 @@ public class GameConsole : MonoBehaviour
     WaitForEndOfFrame waitFrame = new WaitForEndOfFrame();
 
 
+    public static GameConsole instance;
+
 
     Queue<string> messages = new Queue<string>();
 
     StringBuilder sb = new StringBuilder();
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else Destroy(gameObject);
+    }
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
