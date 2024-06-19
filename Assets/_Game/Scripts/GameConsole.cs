@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class GameConsole : MonoBehaviour
 {
 
     [SerializeField] GameObject console;
     [SerializeField] TextMeshProUGUI text;
-    [SerializeField] ScrollRect scroll;
 
     [Space]
     [SerializeField, Range(0, 500)] int maxMessages = 200;
@@ -24,8 +23,8 @@ public class GameConsole : MonoBehaviour
     [Space]
     [SerializeField] Color details = Color.green;
 
-
-    WaitForEndOfFrame waitFrame = new WaitForEndOfFrame();
+    [Space]
+    [SerializeField] UnityEvent OnMessageAdded;
 
 
     public static GameConsole instance;
@@ -108,14 +107,9 @@ public class GameConsole : MonoBehaviour
 
         text.text = sb.ToString();
 
-        StartCoroutine(ScrollingToBottom());
+        OnMessageAdded.Invoke();
     }
 
-    IEnumerator ScrollingToBottom()
-    {
-        yield return waitFrame;
-        scroll.verticalNormalizedPosition = 0;
-    }
 
     public void AddCommand(string command) // Placeholder for testing input field and for the future use.
     {
