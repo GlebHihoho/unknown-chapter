@@ -12,7 +12,12 @@ public class AutoScrollDown : MonoBehaviour
 
     private void Awake() => scrollRect = GetComponent<ScrollRect>();
 
-    public void Scroll() => StartCoroutine(ScrollingToBottom());
+    public void Scroll()
+    {
+        if (gameObject.activeInHierarchy == false) return;
+
+        StartCoroutine(ScrollingToBottom());
+    }
 
     IEnumerator ScrollingToBottom()
     {

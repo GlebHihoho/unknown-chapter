@@ -107,7 +107,7 @@ public class GameConsole : MonoBehaviour
 
         text.text = sb.ToString();
 
-        OnMessageAdded.Invoke();
+        if (console.activeSelf) OnMessageAdded.Invoke();
     }
 
 
