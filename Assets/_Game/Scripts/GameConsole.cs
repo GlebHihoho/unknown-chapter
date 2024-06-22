@@ -42,6 +42,15 @@ public class GameConsole : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);
+
+        PlayerInputActions inputActions = new();
+        inputActions.Player.Enable();
+        inputActions.Player.GameConsole.performed += GameConsole_performed;
+    }
+
+    private void GameConsole_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        console.SetActive(!console.activeSelf);
     }
 
 
@@ -52,11 +61,6 @@ public class GameConsole : MonoBehaviour
         text.text = "";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.BackQuote))  console.SetActive(!console.activeSelf); 
-    }
 
     private void OnEnable() => Application.logMessageReceived += LogRecieved;
     private void OnDisable() => Application.logMessageReceived -= LogRecieved;

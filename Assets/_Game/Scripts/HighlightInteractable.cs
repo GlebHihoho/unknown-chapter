@@ -6,32 +6,21 @@ public class HighlightInteractable : MonoBehaviour
 
     public static event Action<bool> OnHighlightsEnabled;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.RightAlt))
-        {
-            EnableHighlights();
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftAlt) || Input.GetKeyUp(KeyCode.RightAlt))
-        {
-            DisableHighlights();
-        }
+        PlayerInputActions inputActions = new();
+        inputActions.Player.Enable();
+        inputActions.Player.Highlight.started += EnableHighlights;
+        inputActions.Player.Highlight.canceled += DisableHighlights;
     }
 
 
-    private void EnableHighlights()
+    private void EnableHighlights(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         OnHighlightsEnabled?.Invoke(true);
     }
 
-    private void DisableHighlights()
+    private void DisableHighlights(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         OnHighlightsEnabled?.Invoke(false);
     }

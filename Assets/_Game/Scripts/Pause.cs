@@ -17,13 +17,16 @@ public class Pause : MonoBehaviour
     private void Awake()
     {
         if (instance == null) instance = this;
+
+        PlayerInputActions inputActions = new();
+        inputActions.Player.Enable();
+        inputActions.Player.Pause.performed += Pause_performed;
     }
 
 
-    // Update is called once per frame
-    void Update()
+    private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        if (Input.GetKeyDown(KeyCode.P)) SetPause(!isPaused);
+        SetPause(!isPaused);
     }
 
 

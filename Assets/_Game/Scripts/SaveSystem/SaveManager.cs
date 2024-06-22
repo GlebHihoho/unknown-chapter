@@ -15,6 +15,8 @@ public class SaveManager : MonoBehaviour
     const string savesFolder = "Saves";
     const string extension = ".dat";
 
+    const string quickSave = "QuickSave";
+
     string path;
 
     SaveData.Save save = new SaveData.Save();
@@ -47,28 +49,23 @@ public class SaveManager : MonoBehaviour
         path = Application.persistentDataPath + Path.DirectorySeparatorChar + savesFolder;
 
         RefreshSavesInfo();
+
+        PlayerInputActions inputActions = new();
+        inputActions.Player.Enable();
+        inputActions.Player.QuickSave.performed += QuickSave;
+        inputActions.Player.QuickLoad.performed += QuickLoad;
     }
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void QuickSave(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-
+        Save(quickSave);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void QuickLoad(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        if (Input.GetKeyDown(KeyCode.F5))
-        {
-            Save("TestSave");
-        }
-
-        else if (Input.GetKeyDown(KeyCode.F6))
-        {
-            Load("TestSave");
-        }
+        Load(quickSave);
     }
+
 
 
     private void OnEnable()

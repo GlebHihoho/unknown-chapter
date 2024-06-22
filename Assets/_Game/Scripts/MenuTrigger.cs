@@ -11,10 +11,27 @@ public class MenuTrigger : MonoBehaviour
 
     bool isShown = false;
 
+    private void Awake()
+    {
+        PlayerInputActions playerInputActions = new();
+        playerInputActions.Player.Enable();
+        playerInputActions.Player.MainMenu.performed += MainMenu;
+
+    }
+
+
+    private void MainMenu(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        isShown = !isShown;
+
+        if (isShown) OnShowMenu.Invoke();
+        else OnHideMenu.Invoke();
+    }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             isShown = !isShown;
@@ -22,5 +39,6 @@ public class MenuTrigger : MonoBehaviour
             if (isShown) OnShowMenu.Invoke();
             else OnHideMenu.Invoke();
         }
+        */
     }
 }

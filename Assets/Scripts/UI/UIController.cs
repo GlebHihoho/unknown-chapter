@@ -10,19 +10,26 @@ namespace UI
         [SerializeField] private GameObject _playerBackGround;
         [SerializeField] private GameObject _miniPlayerBackGround;
 
-        void Update()
+        private void Awake()
         {
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                _inventoryBackGround.SetActive(!_inventoryBackGround.activeSelf);
-            }
+            PlayerInputActions inputActions = new PlayerInputActions();
+            inputActions.Player.Enable();
+            inputActions.Player.Inventory.performed += Inventory;
+            inputActions.Player.CharacterTab.performed += CharacterTab;
+        }
 
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                _playerBackGround.SetActive(!_playerBackGround.activeSelf);
-            }
-            
+        private void Inventory(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            _inventoryBackGround.SetActive(!_inventoryBackGround.activeSelf);
+        }
+
+        private void CharacterTab(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            _playerBackGround.SetActive(!_playerBackGround.activeSelf);
+
             _miniPlayerBackGround.SetActive(!_playerBackGround.activeSelf);
         }
+
+
     }
 }

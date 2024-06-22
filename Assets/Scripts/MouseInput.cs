@@ -2,6 +2,7 @@ using MxM;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 
 public class MouseInput : MonoBehaviour
 {
@@ -21,8 +22,20 @@ public class MouseInput : MonoBehaviour
 
     public LayerMask WhatCanBeClickedOn;
 
+    PlayerInputActions inputActions;
+
+
+    private void Awake()
+    {
+        inputActions = new();
+        inputActions.Player.Enable();
+        inputActions.Player.AltFire.performed += SetDestination;
+    }
+
 
     bool isPaused = false;
+    bool agentEnabled = true;
+
     Vector3 destination;
     
     void Start()
@@ -63,14 +76,23 @@ public class MouseInput : MonoBehaviour
 
         this.isPaused = isPaused;
 
-        _myAgent.enabled = !isPaused;
 
-        if (isPaused) _m_mxmAnimator.Pause();
-        else 
-        { 
-            if (_isParticleMovePoint) _myAgent.SetDestination(destination);
+        if (isPaused) 
+        {
+            inputActions.Player.Disable();
+            _m_mxmAnimator.Pause();
 
-            _m_mxmAnimator.UnPause();           
+            agentEnabled = _myAgent.enabled;
+            _myAgent.enabled = false;
+        }
+        else
+        {
+            _myAgent.enabled = agentEnabled;
+
+            if (_isParticleMovePoint && _myAgent.enabled) _myAgent.SetDestination(destination);
+
+            inputActions.Player.Enable();
+            _m_mxmAnimator.UnPause();
         }     
     }
 
@@ -87,39 +109,47 @@ public class MouseInput : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButton(1) && !isPaused)
+    }
+
+
+    private void SetDestination(InputAction.CallbackContext obj)
+    {
+        Vector3 newPos;
+        newPos.x = Pointer.current.position.x.ReadValue();
+        newPos.y = Pointer.current.position.y.ReadValue();
+        newPos.z = 0;
+
+
+        Ray myRay = Camera.main.ScreenPointToRay(newPos);
+        RaycastHit hitInfo;
+
+        if (Physics.Raycast(myRay, out hitInfo, 100, WhatCanBeClickedOn))
         {
-            Ray myRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hitInfo;
+            _m_mxmAnimator.RootMotion = EMxMRootMotion.On;
+            _myAgent.enabled = true;
 
-            if (Physics.Raycast(myRay, out hitInfo, 100, WhatCanBeClickedOn))
+            _currentClickPoint = hitInfo.point;
+            _m_locomotionSpeedRamp.BeginSprint();
+            _m_trajectoryGenerator.MaxSpeed = 5f;
+            _m_trajectoryGenerator.PositionBias = 6f;
+            _m_trajectoryGenerator.DirectionBias = 6f;
+            _m_mxmAnimator.SetCalibrationData("Sprint");
+            _m_trajectoryGenerator.InputProfile = _m_sprintLocomotion;
+
+            if (!_isParticleMovePoint)
             {
-                _m_mxmAnimator.RootMotion = EMxMRootMotion.On;
-                _myAgent.enabled = true;
-
-                _currentClickPoint = hitInfo.point;
-                _m_locomotionSpeedRamp.BeginSprint();
-                _m_trajectoryGenerator.MaxSpeed = 5f;
-                _m_trajectoryGenerator.PositionBias = 6f;
-                _m_trajectoryGenerator.DirectionBias = 6f;
-                _m_mxmAnimator.SetCalibrationData("Sprint");
-                _m_trajectoryGenerator.InputProfile = _m_sprintLocomotion;
-
-                if (!_isParticleMovePoint)
-                {
-                    CreateMovePoint();
-                }
-                else
-                {
-                    UpdateMovePoint();
-                }
-
-                destination = hitInfo.point;
-                _myAgent.SetDestination(hitInfo.point);
-                //_myAgent.isStopped = true; // Остановить навигацию
+                CreateMovePoint();
             }
+            else
+            {
+                UpdateMovePoint();
+            }
+
+            destination = hitInfo.point;
+            _myAgent.SetDestination(hitInfo.point);
         }
     }
+
 
     private void CreateMovePoint()
     {
