@@ -2,27 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="CursorSettings", menuName ="Gameplay/Create cursor settings")]
+[CreateAssetMenu(fileName ="CursorSettings", menuName ="Gameplay/Cursor settings")]
 public class CursorData : ScriptableObject
 {
 
-    [SerializeField] Texture2D viewCursor;
-    public Texture2D ViewCursor => viewCursor;
+    [SerializeField] Texture2D sprite;
+    public Texture2D Sprite => sprite;
 
 
-    [SerializeField] Color inspectColor = Color.yellow;
-    public Color InspectColor => inspectColor;
+    [SerializeField] Color color = Color.yellow;
+    public Color Color => color;
 
-    [SerializeField] Texture2D takeCursor;
-    public Texture2D TakeCursor => takeCursor;
-
-
-    [SerializeField] Color takeColor = Color.green;
-    public Color TakeColor => takeColor;
-
-    [SerializeField] Texture2D talkCursor;
-    public Texture2D TalkCursor => talkCursor;
-
-    [SerializeField] Color talkColor = Color.green;
-    public Color TalkColor => talkColor;
 }

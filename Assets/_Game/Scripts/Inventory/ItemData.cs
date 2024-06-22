@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
 
-[CreateAssetMenu(fileName ="ItemConfig", menuName ="Gameplay/Create Item Config")]
+[CreateAssetMenu(fileName ="ItemConfig", menuName = "Gameplay/Interactable/ItemData")]
 public class ItemData : ScriptableObject
 {
 
