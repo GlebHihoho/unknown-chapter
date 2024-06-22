@@ -14,15 +14,22 @@ public class Pause : MonoBehaviour
 
     public static Pause instance;
 
+    PlayerInputActions inputActions;
+
     private void Awake()
     {
         if (instance == null) instance = this;
 
-        PlayerInputActions inputActions = new();
+        inputActions = new();
         inputActions.Player.Enable();
         inputActions.Player.Pause.performed += Pause_performed;
     }
 
+
+    private void OnDestroy()
+    {
+        inputActions.Player.Disable();
+    }
 
     private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {

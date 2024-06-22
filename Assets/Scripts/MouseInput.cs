@@ -32,6 +32,11 @@ public class MouseInput : MonoBehaviour
         inputActions.Player.AltFire.performed += SetDestination;
     }
 
+    private void OnDestroy()
+    {
+        inputActions.Player.Disable();
+    }
+
 
     bool isPaused = false;
     bool agentEnabled = true;

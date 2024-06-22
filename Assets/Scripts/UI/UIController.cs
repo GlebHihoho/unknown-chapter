@@ -10,12 +10,19 @@ namespace UI
         [SerializeField] private GameObject _playerBackGround;
         [SerializeField] private GameObject _miniPlayerBackGround;
 
+        PlayerInputActions inputActions;
+
         private void Awake()
         {
-            PlayerInputActions inputActions = new PlayerInputActions();
+            inputActions = new PlayerInputActions();
             inputActions.Player.Enable();
             inputActions.Player.Inventory.performed += Inventory;
             inputActions.Player.CharacterTab.performed += CharacterTab;
+        }
+
+        private void OnDestroy()
+        {
+            inputActions.Player.Disable();
         }
 
         private void Inventory(UnityEngine.InputSystem.InputAction.CallbackContext obj)

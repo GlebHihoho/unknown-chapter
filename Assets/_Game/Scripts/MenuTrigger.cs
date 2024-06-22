@@ -11,14 +11,20 @@ public class MenuTrigger : MonoBehaviour
 
     bool isShown = false;
 
+    PlayerInputActions playerInputActions;
+
     private void Awake()
     {
-        PlayerInputActions playerInputActions = new();
+        playerInputActions = new();
         playerInputActions.Player.Enable();
         playerInputActions.Player.MainMenu.performed += MainMenu;
 
     }
 
+    private void OnDestroy()
+    {
+        playerInputActions.Player.Disable();
+    }
 
     private void MainMenu(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {

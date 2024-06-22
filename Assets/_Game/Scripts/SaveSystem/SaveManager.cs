@@ -39,6 +39,8 @@ public class SaveManager : MonoBehaviour
 
     public static event Action OnStartingLoad;
 
+    PlayerInputActions inputActions;
+
     private void Awake()
     {
 
@@ -50,10 +52,15 @@ public class SaveManager : MonoBehaviour
 
         RefreshSavesInfo();
 
-        PlayerInputActions inputActions = new();
+        inputActions = new();
         inputActions.Player.Enable();
         inputActions.Player.QuickSave.performed += QuickSave;
         inputActions.Player.QuickLoad.performed += QuickLoad;
+    }
+
+    private void OnDestroy()
+    {
+        inputActions.Player.Disable();
     }
 
     private void QuickSave(UnityEngine.InputSystem.InputAction.CallbackContext obj)

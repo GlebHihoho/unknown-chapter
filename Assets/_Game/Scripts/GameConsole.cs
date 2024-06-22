@@ -34,6 +34,8 @@ public class GameConsole : MonoBehaviour
 
     StringBuilder sb = new StringBuilder();
 
+    PlayerInputActions inputActions;
+
     private void Awake()
     {
         if (instance == null)
@@ -43,9 +45,14 @@ public class GameConsole : MonoBehaviour
         }
         else Destroy(gameObject);
 
-        PlayerInputActions inputActions = new();
+        inputActions = new();
         inputActions.Player.Enable();
         inputActions.Player.GameConsole.performed += GameConsole_performed;
+    }
+
+    private void OnDestroy()
+    {
+        inputActions.Player.Disable();
     }
 
     private void GameConsole_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
