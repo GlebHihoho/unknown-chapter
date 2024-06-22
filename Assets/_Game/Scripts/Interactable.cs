@@ -19,13 +19,21 @@ public class Interactable : MonoBehaviour
     private CursorMode cursorMode = CursorMode.Auto;
     private Vector2 hotSpot = Vector2.zero;
 
+    PlayerInputActions inputActions;
+
 
 
     private void Awake()
     {
         outline = GetComponent<Outline>();
         outline.enabled = false;
+
+        inputActions = new(); 
+        inputActions.Player.Fire.performed += Interact;
+
     }
+
+    private void OnDestroy() => inputActions.Player.Disable();
 
     void Start() => player = GameObject.FindWithTag("Player").transform;
 
@@ -33,7 +41,7 @@ public class Interactable : MonoBehaviour
     private void OnEnable()
     {
         Pause.OnPause += SetPause;
-        HighlightInteractable.OnHighlightsEnabled += Highlight;
+        HighlightInteractable.OnHighlightsEnabled += Highlight;       
     }
 
     private void OnDisable()
@@ -43,10 +51,8 @@ public class Interactable : MonoBehaviour
     }
 
 
-    private void OnMouseDown() => Interact();
 
-
-    private void OnMouseOver()
+    private void OnMouseEnter()
     {
         if (status == Status.Paused) return;
 
@@ -67,11 +73,16 @@ public class Interactable : MonoBehaviour
 
         outline.enabled = true;
 
+        inputActions.Player.Enable();
+
     }
 
 
-    private void OnMouseExit() => ResetVisuals();
-
+    private void OnMouseExit()
+    {
+        ResetVisuals();
+        inputActions.Player.Disable();
+    }
 
     protected void ResetVisuals()
     {
@@ -80,7 +91,7 @@ public class Interactable : MonoBehaviour
     }
 
 
-    private void Interact()
+    private void Interact(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         if (status == Status.Paused) return;
 
