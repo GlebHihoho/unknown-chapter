@@ -16,11 +16,11 @@ public class SoundZoneBorder : MonoBehaviour
 
     private void Awake() => render = GetComponent<MeshRenderer>();
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-            render.enabled = !render.enabled;
-    }
+
+    private void Start() => GameConsole.instance.OnToggleTriggersView += ToggleTriggerVisibility;
+    private void OnDestroy() => GameConsole.instance.OnToggleTriggersView -= ToggleTriggerVisibility;
+    private void ToggleTriggerVisibility() => render.enabled = !render.enabled;
+
 
     private void OnTriggerEnter(Collider other) => enterDot = DirectionDot(other);
 

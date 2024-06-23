@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -34,6 +35,8 @@ public class GameConsole : MonoBehaviour
 
     StringBuilder sb = new StringBuilder();
 
+    public event Action OnToggleTriggersView;
+
 
     private void Awake()
     {
@@ -50,6 +53,7 @@ public class GameConsole : MonoBehaviour
     private void GameConsole_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         console.SetActive(!console.activeSelf);
+        Pause.instance.SetPause(console.activeSelf);
     }
 
 
@@ -118,8 +122,27 @@ public class GameConsole : MonoBehaviour
     }
 
 
-    public void AddCommand(string command) // Placeholder for testing input field and for the future use.
+    public void AddCommand(string command)
     {
-        AddMessage(command);
+
+        string s = command.ToLower().Replace(" ", "").Trim();
+
+        if (s == "toggletriggersview")
+        {
+            sb.Clear();
+            sb.Append(" <color=#");
+            sb.Append(ColorUtility.ToHtmlStringRGB(other));
+            sb.Append(">");
+
+            sb.Append("Toggling triggers view.");
+
+            sb.Append("</color> ");         
+
+            OnToggleTriggersView?.Invoke();
+
+            AddMessage(sb.ToString());
+        }
+
+        else AddMessage(command);
     }
 }
