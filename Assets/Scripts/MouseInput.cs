@@ -22,21 +22,6 @@ public class MouseInput : MonoBehaviour
 
     public LayerMask WhatCanBeClickedOn;
 
-    PlayerInputActions inputActions;
-
-
-    private void Awake()
-    {
-        inputActions = new();
-        inputActions.Player.Enable();
-        inputActions.Player.AltFire.performed += SetDestination;
-    }
-
-    private void OnDestroy()
-    {
-        inputActions.Player.Disable();
-    }
-
 
     bool isPaused = false;
     bool agentEnabled = true;
@@ -52,7 +37,11 @@ public class MouseInput : MonoBehaviour
 
         _m_trajectoryGenerator = GetComponentInChildren<MxMTrajectoryGenerator>();
         _m_trajectoryGenerator.InputProfile = _m_generalLocomotion;
+
+        GameControls.instance.OnAltFire += SetDestination;
     }
+
+    private void OnDestroy() => GameControls.instance.OnAltFire -= SetDestination;
 
 
     private void OnEnable()
@@ -84,7 +73,6 @@ public class MouseInput : MonoBehaviour
 
         if (isPaused) 
         {
-            inputActions.Player.Disable();
             _m_mxmAnimator.Pause();
 
             agentEnabled = _myAgent.enabled;
@@ -96,7 +84,6 @@ public class MouseInput : MonoBehaviour
 
             if (_isParticleMovePoint && _myAgent.enabled) _myAgent.SetDestination(destination);
 
-            inputActions.Player.Enable();
             _m_mxmAnimator.UnPause();
         }     
     }

@@ -39,7 +39,6 @@ public class SaveManager : MonoBehaviour
 
     public static event Action OnStartingLoad;
 
-    PlayerInputActions inputActions;
 
     private void Awake()
     {
@@ -51,17 +50,21 @@ public class SaveManager : MonoBehaviour
         path = Application.persistentDataPath + Path.DirectorySeparatorChar + savesFolder;
 
         RefreshSavesInfo();
+    }
 
-        inputActions = new();
-        inputActions.Player.Enable();
-        inputActions.Player.QuickSave.performed += QuickSave;
-        inputActions.Player.QuickLoad.performed += QuickLoad;
+
+    private void Start()
+    {
+        GameControls.instance.OnQuicksave += QuickSave;
+        GameControls.instance.OnQuickload += QuickLoad;
     }
 
     private void OnDestroy()
     {
-        inputActions.Player.Disable();
+        GameControls.instance.OnQuicksave -= QuickSave;
+        GameControls.instance.OnQuickload -= QuickLoad;
     }
+
 
     private void QuickSave(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {

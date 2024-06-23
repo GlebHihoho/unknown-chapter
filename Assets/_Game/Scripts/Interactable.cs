@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 [RequireComponent(typeof(Outline))]
@@ -19,8 +20,6 @@ public class Interactable : MonoBehaviour
     private CursorMode cursorMode = CursorMode.Auto;
     private Vector2 hotSpot = Vector2.zero;
 
-    PlayerInputActions inputActions;
-
 
 
     private void Awake()
@@ -28,12 +27,8 @@ public class Interactable : MonoBehaviour
         outline = GetComponent<Outline>();
         outline.enabled = false;
 
-        inputActions = new(); 
-        inputActions.Player.Fire.performed += Interact;
-
     }
 
-    private void OnDestroy() => inputActions.Player.Disable();
 
     void Start() => player = GameObject.FindWithTag("Player").transform;
 
@@ -73,7 +68,7 @@ public class Interactable : MonoBehaviour
 
         outline.enabled = true;
 
-        inputActions.Player.Enable();
+        GameControls.instance.OnFire += Interact;
 
     }
 
@@ -81,7 +76,7 @@ public class Interactable : MonoBehaviour
     private void OnMouseExit()
     {
         ResetVisuals();
-        inputActions.Player.Disable();
+        GameControls.instance.OnFire -= Interact;
     }
 
     protected void ResetVisuals()

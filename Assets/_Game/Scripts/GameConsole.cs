@@ -34,7 +34,6 @@ public class GameConsole : MonoBehaviour
 
     StringBuilder sb = new StringBuilder();
 
-    PlayerInputActions inputActions;
 
     private void Awake()
     {
@@ -45,15 +44,8 @@ public class GameConsole : MonoBehaviour
         }
         else Destroy(gameObject);
 
-        inputActions = new();
-        inputActions.Player.Enable();
-        inputActions.Player.GameConsole.performed += GameConsole_performed;
     }
 
-    private void OnDestroy()
-    {
-        inputActions.Player.Disable();
-    }
 
     private void GameConsole_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
@@ -64,10 +56,14 @@ public class GameConsole : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        GameControls.instance.OnGameConsole += GameConsole_performed;
+
         console.SetActive(false);
         text.text = "";
     }
 
+
+    private void OnDestroy() => GameControls.instance.OnGameConsole -= GameConsole_performed;
 
     private void OnEnable() => Application.logMessageReceived += LogRecieved;
     private void OnDisable() => Application.logMessageReceived -= LogRecieved;

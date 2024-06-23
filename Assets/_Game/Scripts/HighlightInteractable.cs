@@ -6,20 +6,19 @@ public class HighlightInteractable : MonoBehaviour
 
     public static event Action<bool> OnHighlightsEnabled;
 
-    PlayerInputActions inputActions;
 
-    private void Awake()
+    private void Start()
     {
-        inputActions = new();
-        inputActions.Player.Enable();
-        inputActions.Player.Highlight.started += EnableHighlights;
-        inputActions.Player.Highlight.canceled += DisableHighlights;
+        GameControls.instance.OnHighlightStarted += EnableHighlights;
+        GameControls.instance.OnHighlightEnded += DisableHighlights;
     }
 
     private void OnDestroy()
     {
-        inputActions.Player.Disable();
+        GameControls.instance.OnHighlightStarted -= EnableHighlights;
+        GameControls.instance.OnHighlightEnded -= DisableHighlights;
     }
+
 
     private void EnableHighlights(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {

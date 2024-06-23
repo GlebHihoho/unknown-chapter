@@ -29,24 +29,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             ""id"": ""edce0809-cdb2-46ac-80c3-c07d2e93571c"",
             ""actions"": [
                 {
-                    ""name"": ""MainMenu"",
-                    ""type"": ""Button"",
-                    ""id"": ""424d0c12-8e83-413e-9697-30fa16aa8770"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""GameConsole"",
-                    ""type"": ""Button"",
-                    ""id"": ""af8d6d14-b254-4b9b-bf94-af75de81c0a1"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Inventory"",
                     ""type"": ""Button"",
                     ""id"": ""25c75b05-edc2-4b9c-94e9-81874a384985"",
@@ -92,15 +74,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Pause"",
-                    ""type"": ""Button"",
-                    ""id"": ""6f80ccba-f8de-4d36-a668-53c46757374a"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""QuickSave"",
                     ""type"": ""Button"",
                     ""id"": ""69a8f0c7-5a65-4e58-a520-e163759d4bf1"",
@@ -120,28 +93,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""5b2ba741-1d4a-44ec-9e97-5fcad7df1bea"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MainMenu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""48df4d31-8942-4c7a-b399-ca3a2079b8b0"",
-                    ""path"": ""<Keyboard>/backquote"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""GameConsole"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": """",
                     ""id"": ""211f83ce-0f7a-4509-bd7b-5199a4672c25"",
@@ -199,17 +150,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ec6f2e7c-e6c1-49ed-9481-d69236d8f8de"",
-                    ""path"": ""<Keyboard>/p"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Pause"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""2e9d0ad7-cbed-459f-9646-bec40c6dcb92"",
                     ""path"": ""<Keyboard>/f5"",
                     ""interactions"": """",
@@ -231,27 +171,98 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""System"",
+            ""id"": ""b7518480-ed2d-4333-a3fb-85899b8f4782"",
+            ""actions"": [
+                {
+                    ""name"": ""MainMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""48338b57-03e2-4cb5-a1e8-429f709f5bcd"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""3f79fd00-6392-4e2f-b60f-5ce317bf3710"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GameConsole"",
+                    ""type"": ""Button"",
+                    ""id"": ""ed07ad62-d25b-457f-8baa-6b14c07a0f2e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""55e2813a-9abd-4d19-b02d-862fcff01d2f"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MainMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fcb31a38-13c2-4f72-888c-112fde03ffcc"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""acef3e53-e286-4f81-9c44-0c00e3a69477"",
+                    ""path"": ""<Keyboard>/backquote"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GameConsole"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_MainMenu = m_Player.FindAction("MainMenu", throwIfNotFound: true);
-        m_Player_GameConsole = m_Player.FindAction("GameConsole", throwIfNotFound: true);
         m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
         m_Player_CharacterTab = m_Player.FindAction("CharacterTab", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_AltFire = m_Player.FindAction("AltFire", throwIfNotFound: true);
         m_Player_Highlight = m_Player.FindAction("Highlight", throwIfNotFound: true);
-        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_QuickSave = m_Player.FindAction("QuickSave", throwIfNotFound: true);
         m_Player_QuickLoad = m_Player.FindAction("QuickLoad", throwIfNotFound: true);
+        // System
+        m_System = asset.FindActionMap("System", throwIfNotFound: true);
+        m_System_MainMenu = m_System.FindAction("MainMenu", throwIfNotFound: true);
+        m_System_Pause = m_System.FindAction("Pause", throwIfNotFound: true);
+        m_System_GameConsole = m_System.FindAction("GameConsole", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
     {
         Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, PlayerInputActions.Player.Disable() has not been called.");
+        Debug.Assert(!m_System.enabled, "This will cause a leak and performance issues, PlayerInputActions.System.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -313,28 +324,22 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_MainMenu;
-    private readonly InputAction m_Player_GameConsole;
     private readonly InputAction m_Player_Inventory;
     private readonly InputAction m_Player_CharacterTab;
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_AltFire;
     private readonly InputAction m_Player_Highlight;
-    private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_QuickSave;
     private readonly InputAction m_Player_QuickLoad;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
         public PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @MainMenu => m_Wrapper.m_Player_MainMenu;
-        public InputAction @GameConsole => m_Wrapper.m_Player_GameConsole;
         public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
         public InputAction @CharacterTab => m_Wrapper.m_Player_CharacterTab;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @AltFire => m_Wrapper.m_Player_AltFire;
         public InputAction @Highlight => m_Wrapper.m_Player_Highlight;
-        public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @QuickSave => m_Wrapper.m_Player_QuickSave;
         public InputAction @QuickLoad => m_Wrapper.m_Player_QuickLoad;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -346,12 +351,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @MainMenu.started += instance.OnMainMenu;
-            @MainMenu.performed += instance.OnMainMenu;
-            @MainMenu.canceled += instance.OnMainMenu;
-            @GameConsole.started += instance.OnGameConsole;
-            @GameConsole.performed += instance.OnGameConsole;
-            @GameConsole.canceled += instance.OnGameConsole;
             @Inventory.started += instance.OnInventory;
             @Inventory.performed += instance.OnInventory;
             @Inventory.canceled += instance.OnInventory;
@@ -367,9 +366,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Highlight.started += instance.OnHighlight;
             @Highlight.performed += instance.OnHighlight;
             @Highlight.canceled += instance.OnHighlight;
-            @Pause.started += instance.OnPause;
-            @Pause.performed += instance.OnPause;
-            @Pause.canceled += instance.OnPause;
             @QuickSave.started += instance.OnQuickSave;
             @QuickSave.performed += instance.OnQuickSave;
             @QuickSave.canceled += instance.OnQuickSave;
@@ -380,12 +376,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
 
         private void UnregisterCallbacks(IPlayerActions instance)
         {
-            @MainMenu.started -= instance.OnMainMenu;
-            @MainMenu.performed -= instance.OnMainMenu;
-            @MainMenu.canceled -= instance.OnMainMenu;
-            @GameConsole.started -= instance.OnGameConsole;
-            @GameConsole.performed -= instance.OnGameConsole;
-            @GameConsole.canceled -= instance.OnGameConsole;
             @Inventory.started -= instance.OnInventory;
             @Inventory.performed -= instance.OnInventory;
             @Inventory.canceled -= instance.OnInventory;
@@ -401,9 +391,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Highlight.started -= instance.OnHighlight;
             @Highlight.performed -= instance.OnHighlight;
             @Highlight.canceled -= instance.OnHighlight;
-            @Pause.started -= instance.OnPause;
-            @Pause.performed -= instance.OnPause;
-            @Pause.canceled -= instance.OnPause;
             @QuickSave.started -= instance.OnQuickSave;
             @QuickSave.performed -= instance.OnQuickSave;
             @QuickSave.canceled -= instance.OnQuickSave;
@@ -427,17 +414,82 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // System
+    private readonly InputActionMap m_System;
+    private List<ISystemActions> m_SystemActionsCallbackInterfaces = new List<ISystemActions>();
+    private readonly InputAction m_System_MainMenu;
+    private readonly InputAction m_System_Pause;
+    private readonly InputAction m_System_GameConsole;
+    public struct SystemActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public SystemActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @MainMenu => m_Wrapper.m_System_MainMenu;
+        public InputAction @Pause => m_Wrapper.m_System_Pause;
+        public InputAction @GameConsole => m_Wrapper.m_System_GameConsole;
+        public InputActionMap Get() { return m_Wrapper.m_System; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SystemActions set) { return set.Get(); }
+        public void AddCallbacks(ISystemActions instance)
+        {
+            if (instance == null || m_Wrapper.m_SystemActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_SystemActionsCallbackInterfaces.Add(instance);
+            @MainMenu.started += instance.OnMainMenu;
+            @MainMenu.performed += instance.OnMainMenu;
+            @MainMenu.canceled += instance.OnMainMenu;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
+            @GameConsole.started += instance.OnGameConsole;
+            @GameConsole.performed += instance.OnGameConsole;
+            @GameConsole.canceled += instance.OnGameConsole;
+        }
+
+        private void UnregisterCallbacks(ISystemActions instance)
+        {
+            @MainMenu.started -= instance.OnMainMenu;
+            @MainMenu.performed -= instance.OnMainMenu;
+            @MainMenu.canceled -= instance.OnMainMenu;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
+            @GameConsole.started -= instance.OnGameConsole;
+            @GameConsole.performed -= instance.OnGameConsole;
+            @GameConsole.canceled -= instance.OnGameConsole;
+        }
+
+        public void RemoveCallbacks(ISystemActions instance)
+        {
+            if (m_Wrapper.m_SystemActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ISystemActions instance)
+        {
+            foreach (var item in m_Wrapper.m_SystemActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_SystemActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public SystemActions @System => new SystemActions(this);
     public interface IPlayerActions
     {
-        void OnMainMenu(InputAction.CallbackContext context);
-        void OnGameConsole(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
         void OnCharacterTab(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnAltFire(InputAction.CallbackContext context);
         void OnHighlight(InputAction.CallbackContext context);
-        void OnPause(InputAction.CallbackContext context);
         void OnQuickSave(InputAction.CallbackContext context);
         void OnQuickLoad(InputAction.CallbackContext context);
+    }
+    public interface ISystemActions
+    {
+        void OnMainMenu(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
+        void OnGameConsole(InputAction.CallbackContext context);
     }
 }
