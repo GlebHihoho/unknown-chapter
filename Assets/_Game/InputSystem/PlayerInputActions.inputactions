@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Fire",
+                    "name": "Action",
                     "type": "Button",
                     "id": "7ecfaf14-fa1c-426a-82aa-ee1bf2c4d020",
                     "expectedControlType": "",
@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "AltFire",
+                    "name": "Move",
                     "type": "Button",
                     "id": "4917f3b8-fb08-429b-a19c-91e8fa1e8931",
                     "expectedControlType": "",
@@ -99,7 +99,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Fire",
+                    "action": "Action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -110,7 +110,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "AltFire",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

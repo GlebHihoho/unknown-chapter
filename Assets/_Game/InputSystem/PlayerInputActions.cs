@@ -47,7 +47,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Fire"",
+                    ""name"": ""Action"",
                     ""type"": ""Button"",
                     ""id"": ""7ecfaf14-fa1c-426a-82aa-ee1bf2c4d020"",
                     ""expectedControlType"": """",
@@ -56,7 +56,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""AltFire"",
+                    ""name"": ""Move"",
                     ""type"": ""Button"",
                     ""id"": ""4917f3b8-fb08-429b-a19c-91e8fa1e8931"",
                     ""expectedControlType"": """",
@@ -122,7 +122,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Fire"",
+                    ""action"": ""Action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -133,7 +133,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""AltFire"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -247,8 +247,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
         m_Player_CharacterTab = m_Player.FindAction("CharacterTab", throwIfNotFound: true);
-        m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
-        m_Player_AltFire = m_Player.FindAction("AltFire", throwIfNotFound: true);
+        m_Player_Action = m_Player.FindAction("Action", throwIfNotFound: true);
+        m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Highlight = m_Player.FindAction("Highlight", throwIfNotFound: true);
         m_Player_QuickSave = m_Player.FindAction("QuickSave", throwIfNotFound: true);
         m_Player_QuickLoad = m_Player.FindAction("QuickLoad", throwIfNotFound: true);
@@ -326,8 +326,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Inventory;
     private readonly InputAction m_Player_CharacterTab;
-    private readonly InputAction m_Player_Fire;
-    private readonly InputAction m_Player_AltFire;
+    private readonly InputAction m_Player_Action;
+    private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Highlight;
     private readonly InputAction m_Player_QuickSave;
     private readonly InputAction m_Player_QuickLoad;
@@ -337,8 +337,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
         public InputAction @CharacterTab => m_Wrapper.m_Player_CharacterTab;
-        public InputAction @Fire => m_Wrapper.m_Player_Fire;
-        public InputAction @AltFire => m_Wrapper.m_Player_AltFire;
+        public InputAction @Action => m_Wrapper.m_Player_Action;
+        public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Highlight => m_Wrapper.m_Player_Highlight;
         public InputAction @QuickSave => m_Wrapper.m_Player_QuickSave;
         public InputAction @QuickLoad => m_Wrapper.m_Player_QuickLoad;
@@ -357,12 +357,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @CharacterTab.started += instance.OnCharacterTab;
             @CharacterTab.performed += instance.OnCharacterTab;
             @CharacterTab.canceled += instance.OnCharacterTab;
-            @Fire.started += instance.OnFire;
-            @Fire.performed += instance.OnFire;
-            @Fire.canceled += instance.OnFire;
-            @AltFire.started += instance.OnAltFire;
-            @AltFire.performed += instance.OnAltFire;
-            @AltFire.canceled += instance.OnAltFire;
+            @Action.started += instance.OnAction;
+            @Action.performed += instance.OnAction;
+            @Action.canceled += instance.OnAction;
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
             @Highlight.started += instance.OnHighlight;
             @Highlight.performed += instance.OnHighlight;
             @Highlight.canceled += instance.OnHighlight;
@@ -382,12 +382,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @CharacterTab.started -= instance.OnCharacterTab;
             @CharacterTab.performed -= instance.OnCharacterTab;
             @CharacterTab.canceled -= instance.OnCharacterTab;
-            @Fire.started -= instance.OnFire;
-            @Fire.performed -= instance.OnFire;
-            @Fire.canceled -= instance.OnFire;
-            @AltFire.started -= instance.OnAltFire;
-            @AltFire.performed -= instance.OnAltFire;
-            @AltFire.canceled -= instance.OnAltFire;
+            @Action.started -= instance.OnAction;
+            @Action.performed -= instance.OnAction;
+            @Action.canceled -= instance.OnAction;
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
             @Highlight.started -= instance.OnHighlight;
             @Highlight.performed -= instance.OnHighlight;
             @Highlight.canceled -= instance.OnHighlight;
@@ -480,8 +480,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     {
         void OnInventory(InputAction.CallbackContext context);
         void OnCharacterTab(InputAction.CallbackContext context);
-        void OnFire(InputAction.CallbackContext context);
-        void OnAltFire(InputAction.CallbackContext context);
+        void OnAction(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
         void OnHighlight(InputAction.CallbackContext context);
         void OnQuickSave(InputAction.CallbackContext context);
         void OnQuickLoad(InputAction.CallbackContext context);

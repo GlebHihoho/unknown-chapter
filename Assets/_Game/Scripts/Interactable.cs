@@ -68,7 +68,7 @@ public class Interactable : MonoBehaviour
 
         outline.enabled = true;
 
-        GameControls.instance.OnFire += Interact;
+        GameControls.instance.OnAction += Interact;
 
     }
 
@@ -76,7 +76,7 @@ public class Interactable : MonoBehaviour
     private void OnMouseExit()
     {
         ResetVisuals();
-        GameControls.instance.OnFire -= Interact;
+        GameControls.instance.OnAction -= Interact;
     }
 
     protected void ResetVisuals()

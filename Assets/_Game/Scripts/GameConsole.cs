@@ -35,7 +35,9 @@ public class GameConsole : MonoBehaviour
 
     StringBuilder sb = new StringBuilder();
 
+
     public event Action OnToggleTriggersView;
+    public event Action OnRestoreDefaultControls;
 
 
     private void Awake()
@@ -125,22 +127,31 @@ public class GameConsole : MonoBehaviour
     public void AddCommand(string command)
     {
 
-        string s = command.ToLower().Replace(" ", "").Trim();
-
-        if (s == "toggletriggersview")
+        void AddCommand(string s)
         {
             sb.Clear();
             sb.Append(" <color=#");
             sb.Append(ColorUtility.ToHtmlStringRGB(other));
             sb.Append(">");
 
-            sb.Append("Toggling triggers view.");
+            sb.Append(s);
 
-            sb.Append("</color> ");         
-
-            OnToggleTriggersView?.Invoke();
+            sb.Append("</color> ");
 
             AddMessage(sb.ToString());
+        }
+
+        string s = command.ToLower().Replace(" ", "").Trim();
+
+        if (s == "toggletriggersview")
+        {
+            AddCommand("Toggling triggers view.");     
+            OnToggleTriggersView?.Invoke();
+        }
+        else if (s == "resetcontrols")
+        {
+            AddCommand("Resetting controls to default.");
+            OnRestoreDefaultControls?.Invoke();
         }
 
         else AddMessage(command);

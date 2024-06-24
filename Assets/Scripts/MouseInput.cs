@@ -38,10 +38,10 @@ public class MouseInput : MonoBehaviour
         _m_trajectoryGenerator = GetComponentInChildren<MxMTrajectoryGenerator>();
         _m_trajectoryGenerator.InputProfile = _m_generalLocomotion;
 
-        GameControls.instance.OnAltFire += SetDestination;
+        GameControls.instance.OnMove += SetDestination;
     }
 
-    private void OnDestroy() => GameControls.instance.OnAltFire -= SetDestination;
+    private void OnDestroy() => GameControls.instance.OnMove -= SetDestination;
 
 
     private void OnEnable()
