@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using TMPro;
@@ -40,6 +39,9 @@ public class GameConsole : MonoBehaviour
     public event Action OnRestoreDefaultControls;
 
 
+    PlayerInputActions inputActions;
+
+
     private void Awake()
     {
         if (instance == null)
@@ -48,6 +50,11 @@ public class GameConsole : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);
+
+        inputActions = new();
+        inputActions.System.Enable();
+
+        inputActions.System.GameConsole.performed += GameConsole_performed;
 
     }
 
@@ -62,14 +69,15 @@ public class GameConsole : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameControls.instance.OnGameConsole += GameConsole_performed;
-
         console.SetActive(false);
         text.text = "";
     }
 
 
-    private void OnDestroy() => GameControls.instance.OnGameConsole -= GameConsole_performed;
+    private void OnDestroy()
+    {
+        if (inputActions != null) inputActions.System.Disable();
+    }
 
     private void OnEnable() => Application.logMessageReceived += LogRecieved;
     private void OnDisable() => Application.logMessageReceived -= LogRecieved;

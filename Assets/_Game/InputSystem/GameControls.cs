@@ -13,7 +13,6 @@ public class GameControls : MonoBehaviour
     public static GameControls instance;
 
     public event Action<InputAction.CallbackContext> OnMainMenu;
-    public event Action<InputAction.CallbackContext> OnGameConsole;
 
     public event Action<InputAction.CallbackContext> OnInventory;
     public event Action<InputAction.CallbackContext> OnCharacterTab;
@@ -25,7 +24,7 @@ public class GameControls : MonoBehaviour
     public event Action<InputAction.CallbackContext> OnQuicksave;
     public event Action<InputAction.CallbackContext> OnQuickload;
 
-    public enum Bindings { MainMenu, GameConsole, Pause, Inventory, CharacterTab, Action, Move, Highlight, Quicksave, Quickload };
+    public enum Bindings { MainMenu, Pause, Inventory, CharacterTab, Action, Move, Highlight, Quicksave, Quickload };
 
 
 
@@ -43,7 +42,6 @@ public class GameControls : MonoBehaviour
         inputActions.Player.Enable();
 
         inputActions.System.MainMenu.performed += MainMenu;
-        inputActions.System.GameConsole.performed += GameConsole;
         inputActions.System.Pause.performed += PauseGame;
 
         inputActions.Player.Inventory.performed += Inventory;
@@ -72,7 +70,6 @@ public class GameControls : MonoBehaviour
 
 
     private void MainMenu(InputAction.CallbackContext obj) => OnMainMenu?.Invoke(obj);
-    private void GameConsole(InputAction.CallbackContext obj) => OnGameConsole?.Invoke(obj);
     private void PauseGame(InputAction.CallbackContext obj) => OnPause?.Invoke(obj);
 
     private void Inventory(InputAction.CallbackContext obj) => OnInventory?.Invoke(obj);
@@ -100,9 +97,6 @@ public class GameControls : MonoBehaviour
 
             case Bindings.MainMenu:
                 return inputActions.System.MainMenu.bindings[0].ToDisplayString();
-
-            case Bindings.GameConsole:
-                return inputActions.System.GameConsole.bindings[0].ToDisplayString();
 
             case Bindings.Pause:
                 return inputActions.System.Pause.bindings[0].ToDisplayString();
@@ -184,7 +178,7 @@ public class GameControls : MonoBehaviour
         if (isMapActive) inputAction.actionMap.Disable();
 
         inputAction.PerformInteractiveRebinding(0).
-            WithControlsExcluding("<keyboard>/backquote").
+            WithControlsExcluding("<keyboard>/backquote"). // Reserved for the game console
             WithControlsExcluding("<keyboard>/anykey").
             OnComplete(callback =>
         {
