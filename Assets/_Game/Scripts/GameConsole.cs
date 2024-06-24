@@ -62,7 +62,7 @@ public class GameConsole : MonoBehaviour
     private void GameConsole_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         console.SetActive(!console.activeSelf);
-        Pause.instance.SetPause(console.activeSelf);
+        if (Pause.instance != null) Pause.instance.SetPause(console.activeSelf);
     }
 
 
