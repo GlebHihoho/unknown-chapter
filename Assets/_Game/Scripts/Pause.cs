@@ -14,6 +14,8 @@ public class Pause : MonoBehaviour
 
     public static Pause instance;
 
+    bool consoleActive = false;
+
 
     private void Awake()
     {
@@ -38,6 +40,8 @@ public class Pause : MonoBehaviour
         DialogueManager.instance.conversationEnded += ConversationEnded;
 
         SaveManager.OnLoadCompleted += ResetPause;
+
+        GameConsole.OnConsoleActivated += ConsoleActivated;
     }
 
 
@@ -49,6 +53,8 @@ public class Pause : MonoBehaviour
             DialogueManager.instance.conversationEnded -= ConversationEnded;
 
             SaveManager.OnLoadCompleted -= ResetPause;
+
+            GameConsole.OnConsoleActivated -= ConsoleActivated;
         }
     }
 
@@ -67,7 +73,7 @@ public class Pause : MonoBehaviour
 
     public void SetPause(bool isPaused)
     {
-        if (conversationinProgress) return;
+        if (conversationinProgress || consoleActive) return;
 
         this.isPaused = isPaused;
         OnPause?.Invoke(isPaused);
@@ -78,5 +84,20 @@ public class Pause : MonoBehaviour
     {
         conversationinProgress = false;
         SetPause(false);
+    }
+
+
+    private void ConsoleActivated(bool isActive)
+    {
+        if (isActive)
+        {
+            SetPause(true);
+            consoleActive = true;
+        }
+        else
+        {
+            consoleActive = false;
+            SetPause(false);
+        }
     }
 }

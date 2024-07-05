@@ -39,6 +39,9 @@ public class GameConsole : MonoBehaviour
     public event Action OnRestoreDefaultControls;
 
 
+    public static event Action<bool> OnConsoleActivated;
+
+
     PlayerInputActions inputActions;
 
 
@@ -62,7 +65,9 @@ public class GameConsole : MonoBehaviour
     private void GameConsole_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         console.SetActive(!console.activeSelf);
-        if (Pause.instance != null) Pause.instance.SetPause(console.activeSelf);
+        //if (Pause.instance != null) Pause.instance.SetPause(console.activeSelf);
+
+        OnConsoleActivated?.Invoke(console.activeSelf);
     }
 
 
@@ -86,6 +91,7 @@ public class GameConsole : MonoBehaviour
     private void LogRecieved(string condition, string stackTrace, LogType type)
     {
         sb.Clear();
+
         sb.Append("<color=#");
 
         if (type == LogType.Error || type == LogType.Exception) sb.Append(ColorUtility.ToHtmlStringRGB(error));
@@ -138,16 +144,22 @@ public class GameConsole : MonoBehaviour
         void AddCommand(string s)
         {
             sb.Clear();
-            sb.Append(" <color=#");
-            sb.Append(ColorUtility.ToHtmlStringRGB(other));
-            sb.Append(">");
 
-            sb.Append(s);
-
-            sb.Append("</color> ");
+            ColorText(s, other);
 
             AddMessage(sb.ToString());
         }
+
+        void AddHint(string command, string hint)
+        {
+            sb.Clear();
+            ColorText(command, other);
+            sb.Append(": ");
+            sb.Append(hint);
+
+            AddMessage(sb.ToString());
+        }
+
 
         string s = command.ToLower().Replace(" ", "").Trim();
 
@@ -162,6 +174,57 @@ public class GameConsole : MonoBehaviour
             OnRestoreDefaultControls?.Invoke();
         }
 
+        else if (s == "resetheight")
+        {
+            sb.Clear();
+            sb.Append("Resetting player's height. ");
+
+            GameObject player = GameObject.FindWithTag("Player");
+
+            if (player != null)
+            {
+                sb.Append("Old position: ");
+                sb.Append(player.transform.position.ToString());
+
+                Vector3 newPos = new Vector3(player.transform.position.x, 100, player.transform.position.z);
+                player.transform.position = newPos;
+
+                sb.Append(" New position: ");
+                sb.Append(player.transform.position.ToString());
+            }
+            else
+            {
+                sb.Append("Error: object with tag \"Player\" not found!");
+            }
+
+
+            AddCommand(sb.ToString());
+        }
+
+        else if (s == "help")
+        {
+
+            AddHint("Toggle triggers view", "toggling visibility of triggers.");
+            AddHint("Reset controls", "reset controls to default.");
+            AddHint("Reset height", "reset player's vertical position.");
+
+            sb.Clear();
+            ColorText("All commands case and space insensitive.", log);
+            AddMessage(sb.ToString());
+        }
+
         else AddMessage(command);
+    }
+
+
+    private void ColorText(string s, Color color)
+    {
+        sb.Append(" <color=#");
+        sb.Append(ColorUtility.ToHtmlStringRGB(color));
+        sb.Append(">");
+
+        sb.Append(s);
+
+        sb.Append("</color> ");
     }
 }
