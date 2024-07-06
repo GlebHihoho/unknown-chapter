@@ -186,8 +186,16 @@ public class GameConsole : MonoBehaviour
                 sb.Append("Old position: ");
                 sb.Append(player.transform.position.ToString());
 
-                Vector3 newPos = new Vector3(player.transform.position.x, 100, player.transform.position.z);
+                Physics.Raycast(new Vector3(player.transform.position.x, 1000, player.transform.position.z), Vector3.down, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("Ground"));
+
+                Vector3 newPos = new Vector3(hit.point.x, hit.point.y + 0.5f, hit.point.z);
                 player.transform.position = newPos;
+
+                if (player.TryGetComponent<Rigidbody>(out Rigidbody body))
+                {
+                    body.linearVelocity = Vector3.zero;
+                    body.angularVelocity = Vector3.zero;
+                }
 
                 sb.Append(" New position: ");
                 sb.Append(player.transform.position.ToString());

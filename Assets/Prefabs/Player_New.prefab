@@ -1014,6 +1014,7 @@ GameObject:
   - component: {fileID: 235801983729894797}
   - component: {fileID: 235801983729894798}
   - component: {fileID: 235801983729894799}
+  - component: {fileID: 485040934056680913}
   m_Layer: 0
   m_Name: Player_New
   m_TagString: Player
@@ -1070,8 +1071,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439124870637331943}
   serializedVersion: 4
-  m_Mass: 0.00001
-  m_Drag: 0
+  m_Mass: 70
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -1088,7 +1089,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &439124870637331944
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1472,6 +1473,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _beachConversation_2: {fileID: 0}
+--- !u!114 &485040934056680913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439124870637331943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5cf3cfec38ae3c4c9f5465e4787200c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &439124870648225630
 GameObject:
   m_ObjectHideFlags: 0
