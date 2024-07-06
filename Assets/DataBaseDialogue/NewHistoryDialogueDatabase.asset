@@ -12905,7 +12905,7 @@ MonoBehaviour:
         destinationDialogueID: 4
         isConnector: 0
         priority: 2
-      conditionsString: Variable["4_lag"] >= 1
+      conditionsString: Dialog[thisID].SimStatus == "Untouched"
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -12952,7 +12952,7 @@ MonoBehaviour:
       isGroup: 0
       nodeColor: 
       delaySimStatus: 0
-      falseConditionAction: Block
+      falseConditionAction: Passthrough
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 4
@@ -12961,7 +12961,7 @@ MonoBehaviour:
         destinationDialogueID: 4
         isConnector: 0
         priority: 2
-      conditionsString: Variable["4_lag"] == 0 and (Dialog[thisID].SimStatus == "Untouched")
+      conditionsString: Dialog[thisID].SimStatus == "Untouched"
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -21338,8 +21338,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 5276.5903, y: 1784.3143}
-    canvasZoom: 0.37000015
+    canvasScrollPosition: {x: 6589.938, y: 1329.1522}
+    canvasZoom: 1.0599997
   - id: 5
     fields:
     - title: Title
@@ -24774,7 +24774,7 @@ MonoBehaviour:
       isGroup: 0
       nodeColor: 
       delaySimStatus: 0
-      falseConditionAction: Block
+      falseConditionAction: Passthrough
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 6
@@ -24783,7 +24783,7 @@ MonoBehaviour:
         destinationDialogueID: 5
         isConnector: 0
         priority: 2
-      conditionsString: Dialog[7].SimStatus ~= "Untouched"
+      conditionsString: Dialog[thisID].SimStatus == "Untouched"
       userScript: 
       onExecute:
         m_PersistentCalls:
