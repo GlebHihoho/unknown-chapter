@@ -17,12 +17,6 @@ public class ConversationPartner : Interactable
         DialogueManager.StartConversation(data.Conversation);
     }
 
-    protected override void PerfomInspection()
-    {
-        base.PerfomInspection();
-
-        DialogueManager.BarkString(data.ExamineBark, transform);
-    }
 
 
 }

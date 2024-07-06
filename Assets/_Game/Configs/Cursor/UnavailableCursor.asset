@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d43e71ae285f8b34697dda120acd0f61, type: 3}
-  m_Name: NPCData
+  m_Script: {fileID: 11500000, guid: 8db25dec0f1ed944cb1a167b177a73f4, type: 3}
+  m_Name: UnavailableCursor
   m_EditorClassIdentifier: 
-  examineBark: 
-  interactDistace: 2
-  icon: {fileID: 0}
-  image: {fileID: 0}
-  description: 
-  inventoryMax: 100
+  sprite: {fileID: 2800000, guid: b4fbcbe0cd94d5943a067e0832b0ebc2, type: 3}
+  color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}

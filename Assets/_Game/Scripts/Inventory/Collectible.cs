@@ -29,13 +29,5 @@ public class Collectible : Interactable
         gameObject.SetActive(false);
     }
 
-    protected override void PerfomInspection()
-    {
-        base.PerfomInspection();
-
-        DialogueManager.BarkString(itemData.ExamineBark, transform);
-    }
-
-
 
 }

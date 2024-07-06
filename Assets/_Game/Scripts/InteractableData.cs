@@ -7,8 +7,8 @@ public class InteractableData : ScriptableObject
     public float InteractDistance => interactDistace;
 
 
-    [SerializeField] CursorData inspectCursor;
-    public CursorData InspectCursor => inspectCursor;
+    [SerializeField] CursorData unavailableCursor;
+    public CursorData UnavailableCursor => unavailableCursor;
 
     [SerializeField] CursorData interactCursor;
     public CursorData InteractCursor => interactCursor;

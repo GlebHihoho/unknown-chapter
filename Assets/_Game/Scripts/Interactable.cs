@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Outline))]
 public class Interactable : MonoBehaviour
 {
-    enum Status { CanInteract, CanInspect, Paused }
+    enum Status { CanInteract, Unavailable, Paused }
 
     Status status = Status.CanInteract;
     Status prevStatus = Status.CanInteract;
@@ -54,18 +54,18 @@ public class Interactable : MonoBehaviour
         if (status == Status.Paused) return;
 
         if (Vector3.Magnitude(transform.position - player.position) <= interactData.InteractDistance) status = Status.CanInteract;
-        else status = Status.CanInspect;
+        else status = Status.Unavailable;
 
 
         if (status == Status.CanInteract)
         {
             Cursor.SetCursor(interactData.InteractCursor.Sprite, hotSpot, cursorMode);
-            outline.OutlineColor = interactData.InspectCursor.Color;
+            outline.OutlineColor = interactData.InteractCursor.Color;
         }
         else
         {
-            Cursor.SetCursor(interactData.InspectCursor.Sprite, hotSpot, cursorMode);
-            outline.OutlineColor = interactData.InspectCursor.Color;
+            Cursor.SetCursor(interactData.UnavailableCursor.Sprite, hotSpot, cursorMode);
+            outline.OutlineColor = interactData.UnavailableCursor.Color;
         }
 
         outline.enabled = true;
@@ -93,16 +93,10 @@ public class Interactable : MonoBehaviour
         if (status == Status.Paused) return;
 
         if (status == Status.CanInteract) PerfomInteraction();
-        else PerfomInspection();
     }
 
 
     protected virtual void PerfomInteraction()
-    {
-
-    }
-
-    protected virtual void PerfomInspection()
     {
 
     }
