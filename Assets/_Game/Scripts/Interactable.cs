@@ -43,6 +43,8 @@ public class Interactable : MonoBehaviour
     {
         Pause.OnPause -= SetPause;
         HighlightInteractable.OnHighlightsEnabled -= Highlight;
+
+        GameControls.instance.OnAction -= Interact;
     }
 
 
