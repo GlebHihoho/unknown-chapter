@@ -129,7 +129,7 @@ public class GameControls : MonoBehaviour
     }
 
 
-    public void RebindBinding(Bindings binding, Action onActionRebound)
+    public void RebindBinding(Bindings binding, Action onActionRebound, Action onReboundCanceled)
     {
 
         InputAction inputAction;
@@ -174,20 +174,32 @@ public class GameControls : MonoBehaviour
                 break;
         }
 
+
+        inputActions.System.Disable(); // Always disabled for use Esc for cancel
+
         bool isMapActive = inputAction.actionMap.enabled;
         if (isMapActive) inputAction.actionMap.Disable();
 
         inputAction.PerformInteractiveRebinding(0).
             WithControlsExcluding("<keyboard>/backquote"). // Reserved for the game console
             WithControlsExcluding("<keyboard>/anykey").
+            WithCancelingThrough("<keyboard>/escape").
             OnComplete(callback =>
         {
             if (isMapActive) inputAction.actionMap.Enable();
+
+            inputActions.System.Enable();
+
             callback.Dispose();
             onActionRebound();
 
             PlayerPrefs.SetString(playerBindings, inputActions.SaveBindingOverridesAsJson());
             PlayerPrefs.Save();
+
+        }).OnCancel(callback =>
+        {
+            callback.Dispose();
+            onReboundCanceled();
 
         }).Start();
     }
