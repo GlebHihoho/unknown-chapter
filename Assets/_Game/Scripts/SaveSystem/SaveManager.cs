@@ -17,6 +17,9 @@ public class SaveManager : MonoBehaviour
 
     const string quickSave = "QuickSave";
 
+    public const string quickSaveLabel = "Áûסענ.";
+    public const string autoSaveLabel = "Àגעמ";
+
     string path;
 
     SaveData.Save save = new SaveData.Save();
@@ -29,6 +32,7 @@ public class SaveManager : MonoBehaviour
     {
         public string location;
         public DateTime timeStamp;
+        public SaveData.Type type;
     }
 
     public Dictionary<string, Summary> SavesInfo { get; private set; } = new Dictionary<string, Summary>();
@@ -68,7 +72,7 @@ public class SaveManager : MonoBehaviour
 
     private void QuickSave(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        Save(quickSave);
+        Save(SaveData.Type.Quick);
     }
 
     private void QuickLoad(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -93,20 +97,27 @@ public class SaveManager : MonoBehaviour
     }
 
 
+    private void Save() => Save(SaveData.Type.Normal);
 
-    private void Save(string saveName)
+    private void Save(SaveData.Type type = SaveData.Type.Normal)
     {
+        DateTime timestamp = DateTime.Now;
 
-        if (saveName == "") return;
+        string saveName;
+
+        if (type == SaveData.Type.Quick) saveName = quickSave;
+        else saveName = timestamp.ToString().Replace(":", "_").Replace(".","-");
+
 
         if (!Directory.Exists(path)) Directory.CreateDirectory(path);
 
         string fileName = path + Path.DirectorySeparatorChar + saveName + extension;
 
+        save.type = type;
 
         save.location = "Somewhere";
 
-        DateTime timestamp = DateTime.Now;
+        
 
         save.timeStamp = timestamp.ToString();
 
@@ -129,6 +140,7 @@ public class SaveManager : MonoBehaviour
         Summary info;
         info.location = save.location;
         info.timeStamp = timestamp;
+        info.type = save.type;
 
 
         if (SavesInfo.ContainsKey(saveName)) SavesInfo[saveName] = info;
@@ -190,23 +202,29 @@ public class SaveManager : MonoBehaviour
         if (Directory.Exists(path))
         {
 
-            string[] filenames = Directory.GetFiles(path);
 
-            foreach (string filename in filenames)
+            DirectoryInfo info = new DirectoryInfo(path);
+            FileInfo[] files = info.GetFiles().OrderBy(f => f.LastWriteTime).ToArray();
+
+
+            foreach (FileInfo file in files)
             {
+                string filename = file.FullName;
+
                 save = JsonUtility.FromJson<SaveData.Save>(File.ReadAllText(filename));
 
                 DateTime timestamp;
 
                 if (DateTime.TryParse(save.timeStamp, out timestamp))
                 {
-                    Summary info;
+                    Summary summary;
 
                     string name = Path.GetFileNameWithoutExtension(filename);
-                    info.location = save.location;
-                    info.timeStamp = timestamp;
+                    summary.location = save.location;
+                    summary.timeStamp = timestamp;
+                    summary.type = save.type;
 
-                    SavesInfo.Add(name, info);
+                    SavesInfo.Add(name, summary);
                 }
             }
         }

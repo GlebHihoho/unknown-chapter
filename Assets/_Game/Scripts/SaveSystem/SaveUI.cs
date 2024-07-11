@@ -36,7 +36,7 @@ public class SaveUI : MonoBehaviour
     }
 
 
-    private void SetName(string saveName)
+    private void SetName(string saveName, SaveData.Type type)
     {
         inputName.text = saveName;
     }

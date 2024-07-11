@@ -6,6 +6,8 @@ using UnityEngine;
 public class SaveData
 {
 
+    public enum Type { Normal, Quick, Auto}
+
     [Serializable]
     public struct InventoryItem
     {
@@ -16,6 +18,7 @@ public class SaveData
 
     public class Save
     {
+        public Type type;
 
         public string location;
 

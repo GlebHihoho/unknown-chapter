@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(ScrollRect))]
 public class SavesList : MonoBehaviour
 {
 
@@ -12,9 +13,14 @@ public class SavesList : MonoBehaviour
 
     List<SaveListEntry> saves = new List<SaveListEntry>();
 
+    ScrollRect scrollRect;
+
+    WaitForEndOfFrame waitFrame = new WaitForEndOfFrame();
+
 
     private void Awake()
     {
+        scrollRect = GetComponent<ScrollRect>();
 
         foreach (SaveListEntry item in content.GetComponentsInChildren<SaveListEntry>())
         {
@@ -58,13 +64,22 @@ public class SavesList : MonoBehaviour
         int i = 0;
         foreach (string key in SaveManager.instance.SavesInfo.Keys)
         {
-            saves[i].SetName(key);
+            saves[i].SetName(i + 1, key, SaveManager.instance.SavesInfo[key]);
             saves[i].SetActive(true);
             i++;
         }
 
-        if (saves.Count > 0) saves[0].Select();
+        StartCoroutine(SelectLast());
 
+    }
+
+    IEnumerator SelectLast()
+    {
+        yield return waitFrame;
+
+        if (saves.Count > 0) saves[saves.Count - 1].Select();
+
+        scrollRect.verticalNormalizedPosition = 0;
     }
 
 

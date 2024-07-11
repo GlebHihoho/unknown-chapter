@@ -11,81 +11,55 @@ public class SaveEntryUI : MonoBehaviour
     enum Mode { Save, Load}
     [SerializeField] Mode mode = Mode.Load;
 
-    [Header("Save details")]
-    [SerializeField] Image image;
-    [SerializeField] TextMeshProUGUI location;
-    [SerializeField] TextMeshProUGUI timeStamp;
-
-    [Header("Controls")]
     [SerializeField] Button actionButton;
     [SerializeField] Button deleteButton;
 
-    [SerializeField] GameObject confirmationPanel;
-    [SerializeField] Button yesButton;
+    [SerializeField] ModalWindow modalWindow;
 
 
     string saveName;
 
 
-    public static event Action<string> OnSave;
+    public static event Action OnSave;
     public static event Action<string> OnLoad;
 
     public static event Action<string> OnDelete;
 
+    private void Awake() => SaveListEntry.OnSaveSelected += SetEntry;
+    private void OnDestroy() => SaveListEntry.OnSaveSelected -= SetEntry;
+
 
     private void OnEnable()
-    {
-        SaveListEntry.OnSaveSelected += SetEntry;
-
-        SaveUI.OnNameUpdate += NewEntry;
+    {       
+        //SaveUI.OnNameUpdate += NewEntry;
 
         deleteButton.onClick.AddListener(ShowConfirmation);
         actionButton.onClick.AddListener(Action);
-
-        yesButton.onClick.AddListener(Delete);
-
-        NewEntry("");
     }
 
-    private void OnDisable()
-    {
-        SaveListEntry.OnSaveSelected -= SetEntry;
 
-        SaveUI.OnNameUpdate -= NewEntry;
+    private void OnDisable()
+    {       
+        //SaveUI.OnNameUpdate -= NewEntry;
 
         deleteButton.onClick.RemoveListener(ShowConfirmation);
 
-        yesButton.onClick.RemoveListener(Delete);
         actionButton.onClick.RemoveListener(Action);
     }
 
 
-    private void SetEntry(string saveName)
-    {
-
-        this.saveName = saveName;
-
-        SaveManager.Summary info = SaveManager.instance.SavesInfo[saveName];
-
-        location.text = info.location;
-
-        timeStamp.text = info.timeStamp.ToShortDateString() + " - " + info.timeStamp.ToShortTimeString();
-    }
-
-
-    private void NewEntry(string saveName)
+    private void SetEntry(string saveName, SaveData.Type type)
     {
         this.saveName = saveName;
 
-        location.text = "";
-        timeStamp.text = "";
+        deleteButton.interactable = type == SaveData.Type.Normal;
     }
-
 
     private void ShowConfirmation()
     {
-        confirmationPanel.SetActive(true);
+        modalWindow.ShowPromt("Удаление сохранения", "Вы уверены что хотите удалить сохранение?", Delete);
     }
+
 
 
     private void Action()
@@ -104,11 +78,14 @@ public class SaveEntryUI : MonoBehaviour
     }
 
 
-    private void Save() => OnSave?.Invoke(saveName);
+    private void Save() => OnSave?.Invoke();
 
     private void Load() => OnLoad?.Invoke(saveName);
 
-    private void Delete() => OnDelete?.Invoke(saveName);
+    private void Delete(bool isConfirmed)
+    {
+        if (isConfirmed) Debug.Log("Deleting |" + saveName + "|"); // OnDelete?.Invoke(saveName);
+    }
 
 
 }
