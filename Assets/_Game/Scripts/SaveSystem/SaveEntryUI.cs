@@ -84,7 +84,7 @@ public class SaveEntryUI : MonoBehaviour
 
     private void Delete(bool isConfirmed)
     {
-        if (isConfirmed) Debug.Log("Deleting |" + saveName + "|"); // OnDelete?.Invoke(saveName);
+        if (isConfirmed) OnDelete?.Invoke(saveName);
     }
 
 
