@@ -29,6 +29,8 @@ public class SaveData
 
         public string zoneID;
 
+        public float timeOfDay;
+
         public double physical;
         public double perception;
         public double intellect;

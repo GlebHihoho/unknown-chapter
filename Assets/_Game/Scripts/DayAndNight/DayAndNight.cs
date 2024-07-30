@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class DayAndNight : MonoBehaviour
+public class DayAndNight : MonoBehaviour, ISaveable
 {
 
     [SerializeField] DayAndNightSettings settings;
@@ -93,6 +93,13 @@ public class DayAndNight : MonoBehaviour
         manualMode = isToggled;
     }
 
+    public void Save(ref SaveData.Save save)
+    {
+        save.timeOfDay = currentTime;
+    }
 
-
+    public void Load(SaveData.Save save)
+    {
+        currentTime = Mathf.Clamp(save.timeOfDay, 0, 1);
+    }
 }
