@@ -115,7 +115,7 @@ public class SaveManager : MonoBehaviour
 
         save.type = type;
 
-        save.location = "Somewhere";
+
 
         
 
@@ -132,6 +132,8 @@ public class SaveManager : MonoBehaviour
         {
             item.Save(ref save);
         }
+
+        save.location = Environment.ZoneManager.instance.GetZoneLabel(save.zoneID);
 
 
         File.WriteAllText(fileName, JsonUtility.ToJson(save));

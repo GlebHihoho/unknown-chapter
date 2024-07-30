@@ -27,6 +27,8 @@ public class SaveData
         public Vector3 playerPosition;
         public Quaternion playerRotation;
 
+        public string zoneID;
+
         public double physical;
         public double perception;
         public double intellect;
