@@ -17,7 +17,11 @@ namespace Environment
         MeshRenderer render;
 
 
-        private void Awake() => render = GetComponent<MeshRenderer>();
+        private void Awake()
+        {
+            render = GetComponent<MeshRenderer>();
+            render.enabled = false;
+        }
 
 
         private void Start() => GameConsole.instance.OnToggleTriggersView += ToggleTriggerVisibility;
