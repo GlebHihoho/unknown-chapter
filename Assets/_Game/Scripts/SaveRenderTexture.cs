@@ -3,7 +3,10 @@ using UnityEditor;
 
 public class SaveRenderTexture
 {
+#if (UNITY_EDITOR)
+
     [MenuItem("Assets/Save RenderTexture to file")]
+
     public static void SaveRTToFile()
     {
         RenderTexture rt = Selection.activeObject as RenderTexture;
@@ -27,4 +30,6 @@ public class SaveRenderTexture
     {
         return Selection.activeObject is RenderTexture;
     }
+#endif
+
 }
