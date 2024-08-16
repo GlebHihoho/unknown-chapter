@@ -23,8 +23,9 @@ public class GameControls : MonoBehaviour
     public event Action<InputAction.CallbackContext> OnPause;
     public event Action<InputAction.CallbackContext> OnQuicksave;
     public event Action<InputAction.CallbackContext> OnQuickload;
+    public event Action<InputAction.CallbackContext> OnMap;
 
-    public enum Bindings { MainMenu, Pause, Inventory, CharacterTab, Action, Move, Highlight, Quicksave, Quickload };
+    public enum Bindings { MainMenu, Pause, Inventory, CharacterTab, Action, Move, Highlight, Quicksave, Quickload, Map };
 
 
 
@@ -52,6 +53,7 @@ public class GameControls : MonoBehaviour
         inputActions.Player.Highlight.canceled += HighlightEnded;
         inputActions.Player.QuickSave.performed += Quicksave;
         inputActions.Player.QuickLoad.performed += Quickload;
+        inputActions.Player.Map.performed += Map;
 
     }
 
@@ -80,6 +82,7 @@ public class GameControls : MonoBehaviour
     private void HighlightEnded(InputAction.CallbackContext obj) => OnHighlightEnded?.Invoke(obj);
     private void Quicksave(InputAction.CallbackContext obj) => OnQuicksave?.Invoke(obj);
     private void Quickload(InputAction.CallbackContext obj) => OnQuickload?.Invoke(obj);
+    private void Map(InputAction.CallbackContext obj) => OnMap?.Invoke(obj);
 
 
     private void SetPause(bool isPaused)
@@ -121,6 +124,9 @@ public class GameControls : MonoBehaviour
 
             case Bindings.Quickload:
                 return inputActions.Player.QuickLoad.bindings[0].ToDisplayString();
+
+            case Bindings.Map:
+                return inputActions.Player.Map.bindings[0].ToDisplayString();
 
         }
 
@@ -171,6 +177,10 @@ public class GameControls : MonoBehaviour
 
             case Bindings.Quickload:
                 inputAction = inputActions.Player.QuickLoad;
+                break;
+
+            case Bindings.Map:
+                inputAction = inputActions.Player.Map;
                 break;
         }
 

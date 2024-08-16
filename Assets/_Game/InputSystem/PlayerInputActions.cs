@@ -90,6 +90,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Map"",
+                    ""type"": ""Button"",
+                    ""id"": ""3e20cefa-fff0-4894-848a-a377abda3382"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -167,6 +176,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""QuickLoad"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c9c4f21a-1f44-4c85-a20a-67908635d04c"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Map"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -252,6 +272,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Highlight = m_Player.FindAction("Highlight", throwIfNotFound: true);
         m_Player_QuickSave = m_Player.FindAction("QuickSave", throwIfNotFound: true);
         m_Player_QuickLoad = m_Player.FindAction("QuickLoad", throwIfNotFound: true);
+        m_Player_Map = m_Player.FindAction("Map", throwIfNotFound: true);
         // System
         m_System = asset.FindActionMap("System", throwIfNotFound: true);
         m_System_MainMenu = m_System.FindAction("MainMenu", throwIfNotFound: true);
@@ -331,6 +352,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Highlight;
     private readonly InputAction m_Player_QuickSave;
     private readonly InputAction m_Player_QuickLoad;
+    private readonly InputAction m_Player_Map;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -342,6 +364,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Highlight => m_Wrapper.m_Player_Highlight;
         public InputAction @QuickSave => m_Wrapper.m_Player_QuickSave;
         public InputAction @QuickLoad => m_Wrapper.m_Player_QuickLoad;
+        public InputAction @Map => m_Wrapper.m_Player_Map;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -372,6 +395,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @QuickLoad.started += instance.OnQuickLoad;
             @QuickLoad.performed += instance.OnQuickLoad;
             @QuickLoad.canceled += instance.OnQuickLoad;
+            @Map.started += instance.OnMap;
+            @Map.performed += instance.OnMap;
+            @Map.canceled += instance.OnMap;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -397,6 +423,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @QuickLoad.started -= instance.OnQuickLoad;
             @QuickLoad.performed -= instance.OnQuickLoad;
             @QuickLoad.canceled -= instance.OnQuickLoad;
+            @Map.started -= instance.OnMap;
+            @Map.performed -= instance.OnMap;
+            @Map.canceled -= instance.OnMap;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -485,6 +514,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnHighlight(InputAction.CallbackContext context);
         void OnQuickSave(InputAction.CallbackContext context);
         void OnQuickLoad(InputAction.CallbackContext context);
+        void OnMap(InputAction.CallbackContext context);
     }
     public interface ISystemActions
     {
