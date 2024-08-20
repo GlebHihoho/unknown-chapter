@@ -9,12 +9,17 @@ public class ConversationPartner : Interactable
 
     [SerializeField] NPCData data;
 
+    [Space]
+    [SerializeField, Min(0)] int conversationIndex = 0;
+
+
 
     protected override void PerfomInteraction()
     {
         base.PerfomInteraction();
 
-        DialogueManager.StartConversation(data.Conversation);
+        if (conversationIndex >= 0 && conversationIndex < data.Conversations.Length)
+            DialogueManager.StartConversation(data.Conversations[conversationIndex]);
     }
 
 

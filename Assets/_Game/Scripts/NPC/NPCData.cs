@@ -3,9 +3,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NPCData", menuName = "Gameplay/Interactable/NPCData")]
 public class NPCData : ScriptableObject
 {
-    [SerializeField] string conversation;
-    public string Conversation => conversation;
+    [SerializeField] string dialogueActor;
+    public string DialogueActor => dialogueActor;
 
-    [SerializeField, TextArea(0, 3)] string examineBark;
-    public string ExamineBark => examineBark;
+    [SerializeField] string[] conversations;
+    public string[] Conversations => conversations;
+
 }
