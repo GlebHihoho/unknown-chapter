@@ -22,6 +22,12 @@ public class ConversationPartner : Interactable
             DialogueManager.StartConversation(data.Conversations[conversationIndex]);
     }
 
+    public void Talk(int conversationIndex = 0)
+    {
+        if (conversationIndex >= 0 && conversationIndex < data.Conversations.Length)
+            DialogueManager.StartConversation(data.Conversations[conversationIndex]);
+    }
+
 
 
 }

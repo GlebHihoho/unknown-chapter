@@ -40,6 +40,8 @@ public class SaveData
         public List<bool> collectibles = new List<bool>();
 
         public List<InventoryItem> inventory = new List<InventoryItem>();
+
+        public bool wallOfMistActive = true;
     }
 
 }
