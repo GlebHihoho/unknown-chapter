@@ -17,6 +17,7 @@ public class InventoryUI : MonoBehaviour
     ItemData activeItem;
 
     public static event Action<ItemData> OnSetActive;
+    public static event Action OnClear;
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +57,11 @@ public class InventoryUI : MonoBehaviour
         if (activeItem == item)
         {
             if (inventory.Count > 0) SetActiveItem(inventory.Keys.First());
-            else activeItem = null;
+            else 
+            { 
+                activeItem = null;
+                OnClear?.Invoke();
+            }
         }       
     }
 

@@ -35,9 +35,11 @@ public class ItemData : ScriptableObject
     [SerializeField, Min(1)] int inventoryMax = 100;
     public int InventoryMax => inventoryMax; 
 
-
     [SerializeField, Min(0)] float interactDistace = 2f;
     public float InteractDistance => interactDistace;
+
+    [SerializeField] bool canDelete = true;
+    public bool CanDelete => canDelete;
 
     [Header("Modifiers")]
 
@@ -50,8 +52,11 @@ public class ItemData : ScriptableObject
     [SerializeField, Range(-5, 5)] int intellectModifier = 0;
     public int IntellectModifier => intellectModifier;
 
-    [SerializeField] bool canDelete = true;
-    public bool CanDelete => canDelete;
+    [Header("Interactions")]
+    [SerializeField] string examine = string.Empty;
+    public string Examine => examine;
+
+
 
 
 

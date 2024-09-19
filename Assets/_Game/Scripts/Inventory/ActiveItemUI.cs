@@ -24,13 +24,21 @@ public class ActiveItemUI : MonoBehaviour
     public static event Action<ItemData> OnUseItem;
     public static event Action<ItemData> OnDeleteItem;
 
+    Sprite defaultImage;
+
 
     private void Awake()
     {
         useButton.onClick.AddListener(UseItem);
         deleteButton.onClick.AddListener(DeleteItem);
 
+        useButton.interactable = false;
+        deleteButton.interactable = false;
+
         InventoryUI.OnSetActive += SetItem;
+        InventoryUI.OnClear += ClearItem;
+
+        defaultImage = image.sprite;
     }
 
 
@@ -40,6 +48,7 @@ public class ActiveItemUI : MonoBehaviour
         deleteButton.onClick.RemoveListener(DeleteItem);
 
         InventoryUI.OnSetActive -= SetItem;
+        InventoryUI.OnClear -= ClearItem;
     }
 
 
@@ -52,7 +61,24 @@ public class ActiveItemUI : MonoBehaviour
         itemName.text = item.ItemName;
         description.text = item.Description;
 
+
+        useButton.interactable = item.Examine != String.Empty;
+
         deleteButton.interactable = item.CanDelete;
+    }
+
+
+    private void ClearItem()
+    {
+        item = null;
+
+        image.sprite = defaultImage;
+
+        itemName.text = String.Empty;
+        description.text= String.Empty;
+
+        useButton.interactable= false;
+        deleteButton.interactable = false;
     }
 
 

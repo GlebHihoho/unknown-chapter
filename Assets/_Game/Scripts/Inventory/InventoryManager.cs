@@ -105,7 +105,8 @@ public class InventoryManager : MonoBehaviour, ISaveable
 
     private void UseItem(ItemData item)
     {
-        Debug.Log("Using item: " + item.name + " \""+ item.ItemName+"\"");
+        if (item.Examine != string.Empty) DialogueManager.StartConversation(item.Examine);
+        else Debug.Log("Using item: " + item.name + " \""+ item.ItemName+"\"");
     }
 
     private void DeleteItem(ItemData item)
