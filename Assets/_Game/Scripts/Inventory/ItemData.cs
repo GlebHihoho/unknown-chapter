@@ -50,6 +50,9 @@ public class ItemData : ScriptableObject
     [SerializeField, Range(-5, 5)] int intellectModifier = 0;
     public int IntellectModifier => intellectModifier;
 
+    [SerializeField] bool canDelete = true;
+    public bool CanDelete => canDelete;
+
 
 
 

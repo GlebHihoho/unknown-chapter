@@ -1290,11 +1290,95 @@ MonoBehaviour:
   - id: 75
     fields:
     - title: Name
-      value: CaptainBody.New Variable 75
+      value: CaptainBody.Audacity
       type: 0
       typeString: CustomFieldType_Text
     - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
       value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 76
+    fields:
+    - title: Name
+      value: CaptainBody.Intellect
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 77
+    fields:
+    - title: Name
+      value: ThreeVictims.First
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 78
+    fields:
+    - title: Name
+      value: ThreeVictims.Second
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: Currently not used
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 79
+    fields:
+    - title: Name
+      value: ThreeVictims.Third
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 80
+    fields:
+    - title: Name
+      value: ThreeVictims.Ring
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 81
+    fields:
+    - title: Name
+      value: ThreeVictims.Neck
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
       type: 2
       typeString: CustomFieldType_Boolean
     - title: Description
@@ -11006,8 +11090,11 @@ MonoBehaviour:
         destinationDialogueID: 6
         isConnector: 0
         priority: 2
-      conditionsString: 
-      userScript: Variable["Stats.Empathy"] = Variable["Stats.Empathy"] - 1
+      conditionsString: Variable["CaptainBody.Empathy"] == false
+      userScript: 'Variable["Stats.Empathy"] = Variable["Stats.Empathy"] - 1;
+
+        Variable["CaptainBody.Empathy"]
+        = true'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11063,8 +11150,11 @@ MonoBehaviour:
         destinationDialogueID: 26
         isConnector: 0
         priority: 2
-      conditionsString: 
-      userScript: Variable["Stats.Audacity"] = Variable["Stats.Audacity"] - 1
+      conditionsString: Variable["CaptainBody.Audacity"] == false
+      userScript: 'Variable["Stats.Audacity"] = Variable["Stats.Audacity"] - 1;
+
+        Variable["CaptainBody.Audacity"]
+        = true'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11120,9 +11210,11 @@ MonoBehaviour:
         destinationDialogueID: 16
         isConnector: 0
         priority: 2
-      conditionsString: 
-      userScript: Variable["Stats.Intelligence"] = Variable["Stats.Intelligence"]
-        - 1
+      conditionsString: Variable["CaptainBody.Intellect"] == false
+      userScript: 'Variable["Stats.Intelligence"] = Variable["Stats.Intelligence"]
+        - 1;
+
+        Variable["CaptainBody.Intellect"] = true'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -12919,7 +13011,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1412.6261, y: 573.781}
+    canvasScrollPosition: {x: 1869.7688, y: 654.0009}
     canvasZoom: 0.9100001
   - id: 4
     fields:
@@ -34028,8 +34120,9 @@ MonoBehaviour:
         destinationDialogueID: 7
         isConnector: 0
         priority: 2
-      conditionsString: 
-      userScript: "Variable[\"\u0416\u0435\u0440\u0442\u0432\u0430\"] = 1"
+      conditionsString: Variable["ThreeVictims.First"] == false
+      userScript: "Variable[\"\u0416\u0435\u0440\u0442\u0432\u0430\"] = 1;\nVariable[\"ThreeVictims.First\"]
+        = true"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -34084,7 +34177,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: "Variable[\"\u0416\u0435\u0440\u0442\u0432\u0430\"] = 2"
+      userScript: "Variable[\"\u0416\u0435\u0440\u0442\u0432\u0430\"] = 2;"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -34144,8 +34237,9 @@ MonoBehaviour:
         destinationDialogueID: 5
         isConnector: 0
         priority: 2
-      conditionsString: 
-      userScript: "Variable[\"\u0416\u0435\u0440\u0442\u0432\u0430\"] = 3"
+      conditionsString: Variable["ThreeVictims.Third"] == false
+      userScript: "Variable[\"\u0416\u0435\u0440\u0442\u0432\u0430\"] = 3;\nVariable[\"ThreeVictims.Third\"]
+        = true"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -35098,7 +35192,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 770.82556
+        x: 768.4726
         y: 1267.0382
         width: 160
         height: 30
@@ -35787,16 +35881,18 @@ MonoBehaviour:
         destinationDialogueID: 35
         isConnector: 0
         priority: 2
-      conditionsString: 
-      userScript: Variable["Stats.Intelligence"] = Variable["Stats.Intelligence"]
-        - 1
+      conditionsString: Variable["ThreeVictims.Neck"] == false
+      userScript: 'Variable["Stats.Intelligence"] = Variable["Stats.Intelligence"]
+        - 1;
+
+        Variable["ThreeVictims.Neck"] = true'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2051.2542
-        y: 1114.7178
+        x: 2048.9014
+        y: 1117.0707
         width: 160
         height: 30
     - id: 34
@@ -36441,8 +36537,11 @@ MonoBehaviour:
         destinationDialogueID: 52
         isConnector: 0
         priority: 2
-      conditionsString: 
-      userScript: Variable["Stats.Empathy"] = Variable["Stats.Empathy"] - 1
+      conditionsString: Variable["ThreeVictims.Ring"] == false
+      userScript: 'Variable["Stats.Empathy"] = Variable["Stats.Empathy"] - 1;
+
+        Variable["ThreeVictims.Ring"]
+        = true'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -37212,8 +37311,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1329.2173, y: 13.186829}
-    canvasZoom: 0.9100003
+    canvasScrollPosition: {x: 1391.7643, y: 372.94098}
+    canvasZoom: 0.8500004
   - id: 10
     fields:
     - title: Title

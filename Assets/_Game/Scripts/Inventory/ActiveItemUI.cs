@@ -51,6 +51,8 @@ public class ActiveItemUI : MonoBehaviour
 
         itemName.text = item.ItemName;
         description.text = item.Description;
+
+        deleteButton.interactable = item.CanDelete;
     }
 
 

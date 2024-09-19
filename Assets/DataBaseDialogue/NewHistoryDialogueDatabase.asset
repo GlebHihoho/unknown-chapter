@@ -1385,6 +1385,20 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: CustomFieldType_Text
+  - id: 82
+    fields:
+    - title: Name
+      value: Items.Papers
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
   conversations:
   - id: 1
     fields:
@@ -11273,25 +11287,7 @@ MonoBehaviour:
       - originConversationID: 3
         originDialogueID: 6
         destinationConversationID: 3
-        destinationDialogueID: 7
-        isConnector: 0
-        priority: 2
-      - originConversationID: 3
-        originDialogueID: 6
-        destinationConversationID: 3
-        destinationDialogueID: 8
-        isConnector: 0
-        priority: 2
-      - originConversationID: 3
-        originDialogueID: 6
-        destinationConversationID: 3
-        destinationDialogueID: 9
-        isConnector: 0
-        priority: 2
-      - originConversationID: 3
-        originDialogueID: 6
-        destinationConversationID: 3
-        destinationDialogueID: 38
+        destinationDialogueID: 41
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -11301,8 +11297,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1939.659
-        y: 1086.7706
+        x: 1937.4614
+        y: 1097.7598
         width: 160
         height: 30
     - id: 7
@@ -11466,7 +11462,7 @@ MonoBehaviour:
         destinationDialogueID: 15
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Variable["Story.PapersFound"] == false
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -11806,25 +11802,7 @@ MonoBehaviour:
       - originConversationID: 3
         originDialogueID: 16
         destinationConversationID: 3
-        destinationDialogueID: 18
-        isConnector: 0
-        priority: 2
-      - originConversationID: 3
-        originDialogueID: 16
-        destinationConversationID: 3
-        destinationDialogueID: 19
-        isConnector: 0
-        priority: 2
-      - originConversationID: 3
-        originDialogueID: 16
-        destinationConversationID: 3
-        destinationDialogueID: 20
-        isConnector: 0
-        priority: 2
-      - originConversationID: 3
-        originDialogueID: 16
-        destinationConversationID: 3
-        destinationDialogueID: 38
+        destinationDialogueID: 43
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -11835,7 +11813,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 3404.1577
-        y: 1090.3705
+        y: 1113.4474
         width: 160
         height: 30
     - id: 18
@@ -11890,8 +11868,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 3179.834
-        y: 1210.6852
+        x: 3190.823
+        y: 1282.1136
         width: 160
         height: 30
     - id: 19
@@ -11946,8 +11924,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 3404.1577
-        y: 1207.9825
+        x: 3415.1467
+        y: 1279.411
         width: 160
         height: 30
     - id: 20
@@ -11996,15 +11974,15 @@ MonoBehaviour:
         destinationDialogueID: 23
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Variable["Story.PapersFound"] == false
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 3628.4814
-        y: 1207.9825
+        x: 3639.4705
+        y: 1279.411
         width: 160
         height: 30
     - id: 21
@@ -12076,8 +12054,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 3179.834
-        y: 1260.6852
+        x: 3190.823
+        y: 1332.1136
         width: 160
         height: 30
     - id: 22
@@ -12142,8 +12120,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 3404.1577
-        y: 1257.9825
+        x: 3415.1467
+        y: 1329.411
         width: 160
         height: 30
     - id: 23
@@ -12216,8 +12194,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 3628.4814
-        y: 1257.9825
+        x: 3639.4705
+        y: 1329.411
         width: 160
         height: 30
     - id: 24
@@ -12261,7 +12239,7 @@ MonoBehaviour:
       - originConversationID: 3
         originDialogueID: 24
         destinationConversationID: 3
-        destinationDialogueID: 16
+        destinationDialogueID: 43
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -12271,8 +12249,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 3298.9854
-        y: 1375.4567
+        x: 3309.9744
+        y: 1446.8851
         width: 160
         height: 30
     - id: 25
@@ -12316,7 +12294,7 @@ MonoBehaviour:
       - originConversationID: 3
         originDialogueID: 25
         destinationConversationID: 3
-        destinationDialogueID: 6
+        destinationDialogueID: 41
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -12326,8 +12304,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1867.2792
-        y: 1429.6033
+        x: 1863.9824
+        y: 1493.3395
         width: 160
         height: 30
     - id: 26
@@ -12379,25 +12357,7 @@ MonoBehaviour:
       - originConversationID: 3
         originDialogueID: 26
         destinationConversationID: 3
-        destinationDialogueID: 28
-        isConnector: 0
-        priority: 2
-      - originConversationID: 3
-        originDialogueID: 26
-        destinationConversationID: 3
-        destinationDialogueID: 29
-        isConnector: 0
-        priority: 2
-      - originConversationID: 3
-        originDialogueID: 26
-        destinationConversationID: 3
-        destinationDialogueID: 30
-        isConnector: 0
-        priority: 2
-      - originConversationID: 3
-        originDialogueID: 26
-        destinationConversationID: 3
-        destinationDialogueID: 38
+        destinationDialogueID: 42
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -12569,7 +12529,7 @@ MonoBehaviour:
         destinationDialogueID: 33
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Variable["Story.PapersFound"] == false
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -12894,7 +12854,11 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["Story.PapersFound"] == true
-      userScript: RemoveMist()
+      userScript: 'RemoveMist();
+
+        Variable["Items.Papers"] = 1;
+
+        UpdateItem("Items.Papers")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -12945,7 +12909,7 @@ MonoBehaviour:
       - originConversationID: 3
         originDialogueID: 39
         destinationConversationID: 3
-        destinationDialogueID: 26
+        destinationDialogueID: 42
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -13010,8 +12974,227 @@ MonoBehaviour:
         y: 867.5891
         width: 160
         height: 30
+    - id: 41
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 3
+      isRoot: 0
+      isGroup: 1
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 41
+        destinationConversationID: 3
+        destinationDialogueID: 7
+        isConnector: 0
+        priority: 2
+      - originConversationID: 3
+        originDialogueID: 41
+        destinationConversationID: 3
+        destinationDialogueID: 8
+        isConnector: 0
+        priority: 2
+      - originConversationID: 3
+        originDialogueID: 41
+        destinationConversationID: 3
+        destinationDialogueID: 9
+        isConnector: 0
+        priority: 2
+      - originConversationID: 3
+        originDialogueID: 41
+        destinationConversationID: 3
+        destinationDialogueID: 38
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1937.4615
+        y: 1177.43
+        width: 160
+        height: 30
+    - id: 42
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 3
+      isRoot: 0
+      isGroup: 1
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 42
+        destinationConversationID: 3
+        destinationDialogueID: 28
+        isConnector: 0
+        priority: 2
+      - originConversationID: 3
+        originDialogueID: 42
+        destinationConversationID: 3
+        destinationDialogueID: 29
+        isConnector: 0
+        priority: 2
+      - originConversationID: 3
+        originDialogueID: 42
+        destinationConversationID: 3
+        destinationDialogueID: 30
+        isConnector: 0
+        priority: 2
+      - originConversationID: 3
+        originDialogueID: 42
+        destinationConversationID: 3
+        destinationDialogueID: 38
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2714.0679
+        y: 1222.2861
+        width: 160
+        height: 30
+    - id: 43
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 3
+      isRoot: 0
+      isGroup: 1
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 43
+        destinationConversationID: 3
+        destinationDialogueID: 18
+        isConnector: 0
+        priority: 2
+      - originConversationID: 3
+        originDialogueID: 43
+        destinationConversationID: 3
+        destinationDialogueID: 19
+        isConnector: 0
+        priority: 2
+      - originConversationID: 3
+        originDialogueID: 43
+        destinationConversationID: 3
+        destinationDialogueID: 20
+        isConnector: 0
+        priority: 2
+      - originConversationID: 3
+        originDialogueID: 43
+        destinationConversationID: 3
+        destinationDialogueID: 38
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 3399.7625
+        y: 1176.6342
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1869.7688, y: 654.0009}
+    canvasScrollPosition: {x: 2010.428, y: 807.8476}
     canvasZoom: 0.9100001
   - id: 4
     fields:
