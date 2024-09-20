@@ -10,7 +10,7 @@ namespace UI
         [SerializeField] private GameObject _playerBackGround;
         [SerializeField] private GameObject _miniPlayerBackGround;
 
-        [SerializeField] private GameObject map;
+        [SerializeField] private Map map;
 
 
         private void Start()
@@ -44,7 +44,7 @@ namespace UI
 
         private void Map(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            map.SetActive(!map.activeSelf);
+            map.ToggleMap();
         }
 
 

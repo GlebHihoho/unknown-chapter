@@ -9175,7 +9175,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 3131.9849, y: 780.62805}
+    canvasScrollPosition: {x: 2033.1217, y: 564.7192}
     canvasZoom: 0.8800006
   - id: 2
     fields:
@@ -12856,7 +12856,10 @@ MonoBehaviour:
       conditionsString: Variable["Story.PapersFound"] == true
       userScript: 'RemoveMist();
 
-        Variable["Items.Papers"] = 1;
+        UnlockMap();
+
+        Variable["Items.Papers"]
+        = 1;
 
         UpdateItem("Items.Papers")'
       onExecute:

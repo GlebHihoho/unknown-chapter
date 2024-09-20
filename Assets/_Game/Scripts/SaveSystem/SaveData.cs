@@ -27,6 +27,8 @@ public class SaveData
         public Vector3 playerPosition;
         public Quaternion playerRotation;
 
+        public bool mapUnlocked = false;
+
         public string zoneID;
 
         public float timeOfDay;
