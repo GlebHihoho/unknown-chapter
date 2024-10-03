@@ -62,7 +62,7 @@ public class ActiveItemUI : MonoBehaviour
         description.text = item.Description;
 
 
-        useButton.interactable = item.Examine != String.Empty;
+        useButton.interactable = item.Usable;
 
         deleteButton.interactable = item.CanDelete;
     }

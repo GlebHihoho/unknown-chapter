@@ -12,6 +12,8 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] InventoryCell cellPrefab;
     [SerializeField] Transform itemsPanel;
 
+    [SerializeField] ButtonUpdated inventoryButton;
+
     Dictionary<ItemData, InventoryCell> inventory = new Dictionary<ItemData, InventoryCell>();
 
     ItemData activeItem;
@@ -46,6 +48,8 @@ public class InventoryUI : MonoBehaviour
         inventory.Add(item, cell);
 
         if (activeItem == null) SetActiveItem(item);
+
+        inventoryButton.ShowUpdate();
     }
 
     private void RemoveItem(ItemData item)
@@ -66,8 +70,11 @@ public class InventoryUI : MonoBehaviour
     }
 
 
-    private void UpdateItem(ItemData item, int quantity) => inventory[item].UpdateItem(quantity);
-
+    private void UpdateItem(ItemData item, int quantity)
+    {
+        inventory[item].UpdateItem(quantity);
+        inventoryButton.ShowUpdate();
+    }
 
     public void SetActiveItem(ItemData item)
     {

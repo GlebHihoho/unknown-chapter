@@ -13,12 +13,14 @@ public class InventoryCell : MonoBehaviour
     [SerializeField] Image icon;
     [SerializeField] TextMeshProUGUI numberLabel;
 
+    [SerializeField] Image usable;
+
 
     [Space]
     [SerializeField] Image background;
     
     [SerializeField] Color selectedColour = Color.blue;
-    [SerializeField] Color nonSelectedColour = Color.black;
+
 
     Button select;
 
@@ -39,11 +41,21 @@ public class InventoryCell : MonoBehaviour
         this.inventoryUI = inventoryUI;
 
         icon.sprite = item.Icon;
+
         numberLabel.text = "0";
+        numberLabel.enabled = false;
+
+        usable.enabled = item.Usable;
+
+        background.enabled = false;
     }
 
 
-    public void UpdateItem(int quantity) => numberLabel.text = quantity.ToString();
+    public void UpdateItem(int quantity)
+    {
+        numberLabel.enabled = quantity > 1;
+        numberLabel.text = quantity.ToString();
+    }
 
     public void DeleteItem() => Destroy(gameObject);
 
@@ -51,13 +63,15 @@ public class InventoryCell : MonoBehaviour
 
 
     public void SelectItem()
-    {      
+    {
+        background.enabled = true;
         background.color = selectedColour;
     }
 
 
     public void DeselectItem()
     {
-        background.color = nonSelectedColour;
+        background.enabled = false;
+       // background.color = nonSelectedColour;
     }
 }

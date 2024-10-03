@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 [CreateAssetMenu(fileName ="ItemConfig", menuName = "Gameplay/Interactable/ItemData")]
 public class ItemData : ScriptableObject
@@ -55,6 +56,15 @@ public class ItemData : ScriptableObject
     [Header("Interactions")]
     [SerializeField] string examine = string.Empty;
     public string Examine => examine;
+
+
+    public bool Usable
+    {
+        get
+        {
+            return examine != string.Empty;
+        }
+    }
 
 
 
