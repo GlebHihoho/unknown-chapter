@@ -18,6 +18,9 @@ public class InventoryUI : MonoBehaviour
 
     ItemData activeItem;
 
+    bool isPaused = false;
+    bool awatingUpdate = false;
+
     public static event Action<ItemData> OnSetActive;
     public static event Action OnClear;
 
@@ -28,8 +31,11 @@ public class InventoryUI : MonoBehaviour
         InventoryManager.OnItemRemoved += RemoveItem;
         InventoryManager.OnQuantityChanged += UpdateItem;
 
+        Pause.OnPause += SetPause;
+
         gameObject.SetActive(false);
     }
+
 
 
     private void OnDestroy()
@@ -37,6 +43,20 @@ public class InventoryUI : MonoBehaviour
         InventoryManager.OnItemAdded -= AddItem;
         InventoryManager.OnItemRemoved -= RemoveItem;
         InventoryManager.OnQuantityChanged -= UpdateItem;
+
+        Pause.OnPause -= SetPause;
+    }
+
+
+    private void SetPause(bool value)
+    {
+        isPaused = value;
+
+        if (!isPaused)
+        {
+            if (awatingUpdate) inventoryButton.ShowUpdate();
+            awatingUpdate = false;
+        }
     }
 
 
@@ -49,7 +69,9 @@ public class InventoryUI : MonoBehaviour
 
         if (activeItem == null) SetActiveItem(item);
 
-        inventoryButton.ShowUpdate();
+        if (!isPaused) inventoryButton.ShowUpdate();
+        else awatingUpdate = true;
+
     }
 
     private void RemoveItem(ItemData item)
@@ -73,7 +95,10 @@ public class InventoryUI : MonoBehaviour
     private void UpdateItem(ItemData item, int quantity)
     {
         inventory[item].UpdateItem(quantity);
-        inventoryButton.ShowUpdate();
+
+        if (!isPaused) inventoryButton.ShowUpdate();
+        else awatingUpdate = true;
+
     }
 
     public void SetActiveItem(ItemData item)
