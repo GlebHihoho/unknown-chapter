@@ -1399,6 +1399,34 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: CustomFieldType_Text
+  - id: 83
+    fields:
+    - title: Name
+      value: Items.Planks
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 84
+    fields:
+    - title: Name
+      value: Items.Cloth
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
   conversations:
   - id: 1
     fields:
@@ -12856,7 +12884,10 @@ MonoBehaviour:
       conditionsString: Variable["Story.PapersFound"] == true
       userScript: 'RemoveMist();
 
-        Variable["Items.Papers"] = 1;
+        UnlockMap();
+
+        Variable["Items.Papers"]
+        = 1;
 
         UpdateItem("Items.Papers")'
       onExecute:
