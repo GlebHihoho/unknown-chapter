@@ -3,8 +3,26 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
 
+    public static SoundManager instance;
+
     [SerializeField] AudioSource ambientMusic1;
     [SerializeField] AudioSource ambientMusic2;
+
+    [SerializeField] AudioSource soundEffects;
+
+    const float defaultVolume = 0.7f;
+
+    [Space]
+    [SerializeField] AudioClip mainTheme;
+
+    [SerializeField, Range(0, 1)] float generalVolume = defaultVolume;
+    public float GeneralVolume => generalVolume;
+
+    [SerializeField, Range(0, 1)] float musicVolume = defaultVolume;
+    public float MusicVolume => musicVolume;
+
+    [SerializeField, Range(0, 1)] float effectsVolume = defaultVolume;
+    public float EffectsVolume => effectsVolume;
 
     [SerializeField, Range(0, 5)] float shuffleTime = 1.5f;
     float timer = 0;
@@ -13,19 +31,68 @@ public class SoundManager : MonoBehaviour
     AudioClip activeMusic;
 
 
+    const string generalVolumeString = "GeneralVolume";
+    const string musicVolumeString = "MusicVolume";
+    const string effectsVolumeString = "EffectsVolume";
+
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else Destroy(gameObject);
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+        generalVolume = PlayerPrefs.GetFloat(generalVolumeString, defaultVolume);
+        musicVolume = PlayerPrefs.GetFloat (musicVolumeString, defaultVolume);
+        effectsVolume = PlayerPrefs.GetFloat(effectsVolumeString, defaultVolume);
+
+
         Environment.ZoneManager.OnChangeAmbientMusic += ChangeAmbientMusic;
 
         ambientMusic1.volume = 1;
         ambientMusic2.volume = 0;
+
+        if (mainTheme != null) ChangeAmbientMusic(mainTheme);
+
+        SoundSettingsUI.OnGeneralVolumeChange += ChangeGeneralVolume;
+        SoundSettingsUI.OnMusicVolumeChange += ChangeMusicVolume;
+        SoundSettingsUI.OnEffectsVolumeChange += ChangeEfectsVolume;
+
+        SoundSettingsUI.OnCloseSettings += SaveSettings;
     }
+
 
 
     private void OnDestroy()
     {
         Environment.ZoneManager.OnChangeAmbientMusic -= ChangeAmbientMusic;
+
+        SoundSettingsUI.OnGeneralVolumeChange -= ChangeGeneralVolume;
+        SoundSettingsUI.OnMusicVolumeChange -= ChangeMusicVolume;
+        SoundSettingsUI.OnEffectsVolumeChange -= ChangeEfectsVolume;
+
+        SoundSettingsUI.OnCloseSettings -= SaveSettings;
+    }
+
+
+    private void ChangeGeneralVolume(float volume) => generalVolume = volume;
+    private void ChangeMusicVolume(float volume) => musicVolume = volume;
+    private void ChangeEfectsVolume(float volume) => effectsVolume = volume;
+
+
+    private void SaveSettings()
+    {
+        PlayerPrefs.SetFloat(generalVolumeString, generalVolume);
+        PlayerPrefs.SetFloat (musicVolumeString, musicVolume);
+        PlayerPrefs.SetFloat(effectsVolumeString, effectsVolume);
     }
 
 
