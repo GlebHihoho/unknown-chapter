@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
@@ -10,13 +11,16 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] AudioSource soundEffects;
 
+    [SerializeField] AudioMixer mixer;
+
+
     const float defaultVolume = 0.7f;
 
     [Space]
     [SerializeField] AudioClip mainTheme;
 
-    [SerializeField, Range(0, 1)] float generalVolume = defaultVolume;
-    public float GeneralVolume => generalVolume;
+    [SerializeField, Range(0, 1)] float masterVolume = defaultVolume;
+    public float MasterVolume => masterVolume;
 
     [SerializeField, Range(0, 1)] float musicVolume = defaultVolume;
     public float MusicVolume => musicVolume;
@@ -31,9 +35,13 @@ public class SoundManager : MonoBehaviour
     AudioClip activeMusic;
 
 
-    const string generalVolumeString = "GeneralVolume";
+    const string masterVolumeString = "GeneralVolume";
     const string musicVolumeString = "MusicVolume";
     const string effectsVolumeString = "EffectsVolume";
+
+    const string masterVolumeMixer = "MasterVolume";
+    const string musicVolumeMixer = "MusicVolume";
+    const string effectsVolumeMixer = "EffectsVolume";
 
 
     private void Awake()
@@ -50,9 +58,14 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
 
-        generalVolume = PlayerPrefs.GetFloat(generalVolumeString, defaultVolume);
+        masterVolume = PlayerPrefs.GetFloat(masterVolumeString, defaultVolume);
         musicVolume = PlayerPrefs.GetFloat (musicVolumeString, defaultVolume);
         effectsVolume = PlayerPrefs.GetFloat(effectsVolumeString, defaultVolume);
+
+        mixer.SetFloat(masterVolumeMixer, MixerVolume(masterVolume));
+        mixer.SetFloat(musicVolumeMixer, MixerVolume(musicVolume));
+        mixer.SetFloat(effectsVolumeMixer, MixerVolume(effectsVolume));
+        
 
 
         Environment.ZoneManager.OnChangeAmbientMusic += ChangeAmbientMusic;
@@ -83,14 +96,22 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    private void ChangeGeneralVolume(float volume) => generalVolume = volume;
-    private void ChangeMusicVolume(float volume) => musicVolume = volume;
-    private void ChangeEfectsVolume(float volume) => effectsVolume = volume;
+    private void ChangeGeneralVolume(float volume) => ChangeVolume(volume, out masterVolume, masterVolumeMixer);
+    private void ChangeMusicVolume(float volume) => ChangeVolume(volume, out musicVolume, musicVolumeMixer);
+    private void ChangeEfectsVolume(float volume) => ChangeVolume(volume, out effectsVolume, effectsVolumeMixer);
 
+
+    private void ChangeVolume(float newVolume, out float currVolume, string mixerGroup)
+    {
+        currVolume = newVolume;
+        mixer.SetFloat(mixerGroup, MixerVolume(newVolume));
+    }
+
+    private float MixerVolume(float volume) => Mathf.Log10(volume) * 20;
 
     private void SaveSettings()
     {
-        PlayerPrefs.SetFloat(generalVolumeString, generalVolume);
+        PlayerPrefs.SetFloat(masterVolumeString, masterVolume);
         PlayerPrefs.SetFloat (musicVolumeString, musicVolume);
         PlayerPrefs.SetFloat(effectsVolumeString, effectsVolume);
     }

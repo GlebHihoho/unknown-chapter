@@ -41,7 +41,7 @@ AudioSource:
   m_GameObject: {fileID: 249540044388039309}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5480288018544954060, guid: 7f5de2b7a5e7ab146b18a3a0d51bf248, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -179,7 +179,14 @@ MonoBehaviour:
   ambientMusic1: {fileID: 8990406120544405772}
   ambientMusic2: {fileID: 8380211055883254400}
   soundEffects: {fileID: 1600263995760511552}
+  mixer: {fileID: 24100000, guid: 7f5de2b7a5e7ab146b18a3a0d51bf248, type: 2}
+  masterGroup: {fileID: 24300002, guid: 7f5de2b7a5e7ab146b18a3a0d51bf248, type: 2}
+  musicGroup: {fileID: -5480288018544954060, guid: 7f5de2b7a5e7ab146b18a3a0d51bf248, type: 2}
+  soundEffectsGroup: {fileID: 7143029432158065603, guid: 7f5de2b7a5e7ab146b18a3a0d51bf248, type: 2}
   mainTheme: {fileID: 0}
+  generalVolume: 0.7
+  musicVolume: 0.7
+  effectsVolume: 0.7
   shuffleTime: 1.5
 --- !u!1 &6498123228434408923
 GameObject:
@@ -222,7 +229,7 @@ AudioSource:
   m_GameObject: {fileID: 6498123228434408923}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7143029432158065603, guid: 7f5de2b7a5e7ab146b18a3a0d51bf248, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -351,7 +358,7 @@ AudioSource:
   m_GameObject: {fileID: 7305673439479774721}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5480288018544954060, guid: 7f5de2b7a5e7ab146b18a3a0d51bf248, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0

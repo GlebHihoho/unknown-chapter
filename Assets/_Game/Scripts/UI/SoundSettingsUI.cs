@@ -17,7 +17,7 @@ public class SoundSettingsUI : MonoBehaviour
 
     private void OnEnable()
     {
-        volume.value = SoundManager.instance.GeneralVolume;
+        volume.value = SoundManager.instance.MasterVolume;
         music.value = SoundManager.instance.MusicVolume;
         effects.value = SoundManager.instance.EffectsVolume;
 
