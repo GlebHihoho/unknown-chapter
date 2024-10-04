@@ -13,9 +13,9 @@ public class Map : MonoBehaviour, ISaveable
     {
         Lua.RegisterFunction("UnlockMap", this, SymbolExtensions.GetMethodInfo(() => UnlockMap()));
 
-        gameObject.SetActive(false);
-
         mapButton.gameObject.SetActive(false);
+
+        gameObject.SetActive(false);       
     }
 
     private void OnDestroy() => Lua.UnregisterFunction("UnlockMap");

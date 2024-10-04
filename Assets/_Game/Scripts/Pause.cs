@@ -10,6 +10,8 @@ public class Pause : MonoBehaviour
     public static event Action<bool> OnPause;
 
     bool isPaused = false;
+    public bool IsPaused => isPaused;
+
     bool conversationinProgress = false;
 
     public static Pause instance;

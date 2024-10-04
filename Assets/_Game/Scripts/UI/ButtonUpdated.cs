@@ -16,11 +16,20 @@ public class ButtonUpdated : MonoBehaviour
     bool isPaused = false;
     bool awatingUpdate = false;
 
+    bool isStarted = false;
+
+
 
     private void Awake() => rectTransform = GetComponent<RectTransform>();
 
 
-    private void Start() => Pause.OnPause += SetPause;
+    private void Start()
+    {
+        Pause.OnPause += SetPause;
+
+        isStarted = true;
+    }
+
     private void OnDestroy() => Pause.OnPause -= SetPause;
 
 
@@ -44,6 +53,8 @@ public class ButtonUpdated : MonoBehaviour
 
     public void ShowUpdate()
     {
+        if (!isStarted) isPaused = Pause.instance.IsPaused;
+
         if (!isPaused)
         {
             ResetUpdate();
