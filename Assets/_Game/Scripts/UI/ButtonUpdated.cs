@@ -9,22 +9,53 @@ public class ButtonUpdated : MonoBehaviour
     RectTransform rectTransform;
 
     WaitForSeconds remindPause = new WaitForSeconds(3);
+    WaitForSeconds delayAfterPause = new WaitForSeconds(0.5f);
 
     Coroutine reminder;
+
+    bool isPaused = false;
+    bool awatingUpdate = false;
+
 
     private void Awake() => rectTransform = GetComponent<RectTransform>();
 
 
+    private void Start() => Pause.OnPause += SetPause;
+    private void OnDestroy() => Pause.OnPause -= SetPause;
+
+
+    private void SetPause(bool isPaused)
+    {
+        this.isPaused = isPaused;
+
+        if (!isPaused)
+        {
+            if (awatingUpdate) StartCoroutine(AfterPause());
+            awatingUpdate = false;
+        }
+    }
+
+    IEnumerator AfterPause()
+    {
+        yield return delayAfterPause;
+        ShowUpdate();
+    }
+
+
     public void ShowUpdate()
     {
-        ResetUpdate();
-        reminder = StartCoroutine(Remind());
+        if (!isPaused)
+        {
+            ResetUpdate();
+            reminder = StartCoroutine(Remind());
 
-        Sequence sequence = DOTween.Sequence();
-        sequence.Append(rectTransform.DOScale(1.5f, 0.4f));
-        sequence.Append(rectTransform.DOScale(1, 0.4f));
-           
-        sequence.Play();
+            Sequence sequence = DOTween.Sequence();
+            sequence.Append(rectTransform.DOScale(1.5f, 0.4f));
+            sequence.Append(rectTransform.DOScale(1, 0.4f));
+
+            sequence.Play();
+        }
+        else awatingUpdate = true;
     }
 
 

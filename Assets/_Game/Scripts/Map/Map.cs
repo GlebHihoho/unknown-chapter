@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Map : MonoBehaviour, ISaveable
 {
-    [SerializeField] GameObject mapButton;
+    [SerializeField] ButtonUpdated mapButton;
 
     bool mapEnabled = false;
 
@@ -15,10 +15,13 @@ public class Map : MonoBehaviour, ISaveable
 
         gameObject.SetActive(false);
 
-        mapButton.SetActive(false);
+        mapButton.gameObject.SetActive(false);
     }
 
     private void OnDestroy() => Lua.UnregisterFunction("UnlockMap");
+
+
+    private void OnEnable() => mapButton.ResetUpdate();
 
 
     public void ToggleMap()
@@ -31,7 +34,8 @@ public class Map : MonoBehaviour, ISaveable
     {
         mapEnabled = true;
 
-        mapButton.SetActive(true);
+        mapButton.gameObject.SetActive(true);
+        mapButton.ShowUpdate();
     }
 
 
@@ -45,6 +49,6 @@ public class Map : MonoBehaviour, ISaveable
     {
         mapEnabled = save.mapUnlocked;
 
-        if (mapEnabled) mapButton.SetActive(true);
+        if (mapEnabled) mapButton.gameObject.SetActive(true);
     }
 }
