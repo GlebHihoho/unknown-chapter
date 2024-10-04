@@ -44,8 +44,12 @@ public class InventoryUI : MonoBehaviour
         InventoryManager.OnItemRemoved -= RemoveItem;
         InventoryManager.OnQuantityChanged -= UpdateItem;
 
+
         Pause.OnPause -= SetPause;
     }
+
+
+    private void OnEnable() => inventoryButton.ResetUpdate();
 
 
     private void SetPause(bool value)

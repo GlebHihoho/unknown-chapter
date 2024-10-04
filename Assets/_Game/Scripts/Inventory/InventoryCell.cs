@@ -14,6 +14,7 @@ public class InventoryCell : MonoBehaviour
     [SerializeField] TextMeshProUGUI numberLabel;
 
     [SerializeField] Image usable;
+    [SerializeField] Image newItem;
 
 
     [Space]
@@ -48,6 +49,7 @@ public class InventoryCell : MonoBehaviour
         usable.enabled = item.Usable;
 
         background.enabled = false;
+        newItem.enabled = true;
     }
 
 
@@ -66,12 +68,12 @@ public class InventoryCell : MonoBehaviour
     {
         background.enabled = true;
         background.color = selectedColour;
+        newItem.enabled = false;
     }
 
 
     public void DeselectItem()
     {
-        background.enabled = false;
-       // background.color = nonSelectedColour;
+        background.enabled = false;        
     }
 }
