@@ -45,8 +45,11 @@ public class InventoryUI : MonoBehaviour
         InventoryManager.OnItemRemoved -= RemoveItem;
         InventoryManager.OnQuantityChanged -= UpdateItem;
 
-        DialogueManager.instance.conversationStarted -= ConversationStarted;
-        DialogueManager.instance.conversationEnded -= ConversationEnded;
+        if (DialogueManager.instance != null)
+        {
+            DialogueManager.instance.conversationStarted -= ConversationStarted;
+            DialogueManager.instance.conversationEnded -= ConversationEnded;
+        }
     }
 
 
