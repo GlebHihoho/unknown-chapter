@@ -83,7 +83,7 @@ public class InventoryUI : MonoBehaviour
 
         if (activeItem == null) SetActiveItem(item);
 
-        inventoryButton.ShowUpdate();
+        if (!activeWhileConversation) inventoryButton.ShowUpdate();
     }
 
     private void RemoveItem(ItemData item)
@@ -108,7 +108,7 @@ public class InventoryUI : MonoBehaviour
     {
         inventory[item].UpdateItem(quantity);
 
-        inventoryButton.ShowUpdate();
+        if (!activeWhileConversation) inventoryButton.ShowUpdate();
 
     }
 
