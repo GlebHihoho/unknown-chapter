@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using PixelCrushers.DialogueSystem;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class InventoryUI : MonoBehaviour
     public static event Action<ItemData> OnSetActive;
     public static event Action OnClear;
 
+    bool activeWhileConversation = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +31,12 @@ public class InventoryUI : MonoBehaviour
         InventoryManager.OnItemRemoved += RemoveItem;
         InventoryManager.OnQuantityChanged += UpdateItem;
 
+        DialogueManager.instance.conversationStarted += ConversationStarted;
+        DialogueManager.instance.conversationEnded += ConversationEnded;
+
         gameObject.SetActive(false);
     }
+
 
 
     private void OnDestroy()
@@ -37,10 +44,33 @@ public class InventoryUI : MonoBehaviour
         InventoryManager.OnItemAdded -= AddItem;
         InventoryManager.OnItemRemoved -= RemoveItem;
         InventoryManager.OnQuantityChanged -= UpdateItem;
+
+        DialogueManager.instance.conversationStarted -= ConversationStarted;
+        DialogueManager.instance.conversationEnded -= ConversationEnded;
     }
 
 
     private void OnEnable() => inventoryButton.ResetUpdate();
+
+
+    private void ConversationStarted(Transform t)
+    {
+        if (gameObject.activeSelf)
+        {
+            activeWhileConversation = true;
+            gameObject.SetActive(false);
+        }
+    }
+
+
+    private void ConversationEnded(Transform t)
+    {
+        if (activeWhileConversation)
+        {
+            gameObject.SetActive(true);
+            activeWhileConversation = false;
+        }
+    }
 
 
 
