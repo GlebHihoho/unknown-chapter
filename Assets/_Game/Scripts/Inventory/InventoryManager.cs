@@ -33,6 +33,7 @@ public class InventoryManager : MonoBehaviour, ISaveable
     private void OnEnable()
     {
         Collectible.OnItemGiven += IncreaseQuantity;
+        ItemsContainer.OnItemGiven += IncreaseQuantity;
 
         ActiveItemUI.OnUseItem += UseItem;
         ActiveItemUI.OnDeleteItem += DeleteItem;
@@ -43,6 +44,7 @@ public class InventoryManager : MonoBehaviour, ISaveable
     private void OnDisable()
     {
         Collectible.OnItemGiven -= IncreaseQuantity;
+        ItemsContainer.OnItemGiven -= IncreaseQuantity;
 
         ActiveItemUI.OnUseItem -= UseItem;
         ActiveItemUI.OnDeleteItem -= DeleteItem;
