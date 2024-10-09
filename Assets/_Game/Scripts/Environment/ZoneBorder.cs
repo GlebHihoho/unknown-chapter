@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Environment
 {
+    [RequireComponent(typeof(TriggerVisuals))]
     public class ZoneBorder : MonoBehaviour
     {
 
@@ -13,20 +14,6 @@ namespace Environment
 
 
         float enterDot, exitDot;
-
-        MeshRenderer render;
-
-
-        private void Awake()
-        {
-            render = GetComponent<MeshRenderer>();
-            render.enabled = false;
-        }
-
-
-        private void Start() => GameConsole.instance.OnToggleTriggersView += ToggleTriggerVisibility;
-        private void OnDestroy() => GameConsole.instance.OnToggleTriggersView -= ToggleTriggerVisibility;
-        private void ToggleTriggerVisibility() => render.enabled = !render.enabled;
 
 
         private void OnTriggerEnter(Collider other) => enterDot = DirectionDot(other);

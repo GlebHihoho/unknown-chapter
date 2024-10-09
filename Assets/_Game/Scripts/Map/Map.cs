@@ -13,15 +13,27 @@ public class Map : MonoBehaviour, ISaveable
     {
         Lua.RegisterFunction("UnlockMap", this, SymbolExtensions.GetMethodInfo(() => UnlockMap()));
 
+        MapCover.OnZoneUncovered += ZoneUncovered;
+
         mapButton.gameObject.SetActive(false);
 
         gameObject.SetActive(false);       
     }
 
-    private void OnDestroy() => Lua.UnregisterFunction("UnlockMap");
+
+
+    private void OnDestroy()
+    {
+        Lua.UnregisterFunction("UnlockMap");
+
+        MapCover.OnZoneUncovered -= ZoneUncovered;
+    }
 
 
     private void OnEnable() => mapButton.ResetUpdate();
+
+
+    private void ZoneUncovered() => mapButton.ShowUpdate();
 
 
     public void ToggleMap()

@@ -15,6 +15,13 @@ public class SaveData
         public int quantity;
     }
 
+    [Serializable]
+    public struct MapZones
+    {
+        public string name;
+        public bool locked;
+    }
+
 
     public class Save
     {
@@ -28,6 +35,8 @@ public class SaveData
         public Quaternion playerRotation;
 
         public bool mapUnlocked = false;
+
+        public List<MapZones> mapZones = new List<MapZones>();
 
         public string zoneID;
 

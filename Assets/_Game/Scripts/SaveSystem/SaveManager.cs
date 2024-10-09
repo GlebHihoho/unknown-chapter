@@ -22,7 +22,7 @@ public class SaveManager : MonoBehaviour
 
     string path;
 
-    SaveData.Save save = new SaveData.Save();
+    SaveData.Save save;
 
 
     public static event Action OnLoadCompleted;
@@ -113,12 +113,11 @@ public class SaveManager : MonoBehaviour
 
         string fileName = path + Path.DirectorySeparatorChar + saveName + extension;
 
+        save = new();
+
         save.type = type;
 
-
-
-        
-
+      
         save.timeStamp = timestamp.ToString();
 
         save.dialogues = saver.RecordData();
@@ -163,6 +162,8 @@ public class SaveManager : MonoBehaviour
         {
 
             OnStartingLoad?.Invoke();
+
+            save = new();
 
             save = JsonUtility.FromJson<SaveData.Save>(File.ReadAllText(fileName));
 
