@@ -41,6 +41,8 @@ public class Map : MonoBehaviour, ISaveable
         if (mapEnabled) gameObject.SetActive(!gameObject.activeSelf);
     }
 
+    public void HideMap() => gameObject.SetActive(false);
+
 
     private void UnlockMap()
     {
