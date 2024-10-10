@@ -18,7 +18,8 @@ public class MapCover : MonoBehaviour, ISaveable
 
     private void Awake() => image = GetComponent<Image>();
 
-    private void Start()
+
+    public void InitCover()
     {
         if (image.enabled) MapCoverTrigger.OnEnter += UncoverZone;
         SaveManager.OnStartingLoad += ClearZonesList;
@@ -30,6 +31,9 @@ public class MapCover : MonoBehaviour, ISaveable
         MapCoverTrigger.OnEnter -= UncoverZone;
         SaveManager.OnStartingLoad -= ClearZonesList;
     }
+
+
+
 
 
     private void UncoverZone(string zoneName)

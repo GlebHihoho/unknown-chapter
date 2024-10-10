@@ -1,4 +1,5 @@
 using PixelCrushers.DialogueSystem;
+using System.Linq;
 using UnityEngine;
 
 public class Map : MonoBehaviour, ISaveable
@@ -14,6 +15,13 @@ public class Map : MonoBehaviour, ISaveable
         Lua.RegisterFunction("UnlockMap", this, SymbolExtensions.GetMethodInfo(() => UnlockMap()));
 
         MapCover.OnZoneUncovered += ZoneUncovered;
+
+
+        foreach (MapCover item in FindObjectsByType<MapCover>(FindObjectsInactive.Include, FindObjectsSortMode.None).ToArray())
+        {
+            item.InitCover();
+        }
+
 
         mapButton.gameObject.SetActive(false);
 
