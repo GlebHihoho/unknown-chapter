@@ -1455,6 +1455,20 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: CustomFieldType_Text
+  - id: 87
+    fields:
+    - title: Name
+      value: Wood.PickedUp
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
   conversations:
   - id: 1
     fields:
@@ -5639,11 +5653,8 @@ MonoBehaviour:
       conditionsString: 
       userScript: 'SetQuestState("Heal Foma", "success");
 
-        SetQuestState("Heal
-        Foma", "unassigned");
-
-        Variable["Items.Planks"] = Variable["Items.Planks"]
-        - 1;
+        Variable["Items.Planks"]
+        = Variable["Items.Planks"] - 1;
 
         UpdateItem("Items.Planks");
 
@@ -5719,7 +5730,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2421.2861
+        x: 2419.2861
         y: 2258.7612
         width: 160
         height: 30
@@ -9298,8 +9309,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1905.1565, y: 1045.8898}
-    canvasZoom: 1.0000005
+    canvasScrollPosition: {x: 1494.0258, y: 1702.6302}
+    canvasZoom: 0.7600007
   - id: 2
     fields:
     - title: Title
@@ -9504,8 +9515,8 @@ MonoBehaviour:
         destinationDialogueID: 35
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Wood.Perception"] == false and (Variable["Items.Planks"]
-        == 0)
+      conditionsString: Variable["Wood.Perception"] == false and (Variable["Wood.PickedUp"]
+        == false)
       userScript: 'Variable["Stats.Empathy"] = Variable["Stats.Empathy"] - 1;
 
         Variable["Wood.Perception"]
@@ -9564,8 +9575,8 @@ MonoBehaviour:
         destinationDialogueID: 5
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Wood.Force"] == false and (Variable["Items.Planks"]
-        == 0)
+      conditionsString: Variable["Wood.Force"] == false and (Variable["Wood.PickedUp"]
+        == false)
       userScript: 'Variable["Stats.Audacity"] = Variable["Stats.Audacity"] - 1;
 
         Variable["Wood.Force"]
@@ -9627,7 +9638,8 @@ MonoBehaviour:
         destinationDialogueID: 36
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Wood.Intellect"] == false
+      conditionsString: Variable["Wood.Intellect"] == false and (Variable["Wood.PickedUp"]
+        == false)
       userScript: 'Variable["Stats.Intelligence"] = Variable["Stats.Intelligence"]
         - 1;
 
@@ -10182,6 +10194,12 @@ MonoBehaviour:
         destinationDialogueID: 33
         isConnector: 0
         priority: 2
+      - originConversationID: 2
+        originDialogueID: 16
+        destinationConversationID: 2
+        destinationDialogueID: 8
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -10497,6 +10515,12 @@ MonoBehaviour:
         destinationDialogueID: 33
         isConnector: 0
         priority: 2
+      - originConversationID: 2
+        originDialogueID: 25
+        destinationConversationID: 2
+        destinationDialogueID: 8
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -10803,17 +10827,22 @@ MonoBehaviour:
         destinationDialogueID: 38
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: ((Variable["Wood.Perception"] == true) or (Variable["Wood.Force"]
+        == true) or (Variable["Wood.Intellect"] == true)) and (Variable["Wood.PickedUp"]
+        == false)
       userScript: 'Variable["Items.Planks"] = Variable["Items.Planks"] + 1;
 
-        UpdateItem("Items.Planks")'
+        UpdateItem("Items.Planks");
+
+        Variable["Wood.PickedUp"]
+        = true'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1789.4568
-        y: 622.7961
+        x: 1790.6763
+        y: 631.3327
         width: 160
         height: 30
     - id: 34
@@ -10872,6 +10901,12 @@ MonoBehaviour:
         destinationDialogueID: 33
         isConnector: 0
         priority: 2
+      - originConversationID: 2
+        originDialogueID: 34
+        destinationConversationID: 2
+        destinationDialogueID: 8
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -10879,8 +10914,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1460.0679
-        y: 518.17267
+        x: 1603.9703
+        y: 525.48975
         width: 160
         height: 30
     - id: 35
