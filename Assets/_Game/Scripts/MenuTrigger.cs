@@ -1,3 +1,4 @@
+using UI;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,10 +11,10 @@ public class MenuTrigger : MonoBehaviour
     bool isShown = false;
 
 
-    private void Start() => GameControls.instance.OnMainMenu += MainMenu;
-    private void OnDestroy() => GameControls.instance.OnMainMenu -= MainMenu;
+    private void Start() => UIController.OnMainMenu += MainMenu;
+    private void OnDestroy() => UIController.OnMainMenu -= MainMenu;
 
-    private void MainMenu(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    public void MainMenu()
     {
         isShown = !isShown;
 

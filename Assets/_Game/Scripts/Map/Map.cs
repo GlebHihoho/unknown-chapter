@@ -8,6 +8,11 @@ public class Map : MonoBehaviour, ISaveable
 
     bool mapEnabled = false;
 
+    public bool MapOpened
+    {
+        get { return gameObject.activeSelf; }
+    }
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

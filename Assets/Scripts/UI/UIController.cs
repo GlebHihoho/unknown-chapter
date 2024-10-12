@@ -1,3 +1,4 @@
+using System;
 using UI.InventoryScripts;
 using UnityEngine;
 
@@ -12,6 +13,8 @@ namespace UI
 
         [SerializeField] private Map map;
 
+        public static event Action OnMainMenu;
+
 
         private void Start()
         {
@@ -19,7 +22,7 @@ namespace UI
             //GameControls.instance.OnCharacterTab += CharacterTab; // Temporarily disable character's window for gamedesing reasons.
             GameControls.instance.OnMap += Map;
 
-            GameControls.instance.OnMainMenu += HideAll;
+            GameControls.instance.OnMainMenu += MainMenu;
         }
 
 
@@ -30,7 +33,7 @@ namespace UI
             //GameControls.instance.OnCharacterTab -= CharacterTab;
             GameControls.instance.OnMap -= Map;
 
-            GameControls.instance.OnMainMenu -= HideAll;
+            GameControls.instance.OnMainMenu -= MainMenu;
         }
 
         private void Inventory(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -52,12 +55,19 @@ namespace UI
         }
 
 
-        private void HideAll(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        private void MainMenu(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            if (!_inventoryBackGround.activeSelf && !map.MapOpened && !_playerBackGround.activeSelf) OnMainMenu?.Invoke();
+            else HideAll();
+        }
+
+
+        public void HideAll()
         {
             _inventoryBackGround.SetActive(false);
 
             _playerBackGround.SetActive(false);
-            _miniPlayerBackGround.SetActive(true);
+            //_miniPlayerBackGround.SetActive(true);
 
             map.HideMap();
         }
