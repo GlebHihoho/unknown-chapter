@@ -16,7 +16,7 @@ namespace UI
         private void Start()
         {
             GameControls.instance.OnInventory += Inventory;
-            GameControls.instance.OnCharacterTab += CharacterTab;
+            //GameControls.instance.OnCharacterTab += CharacterTab; // Temporarily disable character's window for gamedesing reasons.
             GameControls.instance.OnMap += Map;
 
             GameControls.instance.OnMainMenu += HideAll;
@@ -27,7 +27,7 @@ namespace UI
         private void OnDestroy()
         {
             GameControls.instance.OnInventory -= Inventory;
-            GameControls.instance.OnCharacterTab -= CharacterTab;
+            //GameControls.instance.OnCharacterTab -= CharacterTab;
             GameControls.instance.OnMap -= Map;
 
             GameControls.instance.OnMainMenu -= HideAll;

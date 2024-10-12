@@ -106,7 +106,7 @@ MonoBehaviour:
     - title: Name
       value: "\u0421\u0418\u0421\u0422\u0415\u041C\u041D\u041E\u0415"
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
@@ -119,6 +119,10 @@ MonoBehaviour:
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: Display Name
+      value: "\u0421\u0438\u0441\u0442\u0435\u043C\u043D\u043E\u0435"
+      type: 0
+      typeString: 
     portrait: {fileID: 0}
     spritePortrait: {fileID: 21300000, guid: 9f14df2507fd17b418ef14248d02bbbb, type: 3}
     alternatePortraits: []
@@ -207,6 +211,10 @@ MonoBehaviour:
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: Display Name
+      value: "\u0413\u0440\u043E\u0431\u043E\u0432\u0449\u0438\u043A\u0438"
+      type: 0
+      typeString: 
     portrait: {fileID: 0}
     spritePortrait: {fileID: 21300000, guid: a6578b12c0e23454fb84258e34c792f5, type: 3}
     alternatePortraits: []
@@ -229,6 +237,10 @@ MonoBehaviour:
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: Display Name
+      value: "\u041B\u044B\u0441\u044B\u0439"
+      type: 0
+      typeString: 
     portrait: {fileID: 0}
     spritePortrait: {fileID: 21300000, guid: a6578b12c0e23454fb84258e34c792f5, type: 3}
     alternatePortraits: []
@@ -251,8 +263,64 @@ MonoBehaviour:
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: Display Name
+      value: "\u041B\u043E\u0445\u043C\u0430\u0442\u044B\u0439"
+      type: 0
+      typeString: 
     portrait: {fileID: 0}
     spritePortrait: {fileID: 21300000, guid: a6578b12c0e23454fb84258e34c792f5, type: 3}
+    alternatePortraits: []
+    spritePortraits: []
+  - id: 13
+    fields:
+    - title: Name
+      value: Skull
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Display Name
+      value: "\u0427\u0435\u0440\u0435\u043F"
+      type: 0
+      typeString: 
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 21300000, guid: 1871940e46a604f4c9275e333ae32fac, type: 3}
+    alternatePortraits: []
+    spritePortraits: []
+  - id: 14
+    fields:
+    - title: Name
+      value: Professor Vivickiy
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Display Name
+      value: "\u041F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440 \u0412\u0438\u0432\u0438\u0446\u043A\u0438\u0439"
+      type: 0
+      typeString: 
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 21300000, guid: 13a18c77f9a450d4e86ba4f74abf36a3, type: 3}
     alternatePortraits: []
     spritePortraits: []
   items:
@@ -2820,7 +2888,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041E\u0434\u0435\u0436\u0434\u0430 (+\u0438\u043D\u0442)"
+        value: "\u041E\u0434\u0435\u0436\u0434\u0430"
         type: 0
         typeString: 
       - title: Sequence
@@ -3058,8 +3126,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0420\u0430\u0441\u0441\u043A\u0430\u0437\u0430\u0442\u044C \u0448\u0443\u0442\u043A\u0443
-          (+\u043E\u0447\u043A\u0438 \u044D\u043C\u043F\u0430\u0442\u0438\u0438)"
+        value: "\u0420\u0430\u0441\u0441\u043A\u0430\u0437\u0430\u0442\u044C \u0448\u0443\u0442\u043A\u0443"
         type: 0
         typeString: 
       - title: Sequence
@@ -3657,7 +3724,7 @@ MonoBehaviour:
       - title: Dialogue Text
         value: "\u041F\u0440\u0435\u0434\u043B\u043E\u0436\u0438\u0442\u044C \u0441\u0442\u0430\u0440\u0438\u043A\u0443
           \u043E\u0431\u0435\u0437\u0437\u0430\u0440\u0430\u0437\u0438\u0442\u044C
-          \u0440\u0430\u043D\u0443. (+\u0434\u0435\u0440\u0437\u043E\u0441\u0442\u044C)"
+          \u0440\u0430\u043D\u0443."
         type: 0
         typeString: 
       - title: Sequence
@@ -5629,7 +5696,10 @@ MonoBehaviour:
           \u043D\u0435 \u0441\u0442\u044B\u0434\u0438\u0442\u0441\u044F, \u0432 \u0438\u0441\u0441\u0442\u0443\u043F\u043B\u0451\u043D\u043D\u043E\u043C
           \u0443\u0436\u0430\u0441\u0435 \u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0430\u044F
           \u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u043D\u0430 \u0441\u0432\u043E\u0435\u0433\u043E
-          \u0441\u043F\u0430\u0441\u0438\u0442\u0435\u043B\u044F."
+          \u0441\u043F\u0430\u0441\u0438\u0442\u0435\u043B\u044F.\n\n[em2]\u0412\u044B
+          \u043F\u043E\u0442\u0435\u0440\u044F\u043B\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B:
+          \u043A\u0443\u0441\u043E\u043A \u0442\u043A\u0430\u043D\u0438, \u0434\u043E\u0441\u043A\u0438
+          \u0438 \u0431\u0443\u0442\u044B\u043B\u043A\u0430 \u0440\u043E\u043C\u0430.[/em2]"
         type: 0
         typeString: 
       - title: Sequence
@@ -8066,8 +8136,7 @@ MonoBehaviour:
       - title: Dialogue Text
         value: "\u041F\u043E\u0447\u0435\u043C\u0443 \u0442\u044B \u0442\u0430\u043A
           \u0441\u043C\u0435\u043B\u043E \u043F\u0440\u0438\u0437\u043D\u0430\u0451\u0448\u044C
-          \u0441\u0432\u043E\u0451 \u0435\u0440\u0435\u0442\u0438\u0447\u0435\u0441\u0442\u0432\u043E?
-          (-\u0438\u043D\u0442\u0435\u043B\u043B\u0435\u043A\u0442)"
+          \u0441\u0432\u043E\u0451 \u0435\u0440\u0435\u0442\u0438\u0447\u0435\u0441\u0442\u0432\u043E?"
         type: 0
         typeString: 
       - title: Sequence
@@ -8597,7 +8666,7 @@ MonoBehaviour:
           \u044F\u0437\u044B\u043A \u0437\u0430 \u0437\u0443\u0431\u0430\u043C\u0438...
           \u0438\u043D\u0430\u0447\u0435 \u043C\u043D\u0435 \u043F\u0440\u0438\u0434\u0451\u0442\u0441\u044F
           \u0437\u0430\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u0432\u0430\u0441
-          \u043C\u043E\u043B\u0447\u0430\u0442\u044C. (-\u0434\u0435\u0440\u0437\u043E\u0441\u0442\u044C)"
+          \u043C\u043E\u043B\u0447\u0430\u0442\u044C."
         type: 0
         typeString: 
       - title: Sequence
@@ -9309,8 +9378,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1494.0258, y: 1702.6302}
-    canvasZoom: 0.7600007
+    canvasScrollPosition: {x: 1858.596, y: 1753.4235}
+    canvasZoom: 0.7300007
   - id: 2
     fields:
     - title: Title
@@ -9493,8 +9562,7 @@ MonoBehaviour:
       - title: Dialogue Text
         value: "\u041F\u043E\u0440\u0430\u0437\u043C\u044B\u0441\u043B\u0438\u0442\u044C
           \u043D\u0430\u0434 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u0430\u043C\u0438
-          \u043A\u043E\u0440\u0430\u0431\u043B\u0435\u043A\u0440\u0443\u0448\u0435\u043D\u0438\u044F
-          (-\u044D\u043C\u043F)"
+          \u043A\u043E\u0440\u0430\u0431\u043B\u0435\u043A\u0440\u0443\u0448\u0435\u043D\u0438\u044F"
         type: 0
         typeString: 
       - title: Sequence
@@ -9554,7 +9622,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: "\u041F\u043E\u0434\u043D\u044F\u0442\u044C \u0438 \u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C
-          \u0434\u043E\u0441\u043A\u0443 (-\u0414\u0435\u0440\u0437\u043E\u0441\u0442\u044C)"
+          \u0434\u043E\u0441\u043A\u0443"
         type: 0
         typeString: 
       - title: Sequence
@@ -9616,8 +9684,7 @@ MonoBehaviour:
         value: "\u0410\u043A\u043A\u0443\u0440\u0430\u0442\u043D\u043E \u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C
           \u0434\u043E\u0441\u043A\u0443, \u043F\u0440\u0438\u043C\u0435\u043D\u0438\u0432
           \u0437\u043D\u0430\u043D\u0438\u044F \u0432 \u043E\u0431\u043B\u0430\u0441\u0442\u0438
-          \u0432\u0437\u0440\u044B\u0432\u0447\u0430\u0442\u044B\u0445 \u0432\u0435\u0449\u0435\u0441\u0442\u0432
-          (-\u0438\u043D\u0442)"
+          \u0432\u0437\u0440\u044B\u0432\u0447\u0430\u0442\u044B\u0445 \u0432\u0435\u0449\u0435\u0441\u0442\u0432"
         type: 0
         typeString: 
       - title: Sequence
@@ -11071,7 +11138,9 @@ MonoBehaviour:
           \u0441\u0434\u0435\u043B\u0430\u0442\u044C \u0448\u0438\u043D\u0443. \u041D\u0443,
           \u0438\u043B\u0438 \u043E\u0433\u0440\u0435\u0442\u044C \u043A\u043E\u0433\u043E
           \u0438\u0437 \u043C\u0435\u0441\u0442\u043D\u044B\u0445 \u043F\u043E \u0431\u0430\u0448\u043A\u0435,
-          \u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440."
+          \u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440.\n\n[em2]\u0412\u044B
+          \u043F\u043E\u043B\u0443\u0447\u0438\u043B\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442:
+          \u0434\u043E\u0441\u043A\u0438[/em2]"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -11304,7 +11373,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: "\u0412\u0434\u0443\u043C\u0447\u0438\u0432\u043E \u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C
-          \u0442\u0440\u0443\u043F. [em2](-\u042D\u043C\u043F\u0430\u0442\u0438\u044F)[/em2]"
+          \u0442\u0440\u0443\u043F."
         type: 0
         typeString: 
       - title: Sequence
@@ -11364,7 +11433,7 @@ MonoBehaviour:
       - title: Dialogue Text
         value: "\u041F\u0440\u0438\u043A\u0438\u043D\u0443\u0442\u044C, \u0435\u0441\u0442\u044C
           \u043B\u0438 \u0443 \u0442\u0440\u0443\u043F\u0430 \u0447\u0442\u043E-\u0442\u043E
-          \u043F\u043E\u043B\u0435\u0437\u043D\u043E\u0435. [em2](-\u0434\u0435\u0440\u0437\u043E\u0441\u0442\u044C)[/em2]"
+          \u043F\u043E\u043B\u0435\u0437\u043D\u043E\u0435."
         type: 0
         typeString: 
       - title: Sequence
@@ -11423,8 +11492,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: "\u041F\u0440\u0430\u0433\u043C\u0430\u0442\u0438\u0447\u043D\u043E
-          \u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0442\u0440\u0443\u043F.
-          [em2](-\u0438\u043D\u0442)[/em2]"
+          \u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0442\u0440\u0443\u043F."
         type: 0
         typeString: 
       - title: Sequence
@@ -11721,7 +11789,9 @@ MonoBehaviour:
           \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u0441\u0442\u0438 \u044F
           \u043D\u0430\u0448\u0451\u043B \u0441\u0435\u0431\u0435 \u043F\u0440\u0438\u043B\u0438\u0447\u043D\u043E\u0435
           \u0438\u043C\u044F \u0438 \u0437\u0432\u0430\u043D\u0438\u0435 - \u043E\u0442\u043B\u0438\u0447\u043D\u043E\u0435
-          \u043D\u0430\u0447\u0430\u043B\u043E \u043D\u043E\u0432\u043E\u0439 \u0436\u0438\u0437\u043D\u0438!"
+          \u043D\u0430\u0447\u0430\u043B\u043E \u043D\u043E\u0432\u043E\u0439 \u0436\u0438\u0437\u043D\u0438!\n\n[em2]\u0412\u044B
+          \u043F\u043E\u043B\u0443\u0447\u0438\u043B\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442:
+          \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B \u0441\u044B\u0441\u043A\u043D\u043E\u0433\u043E[/em2]"
         type: 0
         typeString: 
       - title: Sequence
@@ -13418,8 +13488,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1601.637, y: 807.84766}
-    canvasZoom: 0.9100001
+    canvasScrollPosition: {x: 1755.0955, y: 515.0172}
+    canvasZoom: 0.8200002
   - id: 4
     fields:
     - title: Title
@@ -13908,9 +13978,7 @@ MonoBehaviour:
           \u0432\u0430\u0441 \u0437\u0434\u0435\u0441\u044C \u0433\u043B\u0430\u0432\u043D\u044B\u0439?
           \u0413\u0434\u0435 \u0441\u043F\u0430\u0441\u0430\u0442\u0435\u043B\u044C\u043D\u0430\u044F
           \u043A\u043E\u043C\u0430\u043D\u0434\u0430?! \u0413\u0434\u0435 \u0448\u043B\u044E\u043F\u043A\u0438,
-          \u0447\u0451\u0440\u0442 \u0431\u044B \u0432\u0430\u0441 \u043F\u043E\u0431\u0440\u0430\u043B?!
-          (+5 \u043E\u0447\u043A\u043E\u0432 \u0434\u0435\u0440\u0437\u043E\u0441\u0442\u0438,
-          +5 \u043E\u0447\u043A\u043E\u0432 \u0438\u043D\u0442\u0435\u043B\u043B\u0435\u043A\u0442\u0430)"
+          \u0447\u0451\u0440\u0442 \u0431\u044B \u0432\u0430\u0441 \u043F\u043E\u0431\u0440\u0430\u043B?!"
         type: 0
         typeString: 
       - title: Sequence
@@ -14976,9 +15044,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[em2](-5 \u043E\u0447\u043A\u043E\u0432 \u0438\u043D\u0442\u0435\u043B\u043B\u0435\u043A\u0442\u0430)
-          \u0421\u043E\u0441\u0440\u0435\u0434\u043E\u0442\u043E\u0447\u0438\u0442\u044C\u0441\u044F
-          \u043D\u0430 \u0437\u0430\u043F\u0430\u0445\u0435.[/em2]"
+        value: "\u0421\u043E\u0441\u0440\u0435\u0434\u043E\u0442\u043E\u0447\u0438\u0442\u044C\u0441\u044F
+          \u043D\u0430 \u0437\u0430\u043F\u0430\u0445\u0435."
         type: 0
         typeString: 
       - title: Sequence
@@ -15694,9 +15761,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[em2](-5 \u043E\u0447\u043A\u043E\u0432 \u0438\u043D\u0442\u0435\u043B\u043B\u0435\u043A\u0442\u0430)
-          \u0412\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C\u0441\u044F \u0432
-          \u043B\u0438\u0446\u043E[/em2]"
+        value: "\u0412\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C\u0441\u044F
+          \u0432 \u043B\u0438\u0446\u043E"
         type: 0
         typeString: 
       - title: Sequence
@@ -16749,11 +16815,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[em2](-5 \u043E\u0447\u043A\u043E\u0432 \u0434\u0435\u0440\u0437\u043E\u0441\u0442\u0438)
-          \u041F\u0440\u0438\u043B\u043E\u0436\u0438\u0442\u044C\u0441\u044F \u043A
-          \u0440\u0443\u043A\u0435 \u0441\u0442\u0430\u0440\u0438\u043A\u0430 \u044F\u043A\u043E\u0431\u044B
-          \u0432 \u0437\u043D\u0430\u043A \u0440\u0435\u043B\u0438\u0433\u0438\u043E\u0437\u043D\u043E\u0433\u043E
-          \u043F\u0440\u0438\u043A\u043B\u043E\u043D\u0435\u043D\u0438\u044F.[/em2]"
+        value: "\u041F\u0440\u0438\u043B\u043E\u0436\u0438\u0442\u044C\u0441\u044F
+          \u043A \u0440\u0443\u043A\u0435 \u0441\u0442\u0430\u0440\u0438\u043A\u0430
+          \u044F\u043A\u043E\u0431\u044B \u0432 \u0437\u043D\u0430\u043A \u0440\u0435\u043B\u0438\u0433\u0438\u043E\u0437\u043D\u043E\u0433\u043E
+          \u043F\u0440\u0438\u043A\u043B\u043E\u043D\u0435\u043D\u0438\u044F."
         type: 0
         typeString: 
       - title: Sequence
@@ -18426,8 +18491,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "(+5 \u043E\u0447\u043A\u043E\u0432 \u044D\u043C\u043F\u0430\u0442\u0438\u0438)
-          (+\u0424\u043E\u043C\u0430) \u0418 \u0435\u0449\u0451. \u041D\u0430 \u043F\u043B\u044F\u0436\u0435
+        value: "\u0418 \u0435\u0449\u0451. \u041D\u0430 \u043F\u043B\u044F\u0436\u0435
           \u0435\u0441\u0442\u044C \u0432\u044B\u0436\u0438\u0432\u0448\u0438\u0439.
           \u041F\u043E\u0448\u043B\u0438\u0442\u0435 \u0437\u0430 \u043D\u0438\u043C
           \u043A\u043E\u0433\u043E-\u043D\u0438\u0431\u0443\u0434\u044C."
@@ -19075,7 +19139,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 4
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -20487,9 +20551,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[em2](-5 \u043E\u0447\u043A\u043E\u0432 \u0434\u0435\u0440\u0437\u043E\u0441\u0442\u0438)
-          \u0421\u0447\u0430\u0441\u0442\u044C\u0435 - \u044D\u0442\u043E \u0437\u0430\u043A\u043E\u043B\u0434\u043E\u0432\u0430\u043D\u043D\u044B\u0439
-          \u0441\u0430\u043C\u043E\u0433\u043E\u043D \u0438 \u0447\u0435\u0440\u043D\u0438\u043B\u044C\u043D\u0438\u043A?[/em2]"
+        value: "\u0421\u0447\u0430\u0441\u0442\u044C\u0435 - \u044D\u0442\u043E \u0437\u0430\u043A\u043E\u043B\u0434\u043E\u0432\u0430\u043D\u043D\u044B\u0439
+          \u0441\u0430\u043C\u043E\u0433\u043E\u043D \u0438 \u0447\u0435\u0440\u043D\u0438\u043B\u044C\u043D\u0438\u043A?"
         type: 0
         typeString: 
       - title: Sequence
@@ -22017,8 +22080,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 6984.6597, y: 2522.1343}
-    canvasZoom: 0.70000017
+    canvasScrollPosition: {x: 2150.4678, y: 1690.9814}
+    canvasZoom: 0.6400002
   - id: 5
     fields:
     - title: Title
@@ -22715,7 +22778,7 @@ MonoBehaviour:
       - title: Dialogue Text
         value: "\u041A\u0442\u043E, \u0433\u043E\u0432\u043E\u0440\u0438\u0442\u0435,
           \u0436\u0438\u0432\u0451\u0442 \u0432 \u0432\u0430\u0448\u0435\u043C \u0434\u043E\u043C\u0435?
-          \u041F\u0440\u0438\u0437\u0440\u0430\u043A\u0438?! (-\u0434\u0435\u0440\u0437\u043E\u0441\u0442\u044C)"
+          \u041F\u0440\u0438\u0437\u0440\u0430\u043A\u0438?!"
         type: 0
         typeString: 
       - title: Sequence
@@ -22772,7 +22835,7 @@ MonoBehaviour:
       - title: Dialogue Text
         value: "\u0427\u0442\u043E \u0436\u0435 \u043E\u0441\u043E\u0431\u0435\u043D\u043D\u043E\u0433\u043E
           \u0432\u044B \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0435 \u0432 \u043D\u0430\u0448\u0435\u043C
-          \u0437\u043D\u0430\u043A\u043E\u043C\u0441\u0442\u0432\u0435? (-\u044D\u043C\u043F\u0430\u0442\u0438\u044F)"
+          \u0437\u043D\u0430\u043A\u043E\u043C\u0441\u0442\u0432\u0435?"
         type: 0
         typeString: 
       - title: Sequence
@@ -22828,7 +22891,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: "\u0412\u044B \u043F\u043E\u0434\u0447\u0438\u043D\u044F\u0435\u0442\u0435\u0441\u044C
-          \u041E\u0442\u0446\u0443 \u041F\u0438\u044E? (-\u0438\u043D\u0442\u0435\u043B\u043B\u0435\u043A\u0442)"
+          \u041E\u0442\u0446\u0443 \u041F\u0438\u044E?"
         type: 0
         typeString: 
       - title: Sequence
@@ -23429,7 +23492,7 @@ MonoBehaviour:
       - title: Dialogue Text
         value: "\u0417\u0430\u0442\u043A\u043D\u0438\u0441\u044C, \u0441\u0442\u0430\u0440\u0438\u043A,
           \u0435\u0441\u043B\u0438 \u0442\u0435\u0431\u0435 \u0434\u043E\u0440\u043E\u0433\u0430
-          \u0442\u0432\u043E\u044F \u0436\u0438\u0437\u043D\u044C! (+\u0434\u0435\u0440\u0437\u043E\u0441\u0442\u044C)"
+          \u0442\u0432\u043E\u044F \u0436\u0438\u0437\u043D\u044C!"
         type: 0
         typeString: 
       - title: Sequence
@@ -25183,7 +25246,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1673.9061, y: 1141.0275}
+    canvasScrollPosition: {x: 1773.9062, y: 1284.0275}
     canvasZoom: 1
   - id: 6
     fields:
@@ -25999,8 +26062,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[em2]\u041A\u0435\u043C \u0431\u044B\u043B \u0432\u0430\u0448 \u043C\u0443\u0436?
-          (-\u042D\u043C\u043F\u0430\u0442\u0438\u044F) (+\u0414\u0438\u0430\u043D\u0430)[/em2]"
+        value: "\u041A\u0435\u043C \u0431\u044B\u043B \u0432\u0430\u0448 \u043C\u0443\u0436?"
         type: 0
         typeString: 
       - title: Sequence
@@ -26062,8 +26124,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: "\u041A\u0430\u043A \u0438\u043C \u0443\u0434\u0430\u043B\u043E\u0441\u044C
-          \u0437\u0430\u0445\u0432\u0430\u0442\u0438\u0442\u044C \u043F\u0440\u0438\u0438\u0441\u043A\u0438?
-          (-\u0414\u0435\u0440\u0437\u043E\u0441\u0442\u044C)"
+          \u0437\u0430\u0445\u0432\u0430\u0442\u0438\u0442\u044C \u043F\u0440\u0438\u0438\u0441\u043A\u0438?"
         type: 0
         typeString: 
       - title: Sequence
@@ -26121,9 +26182,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[em2]\u0427\u0442\u043E \u0432\u044B \u0437\u0434\u0435\u0441\u044C
-          \u0434\u0435\u043B\u0430\u0435\u0442\u0435? \u041A\u0430\u043A\u043E\u0432
-          \u0432\u0430\u0448 \u043F\u043B\u0430\u043D? (-\u0418\u043D\u0442\u0435\u043B\u043B\u0435\u043A\u0442)[/em2]"
+        value: "\u0427\u0442\u043E \u0432\u044B \u0437\u0434\u0435\u0441\u044C \u0434\u0435\u043B\u0430\u0435\u0442\u0435?
+          \u041A\u0430\u043A\u043E\u0432 \u0432\u0430\u0448 \u043F\u043B\u0430\u043D?"
         type: 0
         typeString: 
       - title: Sequence
@@ -26997,7 +27057,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[em2]\u041B\u0438\u0446\u043E (-\u042D\u043C\u043F\u0430\u0442\u0438\u044F)[/em2]"
+        value: "\u041B\u0438\u0446\u043E"
         type: 0
         typeString: 
       - title: Sequence
@@ -27174,7 +27234,7 @@ MonoBehaviour:
           \u0438\u043B\u0438 \u043F\u0440\u043E\u0434\u0443\u043C\u0430\u043D\u043D\u044B\u0439
           \u043B\u0438\u0434\u0435\u0440, \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u044E\u0449\u0438\u0439
           \u043E\u0431\u0440\u0430\u0437 \u0441\u0442\u0440\u043E\u0433\u043E\u0439
-          \u043C\u0430\u0442\u0435\u0440\u0438? (+\u0438\u043D\u0442)"
+          \u043C\u0430\u0442\u0435\u0440\u0438?"
         type: 0
         typeString: 
       - title: Sequence
@@ -27370,10 +27430,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[em2]\u0412\u044B \u0432\u0441\u0435\u0433\u0434\u0430 \u0432\u043E\u043E\u0440\u0443\u0436\u0435\u043D\u044B
+        value: "\u0412\u044B \u0432\u0441\u0435\u0433\u0434\u0430 \u0432\u043E\u043E\u0440\u0443\u0436\u0435\u043D\u044B
           \u0434\u043E \u0437\u0443\u0431\u043E\u0432 \u0438\u043B\u0438 \u0442\u043E\u043B\u044C\u043A\u043E
           \u0441\u0435\u0439\u0447\u0430\u0441 \u043A\u0438\u0447\u0438\u0442\u0435\u0441\u044C
-          \u0431\u0440\u0435\u0442\u0451\u0440\u0441\u0442\u0432\u043E\u043C? (+\u0434\u0435\u0440\u0437\u043E\u0441\u0442\u044C)[/em2]"
+          \u0431\u0440\u0435\u0442\u0451\u0440\u0441\u0442\u0432\u043E\u043C?"
         type: 0
         typeString: 
       - title: Sequence
@@ -27564,7 +27624,7 @@ MonoBehaviour:
           \u043F\u0440\u044F\u043C\u043E \u0437\u0430\u0432\u0438\u0441\u044F\u0442
           \u043E\u0442 \u0443\u0441\u043B\u043E\u0432\u0438\u0439, mon cher. \u041D\u043E
           \u044F \u043E\u0431\u0435\u0449\u0430\u044E \u0432\u0430\u043C \u0431\u044B\u0442\u044C
-          \u0447\u0435\u0441\u0442\u043D\u044B\u043C. (+\u0418\u043D\u0442\u0435\u043B\u043B\u0435\u043A\u0442)"
+          \u0447\u0435\u0441\u0442\u043D\u044B\u043C."
         type: 0
         typeString: 
       - title: Sequence
@@ -27621,7 +27681,7 @@ MonoBehaviour:
       - title: Dialogue Text
         value: "\u041A\u043B\u044F\u043D\u0443\u0441\u044C \u0447\u0435\u0441\u0442\u044C\u044E
           \u0434\u0432\u043E\u0440\u044F\u043D\u0438\u043D\u0430, \u044F \u044D\u0442\u043E
-          \u0441\u0434\u0435\u043B\u0430\u044E. (+\u042D\u043C\u043F\u0430\u0442\u0438\u044F)"
+          \u0441\u0434\u0435\u043B\u0430\u044E."
         type: 0
         typeString: 
       - title: Sequence
@@ -28724,8 +28784,7 @@ MonoBehaviour:
       - title: Dialogue Text
         value: "\u042F \u043D\u0435 \u0431\u0443\u0434\u0443 \u0441\u043F\u043E\u0440\u0438\u0442\u044C
           \u0441 \u0432\u0430\u043C\u0438, \u043F\u0430\u0440\u0448\u0438\u0432\u0430\u044F
-          \u0441\u0442\u0435\u0440\u0432\u0430! (-\u0414\u0435\u0440\u0437\u043E\u0441\u0442\u044C)
-          (-\u0414\u0438\u0430\u043D\u0430)"
+          \u0441\u0442\u0435\u0440\u0432\u0430!"
         type: 0
         typeString: 
       - title: Sequence
@@ -29803,7 +29862,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1342.3525, y: 955.5529}
+    canvasScrollPosition: {x: 1831.7642, y: 826.1406}
     canvasZoom: 0.8500003
   - id: 7
     fields:
@@ -31662,9 +31721,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[em2](-5 \u043E\u0447\u043A\u043E\u0432 \u0434\u0435\u0440\u0437\u043E\u0441\u0442\u0438)
-          \u0421\u0447\u0430\u0441\u0442\u044C\u0435 - \u044D\u0442\u043E \u0437\u0430\u043A\u043E\u043B\u0434\u043E\u0432\u0430\u043D\u043D\u044B\u0439
-          \u0441\u0430\u043C\u043E\u0433\u043E\u043D \u0438 \u0447\u0435\u0440\u043D\u0438\u043B\u044C\u043D\u0438\u043A?[/em2]"
+        value: "\u0421\u0447\u0430\u0441\u0442\u044C\u0435 - \u044D\u0442\u043E \u0437\u0430\u043A\u043E\u043B\u0434\u043E\u0432\u0430\u043D\u043D\u044B\u0439
+          \u0441\u0430\u043C\u043E\u0433\u043E\u043D \u0438 \u0447\u0435\u0440\u043D\u0438\u043B\u044C\u043D\u0438\u043A?"
         type: 0
         typeString: 
       - title: Sequence
@@ -33898,8 +33956,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 507.89453, y: 185.84885}
-    canvasZoom: 0.76000017
+    canvasScrollPosition: {x: 1356.2495, y: 121.14603}
+    canvasZoom: 0.6400003
   - id: 8
     fields:
     - title: Title
@@ -34843,7 +34901,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u041B\u0438\u0446\u043E (-\u044D\u043C\u043F\u0430\u0442\u0438\u044F)"
+        value: "\u041B\u0438\u0446\u043E"
         type: 0
         typeString: 
       - title: Sequence
@@ -35568,10 +35626,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "[em2](-5 \u043E\u0447\u043A\u043E\u0432 \u0434\u0435\u0440\u0437\u043E\u0441\u0442\u0438)
-          \u0411\u044B\u0441\u0442\u0440\u043E \u0440\u0430\u0437\u043E\u0440\u0432\u0430\u0442\u044C
+        value: "\u0411\u044B\u0441\u0442\u0440\u043E \u0440\u0430\u0437\u043E\u0440\u0432\u0430\u0442\u044C
           \u043F\u043B\u0430\u0442\u044C\u0435 \u0438 \u043D\u0430\u0439\u0442\u0438
-          \u043C\u0435\u0441\u0442\u043E \u0443\u043A\u043E\u043B\u0430.[/em2]"
+          \u043C\u0435\u0441\u0442\u043E \u0443\u043A\u043E\u043B\u0430."
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -36267,7 +36324,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0428\u0435\u044F (-\u0438\u043D\u0442)"
+        value: "\u0428\u0435\u044F"
         type: 0
         typeString: 
       - title: Sequence
@@ -36920,8 +36977,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "(-\u043E\u0447\u043A\u0438 \u044D\u043C\u043F\u0430\u0442\u0438\u0438)
-          \u0417\u0430\u0431\u0440\u0430\u0442\u044C \u043A\u043E\u043B\u044C\u0446\u043E,
+        value: "\u0417\u0430\u0431\u0440\u0430\u0442\u044C \u043A\u043E\u043B\u044C\u0446\u043E,
           \u0447\u0442\u043E\u0431\u044B \u0432\u0435\u0440\u043D\u0443\u0442\u044C
           \u0435\u0433\u043E \u043C\u0443\u0436\u0443."
         type: 0
@@ -37718,8 +37774,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1391.7643, y: 372.94098}
-    canvasZoom: 0.8500004
+    canvasScrollPosition: {x: 495.0666, y: 524.5721}
+    canvasZoom: 0.88000035
   - id: 10
     fields:
     - title: Title
@@ -42817,7 +42873,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 295.43256, y: 64.63211}
+    canvasScrollPosition: {x: 226.36035, y: 0}
     canvasZoom: 0.97
   - id: 12
     fields:
@@ -43035,8 +43091,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0414\u0435\u0440\u0437\u043E\u0441\u0442\u044C: \u041F\u043E\u0434\u0443\u043C\u0430\u0442\u044C
-          \u043E \u0435\u0433\u043E \u043F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u043C
+        value: "\u041F\u043E\u0434\u0443\u043C\u0430\u0442\u044C \u043E \u0435\u0433\u043E
+          \u043F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u043C
           \u043D\u0430\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0438"
         type: 0
         typeString: CustomFieldType_Text
@@ -43092,7 +43148,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0418\u043D\u0442\u0435\u043B\u043B\u0435\u043A\u0442: \u0412\u043D\u0438\u043C\u0430\u0442\u0435\u043B\u044C\u043D\u043E
+        value: "\u0412\u043D\u0438\u043C\u0430\u0442\u0435\u043B\u044C\u043D\u043E
           \u0438\u0437\u0443\u0447\u0438\u0442\u044C \u0447\u0435\u0440\u0435\u043F"
         type: 0
         typeString: CustomFieldType_Text
@@ -43148,8 +43204,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u042D\u043C\u043F\u0430\u0442\u0438\u044F: \u0417\u0430\u0433\u043B\u044F\u043D\u0443\u0442\u044C
-          \u0432 \u043F\u0443\u0441\u0442\u044B\u0435 \u0433\u043B\u0430\u0437\u043D\u0438\u0446\u044B"
+        value: "\u0417\u0430\u0433\u043B\u044F\u043D\u0443\u0442\u044C \u0432 \u043F\u0443\u0441\u0442\u044B\u0435
+          \u0433\u043B\u0430\u0437\u043D\u0438\u0446\u044B"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -43204,14 +43260,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "''\u0414\u0435\u0440\u0437\u043E\u0441\u0442\u044C: ''\u0411\u0435\u0441\u0445\u043E\u0437\u043D\u044B\u0439
-          \u0447\u0435\u0440\u0435\u043F \u0432 \u0445\u043E\u0440\u043E\u0448\u0435\u043C
-          \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0438 \u0432\u044B\u043A\u0443\u043F\u0438\u0442
-          \u043B\u044E\u0431\u043E\u0439 \u0440\u0435\u0437\u0447\u0438\u043A \u043F\u043E
-          \u043A\u043E\u0441\u0442\u0438. \u041E\u043D \u0441\u0434\u0435\u043B\u0430\u0435\u0442
-          \u0438\u0437 \u043D\u0435\u0433\u043E \u0438\u0437\u044F\u0449\u043D\u0443\u044E
-          \u0447\u0430\u0448\u0443 \u0434\u043B\u044F \u043A\u0440\u0430\u0441\u043D\u043E\u0433\u043E
-          \u0432\u0438\u043D\u0430, \u0438\u043B\u0438 \u0436\u0435 \u0433\u0440\u043E\u0442\u0435\u0441\u043A\u043D\u043E\u0433\u043E
+        value: "\u0411\u0435\u0441\u0445\u043E\u0437\u043D\u044B\u0439 \u0447\u0435\u0440\u0435\u043F
+          \u0432 \u0445\u043E\u0440\u043E\u0448\u0435\u043C \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0438
+          \u0432\u044B\u043A\u0443\u043F\u0438\u0442 \u043B\u044E\u0431\u043E\u0439
+          \u0440\u0435\u0437\u0447\u0438\u043A \u043F\u043E \u043A\u043E\u0441\u0442\u0438.
+          \u041E\u043D \u0441\u0434\u0435\u043B\u0430\u0435\u0442 \u0438\u0437 \u043D\u0435\u0433\u043E
+          \u0438\u0437\u044F\u0449\u043D\u0443\u044E \u0447\u0430\u0448\u0443 \u0434\u043B\u044F
+          \u043A\u0440\u0430\u0441\u043D\u043E\u0433\u043E \u0432\u0438\u043D\u0430,
+          \u0438\u043B\u0438 \u0436\u0435 \u0433\u0440\u043E\u0442\u0435\u0441\u043A\u043D\u043E\u0433\u043E
           \u0432\u0438\u0434\u0430  \u043F\u043E\u0434\u0441\u0432\u0435\u0447\u043D\u0438\u043A,
           \u043C\u0440\u0430\u0447\u043D\u043E \u043E\u0442\u0440\u0430\u0436\u0430\u044E\u0449\u0438\u0439
           \u0441\u0432\u043E\u0435\u0439 \u0431\u043B\u0435\u0434\u043D\u043E\u0439
@@ -43343,9 +43399,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0414\u0435\u0440\u0437\u043E\u0441\u0442\u044C: \u0427\u0442\u043E
-          \u0435\u0449\u0435 \u043C\u043E\u0436\u043D\u043E \u0441\u0434\u0435\u043B\u0430\u0442\u044C
-          \u0441 \u0447\u0435\u0440\u0435\u043F\u043E\u043C?"
+        value: "\u0427\u0442\u043E \u0435\u0449\u0435 \u043C\u043E\u0436\u043D\u043E
+          \u0441\u0434\u0435\u043B\u0430\u0442\u044C \u0441 \u0447\u0435\u0440\u0435\u043F\u043E\u043C?"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -43400,15 +43455,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "''\u0418\u043D\u0442\u0443\u0438\u0446\u0438\u044F:'' \u0411\u043E\u043B\u0435\u0435
-          \u0441\u043C\u0435\u043B\u044B\u0439 \u0445\u043E\u0434 - \u043F\u0440\u043E\u0434\u0430\u0442\u044C
-          \u043C\u043E\u043B\u043E\u0434\u043E\u043C\u0443 \u0447\u0430\u0440\u043E\u0434\u0435\u044E,
-          \u0438\u043B\u0438, \u0443\u0436 \u043A\u043E\u043B\u044C \u043D\u0430
-          \u0442\u043E \u043F\u043E\u0448\u043B\u043E, - \u0432\u0435\u0434\u044C\u043C\u0435.
-          \u041F\u043E\u0434\u043E\u0431\u043D\u044B\u0439 \u043E\u043A\u043A\u0443\u043B\u044C\u0442\u043D\u044B\u0439
-          \u043F\u0440\u0435\u0434\u043C\u0435\u0442 \u0442\u0430\u0438\u0442 \u0432
-          \u0441\u0435\u0431\u0435 \u0431\u043E\u043B\u044C \u0438 \u0433\u043D\u0435\u0432
-          \u043E\u0441\u043A\u0432\u0435\u0440\u043D\u0435\u043D\u043D\u043E\u0439
+        value: "\u0411\u043E\u043B\u0435\u0435 \u0441\u043C\u0435\u043B\u044B\u0439
+          \u0445\u043E\u0434 - \u043F\u0440\u043E\u0434\u0430\u0442\u044C \u043C\u043E\u043B\u043E\u0434\u043E\u043C\u0443
+          \u0447\u0430\u0440\u043E\u0434\u0435\u044E, \u0438\u043B\u0438, \u0443\u0436
+          \u043A\u043E\u043B\u044C \u043D\u0430 \u0442\u043E \u043F\u043E\u0448\u043B\u043E,
+          - \u0432\u0435\u0434\u044C\u043C\u0435. \u041F\u043E\u0434\u043E\u0431\u043D\u044B\u0439
+          \u043E\u043A\u043A\u0443\u043B\u044C\u0442\u043D\u044B\u0439 \u043F\u0440\u0435\u0434\u043C\u0435\u0442
+          \u0442\u0430\u0438\u0442 \u0432 \u0441\u0435\u0431\u0435 \u0431\u043E\u043B\u044C
+          \u0438 \u0433\u043D\u0435\u0432 \u043E\u0441\u043A\u0432\u0435\u0440\u043D\u0435\u043D\u043D\u043E\u0439
           \u0438 \u043F\u0440\u043E\u043A\u043B\u044F\u0442\u043E\u0439 \u0434\u0443\u0448\u0438,
           \u043B\u0438\u0448\u0435\u043D\u043D\u043E\u0439 \u043F\u043E\u043A\u043E\u044F
           \u0438 \u043E\u0431\u044A\u044F\u0442\u0438\u0439 \u043C\u044F\u0433\u043A\u043E\u0439
@@ -43472,9 +43526,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0414\u0435\u0440\u0437\u043E\u0441\u0442\u044C: \u0425\u043E\u0440\u043E\u0448\u043E.
-          \u0410 \u043A\u0430\u043A \u0435\u0449\u0451 \u043C\u043E\u0436\u043D\u043E
-          \u0435\u0433\u043E \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C?"
+        value: "\u0425\u043E\u0440\u043E\u0448\u043E. \u0410 \u043A\u0430\u043A \u0435\u0449\u0451
+          \u043C\u043E\u0436\u043D\u043E \u0435\u0433\u043E \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C?"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -43529,8 +43582,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "''\u0418\u043D\u0442\u0443\u0438\u0446\u0438\u044F: ''\u0420\u0430\u0437\u0432\u0435
-          \u044D\u0442\u043E\u0433\u043E \u043D\u0435 \u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E?"
+        value: "\u0420\u0430\u0437\u0432\u0435 \u044D\u0442\u043E\u0433\u043E \u043D\u0435
+          \u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E?"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -43585,8 +43638,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0414\u0435\u0440\u0437\u043E\u0441\u0442\u044C: \u0414\u043E\u043B\u0436\u043D\u044B
-          \u0431\u044B\u0442\u044C \u0435\u0449\u0435 \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u044B\u2026"
+        value: "\u0414\u043E\u043B\u0436\u043D\u044B \u0431\u044B\u0442\u044C \u0435\u0449\u0435
+          \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u044B\u2026"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -43641,11 +43694,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0414\u0435\u0440\u0437\u043E\u0441\u0442\u044C: \u041D\u0443\u2026
-          \u0435\u0441\u043B\u0438 \u0443 \u0442\u0435\u0431\u044F \u043D\u0435\u0442
-          \u043D\u0438 \u0441\u043E\u0432\u0435\u0441\u0442\u0438 \u043D\u0438 \u0447\u0435\u0441\u0442\u0438,
-          \u0442\u043E \u043C\u043E\u0436\u043D\u043E \u043D\u0435\u043C\u043D\u043E\u0433\u043E
-          \u043F\u043E\u0436\u043E\u043D\u0433\u043B\u0438\u0440\u043E\u0432\u0430\u0442\u044C
+        value: "\u041D\u0443\u2026 \u0435\u0441\u043B\u0438 \u0443 \u0442\u0435\u0431\u044F
+          \u043D\u0435\u0442 \u043D\u0438 \u0441\u043E\u0432\u0435\u0441\u0442\u0438
+          \u043D\u0438 \u0447\u0435\u0441\u0442\u0438, \u0442\u043E \u043C\u043E\u0436\u043D\u043E
+          \u043D\u0435\u043C\u043D\u043E\u0433\u043E \u043F\u043E\u0436\u043E\u043D\u0433\u043B\u0438\u0440\u043E\u0432\u0430\u0442\u044C
           \u0438\u043C. \u0414\u0435\u043D\u0435\u0433 \u043D\u0430\u043C \u0437\u0430
           \u044D\u0442\u043E \u043D\u0438\u043A\u0442\u043E \u043D\u0435 \u0434\u0430\u0441\u0442,
           \u043D\u043E \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u0431\u0443\u0434\u0435\u0442
@@ -43710,7 +43762,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0414\u0435\u0440\u0437\u043E\u0441\u0442\u044C: \u0416\u043E\u043D\u0433\u043B\u0438\u0440\u043E\u0432\u0430\u0442\u044C
+        value: "\u0416\u043E\u043D\u0433\u043B\u0438\u0440\u043E\u0432\u0430\u0442\u044C
           \u0447\u0435\u0440\u0435\u043F\u043E\u043C"
         type: 0
         typeString: CustomFieldType_Text
@@ -43779,9 +43831,9 @@ MonoBehaviour:
           \u043C\u043E\u043C\u0435\u043D\u0442 \u0432\u0430\u043C \u043D\u0435 \u0443\u0434\u0430\u0451\u0442\u0441\u044F
           \u0432\u043E\u0432\u0440\u0435\u043C\u044F \u043F\u043E\u0439\u043C\u0430\u0442\u044C
           \u0447\u0435\u0440\u0435\u043F \u0438 \u043E\u043D \u0440\u0430\u0437\u0431\u0438\u0432\u0430\u0435\u0442\u0441\u044F
-          \u043E \u0437\u0435\u043C\u043B\u044E. \r\n\r\n\u0418\u043D\u0442\u0443\u0438\u0446\u0438\u044F:
-          \u042D\u0442\u043E \u0431\u044B\u043B\u0430 \u0441\u0430\u043C\u0430\u044F
-          \u0438\u0434\u0438\u043E\u0442\u0441\u043A\u0430\u044F \u0438 \u0431\u0435\u0441\u0441\u043C\u044B\u0441\u043B\u0435\u043D\u043D\u0430\u044F
+          \u043E \u0437\u0435\u043C\u043B\u044E. \r\n\r\n\u042D\u0442\u043E \u0431\u044B\u043B\u0430
+          \u0441\u0430\u043C\u0430\u044F \u0438\u0434\u0438\u043E\u0442\u0441\u043A\u0430\u044F
+          \u0438 \u0431\u0435\u0441\u0441\u043C\u044B\u0441\u043B\u0435\u043D\u043D\u0430\u044F
           \u0438\u0434\u0435\u044F \u0437\u0430 \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0435
           \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u043C\u0435\u0441\u044F\u0446\u0435\u0432.
           \u0412\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u0440\u0430\u0437\u043D\u0438\u0446\u0430
@@ -43850,8 +43902,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0414\u0435\u0440\u0437\u043E\u0441\u0442\u044C: \u0440\u0430\u0437\u0431\u0438\u0442\u044C
-          \u0447\u0435\u0440\u0435\u043F"
+        value: "\u0420\u0430\u0437\u0431\u0438\u0442\u044C \u0447\u0435\u0440\u0435\u043F"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -43906,8 +43957,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "''\u0418\u043D\u0442\u0443\u0438\u0446\u0438\u044F: ''\u041D\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043D\u043E,
-          \u0447\u0442\u043E \u0438\u043C\u0435\u043D\u043D\u043E \u0442\u044B \u043F\u044B\u0442\u0430\u043B\u0441\u044F
+        value: "\u041D\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043D\u043E, \u0447\u0442\u043E
+          \u0438\u043C\u0435\u043D\u043D\u043E \u0442\u044B \u043F\u044B\u0442\u0430\u043B\u0441\u044F
           \u043E\u0442\u044B\u0441\u043A\u0430\u0442\u044C \u0432\u043D\u0443\u0442\u0440\u0438\u2026
           \u041A\u0430\u043A \u0432\u0438\u0434\u0438\u0448\u044C - \u0442\u0430\u043C
           \u0441\u043E\u0432\u0435\u0440\u0448\u0435\u043D\u043D\u043E \u043F\u0443\u0441\u0442\u043E.
@@ -44121,8 +44172,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0418\u043D\u0442\u0435\u043B\u043B\u0435\u043A\u0442: \u0427\u0442\u043E
-          \u0432\u043D\u0443\u0442\u0440\u0438 \u0447\u0435\u0440\u0435\u043F\u043D\u043E\u0439
+        value: "\u0427\u0442\u043E \u0432\u043D\u0443\u0442\u0440\u0438 \u0447\u0435\u0440\u0435\u043F\u043D\u043E\u0439
           \u043A\u043E\u0440\u043E\u0431\u043A\u0438?"
         type: 0
         typeString: CustomFieldType_Text
@@ -44233,8 +44283,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0418\u043D\u0442\u0443\u0438\u0446\u0438\u044F: \u0411\u0435\u0441\u043F\u043E\u0440\u043D\u043E
-          \u044D\u0442\u043E \u043A\u043B\u0435\u0439\u043C\u043E \u0441\u0430\u043C\u043E\u0433\u043E
+        value: "\u0411\u0435\u0441\u043F\u043E\u0440\u043D\u043E \u044D\u0442\u043E
+          \u043A\u043B\u0435\u0439\u043C\u043E \u0441\u0430\u043C\u043E\u0433\u043E
           \u0434\u044C\u044F\u0432\u043E\u043B\u0430. \u0421\u0438\u043C\u0432\u043E\u043B
           \u0411\u0430\u0444\u043E\u043C\u0435\u0442\u0430 - \u043F\u0440\u044F\u043C\u043E\u0445\u043E\u0434\u044F\u0449\u0435\u0433\u043E
           \u043A\u043E\u0437\u043B\u0430 \u0432\u044B\u043C\u0430\u0437\u0430\u043D\u043D\u043E\u0433\u043E
@@ -44329,12 +44379,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "''\u0418\u043D\u0442\u0443\u0438\u0446\u0438\u044F: ''\u0412\u043D\u0443\u0442\u0440\u0438
-          - \u043F\u0443\u0441\u0442\u043E. \u0421\u043B\u0438\u0448\u043A\u043E\u043C
-          \u043F\u0443\u0442\u043E. \u041D\u0430 \u0432\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0438\u0445
-          \u0441\u0442\u0435\u043D\u043A\u0430\u0445 \u0447\u0435\u0440\u0435\u043F\u0430
-          \u0434\u0430\u0436\u0435 \u043D\u0435\u0442 \u0441\u043B\u0435\u0434\u043E\u0432
-          \u0438 \u043F\u044F\u0442\u0435\u043D \u0440\u0430\u0437\u043B\u043E\u0436\u0438\u0432\u0448\u0435\u0439\u0441\u044F
+        value: "\u0412\u043D\u0443\u0442\u0440\u0438 - \u043F\u0443\u0441\u0442\u043E.
+          \u0421\u043B\u0438\u0448\u043A\u043E\u043C \u043F\u0443\u0442\u043E. \u041D\u0430
+          \u0432\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0438\u0445 \u0441\u0442\u0435\u043D\u043A\u0430\u0445
+          \u0447\u0435\u0440\u0435\u043F\u0430 \u0434\u0430\u0436\u0435 \u043D\u0435\u0442
+          \u0441\u043B\u0435\u0434\u043E\u0432 \u0438 \u043F\u044F\u0442\u0435\u043D
+          \u0440\u0430\u0437\u043B\u043E\u0436\u0438\u0432\u0448\u0435\u0439\u0441\u044F
           \u043C\u043E\u0437\u0433\u043E\u0432\u043E\u0439 \u043C\u0430\u0441\u0441\u044B.
           \u042D\u0442\u043E \u0441\u0442\u0440\u0430\u043D\u043D\u043E\u0435 \u0438
           \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E\u0435 \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u0435\u2026
@@ -44397,9 +44447,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0418\u043D\u0442\u0435\u043B\u043B\u0435\u043A\u0442: (...\u043D\u0430\u043F\u0440\u044F\u0447\u044C
-          \u043F\u0430\u043C\u044F\u0442\u044C\u2026\u043F\u043E\u043F\u044B\u0442\u0430\u0442\u044C\u0441\u044F
-          \u0432\u0441\u043F\u043E\u043C\u043D\u0438\u0442\u044C\u2026)"
+        value: "...\u043D\u0430\u043F\u0440\u044F\u0447\u044C \u043F\u0430\u043C\u044F\u0442\u044C\u2026\u043F\u043E\u043F\u044B\u0442\u0430\u0442\u044C\u0441\u044F
+          \u0432\u0441\u043F\u043E\u043C\u043D\u0438\u0442\u044C\u2026"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -44454,10 +44503,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "''\u0418\u043D\u0442\u0443\u0438\u0446\u0438\u044F:'' \u041F\u043B\u043E\u0442\u043D\u044B\u0435
-          \u0440\u044F\u0434\u044B \u043B\u0435\u043A\u0446\u0438\u043E\u043D\u043D\u043E\u0433\u043E
-          \u0437\u0430\u043B\u0430 \u0437\u0430\u043F\u043E\u043B\u043D\u0435\u043D\u044B
-          \u043F\u043E\u043B\u0447\u0438\u0449\u0435\u043C \u0441\u0442\u0443\u0434\u0435\u043D\u0442\u043E\u0432-\u043C\u0435\u0434\u0438\u043A\u043E\u0432.
+        value: "\u041F\u043B\u043E\u0442\u043D\u044B\u0435 \u0440\u044F\u0434\u044B
+          \u043B\u0435\u043A\u0446\u0438\u043E\u043D\u043D\u043E\u0433\u043E \u0437\u0430\u043B\u0430
+          \u0437\u0430\u043F\u043E\u043B\u043D\u0435\u043D\u044B \u043F\u043E\u043B\u0447\u0438\u0449\u0435\u043C
+          \u0441\u0442\u0443\u0434\u0435\u043D\u0442\u043E\u0432-\u043C\u0435\u0434\u0438\u043A\u043E\u0432.
           \u0423 \u0442\u0440\u0438\u0431\u0443\u043D\u044B \u0438\u0437 \u043A\u0440\u0430\u0441\u043D\u043E\u0433\u043E
           \u0434\u0435\u0440\u0435\u0432\u0430 \u0441\u0442\u043E\u0438\u0442 \u0441\u0435\u0434\u043E\u0439
           \u0438 \u0442\u0440\u044F\u0441\u0443\u0449\u0438\u0439\u0441\u044F \u043E\u0442
@@ -44564,7 +44613,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 2
+        value: 14
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -44576,8 +44625,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u041F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440 \u0412\u0438\u0432\u0438\u0446\u043A\u0438\u0439:
-          \u2026\u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0438\u0442\u044C \u043F\u0440\u0438\u0431\u043B\u0438\u0437\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0435
+        value: "\u2026\u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0438\u0442\u044C
+          \u043F\u0440\u0438\u0431\u043B\u0438\u0437\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0435
           \u0432\u0440\u0435\u043C\u044F \u0441\u043C\u0435\u0440\u0442\u0438 \u0432\u0430\u043C
           \u0442\u0430\u043A\u0436\u0435 \u043F\u043E\u0437\u0432\u043E\u043B\u044F\u0442
           \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u043D\u044B\u0435 \u043E\u0442\u043C\u0435\u0442\u0438\u043D\u044B
@@ -44689,7 +44738,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 2
+        value: 14
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -44701,8 +44750,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u041F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440 \u0412\u0438\u0432\u0438\u0446\u043A\u0438:
-          \u0414\u0430, \u043C\u043E\u043B\u043E\u0434\u043E\u0439 \u0447\u0435\u043B\u043E\u0432\u0435\u043A\u2026"
+        value: "\u0414\u0430, \u043C\u043E\u043B\u043E\u0434\u043E\u0439 \u0447\u0435\u043B\u043E\u0432\u0435\u043A\u2026"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -44882,8 +44930,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0414\u0435\u0440\u0437\u043E\u0441\u0442\u044C: \u0410 \u043D\u0430\u0447\u0435\u0440\u0442\u0430
-          \u0412\u044B \u043D\u0430\u043C \u044D\u0442\u043E \u0440\u0430\u0441\u0441\u043A\u0430\u0437\u044B\u0432\u0430\u0435\u0442\u0435?"
+        value: "\u0410 \u043D\u0430\u0447\u0435\u0440\u0442\u0430 \u0412\u044B \u043D\u0430\u043C
+          \u044D\u0442\u043E \u0440\u0430\u0441\u0441\u043A\u0430\u0437\u044B\u0432\u0430\u0435\u0442\u0435?"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -44990,7 +45038,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 2
+        value: 14
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -45002,10 +45050,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u041F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440 \u0412\u0438\u0432\u0438\u0446\u043A\u0438:
-          \u041D\u0443-\u0441\u2026 \u043C\u043E\u043B\u043E\u0434\u043E\u0439 \u0447\u0435\u043B\u043E\u0432\u0435\u043A\u2026
-          \u0422\u0443\u0442 \u0434\u0432\u0430 \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u0430.
-          \u041F\u0435\u0440\u0432\u044B\u0439 - \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F
+        value: "\u041D\u0443-\u0441\u2026 \u043C\u043E\u043B\u043E\u0434\u043E\u0439
+          \u0447\u0435\u043B\u043E\u0432\u0435\u043A\u2026 \u0422\u0443\u0442 \u0434\u0432\u0430
+          \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u0430. \u041F\u0435\u0440\u0432\u044B\u0439
+          - \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F
           \u0441\u0442\u0438\u0445\u0438\u044F \u0432 \u043B\u0438\u0446\u0435 \u0434\u043E\u0436\u0434\u0435\u0432\u044B\u0445
           \u0432\u043E\u0434 \u0438 \u043D\u0435\u0431\u0435\u0441\u043D\u044B\u0445
           \u0432\u0435\u0442\u0440\u043E\u0432, \u043A\u043E\u0442\u043E\u0440\u044B\u0435
@@ -45170,7 +45218,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 2
+        value: 14
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -45182,8 +45230,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u041F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440 \u0412\u0438\u0432\u0438\u0446\u043A\u0438\u0439:
-          \u0420\u044B\u0436\u0435\u0432\u0430\u0442\u043E-\u043A\u043E\u0440\u0438\u0447\u043D\u0435\u0432\u044B\u0435
+        value: "\u0420\u044B\u0436\u0435\u0432\u0430\u0442\u043E-\u043A\u043E\u0440\u0438\u0447\u043D\u0435\u0432\u044B\u0435
           \u201C\u043F\u0440\u043E\u0433\u043D\u0438\u0448\u0438\u201D \u0441\u0432\u0438\u0434\u0435\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u0443\u044E\u0442
           \u043E \u0434\u0432\u0443\u0445-\u0442\u0440\u0451\u0445 \u043D\u0435\u0434\u0435\u043B\u044F\u0445
           \u0441 \u043C\u043E\u043C\u0435\u043D\u0442\u0430 \u0441\u043C\u0435\u0440\u0442\u0438.
@@ -45314,7 +45361,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 2
+        value: 14
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -45326,8 +45373,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u041F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440 \u0412\u0438\u0432\u0438\u0446\u043A\u0438\u0439:
-          \u041D\u0435\u0432\u0435\u0436\u0435\u0441\u0442\u0432\u043E! \u0416\u0430\u043B\u043A\u043E\u0435\u2026
+        value: "\u041D\u0435\u0432\u0435\u0436\u0435\u0441\u0442\u0432\u043E! \u0416\u0430\u043B\u043A\u043E\u0435\u2026
           \u0416\u0430\u043B\u043A\u043E\u0435 \u043D\u0438\u0447\u0442\u043E\u0436\u043D\u043E\u0435
           \u043D\u0435\u0432\u0435\u0436\u0435\u0441\u0442\u0432\u043E! \u0414\u0430
           \u0431\u0443\u0434\u0435\u0442 \u0442\u0435\u0431\u0435 \u0438\u0437\u0432\u0435\u0441\u0442\u043D\u043E,
@@ -45445,7 +45491,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 2
+        value: 14
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -45457,8 +45503,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u041F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440 \u0412\u0438\u0432\u0438\u0446\u043A\u0438:
-          \u0412\u0442\u043E\u0440\u043E\u0439 \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u2026.
+        value: "\u0412\u0442\u043E\u0440\u043E\u0439 \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u2026.
           \u041D\u0443-\u0441\u2026 \u042D\u043C\u2026. \u044D\u0442\u043E \u043C\u043E\u0436\u0435\u0442
           \u043E\u0437\u043D\u0430\u0447\u0430\u0442\u044C \u0447\u0442\u043E-\u0441\u2026.
           \u043C\u043E\u0437\u0433 \u0438\u0437\u0432\u043B\u0435\u043A\u043B\u0438
@@ -45580,9 +45625,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0418\u043D\u0442\u0443\u0438\u0446\u0438\u044F: \u201C\u041C\u043E\u0437\u0433
-          \u0438\u0437\u0432\u043B\u0435\u043A\u043B\u0438 \u0441\u0440\u0430\u0437\u0443
-          \u043F\u043E\u0441\u043B\u0435 \u0441\u043C\u0435\u0440\u0442\u0438\u2026\u201D.
+        value: "\u201C\u041C\u043E\u0437\u0433 \u0438\u0437\u0432\u043B\u0435\u043A\u043B\u0438
+          \u0441\u0440\u0430\u0437\u0443 \u043F\u043E\u0441\u043B\u0435 \u0441\u043C\u0435\u0440\u0442\u0438\u2026\u201D.
           \u0421\u043E\u043C\u043D\u0435\u043D\u0438\u0439 \u043D\u0435\u0442: \u043C\u044B
           \u0438\u043C\u0435\u0435\u043C \u0434\u0435\u043B\u043E \u0441 \u043D\u0435\u043A\u0438\u043C
           \u0436\u0443\u0442\u043A\u0438\u043C \u0440\u0438\u0442\u0443\u0430\u043B\u043E\u043C.
@@ -45656,7 +45700,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "''\u0418\u043D\u0442\u0443\u0438\u0446\u0438\u044F:'' \u0412\u0441\u043C\u0430\u0442\u0440\u0438\u0432\u0430\u044F\u0441\u044C
+        value: "\u0412\u0441\u043C\u0430\u0442\u0440\u0438\u0432\u0430\u044F\u0441\u044C
           \u0432\u043E \u043C\u0440\u0430\u043A \u0447\u0435\u0440\u0435\u043F\u043D\u044B\u0445
           \u0433\u043B\u0430\u0437\u043D\u0438\u0446 \u043C\u043E\u0436\u043D\u043E
           \u0443\u0432\u0438\u0434\u0435\u0442\u044C \u0442\u043E\u043B\u044C\u043A\u043E
@@ -45732,8 +45776,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u042D\u043C\u043F\u0430\u0442\u0438\u044F: \u0418 \u043A\u0442\u043E
-          \u0436\u0435 \u0442\u044B?"
+        value: "\u0418 \u043A\u0442\u043E \u0436\u0435 \u0442\u044B?"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -45776,7 +45819,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 2
+        value: 13
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -45788,12 +45831,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0427\u0435\u0440\u0435\u043F: \u0414\u0430 \u043A\u0430\u043A\u0430\u044F
-          \u0443\u0436\u0435 \u0440\u0430\u0437\u043D\u0438\u0446\u0430 \u201C\u043A\u0442\u043E\u201D.
-          \u0423\u0436\u0435 \u043D\u0438\u043A\u0442\u043E. \u041D\u0435 \u0433\u043E\u0432\u043E\u0440\u0438,
-          \u0447\u0442\u043E \u0442\u0435\u0431\u0435 \u0435\u0441\u0442\u044C \u0434\u0435\u043B\u043E
-          \u0434\u043E \u043C\u0435\u043D\u044F. \u042F \u0443\u0436\u0435 \u043C\u043D\u043E\u0433\u043E
-          \u0440\u0430\u0437 \u043E\u0442 \u043A\u043E\u0433\u043E \u0441\u043B\u044B\u0448\u0430\u043B\u0430
+        value: "\u0414\u0430 \u043A\u0430\u043A\u0430\u044F \u0443\u0436\u0435 \u0440\u0430\u0437\u043D\u0438\u0446\u0430
+          \u201C\u043A\u0442\u043E\u201D. \u0423\u0436\u0435 \u043D\u0438\u043A\u0442\u043E.
+          \u041D\u0435 \u0433\u043E\u0432\u043E\u0440\u0438, \u0447\u0442\u043E \u0442\u0435\u0431\u0435
+          \u0435\u0441\u0442\u044C \u0434\u0435\u043B\u043E \u0434\u043E \u043C\u0435\u043D\u044F.
+          \u042F \u0443\u0436\u0435 \u043C\u043D\u043E\u0433\u043E \u0440\u0430\u0437
+          \u043E\u0442 \u043A\u043E\u0433\u043E \u0441\u043B\u044B\u0448\u0430\u043B\u0430
           \u043F\u043E\u0434\u043E\u0431\u043D\u044B\u0439 \u0438\u043D\u0442\u0435\u0440\u0435\u0441,
           \u0438 \u044D\u0442\u043E \u0432\u0441\u0435\u0433\u0434\u0430 \u0431\u044B\u043B\u0430
           \u043B\u043E\u0436\u044C."
@@ -45851,8 +45894,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u042D\u043C\u043F\u0430\u0442\u0438\u044F: \u0422\u044B \u0442\u0430\u043A
-          \u043C\u043E\u043B\u043E\u0434\u0430\u2026"
+        value: "\u0422\u044B \u0442\u0430\u043A \u043C\u043E\u043B\u043E\u0434\u0430\u2026"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -45895,7 +45937,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 2
+        value: 13
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -45907,10 +45949,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0427\u0435\u0440\u0435\u043F: \u0412\u0441\u0435 \u0441\u0430\u043C\u043E\u0435
-          \u0445\u043E\u0440\u043E\u0448\u0435\u0435 \u0443\u043C\u0438\u0440\u0430\u0435\u0442
-          \u043C\u043E\u043B\u043E\u0434\u044B\u043C. \u041F\u0447\u0451\u043B\u044B,
-          \u043D\u043E\u0447\u043D\u044B\u0435 \u043C\u043E\u0442\u044B\u043B\u044C\u043A\u0438,
+        value: "\u0412\u0441\u0435 \u0441\u0430\u043C\u043E\u0435 \u0445\u043E\u0440\u043E\u0448\u0435\u0435
+          \u0443\u043C\u0438\u0440\u0430\u0435\u0442 \u043C\u043E\u043B\u043E\u0434\u044B\u043C.
+          \u041F\u0447\u0451\u043B\u044B, \u043D\u043E\u0447\u043D\u044B\u0435 \u043C\u043E\u0442\u044B\u043B\u044C\u043A\u0438,
           \u0443\u0442\u0440\u0435\u043D\u043D\u044F\u044F \u0440\u043E\u0441\u0430\u2026
           \u0412\u0441\u0435 \u0437\u043B\u043E - \u0436\u0438\u0432\u0435\u0442
           \u0432\u0435\u0447\u043D\u043E. \u041D\u043E\u0447\u043D\u043E\u0439 \u043C\u0440\u0430\u043A,
@@ -45969,8 +46010,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u042D\u043C\u043F\u0430\u0442\u0438\u044F: \u041A\u0430\u043A \u0442\u044B
-          \u0443\u043C\u0435\u0440\u043B\u0430?"
+        value: "\u041A\u0430\u043A \u0442\u044B \u0443\u043C\u0435\u0440\u043B\u0430?"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -46013,7 +46053,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 2
+        value: 13
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -46025,7 +46065,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0427\u0435\u0440\u0435\u043F: \u0422\u044B \u043D\u0435 \u043F\u043E\u043D\u0438\u043C\u0430\u0435\u0448\u044C,
+        value: "\u0422\u044B \u043D\u0435 \u043F\u043E\u043D\u0438\u043C\u0430\u0435\u0448\u044C,
           \u0447\u0442\u043E \u0433\u043E\u0432\u043E\u0440\u0438\u0448\u044C \u0441\u043E
           \u0441\u0432\u043E\u0438\u043C \u0432\u043E\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435\u043C?
           \u041C\u0435\u043D\u044F \u0434\u0430\u0432\u043D\u043E \u043D\u0435\u0442.
@@ -46036,13 +46076,7 @@ MonoBehaviour:
           \u0438 \u0434\u043E \u0440\u043E\u0436\u0434\u0435\u043D\u0438\u044F. \u0417\u0434\u0435\u0441\u044C
           - \u043D\u0438\u043A\u0430\u043A. \u0418 \u0442\u044B \u0434\u0430\u0436\u0435
           \u043D\u0435 \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u044F\u0435\u0448\u044C
-          \u043A\u0430\u043A \u044D\u0442\u043E \u043F\u0440\u0435\u043A\u0440\u0430\u0441\u043D\u043E\u2026\r\n\r\n(\u0432\u0430\u043C
-          \u043A\u0430\u0436\u0435\u0442\u0441\u044F, \u0441\u043B\u043E\u0432\u043D\u043E
-          \u0447\u0435\u0440\u0435\u043F \u0443\u043B\u044B\u0431\u0430\u0435\u0442\u0441\u044F
-          \u0432\u0430\u043C, \u0430 \u0432 \u0435\u0433\u043E \u043F\u0443\u0441\u0442\u044B\u0445
-          \u0433\u043B\u0430\u0437\u043D\u0438\u0446\u0430\u0445 \u0437\u0430\u0433\u043E\u0440\u0430\u0435\u0442\u0441\u044F
-          \u043F\u0435\u0447\u0430\u043B\u044C\u043D\u044B\u0439 \u043E\u0442\u0431\u043B\u0435\u0441\u043A
-          \u0447\u044C\u0438\u0445-\u0442\u043E \u0433\u043B\u0430\u0437)"
+          \u043A\u0430\u043A \u044D\u0442\u043E \u043F\u0440\u0435\u043A\u0440\u0430\u0441\u043D\u043E\u2026\r"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -46060,7 +46094,7 @@ MonoBehaviour:
       - originConversationID: 12
         originDialogueID: 49
         destinationConversationID: 12
-        destinationDialogueID: 50
+        destinationDialogueID: 57
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -46097,8 +46131,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u042D\u043C\u043F\u0430\u0442\u0438\u044F: \u0421\u043A\u0430\u0436\u0438
-          \u043C\u043D\u0435, \u043A\u0442\u043E \u0442\u0432\u043E\u0439 \u0443\u0431\u0438\u0439\u0446\u0430?"
+        value: "\u0421\u043A\u0430\u0436\u0438 \u043C\u043D\u0435, \u043A\u0442\u043E
+          \u0442\u0432\u043E\u0439 \u0443\u0431\u0438\u0439\u0446\u0430?"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -46127,7 +46161,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1927.2043
-        y: 955.72656
+        y: 1033.8514
         width: 160
         height: 30
     - id: 51
@@ -46153,12 +46187,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "(\u0427\u0435\u0440\u0435\u043F \u043C\u043E\u043B\u0447\u0438\u0442
+        value: "\u0427\u0435\u0440\u0435\u043F \u043C\u043E\u043B\u0447\u0438\u0442
           \u0438 \u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0430\u0435\u0442 \u0443\u043B\u044B\u0431\u0430\u0442\u044C\u0441\u044F.
           \u041A\u0430\u0436\u0435\u0442\u0441\u044F \u201C\u043E\u043D\u0430\u201D
           \u0431\u043E\u043B\u044C\u0448\u0435 \u043D\u0435 \u0441\u043B\u044B\u0448\u0438\u0442
           \u0432\u0430\u0441. \u0415\u0451 \u0431\u043E\u043B\u044C\u0448\u0435 \u043D\u0435\u0442
-          \u0437\u0434\u0435\u0441\u044C)"
+          \u0437\u0434\u0435\u0441\u044C"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -46187,7 +46221,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1927.2043
-        y: 1005.7265
+        y: 1083.8514
         width: 160
         height: 30
     - id: 52
@@ -46213,9 +46247,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u042D\u043C\u043F\u0430\u0442\u0438\u044F: \u041F\u0440\u043E\u0448\u0443,
-          \u043E\u0442\u0432\u0435\u0442\u044C, \u043A\u0442\u043E \u0442\u0435\u0431\u044F
-          \u0443\u0431\u0438\u043B?"
+        value: "\u041F\u0440\u043E\u0448\u0443, \u043E\u0442\u0432\u0435\u0442\u044C,
+          \u043A\u0442\u043E \u0442\u0435\u0431\u044F \u0443\u0431\u0438\u043B?"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -46244,7 +46277,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1928.4238
-        y: 1067.9214
+        y: 1146.0463
         width: 160
         height: 30
     - id: 53
@@ -46270,8 +46303,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0418\u043D\u0442\u0443\u0438\u0446\u0438\u044F: \u041D\u0435\u0442
-          \u043E\u0442\u0432\u0435\u0442\u0430. \u042D\u0442\u043E \u0431\u0435\u0441\u0441\u043C\u044B\u0441\u043B\u0435\u043D\u043D\u043E. "
+        value: "\u041D\u0435\u0442 \u043E\u0442\u0432\u0435\u0442\u0430. \u042D\u0442\u043E
+          \u0431\u0435\u0441\u0441\u043C\u044B\u0441\u043B\u0435\u043D\u043D\u043E. "
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -46300,7 +46333,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1928.4238
-        y: 1117.9214
+        y: 1196.0463
         width: 160
         height: 30
     - id: 54
@@ -46326,8 +46359,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u042D\u043C\u043F\u0430\u0442\u0438\u044F: \u041F\u0440\u043E\u0449\u0430\u0439,
-          \u043D\u0435\u0441\u0447\u0430\u0441\u0442\u043D\u043E\u0435 \u0434\u0438\u0442\u044F\u2026(\u0441\u043F\u0440\u044F\u0442\u0430\u0442\u044C
+        value: "\u041F\u0440\u043E\u0449\u0430\u0439, \u043D\u0435\u0441\u0447\u0430\u0441\u0442\u043D\u043E\u0435
+          \u0434\u0438\u0442\u044F\u2026(\u0441\u043F\u0440\u044F\u0442\u0430\u0442\u044C
           \u0447\u0435\u0440\u0435\u043F)"
         type: 0
         typeString: CustomFieldType_Text
@@ -46357,7 +46390,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1928.4238
-        y: 1189.0979
+        y: 1267.2228
         width: 160
         height: 30
     - id: 55
@@ -46371,7 +46404,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 2
+        value: 13
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -46383,7 +46416,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u0427\u0435\u0440\u0435\u043F: \u041B\u044E\u0431\u043E\u0432\u044C\u2026"
+        value: "\u041B\u044E\u0431\u043E\u0432\u044C\u2026"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -46412,7 +46445,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1928.4238
-        y: 1239.0979
+        y: 1317.2228
         width: 160
         height: 30
     - id: 56
@@ -46476,12 +46509,72 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1928.4238
-        y: 1289.0979
+        y: 1367.2228
+        width: 160
+        height: 30
+    - id: 57
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u0412\u0430\u043C \u043A\u0430\u0436\u0435\u0442\u0441\u044F, \u0441\u043B\u043E\u0432\u043D\u043E
+          \u0447\u0435\u0440\u0435\u043F \u0443\u043B\u044B\u0431\u0430\u0435\u0442\u0441\u044F
+          \u0432\u0430\u043C, \u0430 \u0432 \u0435\u0433\u043E \u043F\u0443\u0441\u0442\u044B\u0445
+          \u0433\u043B\u0430\u0437\u043D\u0438\u0446\u0430\u0445 \u0437\u0430\u0433\u043E\u0440\u0430\u0435\u0442\u0441\u044F
+          \u043F\u0435\u0447\u0430\u043B\u044C\u043D\u044B\u0439 \u043E\u0442\u0431\u043B\u0435\u0441\u043A
+          \u0447\u044C\u0438\u0445-\u0442\u043E \u0433\u043B\u0430\u0437"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 12
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 12
+        originDialogueID: 57
+        destinationConversationID: 12
+        destinationDialogueID: 50
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1928.7668
+        y: 953.059
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 386.15945, y: 183.85825}
-    canvasZoom: 0.6100004
+    canvasScrollPosition: {x: 74.99988, y: 165.62494}
+    canvasZoom: 0.64000034
   - id: 13
     fields:
     - title: Title
@@ -46686,7 +46779,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "\u041F\u043E\u0441\u0442\u0443\u0447\u0430\u0442\u044C \u043F\u0430\u043B\u044C\u0446\u0435\u043C
-          \u043F\u043E \u0441\u0442\u0435\u043A\u043B\u0443 (\u0414\u0435\u0440\u0437\u043E\u0441\u0442\u044C)"
+          \u043F\u043E \u0441\u0442\u0435\u043A\u043B\u0443"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -46742,8 +46835,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "\u0412\u043D\u0438\u043C\u0430\u0442\u0435\u043B\u044C\u043D\u043E
-          \u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u043A\u043E\u0440\u043F\u0443\u0441
-          (\u0418\u043D\u0442\u0435\u043B\u043B\u0435\u043A\u0442)"
+          \u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u043A\u043E\u0440\u043F\u0443\u0441"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -46799,7 +46891,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "\u041E\u043F\u0440\u0435\u0434\u0435\u043B\u0438\u0442\u044C \u0433\u0434\u0435
-          \u0421\u0435\u0432\u0435\u0440 (\u042D\u043C\u043F\u0430\u0442\u0438\u044F)"
+          \u0421\u0435\u0432\u0435\u0440"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -47234,7 +47326,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "\u041F\u043E\u0438\u0441\u043A\u0430\u0442\u044C \u0441\u043A\u0440\u044B\u0442\u044B\u0439
-          \u043E\u0442\u0441\u0435\u043A (\u0418\u043D\u0442\u0435\u043B\u043B\u0435\u043A\u0442)"
+          \u043E\u0442\u0441\u0435\u043A"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -47638,7 +47730,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "\u0418\u0437\u0443\u0447\u0438\u0442\u044C \u043A\u0440\u044B\u0448\u043A\u0443
-          \u043A\u043E\u043C\u043F\u0430\u0441\u0430 (\u0418\u043D\u0442\u0435\u043B\u043B\u0435\u043A\u0442)"
+          \u043A\u043E\u043C\u043F\u0430\u0441\u0430"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -48697,7 +48789,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 27.574722, y: 253.06885}
+    canvasScrollPosition: {x: 0, y: 167.10526}
     canvasZoom: 0.7600002
   syncInfo:
     syncActors: 0
