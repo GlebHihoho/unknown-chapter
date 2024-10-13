@@ -53,6 +53,10 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: Display Name
+      value: "\u0412\u044B\u0436\u0438\u0432\u0448\u0438\u0439"
+      type: 0
+      typeString: 
     portrait: {fileID: 0}
     spritePortrait: {fileID: 21300000, guid: 7f64d0bfb9251aa4d898aa104736316e, type: 3}
     alternatePortraits: []
@@ -1646,12 +1650,6 @@ MonoBehaviour:
         destinationDialogueID: 45
         isConnector: 0
         priority: 2
-      - originConversationID: 1
-        originDialogueID: 0
-        destinationConversationID: 1
-        destinationDialogueID: 139
-        isConnector: 0
-        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -1921,7 +1919,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 3616.9446
-        y: 558.45734
+        y: 551.60803
         width: 160
         height: 30
     - id: 8
@@ -2250,13 +2248,13 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u0422\u044B, \u042D\u0440\u0430\u0441\u0442, \u0441\u043E\u0432\u0441\u0435\u043C
-          \u0435\u0449\u0451 \u0437\u0435\u043B\u0451\u043D\u044B\u0439. \u042F \u0432
-          \u043C\u043E\u0440\u0435 \u0438 \u043D\u0435 \u0442\u0430\u043A\u043E\u0435
-          \u0432\u0438\u0434\u0430\u043B. \u0410 \u044D\u0442\u043E - \u0435\u0440\u0443\u043D\u0434\u0430!
-          \u041C\u044F\u0433\u043A\u0430\u044F \u043F\u0435\u0440\u0438\u043D\u0430
-          \u0438 \u043F\u0438\u043D\u0442\u0430 \u0440\u043E\u043C\u0430 \u0432\u043C\u0438\u0433
-          \u0437\u0430\u043B\u0435\u0447\u0430\u0442 \u043C\u043E\u0438 \u0440\u0430\u043D\u044B!"
+        value: "\u0422\u044B \u0441\u043E\u0432\u0441\u0435\u043C \u0435\u0449\u0451
+          \u0437\u0435\u043B\u0451\u043D\u044B\u0439. \u042F \u0432 \u043C\u043E\u0440\u0435
+          \u0438 \u043D\u0435 \u0442\u0430\u043A\u043E\u0435 \u0432\u0438\u0434\u0430\u043B.
+          \u0410 \u044D\u0442\u043E - \u0435\u0440\u0443\u043D\u0434\u0430! \u041C\u044F\u0433\u043A\u0430\u044F
+          \u043F\u0435\u0440\u0438\u043D\u0430 \u0438 \u043F\u0438\u043D\u0442\u0430
+          \u0440\u043E\u043C\u0430 \u0432\u043C\u0438\u0433 \u0437\u0430\u043B\u0435\u0447\u0430\u0442
+          \u043C\u043E\u0438 \u0440\u0430\u043D\u044B!"
         type: 0
         typeString: 
       - title: Sequence
@@ -9328,57 +9326,8 @@ MonoBehaviour:
         y: 1215.7867
         width: 160
         height: 30
-    - id: 139
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 1
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 3141.1553
-        y: 291.01373
-        width: 160
-        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1858.596, y: 1753.4235}
+    canvasScrollPosition: {x: 2417.501, y: 0}
     canvasZoom: 0.7300007
   - id: 2
     fields:
@@ -12038,7 +11987,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["Story.PapersFound"] = true
+      userScript: "Variable[\"Story.PapersFound\"] = true;\nChangeActorName(\"\u042D\u0440\u0430\u0441\u0442\",\"\u042D\u0440\u0430\u0441\u0442\")"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -12479,7 +12428,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["Story.PapersFound"] = true
+      userScript: "Variable[\"Story.PapersFound\"] = true;\nChangeActorName(\"\u042D\u0440\u0430\u0441\u0442\",\"\u042D\u0440\u0430\u0441\u0442\")"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -13031,13 +12980,13 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["Story.PapersFound"] = true
+      userScript: "Variable[\"Story.PapersFound\"] = true;\nChangeActorName(\"\u042D\u0440\u0430\u0441\u0442\",\"\u042D\u0440\u0430\u0441\u0442\")"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2909.132
+        x: 2906.693
         y: 1347.9209
         width: 160
         height: 30
@@ -13488,7 +13437,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1755.0955, y: 515.0172}
+    canvasScrollPosition: {x: 1585.5835, y: 757.70013}
     canvasZoom: 0.8200002
   - id: 4
     fields:
@@ -17315,9 +17264,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "(+5 \u043E\u0447\u043A\u043E\u0432 \u0434\u0435\u0440\u0437\u043E\u0441\u0442\u0438)
-          \u041A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E, \u044F \u043E\u043A\u0430\u0437\u0430\u043B\u0441\u044F
-          \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u043C
+        value: "\u041A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E, \u044F
+          \u043E\u043A\u0430\u0437\u0430\u043B\u0441\u044F \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u043C
           \u0432\u044B\u0436\u0438\u0432\u0448\u0438\u043C... \u0411\u043E\u0433
           \u043D\u0430\u043A\u0430\u0437\u0430\u043B \u0435\u0440\u0435\u0442\u0438\u043A\u043E\u0432,
           \u043F\u0435\u0440\u0435\u0441\u0435\u043A\u0430\u044E\u0449\u0438\u0445
@@ -17381,8 +17329,7 @@ MonoBehaviour:
           \u0432\u044B\u0436\u0438\u0432\u0448\u0438\u0439 \u043C\u043E\u0440\u044F\u043A.
           \u041F\u043E\u0442\u043E\u0440\u043E\u043F\u0438\u0442\u0435\u0441\u044C
           - \u043E\u043D \u0438\u0437\u043D\u044B\u0432\u0430\u0435\u0442 \u0432
-          \u043C\u0443\u043A\u0430\u0445 (+\u0424\u043E\u043C\u0430) (-\u041E\u0442\u0435\u0446
-          \u041F\u0438\u0439)"
+          \u043C\u0443\u043A\u0430\u0445"
         type: 0
         typeString: 
       - title: Sequence
@@ -22080,8 +22027,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 2150.4678, y: 1690.9814}
-    canvasZoom: 0.6400002
+    canvasScrollPosition: {x: 3493.0134, y: 1748.446}
+    canvasZoom: 0.73000014
   - id: 5
     fields:
     - title: Title
