@@ -20,6 +20,8 @@ public class Interactable : MonoBehaviour
     private CursorMode cursorMode = CursorMode.Auto;
     private Vector2 hotSpot = Vector2.zero;
 
+    private bool approaching = false;
+
 
 
     private void Awake()
@@ -27,6 +29,19 @@ public class Interactable : MonoBehaviour
         outline = GetComponent<Outline>();
         outline.enabled = false;
 
+    }
+
+    private void Update()
+    {
+        if (approaching && (Vector3.Magnitude(transform.position - player.position) <= interactData.InteractDistance))
+        {
+            status = Status.CanInteract;
+
+            MouseInput.instance.ResetMovement();
+            ResetLongInteraction();
+
+            PerfomInteraction();
+        }
     }
 
 
@@ -93,6 +108,19 @@ public class Interactable : MonoBehaviour
         if (status == Status.Paused) return;
 
         if (status == Status.CanInteract) PerfomInteraction();
+        else 
+        {
+            approaching = true;
+            MouseInput.instance.SetDestination(false);
+            MouseInput.instance.OnNewInput += ResetLongInteraction;
+        }
+    }
+
+
+    private void ResetLongInteraction()
+    {
+        approaching = false;
+        MouseInput.instance.OnNewInput -= ResetLongInteraction;
     }
 
 

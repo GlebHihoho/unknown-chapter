@@ -1,4 +1,5 @@
 using MxM;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -23,11 +24,22 @@ public class MouseInput : MonoBehaviour
     public LayerMask WhatCanBeClickedOn;
 
 
+    public static MouseInput instance;
+
+    public event Action OnNewInput;
+
+
     bool isPaused = false;
     bool agentEnabled = true;
 
     Vector3 destination;
-    
+
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+    }
+
     void Start()
     {
         _myAgent = GetComponent<NavMeshAgent>();
@@ -56,7 +68,7 @@ public class MouseInput : MonoBehaviour
         Pause.OnPause -= SetPause;
     }
 
-    private void ResetMovement()
+    public void ResetMovement()
     {
         if (_particleObject != null) DeleteMovePoint();
         _myAgent.isStopped = true;
@@ -106,6 +118,13 @@ public class MouseInput : MonoBehaviour
 
     private void SetDestination(InputAction.CallbackContext obj)
     {
+        SetDestination();
+
+        OnNewInput?.Invoke();
+    }
+
+    public void SetDestination(bool showMovePoint = true)
+    {
         Vector3 newPos;
         newPos.x = Pointer.current.position.x.ReadValue();
         newPos.y = Pointer.current.position.y.ReadValue();
@@ -130,7 +149,7 @@ public class MouseInput : MonoBehaviour
 
             if (!_isParticleMovePoint)
             {
-                CreateMovePoint();
+                CreateMovePoint(showMovePoint);
             }
             else
             {
@@ -143,7 +162,8 @@ public class MouseInput : MonoBehaviour
     }
 
 
-    private void CreateMovePoint()
+
+    private void CreateMovePoint(bool showMovePoint)
     {
         _particleObject = Instantiate(
             _movePointPrefab,
@@ -151,6 +171,8 @@ public class MouseInput : MonoBehaviour
             Quaternion.Euler(90f, 0f, 0f)
         );
         _isParticleMovePoint = true;
+
+        if (!showMovePoint) _particleObject.GetComponent<Renderer>().enabled = false;
     }
 
     public void DeleteMovePoint()
