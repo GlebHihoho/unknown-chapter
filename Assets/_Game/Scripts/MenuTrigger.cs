@@ -11,8 +11,17 @@ public class MenuTrigger : MonoBehaviour
     bool isShown = false;
 
 
-    private void Start() => UIController.OnMainMenu += MainMenu;
-    private void OnDestroy() => UIController.OnMainMenu -= MainMenu;
+    private void Start()
+    {
+        UIController.OnMainMenu += MainMenu;
+        MainMenuToggle.OnHideMenu += ResetShown;
+    }
+
+    private void OnDestroy()
+    {
+        UIController.OnMainMenu -= MainMenu;
+        MainMenuToggle.OnHideMenu -= ResetShown;
+    }
 
     public void MainMenu()
     {
@@ -21,5 +30,7 @@ public class MenuTrigger : MonoBehaviour
         if (isShown) OnShowMenu.Invoke();
         else OnHideMenu.Invoke();
     }
+
+    private void ResetShown() => isShown = false;
 
 }
