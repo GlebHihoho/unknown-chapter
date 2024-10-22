@@ -27,6 +27,8 @@ public class MouseInput : MonoBehaviour
     public static MouseInput instance;
 
     public event Action OnNewInput;
+    public event Action OnDestinationSet;
+    public event Action OnDeleteMovePoint;
 
 
     bool isPaused = false;
@@ -159,6 +161,8 @@ public class MouseInput : MonoBehaviour
             destination = hitInfo.point;
             _myAgent.SetDestination(hitInfo.point);
         }
+
+        OnDestinationSet?.Invoke();
     }
 
 
@@ -179,6 +183,7 @@ public class MouseInput : MonoBehaviour
     {
         Destroy(_particleObject);
         _isParticleMovePoint = false;
+        OnDeleteMovePoint?.Invoke();
     }
     private void UpdateMovePoint()
     {

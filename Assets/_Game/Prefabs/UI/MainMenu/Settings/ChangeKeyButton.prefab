@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 1365112846024072101}
   - component: {fileID: 4495160173398515280}
   - component: {fileID: 2715697114017735016}
+  - component: {fileID: 1036879073605727466}
   m_Layer: 5
   m_Name: ChangeKeyButton
   m_TagString: Untagged
@@ -553,3 +554,15 @@ MonoBehaviour:
   leftMouseButton: {fileID: 21300000, guid: 2c4991519c9cec44cac3832ba6d2bf48, type: 3}
   rightMouseButton: {fileID: 21300000, guid: 92050399755451f44abf2617e4b7ef23, type: 3}
   binding: 0
+--- !u!114 &1036879073605727466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7192475867094459743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b4d18d3144bd6b428ae9ea006d83b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

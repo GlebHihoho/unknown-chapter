@@ -180,11 +180,9 @@ MonoBehaviour:
   ambientMusic2: {fileID: 8380211055883254400}
   soundEffects: {fileID: 1600263995760511552}
   mixer: {fileID: 24100000, guid: 7f5de2b7a5e7ab146b18a3a0d51bf248, type: 2}
-  masterGroup: {fileID: 24300002, guid: 7f5de2b7a5e7ab146b18a3a0d51bf248, type: 2}
-  musicGroup: {fileID: -5480288018544954060, guid: 7f5de2b7a5e7ab146b18a3a0d51bf248, type: 2}
-  soundEffectsGroup: {fileID: 7143029432158065603, guid: 7f5de2b7a5e7ab146b18a3a0d51bf248, type: 2}
+  soundFX: {fileID: 11400000, guid: f012cdeceb2a30c4cbca3cb9aae60785, type: 2}
   mainTheme: {fileID: 0}
-  generalVolume: 0.7
+  masterVolume: 0.7
   musicVolume: 0.7
   effectsVolume: 0.7
   shuffleTime: 1.5
