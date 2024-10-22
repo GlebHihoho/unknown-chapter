@@ -34,7 +34,7 @@ public class ItemsContainer : Interactable
         }
 
         fullContainer.SetActive(false);
-        emptyContainer.SetActive(true);
+        if (emptyContainer != null) emptyContainer.SetActive(true);
 
         Destroy(this);
     }
