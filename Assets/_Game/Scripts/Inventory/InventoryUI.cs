@@ -15,6 +15,8 @@ public class InventoryUI : MonoBehaviour
 
     [SerializeField] ButtonUpdated inventoryButton;
 
+    [SerializeField] ItemSoundData itemSounds;
+
     Dictionary<ItemData, InventoryCell> inventory = new Dictionary<ItemData, InventoryCell>();
 
     ItemData activeItem;
@@ -84,9 +86,11 @@ public class InventoryUI : MonoBehaviour
 
         inventory.Add(item, cell);
 
-        if (activeItem == null) SetActiveItem(item);
+        if (activeItem == null) SetActiveItem(item, true);
 
         if (!activeWhileConversation) inventoryButton.ShowUpdate();
+
+        SoundManager.instance.PlayEffect(itemSounds.Receieved);
     }
 
     private void RemoveItem(ItemData item)
@@ -97,13 +101,15 @@ public class InventoryUI : MonoBehaviour
 
         if (activeItem == item)
         {
-            if (inventory.Count > 0) SetActiveItem(inventory.Keys.First());
+            if (inventory.Count > 0) SetActiveItem(inventory.Keys.First(), true);
             else 
             { 
                 activeItem = null;
                 OnClear?.Invoke();
             }
-        }       
+        }
+
+        SoundManager.instance.PlayEffect(itemSounds.Deleted);
     }
 
 
@@ -115,7 +121,7 @@ public class InventoryUI : MonoBehaviour
 
     }
 
-    public void SetActiveItem(ItemData item)
+    public void SetActiveItem(ItemData item, bool addingOrRemoving = false)
     {
         if (inventory.ContainsKey(item))
         {
@@ -128,6 +134,8 @@ public class InventoryUI : MonoBehaviour
             inventory[item].SelectItem();
         }
         else activeItem = null;
+
+        if (!addingOrRemoving) SoundManager.instance.PlayEffect(itemSounds.Selected);
     }
 
 

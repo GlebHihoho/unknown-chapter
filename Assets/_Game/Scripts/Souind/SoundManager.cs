@@ -14,9 +14,6 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioMixer mixer;
 
 
-    [SerializeField] SoundFXData soundFX;
-
-
     const float defaultVolume = 0.7f;
 
     [Space]
@@ -83,8 +80,6 @@ public class SoundManager : MonoBehaviour
         SoundSettingsUI.OnEffectsVolumeChange += ChangeEfectsVolume;
 
         SoundSettingsUI.OnCloseSettings += SaveSettings;
-
-        ButtonSound.OnClick += ButtonClick;
     }
 
 
@@ -98,8 +93,6 @@ public class SoundManager : MonoBehaviour
         SoundSettingsUI.OnEffectsVolumeChange -= ChangeEfectsVolume;
 
         SoundSettingsUI.OnCloseSettings -= SaveSettings;
-
-        ButtonSound.OnClick -= ButtonClick;
     }
 
 
@@ -173,6 +166,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    private void ButtonClick() => soundEffects.PlayOneShot(soundFX.ButtonClick);
+
+    public void PlayEffect(AudioClip clip) => soundEffects.PlayOneShot(clip);
 
 }
