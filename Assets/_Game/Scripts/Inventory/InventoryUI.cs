@@ -88,7 +88,7 @@ public class InventoryUI : MonoBehaviour
 
         if (activeItem == null) SetActiveItem(item, true);
 
-        if (!activeWhileConversation) inventoryButton.ShowUpdate();
+        if (!activeWhileConversation && !gameObject.activeSelf) inventoryButton.ShowUpdate();
 
         SoundManager.instance.PlayEffect(itemSounds.Receieved);
     }
@@ -117,7 +117,7 @@ public class InventoryUI : MonoBehaviour
     {
         inventory[item].UpdateItem(quantity);
 
-        if (!activeWhileConversation) inventoryButton.ShowUpdate();
+        if (!activeWhileConversation && !gameObject.activeSelf) inventoryButton.ShowUpdate();
 
     }
 

@@ -6,13 +6,19 @@ public class WindowSound : MonoBehaviour
     [SerializeField] WindowSoundData sounds;
 
     bool isFirstDisable = true;
-    [SerializeField] bool ignoreFirstDisable = true;
+    [SerializeField] bool ignoreFirstUse = true;
 
 
-    private void OnEnable() => SoundManager.instance.PlayEffect(sounds.Opened);
+    private void OnEnable()
+    {
+        if((!isFirstDisable || !ignoreFirstUse) && SoundManager.instance != null) 
+            SoundManager.instance.PlayEffect(sounds.Opened);
+    }
+
     private void OnDisable()
     {
-        if (!isFirstDisable || !ignoreFirstDisable) SoundManager.instance.PlayEffect(sounds.Closed);
+        if ((!isFirstDisable || !ignoreFirstUse) && SoundManager.instance !=null) 
+            SoundManager.instance.PlayEffect(sounds.Closed);
 
         isFirstDisable = false;
     }
