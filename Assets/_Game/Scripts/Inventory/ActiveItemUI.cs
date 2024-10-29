@@ -26,6 +26,8 @@ public class ActiveItemUI : MonoBehaviour
 
     Sprite defaultImage;
 
+    [SerializeField] ModalWindow modalWindow;
+
 
     private void Awake()
     {
@@ -84,6 +86,13 @@ public class ActiveItemUI : MonoBehaviour
 
     private void UseItem() => OnUseItem?.Invoke(item);
 
-    private void DeleteItem() => OnDeleteItem?.Invoke(item);
+    private void DeleteItem()
+    {
+        modalWindow.ShowPromt("", $"Удалить {item.ItemName}?", Delete);      
+    }
 
+    private void Delete(bool isConfirmed)
+    {
+        if (isConfirmed) OnDeleteItem?.Invoke(item);
+    }
 }
