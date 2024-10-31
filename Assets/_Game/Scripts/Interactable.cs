@@ -74,12 +74,12 @@ public class Interactable : MonoBehaviour
 
         if (status == Status.CanInteract)
         {
-            Cursor.SetCursor(interactData.InteractCursor.Sprite, hotSpot, cursorMode);
+            GameCursor.instance.SetCursor(interactData.InteractCursor); //  Cursor.SetCursor(interactData.InteractCursor.Sprite, hotSpot, cursorMode);
             outline.OutlineColor = interactData.InteractCursor.Color;
         }
         else
         {
-            Cursor.SetCursor(interactData.UnavailableCursor.Sprite, hotSpot, cursorMode);
+            GameCursor.instance.SetCursor(interactData.UnavailableCursor); //, hotSpot, cursorMode);
             outline.OutlineColor = interactData.UnavailableCursor.Color;
         }
 
@@ -98,7 +98,7 @@ public class Interactable : MonoBehaviour
 
     protected void ResetVisuals()
     {
-        Cursor.SetCursor(null, hotSpot, cursorMode);
+        GameCursor.instance.SetCursor(null);// Cursor.SetCursor(null, hotSpot, cursorMode);
         outline.enabled = false;
     }
 

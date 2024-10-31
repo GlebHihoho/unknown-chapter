@@ -6,8 +6,8 @@ using UnityEngine;
 public class CursorData : ScriptableObject
 {
 
-    [SerializeField] Texture2D sprite;
-    public Texture2D Sprite => sprite;
+    [SerializeField] Sprite sprite;
+    public Sprite Sprite => sprite;
 
 
     [SerializeField] Color color = Color.yellow;
