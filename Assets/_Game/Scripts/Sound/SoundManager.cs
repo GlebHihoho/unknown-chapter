@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioSource ambientMusic2;
 
     [SerializeField] AudioSource soundEffects;
+    [SerializeField] AudioSource soundEffectsContinuous;
 
     [SerializeField] AudioMixer mixer;
 
@@ -168,5 +169,23 @@ public class SoundManager : MonoBehaviour
 
 
     public void PlayEffect(AudioClip clip) => soundEffects.PlayOneShot(clip);
+
+
+    public void PlayContinuousEffect(AudioClip clip)
+    {
+        if (soundEffectsContinuous.clip != clip) soundEffectsContinuous.clip = clip;
+         
+        soundEffectsContinuous.loop = true;
+        if (!soundEffectsContinuous.isPlaying) soundEffectsContinuous.Play();
+    }
+
+    public void StopContinuousEffect(AudioClip clip, bool immediately = false)
+    {
+        if (soundEffectsContinuous.clip == clip) 
+        {
+            soundEffectsContinuous.loop = false;
+            if (immediately) soundEffectsContinuous.Stop();
+        }
+    }
 
 }
