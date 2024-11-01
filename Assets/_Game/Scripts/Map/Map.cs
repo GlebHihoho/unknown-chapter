@@ -6,6 +6,8 @@ public class Map : MonoBehaviour, ISaveable
 {
     [SerializeField] ButtonUpdated mapButton;
 
+    [SerializeField] MapSoundData sounds;
+
     bool mapEnabled = false;
 
     public bool MapOpened
@@ -46,8 +48,11 @@ public class Map : MonoBehaviour, ISaveable
     private void OnEnable() => mapButton.ResetUpdate();
 
 
-    private void ZoneUncovered() => mapButton.ShowUpdate();
-
+    private void ZoneUncovered()
+    {
+        mapButton.ShowUpdate();
+        SoundManager.instance.PlayEffect(sounds.NewLocation);
+    }
 
     public void ToggleMap()
     {
