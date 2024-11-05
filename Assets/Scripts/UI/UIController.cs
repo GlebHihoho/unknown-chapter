@@ -13,6 +13,8 @@ namespace UI
 
         [SerializeField] private Map map;
 
+        [SerializeField] Journal journal;
+
         public static event Action OnMainMenu;
 
 
