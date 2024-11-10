@@ -14,8 +14,15 @@ public class JournalRecord : MonoBehaviour
     [SerializeField] Sprite unselected;
     [SerializeField] Sprite selected;
 
+    [SerializeField, Range(0, 1.5f)] float selectedScale = 0.5f;
+
     [SerializeField] Sprite successed;
     [SerializeField] Sprite failed;
+
+    [SerializeField] Color successColor = Color.green;
+    [SerializeField] Color failureColor = Color.red;
+    [SerializeField] Color defaultColor = Color.white;
+
 
 
     QuestState questState;
@@ -25,15 +32,19 @@ public class JournalRecord : MonoBehaviour
 
     string questName;
 
+    static JournalRecord activeRecord;
+
     private void Awake()
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(SelectRecord);
     }
 
-    private void OnDestroy() => button.onClick.RemoveListener(SelectRecord);
-
-
+    private void OnDestroy()
+    {
+        button.onClick.RemoveListener(SelectRecord);
+        if (activeRecord == this) activeRecord = null;
+    }
 
     public void SetQuest(string name, Journal journal)
     {
@@ -42,6 +53,13 @@ public class JournalRecord : MonoBehaviour
 
         questLabel.text = QuestLog.GetQuestTitle(questName);
         questState = QuestLog.GetQuestState(questName);
+
+        if (activeRecord == null)
+        {
+            activeRecord = this;
+            journal.SelectQuest(name);
+
+        }
 
         UpdateVisuals();
     }
@@ -54,33 +72,56 @@ public class JournalRecord : MonoBehaviour
 
     public void SelectRecord()
     {
+        if (activeRecord != this) 
+        {
+            JournalRecord prevRecord = activeRecord;
+            activeRecord = this;
+
+            prevRecord.UpdateVisuals();
+            UpdateVisuals();
+        }
         journal.SelectQuest(questName);
     }
 
 
     private void UpdateVisuals()
     {
-        switch (questState)
+        questStatus.transform.localScale = Vector3.one;
+
+
+        if (questState == QuestState.Success)
         {
-            case QuestState.Unassigned:
-                break;
-            case QuestState.Active:
-                questStatus.sprite = selected;
-                break;
-            case QuestState.Success:
-                questStatus.sprite = successed;
-                break;
-            case QuestState.Failure:
-                questStatus.sprite = failed;
-                break;
-            case QuestState.Abandoned:
-                break;
-            case QuestState.Grantable:
-                break;
-            case QuestState.ReturnToNPC:
-                break;
-            default:
-                break;
+            questStatus.sprite = successed;
+
+            questLabel.color = successColor;
+            questLabel.fontStyle = FontStyles.Strikethrough;
+
         }
+        else if (questState == QuestState.Failure)
+        {
+            questStatus.sprite = failed;
+
+            questLabel.color = failureColor;
+            questLabel.fontStyle= FontStyles.Strikethrough;
+        }
+        else if (this == activeRecord)
+        {
+            questStatus.sprite = selected;
+            questStatus.transform.localScale = Vector3.one * selectedScale;
+
+            questLabel.color = defaultColor;
+            questLabel.fontStyle = FontStyles.Normal;
+        }
+        else
+        {
+            questStatus.sprite = unselected;
+            questStatus.transform.localScale = Vector3.one * selectedScale;
+
+            questLabel.color = defaultColor;
+            questLabel.fontStyle = FontStyles.Normal;
+        }
+
+        recordSelected.enabled = this == activeRecord;
+
     }
 }

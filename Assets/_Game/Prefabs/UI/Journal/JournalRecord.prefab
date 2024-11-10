@@ -97,8 +97,12 @@ MonoBehaviour:
   recordSelected: {fileID: 8756541522575070565}
   unselected: {fileID: 21300000, guid: 6952f34532d7e0e4e8f2afe26d64efef, type: 3}
   selected: {fileID: 21300000, guid: ae30e48573926124fb8ce71b3b2bd192, type: 3}
+  selectedScale: 0.8
   successed: {fileID: 21300000, guid: 5a00de5dbfc2ad64f99f5ef56b21635d, type: 3}
   failed: {fileID: 21300000, guid: 5c61d7b502814b54a90b3337b1f646c1, type: 3}
+  successColor: {r: 0.34509805, g: 0.37647063, b: 0.24705884, a: 1}
+  failureColor: {r: 0.2784314, g: 0.14117648, b: 0.10588236, a: 1}
+  defaultColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &4628573974308264598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,8 +214,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text as asd asd asd asd ads asd asd ad ads ads
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 69f51f25a23937c4183beacd7486d722, type: 2}
+  m_sharedMaterial: {fileID: -8485646834666411971, guid: 69f51f25a23937c4183beacd7486d722, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -235,8 +239,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -377,6 +377,79 @@ MonoBehaviour:
       value: "\u0412\u044B\u043B\u0435\u0447\u0438\u0442\u044C \u0424\u043E\u043C\u0443"
       type: 0
       typeString: CustomFieldType_Text
+    - title: Entry Count
+      value: 3
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 2 State
+      value: active
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Entry 2
+      value: "\u041D\u0430\u0439\u0442\u0438 \u0442\u043A\u0430\u043D\u044C"
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Entry 3 State
+      value: active
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Entry 3
+      value: "\u041D\u0430\u0439\u0442\u0438 \u0440\u043E\u043C"
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Entry 1
+      value: "\u041D\u0430\u0439\u0442\u0438 \u0434\u043E\u0441\u043A\u0438"
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Entry 1 State
+      value: active
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Entry 1 Active
+      value: "\u0412\u0441\u0435 \u0435\u0449\u0435 \u0438\u0449\u0443 \u0434\u043E\u0441\u043A\u0438"
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Entry 1 Success
+      value: "\u042F \u043D\u0430\u0448\u0435\u043B \u0434\u043E\u0441\u043A\u0438"
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 2
+    fields:
+    - title: Name
+      value: Find Papers
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: "\u0411\u0443\u0434\u0435\u0442 \u043D\u0435\u043B\u0438\u0448\u043D\u0438\u043C
+        \u043D\u0430\u0439\u0442\u0438 \u043A\u0430\u043A\u0438\u0435-\u043D\u0438\u0431\u0443\u0434\u044C
+        \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B."
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Success Description
+      value: "\u042F \u043D\u0430\u0448\u0435\u043B \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B
+        \u0441\u044B\u0441\u043A\u043D\u043E\u0433\u043E."
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: State
+      value: active
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Display Name
+      value: "\u041D\u0430\u0439\u0442\u0438 \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B"
+      type: 0
+      typeString: 
   locations: []
   variables:
   - id: 1
@@ -10839,7 +10912,9 @@ MonoBehaviour:
         UpdateItem("Items.Planks");
 
         Variable["Wood.PickedUp"]
-        = true'
+        = true;
+
+        SetQuestEntryState("Heal Foma", 1, "success")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11159,8 +11234,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 733.8961, y: 0}
-    canvasZoom: 0.7000004
+    canvasScrollPosition: {x: 998.636, y: 73.928444}
+    canvasZoom: 0.88000023
   - id: 3
     fields:
     - title: Title
@@ -13149,7 +13224,10 @@ MonoBehaviour:
         Variable["Items.Papers"]
         = 1;
 
-        UpdateItem("Items.Papers")'
+        UpdateItem("Items.Papers");
+
+        SetQuestState("Find Papers",
+        "success")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
