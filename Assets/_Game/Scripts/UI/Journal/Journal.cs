@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using System.Text;
-using Unity.VisualScripting;
 
 public class Journal : MonoBehaviour
 {
@@ -19,6 +18,15 @@ public class Journal : MonoBehaviour
 
 
     Dictionary<string, JournalRecord> records = new Dictionary<string, JournalRecord>();
+
+    struct Quest
+    {
+        public string name;
+        public bool isActive;
+        public List<int> entriesChanged;
+    }
+
+    List<Quest> quests = new List<Quest>();
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -53,11 +61,13 @@ public class Journal : MonoBehaviour
             Destroy(item.gameObject);
         }
 
+        quests.Clear();
+
         string[] activeQuests = QuestLog.GetAllQuests(QuestState.Active, true);
         string[] completedQuests = QuestLog.GetAllQuests(QuestState.Success | QuestState.Failure, true);
 
 
-        void FillQuests(string[] quests)
+        void FillQuests(string[] quests, bool isActive)
         {
             foreach (string quest in quests)
             {
@@ -65,19 +75,20 @@ public class Journal : MonoBehaviour
             }
         }
 
-        FillQuests(activeQuests);
-        FillQuests(completedQuests);
+        FillQuests(activeQuests, true);
+        FillQuests(completedQuests, false);
 
-
-
-       // recordsPanel.transform.GetComponentInChildren<JournalRecord>().SelectRecord();
+       
     }
 
 
     private void UpdateQuest(string name)
     {
         Debug.Log("<color=blue>Updating quest: </color>" + name);
-        if (records.ContainsKey(name)) records[name].UpdateQuest();
+        if (records.ContainsKey(name)) 
+        { 
+            //records[name].UpdateQuest(); 
+        }
         else AddQuest(name);
     }
 

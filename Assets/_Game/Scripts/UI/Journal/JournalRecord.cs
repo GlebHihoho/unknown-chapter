@@ -37,13 +37,15 @@ public class JournalRecord : MonoBehaviour
     private void Awake()
     {
         button = GetComponent<Button>();
-        button.onClick.AddListener(SelectRecord);
+        button.onClick.AddListener(SelectRecord);       
     }
 
     private void OnDestroy()
     {
         button.onClick.RemoveListener(SelectRecord);
         if (activeRecord == this) activeRecord = null;
+
+        QuestsEvents.OnQuestChanged -= UpdateQuest;
     }
 
     public void SetQuest(string name, Journal journal)
@@ -54,6 +56,8 @@ public class JournalRecord : MonoBehaviour
         questLabel.text = QuestLog.GetQuestTitle(questName);
         questState = QuestLog.GetQuestState(questName);
 
+        if (questState == QuestState.Active) QuestsEvents.OnQuestChanged += UpdateQuest;
+
         if (activeRecord == null)
         {
             activeRecord = this;
@@ -62,6 +66,21 @@ public class JournalRecord : MonoBehaviour
         }
 
         UpdateVisuals();
+    }
+
+    private void UpdateQuest(string name)
+    {
+        if (questName == name)
+        {
+            questState = QuestLog.GetQuestState(questName);
+
+            if (questState != QuestState.Active)
+            {
+                QuestsEvents.OnQuestChanged -= UpdateQuest;
+            }
+
+            UpdateVisuals();
+        }
     }
 
     public void UpdateQuest()
