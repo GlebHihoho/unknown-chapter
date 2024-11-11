@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using PixelCrushers.DialogueSystem;
+using System.Text;
 
 [RequireComponent(typeof(Button))]
 public class JournalRecord : MonoBehaviour
@@ -34,6 +35,10 @@ public class JournalRecord : MonoBehaviour
 
     static JournalRecord activeRecord;
 
+    bool haveUpdates = false;
+
+    StringBuilder sb = new();
+
     private void Awake()
     {
         button = GetComponent<Button>();
@@ -65,6 +70,8 @@ public class JournalRecord : MonoBehaviour
 
         }
 
+        if (activeRecord != this) haveUpdates = true;
+
         UpdateVisuals();
     }
 
@@ -78,6 +85,8 @@ public class JournalRecord : MonoBehaviour
             {
                 QuestsEvents.OnQuestChanged -= UpdateQuest;
             }
+
+            if (activeRecord != this) haveUpdates= true;
 
             UpdateVisuals();
         }
@@ -95,8 +104,11 @@ public class JournalRecord : MonoBehaviour
         {
             JournalRecord prevRecord = activeRecord;
             activeRecord = this;
-
+            
             prevRecord.UpdateVisuals();
+
+            haveUpdates = false;
+
             UpdateVisuals();
         }
         journal.SelectQuest(questName);
@@ -107,6 +119,7 @@ public class JournalRecord : MonoBehaviour
     {
         questStatus.transform.localScale = Vector3.one;
 
+        
 
         if (questState == QuestState.Success)
         {
@@ -142,5 +155,11 @@ public class JournalRecord : MonoBehaviour
 
         recordSelected.enabled = this == activeRecord;
 
+        sb.Clear();
+     
+        sb.Append(QuestLog.GetQuestTitle(questName));
+        if (haveUpdates) sb.Append("<color=blue><b> @</b></color>");
+
+        questLabel.text = sb.ToString();
     }
 }

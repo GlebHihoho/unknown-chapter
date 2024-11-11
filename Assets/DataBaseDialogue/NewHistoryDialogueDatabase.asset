@@ -405,12 +405,46 @@ MonoBehaviour:
       value: active
       type: 0
       typeString: CustomFieldType_QuestState
-    - title: Entry 1 Active
-      value: "\u0412\u0441\u0435 \u0435\u0449\u0435 \u0438\u0449\u0443 \u0434\u043E\u0441\u043A\u0438"
+    - title: Entry 1 active
+      value: "\u041D\u0443\u0436\u043D\u043E \u0447\u0442\u043E-\u043D\u0438\u0431\u0443\u0434\u044C
+        \u0436\u0435\u0441\u0442\u043E\u043A\u043E\u0435, \u0447\u0442\u043E\u0431\u044B
+        \u0437\u0430\u0444\u0438\u043A\u0441\u0438\u0440\u043E\u0432\u0430\u0442\u044C
+        \u043D\u043E\u0433\u0443. \u041C\u043E\u0436\u0435\u0442, \u043F\u0430\u0440\u0430
+        \u0434\u043E\u0441\u043E\u043A \u0441 \u043A\u043E\u0440\u0430\u0431\u043B\u0435\u043A\u0440\u0443\u0448\u0435\u043D\u0438\u044F
+        \u043F\u043E\u0434\u043E\u0439\u0434\u0443\u0442?"
       type: 0
       typeString: CustomFieldType_Text
-    - title: Entry 1 Success
+    - title: Entry 1 success
       value: "\u042F \u043D\u0430\u0448\u0435\u043B \u0434\u043E\u0441\u043A\u0438"
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Entry 2 active
+      value: "\u041C\u043D\u0435 \u043D\u0443\u0436\u043D\u0430 \u0442\u043A\u0430\u043D\u044C,
+        \u0447\u0442\u043E\u0431\u044B \u043F\u0435\u0440\u0435\u0432\u044F\u0437\u0430\u0442\u044C
+        \u0424\u043E\u043C\u0443. \u0412\u043E\u0442 \u0442\u043E\u043B\u044C\u043A\u043E
+        \u0433\u0434\u0435 \u0435\u0451 \u0442\u0443\u0442 \u0432\u0437\u044F\u0442\u044C?.."
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Entry 2 success
+      value: "\u042F \u043D\u0430\u0448\u0435\u043B \u043A\u043E\u0435-\u043A\u0430\u043A\u0443\u044E
+        \u0442\u043A\u0430\u043D\u044C. \u0414\u043B\u044F \u043C\u043E\u0434\u043D\u044B\u0445
+        \u043D\u0430\u0440\u044F\u0434\u043E\u0432 \u043D\u0435 \u043F\u043E\u0439\u0434\u0435\u0442,
+        \u0430 \u0432\u043E\u0442 \u0434\u043B\u044F \u0431\u0438\u043D\u0442\u043E\u0432
+        \u2014 \u0432\u043F\u043E\u043B\u043D\u0435."
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Entry 3 active
+      value: "\u041D\u0443\u0436\u043D\u043E \u0447\u0435\u043C-\u043D\u0438\u0431\u0443\u0434\u044C
+        \u043F\u0440\u043E\u0434\u0435\u0437\u0438\u043D\u0444\u0438\u0446\u0438\u0440\u043E\u0432\u0430\u0442\u044C
+        \u0440\u0430\u043D\u0443. \u0413\u043E\u0432\u043E\u0440\u044F\u0442, \u044D\u0442\u0438
+        \u043C\u043E\u0440\u044F\u043A\u0438 \u2014 \u0442\u0435 \u0435\u0449\u0435
+        \u0432\u044B\u043F\u0438\u0432\u043E\u0445\u0438. \u0425\u043C..."
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Entry 3 success
+      value: "\u042F \u043D\u0430\u0448\u0435\u043B \u0440\u043E\u043C. \u0421\u0433\u043E\u0434\u0438\u0442\u0441\u044F,
+        \u0447\u0442\u043E\u0431\u044B \u043F\u0440\u043E\u043C\u044B\u0442\u044C
+        \u0440\u0430\u043D\u0443."
       type: 0
       typeString: CustomFieldType_Text
   - id: 2
@@ -449,7 +483,7 @@ MonoBehaviour:
     - title: Display Name
       value: "\u041D\u0430\u0439\u0442\u0438 \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B"
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
   locations: []
   variables:
   - id: 1
@@ -1623,6 +1657,20 @@ MonoBehaviour:
     fields:
     - title: Name
       value: Wood.PickedUp
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 88
+    fields:
+    - title: Name
+      value: ThreeVictims.KnowKiller
       type: 0
       typeString: CustomFieldType_Text
     - title: Initial Value
@@ -30884,7 +30932,8 @@ MonoBehaviour:
         destinationDialogueID: 15
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: "Variable[\"\u041E\u0441\u043C\u043E\u0442\u0440\u0435\u043D\u043E_\u0442\u0435\u043B\u043E\"]
+        == true"
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -30942,7 +30991,7 @@ MonoBehaviour:
         destinationDialogueID: 17
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Variable["ThreeVictims.KnowKiller"] = true
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -34198,8 +34247,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 881.5223, y: 450.23428}
-    canvasZoom: 0.58000034
+    canvasScrollPosition: {x: 114.43344, y: 715.2491}
+    canvasZoom: 0.79000014
   - id: 8
     fields:
     - title: Title
@@ -36843,7 +36892,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["ThreeVictims.KnowKiller"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -38071,8 +38120,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 162.29492, y: 0}
-    canvasZoom: 0.6100006
+    canvasScrollPosition: {x: 1369.1306, y: 354.4302}
+    canvasZoom: 0.79000044
   - id: 10
     fields:
     - title: Title

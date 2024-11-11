@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ItemsContainer : Interactable
 {
@@ -13,6 +14,8 @@ public class ItemsContainer : Interactable
     //public static Action<ItemData[], Action<bool>> OnOpenContainer;
     public static event Action<ItemData[], Action> OnOpenContainer;
     public static event Action<ItemData, int> OnItemGiven;
+
+     public UnityEvent OnItemsGiven;
 
 
     protected override void PerfomInteraction()
@@ -32,6 +35,8 @@ public class ItemsContainer : Interactable
         {
             OnItemGiven?.Invoke(item, 1);
         }
+
+        OnItemsGiven.Invoke();
 
         fullContainer.SetActive(false);
         if (emptyContainer != null) emptyContainer.SetActive(true);
