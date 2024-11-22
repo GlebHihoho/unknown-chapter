@@ -183,9 +183,14 @@ public class Journal : MonoBehaviour
             newEntires = questsChanged[quest].entriesChanged;
         }
 
+       
         if (newEntires.Contains(0)) sb.Append(newTextStart);
 
-        sb.AppendLine(QuestLog.GetQuestDescription(quest));
+        string questDescription = QuestLog.GetQuestDescription(quest);
+        sb.AppendLine(questDescription);
+
+        bool firstText = questDescription == null;
+
 
         if (newEntires.Contains(0)) sb.Append(newTextEnd);
 
@@ -193,19 +198,33 @@ public class Journal : MonoBehaviour
         int entryCount = DialogueLua.GetQuestField(quest, "Entry Count").asInt;
         for (int i = 1; i <= entryCount; i++)
         {
-            sb.AppendLine("***");
+
 
             string state = DialogueLua.GetQuestField(quest, $"Entry {i} State").asString.ToLower();
-  
-            string entryText = DialogueLua.GetQuestField(quest, $"Entry {i} {state}").asString;
 
-            if (entryText == string.Empty) entryText = DialogueLua.GetQuestField(quest, $"Entry {i}").asString;
+            if (state != "unassigned")
+            {
 
-            if (newEntires.Contains(i)) sb.Append(newTextStart);
+                string entryText = DialogueLua.GetQuestField(quest, $"Entry {i} {state}").asString;
 
-            sb.AppendLine(entryText);
+                string query = $"Entry {i} {state}";
 
-            if (newEntires.Contains(i)) sb.Append(newTextEnd);
+                if (entryText == string.Empty) entryText = DialogueLua.GetQuestField(quest, $"Entry {i}").asString;
+
+                if (!firstText)
+                {
+                    sb.AppendLine("");
+                    sb.AppendLine("<align=\"center\">* * *</align>");
+                }
+
+                if (firstText) firstText = false;
+
+                if (newEntires.Contains(i)) sb.Append(newTextStart);
+
+                sb.AppendLine(entryText);
+
+                if (newEntires.Contains(i)) sb.Append(newTextEnd);
+            }
 
         }
 
