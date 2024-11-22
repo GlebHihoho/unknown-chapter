@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
@@ -207,7 +208,6 @@ public class GameControls : MonoBehaviour
             OnComplete(callback =>
         {
             if (isMapActive) inputAction.actionMap.Enable();
-
             inputActions.System.Enable();
 
             callback.Dispose();
@@ -221,7 +221,16 @@ public class GameControls : MonoBehaviour
             callback.Dispose();
             onReboundCanceled();
 
+            if (isMapActive) inputAction.actionMap.Enable();
+            StartCoroutine(ReenableSystemActions());
+
         }).Start();
+    }
+
+    IEnumerator ReenableSystemActions()
+    {
+        yield return null;
+        inputActions.System.Enable(); 
     }
 
 
