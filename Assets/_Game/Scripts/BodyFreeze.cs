@@ -8,7 +8,11 @@ public class BodyFreeze : MonoBehaviour
 
     RigidbodyConstraints constraints = RigidbodyConstraints.None;
 
-    private void Awake() => body = GetComponent<Rigidbody>();
+    private void Awake()
+    {
+        body = GetComponent<Rigidbody>();
+        constraints = body.constraints;
+    }
 
     private void OnEnable() => Pause.OnPause += SetPause;
     private void OnDisable() => Pause.OnPause -= SetPause;

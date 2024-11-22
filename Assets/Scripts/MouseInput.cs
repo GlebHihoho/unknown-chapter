@@ -40,10 +40,7 @@ public class MouseInput : MonoBehaviour
     private void Awake()
     {
         if (instance == null) instance = this;
-    }
 
-    void Start()
-    {
         _myAgent = GetComponent<NavMeshAgent>();
         _m_locomotionSpeedRamp = GetComponent<LocomotionSpeedRamp>();
 
@@ -51,10 +48,9 @@ public class MouseInput : MonoBehaviour
 
         _m_trajectoryGenerator = GetComponentInChildren<MxMTrajectoryGenerator>();
         _m_trajectoryGenerator.InputProfile = _m_generalLocomotion;
-
-        GameControls.instance.OnMove += SetDestination;
     }
 
+    void Start() => GameControls.instance.OnMove += SetDestination;
     private void OnDestroy() => GameControls.instance.OnMove -= SetDestination;
 
 

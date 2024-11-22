@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 7687689179186179414}
   - component: {fileID: 1899545528173994446}
   - component: {fileID: 6025440351243436075}
+  - component: {fileID: 8295891212434308471}
   m_Layer: 5
   m_Name: Journal Panel
   m_TagString: Untagged
@@ -268,6 +269,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8295891212434308471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072713139358850423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2fd14dce98e6494aab8336433f52b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  affectKeys: 0
 --- !u!1 &1151220585551210563
 GameObject:
   m_ObjectHideFlags: 0

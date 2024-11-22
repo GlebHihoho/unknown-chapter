@@ -23,6 +23,7 @@ namespace UI
             GameControls.instance.OnInventory += Inventory;
             //GameControls.instance.OnCharacterTab += CharacterTab; // Temporarily disable character's window for gamedesing reasons.
             GameControls.instance.OnMap += Map;
+            GameControls.instance.OnJournal += Journal;
 
             GameControls.instance.OnMainMenu += MainMenu;
         }
@@ -34,6 +35,7 @@ namespace UI
             GameControls.instance.OnInventory -= Inventory;
             //GameControls.instance.OnCharacterTab -= CharacterTab;
             GameControls.instance.OnMap -= Map;
+            GameControls.instance.OnJournal -= Journal;
 
             GameControls.instance.OnMainMenu -= MainMenu;
         }
@@ -54,6 +56,11 @@ namespace UI
         private void Map(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
             map.ToggleMap();
+        }
+
+        private void Journal(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            journal.ToggleJournal();
         }
 
 

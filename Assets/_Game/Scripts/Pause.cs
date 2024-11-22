@@ -8,6 +8,7 @@ public class Pause : MonoBehaviour
 {
 
     public static event Action<bool> OnPause;
+    public static event Action<bool> OnDisableKeys;
 
     bool isPaused = false;
     public bool IsPaused => isPaused;
@@ -73,12 +74,14 @@ public class Pause : MonoBehaviour
     }
 
 
-    public void SetPause(bool isPaused)
+    public void SetPause(bool isPaused, bool affectKeys = true)
     {
         if (conversationinProgress || consoleActive) return;
 
         this.isPaused = isPaused;
         OnPause?.Invoke(isPaused);
+
+        if (affectKeys) OnDisableKeys?.Invoke(isPaused);
     }
 
 

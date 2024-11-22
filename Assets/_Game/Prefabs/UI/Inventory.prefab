@@ -1088,6 +1088,7 @@ GameObject:
   - component: {fileID: 5271192953131485219}
   - component: {fileID: 5472144416327528436}
   - component: {fileID: 1850410129071433296}
+  - component: {fileID: 5159165188798998782}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
@@ -1169,6 +1170,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds: {fileID: 11400000, guid: e23fbd15a0d93014f9d79514e3ee5feb, type: 2}
   ignoreFirstUse: 1
+--- !u!114 &5159165188798998782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724665336879410308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2fd14dce98e6494aab8336433f52b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  affectKeys: 0
 --- !u!1 &1724665336896441266
 GameObject:
   m_ObjectHideFlags: 0

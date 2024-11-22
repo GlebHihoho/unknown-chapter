@@ -24,8 +24,9 @@ public class GameControls : MonoBehaviour
     public event Action<InputAction.CallbackContext> OnQuicksave;
     public event Action<InputAction.CallbackContext> OnQuickload;
     public event Action<InputAction.CallbackContext> OnMap;
+    public event Action<InputAction.CallbackContext> OnJournal;
 
-    public enum Bindings { MainMenu, Pause, Inventory, CharacterTab, Action, Move, Highlight, Quicksave, Quickload, Map };
+    public enum Bindings { MainMenu, Pause, Inventory, CharacterTab, Action, Move, Highlight, Quicksave, Quickload, Map, Journal };
 
 
 
@@ -54,6 +55,7 @@ public class GameControls : MonoBehaviour
         inputActions.Player.QuickSave.performed += Quicksave;
         inputActions.Player.QuickLoad.performed += Quickload;
         inputActions.Player.Map.performed += Map;
+        inputActions.Player.Journal.performed += Journal;
 
     }
 
@@ -67,8 +69,8 @@ public class GameControls : MonoBehaviour
         }
     }
 
-    private void OnEnable() => Pause.OnPause += SetPause;
-    private void OnDisable() => Pause.OnPause -= SetPause;
+    private void OnEnable() => Pause.OnDisableKeys += SetPause;
+    private void OnDisable() => Pause.OnDisableKeys -= SetPause;
 
 
     private void MainMenu(InputAction.CallbackContext obj) => OnMainMenu?.Invoke(obj);
@@ -83,6 +85,7 @@ public class GameControls : MonoBehaviour
     private void Quicksave(InputAction.CallbackContext obj) => OnQuicksave?.Invoke(obj);
     private void Quickload(InputAction.CallbackContext obj) => OnQuickload?.Invoke(obj);
     private void Map(InputAction.CallbackContext obj) => OnMap?.Invoke(obj);
+    private void Journal(InputAction.CallbackContext obj) => OnJournal.Invoke(obj);
 
 
     private void SetPause(bool isPaused)
@@ -127,6 +130,9 @@ public class GameControls : MonoBehaviour
 
             case Bindings.Map:
                 return inputActions.Player.Map.bindings[0].ToDisplayString();
+
+            case Bindings.Journal:
+                return inputActions.Player.Journal.bindings[0].ToDisplayString();
 
         }
 
@@ -181,6 +187,10 @@ public class GameControls : MonoBehaviour
 
             case Bindings.Map:
                 inputAction = inputActions.Player.Map;
+                break;
+
+            case Bindings.Journal:
+                inputAction = inputActions.Player.Journal;
                 break;
         }
 
