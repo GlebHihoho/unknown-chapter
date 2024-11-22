@@ -59,7 +59,7 @@ namespace UI
 
         private void MainMenu(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            if (!_inventoryBackGround.activeSelf && !map.MapOpened && !_playerBackGround.activeSelf) OnMainMenu?.Invoke();
+            if (!_inventoryBackGround.activeSelf && !map.MapOpened && !_playerBackGround.activeSelf && !journal.JournalOpened) OnMainMenu?.Invoke();
             else HideAll();
         }
 
@@ -72,6 +72,8 @@ namespace UI
             //_miniPlayerBackGround.SetActive(true);
 
             map.HideMap();
+
+            journal.CloseJournal();
         }
 
 

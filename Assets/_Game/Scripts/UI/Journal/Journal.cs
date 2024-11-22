@@ -21,6 +21,11 @@ public class Journal : MonoBehaviour
 
     Dictionary<string, JournalRecord> records = new();
 
+    public bool JournalOpened
+    {
+        get { return mainPanel.activeSelf; }
+    }
+
     string activeQuest = string.Empty;
 
     struct Quest
