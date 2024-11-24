@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-
-
+using PixelCrushers.DialogueSystem;
 public class SaveData
 {
 
@@ -20,6 +19,14 @@ public class SaveData
     {
         public string name;
         public bool locked;
+    }
+
+    [Serializable]
+    public struct RecordStatus
+    {
+        public string id;
+        public QuestState state;
+        public List<int> entriesChanged;
     }
 
 
@@ -47,6 +54,9 @@ public class SaveData
         public double intellect;
 
         public string dialogues;
+
+        public List<string> journalRecords = new List<string>();
+        public List<RecordStatus> recordStatus = new List<RecordStatus>();
 
         public List<bool> collectibles = new List<bool>();
 

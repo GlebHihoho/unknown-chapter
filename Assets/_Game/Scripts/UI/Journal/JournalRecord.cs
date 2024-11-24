@@ -105,7 +105,7 @@ public class JournalRecord : MonoBehaviour
             JournalRecord prevRecord = activeRecord;
             activeRecord = this;
             
-            prevRecord.UpdateVisuals();
+            if (prevRecord != null) prevRecord.UpdateVisuals();
 
             haveUpdates = false;
 

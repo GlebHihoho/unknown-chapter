@@ -5,8 +5,9 @@ using System.Collections.Generic;
 using TMPro;
 using System.Text;
 using UnityEngine.UI;
+using System.Linq;
 
-public class Journal : MonoBehaviour
+public class Journal : MonoBehaviour, ISaveable
 {
     [SerializeField] GameObject mainPanel;
 
@@ -20,6 +21,9 @@ public class Journal : MonoBehaviour
     [SerializeField] JournalSoundData sounds;
 
     Dictionary<string, JournalRecord> records = new();
+    List<string> recordsNames = new();
+
+    [SerializeField, QuestPopup] string initialQuest;
 
     public bool JournalOpened
     {
@@ -43,6 +47,8 @@ public class Journal : MonoBehaviour
     {
         CloseJournal();
         ResetJournal();
+
+        if (recordsNames.Count == 0) AddQuest(initialQuest);
 
         QuestsEvents.OnQuestChanged += UpdateQuest;
         QuestsEvents.OnEntryStateChange += QuestEntryChange;
@@ -79,28 +85,11 @@ public class Journal : MonoBehaviour
     private void ResetJournal()
     {
         records.Clear();
+        recordsNames.Clear();
         foreach (Transform item in recordsPanel.transform)
         {
             Destroy(item.gameObject);
-        }
-
-
-        string[] activeQuests = QuestLog.GetAllQuests(QuestState.Active, true);
-        string[] completedQuests = QuestLog.GetAllQuests(QuestState.Success | QuestState.Failure, true);
-
-
-        void FillQuests(string[] quests, bool isActive)
-        {
-            foreach (string quest in quests)
-            {
-                AddQuest(quest);
-            }
-        }
-
-        FillQuests(activeQuests, true);
-        FillQuests(completedQuests, false);
-
-       
+        }      
     }
 
 
@@ -123,10 +112,18 @@ public class Journal : MonoBehaviour
 
     private void AddQuest(string name)
     {
+
+        if (records.ContainsKey(name))
+        {
+            Debug.LogWarning($"Quest {name} already added.");
+            return;
+        }
+
         JournalRecord record = Instantiate(recordPrefab, recordsPanel.transform);
         record.SetQuest(name, this);
 
         records.Add(name, record);
+        recordsNames.Add(name);
 
         UpdateQuestRecord(name);
 
@@ -254,5 +251,50 @@ public class Journal : MonoBehaviour
         }
 
         if (obj.questName == activeQuest) SelectQuest(activeQuest);
+    }
+
+    public void Save(ref SaveData.Save save)
+    {
+        save.journalRecords = recordsNames;
+
+        save.recordStatus.Clear();
+
+        foreach (string key in questsChanged.Keys)
+        {
+            SaveData.RecordStatus rec;
+
+            rec.id = key;
+            rec.state = questsChanged[key].state;
+            rec.entriesChanged = new(questsChanged[key].entriesChanged.ToList());
+
+            save.recordStatus.Add(rec);
+        }
+    }
+
+    public void Load(SaveData.Save save)
+    {
+        CloseJournal();
+        ResetJournal();
+
+        if (save.journalRecords.Count == 0) AddQuest(initialQuest);
+        else
+        {
+            foreach (string record in save.journalRecords)
+            {
+                AddQuest(record);
+            }
+            
+            questsChanged.Clear();
+            foreach (SaveData.RecordStatus record in save.recordStatus)
+            {
+                Quest quest;
+                quest.state = record.state;
+                quest.entriesChanged = new(record.entriesChanged.ToHashSet());
+
+                if (!questsChanged.ContainsKey(record.id)) questsChanged.Add(record.id, quest);
+                else Debug.LogWarning($"Changed quest already contains key {record.id}");
+            }
+            
+        }
     }
 }
