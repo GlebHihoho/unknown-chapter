@@ -21,9 +21,6 @@ namespace Environment
 
         public static event Action<AudioClip> OnChangeAmbientMusic;
 
-        bool isLoaded = false;
-
-
 
         private void Awake()
         {
@@ -36,8 +33,6 @@ namespace Environment
                 if (!zones.ContainsKey(zone.SaveID)) zones.Add(zone.SaveID, zone);
                 else Debug.LogWarning("Zone " + zone.SaveID + " already in the list.");
             }
-
-            StartCoroutine(SetInitialZone());
         }
 
 
@@ -62,10 +57,17 @@ namespace Environment
 
         public void Load(SaveData.Save save)
         {
-            if (zones.ContainsKey(save.zoneID)) ChangeZone(zones[save.zoneID]);
-            else Debug.LogWarning("Zone " + save.zoneID + " not found in the dictionary.");
 
-            isLoaded = true;
+            if (zones.Count == 0)
+                foreach (ZoneData zone in zonesData)
+                {
+                    if (!zones.ContainsKey(zone.SaveID)) zones.Add(zone.SaveID, zone);
+                    else Debug.LogWarning("Zone " + zone.SaveID + " already in the list.");
+                }
+
+
+            if (zones.ContainsKey(save.zoneID)) ChangeZone(zones[save.zoneID]);
+            else ChangeZone(initialZone);
         }
 
 
@@ -75,12 +77,6 @@ namespace Environment
             else return (" - ");
         }
 
-
-        IEnumerator SetInitialZone()
-        {
-            yield return null;
-            if (!isLoaded) ChangeZone(initialZone);
-        }
 
     }
 }

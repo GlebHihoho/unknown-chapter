@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Linq;
+using PixelCrushers.DialogueSystem;
 
 public class SaveManager : MonoBehaviour
 {
 
     public static SaveManager instance;
 
-    PixelCrushers.DialogueSystem.DialogueSystemSaver saver;
+    [SerializeField] string newGameScene = "Level 1";
+
 
     const string savesFolder = "Saves";
     const string extension = ".dat";
@@ -47,13 +49,16 @@ public class SaveManager : MonoBehaviour
     private void Awake()
     {
 
-        if (instance == null) instance = this;
+        if (instance == null) 
+        { 
+            instance = this;
+            DontDestroyOnLoad(gameObject);
 
-        saver = GetComponent<PixelCrushers.DialogueSystem.DialogueSystemSaver>();
+            path = Application.persistentDataPath + Path.DirectorySeparatorChar + savesFolder;
 
-        path = Application.persistentDataPath + Path.DirectorySeparatorChar + savesFolder;
-
-        RefreshSavesInfo();
+            RefreshSavesInfo();
+        }
+        else Destroy(this);
     }
 
 
@@ -120,7 +125,7 @@ public class SaveManager : MonoBehaviour
       
         save.timeStamp = timestamp.ToString();
 
-        save.dialogues = saver.RecordData();
+        save.dialogues = PersistentDataManager.GetSaveData();
 
         save.inventory.Clear();
 
@@ -154,29 +159,41 @@ public class SaveManager : MonoBehaviour
     }
 
 
+    public void NewGame()
+    {
+        Load(string.Empty);
+    }
+
     private void Load(string saveName)
     {
         string fileName = path + Path.DirectorySeparatorChar + saveName + extension;
 
+        OnStartingLoad?.Invoke();
+
+        save = new();
+
         if (File.Exists(fileName))
         {
+            save = JsonUtility.FromJson<SaveData.Save>(File.ReadAllText(fileName));           
+        }
 
-            OnStartingLoad?.Invoke();
+        if (save.activeScene == string.Empty) save.activeScene = newGameScene;
 
-            save = new();
-
-            save = JsonUtility.FromJson<SaveData.Save>(File.ReadAllText(fileName));
-
-            saver.ApplyData(save.dialogues);
+        LoadingScreen.instance.Load(save.activeScene, LoadScene);        
+    }
 
 
-            ISaveable[] saveables = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).OfType<ISaveable>().ToArray();
+    private void LoadScene()
+    {
+        if (save.dialogues != string.Empty) PersistentDataManager.ApplySaveData(save.dialogues);
+        else DialogueManager.ResetDatabase(DatabaseResetOptions.KeepAllLoaded);
 
-            foreach (ISaveable item in saveables)
-            {
-                item.Load(save);
-            }
 
+        ISaveable[] saveables = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).OfType<ISaveable>().ToArray();
+
+        foreach (ISaveable item in saveables)
+        {
+            item.Load(save);
         }
 
         OnLoadCompleted?.Invoke();

@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class NewGame : MonoBehaviour
+public class NewGame : MonoBehaviour, ISaveable
 {
 
     bool isNewGame = true;
@@ -11,11 +11,14 @@ public class NewGame : MonoBehaviour
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        StartCoroutine(StartingGame());
-    }
+    void Start() => SaveManager.OnLoadCompleted += OnLoad;
 
+    private void OnLoad()
+    {
+        SaveManager.OnLoadCompleted -= OnLoad;
+
+        if (isNewGame) StartCoroutine(StartingGame());
+    }
 
     IEnumerator StartingGame()
     {
@@ -32,4 +35,7 @@ public class NewGame : MonoBehaviour
 
         }
     }
+
+    public void Save(ref SaveData.Save save) => save.isNewGame = isNewGame;
+    public void Load(SaveData.Save save) => isNewGame = save.isNewGame;
 }

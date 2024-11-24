@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,8 +18,6 @@ public class LoadingScreen : MonoBehaviour
         if (instance == null) instance = this;
 
         loadingPanel.SetActive(false);
-
-        DontDestroyOnLoad(gameObject);
     }
 
 
@@ -28,13 +27,13 @@ public class LoadingScreen : MonoBehaviour
     }
 
 
-    public void Load(string sceneName)
+    public void Load(string sceneName, Action OnLoad = null)
     {
-        StartCoroutine(LoadingScene(sceneName));
+        StartCoroutine(LoadingScene(sceneName, OnLoad));
     }
 
 
-    IEnumerator LoadingScene(string sceneName)
+    IEnumerator LoadingScene(string sceneName, Action OnLoad)
     {
         progress.fillAmount = 0;
 
@@ -47,6 +46,8 @@ public class LoadingScreen : MonoBehaviour
             yield return null;
             progress.fillAmount = asyncLoad.progress;
         }
+
+        OnLoad?.Invoke();
 
         progress.fillAmount = 1;
 

@@ -32,28 +32,31 @@ public class SaveData
 
     public class Save
     {
-        public Type type;
+        public Type type = Type.Normal;
 
-        public string location;
+        public bool isNewGame = true;
+        public string activeScene = string.Empty;
 
-        public string timeStamp;
+        public string location = string.Empty;
 
-        public Vector3 playerPosition;
-        public Quaternion playerRotation;
+        public string timeStamp = string.Empty;
+
+        public Vector3 playerPosition = Vector3.zero;
+        public Quaternion playerRotation = Quaternion.identity;
 
         public bool mapUnlocked = false;
 
         public List<MapZones> mapZones = new List<MapZones>();
 
-        public string zoneID;
+        public string zoneID = string.Empty;
 
-        public float timeOfDay;
+        public float timeOfDay = 0;
 
-        public double physical;
-        public double perception;
-        public double intellect;
+        public double physical = 0;
+        public double perception = 0;
+        public double intellect = 0;
 
-        public string dialogues;
+        public string dialogues = string.Empty;
 
         public List<string> journalRecords = new List<string>();
         public List<RecordStatus> recordStatus = new List<RecordStatus>();
