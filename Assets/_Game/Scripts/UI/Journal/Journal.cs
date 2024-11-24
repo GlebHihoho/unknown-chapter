@@ -124,10 +124,6 @@ public class Journal : MonoBehaviour, ISaveable
 
         records.Add(name, record);
         recordsNames.Add(name);
-
-        UpdateQuestRecord(name);
-
-        if (name == activeQuest) SelectQuest(name);
     }
 
 
@@ -139,9 +135,17 @@ public class Journal : MonoBehaviour, ISaveable
         {
             Quest quest;
             quest.state = state;
-            quest.entriesChanged = new();// HashSet<int> { 0 };
+            quest.entriesChanged = new() { 0 };
+
+            int entryCount = DialogueLua.GetQuestField(name, "Entry Count").asInt;
+            for (int i = 1; i <= entryCount; i++)
+            {
+                string entryState = DialogueLua.GetQuestField(name, $"Entry {i} State").asString.ToLower();
+                if (entryState == "active") quest.entriesChanged.Add(i);
+            }
 
             questsChanged.Add(name, quest);
+
         }
         else if (questsChanged[name].state != state)
         {
