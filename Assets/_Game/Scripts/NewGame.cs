@@ -12,6 +12,7 @@ public class NewGame : MonoBehaviour, ISaveable
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() => SaveManager.OnLoadCompleted += OnLoad;
+    private void OnDestroy() => SaveManager.OnLoadCompleted -= OnLoad;
 
     private void OnLoad()
     {

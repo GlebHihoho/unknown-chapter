@@ -5,13 +5,15 @@ using UnityEngine;
 using System.IO;
 using System.Linq;
 using PixelCrushers.DialogueSystem;
+using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour
 {
 
     public static SaveManager instance;
 
-    [SerializeField] string newGameScene = "Level 1";
+
+    [SerializeField] string[] levels;
 
 
     const string savesFolder = "Saves";
@@ -57,6 +59,8 @@ public class SaveManager : MonoBehaviour
             path = Application.persistentDataPath + Path.DirectorySeparatorChar + savesFolder;
 
             RefreshSavesInfo();
+
+            if (SceneManager.GetActiveScene().name == levels[0]) NewGame(); // Initialization if main menu was not used for simplicity of development
         }
         else Destroy(this);
     }
@@ -118,9 +122,13 @@ public class SaveManager : MonoBehaviour
 
         string fileName = path + Path.DirectorySeparatorChar + saveName + extension;
 
-        save = new();
+        if (save == null) save = new();
 
         save.type = type;
+
+        if (save.levels == null) save.levels = new();
+
+        while (save.levels.Count <= save.level) save.levels.Add(new SaveData.Level());
 
       
         save.timeStamp = timestamp.ToString();
@@ -137,7 +145,7 @@ public class SaveManager : MonoBehaviour
             item.Save(ref save);
         }
 
-        save.location = Environment.ZoneManager.instance.GetZoneLabel(save.zoneID);
+        save.location = Environment.ZoneManager.instance.GetZoneLabel(save.levels[save.level].zoneID);
 
 
         File.WriteAllText(fileName, JsonUtility.ToJson(save));
@@ -177,9 +185,13 @@ public class SaveManager : MonoBehaviour
             save = JsonUtility.FromJson<SaveData.Save>(File.ReadAllText(fileName));           
         }
 
-        if (save.activeScene == string.Empty) save.activeScene = newGameScene;
+        if (save.levels.Count == 0)
+        {
+            save.levels.Add(new SaveData.Level());
+            save.level = 0;
+        }
 
-        LoadingScreen.instance.Load(save.activeScene, LoadScene);        
+        LoadingScreen.instance.Load(levels[save.level], LoadScene);       
     }
 
 

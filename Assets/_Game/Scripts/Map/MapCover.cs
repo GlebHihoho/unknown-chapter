@@ -58,14 +58,14 @@ public class MapCover : MonoBehaviour, ISaveable
         zoneData.name = this.zoneName;
         zoneData.locked = image.enabled;
 
-        save.mapZones.Add(zoneData);
+        save.levels[save.level].mapZones.Add(zoneData);
     }
 
     public void Load(SaveData.Save save)
     {
         if (zonesLocked.Count == 0)
         {
-            foreach (SaveData.MapZones zone in save.mapZones)
+            foreach (SaveData.MapZones zone in save.levels[save.level].mapZones)
             {
                 zonesLocked.Add(zone.name, zone.locked);
             }

@@ -21,6 +21,21 @@ public class LoadingScreen : MonoBehaviour
     }
 
 
+    private void Start() => SaveManager.OnLoadCompleted += LoadCompleted;
+    private void OnDestroy() => SaveManager.OnLoadCompleted -= LoadCompleted;
+
+    private void LoadCompleted()
+    {
+        progress.fillAmount = 1;
+        StartCoroutine(HidingScreen());
+    }
+
+    IEnumerator HidingScreen()
+    {
+        yield return null;
+        ToggleScreen(false);
+    }
+
     private void ToggleScreen(bool isShown)
     {
         loadingPanel.SetActive(isShown);
@@ -47,11 +62,7 @@ public class LoadingScreen : MonoBehaviour
             progress.fillAmount = asyncLoad.progress;
         }
 
-        OnLoad?.Invoke();
-
-        progress.fillAmount = 1;
-
-        ToggleScreen(false);
+        OnLoad?.Invoke();        
     }
 
 }

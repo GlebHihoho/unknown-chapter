@@ -7,17 +7,17 @@ public class PlayerSave : MonoBehaviour, ISaveable
 
     public void Load(SaveData.Save save)
     {
-        if (save.playerPosition != Vector3.zero)
+        if (save.levels[save.level].playerPosition != Vector3.zero)
         {
-            transform.position = save.playerPosition;
-            transform.rotation = save.playerRotation;
+            transform.position = save.levels[save.level].playerPosition;
+            transform.rotation = save.levels[save.level].playerRotation;
         }
     }
 
     public void Save(ref SaveData.Save save)
     {
-        save.playerPosition = transform.position;
-        save.playerRotation = transform.rotation;
+        save.levels[save.level].playerPosition = transform.position;
+        save.levels[save.level].playerRotation = transform.rotation;
     }
 
 }

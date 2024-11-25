@@ -29,26 +29,36 @@ public class SaveData
         public List<int> entriesChanged;
     }
 
+    [Serializable]
+    public class Level
+    {
+        public Vector3 playerPosition = Vector3.zero;
+        public Quaternion playerRotation = Quaternion.identity;
+
+        public List<MapZones> mapZones = new List<MapZones>();
+
+        public string zoneID = string.Empty;
+
+        public List<bool> collectibles = new List<bool>();
+
+        public List<bool> containers = new List<bool> ();
+    }
+
 
     public class Save
     {
         public Type type = Type.Normal;
 
         public bool isNewGame = true;
-        public string activeScene = string.Empty;
+
+        public int level = 0;
+        public List<Level> levels = new List<Level>();
 
         public string location = string.Empty;
 
         public string timeStamp = string.Empty;
 
-        public Vector3 playerPosition = Vector3.zero;
-        public Quaternion playerRotation = Quaternion.identity;
-
         public bool mapUnlocked = false;
-
-        public List<MapZones> mapZones = new List<MapZones>();
-
-        public string zoneID = string.Empty;
 
         public float timeOfDay = 0;
 
@@ -60,8 +70,6 @@ public class SaveData
 
         public List<string> journalRecords = new List<string>();
         public List<RecordStatus> recordStatus = new List<RecordStatus>();
-
-        public List<bool> collectibles = new List<bool>();
 
         public List<InventoryItem> inventory = new List<InventoryItem>();
 

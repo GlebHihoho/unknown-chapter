@@ -38,9 +38,15 @@ public class ItemsContainer : Interactable
 
         OnItemsGiven.Invoke();
 
-        fullContainer.SetActive(false);
-        if (emptyContainer != null) emptyContainer.SetActive(true);
+        ToggleContainer(false);
+    }
 
-        Destroy(this);
+
+    public void ToggleContainer(bool isEnabled)
+    {
+        fullContainer.SetActive(isEnabled);
+        if (emptyContainer != null) emptyContainer.SetActive(!isEnabled);
+
+        enabled = isEnabled;
     }
 }

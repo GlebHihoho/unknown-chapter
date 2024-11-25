@@ -51,8 +51,8 @@ namespace Environment
 
         public void Save(ref SaveData.Save save)
         {
-            if (activeZone != null) save.zoneID = activeZone.SaveID;
-            else save.zoneID = "";
+            if (activeZone != null) save.levels[save.level].zoneID = activeZone.SaveID;
+            else save.levels[save.level].zoneID = "";
         }
 
         public void Load(SaveData.Save save)
@@ -66,7 +66,7 @@ namespace Environment
                 }
 
 
-            if (zones.ContainsKey(save.zoneID)) ChangeZone(zones[save.zoneID]);
+            if (zones.ContainsKey(save.levels[save.level].zoneID)) ChangeZone(zones[save.levels[save.level].zoneID]);
             else ChangeZone(initialZone);
         }
 
