@@ -25,7 +25,14 @@ public class SaveEntryUI : MonoBehaviour
 
     public static event Action<string> OnDelete;
 
-    private void Awake() => SaveListEntry.OnSaveSelected += SetEntry;
+    private void Awake()
+    {
+        SaveListEntry.OnSaveSelected += SetEntry;
+
+        actionButton.interactable = mode == Mode.Save;
+        deleteButton.interactable = false;
+    }
+
     private void OnDestroy() => SaveListEntry.OnSaveSelected -= SetEntry;
 
 
@@ -52,6 +59,7 @@ public class SaveEntryUI : MonoBehaviour
     {
         this.saveName = saveName;
 
+        actionButton.interactable = true;
         deleteButton.interactable = type == SaveData.Type.Normal;
     }
 
