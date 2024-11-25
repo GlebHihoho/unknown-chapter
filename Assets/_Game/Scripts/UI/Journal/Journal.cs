@@ -189,17 +189,17 @@ public class Journal : MonoBehaviour, ISaveable
             newEntires = questsChanged[quest].entriesChanged;
         }
 
-       
-        if (newEntires.Contains(0)) sb.Append(newTextStart);
-
+             
         string questDescription = QuestLog.GetQuestDescription(quest);
-        sb.AppendLine(questDescription);
+
+        if (questDescription != null)
+        {
+            if (newEntires.Contains(0)) sb.Append(newTextStart);
+            sb.AppendLine(questDescription);          
+            if (newEntires.Contains(0)) sb.Append(newTextEnd);
+        }
 
         bool firstText = questDescription == null;
-
-
-        if (newEntires.Contains(0)) sb.Append(newTextEnd);
-
 
         int entryCount = DialogueLua.GetQuestField(quest, "Entry Count").asInt;
         for (int i = 1; i <= entryCount; i++)
@@ -259,6 +259,8 @@ public class Journal : MonoBehaviour, ISaveable
 
     public void Save(ref SaveData.Save save)
     {
+        save.journalActiveQuest = activeQuest;
+
         save.journalRecords = recordsNames;
 
         save.recordStatus.Clear();
@@ -287,6 +289,12 @@ public class Journal : MonoBehaviour, ISaveable
             {
                 AddQuest(record);
             }
+
+
+            foreach (string key in records.Keys)
+            {
+                records[key].SetHaveUpdates(false);
+            }
             
             questsChanged.Clear();
             foreach (SaveData.RecordStatus record in save.recordStatus)
@@ -297,8 +305,12 @@ public class Journal : MonoBehaviour, ISaveable
 
                 if (!questsChanged.ContainsKey(record.id)) questsChanged.Add(record.id, quest);
                 else Debug.LogWarning($"Changed quest already contains key {record.id}");
+
+                records[record.id].SetHaveUpdates(record.entriesChanged.Count > 0);
             }
             
         }
+
+        if (records.ContainsKey(save.journalActiveQuest)) records[save.journalActiveQuest].SelectRecord();
     }
 }

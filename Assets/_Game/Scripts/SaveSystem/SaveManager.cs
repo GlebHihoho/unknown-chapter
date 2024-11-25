@@ -130,6 +130,14 @@ public class SaveManager : MonoBehaviour
 
         while (save.levels.Count <= save.level) save.levels.Add(new SaveData.Level());
 
+        save.journalRecords.Clear();
+        save.recordStatus.Clear();
+        save.inventory.Clear();
+
+        save.levels[save.level].mapZones.Clear();
+        save.levels[save.level].collectibles.Clear();
+        save.levels[save.level].containers.Clear();
+
       
         save.timeStamp = timestamp.ToString();
 

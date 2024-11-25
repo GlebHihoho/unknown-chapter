@@ -67,7 +67,10 @@ public class MapCover : MonoBehaviour, ISaveable
         {
             foreach (SaveData.MapZones zone in save.levels[save.level].mapZones)
             {
-                zonesLocked.Add(zone.name, zone.locked);
+                if (!zonesLocked.ContainsKey(zone.name))
+                    zonesLocked.Add(zone.name, zone.locked);
+                else 
+                    zonesLocked[zone.name] = zone.locked;
             }
         }
 

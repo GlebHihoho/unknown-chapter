@@ -68,6 +68,7 @@ public class SaveData
 
         public string dialogues = string.Empty;
 
+        public string journalActiveQuest = string.Empty;
         public List<string> journalRecords = new List<string>();
         public List<RecordStatus> recordStatus = new List<RecordStatus>();
 

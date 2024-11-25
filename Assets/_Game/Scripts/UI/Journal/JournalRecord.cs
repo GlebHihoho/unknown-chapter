@@ -75,6 +75,14 @@ public class JournalRecord : MonoBehaviour
         UpdateVisuals();
     }
 
+
+    public void SetHaveUpdates(bool haveUpdates)
+    {
+        if (activeRecord != this) this.haveUpdates = haveUpdates;
+        UpdateVisuals();
+    }
+
+
     private void UpdateQuest(string name)
     {
         if (questName == name)
