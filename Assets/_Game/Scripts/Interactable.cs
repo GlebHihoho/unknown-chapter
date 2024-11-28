@@ -134,8 +134,11 @@ public class Interactable : MonoBehaviour
     {
         if (isPaused)
         {
-            prevStatus = status;
-            status = Status.Paused;
+            if (status != Status.Paused)
+            {
+                prevStatus = status;
+                status = Status.Paused;
+            }
 
             ResetVisuals();
         }
