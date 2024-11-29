@@ -30,6 +30,12 @@ public class SaveData
     }
 
     [Serializable]
+    public struct Character
+    {
+        public int talkIndex;
+    }
+
+    [Serializable]
     public class Level
     {
         public Vector3 playerPosition = Vector3.zero;
@@ -42,6 +48,8 @@ public class SaveData
         public List<bool> collectibles = new List<bool>();
 
         public List<bool> containers = new List<bool> ();
+
+        public List<Character> characters = new List<Character>();
     }
 
 

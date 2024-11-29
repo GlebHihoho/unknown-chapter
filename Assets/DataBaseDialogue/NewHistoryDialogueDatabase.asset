@@ -31564,7 +31564,7 @@ MonoBehaviour:
         destinationDialogueID: 17
         isConnector: 0
         priority: 2
-      conditionsString: Variable["ThreeVictims.KnowKiller"] = true
+      conditionsString: Variable["ThreeVictims.KnowKiller"] == true
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -34820,8 +34820,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 992.9807}
-    canvasZoom: 0.7300002
+    canvasScrollPosition: {x: 239.4181, y: 763.57306}
+    canvasZoom: 0.79000014
   - id: 8
     fields:
     - title: Title
@@ -35680,10 +35680,8 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'SetQuestState("Bodies", "success");
-
-        SetQuestEntryState("Bodies",
-        7, "success")'
+      userScript: "SetQuestState(\"Bodies\", \"success\");\nSetQuestEntryState(\"Bodies\",
+        7, \"success\");\nSetTalkIndex(\"\u041F\u0438\u0439\", 1)"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -38700,8 +38698,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 498.57104, y: 14.285706}
-    canvasZoom: 0.7000005
+    canvasScrollPosition: {x: 561.53705, y: 0}
+    canvasZoom: 0.6700005
   - id: 10
     fields:
     - title: Title

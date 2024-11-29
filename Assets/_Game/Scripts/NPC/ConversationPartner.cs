@@ -10,7 +10,8 @@ public class ConversationPartner : Interactable
     [SerializeField] NPCData data;
 
     [Space]
-    [SerializeField, Min(0)] int conversationIndex = 0;
+    [SerializeField, Min(0)] int talkIndex = 0;
+    public int TalkIndex => talkIndex;
 
 
 
@@ -18,15 +19,22 @@ public class ConversationPartner : Interactable
     {
         base.PerfomInteraction();
 
-        if (conversationIndex >= 0 && conversationIndex < data.Conversations.Length)
-            DialogueManager.StartConversation(data.Conversations[conversationIndex]);
+        if (talkIndex >= 0 && talkIndex < data.Conversations.Length)
+            DialogueManager.StartConversation(data.Conversations[talkIndex]);
     }
 
-    public void Talk(int conversationIndex = 0)
+    public void Talk(int talkIndex = 0)
     {
-        if (conversationIndex >= 0 && conversationIndex < data.Conversations.Length)
-            DialogueManager.StartConversation(data.Conversations[conversationIndex]);
+        if (talkIndex >= 0 && talkIndex < data.Conversations.Length)
+            DialogueManager.StartConversation(data.Conversations[talkIndex]);
     }
+
+    public void SetTalkIndex(string actor, double index)
+    {
+        if (actor == data.DialogueActor) SetTalkIndex(Mathf.FloorToInt((float)index));
+    }
+
+    public void SetTalkIndex(int index) => talkIndex = index;
 
 
 

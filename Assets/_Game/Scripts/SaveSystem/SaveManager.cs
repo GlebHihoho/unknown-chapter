@@ -137,6 +137,7 @@ public class SaveManager : MonoBehaviour
         save.levels[save.level].mapZones.Clear();
         save.levels[save.level].collectibles.Clear();
         save.levels[save.level].containers.Clear();
+        save.levels[save.level].characters.Clear();
 
       
         save.timeStamp = timestamp.ToString();
