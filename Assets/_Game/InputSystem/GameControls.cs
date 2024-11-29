@@ -27,7 +27,10 @@ public class GameControls : MonoBehaviour
     public event Action<InputAction.CallbackContext> OnMap;
     public event Action<InputAction.CallbackContext> OnJournal;
 
-    public enum Bindings { MainMenu, Pause, Inventory, CharacterTab, Action, Move, Highlight, Quicksave, Quickload, Map, Journal };
+    public event Action OnCameraRotateStarted;
+    public event Action OnCameraRotateEnded;
+
+    public enum Bindings { MainMenu, Pause, Inventory, CharacterTab, Action, Move, Highlight, Quicksave, Quickload, Map, Journal, CameraRotation };
 
 
 
@@ -58,6 +61,9 @@ public class GameControls : MonoBehaviour
         inputActions.Player.Map.performed += Map;
         inputActions.Player.Journal.performed += Journal;
 
+        inputActions.Player.CameraRotate.started += CameraRotateStarted;
+        inputActions.Player.CameraRotate.canceled += CameraRotateEnded;
+
     }
 
 
@@ -87,6 +93,9 @@ public class GameControls : MonoBehaviour
     private void Quickload(InputAction.CallbackContext obj) => OnQuickload?.Invoke(obj);
     private void Map(InputAction.CallbackContext obj) => OnMap?.Invoke(obj);
     private void Journal(InputAction.CallbackContext obj) => OnJournal.Invoke(obj);
+
+    private void CameraRotateStarted(InputAction.CallbackContext obj) => OnCameraRotateStarted?.Invoke();
+    private void CameraRotateEnded(InputAction.CallbackContext obj) => OnCameraRotateEnded?.Invoke();
 
 
     private void SetPause(bool isPaused)
@@ -134,6 +143,9 @@ public class GameControls : MonoBehaviour
 
             case Bindings.Journal:
                 return inputActions.Player.Journal.bindings[0].ToDisplayString();
+
+            case Bindings.CameraRotation:
+                return inputActions.Player.CameraRotate.bindings[0].ToDisplayString();
 
         }
 
@@ -192,6 +204,10 @@ public class GameControls : MonoBehaviour
 
             case Bindings.Journal:
                 inputAction = inputActions.Player.Journal;
+                break;
+
+            case Bindings.CameraRotation:
+                inputAction = inputActions.Player.CameraRotate;
                 break;
         }
 

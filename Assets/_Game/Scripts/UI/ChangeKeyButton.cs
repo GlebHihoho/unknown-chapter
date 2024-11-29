@@ -12,6 +12,7 @@ public class ChangeKeyButton : MonoBehaviour
     [SerializeField] Image keyField;
     [SerializeField] Sprite leftMouseButton;
     [SerializeField] Sprite rightMouseButton;
+    [SerializeField] Sprite middleMouseButton;
 
     Sprite defaultSprite;
 
@@ -53,6 +54,11 @@ public class ChangeKeyButton : MonoBehaviour
         else if (s == "rightButton" || s == "RMB")
         {
             keyField.sprite = rightMouseButton;
+            keyLabel.text = "";
+        }
+        else if (s == "middleButton" || s == "MMB")
+        {
+            keyField.sprite = middleMouseButton;
             keyLabel.text = "";
         }
         else 

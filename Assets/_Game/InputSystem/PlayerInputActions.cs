@@ -107,6 +107,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CameraRotate"",
+                    ""type"": ""Button"",
+                    ""id"": ""ce15261f-5833-48e0-a4ab-4f21017f8374"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -208,6 +217,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Journal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64b3d7fe-735b-4e36-80a7-fe39c0d88d3e"",
+                    ""path"": ""<Mouse>/middleButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraRotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -293,6 +313,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_QuickLoad = m_Player.FindAction("QuickLoad", throwIfNotFound: true);
         m_Player_Map = m_Player.FindAction("Map", throwIfNotFound: true);
         m_Player_Journal = m_Player.FindAction("Journal", throwIfNotFound: true);
+        m_Player_CameraRotate = m_Player.FindAction("CameraRotate", throwIfNotFound: true);
         // System
         m_System = asset.FindActionMap("System", throwIfNotFound: true);
         m_System_MainMenu = m_System.FindAction("MainMenu", throwIfNotFound: true);
@@ -374,6 +395,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_QuickLoad;
     private readonly InputAction m_Player_Map;
     private readonly InputAction m_Player_Journal;
+    private readonly InputAction m_Player_CameraRotate;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -387,6 +409,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @QuickLoad => m_Wrapper.m_Player_QuickLoad;
         public InputAction @Map => m_Wrapper.m_Player_Map;
         public InputAction @Journal => m_Wrapper.m_Player_Journal;
+        public InputAction @CameraRotate => m_Wrapper.m_Player_CameraRotate;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -423,6 +446,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Journal.started += instance.OnJournal;
             @Journal.performed += instance.OnJournal;
             @Journal.canceled += instance.OnJournal;
+            @CameraRotate.started += instance.OnCameraRotate;
+            @CameraRotate.performed += instance.OnCameraRotate;
+            @CameraRotate.canceled += instance.OnCameraRotate;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -454,6 +480,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Journal.started -= instance.OnJournal;
             @Journal.performed -= instance.OnJournal;
             @Journal.canceled -= instance.OnJournal;
+            @CameraRotate.started -= instance.OnCameraRotate;
+            @CameraRotate.performed -= instance.OnCameraRotate;
+            @CameraRotate.canceled -= instance.OnCameraRotate;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -544,6 +573,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnQuickLoad(InputAction.CallbackContext context);
         void OnMap(InputAction.CallbackContext context);
         void OnJournal(InputAction.CallbackContext context);
+        void OnCameraRotate(InputAction.CallbackContext context);
     }
     public interface ISystemActions
     {

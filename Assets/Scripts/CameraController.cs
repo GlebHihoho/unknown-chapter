@@ -28,6 +28,9 @@ public class CameraController : MonoBehaviour
     private bool
         _hasSavedInitialZoom = false; // Флаг для отслеживания того, было ли уже сохранено начальное значение зума
 
+    private bool isCameraRotating = false;
+    private bool isPaused = false;
+
     private void Start()
     {
         _cameraOffset = _camera.transform.position - _player.position;
@@ -35,22 +38,40 @@ public class CameraController : MonoBehaviour
         _camera.transform.position = _player.position + _cameraRotation * (_cameraOffset * _zoomFactor);
 
         _mainCamera = GetComponent<Camera>();
+
+        GameControls.instance.OnCameraRotateStarted += CameraRotateStarted;
+        GameControls.instance.OnCameraRotateEnded += CameraRotateEnded;
+
+        Pause.OnPause += SetPause;
     }
+
+
+    private void OnDestroy()
+    {
+        GameControls.instance.OnCameraRotateStarted -= CameraRotateStarted;
+        GameControls.instance.OnCameraRotateEnded -= CameraRotateEnded;
+
+        Pause.OnPause -= SetPause;
+    }
+
+
+    private void CameraRotateStarted() => isCameraRotating = true;
+    private void CameraRotateEnded() => isCameraRotating = false;
+
+    private void SetPause(bool paused) => isPaused = paused;
+
 
     private void Update()
     {
         _camera.transform.position = _player.position + _cameraRotation * (_cameraOffset * _zoomFactor);
         float scrollWheelInput = Input.GetAxis("Mouse ScrollWheel");
 
-        if (scrollWheelInput != 0f)
+        if (!isPaused && scrollWheelInput != 0f)
         {
             CameraZoom();
         }
 
-        if (Input.GetMouseButton(2))
-        {
-            CameraScroll();
-        }
+        CameraScroll();
 
         CheckObstaclesBetweenCameraAndPlayer();
         _camera.transform.LookAt(_player.position);
@@ -58,10 +79,14 @@ public class CameraController : MonoBehaviour
 
     private void CameraScroll()
     {
-        float mouseX = Input.GetAxis("Mouse X") * _sensitivity;
-        _rotationY += mouseX;
-        _cameraRotation = Quaternion.Euler(0f, _rotationY, 0f);
-        UpdateCameraPosition();
+        if (!isPaused && isCameraRotating)
+        {
+
+            float mouseX = Input.GetAxis("Mouse X") * _sensitivity;
+            _rotationY += mouseX;
+            _cameraRotation = Quaternion.Euler(0f, _rotationY, 0f);
+            UpdateCameraPosition();
+        }
     }
 
     private void CameraZoom()
