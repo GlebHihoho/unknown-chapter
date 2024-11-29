@@ -123,6 +123,9 @@ public class MouseInput : MonoBehaviour
 
     public void SetDestination(bool showMovePoint = true)
     {
+
+        if (isPaused) return;
+
         Vector3 newPos;
         newPos.x = Pointer.current.position.x.ReadValue();
         newPos.y = Pointer.current.position.y.ReadValue();
