@@ -29,7 +29,7 @@ MonoBehaviour:
     bold: 0
     italic: 0
     underline: 0
-  - color: {r: 0, g: 0, b: 1, a: 1}
+  - color: {r: 0.54901963, g: 0.54901963, b: 0.5372549, a: 1}
     bold: 0
     italic: 0
     underline: 0
@@ -583,7 +583,7 @@ MonoBehaviour:
       value: "\u0412\u0441\u0442\u0440\u0435\u0447\u0430"
       type: 0
       typeString: CustomFieldType_Text
-    - title: Entry 1 Success
+    - title: Entry 1 success
       value: "\u042F \u043F\u043E\u043F\u0430\u043B \u0432 \u043A\u0430\u043A\u043E\u0439-\u0442\u043E
         \u0441\u0442\u0440\u0430\u043D\u043D\u044B\u0439 \u043B\u0430\u0433\u0435\u0440\u044C
         \u043F\u043E\u0441\u0435\u043B\u0435\u043D\u0446\u0435\u0432. \u041C\u0435\u043D\u044F
@@ -607,7 +607,7 @@ MonoBehaviour:
         \u0440\u0443\u043A\u0443."
       type: 0
       typeString: CustomFieldType_Text
-    - title: Entry 1 Failure
+    - title: Entry 1 failure
       value: "\u042F \u043F\u043E\u043F\u0430\u043B \u0432 \u043A\u0430\u043A\u043E\u0439-\u0442\u043E
         \u0441\u0442\u0440\u0430\u043D\u043D\u044B\u0439 \u043B\u0430\u0433\u0435\u0440\u044C
         \u043F\u043E\u0441\u0435\u043B\u0435\u043D\u0446\u0435\u0432-\u0444\u0430\u043D\u0430\u0442\u0438\u043A\u043E\u0432.
@@ -638,12 +638,12 @@ MonoBehaviour:
     - title: Entry 2 State
       value: unassigned
       type: 0
-      typeString: 
+      typeString: CustomFieldType_QuestState
     - title: Entry 2
       value: "\u0412\u0442\u043E\u0440\u043E\u0439 \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440"
       type: 0
-      typeString: 
-    - title: Entry 2 Success
+      typeString: CustomFieldType_Text
+    - title: Entry 2 success
       value: "\u041F\u0438\u0439 \u0432\u044B\u0433\u043B\u044F\u0434\u0435\u043B
         \u0437\u0430\u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043E\u0432\u0430\u043D\u043D\u044B\u043C.
         \u041E\u043D \u0440\u0430\u0441\u0441\u043A\u0430\u0437\u0430\u043B \u043E
@@ -659,7 +659,7 @@ MonoBehaviour:
         \u041E\u043D\u0438 \u0436\u0438\u0432\u0443\u0442 \u0432 \u043B\u0430\u0433\u0435\u0440\u0435."
       type: 0
       typeString: CustomFieldType_Text
-    - title: Entry 2 Failure
+    - title: Entry 2 failure
       value: 
       type: 0
       typeString: CustomFieldType_Text
@@ -668,7 +668,7 @@ MonoBehaviour:
     - title: Name
       value: Nestor
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
@@ -676,19 +676,19 @@ MonoBehaviour:
     - title: Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Success Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Failure Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: State
       value: unassigned
       type: 0
-      typeString: 
+      typeString: CustomFieldType_QuestState
     - title: Is Item
       value: False
       type: 2
@@ -696,7 +696,7 @@ MonoBehaviour:
     - title: Display Name
       value: "\u041D\u0435\u0441\u0442\u043E\u0440"
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Entry Count
       value: 1
       type: 1
@@ -704,12 +704,12 @@ MonoBehaviour:
     - title: Entry 1 State
       value: unassigned
       type: 0
-      typeString: 
+      typeString: CustomFieldType_QuestState
     - title: Entry 1
       value: "\u041C\u044F\u0433\u043A\u043E\u0435 \u0440\u0430\u0437\u043E\u0431\u043B\u0430\u0447\u0435\u043D\u0438\u0435"
       type: 0
-      typeString: 
-    - title: Entry 1 Success
+      typeString: CustomFieldType_Text
+    - title: Entry 1 success
       value: "\u0413\u0440\u043E\u0431\u043E\u0432\u0449\u0438\u043A \u043C\u0435\u043D\u044F
         \u0440\u0430\u0441\u043A\u0440\u044B\u043B. \u0421\u0443\u043A\u0430! \u041A\u0430\u043A\u043E\u0439
         \u0436\u0435 \u044F \u043F\u043B\u043E\u0445\u043E\u0439 \u0430\u043A\u0442\u0451\u0440!
@@ -727,7 +727,7 @@ MonoBehaviour:
         \u043C\u043E\u0435\u0439 \u043D\u043E\u0432\u043E\u0439 \u043B\u0438\u0447\u043D\u043E\u0441\u0442\u0438."
       type: 0
       typeString: CustomFieldType_Text
-    - title: Entry 1 Failure
+    - title: Entry 1 failure
       value: "\u0422\u0432\u043E\u044E \u043C\u0430\u0442\u044C, \u0442\u0432\u043E\u044E
         \u043C\u0430\u0442\u044C, \u0442\u0432\u043E\u044E \u043C\u0430\u0442\u044C!
         \u0413\u0440\u043E\u0431\u043E\u0432\u0449\u0438\u043A \u043C\u0435\u043D\u044F
@@ -750,7 +750,7 @@ MonoBehaviour:
     - title: Name
       value: Diana
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
@@ -758,19 +758,19 @@ MonoBehaviour:
     - title: Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Success Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Failure Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: State
       value: unassigned
       type: 0
-      typeString: 
+      typeString: CustomFieldType_QuestState
     - title: Is Item
       value: False
       type: 2
@@ -778,7 +778,7 @@ MonoBehaviour:
     - title: Display Name
       value: "\u0414\u0438\u0430\u043D\u0430"
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Entry Count
       value: 1
       type: 1
@@ -786,12 +786,12 @@ MonoBehaviour:
     - title: Entry 1 State
       value: unassigned
       type: 0
-      typeString: 
+      typeString: CustomFieldType_QuestState
     - title: Entry 1
       value: "\u0412\u0441\u0442\u0440\u0435\u0447\u0430"
       type: 0
-      typeString: 
-    - title: Entry 1 Success
+      typeString: CustomFieldType_Text
+    - title: Entry 1 success
       value: "\u041F\u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u043B\u0441\u044F
         \u0441 \u043E\u0447\u0430\u0440\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u0439
         \u0436\u0435\u043D\u0449\u0438\u043D\u043E\u0439 \u043F\u043E \u0438\u043C\u0435\u043D\u0438
@@ -816,7 +816,7 @@ MonoBehaviour:
         \u0443\u0434\u043E\u0431\u043D\u0443\u044E \u0441\u0442\u043E\u0440\u043E\u043D\u0443."
       type: 0
       typeString: CustomFieldType_Text
-    - title: Entry 1 Failure
+    - title: Entry 1 failure
       value: "\u041F\u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u043B\u0441\u044F
         \u0441 \u0433\u043E\u0441\u043F\u043E\u0436\u043E\u0439 \u041E\u0440\u043B\u043E\u0432\u043E\u0439.
         \u0422\u0430 \u0435\u0449\u0451 \u0441\u0443\u043A\u0430. \u041E\u043D\u0430
@@ -890,7 +890,7 @@ MonoBehaviour:
     - title: Name
       value: Bodies
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
@@ -898,21 +898,21 @@ MonoBehaviour:
     - title: Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Success Description
       value: "\u0418\u0442\u0430\u043A, \u0447\u0442\u043E \u043C\u044B \u0438\u043C\u0435\u0435\u043C.
         \u0417\u0432\u0435\u0440\u0441\u043A\u0438 \u0443\u0431\u0438\u0442\u044B
         \u0442\u0440\u0438 \u043C\u043E\u043B\u043E\u0434\u044B\u0435 \u0434\u0435\u0432\u0443\u0448\u043A\u0438."
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Failure Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: State
       value: unassigned
       type: 0
-      typeString: 
+      typeString: CustomFieldType_QuestState
     - title: Is Item
       value: False
       type: 2
@@ -920,7 +920,7 @@ MonoBehaviour:
     - title: Display Name
       value: "\u0422\u0435\u043B\u0430"
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Entry Count
       value: 7
       type: 1
@@ -928,12 +928,12 @@ MonoBehaviour:
     - title: Entry 1 State
       value: unassigned
       type: 0
-      typeString: 
+      typeString: CustomFieldType_QuestState
     - title: Entry 1
       value: "\u0420\u0443\u043A\u0438"
       type: 0
-      typeString: 
-    - title: Entry 1 Success
+      typeString: CustomFieldType_Text
+    - title: Entry 1 success
       value: "\u041E\u0434\u043D\u0430 \u0438\u0437 \u043D\u0438\u0445 \u0431\u044B\u043B\u0430
         \u0437\u0430\u043C\u0443\u0436\u0435\u043C: \u043D\u0430\u0434\u043E \u043E\u043F\u0440\u043E\u0441\u0438\u0442\u044C
         \u0432\u0434\u043E\u0432\u0446\u0430."
@@ -942,12 +942,12 @@ MonoBehaviour:
     - title: Entry 2 State
       value: unassigned
       type: 0
-      typeString: 
+      typeString: CustomFieldType_QuestState
     - title: Entry 2
       value: "\u041F\u0440\u0438\u0447\u0438\u043D\u0430 \u0441\u043C\u0435\u0440\u0442\u0438"
       type: 0
-      typeString: 
-    - title: Entry 2 Success
+      typeString: CustomFieldType_Text
+    - title: Entry 2 success
       value: "\u0412\u0441\u0435 \u043E\u043D\u0438 \u0443\u0431\u0438\u0442\u044B
         \u043E\u0434\u043D\u0438\u043C \u0441\u0440\u0435\u0434\u0441\u0442\u0432\u043E\u043C
         \u2013 \u043D\u043E\u0436\u043E\u043C, \u043A\u0438\u043D\u0436\u0430\u043B\u043E\u043C
@@ -957,12 +957,12 @@ MonoBehaviour:
     - title: Entry 3 State
       value: unassigned
       type: 0
-      typeString: 
+      typeString: CustomFieldType_QuestState
     - title: Entry 3
       value: "\u041B\u0438\u0446\u043E"
       type: 0
-      typeString: 
-    - title: Entry 3 Success
+      typeString: CustomFieldType_Text
+    - title: Entry 3 success
       value: "\u0418\u0437\u043B\u0438\u0448\u043D\u044F\u044F \u0436\u0435\u0441\u0442\u043E\u043A\u043E\u0441\u0442\u044C
         \u0443\u0431\u0438\u0439\u0446\u044B \u0433\u043E\u0432\u043E\u0440\u0438\u0442
         \u043E\u0431 \u044D\u043C\u043E\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E\u043C
@@ -972,12 +972,12 @@ MonoBehaviour:
     - title: Entry 4 State
       value: unassigned
       type: 0
-      typeString: 
+      typeString: CustomFieldType_QuestState
     - title: Entry 4
       value: "\u041E\u0434\u0435\u0436\u0434\u0430"
       type: 0
-      typeString: 
-    - title: Entry 4 Success
+      typeString: CustomFieldType_Text
+    - title: Entry 4 success
       value: "\u041F\u043E\u0441\u043B\u0435 \u0441\u043C\u0435\u0440\u0442\u0438
         \u0436\u0435\u0440\u0442\u0432 \u043F\u0435\u0440\u0435\u0442\u0430\u0441\u043A\u0438\u0432\u0430\u043B\u0438.
         \u0417\u0430\u0447\u0435\u043C? "
@@ -986,12 +986,12 @@ MonoBehaviour:
     - title: Entry 5 State
       value: unassigned
       type: 0
-      typeString: 
+      typeString: CustomFieldType_QuestState
     - title: Entry 5
       value: "\u0413\u043E\u043B\u043E\u0432\u0430"
       type: 0
-      typeString: 
-    - title: Entry 5 Success
+      typeString: CustomFieldType_Text
+    - title: Entry 5 success
       value: "\u0414\u0443\u0448\u0435\u0433\u0443\u0431 \u0431\u044B\u043B \u0437\u043D\u0430\u043A\u043E\u043C
         \u0441 \u0436\u0435\u0440\u0442\u0432\u0430\u043C\u0438, \u0442\u0430\u043A
         \u0447\u0442\u043E \u043E\u043D\u0438 \u043D\u0435 \u043F\u044B\u0442\u0430\u043B\u0438\u0441\u044C
@@ -1001,12 +1001,12 @@ MonoBehaviour:
     - title: Entry 6 State
       value: unassigned
       type: 0
-      typeString: 
+      typeString: CustomFieldType_QuestState
     - title: Entry 6
       value: "\u041E \u0440\u0430\u043D\u0435"
       type: 0
-      typeString: 
-    - title: Entry 6 Success
+      typeString: CustomFieldType_Text
+    - title: Entry 6 success
       value: "\u041F\u0440\u0435\u0441\u0442\u0443\u043F\u043D\u0438\u043A \u0442\u043E\u0447\u043D\u043E
         \u0437\u043D\u0430\u043B, \u043A\u0443\u0434\u0430 \u043D\u0430\u0434\u043E
         \u0431\u0438\u0442\u044C, \u0438 \u0443 \u043D\u0435\u0433\u043E \u0431\u044B\u043B\u0430
@@ -1021,12 +1021,12 @@ MonoBehaviour:
     - title: Entry 7 State
       value: unassigned
       type: 0
-      typeString: 
+      typeString: CustomFieldType_QuestState
     - title: Entry 7
       value: "\u041F\u0438\u0439"
       type: 0
-      typeString: 
-    - title: Entry 7 Success
+      typeString: CustomFieldType_Text
+    - title: Entry 7 success
       value: "\u041F\u043E\u043A\u0430 \u0447\u0442\u043E \u0432\u0441\u0451 \u044D\u0442\u043E
         \u043F\u043E\u0440\u043E\u0436\u0434\u0430\u0435\u0442 \u0431\u043E\u043B\u044C\u0448\u0435
         \u0432\u043E\u043F\u0440\u043E\u0441\u043E\u0432, \u0447\u0435\u043C \u043E\u0442\u0432\u0435\u0442\u043E\u0432.
@@ -6479,13 +6479,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 1
-        originDialogueID: 77
-        destinationConversationID: 1
-        destinationDialogueID: 133
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: CurrentQuestState("Heal Foma") == "success"
       userScript: 
       onExecute:
@@ -6889,13 +6883,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 1
-        originDialogueID: 85
-        destinationConversationID: 1
-        destinationDialogueID: 133
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -9547,7 +9535,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[nosubtitle]\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E
+        value: "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E
           \u0443\u0439\u0442\u0438."
         type: 0
         typeString: 
@@ -9597,7 +9585,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[nosubtitle]\u0423\u0439\u0442\u0438"
+        value: "\u0423\u0439\u0442\u0438"
         type: 0
         typeString: 
       - title: Sequence
@@ -9646,7 +9634,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[nosubtitle]\u0423\u0439\u0442\u0438"
+        value: "\u0423\u0439\u0442\u0438"
         type: 0
         typeString: 
       - title: Sequence
@@ -9695,7 +9683,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[nosubtitle]\u0423\u0439\u0442\u0438"
+        value: "\u0423\u0439\u0442\u0438"
         type: 0
         typeString: 
       - title: Sequence
@@ -9980,8 +9968,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1338.5612, y: 831.69946}
-    canvasZoom: 0.67000115
+    canvasScrollPosition: {x: 2160.9888, y: 1191.9097}
+    canvasZoom: 0.73000115
   - id: 2
     fields:
     - title: Title
@@ -10795,13 +10783,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 14
-        destinationConversationID: 2
-        destinationDialogueID: 39
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -11782,58 +11764,9 @@ MonoBehaviour:
         y: 212.96246
         width: 160
         height: 30
-    - id: 39
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: "[nosubtitle]\u0423\u0439\u0442\u0438"
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 2
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 2257.4253
-        y: 396.3961
-        width: 160
-        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 998.636, y: 73.928444}
-    canvasZoom: 0.88000023
+    canvasScrollPosition: {x: 960.74805, y: 142.35973}
+    canvasZoom: 0.8200003
   - id: 3
     fields:
     - title: Title
@@ -12469,13 +12402,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 3
-        originDialogueID: 12
-        destinationConversationID: 3
-        destinationDialogueID: 44
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -12483,8 +12410,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2692.8345
-        y: 654.8132
+        x: 2385.5173
+        y: 765.78876
         width: 160
         height: 30
     - id: 13
@@ -13929,13 +13856,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 3
-        originDialogueID: 40
-        destinationConversationID: 3
-        destinationDialogueID: 44
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: Variable["Story.PapersFound"] == true
       userScript: 
       onExecute:
@@ -13943,8 +13864,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2992.239
-        y: 867.5891
+        x: 2970.2878
+        y: 918.80865
         width: 160
         height: 30
     - id: 41
@@ -14166,57 +14087,8 @@ MonoBehaviour:
         y: 1176.6342
         width: 160
         height: 30
-    - id: 44
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: "[nosubtitle]\u0423\u0439\u0442\u0438"
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 3
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 3247.7124
-        y: 731.64246
-        width: 160
-        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1990.4609, y: 579.65137}
+    canvasScrollPosition: {x: 1858.7539, y: 689.4077}
     canvasZoom: 0.8200002
   - id: 4
     fields:
@@ -21070,13 +20942,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 4
-        originDialogueID: 115
-        destinationConversationID: 4
-        destinationDialogueID: 149
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -22824,62 +22690,9 @@ MonoBehaviour:
         y: 3283.2688
         width: 160
         height: 30
-    - id: 149
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 8
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: "[nosubtitle]\u0423\u0439\u0442\u0438"
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Response Menu Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 4
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 8943.217
-        y: 3070.1492
-        width: 160
-        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 6740.721, y: 1415.4891}
-    canvasZoom: 0.85000026
+    canvasScrollPosition: {x: 4987.962, y: 1434.6332}
+    canvasZoom: 0.40000057
   - id: 5
     fields:
     - title: Title
@@ -23815,13 +23628,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 5
-        originDialogueID: 14
-        destinationConversationID: 5
-        destinationDialogueID: 39
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -25291,55 +25098,6 @@ MonoBehaviour:
         y: 1871.734
         width: 160
         height: 30
-    - id: 39
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 6
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: "[nosubtitle]\u0423\u0439\u0442\u0438"
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 5
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 3130.2986
-        y: 1664.1389
-        width: 160
-        height: 30
     - id: 40
       fields:
       - title: Title
@@ -26050,8 +25808,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1066.0825, y: 1203.9099}
-    canvasZoom: 0.85000014
+    canvasScrollPosition: {x: 1206.8082, y: 1164.0225}
+    canvasZoom: 0.73000026
   - id: 6
     fields:
     - title: Title
@@ -26668,7 +26426,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[nosubtitle]\u0423\u0439\u0442\u0438"
+        value: "\u0423\u0439\u0442\u0438"
         type: 0
         typeString: 
       - title: Sequence
@@ -26696,8 +26454,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2837.0754
-        y: 1141.7361
+        x: 2839.2732
+        y: 1121.956
         width: 160
         height: 30
     - id: 11
@@ -29722,13 +29480,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 6
-        originDialogueID: 61
-        destinationConversationID: 6
-        destinationDialogueID: 62
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: Variable["Diana.Conflict"] == true
       userScript: 
       onExecute:
@@ -29738,55 +29490,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 2370.6475
         y: 1734.494
-        width: 160
-        height: 30
-    - id: 62
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 7
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: "[nosubtitle]\u0423\u0439\u0442\u0438"
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 6
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 2370.6475
-        y: 1784.494
         width: 160
         height: 30
     - id: 63
@@ -30670,8 +30373,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1490.8566, y: 1214.9829}
-    canvasZoom: 0.91000044
+    canvasScrollPosition: {x: 1186.8121, y: 866.93005}
+    canvasZoom: 0.67000073
   - id: 7
     fields:
     - title: Title
@@ -31121,13 +30824,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 7
-        originDialogueID: 6
-        destinationConversationID: 7
-        destinationDialogueID: 69
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -31564,7 +31261,7 @@ MonoBehaviour:
         destinationDialogueID: 17
         isConnector: 0
         priority: 2
-      conditionsString: Variable["ThreeVictims.KnowKiller"] = true
+      conditionsString: Variable["ThreeVictims.KnowKiller"] == true
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -32249,7 +31946,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: SetQuestEntryState("Pivs", 2, "success")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -34770,58 +34467,9 @@ MonoBehaviour:
         y: 831.14795
         width: 160
         height: 30
-    - id: 69
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 8
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: "[nosubtitle]\u0423\u0439\u0442\u0438"
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 7
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 2709.0222
-        y: 464.31598
-        width: 160
-        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 114.43344, y: 715.2491}
-    canvasZoom: 0.79000014
+    canvasScrollPosition: {x: 702.30774, y: 574.54004}
+    canvasZoom: 0.61000025
   - id: 8
     fields:
     - title: Title
@@ -35506,7 +35154,8 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: "Variable[\"\u0416\u0435\u0440\u0442\u0432\u0430\"] = 2;"
+      userScript: "Variable[\"\u0416\u0435\u0440\u0442\u0432\u0430\"] = 2;\nVariable[\"ThreeVictims.Second\"]
+        = true"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -35672,25 +35321,17 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 9
-        originDialogueID: 6
-        destinationConversationID: 9
-        destinationDialogueID: 69
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
-      userScript: 'SetQuestState("Bodies", "success");
-
-        SetQuestEntryState("Bodies",
-        7, "success")'
+      userScript: "SetQuestState(\"Bodies\", \"success\");\nSetQuestEntryState(\"Bodies\",
+        7, \"success\");\nSetTalkIndex(\"\u041F\u0438\u0439\", 1)"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1622.8025
-        y: 291.97397
+        x: 1619.144
+        y: 298.07153
         width: 160
         height: 30
     - id: 7
@@ -36416,7 +36057,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1360.3673
+        x: 1356.0817
         y: 1048.0288
         width: 160
         height: 30
@@ -36641,7 +36282,8 @@ MonoBehaviour:
         priority: 2
       conditionsString: 
       userScript: "Variable[\"\u041E\u0441\u043C\u043E\u0442\u0440\u0435\u043D\u043E_\u0442\u0435\u043B\u043E\"]
-        = true;\nSetQuestEntryState(\"Bodies\", 6, \"success\")"
+        = true;\nSetQuestEntryState(\"Bodies\", 2, \"success\");\nSetQuestEntryState(\"Bodies\",
+        6, \"success\");"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -38477,7 +38119,7 @@ MonoBehaviour:
       - originConversationID: 9
         originDialogueID: 66
         destinationConversationID: 9
-        destinationDialogueID: 0
+        destinationDialogueID: 5
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -38649,58 +38291,9 @@ MonoBehaviour:
         y: 198.26263
         width: 160
         height: 30
-    - id: 69
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: "[nosubtitle]\u0423\u0439\u0442\u0438"
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 9
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 1622.8025
-        y: 195.4224
-        width: 160
-        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 185.71411, y: 445.71405}
-    canvasZoom: 0.7000005
+    canvasScrollPosition: {x: 382.54102, y: 191.24109}
+    canvasZoom: 0.82000047
   - id: 10
     fields:
     - title: Title
@@ -43840,13 +43433,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 11
-        originDialogueID: 17
-        destinationConversationID: 11
-        destinationDialogueID: 18
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: SetQuestState("Undertakers", "success")
       onExecute:
@@ -43858,57 +43445,8 @@ MonoBehaviour:
         y: 829.36694
         width: 160
         height: 30
-    - id: 18
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: "[nosubtitle]\u0423\u0439\u0442\u0438"
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 11
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 1171.3922
-        y: 930.9133
-        width: 160
-        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 339.76233, y: 201.03088}
+    canvasScrollPosition: {x: 346.97876, y: 239.17523}
     canvasZoom: 0.97
   - id: 12
     fields:
@@ -47609,7 +47147,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 217.18741}
     canvasZoom: 0.64000034
   - id: 13
     fields:
@@ -49880,8 +49418,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 344.1341, y: 308.53937}
-    canvasZoom: 0.79000026
+    canvasScrollPosition: {x: 62.857178, y: 468.48517}
+    canvasZoom: 0.70000035
   syncInfo:
     syncActors: 0
     syncItems: 0
