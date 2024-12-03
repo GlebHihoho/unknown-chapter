@@ -28,6 +28,11 @@ public class SaveManager : MonoBehaviour
 
     SaveData.Save save;
 
+    public bool IsNewGame
+    {
+        get { return save.isNewGame; }
+    }
+
 
     public static event Action OnLoadCompleted;
 
