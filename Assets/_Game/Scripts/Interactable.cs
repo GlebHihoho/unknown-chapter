@@ -65,6 +65,8 @@ public class Interactable : MonoBehaviour
         HighlightInteractable.OnHighlightsEnabled -= Highlight;
 
         GameControls.instance.OnAction -= Interact;
+
+        OnPointerExit?.Invoke();
     }
 
 
@@ -137,6 +139,7 @@ public class Interactable : MonoBehaviour
     {
 
     }
+
 
 
     private void SetPause(bool isPaused)

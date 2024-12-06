@@ -48,5 +48,6 @@ public class ItemsContainer : Interactable
         if (emptyContainer != null) emptyContainer.SetActive(!isEnabled);
 
         enabled = isEnabled;
+        GetComponent<Collider>().enabled = isEnabled;
     }
 }
