@@ -155,7 +155,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""65ea271f-a42e-453b-bb63-1b1a51042bef"",
-                    ""path"": ""<Pointer>/rightButton"",
+                    ""path"": ""<Pointer>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -221,7 +221,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""64b3d7fe-735b-4e36-80a7-fe39c0d88d3e"",
-                    ""path"": ""<Mouse>/middleButton"",
+                    ""path"": ""<Pointer>/middleButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

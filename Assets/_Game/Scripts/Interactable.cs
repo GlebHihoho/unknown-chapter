@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,6 +22,10 @@ public class Interactable : MonoBehaviour
     private Vector2 hotSpot = Vector2.zero;
 
     private bool approaching = false;
+
+
+    public static event Action OnPointerEnter;
+    public static event Action OnPointerExit;
 
 
 
@@ -68,6 +73,8 @@ public class Interactable : MonoBehaviour
     {
         if (status == Status.Paused) return;
 
+        OnPointerEnter?.Invoke();
+
         if (Vector3.Magnitude(transform.position - player.position) <= interactData.InteractDistance) status = Status.CanInteract;
         else status = Status.Unavailable;
 
@@ -94,6 +101,8 @@ public class Interactable : MonoBehaviour
     {
         ResetVisuals();
         GameControls.instance.OnAction -= Interact;
+
+        OnPointerExit?.Invoke();
     }
 
     protected void ResetVisuals()

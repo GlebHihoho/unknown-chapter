@@ -18,7 +18,11 @@ public class GameControls : MonoBehaviour
     public event Action<InputAction.CallbackContext> OnInventory;
     public event Action<InputAction.CallbackContext> OnCharacterTab;
     public event Action<InputAction.CallbackContext> OnAction;
-    public event Action<InputAction.CallbackContext> OnMove;
+    public event Action OnMove;
+
+    public event Action OnMoveStarted;
+    public event Action OnMoveEnded;
+
     public event Action<InputAction.CallbackContext> OnHighlightStarted;
     public event Action<InputAction.CallbackContext> OnHighlightEnded;
     public event Action<InputAction.CallbackContext> OnPause;
@@ -53,7 +57,12 @@ public class GameControls : MonoBehaviour
         inputActions.Player.Inventory.performed += Inventory;
         inputActions.Player.CharacterTab.performed += CharacterTab;
         inputActions.Player.Action.performed += Action;
+
         inputActions.Player.Move.performed += Move;
+
+        inputActions.Player.Move.started += MoveStarted;
+        inputActions.Player.Move.canceled += MoveEnded;
+
         inputActions.Player.Highlight.started += HighlightStarted;
         inputActions.Player.Highlight.canceled += HighlightEnded;
         inputActions.Player.QuickSave.performed += Quicksave;
@@ -86,7 +95,12 @@ public class GameControls : MonoBehaviour
     private void Inventory(InputAction.CallbackContext obj) => OnInventory?.Invoke(obj);
     private void CharacterTab(InputAction.CallbackContext obj) => OnCharacterTab?.Invoke(obj);
     private void Action(InputAction.CallbackContext obj) => OnAction?.Invoke(obj);
-    private void Move(InputAction.CallbackContext obj) => OnMove?.Invoke(obj);
+    private void Move(InputAction.CallbackContext obj) => OnMove?.Invoke();
+
+    private void MoveStarted(InputAction.CallbackContext obj) => OnMoveStarted?.Invoke();
+    private void MoveEnded(InputAction.CallbackContext obj) => OnMoveEnded?.Invoke();
+
+
     private void HighlightStarted(InputAction.CallbackContext obj) => OnHighlightStarted?.Invoke(obj);
     private void HighlightEnded(InputAction.CallbackContext obj) => OnHighlightEnded?.Invoke(obj);
     private void Quicksave(InputAction.CallbackContext obj) => OnQuicksave?.Invoke(obj);

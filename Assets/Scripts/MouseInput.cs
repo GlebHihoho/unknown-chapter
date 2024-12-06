@@ -34,6 +34,10 @@ public class MouseInput : MonoBehaviour
     bool isPaused = false;
     bool agentEnabled = true;
 
+    bool pointerOverInteractable = false;
+
+    bool settingDestination = false;
+
     Vector3 destination;
 
 
@@ -50,8 +54,36 @@ public class MouseInput : MonoBehaviour
         _m_trajectoryGenerator.InputProfile = _m_generalLocomotion;
     }
 
-    void Start() => GameControls.instance.OnMove += SetDestination;
-    private void OnDestroy() => GameControls.instance.OnMove -= SetDestination;
+    void Start()
+    {
+        //GameControls.instance.OnMove += OldSetDestination;
+        GameControls.instance.OnMoveStarted += MoveStarted;
+        GameControls.instance.OnMoveEnded += MoveEnded;
+
+        Interactable.OnPointerEnter += InteractablePointerEnter;
+        Interactable.OnPointerExit += InteractablePointerExit;
+    }
+
+
+
+    private void OnDestroy()
+    {
+        //GameControls.instance.OnMove -= OldSetDestination;
+        GameControls.instance.OnMoveStarted -= MoveStarted;
+        GameControls.instance.OnMoveEnded -= MoveEnded;
+
+        Interactable.OnPointerEnter -= InteractablePointerEnter;
+        Interactable.OnPointerExit -= InteractablePointerExit;
+    }
+
+
+    private void InteractablePointerEnter() => pointerOverInteractable = true;
+    private void InteractablePointerExit() => pointerOverInteractable = false;
+
+
+    private void MoveStarted() => settingDestination = true;
+
+    private void MoveEnded() => settingDestination = false;
 
 
     private void OnEnable()
@@ -99,6 +131,12 @@ public class MouseInput : MonoBehaviour
     }
 
 
+    private void Update()
+    {
+        if (settingDestination) OldSetDestination();
+    }
+
+
     void FixedUpdate()
     {
 
@@ -114,8 +152,10 @@ public class MouseInput : MonoBehaviour
     }
 
 
-    private void SetDestination(InputAction.CallbackContext obj)
+    private void OldSetDestination()
     {
+        if (pointerOverInteractable) return;
+
         SetDestination();
 
         OnNewInput?.Invoke();
