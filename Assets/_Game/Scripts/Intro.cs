@@ -13,6 +13,8 @@ public class Intro : MonoBehaviour
 
     public UnityEvent AfterIntro;
 
+    [SerializeField] bool skipInEditor = true;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -43,6 +45,13 @@ public class Intro : MonoBehaviour
 
     public void PlayIntro()
     {
+
+        if (Application.isEditor && skipInEditor)
+        {
+            background.gameObject.SetActive(false);
+            return;
+        }
+
         Pause.instance.SetPause(true, true);
 
         Color textColor = textField.color;
