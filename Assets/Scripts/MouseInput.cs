@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class MouseInput : MonoBehaviour
@@ -154,7 +155,7 @@ public class MouseInput : MonoBehaviour
 
     private void OldSetDestination()
     {
-        if (pointerOverInteractable) return;
+        if (pointerOverInteractable || EventSystem.current.IsPointerOverGameObject()) return;
 
         SetDestination();
 
