@@ -15,6 +15,7 @@ public class ActiveItemUI : MonoBehaviour
     [Space]
     [SerializeField] TextMeshProUGUI itemName;
     [SerializeField] TextMeshProUGUI description;
+    [SerializeField] ScrollRect scrollRect;
 
     [Space]
     [SerializeField] Button useButton;
@@ -23,6 +24,8 @@ public class ActiveItemUI : MonoBehaviour
 
     public static event Action<ItemData> OnUseItem;
     public static event Action<ItemData> OnDeleteItem;
+
+    WaitForEndOfFrame waitFrame = new WaitForEndOfFrame();
 
     Sprite defaultImage;
 
@@ -67,6 +70,14 @@ public class ActiveItemUI : MonoBehaviour
         useButton.interactable = item.Usable;
 
         deleteButton.interactable = item.CanDelete;
+
+        if (gameObject.activeInHierarchy == true) StartCoroutine(ResetScroll());
+    }
+
+    IEnumerator ResetScroll()
+    {
+        yield return waitFrame;
+        scrollRect.verticalNormalizedPosition = 1;
     }
 
 
