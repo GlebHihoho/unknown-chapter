@@ -23,6 +23,9 @@ public class Journal : MonoBehaviour, ISaveable
     Dictionary<string, JournalRecord> records = new();
     List<string> recordsNames = new();
 
+    [SerializeField, TextArea(0, 3)] string newTextStart;
+    [SerializeField, TextArea(0, 3)] string newTextEnd;
+
     [SerializeField, QuestPopup] string initialQuest;
 
     public bool JournalOpened
@@ -169,8 +172,6 @@ public class Journal : MonoBehaviour, ISaveable
 
     public void SelectQuest(string quest)
     {
-        const string newTextStart = "<color=blue><b>(Новое)</b> ";
-        const string newTextEnd = "</color>";
 
         if (quest != activeQuest) 
         { 
@@ -180,7 +181,7 @@ public class Journal : MonoBehaviour, ISaveable
 
         StringBuilder sb = new StringBuilder();
 
-        sb.Append("<color=black>");
+        //sb.Append("<color=black>");
 
         HashSet<int> newEntires = new();
 
