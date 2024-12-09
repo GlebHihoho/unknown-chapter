@@ -2043,66 +2043,10 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: CustomFieldType_Text
-  - id: 77
-    fields:
-    - title: Name
-      value: ThreeVictims.First
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Initial Value
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Description
-      value: 
-      type: 0
-      typeString: CustomFieldType_Text
-  - id: 78
-    fields:
-    - title: Name
-      value: ThreeVictims.Second
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Initial Value
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Description
-      value: 
-      type: 0
-      typeString: CustomFieldType_Text
-  - id: 79
-    fields:
-    - title: Name
-      value: ThreeVictims.Third
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Initial Value
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Description
-      value: 
-      type: 0
-      typeString: CustomFieldType_Text
   - id: 80
     fields:
     - title: Name
       value: ThreeVictims.Ring
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Initial Value
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Description
-      value: 
-      type: 0
-      typeString: CustomFieldType_Text
-  - id: 81
-    fields:
-    - title: Name
-      value: ThreeVictims.Neck
       type: 0
       typeString: CustomFieldType_Text
     - title: Initial Value
@@ -3156,7 +3100,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 3713.6814
+        x: 3715.954
         y: 865.6153
         width: 160
         height: 30
@@ -9798,8 +9742,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 3136.1409, y: 612.3162}
-    canvasZoom: 0.910001
+    canvasScrollPosition: {x: 2014.8217, y: 0}
+    canvasZoom: 0.7600012
   - id: 2
     fields:
     - title: Title
@@ -14062,7 +14006,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: SetActive(PivsTrigger, false)
+        value: "SetActive(PivsTrigger, false);\nLookAt(\u041F\u0438\u0439,  \u042D\u0440\u0430\u0441\u0442,
+          0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442, \u041F\u0438\u0439, 0.2);"
         type: 0
         typeString: 
       conversationID: 4
@@ -14118,7 +14063,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "SetActive(PivsTrigger, false);\nLookAt(\u041F\u0438\u0439,  \u042D\u0440\u0430\u0441\u0442,
+          0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442, \u041F\u0438\u0439, 0.2);"
         type: 0
         typeString: 
       conversationID: 4
@@ -22477,7 +22423,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 6602.859, y: 1598.9895}
+    canvasScrollPosition: {x: 6660.005, y: 1241.8472}
     canvasZoom: 0.9100003
   - id: 5
     fields:
@@ -22610,7 +22556,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "SetActive(PivsTrigger, false);\nLookAt(\u041D\u0435\u0441\u0442\u043E\u0440, 
+          \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          \u041D\u0435\u0441\u0442\u043E\u0440, 0.2);"
         type: 0
         typeString: 
       conversationID: 5
@@ -25741,7 +25689,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "LookAt(\u0414\u0438\u0430\u043D\u0430 \u041E\u0440\u043B\u043E\u0432\u0430, 
+          \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          \u0414\u0438\u0430\u043D\u0430 \u041E\u0440\u043B\u043E\u0432\u0430, 0.2);"
         type: 0
         typeString: 
       conversationID: 6
@@ -25799,7 +25749,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "LookAt(\u0414\u0438\u0430\u043D\u0430 \u041E\u0440\u043B\u043E\u0432\u0430, 
+          \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          \u0414\u0438\u0430\u043D\u0430 \u041E\u0440\u043B\u043E\u0432\u0430, 0.2);"
         type: 0
         typeString: 
       conversationID: 6
@@ -29200,7 +29152,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "SetActive(PivsTrigger, false);\nLookAt(\u0414\u0438\u0430\u043D\u0430
+          \u041E\u0440\u043B\u043E\u0432\u0430,  \u042D\u0440\u0430\u0441\u0442,
+          0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442, \u0414\u0438\u0430\u043D\u0430
+          \u041E\u0440\u043B\u043E\u0432\u0430, 0.2);"
         type: 0
         typeString: 
       conversationID: 6
@@ -30312,7 +30267,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "LookAt(\u041F\u0438\u0439,  \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          \u041F\u0438\u0439, 0.2);"
         type: 0
         typeString: 
       conversationID: 7
@@ -30368,7 +30324,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "LookAt(\u041F\u0438\u0439,  \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          \u041F\u0438\u0439, 0.2);"
         type: 0
         typeString: 
       conversationID: 7
@@ -30430,7 +30387,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "LookAt(\u041F\u0438\u0439,  \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          \u041F\u0438\u0439, 0.2);"
         type: 0
         typeString: 
       conversationID: 7
@@ -30486,7 +30444,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "LookAt(\u041F\u0438\u0439,  \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          \u041F\u0438\u0439, 0.2);"
         type: 0
         typeString: 
       conversationID: 7
@@ -33883,7 +33842,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: "LookAt(\u041F\u0438\u0439,  \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          \u041F\u0438\u0439, 0.2);"
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 7
@@ -34197,7 +34157,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 17.512146, y: 809.14886}
+    canvasScrollPosition: {x: 1631.729, y: 356.17703}
     canvasZoom: 0.82000005
   - id: 8
     fields:
@@ -34826,9 +34786,8 @@ MonoBehaviour:
         destinationDialogueID: 7
         isConnector: 0
         priority: 2
-      conditionsString: Variable["ThreeVictims.First"] == false
-      userScript: "Variable[\"\u0416\u0435\u0440\u0442\u0432\u0430\"] = 1;\nVariable[\"ThreeVictims.First\"]
-        = true"
+      conditionsString: 
+      userScript: "Variable[\"\u0416\u0435\u0440\u0442\u0432\u0430\"] = 1;"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -34882,9 +34841,8 @@ MonoBehaviour:
         destinationDialogueID: 31
         isConnector: 0
         priority: 2
-      conditionsString: Variable["ThreeVictims.Second"] == false
-      userScript: "Variable[\"\u0416\u0435\u0440\u0442\u0432\u0430\"] = 2;\nVariable[\"ThreeVictims.Second\"]
-        = true"
+      conditionsString: 
+      userScript: "Variable[\"\u0416\u0435\u0440\u0442\u0432\u0430\"] = 2;"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -34944,9 +34902,8 @@ MonoBehaviour:
         destinationDialogueID: 5
         isConnector: 0
         priority: 2
-      conditionsString: Variable["ThreeVictims.Third"] == false
-      userScript: "Variable[\"\u0416\u0435\u0440\u0442\u0432\u0430\"] = 3;\nVariable[\"ThreeVictims.Third\"]
-        = true"
+      conditionsString: 
+      userScript: "Variable[\"\u0416\u0435\u0440\u0442\u0432\u0430\"] = 3;"
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -35336,8 +35293,7 @@ MonoBehaviour:
         destinationDialogueID: 12
         isConnector: 0
         priority: 2
-      conditionsString: (Variable["ThreeVictims.First"] == false) or (Variable["ThreeVictims.Second"]
-        == false) or (Variable["ThreeVictims.Third"] == false)
+      conditionsString: 
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -36535,11 +36491,11 @@ MonoBehaviour:
         destinationDialogueID: 35
         isConnector: 0
         priority: 2
-      conditionsString: Variable["ThreeVictims.Neck"] == false
-      userScript: 'Variable["Stats.Intelligence"] = Variable["Stats.Intelligence"]
-        - 1;
+      conditionsString: 
+      userScript: 'if(Dialog[thisID].SimStatus == "Untouched")
 
-        Variable["ThreeVictims.Neck"] = true'
+        Variable["Stats.Intelligence"]
+        = Variable["Stats.Intelligence"] - 1;'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -36959,6 +36915,12 @@ MonoBehaviour:
         destinationDialogueID: 49
         isConnector: 0
         priority: 2
+      - originConversationID: 9
+        originDialogueID: 40
+        destinationConversationID: 9
+        destinationDialogueID: 69
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -37137,15 +37099,15 @@ MonoBehaviour:
         destinationDialogueID: 51
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Variable["ThreeVictims.Ring"] == false
       userScript: SetQuestEntryState("Bodies", 1, "success")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2245.1162
-        y: 446.5171
+        x: 2125.398
+        y: 453.55933
         width: 160
         height: 30
     - id: 50
@@ -37973,8 +37935,67 @@ MonoBehaviour:
         y: 198.26263
         width: 160
         height: 30
+    - id: 69
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u041D\u0430 \u0431\u0435\u0437\u044B\u043C\u044F\u043D\u043D\u043E\u043C
+          \u043F\u0430\u043B\u044C\u0446\u0435 \u0432\u0441\u0435 \u0435\u0449\u0435
+          \u0432\u0438\u0434\u0435\u043D \u0441\u043B\u0435\u0434 \u043E\u0442 \u043A\u043E\u043B\u0435\u0447\u043A\u0430.
+          \u042D\u0442\u0430 \u0434\u0435\u0432\u0443\u0448\u043A\u0430 \u0431\u044B\u043B\u0430
+          \u0437\u0430\u043C\u0443\u0436\u0435\u043C."
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 9
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 9
+        originDialogueID: 69
+        destinationConversationID: 9
+        destinationDialogueID: 51
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2347.192
+        y: 452.1138
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1030.5068, y: 122.53516}
+    canvasScrollPosition: {x: 1069.9432, y: 0}
     canvasZoom: 0.7100001
   - id: 10
     fields:
@@ -42127,7 +42148,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: "LookAt(Bald,  \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          Bald, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442, Shaggy, 0.2);"
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 11
@@ -42560,7 +42582,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: "LookAt(Shaggy,  \u042D\u0440\u0430\u0441\u0442, 0.2);"
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 11
@@ -42993,7 +43015,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: "LookAt(Shaggy,  \u042D\u0440\u0430\u0441\u0442, 0.2);"
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 11
@@ -43130,7 +43152,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 340.87396, y: 166.52597}
+    canvasScrollPosition: {x: 301.6987, y: 61.855682}
     canvasZoom: 0.97
   - id: 12
     fields:
