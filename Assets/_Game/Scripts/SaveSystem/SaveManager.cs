@@ -28,7 +28,9 @@ public class SaveManager : MonoBehaviour
 
     SaveData.Save save;
 
+# if UNITY_EDITOR
     bool needInit = false;
+#endif
 
     public bool IsNewGame
     {
@@ -66,8 +68,9 @@ public class SaveManager : MonoBehaviour
             path = Application.persistentDataPath + Path.DirectorySeparatorChar + savesFolder;
 
             RefreshSavesInfo();
-
+#if UNITY_EDITOR
             if (Application.isEditor && SceneManager.GetActiveScene().name == levels[0]) needInit = true;
+#endif
         }
         else Destroy(this);
     }
@@ -77,8 +80,9 @@ public class SaveManager : MonoBehaviour
     {
         GameControls.instance.OnQuicksave += QuickSave;
         GameControls.instance.OnQuickload += QuickLoad;
-
+#if UNITY_EDITOR
         if (needInit) NewGame(); // Initialization if main menu was not used for simplicity of development
+#endif
     }
 
     private void OnDestroy()
