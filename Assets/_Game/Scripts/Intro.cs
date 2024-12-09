@@ -12,11 +12,18 @@ public class Intro : MonoBehaviour
     [SerializeField] TextMeshProUGUI textField;
     [SerializeField] TextMeshProUGUI authorField;
 
+    [SerializeField] TextMeshProUGUI skipMessage;
+    [SerializeField, Range(0, 10)] float skipTime = 3;
+
+    float skipTimer = 0;
+
     public UnityEvent AfterIntro;
 
     [SerializeField] bool skipInEditor = true;
 
     UIController uiController;
+
+    Sequence sequence;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,10 +40,23 @@ public class Intro : MonoBehaviour
         color.a = 0;
         authorField.color = color;
 
+        skipMessage.enabled = false;
+
         SaveManager.OnLoadCompleted += OnLoad;
 
         uiController = FindFirstObjectByType<UIController>();
         
+    }
+
+
+    private void Update()
+    {
+        if (skipTimer > 0)
+        {
+            skipTimer -= Time.deltaTime;
+
+            if (skipTimer <= 0) SkipIntro();
+        }
     }
 
 
@@ -68,7 +88,10 @@ public class Intro : MonoBehaviour
 
         background.gameObject.SetActive(true);
 
-        Sequence sequence = DOTween.Sequence();
+        sequence = DOTween.Sequence();
+
+        GameControls.instance.OnSkipIntroStarted += StartSkipIntro;
+        GameControls.instance.OnSkipIntroEnded += EndSkipIntro;
 
         sequence.Append(textField.DOColor(textColor, 8f));
         sequence.Append(authorField.DOColor(authorColor, 2f));
@@ -78,11 +101,15 @@ public class Intro : MonoBehaviour
 
         sequence.Insert(36, background.DOFade(0, 3));
 
-        sequence.InsertCallback(40, () =>
+        sequence.OnComplete(() =>
         {
             background.gameObject.SetActive(false);
 
             Pause.instance.SetPause(false, true);
+
+            GameControls.instance.OnSkipIntroStarted -= StartSkipIntro;
+            GameControls.instance.OnSkipIntroEnded -= EndSkipIntro;
+
             uiController.EnableMainMenu();
 
             AfterIntro.Invoke();
@@ -90,7 +117,16 @@ public class Intro : MonoBehaviour
 
         sequence.Play();
 
-
-
     }
+
+
+    private void StartSkipIntro()
+    {
+        skipMessage.enabled = true;
+        skipTimer = skipTime;
+    }
+
+    private void EndSkipIntro() => skipMessage.enabled = false;
+
+    private void SkipIntro() => sequence.Complete();
 }

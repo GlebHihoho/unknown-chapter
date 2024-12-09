@@ -261,6 +261,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SkipIntro"",
+                    ""type"": ""Button"",
+                    ""id"": ""009261a7-ab97-4fa3-8402-50b7fe045e1c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -296,6 +305,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""GameConsole"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9edf5011-c424-4bae-a978-85e245992603"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkipIntro"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -319,6 +339,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_System_MainMenu = m_System.FindAction("MainMenu", throwIfNotFound: true);
         m_System_Pause = m_System.FindAction("Pause", throwIfNotFound: true);
         m_System_GameConsole = m_System.FindAction("GameConsole", throwIfNotFound: true);
+        m_System_SkipIntro = m_System.FindAction("SkipIntro", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -507,6 +528,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_System_MainMenu;
     private readonly InputAction m_System_Pause;
     private readonly InputAction m_System_GameConsole;
+    private readonly InputAction m_System_SkipIntro;
     public struct SystemActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -514,6 +536,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @MainMenu => m_Wrapper.m_System_MainMenu;
         public InputAction @Pause => m_Wrapper.m_System_Pause;
         public InputAction @GameConsole => m_Wrapper.m_System_GameConsole;
+        public InputAction @SkipIntro => m_Wrapper.m_System_SkipIntro;
         public InputActionMap Get() { return m_Wrapper.m_System; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -532,6 +555,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @GameConsole.started += instance.OnGameConsole;
             @GameConsole.performed += instance.OnGameConsole;
             @GameConsole.canceled += instance.OnGameConsole;
+            @SkipIntro.started += instance.OnSkipIntro;
+            @SkipIntro.performed += instance.OnSkipIntro;
+            @SkipIntro.canceled += instance.OnSkipIntro;
         }
 
         private void UnregisterCallbacks(ISystemActions instance)
@@ -545,6 +571,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @GameConsole.started -= instance.OnGameConsole;
             @GameConsole.performed -= instance.OnGameConsole;
             @GameConsole.canceled -= instance.OnGameConsole;
+            @SkipIntro.started -= instance.OnSkipIntro;
+            @SkipIntro.performed -= instance.OnSkipIntro;
+            @SkipIntro.canceled -= instance.OnSkipIntro;
         }
 
         public void RemoveCallbacks(ISystemActions instance)
@@ -580,5 +609,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnMainMenu(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnGameConsole(InputAction.CallbackContext context);
+        void OnSkipIntro(InputAction.CallbackContext context);
     }
 }

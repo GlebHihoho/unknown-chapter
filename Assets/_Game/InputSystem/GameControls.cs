@@ -15,6 +15,9 @@ public class GameControls : MonoBehaviour
 
     public event Action OnMainMenu;
 
+    public event Action OnSkipIntroStarted;
+    public event Action OnSkipIntroEnded;
+
     public event Action OnInventory;
     public event Action OnCharacterTab;
     public event Action OnAction;
@@ -52,6 +55,10 @@ public class GameControls : MonoBehaviour
         inputActions.Player.Enable();
 
         inputActions.System.MainMenu.performed += MainMenu;
+
+        inputActions.System.SkipIntro.started += SkipIntroStarted;
+        inputActions.System.SkipIntro.canceled += SkipIntroEnded;
+
         inputActions.System.Pause.performed += PauseGame;
 
         inputActions.Player.Inventory.performed += Inventory;
@@ -90,6 +97,12 @@ public class GameControls : MonoBehaviour
 
 
     private void MainMenu(InputAction.CallbackContext obj) => OnMainMenu?.Invoke();
+
+
+    private void SkipIntroStarted(InputAction.CallbackContext obj) => OnSkipIntroStarted?.Invoke();
+    private void SkipIntroEnded(InputAction.CallbackContext obj) => OnSkipIntroEnded?.Invoke();
+
+
     private void PauseGame(InputAction.CallbackContext obj) => OnPause?.Invoke();
 
     private void Inventory(InputAction.CallbackContext obj) => OnInventory?.Invoke();
