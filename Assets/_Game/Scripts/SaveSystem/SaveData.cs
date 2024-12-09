@@ -50,6 +50,8 @@ public class SaveData
         public List<bool> containers = new List<bool> ();
 
         public List<Character> characters = new List<Character>();
+
+        public List<bool> triggers = new List<bool>();
     }
 
 
