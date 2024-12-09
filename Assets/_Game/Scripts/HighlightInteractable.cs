@@ -20,12 +20,12 @@ public class HighlightInteractable : MonoBehaviour
     }
 
 
-    private void EnableHighlights(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    private void EnableHighlights()
     {
         OnHighlightsEnabled?.Invoke(true);
     }
 
-    private void DisableHighlights(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    private void DisableHighlights()
     {
         OnHighlightsEnabled?.Invoke(false);
     }

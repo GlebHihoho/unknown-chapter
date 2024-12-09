@@ -84,15 +84,8 @@ public class SaveManager : MonoBehaviour
     }
 
 
-    private void QuickSave(UnityEngine.InputSystem.InputAction.CallbackContext obj)
-    {
-        Save(SaveData.Type.Quick);
-    }
-
-    private void QuickLoad(UnityEngine.InputSystem.InputAction.CallbackContext obj)
-    {
-        Load(quickSave);
-    }
+    private void QuickSave() => Save(SaveData.Type.Quick);
+    private void QuickLoad() => Load(quickSave);
 
 
 

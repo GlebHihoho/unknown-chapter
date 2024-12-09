@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 
 [RequireComponent(typeof(Outline))]
@@ -114,7 +113,7 @@ public class Interactable : MonoBehaviour
     }
 
 
-    private void Interact(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    private void Interact()
     {
         if (status == Status.Paused) return;
 

@@ -42,12 +42,12 @@ namespace UI
             GameControls.instance.OnMainMenu -= MainMenu;
         }
 
-        private void Inventory(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        private void Inventory()
         {
             _inventoryBackGround.SetActive(!_inventoryBackGround.activeSelf);
         }
 
-        private void CharacterTab(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        private void CharacterTab()
         {
             _playerBackGround.SetActive(!_playerBackGround.activeSelf);
 
@@ -55,12 +55,12 @@ namespace UI
         }
 
 
-        private void Map(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        private void Map()
         {
             map.ToggleMap();
         }
 
-        private void Journal(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        private void Journal()
         {
             journal.ToggleJournal();
         }

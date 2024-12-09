@@ -15,21 +15,21 @@ public class GameControls : MonoBehaviour
 
     public event Action OnMainMenu;
 
-    public event Action<InputAction.CallbackContext> OnInventory;
-    public event Action<InputAction.CallbackContext> OnCharacterTab;
-    public event Action<InputAction.CallbackContext> OnAction;
+    public event Action OnInventory;
+    public event Action OnCharacterTab;
+    public event Action OnAction;
     public event Action OnMove;
 
     public event Action OnMoveStarted;
     public event Action OnMoveEnded;
 
-    public event Action<InputAction.CallbackContext> OnHighlightStarted;
-    public event Action<InputAction.CallbackContext> OnHighlightEnded;
-    public event Action<InputAction.CallbackContext> OnPause;
-    public event Action<InputAction.CallbackContext> OnQuicksave;
-    public event Action<InputAction.CallbackContext> OnQuickload;
-    public event Action<InputAction.CallbackContext> OnMap;
-    public event Action<InputAction.CallbackContext> OnJournal;
+    public event Action OnHighlightStarted;
+    public event Action OnHighlightEnded;
+    public event Action OnPause;
+    public event Action OnQuicksave;
+    public event Action OnQuickload;
+    public event Action OnMap;
+    public event Action OnJournal;
 
     public event Action OnCameraRotateStarted;
     public event Action OnCameraRotateEnded;
@@ -90,23 +90,23 @@ public class GameControls : MonoBehaviour
 
 
     private void MainMenu(InputAction.CallbackContext obj) => OnMainMenu?.Invoke();
-    private void PauseGame(InputAction.CallbackContext obj) => OnPause?.Invoke(obj);
+    private void PauseGame(InputAction.CallbackContext obj) => OnPause?.Invoke();
 
-    private void Inventory(InputAction.CallbackContext obj) => OnInventory?.Invoke(obj);
-    private void CharacterTab(InputAction.CallbackContext obj) => OnCharacterTab?.Invoke(obj);
-    private void Action(InputAction.CallbackContext obj) => OnAction?.Invoke(obj);
+    private void Inventory(InputAction.CallbackContext obj) => OnInventory?.Invoke();
+    private void CharacterTab(InputAction.CallbackContext obj) => OnCharacterTab?.Invoke();
+    private void Action(InputAction.CallbackContext obj) => OnAction?.Invoke();
     private void Move(InputAction.CallbackContext obj) => OnMove?.Invoke();
 
     private void MoveStarted(InputAction.CallbackContext obj) => OnMoveStarted?.Invoke();
     private void MoveEnded(InputAction.CallbackContext obj) => OnMoveEnded?.Invoke();
 
 
-    private void HighlightStarted(InputAction.CallbackContext obj) => OnHighlightStarted?.Invoke(obj);
-    private void HighlightEnded(InputAction.CallbackContext obj) => OnHighlightEnded?.Invoke(obj);
-    private void Quicksave(InputAction.CallbackContext obj) => OnQuicksave?.Invoke(obj);
-    private void Quickload(InputAction.CallbackContext obj) => OnQuickload?.Invoke(obj);
-    private void Map(InputAction.CallbackContext obj) => OnMap?.Invoke(obj);
-    private void Journal(InputAction.CallbackContext obj) => OnJournal.Invoke(obj);
+    private void HighlightStarted(InputAction.CallbackContext obj) => OnHighlightStarted?.Invoke();
+    private void HighlightEnded(InputAction.CallbackContext obj) => OnHighlightEnded?.Invoke();
+    private void Quicksave(InputAction.CallbackContext obj) => OnQuicksave?.Invoke();
+    private void Quickload(InputAction.CallbackContext obj) => OnQuickload?.Invoke();
+    private void Map(InputAction.CallbackContext obj) => OnMap?.Invoke();
+    private void Journal(InputAction.CallbackContext obj) => OnJournal.Invoke();
 
     private void CameraRotateStarted(InputAction.CallbackContext obj) => OnCameraRotateStarted?.Invoke();
     private void CameraRotateEnded(InputAction.CallbackContext obj) => OnCameraRotateEnded?.Invoke();

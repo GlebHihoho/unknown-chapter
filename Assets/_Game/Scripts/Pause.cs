@@ -31,7 +31,7 @@ public class Pause : MonoBehaviour
     private void OnDestroy() => GameControls.instance.OnPause -= Pause_performed;
 
 
-    private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    private void Pause_performed()
     {
         SetPause(!isPaused);
     }
