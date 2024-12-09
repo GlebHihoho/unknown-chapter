@@ -18179,7 +18179,15 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: 'AnimatorTrigger(Run, Guard);
+
+          NavMeshAgent(Guard target,
+          Guard);
+
+          AnimatorTrigger(Run, Guard 2);
+
+          NavMeshAgent(Guard
+          2 target, Guard 2);'
         type: 0
         typeString: 
       conversationID: 4
@@ -22469,8 +22477,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 6254.524, y: 1081.4072}
-    canvasZoom: 0.6400005
+    canvasScrollPosition: {x: 6602.859, y: 1598.9895}
+    canvasZoom: 0.9100003
   - id: 5
     fields:
     - title: Title

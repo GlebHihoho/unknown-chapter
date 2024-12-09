@@ -18179,7 +18179,15 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: 'AnimatorTrigger(Run, Guard);
+
+          NavMeshAgent(Guard target,
+          Guard);
+
+          AnimatorTrigger(Run, Guard 2);
+
+          NavMeshAgent(Guard
+          2 target, Guard 2);'
         type: 0
         typeString: 
       conversationID: 4
@@ -22469,8 +22477,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 6254.524, y: 1081.4072}
-    canvasZoom: 0.6400005
+    canvasScrollPosition: {x: 6602.859, y: 1598.9895}
+    canvasZoom: 0.9100003
   - id: 5
     fields:
     - title: Title
@@ -49224,7 +49232,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: "LookAt(\u042D\u0440\u0430\u0441\u0442, \u041F\u0438\u0439, 0.3)"
+        value: "LookAt(\u042D\u0440\u0430\u0441\u0442, \u041F\u0438\u0439, 0.2);\nLookAt(\u041F\u0438\u0439, 
+          \u042D\u0440\u0430\u0441\u0442, 0.4)"
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 14
@@ -49279,7 +49288,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: "LookAt(\u041F\u0438\u0439,  \u042D\u0440\u0430\u0441\u0442, 0.5)"
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 14
