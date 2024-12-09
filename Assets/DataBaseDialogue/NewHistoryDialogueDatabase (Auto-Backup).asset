@@ -36492,10 +36492,8 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'if(Dialog[thisID].SimStatus == "Untouched")
-
-        Variable["Stats.Intelligence"]
-        = Variable["Stats.Intelligence"] - 1;'
+      userScript: Variable["Stats.Intelligence"] = Variable["Stats.Intelligence"]
+        - 1;
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -37995,7 +37993,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1069.9432, y: 0}
+    canvasScrollPosition: {x: 967.12646, y: 0}
     canvasZoom: 0.7100001
   - id: 10
     fields:
