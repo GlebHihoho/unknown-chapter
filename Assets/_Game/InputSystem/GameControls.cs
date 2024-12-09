@@ -13,7 +13,7 @@ public class GameControls : MonoBehaviour
 
     public static GameControls instance;
 
-    public event Action<InputAction.CallbackContext> OnMainMenu;
+    public event Action OnMainMenu;
 
     public event Action<InputAction.CallbackContext> OnInventory;
     public event Action<InputAction.CallbackContext> OnCharacterTab;
@@ -89,7 +89,7 @@ public class GameControls : MonoBehaviour
     private void OnDisable() => Pause.OnDisableKeys -= SetPause;
 
 
-    private void MainMenu(InputAction.CallbackContext obj) => OnMainMenu?.Invoke(obj);
+    private void MainMenu(InputAction.CallbackContext obj) => OnMainMenu?.Invoke();
     private void PauseGame(InputAction.CallbackContext obj) => OnPause?.Invoke(obj);
 
     private void Inventory(InputAction.CallbackContext obj) => OnInventory?.Invoke(obj);

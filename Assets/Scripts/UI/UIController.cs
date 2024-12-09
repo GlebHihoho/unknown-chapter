@@ -17,6 +17,8 @@ namespace UI
 
         public static event Action OnMainMenu;
 
+        bool isMainMenuDisabled = false;
+
 
         private void Start()
         {
@@ -64,11 +66,16 @@ namespace UI
         }
 
 
-        private void MainMenu(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        private void MainMenu()
         {
+            if (isMainMenuDisabled) return;
+
             if (!_inventoryBackGround.activeSelf && !map.MapOpened && !_playerBackGround.activeSelf && !journal.JournalOpened) OnMainMenu?.Invoke();
             else HideAll();
         }
+
+        public void DisableMainMenu() => isMainMenuDisabled = true;
+        public void EnableMainMenu() => isMainMenuDisabled = false;
 
 
         public void HideAll()

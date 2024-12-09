@@ -1,5 +1,6 @@
 using DG.Tweening;
 using TMPro;
+using UI;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -14,6 +15,8 @@ public class Intro : MonoBehaviour
     public UnityEvent AfterIntro;
 
     [SerializeField] bool skipInEditor = true;
+
+    UIController uiController;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,6 +34,8 @@ public class Intro : MonoBehaviour
         authorField.color = color;
 
         SaveManager.OnLoadCompleted += OnLoad;
+
+        uiController = FindFirstObjectByType<UIController>();
         
     }
 
@@ -53,6 +58,7 @@ public class Intro : MonoBehaviour
         }
 
         Pause.instance.SetPause(true, true);
+        uiController.DisableMainMenu();
 
         Color textColor = textField.color;
         textColor.a = 1;
@@ -75,7 +81,10 @@ public class Intro : MonoBehaviour
         sequence.InsertCallback(40, () =>
         {
             background.gameObject.SetActive(false);
+
             Pause.instance.SetPause(false, true);
+            uiController.EnableMainMenu();
+
             AfterIntro.Invoke();
         });
 
