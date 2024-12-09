@@ -28,6 +28,8 @@ public class SaveManager : MonoBehaviour
 
     SaveData.Save save;
 
+    bool needInit = false;
+
     public bool IsNewGame
     {
         get { return save.isNewGame; }
@@ -65,7 +67,7 @@ public class SaveManager : MonoBehaviour
 
             RefreshSavesInfo();
 
-            if (SceneManager.GetActiveScene().name == levels[0]) NewGame(); // Initialization if main menu was not used for simplicity of development
+            if (Application.isEditor && SceneManager.GetActiveScene().name == levels[0]) needInit = true;
         }
         else Destroy(this);
     }
@@ -75,6 +77,8 @@ public class SaveManager : MonoBehaviour
     {
         GameControls.instance.OnQuicksave += QuickSave;
         GameControls.instance.OnQuickload += QuickLoad;
+
+        if (needInit) NewGame(); // Initialization if main menu was not used for simplicity of development
     }
 
     private void OnDestroy()
