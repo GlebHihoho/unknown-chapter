@@ -3156,7 +3156,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 3713.6814
+        x: 3715.954
         y: 865.6153
         width: 160
         height: 30
@@ -9798,8 +9798,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 3136.1409, y: 612.3162}
-    canvasZoom: 0.910001
+    canvasScrollPosition: {x: 2014.8217, y: 0}
+    canvasZoom: 0.7600012
   - id: 2
     fields:
     - title: Title
@@ -14062,7 +14062,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: SetActive(PivsTrigger, false)
+        value: "SetActive(PivsTrigger, false);\nLookAt(\u041F\u0438\u0439,  \u042D\u0440\u0430\u0441\u0442,
+          0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442, \u041F\u0438\u0439, 0.2);"
         type: 0
         typeString: 
       conversationID: 4
@@ -14118,7 +14119,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "SetActive(PivsTrigger, false);\nLookAt(\u041F\u0438\u0439,  \u042D\u0440\u0430\u0441\u0442,
+          0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442, \u041F\u0438\u0439, 0.2);"
         type: 0
         typeString: 
       conversationID: 4
@@ -22477,7 +22479,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 6602.859, y: 1598.9895}
+    canvasScrollPosition: {x: 6660.005, y: 1241.8472}
     canvasZoom: 0.9100003
   - id: 5
     fields:
@@ -22610,7 +22612,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "SetActive(PivsTrigger, false);\nLookAt(\u041D\u0435\u0441\u0442\u043E\u0440, 
+          \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          \u041D\u0435\u0441\u0442\u043E\u0440, 0.2);"
         type: 0
         typeString: 
       conversationID: 5
@@ -25741,7 +25745,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "LookAt(\u0414\u0438\u0430\u043D\u0430 \u041E\u0440\u043B\u043E\u0432\u0430, 
+          \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          \u0414\u0438\u0430\u043D\u0430 \u041E\u0440\u043B\u043E\u0432\u0430, 0.2);"
         type: 0
         typeString: 
       conversationID: 6
@@ -25799,7 +25805,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "LookAt(\u0414\u0438\u0430\u043D\u0430 \u041E\u0440\u043B\u043E\u0432\u0430, 
+          \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          \u0414\u0438\u0430\u043D\u0430 \u041E\u0440\u043B\u043E\u0432\u0430, 0.2);"
         type: 0
         typeString: 
       conversationID: 6
@@ -29200,7 +29208,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "SetActive(PivsTrigger, false);\nLookAt(\u0414\u0438\u0430\u043D\u0430
+          \u041E\u0440\u043B\u043E\u0432\u0430,  \u042D\u0440\u0430\u0441\u0442,
+          0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442, \u0414\u0438\u0430\u043D\u0430
+          \u041E\u0440\u043B\u043E\u0432\u0430, 0.2);"
         type: 0
         typeString: 
       conversationID: 6
@@ -30312,7 +30323,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "LookAt(\u041F\u0438\u0439,  \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          \u041F\u0438\u0439, 0.2);"
         type: 0
         typeString: 
       conversationID: 7
@@ -30368,7 +30380,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "LookAt(\u041F\u0438\u0439,  \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          \u041F\u0438\u0439, 0.2);"
         type: 0
         typeString: 
       conversationID: 7
@@ -30430,7 +30443,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "LookAt(\u041F\u0438\u0439,  \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          \u041F\u0438\u0439, 0.2);"
         type: 0
         typeString: 
       conversationID: 7
@@ -30486,7 +30500,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: "LookAt(\u041F\u0438\u0439,  \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          \u041F\u0438\u0439, 0.2);"
         type: 0
         typeString: 
       conversationID: 7
@@ -33883,7 +33898,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: "LookAt(\u041F\u0438\u0439,  \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          \u041F\u0438\u0439, 0.2);"
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 7
@@ -34197,7 +34213,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 17.512146, y: 809.14886}
+    canvasScrollPosition: {x: 1631.729, y: 356.17703}
     canvasZoom: 0.82000005
   - id: 8
     fields:
@@ -42127,7 +42143,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: "LookAt(Bald,  \u042D\u0440\u0430\u0441\u0442, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442,
+          Bald, 0.2);\nLookAt(\u042D\u0440\u0430\u0441\u0442, Shaggy, 0.2);"
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 11
@@ -42560,7 +42577,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: "LookAt(Shaggy,  \u042D\u0440\u0430\u0441\u0442, 0.2);"
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 11
@@ -42993,7 +43010,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: "LookAt(Shaggy,  \u042D\u0440\u0430\u0441\u0442, 0.2);"
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 11
@@ -43130,7 +43147,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 340.87396, y: 166.52597}
+    canvasScrollPosition: {x: 301.6987, y: 61.855682}
     canvasZoom: 0.97
   - id: 12
     fields:
