@@ -93,9 +93,11 @@ public class SaveManager : MonoBehaviour
 
 
     private void QuickSave() => Save(SaveData.Type.Quick);
-    private void QuickLoad() => Load(quickSave);
-
-
+    private void QuickLoad()
+    {
+        if (File.Exists(path + Path.DirectorySeparatorChar + quickSave + extension))
+        Load(quickSave);
+    }
 
     private void OnEnable()
     {
