@@ -29,8 +29,8 @@ public class GameControls : MonoBehaviour
     public event Action OnHighlightStarted;
     public event Action OnHighlightEnded;
     public event Action OnPause;
-    public event Action OnQuicksave;
-    public event Action OnQuickload;
+    public static event Action OnQuicksave;
+    public static event Action OnQuickload;
     public event Action OnMap;
     public event Action OnJournal;
 
@@ -44,7 +44,11 @@ public class GameControls : MonoBehaviour
     private void Awake()
     {
         if (instance == null) instance = this;
-        else Destroy(this);
+        else 
+        { 
+            Destroy(this); 
+            return;
+        }
 
         inputActions = new();
 
@@ -79,6 +83,7 @@ public class GameControls : MonoBehaviour
 
         inputActions.Player.CameraRotate.started += CameraRotateStarted;
         inputActions.Player.CameraRotate.canceled += CameraRotateEnded;
+
 
     }
 

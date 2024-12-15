@@ -78,8 +78,8 @@ public class SaveManager : MonoBehaviour
 
     private void Start()
     {
-        GameControls.instance.OnQuicksave += QuickSave;
-        GameControls.instance.OnQuickload += QuickLoad;
+        GameControls.OnQuicksave += QuickSave;
+        GameControls.OnQuickload += QuickLoad;
 #if UNITY_EDITOR
         if (needInit) NewGame(); // Initialization if main menu was not used for simplicity of development
 #endif
@@ -87,8 +87,8 @@ public class SaveManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameControls.instance.OnQuicksave -= QuickSave;
-        GameControls.instance.OnQuickload -= QuickLoad;
+        GameControls.OnQuicksave -= QuickSave;
+        GameControls.OnQuickload -= QuickLoad;
     }
 
 
@@ -180,6 +180,8 @@ public class SaveManager : MonoBehaviour
 
         OnSaveAdded?.Invoke(saveName);
 
+        if (type == SaveData.Type.Quick || type == SaveData.Type.Auto)
+            UIMessage.instance.ShowMessage("Игра сохранена");
 
         Debug.Log("Saved: " + fileName);
     }
