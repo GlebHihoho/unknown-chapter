@@ -211,12 +211,18 @@ public class SaveManager : MonoBehaviour
             save.level = 0;
         }
 
+        for (int i = 0; i < DialogueManager.instance.activeConversations.Count; i++)
+        {
+            DialogueManager.instance.activeConversations[i].conversationController.Close();
+        }
+
         LoadingScreen.instance.Load(levels[save.level], LoadScene);       
     }
 
 
     private void LoadScene()
     {
+               
         if (save.dialogues != string.Empty) PersistentDataManager.ApplySaveData(save.dialogues);
         else DialogueManager.ResetDatabase(DatabaseResetOptions.KeepAllLoaded);
 
