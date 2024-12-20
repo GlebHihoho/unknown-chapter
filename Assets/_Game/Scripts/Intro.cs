@@ -15,6 +15,7 @@ public class Intro : MonoBehaviour
     [SerializeField] TextMeshProUGUI skipMessage;
     [SerializeField, Range(0, 10)] float skipTime = 3;
 
+    bool timerActive = false;
     float skipTimer = 0;
 
     public UnityEvent AfterIntro;
@@ -54,7 +55,7 @@ public class Intro : MonoBehaviour
 
     private void Update()
     {
-        if (skipTimer > 0)
+        if (timerActive)
         {
             skipTimer -= Time.deltaTime;
 
@@ -143,9 +144,15 @@ public class Intro : MonoBehaviour
     {
         skipMessage.enabled = true;
         skipTimer = skipTime;
+
+        timerActive = true;
     }
 
-    private void EndSkipIntro() => skipMessage.enabled = false;
+    private void EndSkipIntro()
+    {
+        skipMessage.enabled = false;
+        timerActive = false;       
+    }
 
     private void SkipIntro() => sequence.Complete();
 }
