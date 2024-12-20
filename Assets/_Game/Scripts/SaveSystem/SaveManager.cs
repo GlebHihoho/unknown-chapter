@@ -211,9 +211,12 @@ public class SaveManager : MonoBehaviour
             save.level = 0;
         }
 
-        for (int i = 0; i < DialogueManager.instance.activeConversations.Count; i++)
+        if (DialogueManager.instance != null)
         {
-            DialogueManager.instance.activeConversations[i].conversationController.Close();
+            for (int i = 0; i < DialogueManager.instance.activeConversations.Count; i++)
+            {
+                DialogueManager.instance.activeConversations[i].conversationController.Close();
+            }
         }
 
         LoadingScreen.instance.Load(levels[save.level], LoadScene);       
