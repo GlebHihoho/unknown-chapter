@@ -9,7 +9,7 @@ public class Intro : MonoBehaviour
 {
 
     [SerializeField] Image background;
-    [SerializeField] TextMeshProUGUI textField;
+    [SerializeField] TextMeshProUGUI[] textFields;
     [SerializeField] TextMeshProUGUI authorField;
 
     [SerializeField] TextMeshProUGUI skipMessage;
@@ -32,9 +32,12 @@ public class Intro : MonoBehaviour
         
         Color color;
 
-        color = textField.color;
-        color.a = 0;
-        textField.color = color;
+        foreach (TextMeshProUGUI textField in textFields)
+        {
+            color = textField.color;
+            color.a = 0;
+            textField.color = color;
+        }
 
         color = authorField.color;
         color.a = 0;
@@ -80,7 +83,7 @@ public class Intro : MonoBehaviour
         Pause.instance.SetPause(true, true);
         uiController.DisableMainMenu();
 
-        Color textColor = textField.color;
+        Color textColor;
         textColor.a = 1;
 
         Color authorColor = authorField.color;
@@ -93,10 +96,26 @@ public class Intro : MonoBehaviour
         GameControls.instance.OnSkipIntroStarted += StartSkipIntro;
         GameControls.instance.OnSkipIntroEnded += EndSkipIntro;
 
-        sequence.Append(textField.DOColor(textColor, 8f));
-        sequence.Append(authorField.DOColor(authorColor, 2f));
+        const float startNext = 7;
+        const float showTime = 5;
+        float startTime = 0;
+
+        for (int i = 0; i < textFields.Length; i++)
+        {
+            textColor = textFields[i].color;
+            textColor.a = 1f;
+
+            sequence.Insert(startTime, textFields[i].DOColor(textColor, showTime));
+
+            sequence.Insert(30, textFields[i].DOFade(0, 6));
+
+            startTime += startNext;
+        }
+
        
-        sequence.Insert(30, textField.DOFade(0, 6));
+        sequence.Insert(startTime + 0.5f, authorField.DOColor(authorColor, 2f));
+       
+        
         sequence.Insert(30, authorField.DOFade(0, 6));
 
         sequence.Insert(36, background.DOFade(0, 3));
