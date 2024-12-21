@@ -12,7 +12,9 @@ public class Intro : MonoBehaviour
     [SerializeField] TextMeshProUGUI[] textFields;
     [SerializeField] TextMeshProUGUI authorField;
 
-    [SerializeField] TextMeshProUGUI skipMessage;
+    [SerializeField] GameObject skipPanel;
+    [SerializeField] Image timerImage;
+
     [SerializeField, Range(0, 10)] float skipTime = 3;
 
     bool timerActive = false;
@@ -44,7 +46,7 @@ public class Intro : MonoBehaviour
         color.a = 0;
         authorField.color = color;
 
-        skipMessage.enabled = false;
+        skipPanel.SetActive(false);
 
         SaveManager.OnLoadCompleted += OnLoad;
 
@@ -58,6 +60,8 @@ public class Intro : MonoBehaviour
         if (timerActive)
         {
             skipTimer -= Time.deltaTime;
+
+            timerImage.fillAmount = Mathf.InverseLerp(skipTime, 0, skipTimer);
 
             if (skipTimer <= 0) SkipIntro();
         }
@@ -142,7 +146,7 @@ public class Intro : MonoBehaviour
 
     private void StartSkipIntro()
     {
-        skipMessage.enabled = true;
+        skipPanel.SetActive(true);
         skipTimer = skipTime;
 
         timerActive = true;
@@ -150,7 +154,7 @@ public class Intro : MonoBehaviour
 
     private void EndSkipIntro()
     {
-        skipMessage.enabled = false;
+        skipPanel.SetActive(false);
         timerActive = false;       
     }
 
