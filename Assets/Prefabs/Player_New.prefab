@@ -1008,12 +1008,10 @@ GameObject:
   - component: {fileID: 439124870637331937}
   - component: {fileID: 439124870637331936}
   - component: {fileID: 439124870637331939}
-  - component: {fileID: 439124870637331938}
   - component: {fileID: 439124870637331941}
   - component: {fileID: 439124870637331940}
   - component: {fileID: 235801983729894797}
   - component: {fileID: 235801983729894798}
-  - component: {fileID: 235801983729894799}
   - component: {fileID: 485040934056680913}
   m_Layer: 0
   m_Name: Player_New
@@ -1352,24 +1350,6 @@ MonoBehaviour:
   m_runSpeedTagName: Run
   m_sprintSpeedTagName: Sprint
   m_walkSpeedTagName: Walk
---- !u!114 &439124870637331938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439124870637331943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8243e57b86b1d424197b2b8ca616d049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_slideDefinition: {fileID: 11400000, guid: b347c3d927daaca47907ee7af431678e, type: 2}
-  m_jumpDefinition: {fileID: 11400000, guid: 8716752c67cf94f408038de4e2cfa289, type: 2}
-  m_danceDefinition: {fileID: 0}
-  m_generalLocomotion: {fileID: 11400000, guid: e6185d4d8606f4149afac0695745b768, type: 2}
-  m_strafeLocomotion: {fileID: 11400000, guid: 5ac17047f0001cf48b86c260abbb2d83, type: 2}
-  m_sprintLocomotion: {fileID: 11400000, guid: 6eb87cfd6a400ee4e9675a277332a6bd, type: 2}
 --- !u!114 &439124870637331941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1461,19 +1441,6 @@ MonoBehaviour:
     prependActorNameSeparator: ': '
     prependActorNameFormat: '{0} {1}'
     subtitleColor: {r: 1, g: 0.99215686, b: 0.80784315, a: 1}
---- !u!114 &235801983729894799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439124870637331943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7be0a7ed54384b3fbc8a9aec037ea8bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _beachConversation_2: {fileID: 0}
 --- !u!114 &485040934056680913
 MonoBehaviour:
   m_ObjectHideFlags: 0
