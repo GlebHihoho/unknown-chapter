@@ -9,6 +9,8 @@ public class UIMessage : MonoBehaviour
 
     public static UIMessage instance;
 
+    string permanentMessage = string.Empty;
+
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -27,6 +29,30 @@ public class UIMessage : MonoBehaviour
         sequence.Append(messageLabel.DOFade(1, 0.2f));
         sequence.AppendInterval(4);
         sequence.Append(messageLabel.DOFade(0, 0.5f));
+
+        sequence.OnComplete(() =>
+        {
+            if (permanentMessage != string.Empty)
+            {
+                ShowPermanentMessage(permanentMessage);
+            }
+        });
+
+        sequence.Play();
+    }
+
+    public void ShowPermanentMessage(string message)
+    {
+        messageLabel.text = message;
+        permanentMessage = message;
+
+        messageLabel.DOFade(1, 0.2f);
+    }
+
+    public void HidePermanentMessage()
+    {
+        permanentMessage = string.Empty;
+        messageLabel.DOFade(0, 0.2f);
     }
 
 }

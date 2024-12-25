@@ -9,15 +9,14 @@ public class Pause : MonoBehaviour
 
     public static event Action<bool> OnPause;
     public static event Action<bool> OnDisableKeys;
+    public static event Action<bool> OnConversation;
 
-    bool isPaused = false;
-    public bool IsPaused => isPaused;
+    int pausedCount = 0;
+    public bool IsPaused => pausedCount > 0;
 
-    bool conversationinProgress = false;
+    bool manualPause = false;
 
     public static Pause instance;
-
-    bool consoleActive = false;
 
 
     private void Awake()
@@ -33,7 +32,11 @@ public class Pause : MonoBehaviour
 
     private void Pause_performed()
     {
-        SetPause(!isPaused);
+        manualPause = !manualPause;
+        SetPause(manualPause);
+
+        if (manualPause) UIMessage.instance.ShowPermanentMessage("Пауза");
+        else UIMessage.instance.HidePermanentMessage();
     }
 
 
@@ -54,40 +57,44 @@ public class Pause : MonoBehaviour
         {
             DialogueManager.Instance.conversationStarted -= ConversationStarted;
             DialogueManager.instance.conversationEnded -= ConversationEnded;
-
-            SaveManager.OnLoadCompleted -= ResetPause;
-
-            GameConsole.OnConsoleActivated -= ConsoleActivated;
         }
+
+        SaveManager.OnLoadCompleted -= ResetPause;
+
+        GameConsole.OnConsoleActivated -= ConsoleActivated;
+        
     }
 
     private void ConversationStarted(Transform t)
     {
+        OnConversation?.Invoke(true);
         SetPause(true);
-        conversationinProgress = true;
     }
 
     private void ConversationEnded(Transform t)
     {
-        conversationinProgress = false;
         SetPause(false);
+        OnConversation?.Invoke(false);
     }
 
 
     public void SetPause(bool isPaused, bool affectKeys = true)
     {
-        if (conversationinProgress || consoleActive) return;
 
-        this.isPaused = isPaused;
-        OnPause?.Invoke(isPaused);
+        if (isPaused) pausedCount++;
+        else pausedCount--;
 
-        if (affectKeys) OnDisableKeys?.Invoke(isPaused);
+        pausedCount = Mathf.Max(0, pausedCount);
+
+        OnPause?.Invoke(pausedCount > 0);
+
+        if (affectKeys) OnDisableKeys?.Invoke(pausedCount > 0);
     }
 
 
     private void ResetPause()
     {
-        conversationinProgress = false;
+        pausedCount = 0;
         SetPause(false);
     }
 
@@ -97,11 +104,9 @@ public class Pause : MonoBehaviour
         if (isActive)
         {
             SetPause(true);
-            consoleActive = true;
         }
         else
         {
-            consoleActive = false;
             SetPause(false);
         }
     }

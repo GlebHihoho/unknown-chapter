@@ -31,6 +31,7 @@ public class MouseInput : MonoBehaviour
 
 
     bool isPaused = false;
+    bool isTalking = false;
 
 
     bool pointerOverInteractable = false;
@@ -92,12 +93,16 @@ public class MouseInput : MonoBehaviour
     {
         SaveManager.OnStartingLoad += ResetMovement;
         Pause.OnPause += SetPause;
+        Pause.OnConversation += SetConversation;
     }
+
+
 
     private void OnDisable()
     {
         SaveManager.OnStartingLoad -= ResetMovement;
         Pause.OnPause -= SetPause;
+        Pause.OnConversation -= SetConversation;
     }
 
     public void ResetMovement()
@@ -109,22 +114,40 @@ public class MouseInput : MonoBehaviour
 
 
 
+    private void SetConversation(bool talking)
+    {
+        isTalking = talking;
+
+        if (isTalking)
+        {
+            agent.ResetPath();
+            DeleteMovePoint();
+
+            animator.BeginIdle();
+            animator.ClearFavourTags();
+            animator.RootMotion = EMxMRootMotion.Off;
+        }
+    }
+
+
     private void SetPause(bool isPaused)
     {
 
         this.isPaused = isPaused;
 
-
-        if (isPaused) 
+        if (!isTalking)
         {
-            animator.Pause();
-            agent.isStopped = true;
-        }
-        else
-        {
-            agent.isStopped = false;
-            animator.UnPause();
-        }     
+            if (isPaused)
+            {
+                animator.Pause();
+                agent.isStopped = true;
+            }
+            else
+            {
+                agent.isStopped = false;
+                animator.UnPause();
+            }
+        }   
     }
 
 
