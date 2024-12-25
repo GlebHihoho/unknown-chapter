@@ -41,6 +41,9 @@ public class SaveData
         public Vector3 playerPosition = Vector3.zero;
         public Quaternion playerRotation = Quaternion.identity;
 
+        public Vector3 cameraPosition = Vector3.zero;
+        public Quaternion cameraRotation = Quaternion.identity;
+
         public List<MapZones> mapZones = new List<MapZones>();
 
         public string zoneID = string.Empty;
