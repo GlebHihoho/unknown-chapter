@@ -10,9 +10,7 @@ public class MouseInput : MonoBehaviour
 {
     [SerializeField] private float _tolerance = 0.6f;
     [SerializeField] private GameObject _movePointPrefab;
-    [SerializeField] private LocomotionSpeedRamp _m_locomotionSpeedRamp;
     [SerializeField] private MxMTrajectoryGenerator _m_trajectoryGenerator;
-    [SerializeField] private MxMInputProfile _m_sprintLocomotion = null;
     
     [Header("Input Profiles")] [SerializeField] private MxMInputProfile _m_generalLocomotion = null;
     
@@ -33,7 +31,7 @@ public class MouseInput : MonoBehaviour
 
 
     bool isPaused = false;
-    bool agentEnabled = true;
+
 
     bool pointerOverInteractable = false;
 
@@ -41,13 +39,15 @@ public class MouseInput : MonoBehaviour
 
     Vector3 destination;
 
+    [SerializeField, Min(0)] float walkingDistance = 5;
+    [SerializeField, Min(0)] float runningDistance = 17;
+
 
     private void Awake()
     {
         if (instance == null) instance = this;
 
         _myAgent = GetComponent<NavMeshAgent>();
-        _m_locomotionSpeedRamp = GetComponent<LocomotionSpeedRamp>();
 
         _m_mxmAnimator = GetComponentInChildren<MxMAnimator>();
 
@@ -65,6 +65,7 @@ public class MouseInput : MonoBehaviour
         Interactable.OnPointerExit += InteractablePointerExit;
     }
 
+   
 
 
     private void OnDestroy()
@@ -117,15 +118,11 @@ public class MouseInput : MonoBehaviour
         if (isPaused) 
         {
             _m_mxmAnimator.Pause();
-
-            agentEnabled = _myAgent.enabled;
-            _myAgent.enabled = false;
+            _myAgent.isStopped = true;
         }
         else
         {
-            _myAgent.enabled = agentEnabled;
-
-            if (_isParticleMovePoint && _myAgent.enabled) _myAgent.SetDestination(destination);
+            if (_isParticleMovePoint) _myAgent.isStopped = false;
 
             _m_mxmAnimator.UnPause();
         }     
@@ -148,6 +145,36 @@ public class MouseInput : MonoBehaviour
                 _isParticleMovePoint = false;
                 DeleteMovePoint();
             }
+
+
+            if (_myAgent.remainingDistance < _myAgent.stoppingDistance)
+            {
+                if (!_m_mxmAnimator.IsIdle)
+                {
+                    _m_mxmAnimator.BeginIdle();
+                    _m_mxmAnimator.ClearFavourTags();
+                    _m_mxmAnimator.RootMotion = EMxMRootMotion.Off;
+                }
+            }
+            else
+            {
+
+                _m_mxmAnimator.RootMotion = EMxMRootMotion.On;
+
+
+                if (_myAgent.remainingDistance > _myAgent.stoppingDistance && _myAgent.remainingDistance < walkingDistance)
+                {
+                    _m_mxmAnimator.SetFavourTag("Walk", 0.5f);
+                }
+                else if (_myAgent.remainingDistance > walkingDistance && _myAgent.remainingDistance < runningDistance)
+                {
+                    _m_mxmAnimator.SetFavourTag("Run", 0.9f);
+                }
+                else
+                {
+                    _m_mxmAnimator.SetFavourTag("Sprint", 0.9f);
+                }
+            }
         }
 
     }
@@ -161,6 +188,7 @@ public class MouseInput : MonoBehaviour
 
         OnNewInput?.Invoke();
     }
+
 
     public void SetDestination(bool showMovePoint = true)
     {
@@ -179,15 +207,9 @@ public class MouseInput : MonoBehaviour
         if (Physics.Raycast(myRay, out hitInfo, 100, WhatCanBeClickedOn))
         {
             _m_mxmAnimator.RootMotion = EMxMRootMotion.On;
-            _myAgent.enabled = true;
 
             _currentClickPoint = hitInfo.point;
-            _m_locomotionSpeedRamp.BeginSprint();
-            _m_trajectoryGenerator.MaxSpeed = 5f;
-            _m_trajectoryGenerator.PositionBias = 6f;
-            _m_trajectoryGenerator.DirectionBias = 6f;
-            _m_mxmAnimator.SetCalibrationData("Sprint");
-            _m_trajectoryGenerator.InputProfile = _m_sprintLocomotion;
+
 
             if (!_isParticleMovePoint)
             {
@@ -219,21 +241,18 @@ public class MouseInput : MonoBehaviour
         if (!showMovePoint) _particleObject.GetComponent<Renderer>().enabled = false;
     }
 
+
     public void DeleteMovePoint()
     {
         Destroy(_particleObject);
         _isParticleMovePoint = false;
         OnDeleteMovePoint?.Invoke();
     }
+
     private void UpdateMovePoint()
     {
         _particleObject.transform.position = _currentClickPoint + new Vector3(0f, 0.2f, 0f);
     }
 
-    public void SetIdle()
-    {
-        _m_mxmAnimator.RootMotion = EMxMRootMotion.Off;
-        _myAgent.enabled = false;
-    }
 
 }
