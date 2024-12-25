@@ -14,11 +14,11 @@ public class MouseInput : MonoBehaviour
     
     [Header("Input Profiles")] [SerializeField] private MxMInputProfile _m_generalLocomotion = null;
     
-    private MxMAnimator _m_mxmAnimator;
+    private MxMAnimator animator;
     private GameObject _particleObject;
     private bool _isParticleMovePoint = false;
     private Vector3 _currentClickPoint;
-    private NavMeshAgent _myAgent;
+    private NavMeshAgent agent;
 
     public LayerMask WhatCanBeClickedOn;
 
@@ -47,9 +47,9 @@ public class MouseInput : MonoBehaviour
     {
         if (instance == null) instance = this;
 
-        _myAgent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
 
-        _m_mxmAnimator = GetComponentInChildren<MxMAnimator>();
+        animator = GetComponentInChildren<MxMAnimator>();
 
         _m_trajectoryGenerator = GetComponentInChildren<MxMTrajectoryGenerator>();
         _m_trajectoryGenerator.InputProfile = _m_generalLocomotion;
@@ -103,8 +103,8 @@ public class MouseInput : MonoBehaviour
     public void ResetMovement()
     {
         if (_particleObject != null) DeleteMovePoint();
-        _myAgent.isStopped = true;
-        _myAgent.ResetPath();    
+        agent.isStopped = true;
+        agent.ResetPath();    
     }
 
 
@@ -117,14 +117,13 @@ public class MouseInput : MonoBehaviour
 
         if (isPaused) 
         {
-            _m_mxmAnimator.Pause();
-            _myAgent.isStopped = true;
+            animator.Pause();
+            agent.isStopped = true;
         }
         else
         {
-            if (_isParticleMovePoint) _myAgent.isStopped = false;
-
-            _m_mxmAnimator.UnPause();
+            agent.isStopped = false;
+            animator.UnPause();
         }     
     }
 
@@ -138,41 +137,41 @@ public class MouseInput : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (_myAgent.enabled)
+        if (agent.enabled)
         {
-            if (_myAgent.remainingDistance <= _tolerance && _myAgent.hasPath && _isParticleMovePoint)
+            if (agent.remainingDistance <= _tolerance && agent.hasPath && _isParticleMovePoint)
             {
                 _isParticleMovePoint = false;
                 DeleteMovePoint();
             }
 
 
-            if (_myAgent.remainingDistance < _myAgent.stoppingDistance)
+            if (agent.remainingDistance < agent.stoppingDistance)
             {
-                if (!_m_mxmAnimator.IsIdle)
+                if (!animator.IsIdle)
                 {
-                    _m_mxmAnimator.BeginIdle();
-                    _m_mxmAnimator.ClearFavourTags();
-                    _m_mxmAnimator.RootMotion = EMxMRootMotion.Off;
+                    animator.BeginIdle();
+                    animator.ClearFavourTags();
+                    animator.RootMotion = EMxMRootMotion.Off;
                 }
             }
             else
             {
 
-                _m_mxmAnimator.RootMotion = EMxMRootMotion.On;
+                animator.RootMotion = EMxMRootMotion.On;
 
 
-                if (_myAgent.remainingDistance > _myAgent.stoppingDistance && _myAgent.remainingDistance < walkingDistance)
+                if (agent.remainingDistance > agent.stoppingDistance && agent.remainingDistance < walkingDistance)
                 {
-                    _m_mxmAnimator.SetFavourTag("Walk", 0.5f);
+                    animator.SetFavourTag("Walk", 0.5f);
                 }
-                else if (_myAgent.remainingDistance > walkingDistance && _myAgent.remainingDistance < runningDistance)
+                else if (agent.remainingDistance > walkingDistance && agent.remainingDistance < runningDistance)
                 {
-                    _m_mxmAnimator.SetFavourTag("Run", 0.9f);
+                    animator.SetFavourTag("Run", 0.9f);
                 }
                 else
                 {
-                    _m_mxmAnimator.SetFavourTag("Sprint", 0.9f);
+                    animator.SetFavourTag("Sprint", 0.9f);
                 }
             }
         }
@@ -206,7 +205,7 @@ public class MouseInput : MonoBehaviour
 
         if (Physics.Raycast(myRay, out hitInfo, 100, WhatCanBeClickedOn))
         {
-            _m_mxmAnimator.RootMotion = EMxMRootMotion.On;
+            animator.RootMotion = EMxMRootMotion.On;
 
             _currentClickPoint = hitInfo.point;
 
@@ -221,7 +220,7 @@ public class MouseInput : MonoBehaviour
             }
 
             destination = hitInfo.point;
-            _myAgent.SetDestination(hitInfo.point);
+            agent.SetDestination(hitInfo.point);
         }
 
         OnDestinationSet?.Invoke();
