@@ -37,7 +37,22 @@ public class GameControls : MonoBehaviour
     public event Action OnCameraRotateStarted;
     public event Action OnCameraRotateEnded;
 
-    public enum Bindings { MainMenu, Pause, Inventory, CharacterTab, Action, Move, Highlight, Quicksave, Quickload, Map, Journal, CameraRotation };
+    public Vector2 MoveKeys
+    {
+        get => inputActions.Player.MoveKeys.ReadValue<Vector2>();
+    }
+
+    public event Action OnUsingMoveKeysStarted;
+    public event Action OnUsingMoveKeysEnded;
+
+
+
+
+    public enum Bindings 
+    { 
+        MainMenu, Pause, Inventory, CharacterTab, Action, Move, Highlight, Quicksave, Quickload, Map, Journal, CameraRotation,
+        Up, Down, Left, Right
+    };
 
 
 
@@ -84,8 +99,12 @@ public class GameControls : MonoBehaviour
         inputActions.Player.CameraRotate.started += CameraRotateStarted;
         inputActions.Player.CameraRotate.canceled += CameraRotateEnded;
 
+        inputActions.Player.MoveKeys.started += MoveKeysStarted;
+        inputActions.Player.MoveKeys.canceled += MoveKeysEnded;
+
 
     }
+
 
 
     private void OnDestroy()
@@ -128,6 +147,10 @@ public class GameControls : MonoBehaviour
 
     private void CameraRotateStarted(InputAction.CallbackContext obj) => OnCameraRotateStarted?.Invoke();
     private void CameraRotateEnded(InputAction.CallbackContext obj) => OnCameraRotateEnded?.Invoke();
+
+
+    private void MoveKeysStarted(InputAction.CallbackContext context) => OnUsingMoveKeysStarted?.Invoke();
+    private void MoveKeysEnded(InputAction.CallbackContext context) => OnUsingMoveKeysEnded?.Invoke();
 
 
     private void SetPause(bool isPaused)
@@ -179,6 +202,18 @@ public class GameControls : MonoBehaviour
             case Bindings.CameraRotation:
                 return inputActions.Player.CameraRotate.bindings[0].ToDisplayString();
 
+            case Bindings.Up:
+                return inputActions.Player.MoveKeys.bindings[1].ToDisplayString();
+
+            case Bindings.Down:
+                return inputActions.Player.MoveKeys.bindings[2].ToDisplayString();
+
+            case Bindings.Left:
+                return inputActions.Player.MoveKeys.bindings[3].ToDisplayString();
+
+            case Bindings.Right:
+                return inputActions.Player.MoveKeys.bindings[4].ToDisplayString();
+
         }
 
         return "n/d";
@@ -190,6 +225,7 @@ public class GameControls : MonoBehaviour
     {
 
         InputAction inputAction;
+        int inputIndex = 0;
 
         switch (binding)
         {
@@ -241,6 +277,27 @@ public class GameControls : MonoBehaviour
             case Bindings.CameraRotation:
                 inputAction = inputActions.Player.CameraRotate;
                 break;
+
+            case Bindings.Up:
+                inputAction = inputActions.Player.MoveKeys;
+                inputIndex = 1;
+                break;
+
+            case Bindings.Down:
+                inputAction = inputActions.Player.MoveKeys;
+                inputIndex = 2;
+                break;
+
+            case Bindings.Left:
+                inputAction = inputActions.Player.MoveKeys;
+                inputIndex = 3;
+                break;
+
+            case Bindings.Right:
+                inputAction = inputActions.Player.MoveKeys;
+                inputIndex = 4;
+                break;
+
         }
 
 
@@ -249,7 +306,7 @@ public class GameControls : MonoBehaviour
         bool isMapActive = inputAction.actionMap.enabled;
         if (isMapActive) inputAction.actionMap.Disable();
 
-        inputAction.PerformInteractiveRebinding(0).
+        inputAction.PerformInteractiveRebinding(inputIndex).
             WithControlsExcluding("<keyboard>/backquote"). // Reserved for the game console
             WithControlsExcluding("<keyboard>/anykey").
             WithCancelingThrough("<keyboard>/escape").

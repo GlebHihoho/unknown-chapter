@@ -116,6 +116,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveKeys"",
+                    ""type"": ""Value"",
+                    ""id"": ""a1bcecb9-de55-47ac-96bc-094a99c0350b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": ""NormalizeVector2"",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -228,6 +237,61 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""CameraRotate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""e9657595-e3d9-40a5-8aae-efcc7b5edfc4"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveKeys"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""a17762b8-a16b-4d7b-b295-61ca9ad4a935"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveKeys"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""575fafdf-43bd-49fc-bd81-5fc8ce1a28b9"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveKeys"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""ac37187a-9ce4-4f12-901a-b87b532d790a"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveKeys"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""92f2350d-bd3e-4d38-b2f1-aefd2e32bdd2"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveKeys"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -345,6 +409,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Map = m_Player.FindAction("Map", throwIfNotFound: true);
         m_Player_Journal = m_Player.FindAction("Journal", throwIfNotFound: true);
         m_Player_CameraRotate = m_Player.FindAction("CameraRotate", throwIfNotFound: true);
+        m_Player_MoveKeys = m_Player.FindAction("MoveKeys", throwIfNotFound: true);
         // System
         m_System = asset.FindActionMap("System", throwIfNotFound: true);
         m_System_MainMenu = m_System.FindAction("MainMenu", throwIfNotFound: true);
@@ -428,6 +493,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Map;
     private readonly InputAction m_Player_Journal;
     private readonly InputAction m_Player_CameraRotate;
+    private readonly InputAction m_Player_MoveKeys;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -442,6 +508,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Map => m_Wrapper.m_Player_Map;
         public InputAction @Journal => m_Wrapper.m_Player_Journal;
         public InputAction @CameraRotate => m_Wrapper.m_Player_CameraRotate;
+        public InputAction @MoveKeys => m_Wrapper.m_Player_MoveKeys;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -481,6 +548,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @CameraRotate.started += instance.OnCameraRotate;
             @CameraRotate.performed += instance.OnCameraRotate;
             @CameraRotate.canceled += instance.OnCameraRotate;
+            @MoveKeys.started += instance.OnMoveKeys;
+            @MoveKeys.performed += instance.OnMoveKeys;
+            @MoveKeys.canceled += instance.OnMoveKeys;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -515,6 +585,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @CameraRotate.started -= instance.OnCameraRotate;
             @CameraRotate.performed -= instance.OnCameraRotate;
             @CameraRotate.canceled -= instance.OnCameraRotate;
+            @MoveKeys.started -= instance.OnMoveKeys;
+            @MoveKeys.performed -= instance.OnMoveKeys;
+            @MoveKeys.canceled -= instance.OnMoveKeys;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -614,6 +687,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnMap(InputAction.CallbackContext context);
         void OnJournal(InputAction.CallbackContext context);
         void OnCameraRotate(InputAction.CallbackContext context);
+        void OnMoveKeys(InputAction.CallbackContext context);
     }
     public interface ISystemActions
     {
