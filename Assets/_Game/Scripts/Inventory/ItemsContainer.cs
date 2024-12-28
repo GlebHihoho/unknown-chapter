@@ -1,5 +1,7 @@
 using NUnit.Framework;
 using System;
+using System.Linq;
+using System.Text;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -31,12 +33,22 @@ public class ItemsContainer : Interactable
     private void TakingItems()
     {
 
-        foreach (ItemData item in items) 
+        StringBuilder sb = new StringBuilder();
+
+        if (items.Length == 1) sb.Append("Получен предмет: ");
+        else sb.Append("Получены предметы: ");
+
+
+        for (int i = 0; i < items.Length; i++)
         {
-            OnItemGiven?.Invoke(item, 1);
+            sb.Append(items[i].ItemName);
+            if (i < items.Length - 1) sb.Append(", ");
+
+            OnItemGiven?.Invoke(items[i], 1);
         }
 
         OnItemsGiven.Invoke();
+        UIMessage.instance.ShowMessage(sb.ToString());
 
         ToggleContainer(false);
     }
