@@ -35,7 +35,7 @@ public class Pause : MonoBehaviour
         manualPause = !manualPause;
         SetPause(manualPause);
 
-        if (manualPause) UIMessage.instance.ShowPermanentMessage("Пауза");
+        if (manualPause) UIMessage.instance.ShowPermanentMessage("Пауза.");
         else UIMessage.instance.HidePermanentMessage();
     }
 

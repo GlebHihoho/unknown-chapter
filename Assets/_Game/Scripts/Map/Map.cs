@@ -52,6 +52,8 @@ public class Map : MonoBehaviour, ISaveable
     {
         mapButton.ShowUpdate();
         SoundManager.instance.PlayEffect(sounds.NewLocation);
+
+        UIMessage.instance.ShowMessage("На карте открыта новая область.");
     }
 
     public void ToggleMap()
@@ -68,6 +70,8 @@ public class Map : MonoBehaviour, ISaveable
 
         mapButton.gameObject.SetActive(true);
         mapButton.ShowUpdate();
+
+        UIMessage.instance.ShowMessage("Доступна карта.");
     }
 
 

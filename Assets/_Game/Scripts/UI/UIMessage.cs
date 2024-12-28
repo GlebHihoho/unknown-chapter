@@ -1,4 +1,6 @@
 using DG.Tweening;
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -11,6 +13,13 @@ public class UIMessage : MonoBehaviour
 
     string permanentMessage = string.Empty;
 
+    Queue<string> awaitingMessages = new();
+    bool isPlaying = false;
+
+    bool isPaused = false;
+
+    string currentlyPlaying = string.Empty;
+
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -19,10 +28,34 @@ public class UIMessage : MonoBehaviour
         messageLabel.text = string.Empty;
     }
 
+    private void Start() => Pause.OnPause += SetPause;
+    private void OnDestroy() => Pause.OnPause -= SetPause;
+
+    private void SetPause(bool isPaused)
+    {
+        this.isPaused = isPaused;
+
+        if (!isPaused && awaitingMessages.Count > 0) ShowMessage();
+    }
 
     public void ShowMessage(string message)
     {
-        messageLabel.text = message;
+        if (message != currentlyPlaying && !awaitingMessages.Contains(message))
+        {
+            awaitingMessages.Enqueue(message);
+            if (!isPlaying) ShowMessage();
+        }
+    }
+
+
+    private void ShowMessage()
+    {
+        isPlaying = true;
+
+        if (isPaused) return;
+
+        messageLabel.text = awaitingMessages.Dequeue();
+        currentlyPlaying = messageLabel.text;
 
         Sequence sequence = DOTween.Sequence();
 
@@ -32,9 +65,16 @@ public class UIMessage : MonoBehaviour
 
         sequence.OnComplete(() =>
         {
-            if (permanentMessage != string.Empty)
+            if (awaitingMessages.Count > 0) ShowMessage();
+            else
             {
-                ShowPermanentMessage(permanentMessage);
+                isPlaying = false;
+                currentlyPlaying = string.Empty;
+
+                if (permanentMessage != string.Empty)
+                {
+                    ShowPermanentMessage(permanentMessage);
+                }
             }
         });
 

@@ -24,7 +24,7 @@ public class Collectible : Interactable
         base.PerfomInteraction();
 
         OnItemGiven?.Invoke(itemData, increment);
-        UIMessage.instance.ShowMessage($"Получен предмет: {itemData.ItemName}") ;
+        UIMessage.instance.ShowMessage($"Получен предмет: {itemData.ItemName}.") ;
 
         ResetVisuals();
         gameObject.SetActive(false);

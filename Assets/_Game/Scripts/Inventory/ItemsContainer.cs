@@ -46,6 +46,7 @@ public class ItemsContainer : Interactable
 
             OnItemGiven?.Invoke(items[i], 1);
         }
+        sb.Append(".");
 
         OnItemsGiven.Invoke();
         UIMessage.instance.ShowMessage(sb.ToString());

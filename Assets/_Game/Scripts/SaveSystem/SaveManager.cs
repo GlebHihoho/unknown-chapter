@@ -181,7 +181,7 @@ public class SaveManager : MonoBehaviour
         OnSaveAdded?.Invoke(saveName);
 
         if (type == SaveData.Type.Quick || type == SaveData.Type.Auto)
-            UIMessage.instance.ShowMessage("Игра сохранена");
+            UIMessage.instance.ShowMessage("Игра сохранена.");
 
         Debug.Log("Saved: " + fileName);
     }

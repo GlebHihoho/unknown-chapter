@@ -158,6 +158,8 @@ public class Journal : MonoBehaviour, ISaveable
 
             questsChanged[name] = quest;
         }
+
+        UIMessage.instance.ShowMessage($"Обновлена запись в журнале: {QuestLog.GetQuestTitle(name)}.");
     }
 
     private void ClearActiveQuestRecord()
