@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class UIMessage : MonoBehaviour
 {
     TextMeshProUGUI messageLabel;
+
+    [SerializeField] Image background;
 
     public static UIMessage instance;
 
@@ -59,9 +62,11 @@ public class UIMessage : MonoBehaviour
 
         Sequence sequence = DOTween.Sequence();
 
+        sequence.Append(background.rectTransform.DOScaleX(1, 0.5f));
         sequence.Append(messageLabel.DOFade(1, 0.2f));
         sequence.AppendInterval(4);
         sequence.Append(messageLabel.DOFade(0, 0.5f));
+        sequence.Append(background.rectTransform.DOScaleX(0, 0.2f));
 
         sequence.OnComplete(() =>
         {
