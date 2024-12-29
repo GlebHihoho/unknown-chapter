@@ -21,6 +21,8 @@ public class UIMessage : MonoBehaviour
 
     bool isPaused = false;
 
+    bool panelVisible = false;
+
     string currentlyPlaying = string.Empty;
 
     private void Awake()
@@ -38,7 +40,8 @@ public class UIMessage : MonoBehaviour
     {
         this.isPaused = isPaused;
 
-        if (!isPaused && awaitingMessages.Count > 0) ShowMessage();
+        if (!isPaused && awaitingMessages.Count > 0)
+            if (!panelVisible) ShowPanel(); else ShowMessage();
     }
 
     public void ShowMessage(string message)
@@ -46,14 +49,14 @@ public class UIMessage : MonoBehaviour
         if (message != currentlyPlaying && !awaitingMessages.Contains(message))
         {
             awaitingMessages.Enqueue(message);
-            if (!isPlaying) ShowMessage();
+            if (!isPlaying) ShowPanel();
         }
     }
 
 
     private void ShowMessage()
     {
-        isPlaying = true;
+        
 
         if (isPaused) return;
 
@@ -62,19 +65,17 @@ public class UIMessage : MonoBehaviour
 
         Sequence sequence = DOTween.Sequence();
 
-        sequence.Append(background.rectTransform.DOScaleX(1, 0.5f));
         sequence.Append(messageLabel.DOFade(1, 0.2f));
         sequence.AppendInterval(4);
         sequence.Append(messageLabel.DOFade(0, 0.5f));
-        sequence.Append(background.rectTransform.DOScaleX(0, 0.2f));
 
         sequence.OnComplete(() =>
         {
             if (awaitingMessages.Count > 0) ShowMessage();
             else
             {
-                isPlaying = false;
                 currentlyPlaying = string.Empty;
+                HidePanel();
 
                 if (permanentMessage != string.Empty)
                 {
@@ -86,18 +87,46 @@ public class UIMessage : MonoBehaviour
         sequence.Play();
     }
 
+
+    private void ShowPanel()
+    {
+        isPlaying = true;
+
+        if (isPaused) return;
+        
+        background.rectTransform.DOScaleX(1, 0.5f).OnComplete(() => 
+        {
+            panelVisible = true;
+            ShowMessage();           
+        });
+    }
+
+
+    private void HidePanel()
+    {
+        background.rectTransform.DOScaleX(0, 0.2f).OnComplete(() => panelVisible = false);
+        isPlaying = false;
+    }
+
     public void ShowPermanentMessage(string message)
     {
         messageLabel.text = message;
         permanentMessage = message;
 
-        messageLabel.DOFade(1, 0.2f);
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(background.rectTransform.DOScaleX(1, 0.5f).OnComplete(() => panelVisible = true));
+        sequence.Append(messageLabel.DOFade(1, 0.2f));
+        sequence.Play();
     }
 
     public void HidePermanentMessage()
     {
         permanentMessage = string.Empty;
-        messageLabel.DOFade(0, 0.2f);
+
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(messageLabel.DOFade(0, 0.2f));
+        sequence.Append(background.rectTransform.DOScaleX(0, 0.2f));
+        sequence.Play().OnComplete(() => panelVisible = false);
     }
 
 }
