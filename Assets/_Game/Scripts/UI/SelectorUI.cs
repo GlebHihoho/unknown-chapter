@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class SelectorUI : MonoBehaviour
@@ -19,6 +20,11 @@ public class SelectorUI : MonoBehaviour
 
     [SerializeField] Sprite activeItem;
     [SerializeField] Sprite inactiveItem;
+
+
+    public UnityEvent<int> OnChangeSelection;
+
+    bool initialized = false;
 
     int index;
 
@@ -41,6 +47,8 @@ public class SelectorUI : MonoBehaviour
 
             selectorItems[0].sprite = activeItem;
         }
+
+        initialized = true;
     }
 
 
@@ -53,6 +61,8 @@ public class SelectorUI : MonoBehaviour
         value.text = values[index];
 
         selectorItems[index].sprite = activeItem;
+
+        OnChangeSelection.Invoke(index);
     }
 
 
@@ -64,6 +74,20 @@ public class SelectorUI : MonoBehaviour
         if (index >= values.Length) index = 0;
         value.text = values[index];
 
+        selectorItems[index].sprite = activeItem;
+
+        OnChangeSelection.Invoke(index);
+    }
+
+    public void Select(int index)
+    {
+
+        if (!initialized) return;
+
+        selectorItems[this.index].sprite = inactiveItem;
+
+        index = Mathf.Clamp(index, 0, values.Length - 1);
+        value.text = values[index];
         selectorItems[index].sprite = activeItem;
     }
 }
