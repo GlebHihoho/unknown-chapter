@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 6778826808512020829}
   - component: {fileID: 2324047176073348092}
   - component: {fileID: 2636408146379067675}
+  - component: {fileID: 4635872677529976335}
   m_Layer: 5
   m_Name: DeleteButton
   m_TagString: Untagged
@@ -257,6 +258,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4635872677529976335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326671516223071784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468fdf8ed58ed884ebfc0be075287f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unavaialableCursor: {fileID: 11400000, guid: d7ab8dbf4dbc12c4aa53e3ae090600ce, type: 2}
 --- !u!1 &7996988808427361342
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +616,10 @@ PrefabInstance:
     - target: {fileID: 4003890848211201736, guid: 327eae9458c4a3845bf8d602f49fdac3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003890848373174535, guid: 327eae9458c4a3845bf8d602f49fdac3, type: 3}
+      propertyPath: m_Value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4003890848503383054, guid: 327eae9458c4a3845bf8d602f49fdac3, type: 3}
       propertyPath: m_AnchorMax.x
