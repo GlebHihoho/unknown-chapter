@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class MainMenuUI : MonoBehaviour
 {
-
+    [SerializeField] GameControls gameControls;
     [SerializeField] GameObject mainPanel;
 
     GameObject activePanel;
@@ -17,7 +17,10 @@ public class MainMenuUI : MonoBehaviour
 
     private void OnEnable()
     {
-        GameControls.instance.OnMainMenu += Return;
+
+        if (gameControls == null) gameControls = GameControls.instance;
+
+        gameControls.OnMainMenu += Return;
 
         openedPanels.Clear();
         if (activePanel != null && activePanel != mainPanel)
@@ -29,7 +32,7 @@ public class MainMenuUI : MonoBehaviour
 
     private void OnDisable()
     {
-        GameControls.instance.OnMainMenu -= Return;
+        gameControls.OnMainMenu -= Return;
         isCalled = false;
     }
 
