@@ -2,6 +2,7 @@ using NUnit.Framework.Interfaces;
 using PixelCrushers.DialogueSystem;
 using PixelCrushers.DialogueSystem.ChatMapper;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Outline))]
 public class ConversationPartner : Interactable
@@ -13,6 +14,11 @@ public class ConversationPartner : Interactable
     [SerializeField, Min(0)] int talkIndex = 0;
     public int TalkIndex => talkIndex;
 
+    bool hasMet = false;
+    public bool HasMet => hasMet;
+
+    public UnityEvent OnMet;
+
 
 
     protected override void PerfomInteraction()
@@ -20,13 +26,27 @@ public class ConversationPartner : Interactable
         base.PerfomInteraction();
 
         if (talkIndex >= 0 && talkIndex < data.Conversations.Length)
+        {
             DialogueManager.StartConversation(data.Conversations[talkIndex]);
+
+            if (!hasMet)
+            {
+                hasMet = true;
+                OnMet.Invoke();
+            }
+        }
     }
 
     public void Talk(int talkIndex = 0)
     {
         if (talkIndex >= 0 && talkIndex < data.Conversations.Length)
             DialogueManager.StartConversation(data.Conversations[talkIndex]);
+
+        if (!hasMet)
+        {
+            hasMet = true;
+            OnMet.Invoke();
+        }
     }
 
     public void SetTalkIndex(string actor, double index)
@@ -35,6 +55,9 @@ public class ConversationPartner : Interactable
     }
 
     public void SetTalkIndex(int index) => talkIndex = index;
+
+
+    public void SetMet(bool met) => hasMet = met;
 
 
 

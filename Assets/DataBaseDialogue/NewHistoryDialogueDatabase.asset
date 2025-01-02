@@ -18128,10 +18128,10 @@ MonoBehaviour:
           NavMeshAgent(Guard target,
           Guard);
 
-          AnimatorTrigger(Run, Guard 2);
+          required AnimatorTrigger(Run, Guard 2) @ 0.37;
 
-          NavMeshAgent(Guard
-          2 target, Guard 2);'
+          required
+          NavMeshAgent(Guard 2 target, Guard 2) @ 0.37;'
         type: 0
         typeString: 
       conversationID: 4
@@ -18905,10 +18905,13 @@ MonoBehaviour:
           NavMeshAgent(Guard target,
           Guard);
 
-          AnimatorTrigger(Run, Guard 2);
+          Delay(0.37);
 
-          NavMeshAgent(Guard
-          2 target, Guard 2);'
+          required AnimatorTrigger(Run,
+          Guard 2) @ 0.37;
+
+          required NavMeshAgent(Guard 2 target, Guard
+          2) @ 0.37;'
         type: 0
         typeString: 
       conversationID: 4
@@ -22429,7 +22432,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 6413.627, y: 2022.6714}
+    canvasScrollPosition: {x: 6614.892, y: 1475.8364}
     canvasZoom: 0.79000044
   - id: 5
     fields:

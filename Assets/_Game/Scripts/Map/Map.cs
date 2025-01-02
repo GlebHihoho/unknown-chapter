@@ -9,6 +9,7 @@ public class Map : MonoBehaviour, ISaveable
     [SerializeField] MapSoundData sounds;
 
     bool mapEnabled = false;
+    public bool MapEnabled => mapEnabled;
 
     public bool MapOpened
     {

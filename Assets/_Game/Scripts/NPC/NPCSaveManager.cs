@@ -20,8 +20,15 @@ public class NPCSaveManager : MonoBehaviour, ISaveable
         for (int i = 0; i < manager.Characters.Length; i++)
         {
             if (i < save.levels[save.level].characters.Count)
+            {
+                manager.Characters[i].SetMet(save.levels[save.level].characters[i].hasMet);
                 manager.Characters[i].SetTalkIndex(save.levels[save.level].characters[i].talkIndex);
-            else manager.Characters[i].SetTalkIndex(0);
+            }
+            else 
+            {
+                manager.Characters[i].SetMet(false);
+                manager.Characters[i].SetTalkIndex(0); 
+            }
         }
     }
 
@@ -33,6 +40,7 @@ public class NPCSaveManager : MonoBehaviour, ISaveable
         {
             SaveData.Character character;
 
+            character.hasMet = manager.Characters[i].HasMet;
             character.talkIndex = manager.Characters[i].TalkIndex;
 
             save.levels[save.level].characters.Add(character);

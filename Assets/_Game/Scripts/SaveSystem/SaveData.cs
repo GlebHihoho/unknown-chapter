@@ -22,6 +22,14 @@ public class SaveData
     }
 
     [Serializable]
+    public struct MapMarkers
+    {
+        public string name;
+        public bool active;
+        public string label;
+    }
+
+    [Serializable]
     public struct RecordStatus
     {
         public string id;
@@ -32,6 +40,7 @@ public class SaveData
     [Serializable]
     public struct Character
     {
+        public bool hasMet;
         public int talkIndex;
     }
 
@@ -45,6 +54,7 @@ public class SaveData
         public Quaternion cameraRotation = Quaternion.identity;
 
         public List<MapZones> mapZones = new List<MapZones>();
+        public List<MapMarkers> mapMarkers = new List<MapMarkers>();
 
         public string zoneID = string.Empty;
 
