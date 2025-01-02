@@ -14,6 +14,8 @@ public class GameCursor : MonoBehaviour
 
     [SerializeField] CursorData defaultCursor;
 
+    Sprite prevCursor;
+
 
     private void Awake()
     {
@@ -33,8 +35,15 @@ public class GameCursor : MonoBehaviour
 
     public void SetCursor(CursorData cursor)
     {
+        prevCursor = image.sprite;
+
         if (cursor != null) image.sprite = cursor.Sprite;
         else image.sprite = defaultCursor.Sprite;
+    }
+
+    public void RestorePreviousCursor()
+    {
+        if (prevCursor != null) image.sprite = prevCursor;
     }
 
 
