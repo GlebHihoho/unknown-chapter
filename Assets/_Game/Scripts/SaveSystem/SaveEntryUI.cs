@@ -28,13 +28,18 @@ public class SaveEntryUI : MonoBehaviour
     private void Awake()
     {
         SaveListEntry.OnSaveSelected += SetEntry;
+        SaveListEntry.OnDoubleClick += EntryDoubleClick;
 
         actionButton.interactable = mode == Mode.Save;
         deleteButton.interactable = false;
     }
 
-    private void OnDestroy() => SaveListEntry.OnSaveSelected -= SetEntry;
 
+    private void OnDestroy()
+    {
+        SaveListEntry.OnSaveSelected -= SetEntry;
+        SaveListEntry.OnDoubleClick -= EntryDoubleClick;
+    }
 
     private void OnEnable()
     {       
@@ -61,6 +66,11 @@ public class SaveEntryUI : MonoBehaviour
 
         actionButton.interactable = true;
         deleteButton.interactable = type == SaveData.Type.Normal;
+    }
+
+    private void EntryDoubleClick(string saveName)
+    {
+        if (mode == Mode.Load) OnLoad?.Invoke(saveName);
     }
 
     private void ShowConfirmation()

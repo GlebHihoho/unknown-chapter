@@ -18,6 +18,10 @@ public class SaveListEntry : MonoBehaviour
     [Space]
     [SerializeField] Image image;
 
+    [Space]
+    [SerializeField, Range(0, 1)] float doubleClick = 0.2f;
+    float doubleClickTimer = 0;
+
     StringBuilder sb = new StringBuilder();
 
 
@@ -26,6 +30,7 @@ public class SaveListEntry : MonoBehaviour
 
 
     public static event Action<string, SaveData.Type> OnSaveSelected;
+    public static event Action<string> OnDoubleClick;
 
 
     private static SaveListEntry selected;
@@ -36,6 +41,12 @@ public class SaveListEntry : MonoBehaviour
     private void OnEnable() => button.onClick.AddListener(Select);
 
     private void OnDisable() => button.onClick.RemoveListener(Select);
+
+
+    private void Update()
+    {
+        if (doubleClickTimer > 0) doubleClickTimer -= Time.deltaTime;
+    }
 
 
     public void SetName(int number, string saveName, SaveManager.Summary summary)
@@ -82,7 +93,15 @@ public class SaveListEntry : MonoBehaviour
         image.enabled = true;
         selected = this;
 
-        OnSaveSelected?.Invoke(saveName, type);      
+        OnSaveSelected?.Invoke(saveName, type);
+
+
+        if (doubleClickTimer > 0)
+        {
+            OnDoubleClick?.Invoke(saveName);
+            doubleClickTimer = 0;
+        }
+        else doubleClickTimer = doubleClick;
     }
 
     private void Deselect()
