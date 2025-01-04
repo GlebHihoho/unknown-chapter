@@ -56,6 +56,12 @@ public class MainMenuUI : MonoBehaviour
         else if (isCalled) gameObject.SetActive(false);
     }
 
+    public void ReturnToMainMenu()
+    {
+        openedPanels.Clear();
+        ToggleActivePanel(mainPanel);
+    }
+
 
     private void ToggleActivePanel(GameObject newPanel)
     {
