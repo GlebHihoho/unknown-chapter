@@ -8,6 +8,10 @@ using UnityEngine.UI;
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class UIMessage : MonoBehaviour
 {
+
+    enum Status { Idle, ShowingPanel, ShowingMessage}
+    Status status = Status.Idle;
+
     TextMeshProUGUI messageLabel;
 
     [SerializeField] Image background;
@@ -17,13 +21,14 @@ public class UIMessage : MonoBehaviour
     string permanentMessage = string.Empty;
 
     Queue<string> awaitingMessages = new();
-    bool isPlaying = false;
+
 
     bool isPaused = false;
 
-    bool panelVisible = false;
-
     string currentlyPlaying = string.Empty;
+
+    Sequence activeAnimation;
+
 
     private void Awake()
     {
@@ -36,20 +41,31 @@ public class UIMessage : MonoBehaviour
     private void Start() => Pause.OnPause += SetPause;
     private void OnDestroy() => Pause.OnPause -= SetPause;
 
+
     private void SetPause(bool isPaused)
     {
         this.isPaused = isPaused;
 
-        if (!isPaused && awaitingMessages.Count > 0)
-            if (!panelVisible) ShowPanel(); else ShowMessage();
+        background.enabled = !isPaused;
+        messageLabel.enabled = !isPaused;
+
+        if (activeAnimation != null)
+        {
+            if (isPaused) activeAnimation.Pause();
+            else activeAnimation.Play();
+        }
+
+        if (!isPaused && awaitingMessages.Count > 0 && status == Status.Idle) ShowPanel();
+         //   if (!panelVisible) ShowPanel(); else ShowMessage();
     }
+
 
     public void ShowMessage(string message)
     {
         if (message != currentlyPlaying && !awaitingMessages.Contains(message))
         {
             awaitingMessages.Enqueue(message);
-            if (!isPlaying) ShowPanel();
+            if (status == Status.Idle) ShowPanel();
         }
     }
 
@@ -57,8 +73,9 @@ public class UIMessage : MonoBehaviour
     private void ShowMessage()
     {
         
-
         if (isPaused) return;
+
+        status = Status.ShowingMessage;
 
         messageLabel.text = awaitingMessages.Dequeue();
         currentlyPlaying = messageLabel.text;
@@ -84,28 +101,34 @@ public class UIMessage : MonoBehaviour
             }
         });
 
+        activeAnimation = sequence;
         sequence.Play();
     }
 
 
     private void ShowPanel()
     {
-        isPlaying = true;
-
+     
         if (isPaused) return;
-        
+
+        status = Status.ShowingPanel;
+
+        Sequence sequence = DOTween.Sequence();
+
+        sequence.Append(
         background.rectTransform.DOScaleX(1, 0.5f).OnComplete(() => 
         {
-            panelVisible = true;
             ShowMessage();           
-        });
+        }));
+
+        activeAnimation = sequence;
+        sequence.Play();
     }
 
 
     private void HidePanel()
     {
-        background.rectTransform.DOScaleX(0, 0.2f).OnComplete(() => panelVisible = false);
-        isPlaying = false;
+        background.rectTransform.DOScaleX(0, 0.2f).OnComplete(() => status = Status.Idle);
     }
 
     public void ShowPermanentMessage(string message)
@@ -113,8 +136,11 @@ public class UIMessage : MonoBehaviour
         messageLabel.text = message;
         permanentMessage = message;
 
+        background.enabled = true;
+        messageLabel.enabled = true;
+
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(background.rectTransform.DOScaleX(1, 0.5f).OnComplete(() => panelVisible = true));
+        sequence.Append(background.rectTransform.DOScaleX(1, 0.5f).OnComplete(() => status = Status.ShowingPanel));
         sequence.Append(messageLabel.DOFade(1, 0.2f));
         sequence.Play();
     }
@@ -126,7 +152,8 @@ public class UIMessage : MonoBehaviour
         Sequence sequence = DOTween.Sequence();
         sequence.Append(messageLabel.DOFade(0, 0.2f));
         sequence.Append(background.rectTransform.DOScaleX(0, 0.2f));
-        sequence.Play().OnComplete(() => panelVisible = false);
+        sequence.Play().OnComplete(() => status = Status.Idle);
+
     }
 
 }
