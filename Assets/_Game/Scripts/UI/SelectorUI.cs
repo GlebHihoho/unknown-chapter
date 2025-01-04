@@ -87,6 +87,8 @@ public class SelectorUI : MonoBehaviour
         selectorItems[this.index].sprite = inactiveItem;
 
         index = Mathf.Clamp(index, 0, values.Length - 1);
+        this.index = index;
+
         value.text = values[index];
         selectorItems[index].sprite = activeItem;
     }
