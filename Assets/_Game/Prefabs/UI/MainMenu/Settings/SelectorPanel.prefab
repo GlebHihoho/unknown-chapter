@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 3150315622743808076}
   - component: {fileID: 7778690972078164018}
   - component: {fileID: 7952671463200979321}
+  - component: {fileID: 805398130499180738}
   m_Layer: 5
   m_Name: RightButton
   m_TagString: Untagged
@@ -407,6 +408,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   sounds: {fileID: 11400000, guid: 2ca58c05c151a79459c2097c94a28bec, type: 2}
+--- !u!114 &805398130499180738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4252121651281473499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468fdf8ed58ed884ebfc0be075287f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactiveCursor: {fileID: 11400000, guid: 0a8c74c798829f149be8a027fb337053, type: 2}
+  unavaialableCursor: {fileID: 11400000, guid: d7ab8dbf4dbc12c4aa53e3ae090600ce, type: 2}
 --- !u!1 &4663957189068418041
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +625,9 @@ MonoBehaviour:
   selectorItemPrefab: {fileID: 1261049861386042825, guid: bc8d1f224725d2246b58880b3e795073, type: 3}
   activeItem: {fileID: 21300000, guid: 1d0cdae07773ee34698d26df21f0d56c, type: 3}
   inactiveItem: {fileID: 21300000, guid: c608ccd5002744941a2ea42dfb52ef24, type: 3}
+  OnChangeSelection:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6396455840969922691
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,6 +641,7 @@ GameObject:
   - component: {fileID: 6310906131213159603}
   - component: {fileID: 6089221045139203504}
   - component: {fileID: 2942849071405345297}
+  - component: {fileID: 5214785524407557847}
   m_Layer: 5
   m_Name: LeftButton
   m_TagString: Untagged
@@ -745,3 +764,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   sounds: {fileID: 11400000, guid: 2ca58c05c151a79459c2097c94a28bec, type: 2}
+--- !u!114 &5214785524407557847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6396455840969922691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468fdf8ed58ed884ebfc0be075287f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactiveCursor: {fileID: 11400000, guid: 0a8c74c798829f149be8a027fb337053, type: 2}
+  unavaialableCursor: {fileID: 11400000, guid: d7ab8dbf4dbc12c4aa53e3ae090600ce, type: 2}

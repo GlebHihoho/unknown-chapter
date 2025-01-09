@@ -328,6 +328,8 @@ GameObject:
   - component: {fileID: 114661469180362800}
   - component: {fileID: 114054343509046778}
   - component: {fileID: 114547911188978186}
+  - component: {fileID: 369619554524888156}
+  - component: {fileID: 5877232710050290881}
   m_Layer: 5
   m_Name: Response Button Template
   m_TagString: Untagged
@@ -482,6 +484,34 @@ MonoBehaviour:
     m_textMeshProUGUI: {fileID: 7727790562319030250}
   setLabelColor: 0
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &369619554524888156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031492634714390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b4d18d3144bd6b428ae9ea006d83b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  sounds: {fileID: 11400000, guid: 2ca58c05c151a79459c2097c94a28bec, type: 2}
+--- !u!114 &5877232710050290881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031492634714390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468fdf8ed58ed884ebfc0be075287f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactiveCursor: {fileID: 11400000, guid: 0a8c74c798829f149be8a027fb337053, type: 2}
+  unavaialableCursor: {fileID: 11400000, guid: d7ab8dbf4dbc12c4aa53e3ae090600ce, type: 2}
 --- !u!1 &1055504699021342
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,6 +526,8 @@ GameObject:
   - component: {fileID: 114938541978505674}
   - component: {fileID: 114084872138153140}
   - component: {fileID: 114879554413188470}
+  - component: {fileID: 452763561179117622}
+  - component: {fileID: 6766838497098323204}
   m_Layer: 5
   m_Name: Continue Button
   m_TagString: Untagged
@@ -666,6 +698,34 @@ MonoBehaviour:
   hideContinueButtonOnContinue: 0
   continueSubtitlePanel: 1
   continueAlertPanel: 1
+--- !u!114 &452763561179117622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055504699021342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b4d18d3144bd6b428ae9ea006d83b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  sounds: {fileID: 11400000, guid: 2ca58c05c151a79459c2097c94a28bec, type: 2}
+--- !u!114 &6766838497098323204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055504699021342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468fdf8ed58ed884ebfc0be075287f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactiveCursor: {fileID: 11400000, guid: 0a8c74c798829f149be8a027fb337053, type: 2}
+  unavaialableCursor: {fileID: 11400000, guid: d7ab8dbf4dbc12c4aa53e3ae090600ce, type: 2}
 --- !u!1 &1091825174423646
 GameObject:
   m_ObjectHideFlags: 0
@@ -4142,6 +4202,7 @@ GameObject:
   - component: {fileID: 7314267321879770775}
   - component: {fileID: 5366261425222638925}
   - component: {fileID: 5247481477667167129}
+  - component: {fileID: 4958335423021159314}
   m_Layer: 5
   m_Name: Scrollbar Vertical
   m_TagString: Untagged
@@ -4256,6 +4317,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4958335423021159314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6844616407461096954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add3e3a130bc85948893e6c2017c78da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 5247481477667167129}
+  interactiveCursor: {fileID: 11400000, guid: 0a8c74c798829f149be8a027fb337053, type: 2}
+  unavaialableCursor: {fileID: 11400000, guid: d7ab8dbf4dbc12c4aa53e3ae090600ce, type: 2}
 --- !u!1 &7778513398625955584
 GameObject:
   m_ObjectHideFlags: 0
