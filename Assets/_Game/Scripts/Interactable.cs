@@ -79,15 +79,14 @@ public class Interactable : MonoBehaviour
         if (Vector3.Magnitude(transform.position - player.position) <= interactData.InteractDistance) status = Status.CanInteract;
         else status = Status.Unavailable;
 
+        GameCursor.instance.SetCursor(interactData.InteractCursor);
 
         if (status == Status.CanInteract)
         {
-            GameCursor.instance.SetCursor(interactData.InteractCursor); //  Cursor.SetCursor(interactData.InteractCursor.Sprite, hotSpot, cursorMode);
             outline.OutlineColor = interactData.InteractCursor.Color;
         }
         else
         {
-            GameCursor.instance.SetCursor(interactData.UnavailableCursor); //, hotSpot, cursorMode);
             outline.OutlineColor = interactData.UnavailableCursor.Color;
         }
 
