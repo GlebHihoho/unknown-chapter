@@ -30,6 +30,8 @@ public class SaveEntryUI : MonoBehaviour
         SaveListEntry.OnSaveSelected += SetEntry;
         SaveListEntry.OnDoubleClick += EntryDoubleClick;
 
+        SaveManager.OnSaveListEmptied += ResetEntry;
+
         actionButton.interactable = mode == Mode.Save;
         deleteButton.interactable = false;
     }
@@ -39,6 +41,8 @@ public class SaveEntryUI : MonoBehaviour
     {
         SaveListEntry.OnSaveSelected -= SetEntry;
         SaveListEntry.OnDoubleClick -= EntryDoubleClick;
+
+        SaveManager.OnSaveListEmptied -= ResetEntry;
     }
 
     private void OnEnable()
@@ -67,6 +71,16 @@ public class SaveEntryUI : MonoBehaviour
         actionButton.interactable = true;
         deleteButton.interactable = type == SaveData.Type.Normal;
     }
+
+
+    private void ResetEntry()
+    {
+        saveName = string.Empty;
+
+        actionButton.interactable = mode == Mode.Save;
+        deleteButton.interactable = false;
+    }
+
 
     private void EntryDoubleClick(string saveName)
     {

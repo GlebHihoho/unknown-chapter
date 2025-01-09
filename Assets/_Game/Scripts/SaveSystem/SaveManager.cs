@@ -54,6 +54,8 @@ public class SaveManager : MonoBehaviour
     public static event Action<string> OnSaveAdded;
     public static event Action<string> OnSaveRemoved;
 
+    public static event Action OnSaveListEmptied;
+
     public static event Action OnStartingLoad;
 
 
@@ -252,6 +254,8 @@ public class SaveManager : MonoBehaviour
             SavesInfo.Remove(saveName);
 
             OnSaveRemoved?.Invoke(saveName);
+
+            if (SavesInfo.Count == 0) OnSaveListEmptied?.Invoke();
         }
     }
 

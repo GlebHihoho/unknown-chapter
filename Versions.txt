@@ -31,3 +31,5 @@ v 1.1
 Cursor now show appropriate status for an interactive object regardless of distance, and change status when hovering over UI elements (buttons etc.) Added more "click" sounds for elements like buttons in dialogues.
 
 Adjusted colours for the character in dialogues.
+
+Added indent at the right side of save record. Fixed a couple of bugs in save / load menus: next available save was not selected after deleting the old one, and control buttons was not locked after deleting the last save.

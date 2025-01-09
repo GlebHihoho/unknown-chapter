@@ -50,6 +50,7 @@ public class SavesList : MonoBehaviour
     private void RefreshList()
     {
 
+
         foreach (SaveListEntry item in saves)
         {
             item.SetActive(false);
@@ -77,7 +78,7 @@ public class SavesList : MonoBehaviour
     {
         yield return waitFrame;
 
-        if (saves.Count > 0) saves[saves.Count - 1].Select();
+        if (SaveManager.instance.SavesInfo.Keys.Count > 0) saves[SaveManager.instance.SavesInfo.Keys.Count - 1].Select();
 
         scrollRect.verticalNormalizedPosition = 0;
     }
