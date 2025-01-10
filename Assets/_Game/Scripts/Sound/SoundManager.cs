@@ -170,6 +170,16 @@ public class SoundManager : MonoBehaviour
 
     public void PlayEffect(AudioClip clip) => soundEffects.PlayOneShot(clip);
 
+    public void MuffleMusic()
+    {
+        mixer.SetFloat(musicVolumeMixer, MixerVolume(0.001f));
+    }
+
+    public void RestoreMusic()
+    {
+        mixer.SetFloat(musicVolumeMixer, MixerVolume(musicVolume));
+    }
+
 
     public void PlayContinuousEffect(AudioClip clip)
     {
