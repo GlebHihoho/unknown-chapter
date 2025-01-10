@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class MusicalBottlesEvent : MonoBehaviour
@@ -8,6 +9,8 @@ public class MusicalBottlesEvent : MonoBehaviour
 
     [SerializeField] AudioClip melodyShort;
     [SerializeField] AudioClip melodyFull;
+
+    [SerializeField] CinemachineCamera bottlesCamera;
 
     WaitForSeconds delay = new WaitForSeconds(1.2f);
 
@@ -37,7 +40,7 @@ public class MusicalBottlesEvent : MonoBehaviour
 
             if (index == correctOrder.Length)
             {
-                StartCoroutine(PlayMeloody(melodyFull, longMelody));
+                StartCoroutine(PlayMeloody(melodyFull, longMelody, true));
 
                 index = 0;
             }
@@ -45,20 +48,24 @@ public class MusicalBottlesEvent : MonoBehaviour
         else
         {
             index = 0;
-            StartCoroutine(PlayMeloody(melodyShort, shortMelody));
+            StartCoroutine(PlayMeloody(melodyShort, shortMelody, false));
         }
     }
 
-    IEnumerator PlayMeloody(AudioClip clip, WaitForSeconds melodyDelay)
+    IEnumerator PlayMeloody(AudioClip clip, WaitForSeconds melodyDelay, bool isWin)
     {
         
         SoundManager.instance.MuffleMusic();
+
+        if (isWin) bottlesCamera.enabled = true;
 
         yield return delay;
         SoundManager.instance.PlayEffect(clip);
 
         yield return melodyDelay;
         SoundManager.instance.RestoreMusic();
+
+        bottlesCamera.enabled = false;
     }
 
 
