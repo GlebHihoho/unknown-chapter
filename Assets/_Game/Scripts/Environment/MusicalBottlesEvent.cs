@@ -9,7 +9,7 @@ public class MusicalBottlesEvent : MonoBehaviour
     [SerializeField] AudioClip melodyShort;
     [SerializeField] AudioClip melodyFull;
 
-    WaitForSeconds delay = new WaitForSeconds(0.7f);
+    WaitForSeconds delay = new WaitForSeconds(1.2f);
 
     WaitForSeconds shortMelody;
     WaitForSeconds longMelody;
@@ -51,9 +51,10 @@ public class MusicalBottlesEvent : MonoBehaviour
 
     IEnumerator PlayMeloody(AudioClip clip, WaitForSeconds melodyDelay)
     {
-        yield return delay;
-
+        
         SoundManager.instance.MuffleMusic();
+
+        yield return delay;
         SoundManager.instance.PlayEffect(clip);
 
         yield return melodyDelay;

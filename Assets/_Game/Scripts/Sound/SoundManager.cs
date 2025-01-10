@@ -35,6 +35,11 @@ public class SoundManager : MonoBehaviour
     int activeAmbient = 1;
     AudioClip activeMusic;
 
+    const float silence = 0.001f;
+    float muffleTimer = 0;
+    float startMuffle = 1;
+    float endMuffle = silence;
+
 
     const string masterVolumeString = "GeneralVolume";
     const string musicVolumeString = "MusicVolume";
@@ -165,6 +170,15 @@ public class SoundManager : MonoBehaviour
                 if(timer <= 0) ambientMusic1.Stop(); 
             }
         }
+
+        if (muffleTimer > 0)
+        {
+            muffleTimer -= Time.deltaTime;
+
+            if (muffleTimer > 0) mixer.SetFloat(musicVolumeMixer, MixerVolume(Mathf.Lerp(endMuffle, startMuffle,muffleTimer)));
+            else mixer.SetFloat(musicVolumeMixer, MixerVolume(endMuffle));
+
+        }
     }
 
 
@@ -172,12 +186,23 @@ public class SoundManager : MonoBehaviour
 
     public void MuffleMusic()
     {
-        mixer.SetFloat(musicVolumeMixer, MixerVolume(0.001f));
+        startMuffle = musicVolume;
+        endMuffle = silence;
+
+        muffleTimer = 1;
+
+       // mixer.SetFloat(musicVolumeMixer, MixerVolume(0.001f));
     }
 
     public void RestoreMusic()
     {
-        mixer.SetFloat(musicVolumeMixer, MixerVolume(musicVolume));
+
+        startMuffle = silence;
+        endMuffle = musicVolume;
+
+        muffleTimer = 1;
+
+       // mixer.SetFloat(musicVolumeMixer, MixerVolume(musicVolume));
     }
 
 
