@@ -21,6 +21,7 @@ public class InventoryCell : MonoBehaviour
     [SerializeField] Image background;
     
     [SerializeField] Color selectedColour = Color.blue;
+    [SerializeField] Color defaultColor = Color.gray;
 
 
     Button select;
@@ -48,7 +49,7 @@ public class InventoryCell : MonoBehaviour
 
         usable.enabled = item.Usable;
 
-        background.enabled = false;
+        background.color = defaultColor;
         newItem.enabled = true;
     }
 
@@ -66,7 +67,6 @@ public class InventoryCell : MonoBehaviour
 
     public void SelectItem()
     {
-        background.enabled = true;
         background.color = selectedColour;
         newItem.enabled = false;
     }
@@ -74,6 +74,6 @@ public class InventoryCell : MonoBehaviour
 
     public void DeselectItem()
     {
-        background.enabled = false;        
+        background.color = defaultColor;        
     }
 }
