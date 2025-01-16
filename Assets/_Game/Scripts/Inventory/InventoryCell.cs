@@ -31,7 +31,7 @@ public class InventoryCell : MonoBehaviour
     private void Awake()
     {
         select = GetComponent<Button>();
-        select.onClick.AddListener(Select);
+        
     }
 
     private void OnDestroy() => select.onClick.RemoveListener(Select);
@@ -39,6 +39,8 @@ public class InventoryCell : MonoBehaviour
 
     public void SetItem(ItemData item, InventoryUI inventoryUI)
     {
+        select.onClick.AddListener(Select);
+
         this.item = item;
         this.inventoryUI = inventoryUI;
 
@@ -49,6 +51,7 @@ public class InventoryCell : MonoBehaviour
 
         usable.enabled = item.Usable;
 
+        background.gameObject.SetActive(true);
         background.color = defaultColor;
         newItem.enabled = true;
     }
@@ -60,7 +63,12 @@ public class InventoryCell : MonoBehaviour
         numberLabel.text = quantity.ToString();
     }
 
-    public void DeleteItem() => Destroy(gameObject);
+    public void ClearCell()
+    {
+        background.gameObject.SetActive(false);
+        item = null;
+        select.onClick.RemoveListener(Select);
+    }
 
     private void Select() => inventoryUI.SetActiveItem(item);
 

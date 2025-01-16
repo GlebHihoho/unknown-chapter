@@ -19,6 +19,11 @@ public class InventoryUI : MonoBehaviour
 
     Dictionary<ItemData, InventoryCell> inventory = new Dictionary<ItemData, InventoryCell>();
 
+    [SerializeField, Min(1)] int initialInventorySize = 48;
+    List<InventoryCell> avialableCells = new List<InventoryCell>();
+
+    [SerializeField, Min(1)] int extraInventorySize = 24;
+
     ItemData activeItem;
 
     public static event Action<ItemData> OnSetActive;
@@ -35,6 +40,8 @@ public class InventoryUI : MonoBehaviour
 
         DialogueManager.instance.conversationStarted += ConversationStarted;
         DialogueManager.instance.conversationEnded += ConversationEnded;
+
+        AddCells(initialInventorySize);
 
         gameObject.SetActive(false);
     }
@@ -81,23 +88,41 @@ public class InventoryUI : MonoBehaviour
 
     private void AddItem(ItemData item)
     {
-        InventoryCell cell = Instantiate(cellPrefab, itemsPanel);
-        cell.SetItem(item, this);
 
-        inventory.Add(item, cell);
+        if (avialableCells.Count == 0) AddCells(extraInventorySize);
 
-        if (activeItem == null) SetActiveItem(item, true);
+        if (avialableCells.Count > 0)
+        {
 
-        if (!activeWhileConversation && !gameObject.activeSelf) inventoryButton.ShowUpdate();
+            InventoryCell cell = avialableCells[0];
+            avialableCells.RemoveAt(0);
 
-        SoundManager.instance.PlayEffect(itemSounds.Receieved);
+            cell.SetItem(item, this);
+
+            inventory.Add(item, cell);
+
+            if (activeItem == null) SetActiveItem(item, true);
+
+            if (!activeWhileConversation && !gameObject.activeSelf) inventoryButton.ShowUpdate();
+
+            SoundManager.instance.PlayEffect(itemSounds.Receieved);
+        }
     }
 
     private void RemoveItem(ItemData item)
     {
-        inventory[item].DeleteItem();
+        inventory[item].ClearCell();
 
+        avialableCells.Insert(0,inventory[item]);
         inventory.Remove(item);
+
+        int i = 0;
+        foreach (ItemData key in inventory.Keys)
+        {
+            inventory[key].transform.SetSiblingIndex(i);
+            i++;
+        }
+
 
         if (activeItem == item)
         {
@@ -136,6 +161,17 @@ public class InventoryUI : MonoBehaviour
         else activeItem = null;
 
         if (!addingOrRemoving) SoundManager.instance.PlayEffect(itemSounds.Selected);
+    }
+
+
+    private void AddCells(int cellsCount)
+    {
+        for (int i = 0; i < cellsCount; i++)
+        {
+            InventoryCell cell = Instantiate(cellPrefab, itemsPanel);
+            cell.ClearCell();
+            avialableCells.Add(cell);
+        }
     }
 
 
