@@ -25,12 +25,14 @@ public class InventoryCell : MonoBehaviour
 
 
     Button select;
+    ButtonCursor buttonCursor;
 
     InventoryUI inventoryUI;
 
     private void Awake()
     {
         select = GetComponent<Button>();
+        buttonCursor = GetComponent<ButtonCursor>();
         
     }
 
@@ -39,7 +41,10 @@ public class InventoryCell : MonoBehaviour
 
     public void SetItem(ItemData item, InventoryUI inventoryUI)
     {
+        select.enabled = true;
         select.onClick.AddListener(Select);
+
+        buttonCursor.enabled = true;
 
         this.item = item;
         this.inventoryUI = inventoryUI;
@@ -68,6 +73,9 @@ public class InventoryCell : MonoBehaviour
         background.gameObject.SetActive(false);
         item = null;
         select.onClick.RemoveListener(Select);
+
+        select.enabled = false;
+        buttonCursor.enabled = false;
     }
 
     private void Select() => inventoryUI.SetActiveItem(item);
