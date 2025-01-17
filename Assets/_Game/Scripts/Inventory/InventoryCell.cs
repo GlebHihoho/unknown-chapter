@@ -16,6 +16,11 @@ public class InventoryCell : MonoBehaviour
     [SerializeField] Image usable;
     [SerializeField] Image newItem;
 
+    [SerializeField] Image border;
+    [SerializeField] Color emptyCellBorder;
+    [SerializeField] Color usedCellBorder;
+    [SerializeField] Color selectedCellBorder;
+
 
     [Space]
     [SerializeField] Image background;
@@ -45,6 +50,7 @@ public class InventoryCell : MonoBehaviour
         select.onClick.AddListener(Select);
 
         buttonCursor.enabled = true;
+        icon.gameObject.SetActive(true);
 
         this.item = item;
         this.inventoryUI = inventoryUI;
@@ -59,6 +65,8 @@ public class InventoryCell : MonoBehaviour
         background.gameObject.SetActive(true);
         background.color = defaultColor;
         newItem.enabled = true;
+
+        border.color = usedCellBorder;
     }
 
 
@@ -76,6 +84,11 @@ public class InventoryCell : MonoBehaviour
 
         select.enabled = false;
         buttonCursor.enabled = false;
+        icon.gameObject.SetActive(false);
+        usable.enabled = false;
+        newItem.enabled = false;
+
+        border.color = emptyCellBorder;
     }
 
     private void Select() => inventoryUI.SetActiveItem(item);
@@ -85,11 +98,14 @@ public class InventoryCell : MonoBehaviour
     {
         background.color = selectedColour;
         newItem.enabled = false;
+
+        border.color = selectedCellBorder;
     }
 
 
     public void DeselectItem()
     {
-        background.color = defaultColor;        
+        background.color = defaultColor;
+        border.color = usedCellBorder;
     }
 }
