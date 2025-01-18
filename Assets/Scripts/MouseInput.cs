@@ -174,7 +174,14 @@ public class MouseInput : MonoBehaviour
         {
 
             Vector3 turn = keyMovement;
-            if (NavMesh.Raycast(transform.position, turn, out NavMeshHit hit, NavMesh.AllAreas))
+
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(turn, out hit, 10, NavMesh.AllAreas))
+            {
+                turn = hit.position;
+            }
+
+            else if (NavMesh.Raycast(transform.position, turn, out hit, NavMesh.AllAreas))
             {
                 turn = hit.position;
             }
