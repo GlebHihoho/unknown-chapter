@@ -15,8 +15,8 @@ MonoBehaviour:
   dialogVariable: Items.Wig
   icon: {fileID: 21300000, guid: ea72d3600472dd147840ab6792116519, type: 3}
   image: {fileID: 21300000, guid: ea72d3600472dd147840ab6792116519, type: 3}
-  itemName: "\u0418\u0421\u041F\u0410\u0427\u041A\u0410\u041D\u041D\u042B\u0419 \u0411\u0415\u041B\u042B\u0419
-    \u041F\u0410\u0420\u0418\u041A"
+  itemName: "\u0418\u0441\u043F\u0430\u0447\u043A\u0430\u043D\u043D\u044B\u0439 \u0431\u0435\u043B\u044B\u0439
+    \u043F\u0430\u0440\u0438\u043A"
   examineBark: "\u041F\u044B\u0448\u043D\u044B\u0439 \u0447\u0451\u0440\u043D\u044B\u0439
     \u043F\u0430\u0440\u0438\u043A, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u043A\u043E\u0433\u0434\u0430-\u0442\u043E
     \u043D\u043E\u0441\u0438\u043B \u0431\u0435\u043B\u044B\u0439 \u0446\u0432\u0435\u0442.
@@ -39,6 +39,8 @@ MonoBehaviour:
     \u044E\u043D\u044B\u0445 \u043E\u0444\u0438\u0446\u0435\u0440\u043E\u0432."
   inventoryMax: 100
   interactDistace: 2
+  canDelete: 1
   physicalModifier: 0
   perceptionModifier: 0
   intellectModifier: 0
+  examine: 

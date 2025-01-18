@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogVariable: Items.CockedHat
   icon: {fileID: 21300000, guid: b275d2996f682c44ebe723a6615d1198, type: 3}
   image: {fileID: 21300000, guid: b275d2996f682c44ebe723a6615d1198, type: 3}
-  itemName: "\u0422\u0420\u0415\u0423\u0413\u041E\u041B\u041A\u0410"
+  itemName: "\u0422\u0440\u0435\u0443\u0433\u043E\u043B\u043A\u0430"
   examineBark: "\u0425\u043E\u0442\u044C \u0438 \u043F\u043E\u043D\u043E\u0448\u0435\u043D\u043D\u0430\u044F,
     \u043D\u043E \u0432\u0441\u0451 \u0435\u0449\u0451 \u044D\u0441\u0442\u0435\u0442\u0438\u0447\u043D\u0430\u044F
     \u0448\u043B\u044F\u043F\u0430 \u0441 \u0438\u043D\u0438\u0446\u0438\u0430\u043B\u0430\u043C\u0438
@@ -34,6 +34,8 @@ MonoBehaviour:
     \u0443\u0437\u043E\u0440\u0430\u043C\u0438."
   inventoryMax: 100
   interactDistace: 2
+  canDelete: 1
   physicalModifier: 0
   perceptionModifier: 0
   intellectModifier: 0
+  examine: 
