@@ -57,7 +57,11 @@ public class MusicalBottlesEvent : MonoBehaviour
         
         SoundManager.instance.MuffleMusic();
 
-        if (isWin) bottlesCamera.enabled = true;
+        if (isWin) 
+        {
+            GameControls.instance.DisableAllControls();
+            bottlesCamera.enabled = true; 
+        }
 
         yield return delay;
         SoundManager.instance.PlayEffect(clip);
@@ -66,6 +70,7 @@ public class MusicalBottlesEvent : MonoBehaviour
         SoundManager.instance.RestoreMusic();
 
         bottlesCamera.enabled = false;
+        GameControls.instance.ReenableAllControls();
     }
 
 

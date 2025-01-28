@@ -347,4 +347,17 @@ public class GameControls : MonoBehaviour
         if (callback != null) callback();
     }
 
+
+    public void ReenableAllControls()
+    {
+        inputActions.System.Enable();
+        inputActions.Player.Enable();
+    }
+
+    public void DisableAllControls()
+    {
+        inputActions.System.Disable();
+        inputActions.Player.Disable();
+    }
+
 }
