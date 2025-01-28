@@ -81,6 +81,8 @@ public class Interactable : MonoBehaviour
 
         GameCursor.instance.SetCursor(interactData.InteractCursor);
 
+        if (outline == null) outline = GetComponent<Outline>();
+
         if (status == Status.CanInteract)
         {
             outline.OutlineColor = interactData.InteractCursor.Color;
@@ -108,6 +110,9 @@ public class Interactable : MonoBehaviour
     protected void ResetVisuals()
     {
         GameCursor.instance.SetCursor(null);// Cursor.SetCursor(null, hotSpot, cursorMode);
+
+        if (outline == null) outline = GetComponent<Outline>();
+
         outline.enabled = false;
     }
 
