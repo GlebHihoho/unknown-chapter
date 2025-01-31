@@ -9,19 +9,32 @@ namespace UI
 
         private Transform _child;
 
+        bool isEnabled = true;
+
         private void Start()
         {
             _child = transform.Find("Image");
+
+            UIController.OnEnableUI += EnableUI;
         }
+
+        private void OnDestroy() => UIController.OnEnableUI -= EnableUI;
+
+        private void EnableUI(bool isEnabled) => this.isEnabled = isEnabled;
+
 
         void Update()
         {
             _child.gameObject.SetActive(_workingPanel.activeSelf);
         }
 
+
         public void OnClick()
         {
-            _workingPanel.SetActive(!_workingPanel.activeSelf);
+            if (isEnabled)
+            {
+                _workingPanel.SetActive(!_workingPanel.activeSelf);
+            }
         }
     }
 }

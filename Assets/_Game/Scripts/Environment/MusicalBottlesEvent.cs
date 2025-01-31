@@ -1,4 +1,5 @@
 using System.Collections;
+using UI;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ public class MusicalBottlesEvent : MonoBehaviour
     WaitForSeconds shortMelody;
     WaitForSeconds longMelody;
 
+    UIController uiContoller;
+
     int index = 0;
 
     void Start()
@@ -25,6 +28,8 @@ public class MusicalBottlesEvent : MonoBehaviour
 
         shortMelody = new WaitForSeconds(melodyShort.length);
         longMelody = new WaitForSeconds(melodyFull.length);
+
+        uiContoller = FindFirstObjectByType<UIController>();
     }
 
     private void OnDestroy() => MusicalBottle.OnClipCalled -= ClipCalled;
@@ -60,6 +65,8 @@ public class MusicalBottlesEvent : MonoBehaviour
         if (isWin) 
         {
             GameControls.instance.DisableAllControls();
+            uiContoller.DisableUI();
+
             bottlesCamera.enabled = true; 
         }
 
@@ -70,7 +77,12 @@ public class MusicalBottlesEvent : MonoBehaviour
         SoundManager.instance.RestoreMusic();
 
         bottlesCamera.enabled = false;
-        GameControls.instance.ReenableAllControls();
+
+        if (isWin)
+        {
+            GameControls.instance.ReenableAllControls();
+            uiContoller.EnableUI();
+        }
     }
 
 

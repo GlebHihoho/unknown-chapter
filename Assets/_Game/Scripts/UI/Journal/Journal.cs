@@ -6,6 +6,7 @@ using TMPro;
 using System.Text;
 using UnityEngine.UI;
 using System.Linq;
+using UI;
 
 public class Journal : MonoBehaviour, ISaveable
 {
@@ -27,6 +28,8 @@ public class Journal : MonoBehaviour, ISaveable
     [SerializeField, TextArea(0, 3)] string newTextEnd;
 
     [SerializeField, QuestPopup] string initialQuest;
+
+    bool isUIEnabled = true;
 
     public bool JournalOpened
     {
@@ -55,14 +58,21 @@ public class Journal : MonoBehaviour, ISaveable
 
         QuestsEvents.OnQuestChanged += UpdateQuest;
         QuestsEvents.OnEntryStateChange += QuestEntryChange;
+
+        UIController.OnEnableUI += EnableUI;
     }
+
 
 
     private void OnDestroy()
     {
         QuestsEvents.OnQuestChanged -= UpdateQuest;
         QuestsEvents.OnEntryStateChange -= QuestEntryChange;
+
+        UIController.OnEnableUI -= EnableUI;
     }
+
+    private void EnableUI(bool isEnabled) => isUIEnabled = isEnabled;
 
 
     public void OpenJournal()
@@ -79,6 +89,9 @@ public class Journal : MonoBehaviour, ISaveable
 
     public void ToggleJournal()
     {
+
+        if (!isUIEnabled) return;
+
         mainPanel.SetActive(!mainPanel.activeSelf);
 
         if (!mainPanel.activeSelf) ClearActiveQuestRecord();

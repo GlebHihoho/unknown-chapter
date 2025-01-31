@@ -19,6 +19,8 @@ namespace UI
 
         bool isMainMenuDisabled = false;
 
+        public static event Action<bool> OnEnableUI;
+
 
         private void Start()
         {
@@ -88,6 +90,21 @@ namespace UI
             map.HideMap();
 
             journal.CloseJournal();
+        }
+
+
+        public void DisableUI()
+        {
+            HideAll();
+            DisableMainMenu();
+
+            OnEnableUI?.Invoke(false);
+        }
+
+        public void EnableUI()
+        {
+            EnableMainMenu();
+            OnEnableUI?.Invoke(true);
         }
 
 
