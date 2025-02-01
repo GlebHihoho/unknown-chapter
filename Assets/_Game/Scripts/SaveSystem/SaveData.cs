@@ -44,6 +44,15 @@ public class SaveData
         public int talkIndex;
     }
 
+
+    [Serializable]
+    public class BalancingStones
+    {
+        public bool isActive = true;
+        public List<Vector3> stonesPositions = new();
+    }
+
+
     [Serializable]
     public class Level
     {
@@ -65,6 +74,8 @@ public class SaveData
         public List<Character> characters = new List<Character>();
 
         public List<bool> triggers = new List<bool>();
+
+        public BalancingStones balancingStones = new();
     }
 
 
