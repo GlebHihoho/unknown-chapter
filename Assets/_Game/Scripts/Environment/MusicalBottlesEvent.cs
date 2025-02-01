@@ -8,10 +8,12 @@ public class MusicalBottlesEvent : MonoBehaviour
 
     [SerializeField] AudioClip[] correctOrder;
 
-    [SerializeField] AudioClip melodyShort;
+    [SerializeField] AudioClip melodyHint;
     [SerializeField] AudioClip melodyFull;
 
     [SerializeField] CinemachineCamera bottlesCamera;
+
+    [SerializeField] bool skipHint = false;
 
     WaitForSeconds delay = new WaitForSeconds(1.2f);
 
@@ -26,7 +28,7 @@ public class MusicalBottlesEvent : MonoBehaviour
     {
         MusicalBottle.OnClipCalled += ClipCalled;
 
-        shortMelody = new WaitForSeconds(melodyShort.length);
+        shortMelody = new WaitForSeconds(melodyHint.length);
         longMelody = new WaitForSeconds(melodyFull.length);
 
         uiContoller = FindFirstObjectByType<UIController>();
@@ -53,7 +55,7 @@ public class MusicalBottlesEvent : MonoBehaviour
         else
         {
             index = 0;
-            StartCoroutine(PlayMeloody(melodyShort, shortMelody, false));
+            if (!skipHint) StartCoroutine(PlayMeloody(melodyHint, shortMelody, false));
         }
     }
 
