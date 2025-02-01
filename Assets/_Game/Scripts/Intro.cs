@@ -122,7 +122,7 @@ public class Intro : MonoBehaviour
             sequence.InsertCallback(startTime, ChangeSlides);
             sequence.Insert(startTime + 0.5f, textFields[i].DOColor(textColor, showTime));
             
-            sequence.Insert(34, textFields[i].DOFade(0, 6));
+            sequence.Insert(38, textFields[i].DOFade(0, 6));
 
             startTime += startNext;
         }
@@ -131,7 +131,7 @@ public class Intro : MonoBehaviour
         sequence.Insert(startTime + 0.5f, authorField.DOColor(authorColor, 2f));
        
         
-        sequence.Insert(34, authorField.DOFade(0, 6));
+        sequence.Insert(38, authorField.DOFade(0, 6));
 
 
         sequence.Insert(40, slide1.DOFade(0, 3));
