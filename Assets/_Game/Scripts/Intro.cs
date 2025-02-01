@@ -9,6 +9,15 @@ public class Intro : MonoBehaviour
 {
 
     [SerializeField] Image background;
+
+
+    [SerializeField] Image slide1;
+    [SerializeField] Image slide2;
+
+
+    [SerializeField] Sprite[] slides;
+    int slideIndex = 0;
+
     [SerializeField] TextMeshProUGUI[] textFields;
     [SerializeField] TextMeshProUGUI authorField;
 
@@ -101,8 +110,8 @@ public class Intro : MonoBehaviour
         GameControls.instance.OnSkipIntroStarted += StartSkipIntro;
         GameControls.instance.OnSkipIntroEnded += EndSkipIntro;
 
-        const float startNext = 7;
-        const float showTime = 5;
+        const float startNext = 8.5f; //7
+        const float showTime = 6; //5
         float startTime = 0;
 
         for (int i = 0; i < textFields.Length; i++)
@@ -110,9 +119,10 @@ public class Intro : MonoBehaviour
             textColor = textFields[i].color;
             textColor.a = 1f;
 
-            sequence.Insert(startTime, textFields[i].DOColor(textColor, showTime));
-
-            sequence.Insert(30, textFields[i].DOFade(0, 6));
+            sequence.InsertCallback(startTime, ChangeSlides);
+            sequence.Insert(startTime + 0.5f, textFields[i].DOColor(textColor, showTime));
+            
+            sequence.Insert(34, textFields[i].DOFade(0, 6));
 
             startTime += startNext;
         }
@@ -121,9 +131,12 @@ public class Intro : MonoBehaviour
         sequence.Insert(startTime + 0.5f, authorField.DOColor(authorColor, 2f));
        
         
-        sequence.Insert(30, authorField.DOFade(0, 6));
+        sequence.Insert(34, authorField.DOFade(0, 6));
 
-        sequence.Insert(36, background.DOFade(0, 3));
+
+        sequence.Insert(40, slide1.DOFade(0, 3));
+
+        sequence.Insert(40, background.DOFade(0, 3));
 
         sequence.OnComplete(() =>
         {
@@ -141,6 +154,36 @@ public class Intro : MonoBehaviour
 
         sequence.Play();
 
+    }
+
+
+    private void ChangeSlides()
+    {
+
+        const float fadeDuration = 1.2f;
+
+        if (slideIndex > slides.Length - 1) return;
+
+        if (slideIndex == 0)
+        {
+            slide1.sprite = slides[slideIndex];
+            slide1.DOFade(1, fadeDuration);
+        }
+        else
+        {
+            slide2.sprite = slides[slideIndex];
+            slide2.DOFade(1, fadeDuration).OnComplete(() =>
+            {
+                slide1.sprite = slide2.sprite;
+
+                Color color = slide2.color;
+                color.a = 0;
+                slide2.color = color;
+
+            });
+        }
+
+        slideIndex++;
     }
 
 
